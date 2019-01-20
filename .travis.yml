@@ -19,6 +19,5 @@ deploy:
 script:
   - yarn danger-ci
 after_success:
-  - yarn report-coverage
   - yarn build
   - npx semantic-release
