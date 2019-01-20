@@ -1,5 +1,4 @@
-// eslint-disable-next-line
-import { danger, fail, markdown, message, schedule, warn } from 'danger';
+import { danger, fail, markdown, message, schedule, warn } from "danger";
 
 const removeAtSymbols = string => string.replace(/@/g, "");
 

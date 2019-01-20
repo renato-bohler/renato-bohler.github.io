@@ -25,7 +25,7 @@
     "bundlesize": "^0.17.1",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
-    "danger": "^7.0.2",
+    "danger": "2.0.3",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.0",
