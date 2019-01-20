@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.0.0...v1.1.0) (2019-01-20)
+
+
+### Features
+
+* **changelog:** implements changelog route ([2621935](https://github.com/renato-bohler/renato-bohler.github.io/commit/2621935))
+
 # 1.0.0 (2019-01-20)
 
 
