@@ -7,8 +7,6 @@ cache:
     - "node_modules"
 install:
   - yarn
-before_deploy:
-  - yarn build
 deploy:
   provider: pages
   skip_cleanup: true
@@ -18,7 +16,7 @@ deploy:
     branch: master
 script:
   - yarn danger-ci
+  - yarn build
   - npx bundlesize
 after_success:
-  - yarn build
   - npx semantic-release
