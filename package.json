@@ -45,6 +45,7 @@
     ]
   },
   "release": {
+    "branch": "development",
     "verifyConditions": [
       "@semantic-release/changelog",
       "@semantic-release/git",
