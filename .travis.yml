@@ -7,6 +7,8 @@ cache:
     - "node_modules"
 install:
   - yarn
+before_deploy:
+  - yarn build
 deploy:
   provider: pages
   keep-history: true
