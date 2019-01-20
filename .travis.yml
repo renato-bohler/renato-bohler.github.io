@@ -18,6 +18,7 @@ deploy:
     branch: master
 script:
   - yarn danger-ci
+  - npx bundlesize
 after_success:
   - yarn build
   - npx semantic-release

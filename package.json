@@ -13,12 +13,8 @@
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
-    "danger": "^7.0.2",
-    "commitizen": "^3.0.5",
-    "cz-conventional-changelog": "^2.1.0",
     "@commitlint/cli": "^7.3.2",
     "@commitlint/config-conventional": "^7.3.1",
-    "semantic-release": "^15.13.3",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
     "@vue/cli-plugin-babel": "^3.3.0",
@@ -26,9 +22,14 @@
     "@vue/cli-service": "^3.3.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
+    "bundlesize": "^0.17.1",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "danger": "^7.0.2",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.0",
+    "semantic-release": "^15.13.3",
     "vue-template-compiler": "^2.5.21"
   },
   "gitHooks": {
@@ -44,6 +45,12 @@
       "git add"
     ]
   },
+  "bundlesize": [
+    {
+      "path": "./dist/js/chunk-vendors.*.js",
+      "maxSize": "500 kB"
+    }
+  ],
   "release": {
     "branch": "development",
     "verifyConditions": [
