@@ -5,25 +5,35 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "danger-ci": "danger ci --verbose"
   },
   "dependencies": {
     "vue": "^2.5.21",
     "vue-router": "^3.0.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^7.3.2",
+    "@commitlint/config-conventional": "^7.3.1",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
     "@vue/cli-plugin-babel": "^3.3.0",
     "@vue/cli-plugin-eslint": "^3.3.0",
     "@vue/cli-service": "^3.3.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "babel-eslint": "^10.0.1",
+    "bundlesize": "^0.17.1",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "danger": "2.0.3",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "lint-staged": "^8.1.0",
+    "semantic-release": "^15.13.3",
     "vue-template-compiler": "^2.5.21"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "commitlint -e && lint-staged"
   },
   "lint-staged": {
     "*.js": [
@@ -33,6 +43,34 @@
     "*.vue": [
       "vue-cli-service lint",
       "git add"
+    ]
+  },
+  "bundlesize": [
+    {
+      "path": "./dist/js/chunk-vendors.*.js",
+      "maxSize": "500 kB"
+    }
+  ],
+  "release": {
+    "branch": "development",
+    "verifyConditions": [
+      "@semantic-release/changelog",
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ],
+    "prepare": [
+      "@semantic-release/changelog",
+      {
+        "path": "@semantic-release/git",
+        "assets": [
+          "package.json",
+          "CHANGELOG.md"
+        ],
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+      }
+    ],
+    "publish": [
+      "@semantic-release/github"
     ]
   }
 }
