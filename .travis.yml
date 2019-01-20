@@ -9,11 +9,15 @@ install:
   - yarn
 deploy:
   provider: pages
+  keep-history: true
   skip_cleanup: true
+  committer-from-gh: true
+  github_token: $GITHUB_TOKEN
+  verbose: true
   local_dir: /dist
-  github_token: $GH_TOKEN
+  target-branch: master
   on:
-    branch: master
+    branch: development
 script:
   - yarn danger-ci
   - yarn build
