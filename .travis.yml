@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+  - "8"
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
+install:
+  - yarn
+before_deploy:
+  - yarn build
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: /dist
+  github_token: $GH_TOKEN
+  on:
+    branch: master
+script:
+  - yarn danger-ci
+after_success:
+  - yarn report-coverage
+  - yarn build
+  - npx semantic-release
