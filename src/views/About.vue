@@ -1,3 +1,6 @@
 <template>
-  <div class="about"><h1>This is an about page</h1></div>
+  <div class="about">
+    <h1>{{ $t("about.title") }}</h1>
+    <p>{{ $t("about.message") }}</p>
+  </div>
 </template>
