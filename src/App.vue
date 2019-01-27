@@ -29,7 +29,7 @@ export default {
       // Menu
       "--menu-shrinked-height": "50px",
       "--menu-animation-duration": "0.5s",
-      // Gradient colors
+      // Gradient
       "--gradient-primary-bright": randomColor.primary.bright,
       "--gradient-primary-dark": randomColor.primary.dark,
       "--gradient-secondary-bright": randomColor.secondary.bright,
@@ -130,55 +130,55 @@ body {
 }
 
 @keyframes shrink {
-  0% {
+  from {
     height: 100%;
   }
-  100% {
+  to {
     height: var(--menu-shrinked-height);
   }
 }
 
 @-moz-keyframes shrink {
-  0% {
+  from {
     height: 100%;
   }
-  100% {
+  to {
     height: var(--menu-shrinked-height);
   }
 }
 
 @-webkit-keyframes shrink {
-  0% {
+  from {
     height: 100%;
   }
-  100% {
+  to {
     height: var(--menu-shrinked-height);
   }
 }
 
 @keyframes expand {
-  0% {
+  from {
     height: var(--menu-shrinked-height);
   }
-  100% {
+  to {
     height: 100%;
   }
 }
 
 @-moz-keyframes expand {
-  0% {
+  from {
     height: var(--menu-shrinked-height);
   }
-  100% {
+  to {
     height: 100%;
   }
 }
 
 @-webkit-keyframes expand {
-  0% {
+  from {
     height: var(--menu-shrinked-height);
   }
-  100% {
+  to {
     height: 100%;
   }
 }
