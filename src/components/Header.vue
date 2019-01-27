@@ -30,13 +30,10 @@
 <script>
 /**
  * @TODOs
- * - Animate fullscreen menu
  * - Title and subtitle writing effect
  * - Link styling
  * - Menu popover
  * - Fullscreen background animation
- * - Review CSS (font-family)
- * - Review variable names
  */
 export default {
   data: () => ({
@@ -130,6 +127,22 @@ export default {
   display: flex;
   align-items: flex-end;
   flex-grow: 1;
+}
+
+.menu-fullscreen-container > span:nth-child(1) {
+  animation: fade-in-bottom ease 0.5s forwards;
+}
+
+.menu-fullscreen-container > span:nth-child(2) {
+  animation: fade-in-bottom ease 1s forwards;
+}
+
+.menu-fullscreen-container > span:nth-child(3) {
+  animation: fade-in-bottom ease 1.5s forwards;
+}
+
+.menu-fullscreen-container > span:nth-child(4) {
+  animation: fade-in-bottom ease 2s forwards;
 }
 
 .menu-fullscreen-container > span {
