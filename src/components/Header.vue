@@ -109,6 +109,9 @@ export default {
   display: flex;
   flex-direction: column;
   width: 53vh;
+  animation: fade-in-top ease 1s forwards;
+  -webkit-animation: fade-in-top ease 1s forwards;
+  -moz-animation: fade-in-top ease 1s forwards;
 }
 
 .title-container > .title {
@@ -129,18 +132,26 @@ export default {
 
 .menu-fullscreen-container > span:nth-child(1) {
   animation: fade-in-bottom ease 0.5s forwards;
+  -webkit-animation: fade-in-bottom ease 0.5s forwards;
+  -moz-animation: fade-in-bottom ease 0.5s forwards;
 }
 
 .menu-fullscreen-container > span:nth-child(2) {
   animation: fade-in-bottom ease 1s forwards;
+  -webkit-animation: fade-in-bottom ease 1s forwards;
+  -moz-animation: fade-in-bottom ease 1s forwards;
 }
 
 .menu-fullscreen-container > span:nth-child(3) {
   animation: fade-in-bottom ease 1.5s forwards;
+  -webkit-animation: fade-in-bottom ease 1.5s forwards;
+  -moz-animation: fade-in-bottom ease 1.5s forwards;
 }
 
 .menu-fullscreen-container > span:nth-child(4) {
   animation: fade-in-bottom ease 2s forwards;
+  -webkit-animation: fade-in-bottom ease 2s forwards;
+  -moz-animation: fade-in-bottom ease 2s forwards;
 }
 
 .menu-fullscreen-container > span {
