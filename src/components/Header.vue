@@ -7,9 +7,15 @@
     >
       <div id="fullscreen-container" v-if="fullscreen">
         <div class="title-container">
-          <span class="title">renato</span>
-          <span class="title">Böhler</span>
-          <span class="subtitle">fullstack developer</span>
+          <span class="title" :class="caretOnName && 'title-caret'">{{
+            name
+          }}</span>
+          <span class="title" :class="caretOnSurname && 'title-caret'">{{
+            surname
+          }}</span>
+          <span class="subtitle" :class="caretOnSubtitle && 'subtitle-caret'">
+            {{ subtitle }}
+          </span>
         </div>
         <div class="menu-fullscreen-container">
           <span class="link">about</span>
@@ -30,25 +36,102 @@
 <script>
 /**
  * @TODOs
- * - Title and subtitle writing effect
  * - Link styling
  * - Menu popover
  */
 export default {
   data: () => ({
-    fullscreen: !window.scrollY,
-    menuOpen: false
+    name: "",
+    surname: "",
+    subtitle: "",
+    fullscreen: true,
+    menuOpen: false,
+    targetName: "renato",
+    targetSurname: "Böhler",
+    targetSubtitle: "",
+    targetSubtitles: [
+      "fullstack developer",
+      "backend developer",
+      "frontend developer",
+      "web developer",
+      ".* developer"
+    ],
+    deletingSubtitle: false,
+    writeTimeout: undefined
   }),
   methods: {
     handleScroll() {
       this.fullscreen = !window.scrollY;
+
+      if (this.fullscreen) {
+        this.initWriting();
+      }
     },
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
+    },
+    initWriting() {
+      clearTimeout(this.writeTimeout);
+
+      this.name = "";
+      this.surname = "";
+      this.subtitle = "";
+      this.targetSubtitle = "";
+
+      this.targetSubtitle = this.targetSubtitles[
+        Math.floor(Math.random() * this.targetSubtitles.length)
+      ];
+
+      this.writeTimeout = setTimeout(this.writeTitle, 500);
+    },
+    writeTitle() {
+      if (this.name !== this.targetName) {
+        // Writing name
+        this.name = this.targetName.slice(0, this.name.length + 1);
+      } else if (this.surname !== this.targetSurname) {
+        // Writing surname
+        this.surname = this.targetSurname.slice(0, this.surname.length + 1);
+      } else {
+        // Writing subtitle
+        if (!this.deletingSubtitle && this.subtitle === this.targetSubtitle) {
+          // New subtitle
+          this.writeTimeout = setTimeout(() => {
+            this.deletingSubtitle = true;
+            this.writeTitle();
+          }, 2000);
+          return;
+        }
+
+        if (this.deletingSubtitle) {
+          this.subtitle = this.subtitle.slice(0, -1);
+          if (this.subtitle === "") {
+            this.deletingSubtitle = false;
+          }
+        } else {
+          if (this.subtitle === "") {
+            const possibleSubtitles = this.targetSubtitles.filter(
+              subtitle => subtitle !== this.targetSubtitle
+            );
+            this.targetSubtitle =
+              possibleSubtitles[
+                Math.floor(Math.random() * possibleSubtitles.length)
+              ];
+          }
+
+          this.subtitle = this.targetSubtitle.slice(
+            0,
+            this.subtitle.length + 1
+          );
+        }
+      }
+
+      this.writeTimeout = setTimeout(this.writeTitle, Math.random() * 50 + 50);
     }
   },
   mounted() {
     window.addEventListener("scroll", this.handleScroll);
+
+    this.initWriting();
   },
   computed: {
     cssVariables() {
@@ -62,6 +145,15 @@ export default {
           ? "100vh"
           : "calc(var(--menu-shrinked-height) + 200px)"
       };
+    },
+    caretOnName() {
+      return this.name !== this.targetName;
+    },
+    caretOnSurname() {
+      return !this.caretOnName && this.surname !== this.targetSurname;
+    },
+    caretOnSubtitle() {
+      return !this.caretOnName && !this.caretOnSurname;
     }
   }
 };
@@ -114,6 +206,22 @@ export default {
   -moz-animation: fade-in-top ease 1s forwards;
 }
 
+.title-caret::after {
+  content: "_";
+  animation: blink ease 1s infinite;
+  -webkit-animation: blink ease 1s infinite;
+  -moz-animation: blink ease 1s infinite;
+}
+
+.subtitle-caret::after {
+  position: relative;
+  right: 2vh;
+  content: "_";
+  animation: blink ease 1s infinite;
+  -webkit-animation: blink ease 1s infinite;
+  -moz-animation: blink ease 1s infinite;
+}
+
 .title-container > .title {
   font-size: 12vh;
 }
@@ -121,7 +229,7 @@ export default {
 .title-container > .subtitle {
   align-self: flex-end;
   font-size: 3vh;
-  margin: 1vh 0.4vh 0 0;
+  margin: 1vh -4vh 0 0;
 }
 
 .menu-fullscreen-container {
@@ -131,27 +239,39 @@ export default {
 }
 
 .menu-fullscreen-container > span:nth-child(1) {
-  animation: fade-in-bottom ease 0.5s forwards;
-  -webkit-animation: fade-in-bottom ease 0.5s forwards;
-  -moz-animation: fade-in-bottom ease 0.5s forwards;
+  animation: fade-in-bottom ease 0.5s backwards;
+  -webkit-animation: fade-in-bottom ease 0.5s backwards;
+  -moz-animation: fade-in-bottom ease 0.5s backwards;
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
 }
 
 .menu-fullscreen-container > span:nth-child(2) {
-  animation: fade-in-bottom ease 1s forwards;
-  -webkit-animation: fade-in-bottom ease 1s forwards;
-  -moz-animation: fade-in-bottom ease 1s forwards;
+  animation: fade-in-bottom ease 1s backwards;
+  -webkit-animation: fade-in-bottom ease 1s backwards;
+  -moz-animation: fade-in-bottom ease 1s backwards;
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
 }
 
 .menu-fullscreen-container > span:nth-child(3) {
-  animation: fade-in-bottom ease 1.5s forwards;
-  -webkit-animation: fade-in-bottom ease 1.5s forwards;
-  -moz-animation: fade-in-bottom ease 1.5s forwards;
+  animation: fade-in-bottom ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom ease 1.5s backwards;
+  -moz-animation: fade-in-bottom ease 1.5s backwards;
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
 }
 
 .menu-fullscreen-container > span:nth-child(4) {
-  animation: fade-in-bottom ease 2s forwards;
-  -webkit-animation: fade-in-bottom ease 2s forwards;
-  -moz-animation: fade-in-bottom ease 2s forwards;
+  animation: fade-in-bottom ease 2s backwards;
+  -webkit-animation: fade-in-bottom ease 2s backwards;
+  -moz-animation: fade-in-bottom ease 2s backwards;
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+  -moz-animation-delay: 1.5s;
 }
 
 .menu-fullscreen-container > span {
