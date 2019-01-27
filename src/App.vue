@@ -33,7 +33,8 @@ export default {
       "--gradient-primary-bright": randomColor.primary.bright,
       "--gradient-primary-dark": randomColor.primary.dark,
       "--gradient-secondary-bright": randomColor.secondary.bright,
-      "--gradient-secondary-dark": randomColor.secondary.dark
+      "--gradient-secondary-dark": randomColor.secondary.dark,
+      "--gradient-animation": "gradient 5s ease infinite"
     })
   }
 };
