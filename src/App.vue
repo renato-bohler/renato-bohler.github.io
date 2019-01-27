@@ -182,4 +182,37 @@ body {
     height: 100%;
   }
 }
+
+@keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(3vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(3vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@-webkit-keyframes fade-in-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(3vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 </style>
