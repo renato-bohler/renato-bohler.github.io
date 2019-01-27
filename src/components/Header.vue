@@ -33,7 +33,6 @@
  * - Title and subtitle writing effect
  * - Link styling
  * - Menu popover
- * - Fullscreen background animation
  */
 export default {
   data: () => ({
@@ -79,21 +78,20 @@ export default {
     var(--gradient-primary-dark),
     var(--gradient-secondary-dark)
   );
+  background-size: 150% 150%;
   width: 100%;
+  position: fixed;
   top: 0;
   left: 0;
-  position: fixed;
-  /* TODO: uncomment */
-  /* background-size: 150% 150%; */
-  /* animation: gradient 5s ease infinite; */
-  /* -webkit-animation: gradient 5s ease infinite; */
-  /* -moz-animation: gradient 5s ease infinite; */
 }
 
 .fullscreen {
-  animation: expand var(--menu-animation-duration) ease;
-  -webkit-animation: expand var(--menu-animation-duration) ease;
-  -moz-animation: expand var(--menu-animation-duration) ease;
+  animation: expand var(--menu-animation-duration) ease forwards,
+    var(--gradient-animation);
+  -webkit-animation: expand var(--menu-animation-duration) ease forwards,
+    var(--gradient-animation);
+  -moz-animation: expand var(--menu-animation-duration) ease forwards,
+    var(--gradient-animation);
 }
 
 #fullscreen-container {
@@ -171,9 +169,12 @@ export default {
   align-items: center;
   align-content: space-between;
   justify-content: space-between;
-  animation: shrink var(--menu-animation-duration) ease;
-  -webkit-animation: shrink var(--menu-animation-duration) ease;
-  -moz-animation: shrink var(--menu-animation-duration) ease;
+  animation: shrink var(--menu-animation-duration) ease forwards,
+    var(--gradient-animation);
+  -webkit-animation: shrink var(--menu-animation-duration) ease forwards,
+    var(--gradient-animation);
+  -moz-animation: shrink var(--menu-animation-duration) ease forwards,
+    var(--gradient-animation);
 }
 
 #shrinked-container {
