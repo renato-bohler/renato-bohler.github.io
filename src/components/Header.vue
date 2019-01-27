@@ -1,7 +1,11 @@
 <template>
-  <div>
-    <div id="header" :class="menuClass" :style="cssVariables">
-      <div id="fullscreen-container" v-if="menuClass === 'fullscreen'">
+  <div id="header-container">
+    <div
+      id="header"
+      :class="fullscreen ? 'fullscreen' : 'shrinked'"
+      :style="cssVariables"
+    >
+      <div id="fullscreen-container" v-if="fullscreen">
         <div class="title-container">
           <span class="title">renato</span>
           <span class="title">Böhler</span>
@@ -36,37 +40,31 @@
  */
 export default {
   data: () => ({
-    menuClass: "fullscreen",
+    fullscreen: !window.scrollY,
     menuOpen: false
   }),
   methods: {
-    updateMenuClass() {
-      if (window.scrollY === 0) {
-        this.menuClass = "fullscreen";
-      } else {
-        this.menuClass = "shrinked";
-      }
+    handleScroll() {
+      this.fullscreen = !window.scrollY;
     },
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
     }
   },
   mounted() {
-    this.updateMenuClass();
-    window.addEventListener("scroll", this.updateMenuClass);
+    window.addEventListener("scroll", this.handleScroll);
   },
   computed: {
     cssVariables() {
       return {
-        "--menu-chevron-rotation": `${this.menuOpen ? "" : "-"}90deg`
+        "--menu-chevron-rotation": `${this.menuOpen ? "-" : ""}90deg`
       };
     },
     headerMargin() {
       return {
-        height:
-          this.menuClass === "fullscreen"
-            ? "100vh"
-            : "calc(var(--menu-shrinked-height) + 200px)"
+        height: this.fullscreen
+          ? "100vh"
+          : "calc(var(--menu-shrinked-height) + 200px)"
       };
     }
   }
@@ -74,6 +72,10 @@ export default {
 </script>
 
 <style scoped>
+#header-container {
+  font-family: "Major Mono Display", monospace;
+}
+
 #header {
   z-index: 100;
   background: linear-gradient(
@@ -98,9 +100,9 @@ export default {
 }
 
 #fullscreen-container {
+  z-index: 101;
   display: flex;
   flex-direction: column;
-  z-index: 101;
   color: white;
   padding: 15vh;
   width: 100vw;
@@ -112,10 +114,6 @@ export default {
   display: flex;
   flex-direction: column;
   width: 53vh;
-}
-
-.title-container > span {
-  font-family: "Major Mono Display", monospace;
 }
 
 .title-container > .title {
@@ -135,7 +133,6 @@ export default {
 }
 
 .menu-fullscreen-container > span {
-  font-family: "Major Mono Display", monospace;
   font-size: 3vh;
 }
 
@@ -171,7 +168,6 @@ export default {
   align-self: flex-end;
   flex-direction: column;
   flex-grow: 1;
-  font-family: "Major Mono Display", monospace;
   font-size: 1.25em;
   font-weight: bold;
   color: white;
@@ -186,7 +182,7 @@ export default {
 }
 
 .menu-button > span:before {
-  content: "<";
+  content: ">";
   display: inline-block;
   transform: rotate(var(--menu-chevron-rotation));
   transition: 0.5s ease;
