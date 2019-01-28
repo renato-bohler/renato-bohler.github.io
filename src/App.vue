@@ -44,7 +44,6 @@ export default {
 #app {
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   padding: 0;
   margin: 0;
   vertical-align: baseline;
@@ -59,18 +58,6 @@ body {
 }
 
 @keyframes gradient {
-  0% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
-
-@-moz-keyframes gradient {
   0% {
     background-position: 50% 0%;
   }
@@ -106,18 +93,6 @@ body {
   }
 }
 
-@-moz-keyframes gradient-horizontal {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @-webkit-keyframes gradient-horizontal {
   0% {
     background-position: 0% 50%;
@@ -131,15 +106,6 @@ body {
 }
 
 @keyframes shrink {
-  from {
-    height: 100%;
-  }
-  to {
-    height: var(--menu-shrinked-height);
-  }
-}
-
-@-moz-keyframes shrink {
   from {
     height: 100%;
   }
@@ -166,15 +132,6 @@ body {
   }
 }
 
-@-moz-keyframes expand {
-  from {
-    height: var(--menu-shrinked-height);
-  }
-  to {
-    height: 100%;
-  }
-}
-
 @-webkit-keyframes expand {
   from {
     height: var(--menu-shrinked-height);
@@ -185,17 +142,6 @@ body {
 }
 
 @keyframes fade-in-top {
-  from {
-    opacity: 0;
-    transform: translateY(-3vh);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@-moz-keyframes fade-in-top {
   from {
     opacity: 0;
     transform: translateY(-3vh);
@@ -228,17 +174,6 @@ body {
   }
 }
 
-@-moz-keyframes fade-in-bottom {
-  from {
-    opacity: 0;
-    transform: translateY(3vh);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @-webkit-keyframes fade-in-bottom {
   from {
     opacity: 0;
@@ -259,7 +194,7 @@ body {
   }
 }
 
-@-moz-keyframes blink {
+@-webkit-keyframes blink {
   from {
     opacity: 0;
   }
@@ -268,12 +203,35 @@ body {
   }
 }
 
-@-webkit-keyframes blink {
-  from {
-    opacity: 0;
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
   }
-  to {
-    opacity: 1;
+  40% {
+    transform: translateY(-3vh);
+  }
+  60% {
+    transform: translateY(-1.5vh);
+  }
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-3vh);
+  }
+  60% {
+    transform: translateY(-1.5vh);
   }
 }
 </style>
