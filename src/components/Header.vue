@@ -17,6 +17,7 @@
             {{ subtitle }}
           </span>
         </div>
+        <div class="scroll-hint">V</div>
         <div class="menu-fullscreen-container">
           <span class="link">about</span>
           <span class="link">skills</span>
@@ -38,6 +39,7 @@
  * @TODOs
  * - Link styling
  * - Menu popover
+ * - Menu internationalization
  */
 export default {
   data: () => ({
@@ -182,8 +184,6 @@ export default {
     var(--gradient-animation);
   -webkit-animation: expand var(--menu-animation-duration) ease forwards,
     var(--gradient-animation);
-  -moz-animation: expand var(--menu-animation-duration) ease forwards,
-    var(--gradient-animation);
 }
 
 #fullscreen-container {
@@ -191,7 +191,7 @@ export default {
   display: flex;
   flex-direction: column;
   color: white;
-  padding: 15vh;
+  padding: 15vmin;
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
@@ -200,87 +200,75 @@ export default {
 .title-container {
   display: flex;
   flex-direction: column;
-  width: 53vh;
+  width: 53vmin;
   animation: fade-in-top ease 1s forwards;
   -webkit-animation: fade-in-top ease 1s forwards;
-  -moz-animation: fade-in-top ease 1s forwards;
 }
 
 .title-caret::after {
   content: "_";
   animation: blink ease 1s infinite;
   -webkit-animation: blink ease 1s infinite;
-  -moz-animation: blink ease 1s infinite;
 }
 
 .subtitle-caret::after {
   position: relative;
-  right: 2vh;
+  right: 2vmin;
   content: "_";
   animation: blink ease 1s infinite;
   -webkit-animation: blink ease 1s infinite;
-  -moz-animation: blink ease 1s infinite;
 }
 
 .title-container > .title {
-  font-size: 12vh;
+  font-size: 12vmin;
 }
 
 .title-container > .subtitle {
   align-self: flex-end;
-  font-size: 3vh;
-  margin: 1vh -4vh 0 0;
+  font-size: 3vmin;
+  margin: 1vmin -4vmin 0 0;
+}
+
+.scroll-hint {
+  position: absolute;
+  align-self: center;
+  bottom: 3vh;
+  font-size: 3vmin;
+  transition: 0.5s ease;
+  animation: bounce 2s infinite, fade-in-bottom 0.5s ease 5s backwards;
+  -webkit-animation: bounce 2s infinite, fade-in-bottom 0.5s ease 5s backwards;
 }
 
 .menu-fullscreen-container {
   display: flex;
   align-items: flex-end;
   flex-grow: 1;
+  font-size: 3vmin;
 }
 
 .menu-fullscreen-container > span:nth-child(1) {
-  animation: fade-in-bottom ease 0.5s backwards;
-  -webkit-animation: fade-in-bottom ease 0.5s backwards;
-  -moz-animation: fade-in-bottom ease 0.5s backwards;
-  animation-delay: 1.5s;
-  -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
+  animation: fade-in-bottom 0.5s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 0.5s ease 1.5s backwards;
 }
 
 .menu-fullscreen-container > span:nth-child(2) {
-  animation: fade-in-bottom ease 1s backwards;
-  -webkit-animation: fade-in-bottom ease 1s backwards;
-  -moz-animation: fade-in-bottom ease 1s backwards;
-  animation-delay: 1.5s;
-  -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
+  animation: fade-in-bottom 1s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 1s ease 1.5s backwards;
 }
 
 .menu-fullscreen-container > span:nth-child(3) {
-  animation: fade-in-bottom ease 1.5s backwards;
-  -webkit-animation: fade-in-bottom ease 1.5s backwards;
-  -moz-animation: fade-in-bottom ease 1.5s backwards;
-  animation-delay: 1.5s;
-  -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
+  animation: fade-in-bottom 1.5s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 1.5s ease 1.5s backwards;
 }
 
 .menu-fullscreen-container > span:nth-child(4) {
-  animation: fade-in-bottom ease 2s backwards;
-  -webkit-animation: fade-in-bottom ease 2s backwards;
-  -moz-animation: fade-in-bottom ease 2s backwards;
-  animation-delay: 1.5s;
-  -webkit-animation-delay: 1.5s;
-  -moz-animation-delay: 1.5s;
-}
-
-.menu-fullscreen-container > span {
-  font-size: 3vh;
+  animation: fade-in-bottom 2s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 2s ease 1.5s backwards;
 }
 
 .menu-fullscreen-container > span:after {
   content: "|";
-  margin: 0 2vh;
+  margin: 0 2vmin;
   background: linear-gradient(
     var(--gradient-primary-bright),
     var(--gradient-secondary-bright)
@@ -303,8 +291,6 @@ export default {
   animation: shrink var(--menu-animation-duration) ease forwards,
     var(--gradient-animation);
   -webkit-animation: shrink var(--menu-animation-duration) ease forwards,
-    var(--gradient-animation);
-  -moz-animation: shrink var(--menu-animation-duration) ease forwards,
     var(--gradient-animation);
 }
 
@@ -331,7 +317,7 @@ export default {
   display: inline-block;
   transform: rotate(var(--menu-chevron-rotation));
   transition: 0.5s ease;
-  margin: 0 1vh;
+  margin: 0 1vmin;
   background: linear-gradient(
     to right,
     var(--gradient-primary-bright),
@@ -344,7 +330,7 @@ export default {
 
 .menu-button > span:after {
   content: " ";
-  margin: 0 1vh;
+  margin: 0 1vmin;
 }
 
 .menu-shrinked-border {
@@ -362,11 +348,53 @@ export default {
   background-size: 150% 150%;
   animation: gradient-horizontal 5s ease infinite;
   -webkit-animation: gradient-horizontal 5s ease infinite;
-  -moz-animation: gradient-horizontal 5s ease infinite;
   height: 3px;
 }
 
 #header-margin {
   transition: height calc(var(--menu-animation-duration) + 0.1s) ease;
+}
+
+@media screen and (max-width: 1023px) {
+  #fullscreen-container {
+    align-items: center;
+    padding: 15vmin 5vmin;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #fullscreen-container {
+    align-items: center;
+    padding: 15vmin 3vmin;
+  }
+
+  .title-container {
+    width: 80vmin !important;
+  }
+
+  .title-container > .title {
+    font-size: 18vmin !important;
+  }
+
+  .title-container > .subtitle {
+    font-size: 5vmin !important;
+  }
+
+  .title-container > .subtitle {
+    margin: 1vmin -6vmin 0 0 !important;
+  }
+
+  .subtitle-caret::after {
+    right: 3vmin !important;
+  }
+
+  .menu-fullscreen-container {
+    display: none !important;
+  }
+
+  .scroll-hint {
+    bottom: 20vh !important;
+    font-size: 20vmin !important;
+  }
 }
 </style>
