@@ -1,12 +1,18 @@
 <template>
   <div id="app" :style="cssVariables">
-    <Header />
-    <router-view />
+    <Header :fullscreen="fullscreen" />
+    <div id="content-container">
+      <About />
+      <div style="margin-top: 20px" v-for="i in 100" :key="i">
+        {{ i }}
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import About from "@/views/About";
 import i18n, { languages } from "@/plugins/i18n.js";
 import { gradient } from "@/consts/colors";
 
@@ -14,15 +20,35 @@ const randomColor = gradient[Math.floor(Math.random() * gradient.length)];
 
 export default {
   components: {
-    Header
+    Header,
+    About
   },
   data: () => ({
-    languages
+    languages,
+    fullscreen: true
   }),
   methods: {
     changeLocale(locale) {
       i18n.locale = locale;
+    },
+    handleScroll() {
+      if (this.fullscreen) {
+        window.scroll(0, 1);
+        this.preventOverscrolling();
+      } else {
+        window.scroll(0, window.scrollY);
+      }
+      this.fullscreen = !window.scrollY;
+    },
+    preventOverscrolling() {
+      const body = document.getElementsByTagName("body")[0].style;
+
+      body.overflow = "hidden";
+      setTimeout(() => (body.overflow = "auto"), 500);
     }
+  },
+  mounted() {
+    window.onscroll = this.handleScroll;
   },
   computed: {
     cssVariables: () => ({
@@ -41,6 +67,10 @@ export default {
 </script>
 
 <style>
+body {
+  background: #f4f5f7;
+}
+
 #app {
   font-family: "Ubuntu", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -51,10 +81,8 @@ export default {
   border: 0;
 }
 
-body {
-  background: #f4f5f7;
-  /* TODO: remove */
-  min-height: 2000px;
+#content-container {
+  margin-top: 200px;
 }
 
 @keyframes gradient {

@@ -19,7 +19,7 @@
         </div>
         <div class="scroll-hint">V</div>
         <div class="menu-fullscreen-container">
-          <span class="link">about</span>
+          <span class="link" v-scroll-to="'#about'">about</span>
           <span class="link">skills</span>
           <span class="link">projects</span>
           <span class="link">professional</span>
@@ -30,7 +30,7 @@
         <div class="menu-shrinked-border" />
       </div>
     </div>
-    <div id="header-margin" :style="headerMargin" />
+    <div id="fullscreen-background" v-if="fullscreen" />
   </div>
 </template>
 
@@ -42,11 +42,18 @@
  * - Menu internationalization
  */
 export default {
+  props: ["fullscreen"],
+  watch: {
+    fullscreen(newValue, oldValue) {
+      if (!oldValue && newValue) {
+        this.initWriting();
+      }
+    }
+  },
   data: () => ({
     name: "",
     surname: "",
     subtitle: "",
-    fullscreen: true,
     menuOpen: false,
     targetName: "renato",
     targetSurname: "Böhler",
@@ -62,13 +69,6 @@ export default {
     writeTimeout: undefined
   }),
   methods: {
-    handleScroll() {
-      this.fullscreen = !window.scrollY;
-
-      if (this.fullscreen) {
-        this.initWriting();
-      }
-    },
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
     },
@@ -131,8 +131,6 @@ export default {
     }
   },
   mounted() {
-    window.addEventListener("scroll", this.handleScroll);
-
     this.initWriting();
   },
   computed: {
@@ -195,6 +193,16 @@ export default {
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
+}
+
+#fullscreen-background {
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .title-container {
