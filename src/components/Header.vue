@@ -20,8 +20,11 @@
         <div class="scroll-hint">V</div>
         <div class="menu-fullscreen-container">
           <span class="link" v-scroll-to="'#about'">about</span>
+          <span class="divider">|</span>
           <span class="link">skills</span>
+          <span class="divider">|</span>
           <span class="link">projects</span>
+          <span class="divider">|</span>
           <span class="link">professional</span>
         </div>
       </div>
@@ -37,7 +40,6 @@
 <script>
 /**
  * @TODOs
- * - Link styling
  * - Menu popover
  * - Menu internationalization
  */
@@ -162,6 +164,9 @@ export default {
 <style scoped>
 #header-container {
   font-family: "Major Mono Display", monospace;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 #header {
@@ -254,9 +259,14 @@ export default {
   font-size: 3vmin;
 }
 
+.menu-fullscreen-container > .link {
+  cursor: pointer;
+  border-bottom: 1px solid white;
+}
+
 .menu-fullscreen-container > span:nth-child(1) {
-  animation: fade-in-bottom 0.5s ease 1.5s backwards;
-  -webkit-animation: fade-in-bottom 0.5s ease 1.5s backwards;
+  animation: fade-in-bottom 0.75s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 0.75s ease 1.5s backwards;
 }
 
 .menu-fullscreen-container > span:nth-child(2) {
@@ -265,16 +275,31 @@ export default {
 }
 
 .menu-fullscreen-container > span:nth-child(3) {
+  animation: fade-in-bottom 1.25s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 1.25s ease 1.5s backwards;
+}
+
+.menu-fullscreen-container > span:nth-child(4) {
   animation: fade-in-bottom 1.5s ease 1.5s backwards;
   -webkit-animation: fade-in-bottom 1.5s ease 1.5s backwards;
 }
 
-.menu-fullscreen-container > span:nth-child(4) {
+.menu-fullscreen-container > span:nth-child(5) {
+  animation: fade-in-bottom 1.75s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 1.75s ease 1.5s backwards;
+}
+
+.menu-fullscreen-container > span:nth-child(6) {
   animation: fade-in-bottom 2s ease 1.5s backwards;
   -webkit-animation: fade-in-bottom 2s ease 1.5s backwards;
 }
 
-.menu-fullscreen-container > span:after {
+.menu-fullscreen-container > span:nth-child(7) {
+  animation: fade-in-bottom 2.25s ease 1.5s backwards;
+  -webkit-animation: fade-in-bottom 2.25s ease 1.5s backwards;
+}
+
+.menu-fullscreen-container > .divider {
   content: "|";
   margin: 0 2vmin;
   background: linear-gradient(
@@ -284,11 +309,6 @@ export default {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.menu-fullscreen-container > span:last-child:after {
-  content: "";
-  margin: 0;
 }
 
 .shrinked {
