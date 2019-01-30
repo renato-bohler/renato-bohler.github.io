@@ -19,13 +19,15 @@
         </div>
         <div class="scroll-hint">V</div>
         <div class="menu-fullscreen-container">
-          <span class="link" v-scroll-to="'#about'">about</span>
-          <span class="divider">|</span>
-          <span class="link">skills</span>
-          <span class="divider">|</span>
-          <span class="link">projects</span>
-          <span class="divider">|</span>
-          <span class="link">professional</span>
+          <span class="link" v-scroll-to="'#about'">{{
+            $t("menu.about")
+          }}</span>
+          <span class="divider" />
+          <span class="link">{{ $t("menu.skills") }}</span>
+          <span class="divider" />
+          <span class="link">{{ $t("menu.projects") }}</span>
+          <span class="divider" />
+          <span class="link">{{ $t("menu.professional") }}</span>
         </div>
       </div>
       <div id="shrinked-container" v-else>
@@ -299,7 +301,7 @@ export default {
   -webkit-animation: fade-in-bottom 2.25s ease 1.5s backwards;
 }
 
-.menu-fullscreen-container > .divider {
+.menu-fullscreen-container > .divider::after {
   content: "|";
   margin: 0 2vmin;
   background: linear-gradient(

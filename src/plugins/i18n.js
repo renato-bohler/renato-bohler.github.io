@@ -10,10 +10,11 @@ export const languages = [
 
 const messages = {
   "en-US": {
-    route: {
-      home: "Home",
-      about: "About",
-      changelog: "Changelog"
+    menu: {
+      about: "about",
+      skills: "skills",
+      projects: "projects",
+      professional: "professional"
     },
     home: {
       title: "Hello world!",
@@ -31,10 +32,11 @@ const messages = {
     }
   },
   "pt-BR": {
-    route: {
-      home: "Início",
-      about: "Sobre",
-      changelog: "Changelog"
+    menu: {
+      about: "sobre",
+      skills: "skills",
+      projects: "projetos",
+      professional: "profissional"
     },
     home: {
       title: "Olá mundo!",
@@ -54,8 +56,8 @@ const messages = {
 };
 
 const i18n = new VueI18n({
-  locale: "pt-BR",
-  fallbackLocale: "en-US",
+  locale: "en-US",
+  fallbackLocale: "pt-BR",
   messages
 });
 
