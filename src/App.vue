@@ -44,7 +44,7 @@ export default {
       const body = document.getElementsByTagName("body")[0].style;
 
       body.overflow = "hidden";
-      setTimeout(() => (body.overflow = "auto"), 500);
+      setTimeout(() => (body.overflow = "auto"), 300);
     }
   },
   mounted() {
