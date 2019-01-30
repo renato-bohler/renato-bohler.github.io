@@ -11,6 +11,7 @@ export const languages = [
 const messages = {
   "en-US": {
     menu: {
+      menu: "menu",
       about: "about",
       skills: "skills",
       projects: "projects",
@@ -33,6 +34,7 @@ const messages = {
   },
   "pt-BR": {
     menu: {
+      menu: "menu",
       about: "sobre",
       skills: "skills",
       projects: "projetos",

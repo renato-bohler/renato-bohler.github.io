@@ -31,7 +31,9 @@
         </div>
       </div>
       <div id="shrinked-container" v-else>
-        <div class="menu-button"><span>menu</span></div>
+        <div class="menu-button">
+          <span>{{ $t("menu.menu") }}</span>
+        </div>
         <div class="menu-shrinked-border" />
       </div>
     </div>
@@ -43,7 +45,6 @@
 /**
  * @TODOs
  * - Menu popover
- * - Menu internationalization
  */
 export default {
   props: ["fullscreen"],
