@@ -386,7 +386,7 @@ export default {
   transition: height calc(var(--menu-animation-duration) + 0.1s) ease;
 }
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1023px), screen and (max-aspect-ratio: 4/3) {
   #fullscreen-container {
     align-items: center;
     padding: 15vmin 5vmin;
