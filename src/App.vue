@@ -85,6 +85,11 @@ body {
   margin-top: 200px;
 }
 
+.toast {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: normal !important;
+}
+
 @keyframes gradient {
   0% {
     background-position: 50% 0%;
