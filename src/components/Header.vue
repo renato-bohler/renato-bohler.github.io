@@ -17,6 +17,15 @@
             {{ subtitle }}
           </span>
         </div>
+        <div class="language-container">
+          <button
+            v-for="language in languages"
+            :key="language.title"
+            @click="changeLocale(language.locale)"
+          >
+            <flag :iso="language.flag" v-bind:squared="false" />
+          </button>
+        </div>
         <div class="scroll-hint">V</div>
         <div class="menu-fullscreen-container">
           <span class="link" v-scroll-to="'#about'">{{
@@ -46,6 +55,8 @@
  * @TODOs
  * - Menu popover
  */
+import i18n, { languages } from "@/plugins/i18n.js";
+
 export default {
   props: ["fullscreen"],
   watch: {
@@ -60,6 +71,7 @@ export default {
     surname: "",
     subtitle: "",
     menuOpen: false,
+    languages,
     targetName: "renato",
     targetSurname: "Böhler",
     targetSubtitle: "",
@@ -76,6 +88,10 @@ export default {
   methods: {
     toggleMenu() {
       this.menuOpen = !this.menuOpen;
+    },
+    changeLocale(locale) {
+      i18n.locale = locale;
+      this.$toasted.show(this.$t("toast.languageChanged"));
     },
     initWriting() {
       clearTimeout(this.writeTimeout);
@@ -167,8 +183,6 @@ export default {
 <style scoped>
 #header-container {
   font-family: "Major Mono Display", monospace;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
   user-select: none;
 }
 
@@ -217,6 +231,7 @@ export default {
   display: flex;
   flex-direction: column;
   width: 53vmin;
+  height: 29vmin;
   animation: fade-in-top ease 1s forwards;
   -webkit-animation: fade-in-top ease 1s forwards;
 }
@@ -243,6 +258,19 @@ export default {
   align-self: flex-end;
   font-size: 3vmin;
   margin: 1vmin -4vmin 0 0;
+}
+
+.language-container {
+  margin-top: 2vh;
+  animation: fade-in-bottom 1s ease 2s backwards;
+}
+
+.language-container > button {
+  font-size: 3vmin;
+  background: none;
+  border: none;
+  outline: none;
+  margin: 5px;
 }
 
 .scroll-hint {
@@ -401,6 +429,7 @@ export default {
 
   .title-container {
     width: 80vmin !important;
+    height: 42vmin !important;
   }
 
   .title-container > .title {
@@ -417,6 +446,10 @@ export default {
 
   .subtitle-caret::after {
     right: 3vmin !important;
+  }
+
+  .language-container > button {
+    font-size: 6vmin;
   }
 
   .menu-fullscreen-container {

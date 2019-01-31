@@ -30,6 +30,9 @@ const messages = {
     },
     changelog: {
       title: "Changelog"
+    },
+    toast: {
+      languageChanged: "Language set to english"
     }
   },
   "pt-BR": {
@@ -53,6 +56,9 @@ const messages = {
     },
     changelog: {
       title: "Changelog"
+    },
+    toast: {
+      languageChanged: "Idioma definido para português"
     }
   }
 };
