@@ -1,6 +1,25 @@
 export const gradient = [
   {
-    name: "dawn",
+    primary: {
+      bright: "#ea5252",
+      dark: "#700d0d"
+    },
+    secondary: {
+      bright: "#e852ea",
+      dark: "#6f0d70"
+    }
+  },
+  {
+    primary: {
+      bright: "#62f48d",
+      dark: "#087f2b"
+    },
+    secondary: {
+      bright: "#62e0f4",
+      dark: "#086f7f"
+    }
+  },
+  {
     primary: {
       bright: "#9566e3",
       dark: "#4a3371"
@@ -11,7 +30,6 @@ export const gradient = [
     }
   },
   {
-    name: "morn",
     primary: {
       bright: "#96dcf7",
       dark: "#4a6d7a"
@@ -22,7 +40,6 @@ export const gradient = [
     }
   },
   {
-    name: "noon",
     primary: {
       bright: "#f2f572",
       dark: "#787939"
@@ -33,7 +50,6 @@ export const gradient = [
     }
   },
   {
-    name: "after",
     primary: {
       bright: "#fbdfac",
       dark: "#7c6e55"
@@ -44,7 +60,6 @@ export const gradient = [
     }
   },
   {
-    name: "dusk",
     primary: {
       bright: "#878ee4",
       dark: "#434671"
@@ -55,7 +70,6 @@ export const gradient = [
     }
   },
   {
-    name: "night",
     primary: {
       bright: "#0249b5",
       dark: "#01245a"
