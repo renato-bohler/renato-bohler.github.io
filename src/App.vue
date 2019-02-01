@@ -1,7 +1,7 @@
 <template>
-  <div id="app" :style="cssVariables">
+  <div class="container" :style="cssVariables">
     <Header :fullscreen="fullscreen" />
-    <div id="content-container">
+    <div class="content-container">
       <About />
       <div style="margin-top: 20px" v-for="i in 100" :key="i">
         {{ i }}
@@ -13,10 +13,9 @@
 <script>
 import Header from "@/components/Header";
 import About from "@/views/About";
-import i18n, { languages } from "@/plugins/i18n.js";
-import { gradient } from "@/consts/colors";
+import { getRandomTheme } from "@/consts/themes";
 
-const randomColor = gradient[Math.floor(Math.random() * gradient.length)];
+const theme = getRandomTheme();
 
 export default {
   components: {
@@ -24,13 +23,9 @@ export default {
     About
   },
   data: () => ({
-    languages,
     fullscreen: true
   }),
   methods: {
-    changeLocale(locale) {
-      i18n.locale = locale;
-    },
     handleScroll() {
       if (this.fullscreen) {
         window.scroll(0, 1);
@@ -56,10 +51,10 @@ export default {
       "--menu-shrinked-height": "50px",
       "--menu-animation-duration": "0.5s",
       // Gradient
-      "--gradient-primary-bright": randomColor.primary.bright,
-      "--gradient-primary-dark": randomColor.primary.dark,
-      "--gradient-secondary-bright": randomColor.secondary.bright,
-      "--gradient-secondary-dark": randomColor.secondary.dark,
+      "--gradient-primary-bright": theme.primary.bright,
+      "--gradient-primary-dark": theme.primary.dark,
+      "--gradient-secondary-bright": theme.secondary.bright,
+      "--gradient-secondary-dark": theme.secondary.dark,
       "--gradient-animation": "gradient 5s ease infinite"
     })
   }
@@ -71,9 +66,8 @@ body {
   background: #f4f5f7;
 }
 
-#app {
+.container {
   font-family: "Ubuntu", sans-serif;
-  -webkit-font-smoothing: antialiased;
   padding: 0;
   margin: 0;
   vertical-align: baseline;
@@ -81,7 +75,7 @@ body {
   border: 0;
 }
 
-#content-container {
+.content-container {
   margin-top: 200px;
 }
 

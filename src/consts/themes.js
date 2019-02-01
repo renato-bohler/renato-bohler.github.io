@@ -1,4 +1,7 @@
-export const gradient = [
+export const getRandomTheme = () =>
+  themes[Math.floor(Math.random() * themes.length)];
+
+export const themes = [
   {
     primary: {
       bright: "#ea5252",
