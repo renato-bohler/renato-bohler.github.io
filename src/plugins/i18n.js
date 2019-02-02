@@ -17,16 +17,10 @@ const messages = {
       projects: "projects",
       professional: "professional"
     },
-    home: {
-      title: "Hello world!",
-      message:
-        "I'm still stuying VueJS to build this page. Please, come back later.",
-      version: "Currently on version <b>{version}</b>"
-    },
     about: {
       title: "About",
       message:
-        "This is a work in progress of my personal website. Here, I'll gonna write a little bit about myself."
+        "This is a work in progress of my personal website. Here, I'm gonna write a little bit about myself."
     },
     skills: {
       title: "Skills",
@@ -55,12 +49,6 @@ const messages = {
       skills: "skills",
       projects: "projetos",
       professional: "profissional"
-    },
-    home: {
-      title: "Olá mundo!",
-      message:
-        "Ainda estou aprendendo VueJS para construir esta página. Por favor, volte novamente mais tarde.",
-      version: "Atualmente na versão <b>{version}</b>"
     },
     about: {
       title: "Sobre",
