@@ -1,6 +1,7 @@
 import Vue from "vue";
 import FlagIcon from "vue-flag-icon";
 import Toasted from "vue-toasted";
+import Tooltip from "v-tooltip";
 import ScrollTo from "vue-scrollto";
 import App from "./App.vue";
 import i18n from "@/plugins/i18n";
@@ -12,6 +13,7 @@ Vue.use(Toasted, {
   position: "bottom-center",
   className: "toast"
 });
+Vue.use(Tooltip);
 Vue.use(ScrollTo, {
   offset: -100
 });
