@@ -14,13 +14,17 @@ export default {
 
 <style scoped>
 .item {
-  cursor: pointer;
   display: block;
   background: rgba(0, 0, 0, 0.7);
   margin: 0 2px 2px 2px;
   line-height: 2em;
   font-size: 1.2em;
   text-align: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .last {

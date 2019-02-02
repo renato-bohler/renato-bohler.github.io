@@ -30,8 +30,12 @@ export default {
 }
 
 span {
-  cursor: pointer;
   display: flex;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 span:before {
