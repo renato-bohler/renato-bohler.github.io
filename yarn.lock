@@ -9653,10 +9653,6 @@ vue-md-loader@^1.1.0:
     loader-utils "^1.1.0"
     markdown-it "^8.4.0"
 
-vue-router@^3.0.1:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
-
 vue-scrollto@^2.13.0:
   version "2.13.0"
   resolved "https://registry.yarnpkg.com/vue-scrollto/-/vue-scrollto-2.13.0.tgz#fe23c9e5d684271c48154e8d504370cd40a8d6fd"
