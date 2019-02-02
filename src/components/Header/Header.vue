@@ -10,7 +10,9 @@
       </div>
 
       <div class="shrinked-container" v-else>
-        <MenuShrinked />
+        <MenuShrinkedButton :open="this.open" :toggle="toggle" />
+        <MenuShrinkedContent :open="this.open" :toggle="toggle" />
+        <MenuShrinkedBorder />
       </div>
     </div>
   </div>
@@ -21,7 +23,9 @@ import Title from "./Title";
 import LanguageSelect from "./LanguageSelect";
 import ScrollHint from "./ScrollHint";
 import MenuFullscreen from "./Menu/Fullscreen";
-import MenuShrinked from "./Menu/Shrinked";
+import MenuShrinkedButton from "./Menu/Shrinked/MenuShrinkedButton";
+import MenuShrinkedBorder from "./Menu/Shrinked/MenuShrinkedBorder";
+import MenuShrinkedContent from "./Menu/Shrinked/MenuShrinkedContent";
 
 export default {
   props: ["fullscreen"],
@@ -30,7 +34,24 @@ export default {
     LanguageSelect,
     ScrollHint,
     MenuFullscreen,
-    MenuShrinked
+    MenuShrinkedButton,
+    MenuShrinkedBorder,
+    MenuShrinkedContent
+  },
+  data: () => ({
+    open: false
+  }),
+  methods: {
+    toggle() {
+      this.open = !this.open;
+    }
+  },
+  watch: {
+    fullscreen(newValue, oldValue) {
+      if (!oldValue && newValue) {
+        this.open = false;
+      }
+    }
   }
 };
 </script>
@@ -98,9 +119,7 @@ export default {
   align-self: flex-end;
   flex-direction: column;
   flex-grow: 1;
-  font-size: 1.25em;
-  font-weight: bold;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(253, 168, 168, 0.5);
 }
 
 @media screen and (max-width: 1023px), screen and (max-aspect-ratio: 4/3) {

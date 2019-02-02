@@ -19,5 +19,6 @@
   animation: gradient-horizontal 5s ease infinite;
   -webkit-animation: gradient-horizontal 5s ease infinite;
   height: 3px;
+  z-index: 103;
 }
 </style>

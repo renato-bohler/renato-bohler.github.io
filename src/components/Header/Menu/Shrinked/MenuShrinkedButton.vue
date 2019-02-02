@@ -1,6 +1,6 @@
 <template>
   <div class="button">
-    <span :class="chevronOrientation" @click="toggle">
+    <span :class="chevronOrientation" @click.stop="toggle">
       {{ $t("menu.menu") }}
     </span>
   </div>
@@ -18,12 +18,15 @@ export default {
 </script>
 
 <style scoped>
-div {
+.button {
+  font-size: 1.25em;
+  font-weight: bold;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: var(--menu-shrinked-height);
+  z-index: 104;
 }
 
 span {
@@ -36,6 +39,7 @@ span:before {
   display: inline-block;
   transition: 0.5s ease;
   margin: 0 1vmin;
+  width: 20px;
   background: linear-gradient(
     to right,
     var(--gradient-primary-bright),
@@ -57,5 +61,6 @@ span.close::before {
 span:after {
   content: " ";
   margin: 0 1vmin;
+  width: 20px;
 }
 </style>
