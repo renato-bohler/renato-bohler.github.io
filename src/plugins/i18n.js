@@ -26,7 +26,20 @@ const messages = {
     about: {
       title: "About",
       message:
-        "This is a work in progress of my personal website. This is my first shot at VueJS aswell."
+        "This is a work in progress of my personal website. Here, I'll gonna write a little bit about myself."
+    },
+    skills: {
+      title: "Skills",
+      message:
+        "In this section I'll detail my skills, aswell as what I'm aiming to learn in the near future."
+    },
+    projects: {
+      title: "Projects",
+      message: "Here I'll show some personal projects."
+    },
+    professional: {
+      title: "Professional",
+      message: "This section will have all my past and current jobs in detail."
     },
     changelog: {
       title: "Changelog"
@@ -52,7 +65,20 @@ const messages = {
     about: {
       title: "Sobre",
       message:
-        "Esta é minha página pessoal, um trabalho em progresso. Esta é também a minha primeira experiência com VueJS."
+        "Esta é minha página pessoal, um trabalho em progresso. Aqui, escreverei um pouco sobre mim."
+    },
+    skills: {
+      title: "Skills",
+      message:
+        "Nesta seção detalharei minhas habilidads, bem como o que pretendo aprender num futuro próximo."
+    },
+    projects: {
+      title: "Projetos",
+      message: "Aqui irei mostrar alguns projetos pessoais."
+    },
+    professional: {
+      title: "Profissional",
+      message: "Esta seção terá todos meus trabalhos passados e o atual."
     },
     changelog: {
       title: "Changelog"
