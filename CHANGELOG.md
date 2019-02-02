@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.3.0...v1.3.1) (2019-02-02)
+
+
+### Bug Fixes
+
+* **About:** fix typo ([1cb5edc](https://github.com/renato-bohler/renato-bohler.github.io/commit/1cb5edc))
+
 # [1.3.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.2.0...v1.3.0) (2019-02-02)
 
 
