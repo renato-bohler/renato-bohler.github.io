@@ -4,6 +4,7 @@
       v-for="language in languages"
       :key="language.title"
       @click="changeLocale(language.locale)"
+      v-tooltip.bottom="language.title"
     >
       <flag :iso="language.flag" v-bind:squared="false" />
     </button>
