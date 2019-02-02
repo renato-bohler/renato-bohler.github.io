@@ -119,7 +119,7 @@ export default {
   align-self: flex-end;
   flex-direction: column;
   flex-grow: 1;
-  background: rgba(253, 168, 168, 0.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 1023px), screen and (max-aspect-ratio: 4/3) {
