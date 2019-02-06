@@ -12,7 +12,6 @@
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.21",
     "vue-clickaway": "^2.2.2",
-    "vue-flag-icon": "^1.0.6",
     "vue-i18n": "^8.7.0",
     "vue-scrollto": "^2.13.0",
     "vue-toasted": "^1.1.26"
