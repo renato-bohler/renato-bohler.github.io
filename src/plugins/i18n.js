@@ -4,8 +4,8 @@ import VueI18n from "vue-i18n";
 Vue.use(VueI18n);
 
 export const languages = [
-  { flag: "br", locale: "pt-BR", title: "Português brasileiro" },
-  { flag: "us", locale: "en-US", title: "English" }
+  { flag: "us", locale: "en-US", title: "English" },
+  { flag: "br", locale: "pt-BR", title: "Português brasileiro" }
 ];
 
 const messages = {
