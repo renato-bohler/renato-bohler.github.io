@@ -3,83 +3,113 @@ export const getRandomTheme = () =>
 
 export const themes = [
   {
+    name: "dark",
     primary: {
-      bright: "#ea5252",
-      dark: "#700d0d"
+      bright: "#2c3e50",
+      dark: "#161f28"
     },
     secondary: {
-      bright: "#e852ea",
-      dark: "#6f0d70"
+      bright: "#bdc3c7",
+      dark: "#5d6063"
     }
   },
   {
+    name: "cyan",
     primary: {
-      bright: "#62f48d",
-      dark: "#087f2b"
+      bright: "#4ca1af",
+      dark: "#265057"
     },
     secondary: {
-      bright: "#62e0f4",
-      dark: "#086f7f"
+      bright: "#c4e0e5",
+      dark: "#606f72"
     }
   },
   {
+    name: "blue",
     primary: {
-      bright: "#9566e3",
-      dark: "#4a3371"
+      bright: "#5b86e5",
+      dark: "#2d4372"
     },
     secondary: {
-      bright: "#a7f5ff",
-      dark: "#52797e"
+      bright: "#36d1dc",
+      dark: "#1b686e"
     }
   },
   {
+    name: "aqua",
     primary: {
-      bright: "#96dcf7",
-      dark: "#4a6d7a"
+      bright: "#0ed2f7",
+      dark: "#07697b"
     },
     secondary: {
-      bright: "#63ebbd",
-      dark: "#31745e"
+      bright: "#b2fefa",
+      dark: "#587e7d"
     }
   },
   {
+    name: "vice",
     primary: {
-      bright: "#f2f572",
-      dark: "#787939"
+      bright: "#ec6ead",
+      dark: "#763756"
     },
     secondary: {
-      bright: "#ff8484",
-      dark: "#7e4141"
+      bright: "#3494e6",
+      dark: "#1d4972"
     }
   },
   {
+    name: "purple",
     primary: {
-      bright: "#fbdfac",
-      dark: "#7c6e55"
+      bright: "#7f00ff",
+      dark: "#3f007f"
     },
     secondary: {
-      bright: "#ec6262",
-      dark: "#753131"
+      bright: "#e100ff",
+      dark: "#6f007f"
     }
   },
   {
+    name: "rose",
     primary: {
-      bright: "#878ee4",
-      dark: "#434671"
+      bright: "#ee9ca7",
+      dark: "#774e53"
     },
     secondary: {
-      bright: "#feb8cb",
-      dark: "#7e5b65"
+      bright: "#ffdde1",
+      dark: "#7f6e70"
     }
   },
   {
+    name: "orange",
     primary: {
-      bright: "#0249b5",
-      dark: "#01245a"
+      bright: "#ee0979",
+      dark: "#77043c"
     },
     secondary: {
-      bright: "#878ee4",
-      dark: "#424671"
+      bright: "#ff6a00",
+      dark: "#7f3401"
+    }
+  },
+  {
+    name: "green",
+    primary: {
+      bright: "#a8ff78",
+      dark: "#547f3c"
+    },
+    secondary: {
+      bright: "#78ffd6",
+      dark: "#3c7f6a"
+    }
+  },
+  {
+    name: "slate",
+    primary: {
+      bright: "#135058",
+      dark: "#09282c"
+    },
+    secondary: {
+      bright: "#f1f2b5",
+      dark: "#77785a"
     }
   }
 ];
