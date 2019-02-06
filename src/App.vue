@@ -85,7 +85,7 @@ export default {
       "--gradient-primary-dark": theme.primary.dark,
       "--gradient-secondary-bright": theme.secondary.bright,
       "--gradient-secondary-dark": theme.secondary.dark,
-      "--gradient-animation": "gradient 5s ease infinite"
+      "--gradient-animation": "gradient 10s ease infinite"
     })
   }
 };
