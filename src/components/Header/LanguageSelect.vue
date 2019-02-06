@@ -6,16 +6,18 @@
       @click="changeLocale(language.locale)"
       v-tooltip.bottom="language.title"
     >
-      <flag :iso="language.flag" v-bind:squared="false" />
+      <Flag :iso="language.flag" />
     </button>
   </div>
 </template>
 
 <script>
+import Flag from "@/components/Flag";
 import i18n, { languages } from "@/plugins/i18n.js";
 
 export default {
   data: () => ({ languages }),
+  components: { Flag },
   methods: {
     changeLocale(locale) {
       i18n.locale = locale;
