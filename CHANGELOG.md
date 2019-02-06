@@ -1,3 +1,13 @@
+# [1.4.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.3.1...v1.4.0) (2019-02-06)
+
+
+### Features
+
+* **App:** adds favicon changing according to theme ([323002f](https://github.com/renato-bohler/renato-bohler.github.io/commit/323002f))
+* **favicon:** adds favicon files ([fe1c545](https://github.com/renato-bohler/renato-bohler.github.io/commit/fe1c545))
+* **favicon:** implements changeFavicon function ([0a20fa8](https://github.com/renato-bohler/renato-bohler.github.io/commit/0a20fa8))
+* implements flag icons inside the project ([ecb1c8b](https://github.com/renato-bohler/renato-bohler.github.io/commit/ecb1c8b))
+
 ## [1.3.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.3.0...v1.3.1) (2019-02-02)
 
 
