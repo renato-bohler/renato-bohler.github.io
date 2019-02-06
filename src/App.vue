@@ -37,12 +37,14 @@ import Skills from "@/views/Skills";
 import Projects from "@/views/Projects";
 import Professional from "@/views/Professional";
 import { getRandomTheme } from "@/consts/themes";
+import { changeFavicon } from "@/utils/favicon";
 
 import "@/styles/keyframes.css";
 import "@/styles/toast.css";
 import "@/styles/tooltip.css";
 
 const theme = getRandomTheme();
+changeFavicon(theme);
 
 export default {
   components: {
