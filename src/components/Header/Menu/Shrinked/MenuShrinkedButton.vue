@@ -46,8 +46,8 @@ span:before {
   width: 20px;
   background: linear-gradient(
     to right,
-    var(--gradient-primary-bright),
-    var(--gradient-secondary-bright)
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
   );
   background-clip: text;
   -webkit-background-clip: text;

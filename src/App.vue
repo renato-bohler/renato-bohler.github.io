@@ -86,11 +86,12 @@ export default {
       // Menu
       "--menu-shrinked-height": "50px",
       "--menu-animation-duration": "0.5s",
-      // Gradient
-      "--gradient-primary-bright": theme.primary.bright,
-      "--gradient-primary-dark": theme.primary.dark,
-      "--gradient-secondary-bright": theme.secondary.bright,
-      "--gradient-secondary-dark": theme.secondary.dark,
+      // Theme
+      "--theme-primary-bright": theme.primary.bright,
+      "--theme-primary-dark": theme.primary.dark,
+      "--theme-secondary-bright": theme.secondary.bright,
+      "--theme-secondary-dark": theme.secondary.dark,
+      // Gradient animation
       "--gradient-animation": "gradient 10s ease infinite",
       // Text colors
       "--font-gray-color": "#5a5a5a"
