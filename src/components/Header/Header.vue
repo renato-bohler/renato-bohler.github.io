@@ -58,7 +58,7 @@ export default {
 
 <style scoped>
 .container {
-  font-family: "Major Mono Display", monospace;
+  font-family: "Major Mono Display", monospace !important;
   user-select: none;
 }
 
