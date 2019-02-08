@@ -27,11 +27,13 @@
         :key="i"
       />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import About from "@/views/About";
 import Skills from "@/views/Skills";
 import Projects from "@/views/Projects";
@@ -50,6 +52,7 @@ changeFavicon(theme);
 export default {
   components: {
     Header,
+    Footer,
     About,
     Skills,
     Projects,
@@ -88,7 +91,9 @@ export default {
       "--gradient-primary-dark": theme.primary.dark,
       "--gradient-secondary-bright": theme.secondary.bright,
       "--gradient-secondary-dark": theme.secondary.dark,
-      "--gradient-animation": "gradient 10s ease infinite"
+      "--gradient-animation": "gradient 10s ease infinite",
+      // Text colors
+      "--font-gray-color": "#5a5a5a"
     })
   }
 };
