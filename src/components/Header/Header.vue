@@ -58,15 +58,15 @@ export default {
 
 <style scoped>
 .container {
-  font-family: "Major Mono Display", monospace;
+  font-family: "Major Mono Display", monospace !important;
   user-select: none;
 }
 
 .header {
   z-index: 100;
   background: linear-gradient(
-    var(--gradient-primary-dark),
-    var(--gradient-secondary-dark)
+    var(--theme-primary-dark),
+    var(--theme-secondary-dark)
   );
   background-size: 150% 150%;
   width: 100%;

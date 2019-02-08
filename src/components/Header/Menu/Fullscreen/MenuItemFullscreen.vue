@@ -45,8 +45,8 @@ span {
   content: "|";
   margin: 0 2vmin;
   background: linear-gradient(
-    var(--gradient-primary-bright),
-    var(--gradient-secondary-bright)
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
   );
   background-clip: text;
   -webkit-background-clip: text;

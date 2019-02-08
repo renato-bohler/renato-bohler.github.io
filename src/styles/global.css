@@ -1,0 +1,30 @@
+a:link, a:visited {
+  text-decoration: none;
+  color: var(--font-gray-color);
+  border-bottom: 1px dashed var(--theme-secondary-dark);
+}
+
+a:hover, a:active {
+  text-decoration: none;
+  border-bottom: 1px solid var(--theme-secondary-dark);
+}
+
+span > .highlight {
+  background: linear-gradient(
+    to right,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+span > .heart {
+  background: var(--theme-primary-bright);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px var(--theme-primary-dark);
+  font-style: normal;
+}

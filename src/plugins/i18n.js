@@ -17,6 +17,33 @@ const messages = {
       projects: "projects",
       professional: "professional"
     },
+    footer: {
+      designed: "Designed and developed",
+      with: "with <span class='heart'>♥</span>",
+      by: "by <a href='https://github.com/renato-bohler'>Renato Böhler</a>",
+      while: [
+        "while listening to Monstercat",
+        "while listening to The Beatles",
+        "while listening to Queen",
+        "while listening to Eric Claption",
+        "while listening to B.B. King",
+        "while listening to Ray Charles",
+        "while listening to Black Sabbath",
+        "while listening to Metallica",
+        "while listening to AC/DC",
+        "while listening to Chrono Trigger's OST",
+        "while listening to Zelda's OST",
+        "while watching Wagamama",
+        "while watching Merlini",
+        "while watching Draskyl",
+        "while watching DotACapitalist",
+        "while watching MikamiHero",
+        "while watching Peeve",
+        "while watching Rurouni Kenshin",
+        "while watching Athletico Paranaense",
+        "while drinking some Coke™"
+      ]
+    },
     about: {
       title: "About",
       message:
@@ -49,6 +76,33 @@ const messages = {
       skills: "skills",
       projects: "projetos",
       professional: "profissional"
+    },
+    footer: {
+      designed: "Desenhado e desenvolvido",
+      with: "com <span class='heart'>♥</span>",
+      by: "por <a href='https://github.com/renato-bohler'>Renato Böhler</a>",
+      while: [
+        "enquanto ouvia Monstercat",
+        "enquanto ouvia os Beatles",
+        "enquanto ouvia Queen",
+        "enquanto ouvia Eric Claption",
+        "enquanto ouvia B.B. King",
+        "enquanto ouvia Ray Charles",
+        "enquanto ouvia Black Sabbath",
+        "enquanto ouvia Metallica",
+        "enquanto ouvia AC/DC",
+        "enquanto ouvia a trilha sonora de Chrono Trigger",
+        "enquanto ouvia a trilha sonora de Zelda",
+        "enquanto assistia ao Wagamama",
+        "enquanto assistia ao Merlini",
+        "enquanto assistia ao Draskyl",
+        "enquanto assistia ao DotACapitalist",
+        "enquanto assistia ao MikamiHero",
+        "enquanto assistia ao Peeve",
+        "enquanto assistia ao Rurouni Kenshin",
+        "enquanto assistia ao Athletico Paranaense",
+        "enquanto bebia Coca™"
+      ]
     },
     about: {
       title: "Sobre",

@@ -27,11 +27,13 @@
         :key="i"
       />
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import About from "@/views/About";
 import Skills from "@/views/Skills";
 import Projects from "@/views/Projects";
@@ -39,6 +41,7 @@ import Professional from "@/views/Professional";
 import { getRandomTheme } from "@/consts/themes";
 import { changeFavicon } from "@/utils/favicon";
 
+import "@/styles/global.css";
 import "@/styles/keyframes.css";
 import "@/styles/toast.css";
 import "@/styles/tooltip.css";
@@ -49,6 +52,7 @@ changeFavicon(theme);
 export default {
   components: {
     Header,
+    Footer,
     About,
     Skills,
     Projects,
@@ -82,18 +86,21 @@ export default {
       // Menu
       "--menu-shrinked-height": "50px",
       "--menu-animation-duration": "0.5s",
-      // Gradient
-      "--gradient-primary-bright": theme.primary.bright,
-      "--gradient-primary-dark": theme.primary.dark,
-      "--gradient-secondary-bright": theme.secondary.bright,
-      "--gradient-secondary-dark": theme.secondary.dark,
-      "--gradient-animation": "gradient 10s ease infinite"
+      // Theme
+      "--theme-primary-bright": theme.primary.bright,
+      "--theme-primary-dark": theme.primary.dark,
+      "--theme-secondary-bright": theme.secondary.bright,
+      "--theme-secondary-dark": theme.secondary.dark,
+      // Gradient animation
+      "--gradient-animation": "gradient 10s ease infinite",
+      // Text colors
+      "--font-gray-color": "#5a5a5a"
     })
   }
 };
 </script>
 
-<style>
+<style scoped>
 body {
   background: #f4f5f7;
 }
