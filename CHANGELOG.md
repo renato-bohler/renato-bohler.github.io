@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.4.0...v1.5.0) (2019-02-08)
+
+
+### Bug Fixes
+
+* **Header:** fixes menu button font family ([cdc5e35](https://github.com/renato-bohler/renato-bohler.github.io/commit/cdc5e35))
+
+
+### Features
+
+* **Footer:** initial component implementation ([54b25cd](https://github.com/renato-bohler/renato-bohler.github.io/commit/54b25cd))
+
 # [1.4.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.3.1...v1.4.0) (2019-02-06)
 
 
