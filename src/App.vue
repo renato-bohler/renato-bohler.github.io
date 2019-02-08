@@ -39,6 +39,7 @@ import Professional from "@/views/Professional";
 import { getRandomTheme } from "@/consts/themes";
 import { changeFavicon } from "@/utils/favicon";
 
+import "@/styles/global.css";
 import "@/styles/keyframes.css";
 import "@/styles/toast.css";
 import "@/styles/tooltip.css";
@@ -93,7 +94,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   background: #f4f5f7;
 }
