@@ -1,7 +1,7 @@
 <template>
-  <div class="container" :style="cssVariables">
+  <div class="app-container" :style="cssVariables">
     <Header :fullscreen="fullscreen" />
-    <div class="content-container">
+    <div class="app-content-container">
       <About />
       <div
         style="height: 20px"
@@ -87,6 +87,8 @@ export default {
       "--menu-shrinked-height": "50px",
       "--menu-animation-duration": "0.5s",
       // Theme
+      "--theme-background": theme.background,
+      "--theme-border": theme.border,
       "--theme-primary-bright": theme.primary.bright,
       "--theme-primary-dark": theme.primary.dark,
       "--theme-secondary-bright": theme.secondary.bright,
@@ -100,21 +102,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 body {
-  background: #f4f5f7;
+  margin: 0;
 }
 
-.container {
+.app-container {
   font-family: "Ubuntu", sans-serif;
   padding: 0;
   margin: 0;
   vertical-align: baseline;
   list-style: none;
   border: 0;
+  background: var(--theme-background);
 }
 
-.content-container {
-  margin-top: 200px;
+.app-content-container {
+  padding-top: 200px;
 }
 </style>
