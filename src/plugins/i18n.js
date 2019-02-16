@@ -55,11 +55,11 @@ const messages = {
         "In this section I'll detail my skills, aswell as what I'm aiming to learn in the near future."
     },
     projects: {
-      title: "Projects",
+      title: "proJects",
       message: "Here I'll show some personal projects."
     },
     professional: {
-      title: "Professional",
+      title: "professionAl",
       message: "This section will have all my past and current jobs in detail."
     },
     changelog: {
@@ -67,6 +67,9 @@ const messages = {
     },
     toast: {
       languageChanged: "Language set to english"
+    },
+    content: {
+      lastEdited: "Last edited"
     }
   },
   "pt-BR": {
@@ -105,21 +108,21 @@ const messages = {
       ]
     },
     about: {
-      title: "Sobre",
+      title: "soBre",
       message:
         "Esta é minha página pessoal, um trabalho em progresso. Aqui, escreverei um pouco sobre mim."
     },
     skills: {
       title: "Skills",
       message:
-        "Nesta seção detalharei minhas habilidads, bem como o que pretendo aprender num futuro próximo."
+        "Nesta seção detalharei minhas habilidades, bem como o que pretendo aprender num futuro próximo."
     },
     projects: {
-      title: "Projetos",
+      title: "proJetos",
       message: "Aqui irei mostrar alguns projetos pessoais."
     },
     professional: {
-      title: "Profissional",
+      title: "profissionAl",
       message: "Esta seção terá todos meus trabalhos passados e o atual."
     },
     changelog: {
@@ -127,6 +130,9 @@ const messages = {
     },
     toast: {
       languageChanged: "Idioma definido para português"
+    },
+    content: {
+      lastEdited: "Última edição"
     }
   }
 };
