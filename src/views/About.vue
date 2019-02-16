@@ -1,6 +1,12 @@
 <template>
-  <div id="about">
-    <h1>{{ $t("about.title") }}</h1>
+  <Content id="about" :title="$t('about.title')" :lastEditedAt="new Date()">
     <p>{{ $t("about.message") }}</p>
-  </div>
+  </Content>
 </template>
+
+<script>
+import Content from "@/components/Content";
+export default {
+  components: { Content }
+};
+</script>

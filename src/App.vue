@@ -1,31 +1,11 @@
 <template>
-  <div class="container" :style="cssVariables">
+  <div class="app-container" :style="cssVariables">
     <Header :fullscreen="fullscreen" />
-    <div class="content-container">
+    <div class="app-content-container">
       <About />
-      <div
-        style="height: 20px"
-        v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-        :key="i"
-      />
       <Skills />
-      <div
-        style="height: 20px"
-        v-for="i in [11, 12, 13, 14, 15, 16, 17, 18, 19, 20]"
-        :key="i"
-      />
       <Projects />
-      <div
-        style="height: 20px"
-        v-for="i in [21, 22, 23, 24, 25, 26, 27, 28, 29, 30]"
-        :key="i"
-      />
       <Professional />
-      <div
-        style="height: 20px"
-        v-for="i in [31, 32, 33, 34, 35, 36, 37, 38, 39, 40]"
-        :key="i"
-      />
     </div>
     <Footer />
   </div>
@@ -87,6 +67,8 @@ export default {
       "--menu-shrinked-height": "50px",
       "--menu-animation-duration": "0.5s",
       // Theme
+      "--theme-background": theme.background,
+      "--theme-border": theme.border,
       "--theme-primary-bright": theme.primary.bright,
       "--theme-primary-dark": theme.primary.dark,
       "--theme-secondary-bright": theme.secondary.bright,
@@ -100,21 +82,22 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 body {
-  background: #f4f5f7;
+  margin: 0;
 }
 
-.container {
+.app-container {
   font-family: "Ubuntu", sans-serif;
   padding: 0;
   margin: 0;
   vertical-align: baseline;
   list-style: none;
   border: 0;
+  background: var(--theme-background);
 }
 
-.content-container {
-  margin-top: 200px;
+.app-content-container {
+  padding-top: 200px;
 }
 </style>

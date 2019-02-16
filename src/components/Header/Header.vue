@@ -108,7 +108,7 @@ export default {
   z-index: 99;
   width: 100vw;
   height: 100vh;
-  background: white;
+  background: var(--theme-background);
   position: absolute;
   top: 0;
   right: 0;

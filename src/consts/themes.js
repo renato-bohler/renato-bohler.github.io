@@ -4,6 +4,8 @@ export const getRandomTheme = () =>
 export const themes = [
   {
     name: "dark",
+    background: "#e6e6e6",
+    border: "#c5c5c5",
     primary: {
       bright: "#2c3e50",
       dark: "#161f28"
@@ -15,6 +17,8 @@ export const themes = [
   },
   {
     name: "cyan",
+    background: "#e2e4e4",
+    border: "#a8cec5",
     primary: {
       bright: "#4ca1af",
       dark: "#265057"
@@ -26,6 +30,8 @@ export const themes = [
   },
   {
     name: "blue",
+    background: "#e6eaea",
+    border: "#a5b9e8",
     primary: {
       bright: "#5b86e5",
       dark: "#2d4372"
@@ -37,6 +43,8 @@ export const themes = [
   },
   {
     name: "aqua",
+    background: "#edf0f3",
+    border: "#9cd5e4",
     primary: {
       bright: "#0ed2f7",
       dark: "#07697b"
@@ -48,6 +56,8 @@ export const themes = [
   },
   {
     name: "vice",
+    background: "#edecf1",
+    border: "#a095ce",
     primary: {
       bright: "#ec6ead",
       dark: "#763756"
@@ -59,6 +69,8 @@ export const themes = [
   },
   {
     name: "purple",
+    background: "#ede9ee",
+    border: "#c1b4ea",
     primary: {
       bright: "#7f00ff",
       dark: "#3f007f"
@@ -70,6 +82,8 @@ export const themes = [
   },
   {
     name: "rose",
+    background: "#e4e1e4",
+    border: "#e4aaca",
     primary: {
       bright: "#ee9ca7",
       dark: "#774e53"
@@ -81,6 +95,8 @@ export const themes = [
   },
   {
     name: "orange",
+    background: "#ecebeb",
+    border: "#f5bca1",
     primary: {
       bright: "#ee0979",
       dark: "#77043c"
@@ -92,6 +108,8 @@ export const themes = [
   },
   {
     name: "green",
+    background: "#eff1ef",
+    border: "#c0dcb2",
     primary: {
       bright: "#a8ff78",
       dark: "#547f3c"
@@ -103,6 +121,8 @@ export const themes = [
   },
   {
     name: "slate",
+    background: "#edeee9",
+    border: "#b9dca3",
     primary: {
       bright: "#135058",
       dark: "#09282c"

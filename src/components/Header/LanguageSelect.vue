@@ -13,14 +13,15 @@
 
 <script>
 import Flag from "@/components/Flag";
-import i18n, { languages } from "@/plugins/i18n.js";
+import { languages } from "@/plugins/i18n.js";
 
 export default {
   data: () => ({ languages }),
   components: { Flag },
   methods: {
     changeLocale(locale) {
-      i18n.locale = locale;
+      this.$i18n.locale = locale;
+      this.$moment.locale(locale);
       this.$toasted.show(this.$t("toast.languageChanged"));
     }
   }
