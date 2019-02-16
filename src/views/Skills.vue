@@ -1,6 +1,16 @@
 <template>
-  <div id="skills">
-    <h1>{{ $t("skills.title") }}</h1>
+  <Content
+    id="skills"
+    :title="$t('skills.title')"
+    :lastEditedAt="new Date() - 60 * 1000"
+  >
     <p>{{ $t("skills.message") }}</p>
-  </div>
+  </Content>
 </template>
+
+<script>
+import Content from "@/components/Content";
+export default {
+  components: { Content }
+};
+</script>
