@@ -1,3 +1,22 @@
+# [1.6.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.5.0...v1.6.0) (2019-02-16)
+
+
+### Bug Fixes
+
+* **App:** fixes styling ([b8de8c6](https://github.com/renato-bohler/renato-bohler.github.io/commit/b8de8c6))
+* **Header:** fixes fullscreen background styling ([52d0215](https://github.com/renato-bohler/renato-bohler.github.io/commit/52d0215))
+
+
+### Features
+
+* **App:** removes stub divider divs ([2adb6fa](https://github.com/renato-bohler/renato-bohler.github.io/commit/2adb6fa))
+* **Content:** initial implementation ([543788b](https://github.com/renato-bohler/renato-bohler.github.io/commit/543788b))
+* **Header:** implements moment locale changing ([91a42ba](https://github.com/renato-bohler/renato-bohler.github.io/commit/91a42ba))
+* **i18n:** adds new strings ([1c34f6c](https://github.com/renato-bohler/renato-bohler.github.io/commit/1c34f6c))
+* **main:** configures moment and icon ([3354988](https://github.com/renato-bohler/renato-bohler.github.io/commit/3354988))
+* **theme:** adds background and border color to all themes ([6a78ec2](https://github.com/renato-bohler/renato-bohler.github.io/commit/6a78ec2))
+* changes all views to use Content component ([4302f18](https://github.com/renato-bohler/renato-bohler.github.io/commit/4302f18)), closes [#5](https://github.com/renato-bohler/renato-bohler.github.io/issues/5)
+
 # [1.5.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.4.0...v1.5.0) (2019-02-08)
 
 
