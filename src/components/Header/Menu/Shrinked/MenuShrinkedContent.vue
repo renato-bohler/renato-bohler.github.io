@@ -50,10 +50,10 @@ export default {
   min-width: 250px;
   background: linear-gradient(
     45deg,
-    var(--theme-primary-bright),
-    var(--theme-secondary-bright),
-    var(--theme-primary-bright),
-    var(--theme-secondary-bright)
+    var(--theme-primary-dark),
+    var(--theme-secondary-dark),
+    var(--theme-primary-dark),
+    var(--theme-secondary-dark)
   );
   background-size: 150% 150%;
   animation: gradient-horizontal 5s ease infinite;
