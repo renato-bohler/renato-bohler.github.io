@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" :style="cssVariables">
     <div class="fullscreen-background" v-if="fullscreen" />
     <div class="header" :class="fullscreen ? 'fullscreen' : 'shrinked'">
       <div class="fullscreen-container" v-if="fullscreen">
@@ -27,6 +27,8 @@ import MenuShrinkedButton from "./Menu/Shrinked/MenuShrinkedButton";
 import MenuShrinkedBorder from "./Menu/Shrinked/MenuShrinkedBorder";
 import MenuShrinkedContent from "./Menu/Shrinked/MenuShrinkedContent";
 
+const SHRINKED_MENU_TRANSITION_DURATION_SECS = 0.5;
+
 export default {
   props: ["fullscreen"],
   components: {
@@ -39,11 +41,26 @@ export default {
     MenuShrinkedContent
   },
   data: () => ({
-    open: false
+    open: false,
+    shrinkedMenuDisplay: "none",
+    shrinkedMenuDisplayTimeout: null
   }),
   methods: {
     toggle() {
-      this.open = !this.open;
+      if (this.open) {
+        this.open = false;
+
+        clearTimeout(this.shrinkedMenuDisplayTimeout);
+        this.shrinkedMenuDisplayTimeout = setTimeout(
+          () => (this.shrinkedMenuDisplay = "none"),
+          SHRINKED_MENU_TRANSITION_DURATION_SECS * 1000
+        );
+      } else {
+        this.shrinkedMenuDisplay = "block";
+
+        clearTimeout(this.shrinkedMenuDisplayTimeout);
+        this.shrinkedMenuDisplayTimeout = setTimeout(() => (this.open = true));
+      }
     }
   },
   watch: {
@@ -51,6 +68,14 @@ export default {
       if (!oldValue && newValue) {
         this.open = false;
       }
+    }
+  },
+  computed: {
+    cssVariables() {
+      return {
+        "--menu-shrinked-content-transition-duration": `${SHRINKED_MENU_TRANSITION_DURATION_SECS}s`,
+        "--menu-shrinked-content-display": this.shrinkedMenuDisplay
+      };
     }
   }
 };
