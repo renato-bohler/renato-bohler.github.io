@@ -74,6 +74,12 @@ export default {
   margin-right: 4px;
 }
 
+@media screen and (max-width: 425px) {
+  .title {
+    font-size: 10vw;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .frame {
     width: 100%;
