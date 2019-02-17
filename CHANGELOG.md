@@ -1,3 +1,17 @@
+## [1.6.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.6.0...v1.6.1) (2019-02-17)
+
+
+### Bug Fixes
+
+* **Content:** adjusts title size for mobile devices ([4bc5d21](https://github.com/renato-bohler/renato-bohler.github.io/commit/4bc5d21))
+* **Header:** adjusts shrinked menu content background color ([88d73e7](https://github.com/renato-bohler/renato-bohler.github.io/commit/88d73e7))
+* **Header:** fixes shrinked menu clickable when hidden ([6896204](https://github.com/renato-bohler/renato-bohler.github.io/commit/6896204))
+
+
+### Performance Improvements
+
+* **Icon:** imports only used icons to reduce bundle size ([484b986](https://github.com/renato-bohler/renato-bohler.github.io/commit/484b986))
+
 # [1.6.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.5.0...v1.6.0) (2019-02-16)
 
 
