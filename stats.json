@@ -1,0 +1,23 @@
+{
+  "errors": [
+    "Entry module not found: Error: Can't resolve './src' in '/home/renato-bohler/Workspace/renato-bohler.github.io'\nresolve './src' in '/home/renato-bohler/Workspace/renato-bohler.github.io'\n  using description file: /home/renato-bohler/Workspace/renato-bohler.github.io/package.json (relative path: .)\n    Field 'browser' doesn't contain a valid alias configuration\n    using description file: /home/renato-bohler/Workspace/renato-bohler.github.io/package.json (relative path: ./src)\n      no extension\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/renato-bohler/Workspace/renato-bohler.github.io/src is not a file\n      .wasm\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/renato-bohler/Workspace/renato-bohler.github.io/src.wasm doesn't exist\n      .mjs\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/renato-bohler/Workspace/renato-bohler.github.io/src.mjs doesn't exist\n      .js\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/renato-bohler/Workspace/renato-bohler.github.io/src.js doesn't exist\n      .json\n        Field 'browser' doesn't contain a valid alias configuration\n        /home/renato-bohler/Workspace/renato-bohler.github.io/src.json doesn't exist\n      as directory\n        existing directory\n          using path: /home/renato-bohler/Workspace/renato-bohler.github.io/src/index\n            using description file: /home/renato-bohler/Workspace/renato-bohler.github.io/package.json (relative path: ./src/index)\n              no extension\n                Field 'browser' doesn't contain a valid alias configuration\n                /home/renato-bohler/Workspace/renato-bohler.github.io/src/index doesn't exist\n              .wasm\n                Field 'browser' doesn't contain a valid alias configuration\n                /home/renato-bohler/Workspace/renato-bohler.github.io/src/index.wasm doesn't exist\n              .mjs\n                Field 'browser' doesn't contain a valid alias configuration\n                /home/renato-bohler/Workspace/renato-bohler.github.io/src/index.mjs doesn't exist\n              .js\n                Field 'browser' doesn't contain a valid alias configuration\n                /home/renato-bohler/Workspace/renato-bohler.github.io/src/index.js doesn't exist\n              .json\n                Field 'browser' doesn't contain a valid alias configuration\n                /home/renato-bohler/Workspace/renato-bohler.github.io/src/index.json doesn't exist"
+  ],
+  "warnings": [
+    "configuration\nThe 'mode' option has not been set, webpack will fallback to 'production' for this value. Set 'mode' option to 'development' or 'production' to enable defaults for each environment.\nYou can also set it to 'none' to disable any default behavior. Learn more: https://webpack.js.org/concepts/mode/"
+  ],
+  "version": "4.29.2",
+  "hash": "63e6144bde831fa005f5",
+  "time": 51,
+  "builtAt": 1550336095429,
+  "publicPath": "",
+  "outputPath": "/home/renato-bohler/Workspace/renato-bohler.github.io/dist",
+  "assetsByChunkName": {},
+  "assets": [],
+  "filteredAssets": 0,
+  "entrypoints": {},
+  "namedChunkGroups": {},
+  "chunks": [],
+  "modules": [],
+  "filteredModules": 0,
+  "children": []
+}

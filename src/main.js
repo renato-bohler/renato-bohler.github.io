@@ -2,11 +2,11 @@ import Vue from "vue";
 import Toasted from "vue-toasted";
 import Tooltip from "v-tooltip";
 import ScrollTo from "vue-scrollto";
-import Icon from "vue-awesome";
 import Moment from "vue-moment";
 import moment from "moment";
 import App from "./App.vue";
 import i18n from "@/plugins/i18n";
+import Icon from "@/plugins/icon";
 
 Vue.use(Toasted, {
   singleton: true,
