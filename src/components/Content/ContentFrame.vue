@@ -52,8 +52,18 @@ export default {
   font-size: 0.9em;
 }
 
-.content > p {
+p {
   text-indent: 20px;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace !important;
+  font-size: 2em;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 0.15em;
+  color: var(--theme-primary-dark);
+  text-transform: lowercase;
 }
 
 .footer {
