@@ -7,7 +7,7 @@ export default {
   props: ["iso"],
   computed: {
     style() {
-      return `background-image: url(${require(`../../resources/flag/${
+      return `background-image: url(${require(`@/images/flag/${
         this.iso
       }.svg`)};`;
     }
