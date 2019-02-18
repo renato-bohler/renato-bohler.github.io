@@ -46,6 +46,10 @@ const messages = {
     },
     about: {
       title: "About",
+      helloWorld: "Hello, world!",
+      image: {
+        tooltip: "What's up?"
+      },
       message:
         "This is a work in progress of my personal website. Here, I'm gonna write a little bit about myself."
     },
@@ -109,6 +113,10 @@ const messages = {
     },
     about: {
       title: "soBre",
+      image: {
+        tooltip: "Eu mesmo"
+      },
+      helloWorld: "Olá, mundo!",
       message:
         "Esta é minha página pessoal, um trabalho em progresso. Aqui, escreverei um pouco sobre mim."
     },
