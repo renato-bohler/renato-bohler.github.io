@@ -6,7 +6,12 @@
         <slot />
       </div>
       <div class="footer">
-        <icon name="regular/clock" class="icon" scale="0.8" />
+        <icon
+          name="regular/clock"
+          class="icon"
+          scale="0.8"
+          v-tooltip.bottom="absoluteEditTime"
+        />
         {{ $t("content.lastEdited") }}
         {{ relativeEditTime }}
       </div>
@@ -20,6 +25,9 @@ export default {
   computed: {
     relativeEditTime() {
       return this.$moment(this.lastEditedAt).fromNow();
+    },
+    absoluteEditTime() {
+      return this.$moment(this.lastEditedAt).format("LLLL");
     }
   }
 };
