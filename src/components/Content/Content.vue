@@ -3,7 +3,7 @@
     <ContentFrame :title="title" :lastEditedAt="lastEditedAt">
       <slot />
     </ContentFrame>
-    <ContentDivider />
+    <ContentDivider v-if="!last" />
   </ContentContainer>
 </template>
 
@@ -14,6 +14,6 @@ import ContentDivider from "./ContentDivider";
 
 export default {
   components: { ContentContainer, ContentFrame, ContentDivider },
-  props: ["title", "lastEditedAt"]
+  props: ["title", "last", "lastEditedAt"]
 };
 </script>

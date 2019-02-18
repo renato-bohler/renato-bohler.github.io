@@ -2,10 +2,9 @@
   <div class="app-container" :style="cssVariables">
     <Header :fullscreen="fullscreen" />
     <div class="app-content-container">
-      <About />
-      <Skills />
-      <Projects />
-      <Professional />
+      <div v-for="(content, index) in contents" :key="content.id">
+        <div :is="content.component" :last="index === contents.length - 1" />
+      </div>
     </div>
     <Footer />
   </div>
@@ -14,10 +13,7 @@
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import About from "@/views/About";
-import Skills from "@/views/Skills";
-import Projects from "@/views/Projects";
-import Professional from "@/views/Professional";
+import contents from "@/consts/contents";
 import { getRandomTheme } from "@/consts/themes";
 import { changeFavicon } from "@/utils/favicon";
 
@@ -32,13 +28,10 @@ changeFavicon(theme);
 export default {
   components: {
     Header,
-    Footer,
-    About,
-    Skills,
-    Projects,
-    Professional
+    Footer
   },
   data: () => ({
+    contents,
     fullscreen: true
   }),
   methods: {
