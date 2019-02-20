@@ -57,11 +57,11 @@ export default {
 .content {
   flex-grow: 1;
   padding: 16px;
-  font-size: 0.9em;
 }
 
 p {
   text-indent: 20px;
+  text-align: justify;
 }
 
 h1 {
