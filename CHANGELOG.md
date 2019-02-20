@@ -1,3 +1,23 @@
+# [1.7.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.6.1...v1.7.0) (2019-02-20)
+
+
+### Bug Fixes
+
+* **Content:** adjusts text alignment ([3f292e5](https://github.com/renato-bohler/renato-bohler.github.io/commit/3f292e5))
+* **Content:** implements title styling ([eceb782](https://github.com/renato-bohler/renato-bohler.github.io/commit/eceb782))
+* **Flag:** fixes flag resources path ([5bc655b](https://github.com/renato-bohler/renato-bohler.github.io/commit/5bc655b))
+* **Footer:** adjusts styling ([bb5824f](https://github.com/renato-bohler/renato-bohler.github.io/commit/bb5824f))
+* removes all views that had no real content ([ae73b3b](https://github.com/renato-bohler/renato-bohler.github.io/commit/ae73b3b))
+* removes divider after the last content ([0fa3ffe](https://github.com/renato-bohler/renato-bohler.github.io/commit/0fa3ffe))
+
+
+### Features
+
+* **About:** adds content header ([c48ae6a](https://github.com/renato-bohler/renato-bohler.github.io/commit/c48ae6a))
+* **About:** adds initial content ([ba0ce2c](https://github.com/renato-bohler/renato-bohler.github.io/commit/ba0ce2c)), closes [#8](https://github.com/renato-bohler/renato-bohler.github.io/issues/8)
+* **Content:** adds absolute time on clock icon's tooltip ([181bf25](https://github.com/renato-bohler/renato-bohler.github.io/commit/181bf25))
+* **ImageFrame:** implements image component ([c398e5a](https://github.com/renato-bohler/renato-bohler.github.io/commit/c398e5a))
+
 ## [1.6.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.6.0...v1.6.1) (2019-02-17)
 
 
