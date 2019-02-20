@@ -46,8 +46,29 @@ const messages = {
     },
     about: {
       title: "About",
-      message:
-        "This is a work in progress of my personal website. Here, I'm gonna write a little bit about myself."
+      helloWorld: "Hello, world!",
+      image: {
+        tooltip: "What's up?"
+      },
+      paragraphs: [
+        `Hey there! My name is Renato Böhler. I'm a {age}-year-old brazilian, currently in the last year of
+          <a href='http://www2.dainf.ct.utfpr.edu.br/ec'>Computer Engineering school at UTFPR</a>. I'm a computer
+          enthusiast since my childhood, and I'm always happy to learn more about all its related areas.`,
+        `My developer journey began early on, when I was only 12. On that time, I started to learn some basic
+          concepts on programming by myself (by playing games like <a href='https://uo.com/'>Ultima Online</a>).
+          Before entering Computer Engineering school, I've attended a few years of Chemical Engineering at UFPR.
+          Interestingly, it was whilst I was on Chemical Engineering school that I've realized that my vocation
+          for computing could yield me a professional career. At the age of 24, I've had my first experience as a
+          professional programmer and, since then, I've learned so much both professionally and personally.`,
+        `I love what I do, and I like to work with people that also do love their jobs. I feel very comfortable
+          when working on relaxed environments, but I do make a point on professionalism, respect, honesty and
+          compromise.`,
+        `I usually spend a good chunk of my free time studying, either by reading about new technologies or by
+          trying out new libaries and tools. Recently, I've been reserving more time to contribute to open source
+          projects, whenever I found a good opportunity to do it. I enjoy doing all of that while watching a
+          soccer match on the television, watching eSports on <a href='https://twitch.tv>Twitch</a> or
+          listening to some good music.`
+      ]
     },
     skills: {
       title: "Skills",
@@ -109,8 +130,31 @@ const messages = {
     },
     about: {
       title: "soBre",
-      message:
-        "Esta é minha página pessoal, um trabalho em progresso. Aqui, escreverei um pouco sobre mim."
+      image: {
+        tooltip: "Eu mesmo"
+      },
+      helloWorld: "Olá, mundo!",
+      paragraphs: [
+        `Olá! Meu nome é Renato Böhler. Sou brasileiro, tenho {age} anos e sou estudante do 9º período de
+          <a href='http://www2.dainf.ct.utfpr.edu.br/ec'>Engenharia de Computação na UTFPR</a>, entusiasta de
+          computação desde criança e sempre feliz em poder aprender mais sobre todas as áreas de conhecimento
+          relacionadas.`,
+        `Foi logo cedo, aos 12 anos, que minha jornada como desenvolvedor começou. Naquela época, comecei a
+          aprender, por conta própria, conceitos básicos de programação (em jogos como
+          <a href='https://uo.com/'>Ultima Online</a>). Antes de entrar pra faculdade de Engenharia de Computação
+          (em 2015), eu fiz alguns anos de Engenharia Química na UFPR. Curiosamente, foi no período em que
+          estudava Engenharia Química que me dei conta de que minha vocação para Computação poderia me render uma
+          carreira profissional. Com 24 anos tive minha primeira experiência profissional como programador e
+          desde então tenho aprendido muito, tanto profissional quanto pessoalmente.`,
+        `Amo o que faço e adoro trabalhar com pessoas também apaixonadas pelo seu trabalho. Me sinto muito
+          confortável em trabalhar em ambientes descontraídos, mas não abro mão de profissionalismo, respeito,
+          honestidade e comprometimento.`,
+        `Costumo dedicar boa parte do meu tempo livre aos estudos, seja lendo sobre novas tecnologicas ou
+          testando novas bibliotecas e ferramentas. Ultimamente também tenho contribuído com projetos open source,
+          sempre que uma boa oportunidade aparece. Gosto de fazer isto tudo assistindo a um jogo de futebol na TV,
+          esportes eletrônicos no <a href='https://twitch.tv>Twitch</a> ou ouvindo música. Pra descansar, gosto
+          bastante de passar tempo com minha noiva ou jogar algum jogo no computador.`
+      ]
     },
     skills: {
       title: "Skills",

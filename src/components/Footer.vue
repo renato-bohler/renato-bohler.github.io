@@ -22,20 +22,22 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 1vh;
 }
 
 .container::before {
-  content: ".  .  .";
+  content: ".  .  .  .";
   background: linear-gradient(
     to right,
     var(--theme-primary-bright),
-    var(--theme-secondary-bright),
-    var(--theme-primary-bright)
+    var(--theme-primary-dark),
+    var(--theme-secondary-dark),
+    var(--theme-secondary-bright)
   );
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 2vh 0;
+  margin: 4vh 0;
 }
 
 .container > span {

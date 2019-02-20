@@ -6,7 +6,12 @@
         <slot />
       </div>
       <div class="footer">
-        <icon name="regular/clock" class="icon" scale="0.8" />
+        <icon
+          name="regular/clock"
+          class="icon"
+          scale="0.8"
+          v-tooltip.bottom="absoluteEditTime"
+        />
         {{ $t("content.lastEdited") }}
         {{ relativeEditTime }}
       </div>
@@ -20,6 +25,9 @@ export default {
   computed: {
     relativeEditTime() {
       return this.$moment(this.lastEditedAt).fromNow();
+    },
+    absoluteEditTime() {
+      return this.$moment(this.lastEditedAt).format("LLLL");
     }
   }
 };
@@ -49,11 +57,21 @@ export default {
 .content {
   flex-grow: 1;
   padding: 16px;
-  font-size: 0.9em;
 }
 
-.content > p {
+p {
   text-indent: 20px;
+  text-align: justify;
+}
+
+h1 {
+  font-family: "Major Mono Display", monospace !important;
+  font-size: 2em;
+  font-weight: normal;
+  font-style: italic;
+  margin-bottom: 0.15em;
+  color: var(--theme-primary-dark);
+  text-transform: lowercase;
 }
 
 .footer {
