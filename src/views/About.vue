@@ -3,7 +3,7 @@
     id="about"
     :title="$t('about.title')"
     :last="last"
-    :lastEditedAt="new Date()"
+    :lastEditedAt="new Date('February 19, 2019 23:21:57')"
   >
     <div class="header">
       <ImageFrame
@@ -14,7 +14,10 @@
       />
       <h1>{{ $t("about.helloWorld") }}</h1>
     </div>
-    <p>{{ $t("about.message") }}</p>
+    <p v-html="$t('about.paragraphs[0]', { age })" />
+    <p v-html="$t('about.paragraphs[1]')" />
+    <p v-html="$t('about.paragraphs[2]')" />
+    <p v-html="$t('about.paragraphs[3]')" />
   </Content>
 </template>
 
@@ -24,7 +27,12 @@ import ImageFrame from "@/components/ImageFrame";
 
 export default {
   props: ["last"],
-  components: { Content, ImageFrame }
+  components: { Content, ImageFrame },
+  data: () => ({
+    age: Math.floor(
+      (new Date() - new Date("June 6, 1992")) / (1000 * 60 * 60 * 24 * 365)
+    )
+  })
 };
 </script>
 
