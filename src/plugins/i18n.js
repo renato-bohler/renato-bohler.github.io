@@ -67,7 +67,8 @@ const messages = {
           trying out new libaries and tools. Recently, I've been reserving more time to contribute to open source
           projects, whenever I found a good opportunity to do it. I enjoy doing all of that while watching a
           soccer match on the television, watching eSports on <a href='https://twitch.tv'>Twitch</a> or
-          listening to some good music.`
+          listening to some good music. To rest, I enjoy spending time with my bride or playing some computer
+          games.`
       ]
     },
     skills: {
