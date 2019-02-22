@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.7.1...v1.7.2) (2019-02-22)
+
+
+### Bug Fixes
+
+* **About:** adds missing translation ([50423b0](https://github.com/renato-bohler/renato-bohler.github.io/commit/50423b0))
+
 ## [1.7.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.7.0...v1.7.1) (2019-02-20)
 
 
