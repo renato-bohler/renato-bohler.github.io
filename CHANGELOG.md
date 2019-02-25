@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.8.0...v1.8.1) (2019-02-25)
+
+
+### Performance Improvements
+
+* reduces bundle size by loading only used momentjs locales ([1edd75d](https://github.com/renato-bohler/renato-bohler.github.io/commit/1edd75d))
+
 # [1.8.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.7.2...v1.8.0) (2019-02-23)
 
 
