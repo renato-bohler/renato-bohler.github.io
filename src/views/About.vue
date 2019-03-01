@@ -43,4 +43,8 @@ export default {
   align-items: center;
   margin-bottom: 3em;
 }
+
+.header > h1 {
+  text-align: center;
+}
 </style>
