@@ -36,6 +36,11 @@ export default {
 </script>
 
 <style scoped>
+img {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 .circle {
   border-radius: 100%;
   width: var(--image-frame-size);
