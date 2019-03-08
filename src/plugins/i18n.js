@@ -74,7 +74,23 @@ const messages = {
     skills: {
       title: "Skills",
       message:
-        "In this section I'll detail my skills, aswell as what I'm aiming to learn in the near future."
+        "In this section I'll detail my skills, aswell as what I'm aiming to learn in the near future.",
+      moreInfo: {
+        skillLevel: {
+          one: "Yeah, I've heard that word before (1/6)",
+          two: "I know the concepts (2/6)",
+          three: "I've had studied that (3/6)",
+          four: "I've already used this (4/6)",
+          five: "I feel safe to say that I know it (5/6)",
+          six: "I feel safe to say that I master it (6/6)"
+        },
+        recentUsage: {
+          high: "I've been using this often recently",
+          medium: "I've been using this recently",
+          low: "I've not used this in a while"
+        },
+        studying: "I've been studying this recently"
+      }
     },
     projects: {
       title: "proJects",
@@ -160,7 +176,23 @@ const messages = {
     skills: {
       title: "Skills",
       message:
-        "Nesta seção detalharei minhas habilidades, bem como o que pretendo aprender num futuro próximo."
+        "Nesta seção detalharei minhas habilidades, bem como o que pretendo aprender num futuro próximo.",
+      moreInfo: {
+        skillLevel: {
+          one: "Hmm, já vi essa palavra antes (1/6)",
+          two: "Conheço os conceitos (2/6)",
+          three: "Já estudei isto (3/6)",
+          four: "Já utilizei isto (4/6)",
+          five: "Sinto-me seguro em dizer que conheço (5/6)",
+          six: "Sinto-me seguro em dizer que domino (6/6)"
+        },
+        recentUsage: {
+          high: "Eu tenho utilizado isto bastante recentemente",
+          medium: "Eu tenho utilizado isto recentemente",
+          low: "Faz um tempo que não utilizo isto"
+        },
+        studying: "Tenho estudado isto recentemente"
+      }
     },
     projects: {
       title: "proJetos",
