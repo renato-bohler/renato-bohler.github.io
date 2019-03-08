@@ -1,3 +1,7 @@
+svg {
+  outline: none;
+}
+
 a:link, a:visited {
   text-decoration: none;
   color: var(--font-gray-color);

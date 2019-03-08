@@ -52,6 +52,8 @@ export default {
   margin-bottom: -0.15em;
   color: var(--theme-primary-dark);
   z-index: 2;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .content {
