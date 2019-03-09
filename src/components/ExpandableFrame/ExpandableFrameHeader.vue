@@ -29,6 +29,8 @@ export default {
 }
 
 .title {
+  font-family: "Major Mono Display", monospace !important;
+  text-transform: lowercase;
   flex-grow: 1;
   font-weight: normal;
   padding-left: 16px;
