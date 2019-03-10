@@ -1,27 +1,34 @@
 <template>
   <div
     class="more-info"
-    :if="this.moreInfo && Object.keys(this.moreInfo).length > 0"
+    v-if="this.moreInfo && Object.keys(this.moreInfo).length > 0"
   >
     <icon
-      :if="this.moreInfo && this.moreInfo.skillLevel"
+      v-if="this.moreInfo && this.moreInfo.skillLevel"
       :name="skillLevel.icon"
       :color="skillLevel.color"
       v-tooltip:top="skillLevel.tooltip"
       class="icon"
     />
     <icon
-      :if="this.moreInfo && this.moreInfo.recentUsage"
+      v-if="this.moreInfo && this.moreInfo.recentUsage"
       :name="recentUsage.icon"
       :color="recentUsage.color"
       v-tooltip:top="recentUsage.tooltip"
       class="icon"
     />
     <icon
-      :if="this.moreInfo && this.moreInfo.studying"
+      v-if="this.moreInfo && this.moreInfo.studying"
       :name="studying.icon"
       :color="studying.color"
       v-tooltip:top="studying.tooltip"
+      class="icon"
+    />
+    <icon
+      v-if="this.moreInfo && this.moreInfo.planningToStudy"
+      :name="planningToStudy.icon"
+      :color="planningToStudy.color"
+      v-tooltip:top="planningToStudy.tooltip"
       class="icon"
     />
   </div>
@@ -79,21 +86,27 @@ export default {
         switch (this.moreInfo.recentUsage) {
           case "high":
             return {
-              icon: "level-up-alt",
-              color: "#26ab19",
+              icon: "thermometer-full",
+              color: "#ef652d",
               tooltip: this.$t("skills.moreInfo.recentUsage.high")
             };
           case "medium":
             return {
-              icon: "minus",
-              color: "#3475de",
+              icon: "thermometer-half",
+              color: "#ecb120",
               tooltip: this.$t("skills.moreInfo.recentUsage.medium")
             };
           case "low":
             return {
-              icon: "level-down-alt",
-              color: "#da2929",
+              icon: "thermometer-quarter",
+              color: "#2065ec",
               tooltip: this.$t("skills.moreInfo.recentUsage.low")
+            };
+          case "never":
+            return {
+              icon: "thermometer-empty",
+              color: "#20baec",
+              tooltip: this.$t("skills.moreInfo.recentUsage.never")
             };
         }
       }
@@ -110,6 +123,18 @@ export default {
         }
       }
       return { icon: "regular/clock", color: "transparent", tooltip: "" };
+    },
+    planningToStudy() {
+      if (this.moreInfo) {
+        if (this.moreInfo.planningToStudy) {
+          return {
+            icon: "book",
+            color: "#333",
+            tooltip: this.$t("skills.moreInfo.planningToStudy")
+          };
+        }
+      }
+      return { icon: "regular/clock", color: "transparent", tooltip: "" };
     }
   }
 };
@@ -117,8 +142,8 @@ export default {
 
 <style scoped>
 .more-info {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
   padding: 0 8px;
   margin: 0 16px;
   border-right: 1px solid #cacaca;
