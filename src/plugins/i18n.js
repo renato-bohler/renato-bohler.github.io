@@ -87,9 +87,11 @@ const messages = {
         recentUsage: {
           high: "I've been using this often recently",
           medium: "I've been using this recently",
-          low: "I've not used this in a while"
+          low: "I've not used this in a while",
+          never: "I've never used this"
         },
-        studying: "I've been studying this recently"
+        studying: "I've been studying this recently",
+        planningToStudy: "I'm planning to study this"
       }
     },
     projects: {
@@ -187,11 +189,13 @@ const messages = {
           six: "Sinto-me seguro em dizer que domino (6/6)"
         },
         recentUsage: {
-          high: "Eu tenho utilizado isto bastante recentemente",
-          medium: "Eu tenho utilizado isto recentemente",
-          low: "Faz um tempo que não utilizo isto"
+          high: "Tenho utilizado isto bastante recentemente",
+          medium: "Tenho utilizado isto recentemente",
+          low: "Faz um tempo que não utilizo isto",
+          never: "Nunca utilizei isto"
         },
-        studying: "Tenho estudado isto recentemente"
+        studying: "Tenho estudado isto recentemente",
+        planningToStudy: "Pretendo estudar isto"
       }
     },
     projects: {

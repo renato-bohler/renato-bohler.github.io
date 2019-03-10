@@ -6,9 +6,9 @@
     :lastEditedAt="new Date() - 60 * 1000"
   >
     <ExpandableFrame
-      image="about/myself.png"
-      title="Title One"
-      :moreInfo="{ skillLevel: 1, recentUsage: 'high', studying: true }"
+      image="skills/javascript.png"
+      title="Javascript"
+      :moreInfo="{ skillLevel: 6, recentUsage: 'high', studying: true }"
     >
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec velit
@@ -46,37 +46,135 @@
       </p>
     </ExpandableFrame>
     <ExpandableFrame
-      image="about/myself.png"
-      title="Title Two"
-      :moreInfo="{ skillLevel: 2, recentUsage: 'medium' }"
+      image="skills/java.png"
+      title="Java"
+      :moreInfo="{ skillLevel: 5, recentUsage: 'high' }"
     >
       <p>Lorem</p>
     </ExpandableFrame>
     <ExpandableFrame
-      image="about/myself.png"
-      title="Title Three"
-      :moreInfo="{ skillLevel: 3, recentUsage: 'low', studying: true }"
+      image="skills/react.png"
+      title="React"
+      :moreInfo="{ skillLevel: 6, recentUsage: 'high', studying: true }"
     >
       <p>Lorem</p>
     </ExpandableFrame>
     <ExpandableFrame
-      image="about/myself.png"
-      title="Title Four"
+      image="skills/redux.png"
+      title="Redux"
+      :moreInfo="{ skillLevel: 6, recentUsage: 'high' }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/vuejs.png"
+      title="VueJS"
+      :moreInfo="{ skillLevel: 4, recentUsage: 'medium', studying: true }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/angular.png"
+      title="Angular"
+      :moreInfo="{ skillLevel: 4, recentUsage: 'low' }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/sql.png"
+      title="SQL"
+      :moreInfo="{
+        skillLevel: 5,
+        recentUsage: 'medium',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/git.png"
+      title="Git"
+      :moreInfo="{ skillLevel: 5, recentUsage: 'high' }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/docker.png"
+      title="Docker"
+      :moreInfo="{
+        skillLevel: 4,
+        recentUsage: 'medium',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/kubernetes.png"
+      title="Kubernetes"
+      :moreInfo="{
+        skillLevel: 2,
+        recentUsage: 'never',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/kafka.png"
+      title="Kafka"
+      :moreInfo="{
+        skillLevel: 5,
+        recentUsage: 'medium',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/mqtt.png"
+      title="MQTT"
       :moreInfo="{ skillLevel: 4, recentUsage: 'medium' }"
     >
       <p>Lorem</p>
     </ExpandableFrame>
     <ExpandableFrame
-      image="about/myself.png"
-      title="Title Five"
-      :moreInfo="{ skillLevel: 5, recentUsage: 'medium' }"
+      image="skills/websockets.png"
+      title="WebSockets"
+      :moreInfo="{ skillLevel: 4, recentUsage: 'medium' }"
     >
       <p>Lorem</p>
     </ExpandableFrame>
     <ExpandableFrame
-      image="about/myself.png"
-      title="Title Six"
-      :moreInfo="{ skillLevel: 6, recentUsage: 'medium', studying: true }"
+      image="skills/regexp.png"
+      title="RegExp"
+      :moreInfo="{
+        skillLevel: 4,
+        recentUsage: 'medium',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/nosql.png"
+      title="NoSQL"
+      :moreInfo="{
+        skillLevel: 2,
+        recentUsage: 'never',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/seo.png"
+      title="SEO"
+      :moreInfo="{
+        skillLevel: 2,
+        recentUsage: 'never',
+        planningToStudy: true
+      }"
     >
       <p>Lorem</p>
     </ExpandableFrame>
