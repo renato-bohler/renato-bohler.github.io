@@ -2,8 +2,10 @@
   <div class="header" @click.stop="toggle">
     <ImageFrame :src="image" :size="30" :border="true" />
     <h3 class="title">{{ title }}</h3>
-    <ExpandableFrameMoreInfo :moreInfo="moreInfo" />
-    <span :class="['chevron', isOpen]">></span>
+    <div class="info-container">
+      <ExpandableFrameMoreInfo :moreInfo="moreInfo" />
+      <span :class="['chevron', isOpen]">></span>
+    </div>
   </div>
 </template>
 
@@ -31,15 +33,24 @@ export default {
 .title {
   font-family: "Major Mono Display", monospace !important;
   text-transform: lowercase;
-  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: normal;
   padding-left: 16px;
   margin: 0;
 }
 
+.info-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
 .chevron {
   display: inline-block;
   transition: transform 0.5s ease;
+  height: 100%;
+  align-self: center;
 }
 
 .chevron.open {
