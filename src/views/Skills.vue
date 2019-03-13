@@ -26,7 +26,11 @@
       title="Java"
       :moreInfo="{ skillLevel: 5, recentUsage: 'high' }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.java')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/react.png"

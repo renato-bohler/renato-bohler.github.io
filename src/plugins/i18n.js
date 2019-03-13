@@ -75,7 +75,7 @@ const messages = {
       title: "Skills",
       introduction: [
         "This section contains some of my main skills, aswell as topics that I'm currently studying or willing to study in the near future. Each skill has its own expandable content with a description to contextualize. Furthermore, some icons indicates my skill level, frequency of recent use and whether I'm studying that or intend to study the topic in question.",
-        "All these information are the result of a self-assessment, so please take it with a grain of salt."
+        "All this information is the result of a self-assessment, so please take it with a grain of salt."
       ],
       moreInfo: {
         skillLevel: {
@@ -99,6 +99,9 @@ const messages = {
         "I know JavaScript for almost one decade now. I've started learning the basics when doing some websites for hobby, without the use of any tool. After some time I've discovered and learned to use <a href='https://jquery.com'>jQuery</a>.",
         "I currently use JavaScript mainly to develop interfaces, using <a href='https://reactjs.org'>React</a>. I also use JavaScript to develop backends using <a href='https://expressjs.com'>expressJS</a> and integration between systems with <a href='https://kafka.apache.org'>Kafka</a> in <a href='https://nodejs.org'>NodeJS</a> applications.",
         "I've been studying <a href='https://vuejs.org'>VueJS</a> as an alternative for interface development in JavaScript. Actually, this page is my first experience with VueJS. I'm also always trying to be on par with the language's new features."
+      ],
+      java: [
+        "I started stuying Java interested in learning how to develop native Android applications around 2014. I'm currenlty developing REST APIs with Java, using mainly <a href='https://maven.apache.org'>Maven</a>, <a href='https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services'>JAX-RS</a> and <a href='http://hibernate.org/'>Hibernate</a>."
       ]
     },
     projects: {
@@ -210,6 +213,9 @@ const messages = {
         "Conheço JavaScript há praticamente uma década. Comecei aprendendo o básico ao fazer alguns websites por hobby, sem o uso de nenhuma ferramenta. Após algum tempo, descobri e aprendi a utilizar o <a href='https://jquery.com'>jQuery</a>.",
         "Atualmente utilizo JavaScript principalmente para desenvolver interfaces, utilizando a biblioteca <a href='https://reactjs.org'>React</a>. Também utilizo JavaScript para fazer <i>backends</i> com <a href='https://expressjs.com'>expressJS</a> e integração entre sistemas com <a href='https://kafka.apache.org'>Kafka</a> em aplicações <a href='https://nodejs.org'>NodeJS</a>.",
         "Tenho estudado o <i>framework</i> <a href='https://vuejs.org'>VueJS</a> como alternativa para desenvolvimento de interfaces. Na verdade, esta página é minha primeira experiência com VueJS. Eu também procuro me manter atualizado das novas funcionalidades da lingugagem."
+      ],
+      java: [
+        "Comecei a estudar Java por interesse em aprender a desenvolver aplicativos nativos Android, por meados de 2014. Atualmente desenvolvo <i>API</i>s <i>REST</i> com Java, utilizando principalmente <a href='https://maven.apache.org'>Maven</a>, <a href='https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services'>JAX-RS</a> e <a href='http://hibernate.org/'>Hibernate</a>."
       ]
     },
     projects: {
