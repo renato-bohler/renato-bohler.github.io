@@ -55,7 +55,7 @@ const messages = {
           <a href='http://www2.dainf.ct.utfpr.edu.br/ec'>Computer Engineering school at UTFPR</a>. I'm a computer
           enthusiast since my childhood, and I'm always happy to learn more about all its related areas.`,
         `My developer journey began early on, when I was only 12. At that time, I started to learn some basic
-          concepts on programming by myself (by playing games like <a href='https://uo.com/'>Ultima Online</a>).
+          concepts on programming by myself (by playing games like <a href='https://uo.com'>Ultima Online</a>).
           Before entering Computer Engineering school, I've attended a few years of Chemical Engineering at UFPR.
           Interestingly, it was whilst I was on Chemical Engineering school that I've realized that my vocation
           for computing could yield me a professional career. At the age of 24, I've had my first experience as a
@@ -94,7 +94,8 @@ const messages = {
         },
         studying: "I've been studying this recently",
         planningToStudy: "I'm planning to study this"
-      }
+      },
+      javascript: [""]
     },
     projects: {
       title: "proJects",
@@ -162,7 +163,7 @@ const messages = {
           relacionadas.`,
         `Foi logo cedo, aos 12 anos, que minha jornada como desenvolvedor começou. Naquela época, comecei a
           aprender, por conta própria, conceitos básicos de programação (em jogos como
-          <a href='https://uo.com/'>Ultima Online</a>). Antes de entrar pra faculdade de Engenharia de Computação
+          <a href='https://uo.com'>Ultima Online</a>). Antes de entrar pra faculdade de Engenharia de Computação
           (em 2015), eu fiz alguns anos de Engenharia Química na UFPR. Curiosamente, foi no período em que
           estudava Engenharia Química que me dei conta de que minha vocação para Computação poderia me render uma
           carreira profissional. Com 24 anos tive minha primeira experiência profissional como programador e
@@ -200,7 +201,12 @@ const messages = {
         },
         studying: "Tenho estudado isto recentemente",
         planningToStudy: "Pretendo estudar isto"
-      }
+      },
+      javascript: [
+        "Conheço JavaScript há praticamente uma década. Comecei aprendendo o básico ao fazer alguns websites por hobby, sem o uso de nenhuma ferramenta. Após algum tempo, descobri e aprendi a utilizar o <a href='https://jquery.com'>jQuery</a>.",
+        "Atualmente utilizo JavaScript principalmente para desenvolver interfaces, utilizando a biblioteca <a href='https://reactjs.org'>React</a>. Também utilizo JavaScript para fazer <i>backends</i> com <a href='https://expressjs.com'>expressJS</a> e integração entre sistemas com <a href='https://kafka.apache.org'>Kafka</a> em aplicações <a href='https://nodejs.org'>NodeJS</a>.",
+        "Tenho estudado o <i>framework</i> <a href='https://vuejs.org'>VueJS</a> como alternativa para desenvolvimento de interfaces."
+      ]
     },
     projects: {
       title: "proJetos",
