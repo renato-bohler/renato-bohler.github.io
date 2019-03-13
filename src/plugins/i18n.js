@@ -95,7 +95,11 @@ const messages = {
         studying: "I've been studying this recently",
         planningToStudy: "I'm planning to study this"
       },
-      javascript: [""]
+      javascript: [
+        "I know JavaScript for almost one decade now. I've started learning the basics when doing some websites for hobby, without the use of any tool. After some time I've discovered and learned to use <a href='https://jquery.com'>jQuery</a>.",
+        "I currently use JavaScript mainly to develop interfaces, using <a href='https://reactjs.org'>React</a>. I also use JavaScript to develop backends using <a href='https://expressjs.com'>expressJS</a> and integration between systems with <a href='https://kafka.apache.org'>Kafka</a> in <a href='https://nodejs.org'>NodeJS</a> applications.",
+        "I've been studying <a href='https://vuejs.org'>VueJS</a> as an alternative for interface development in JavaScript. Actually, this page is my first experience with VueJS. I'm also always trying to be on par with the language's new features."
+      ]
     },
     projects: {
       title: "proJects",
@@ -205,7 +209,7 @@ const messages = {
       javascript: [
         "Conheço JavaScript há praticamente uma década. Comecei aprendendo o básico ao fazer alguns websites por hobby, sem o uso de nenhuma ferramenta. Após algum tempo, descobri e aprendi a utilizar o <a href='https://jquery.com'>jQuery</a>.",
         "Atualmente utilizo JavaScript principalmente para desenvolver interfaces, utilizando a biblioteca <a href='https://reactjs.org'>React</a>. Também utilizo JavaScript para fazer <i>backends</i> com <a href='https://expressjs.com'>expressJS</a> e integração entre sistemas com <a href='https://kafka.apache.org'>Kafka</a> em aplicações <a href='https://nodejs.org'>NodeJS</a>.",
-        "Tenho estudado o <i>framework</i> <a href='https://vuejs.org'>VueJS</a> como alternativa para desenvolvimento de interfaces."
+        "Tenho estudado o <i>framework</i> <a href='https://vuejs.org'>VueJS</a> como alternativa para desenvolvimento de interfaces. Na verdade, esta página é minha primeira experiência com VueJS. Eu também procuro me manter atualizado das novas funcionalidades da lingugagem."
       ]
     },
     projects: {
