@@ -5,6 +5,11 @@
     :last="last"
     :lastEditedAt="new Date() - 60 * 1000"
   >
+    <p
+      v-for="(paragraph, index) in $t('skills.introduction')"
+      :key="index"
+      v-html="paragraph"
+    />
     <ExpandableFrame
       image="skills/javascript.png"
       title="Javascript"
@@ -74,6 +79,17 @@
       <p>Lorem</p>
     </ExpandableFrame>
     <ExpandableFrame
+      image="skills/graphql.png"
+      title="GraphQL"
+      :moreInfo="{
+        skillLevel: 1,
+        recentUsage: 'never',
+        planningToStudy: true
+      }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
       image="skills/angular.png"
       title="Angular"
       :moreInfo="{ skillLevel: 4, recentUsage: 'low' }"
@@ -125,8 +141,7 @@
       title="Kafka"
       :moreInfo="{
         skillLevel: 5,
-        recentUsage: 'medium',
-        planningToStudy: true
+        recentUsage: 'medium'
       }"
     >
       <p>Lorem</p>
@@ -159,17 +174,6 @@
     <ExpandableFrame
       image="skills/nosql.png"
       title="NoSQL"
-      :moreInfo="{
-        skillLevel: 2,
-        recentUsage: 'never',
-        planningToStudy: true
-      }"
-    >
-      <p>Lorem</p>
-    </ExpandableFrame>
-    <ExpandableFrame
-      image="skills/seo.png"
-      title="SEO"
       :moreInfo="{
         skillLevel: 2,
         recentUsage: 'never',

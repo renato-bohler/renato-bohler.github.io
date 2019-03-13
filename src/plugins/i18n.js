@@ -73,8 +73,10 @@ const messages = {
     },
     skills: {
       title: "Skills",
-      message:
-        "In this section I'll detail my skills, aswell as what I'm aiming to learn in the near future.",
+      introduction: [
+        "This section contains some of my main skills, aswell as topics that I'm currently studying or willing to study in the near future. Each skill has its own expandable content with a description to contextualize. Furthermore, some icons indicates my skill level, frequency of recent use and whether I'm studying that or intend to study the topic in question.",
+        "All these information are the result of a self-assessment, so please take it with a grain of salt."
+      ],
       moreInfo: {
         skillLevel: {
           one: "Yeah, I've heard that word before (1/6)",
@@ -177,8 +179,10 @@ const messages = {
     },
     skills: {
       title: "Skills",
-      message:
-        "Nesta seção detalharei minhas habilidades, bem como o que pretendo aprender num futuro próximo.",
+      introduction: [
+        "Esta seção contém algumas das minhas principais habilidades, bem como alguns tópicos que estou estudando ou pretendo estudar. Cada habilidade possui um conteúdo ampliável com uma descrição para contextualização. Além disso, alguns ícones indicam um nível de habilidade, frequência de uso recente e se estou estudando ou pretendo estudar o tópico em questão.",
+        "Todas estas informações são resultado de uma autoavaliação, então por favor as tome com cautela."
+      ],
       moreInfo: {
         skillLevel: {
           one: "Hmm, já vi essa palavra antes (1/6)",
