@@ -68,6 +68,13 @@
       <p>Lorem</p>
     </ExpandableFrame>
     <ExpandableFrame
+      image="skills/android.png"
+      title="Android"
+      :moreInfo="{ skillLevel: 4, recentUsage: 'low' }"
+    >
+      <p>Lorem</p>
+    </ExpandableFrame>
+    <ExpandableFrame
       image="skills/sql.png"
       title="SQL"
       :moreInfo="{
