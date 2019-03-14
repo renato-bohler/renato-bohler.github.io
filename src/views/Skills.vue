@@ -37,7 +37,11 @@
       title="React"
       :moreInfo="{ skillLevel: 6, recentUsage: 'high', studying: true }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.react')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/redux.png"

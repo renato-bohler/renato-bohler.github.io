@@ -102,6 +102,12 @@ const messages = {
       ],
       java: [
         "I started stuying Java interested in learning how to develop native Android applications around 2014. I'm currenlty developing REST APIs with Java, using mainly <a href='https://maven.apache.org'>Maven</a>, <a href='https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services'>JAX-RS</a> and <a href='http://hibernate.org/'>Hibernate</a>."
+      ],
+      react: [
+        "My first contact with React was as a professional developer in early 2017. Since then I've fallen in love with this library: it's certainly my preferred solution when it comes to UI development. Recently, most of my work has been to develop and maintain React projects.",
+        "In the projects I took part in, I used libraries such as <a href='https://redux.js.org'>redux</a>, <a href='https://github.com/reduxjs/redux-thunk'>redux-thunk</a>, <a href='https://redux-form.com'>redux-form</a>, <a href='https://material-ui.com'>material-ui</a>, <a href='https://www.styled-components.com'>styled-components</a>, among others. I've collaborated with the initial development and maintenance of a component project implementing a styleguide, using <a href='https://github.com/storybooks/storybook'>storybook</a> for testing. I developed a custom rich text editor using <a href='https://draftjs.org'>draft-js</a>, PDF documents generation and integration with QRCode reading devices.",
+        "I always keep an eye on new React features. To do so, I participate in <a href='https://react-brasil.github.io/react-brasil-slack'>brazilian</a> and <a href='https://www.reactiflux.com'>international communities</a>. I had the oportunity to <a href='https://github.com/reactjs/pt-BR.reactjs.org/pull/31'>collaborate</a> with translating the <a href='https://pt-br.reactjs.org/docs/react-api.html'>API Reference (in portuguese)</a> from the official React documentation.",
+        "Whenever I can, I attend to <a href='https://www.meetup.com/ReactJS-CWB/events/259667650'>React CWB</a> (React meetup in Curitiba). In React CWB #11, I gave a lecture about a library of my own <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>(video - in portuguese)</a>."
       ]
     },
     projects: {
@@ -216,6 +222,12 @@ const messages = {
       ],
       java: [
         "Comecei a estudar Java por interesse em aprender a desenvolver aplicativos nativos Android, por meados de 2014. Atualmente desenvolvo <i>API</i>s <i>REST</i> com Java, utilizando principalmente <a href='https://maven.apache.org'>Maven</a>, <a href='https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services'>JAX-RS</a> e <a href='http://hibernate.org/'>Hibernate</a>."
+      ],
+      react: [
+        "Meu primeiro contato com React foi já como desenvolvedor profissional, no começo de 2017. Desde então tenho me apaixonado pela biblioteca: ela é com certeza minha solução preferida para desenvolvimento de interfaces. A maior parte do meu trabalho atualmente tem sido desenvolver e manter projetos em React.",
+        "Nos projetos que participei, utilizei bibliotecas como <a href='https://redux.js.org'>redux</a>, <a href='https://github.com/reduxjs/redux-thunk'>redux-thunk</a>, <a href='https://redux-form.com'>redux-form</a>, <a href='https://material-ui.com'>material-ui</a>, <a href='https://www.styled-components.com'>styled-components</a>, entre outros. Colaborei com o desenvolvimento e manutenção de um projeto de componentes implementando um <i>styleguide</i>, utilizando <a href='https://github.com/storybooks/storybook'>storybook</a> para testes. Desenvolvi um editor de <i>rich text</i> customizado com <a href='https://draftjs.org'>draft-js</a>, geração de documentos PDF e integração com dispositivos de leitura de QRCode.",
+        "Estou sempre de olho nas novidades da biblioteca. Para isso, participo de <a href='https://react-brasil.github.io/react-brasil-slack'>comunidades brasileiras</a> e <a href='https://www.reactiflux.com'>internacionais</a>. Tive a oportunidade de <a href='https://github.com/reactjs/pt-BR.reactjs.org/pull/31'>colaborar</a> com a tradução da <a href='https://pt-br.reactjs.org/docs/react-api.html'>referência da <i>API</i></a> da documentação oficial do projeto.",
+        "Sempre que consigo, participo do <a href='https://www.meetup.com/ReactJS-CWB/events/259667650'>React CWB</a> (meetup de React em Curitiba). No React CWB #11, palestrei sobre uma biblioteca de minha autoria <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>(vídeo)</a>."
       ]
     },
     projects: {
