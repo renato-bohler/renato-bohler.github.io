@@ -48,7 +48,11 @@
       title="Redux"
       :moreInfo="{ skillLevel: 6, recentUsage: 'high' }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.redux')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/vuejs.png"
