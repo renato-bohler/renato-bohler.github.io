@@ -112,6 +112,10 @@ const messages = {
       redux: [
         "Redux is the library that I've been using to manage state on React. At first there was steep a learning curve. Over time, I began to realize the power of having the application state explicitly defined.",
         "In March 2018 I published redux-form-input-masks: a library for input masking with <a href='https://redux-form.com'>redux-form</a>. You can see the <a href='https://renato-bohler.github.io/redux-form-input-masks'>documentation</a>, <a href='http://npmjs.org/package/redux-form-input-masks'>NPM page</a> and the <a href='https://github.com/renato-bohler/redux-form-input-masks'>project on GitHub</a>. I've presented this project at <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>React CWB #11 (in portuguese)</a>."
+      ],
+      vuejs: [
+        "I've heard a lot about VueJS, until one day I decided to give it a shot. I build this personal webpage using this framework, just to learn a little bit about it. You can check the <a href='https://github.com/renato-bohler/renato-bohler.github.io'>project on GitHub</a>.",
+        "I've not yet had the opportunity to use VueJS professionally. I feel that for this to happen I'd still need more study and practice. For example: I've not used tools like <a href='https://vuex.vuejs.org'>VueX</a> yet, although I know that its concepts are quite similar with <a href='https://redux.js.org'>Redux</a>."
       ]
     },
     projects: {
@@ -236,6 +240,10 @@ const messages = {
       redux: [
         "Redux é a biblioteca que sempre utilizei para gerenciar estado no React. No começo, existiu uma curva de aprendizagem um pouco íngreme. Com o tempo, comecei a perceber o valor de se ter o estado da aplicação explicitamente definido.",
         "Publiquei, em março de 2018, o redux-form-input-masks: uma biblioteca para formatação de <i>inputs</i> para <a href='https://redux-form.com'>redux-form</a>. Você pode ver a <a href='https://renato-bohler.github.io/redux-form-input-masks'>documentação</a>, <a href='http://npmjs.org/package/redux-form-input-masks'>página no NPM</a> e o <a href='https://github.com/renato-bohler/redux-form-input-masks'>projeto no GitHub</a>. Apresentei este projeto no <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>React CWB #11</a>."
+      ],
+      vuejs: [
+        "Ouvi muita gente comentando sobre VueJS, até que um dia resolvi dar uma chance. Construí esta minha página pessoal usando este <i>framework</i>, com o objetivo de aprender um pouco sobre ele. Você pode conferir o <a href='https://github.com/renato-bohler/renato-bohler.github.io'>projeto no GitHub</a>.",
+        "Ainda não tive a oportunidade de utilizar VueJS profissionalmente. Sinto que para isso acontecer ainda precisaria de mais estudo e prática. Por exemplo: não utilizei ferramentas como <a href='https://vuex.vuejs.org'>VueX</a> ainda, apesar de saber que os conceitos são bastante semelhantes com <a href='https://redux.js.org'>Redux</a>."
       ]
     },
     projects: {

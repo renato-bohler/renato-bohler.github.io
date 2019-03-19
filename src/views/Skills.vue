@@ -59,7 +59,11 @@
       title="VueJS"
       :moreInfo="{ skillLevel: 4, recentUsage: 'medium', studying: true }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.vuejs')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/graphql.png"
