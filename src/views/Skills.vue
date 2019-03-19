@@ -69,12 +69,16 @@
       image="skills/graphql.png"
       title="GraphQL"
       :moreInfo="{
-        skillLevel: 1,
+        skillLevel: 2,
         recentUsage: 'never',
         planningToStudy: true
       }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.graphql')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/angular.png"
