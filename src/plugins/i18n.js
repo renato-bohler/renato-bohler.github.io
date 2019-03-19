@@ -119,6 +119,10 @@ const messages = {
       ],
       graphql: [
         "GraphQL has received a lot of attention from the developer community in recent years. I've never had the opportunity to use it or to study it thoroughly, but GraphQL is certainly something that I intend to focus my studies in a near future."
+      ],
+      angular: [
+        "My experience with Angular is limited to AngularJS (up to version 1.7.x LTS). AngularJS was the first technology with which I had professional contact. Currently, I've been only performing slight changes and maintenance to AngularJS projects.",
+        "Since when I started using React and studying VueJS, my priority on studying newer versions of Angular has dropped quite a bit."
       ]
     },
     projects: {
@@ -250,6 +254,10 @@ const messages = {
       ],
       graphql: [
         "GraphQL tem recebido uma atenção muito grande da comunidade de desenvolvedores estes últimos anos. Nunca tive oportunidade de utilizar ou estudar profundamente o GraphQL, mas é uma das principais áreas na qual pretendo focar meus próximos estudos."
+      ],
+      angular: [
+        "Minha experiência com Angular se limita ao AngularJS (até a versão 1.7.x LTS). AngularJS foi a primeira tecnologia com a qual tive contato profissional. Meu trabalho com AngularJS atualmente tem sido realizar manutenções e pequenas alterações esporadicamente.",
+        "Desde que comecei a utilizar React e a estudar VueJS, a prioridade para estudar as versões mais modernas de Angular caiu bastante."
       ]
     },
     projects: {

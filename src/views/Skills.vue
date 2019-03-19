@@ -85,7 +85,11 @@
       title="Angular"
       :moreInfo="{ skillLevel: 4, recentUsage: 'low' }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.angular')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/android.png"
