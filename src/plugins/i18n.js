@@ -118,7 +118,7 @@ const messages = {
         "I've not yet had the opportunity to use VueJS professionally. I feel that for this to happen I'd still need more study and practice. For example: I've not used tools like <a href='https://vuex.vuejs.org'>VueX</a> yet, although I know that its concepts are quite similar with <a href='https://redux.js.org'>Redux</a>."
       ],
       graphql: [
-        "GraphQL has received a lot of attention from the developer community in recent years. I've never had the opportunity to use it or to study it thoroughly, but GraphQL is certainly something that I intend to focus my studies in a near future."
+        "GraphQL has been receiving a lot of attention from the developer community in recent years. I've never had the opportunity to use it or to study it thoroughly, but GraphQL is certainly something that I intend to focus my studies in a near future."
       ],
       angular: [
         "My experience with Angular is limited to AngularJS (up to version 1.7.x LTS). AngularJS was the first technology with which I had professional contact. Currently, I've been only performing slight changes and maintenance to AngularJS projects.",
@@ -129,6 +129,10 @@ const messages = {
         "For example: the biggest app I developed served to receive (via SMS) weather information, dollar quotations and my daily earnings from my AdSense account and display them into a widget. This app also filtered these received messages to avoid notifications and pollution of the default SMS app.",
         "The release of Android 4.4 (KitKat), however, <a href='https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html'>removed</a> the possibility to intercept and block SMS messages for applications other than the default SMS app itself. This led me to know <a href='https://forum.xda-developers.com/xposed'>Xposed framework</a>. I did a short reverse engineering work on Android's default SMS app and build a Xposed module that intercepted methods of this app to apply a series of filters that were registered in an UI. This app that I built served me to get rid of annoying SMS ads for a long time.",
         "Since then, I've been following Android more as an user than a developer. I've been more interested in learning <a href='https://facebook.github.io/react-native'>React Native</a> or <a href='https://flutter.dev'>Flutter</a> for mobile development. I've never had professional experience as a mobile developer, native or not."
+      ],
+      sql: [
+        "My experience with relational databases is quite practical. My knowledge is enough to be able to elaborate some complex queries. I've already used <a href='https://www.mysql.com'>MySQL</a>, <a href='https://www.postgresql.org'>PostgreSQL</a> and <a href='https://www.microsoft.com/sql-server'>Microsoft SQL Server</a>. I know some core concepts behind a database management system, but not deeply enough to do insane query optimizations. I don't have much experience in using features like procedures or triggers.",
+        "Given the importance of this topic and my gaps in some areas of it, I certainly plan to study it further."
       ]
     },
     projects: {
@@ -270,6 +274,10 @@ const messages = {
         "Por exemplo: a maior aplicação que desenvolvi para Android servia para receber (via SMS) informações de clima, cotação do dólar e ganhos diários da minha conta do AdSense e as exibia num <i>widget</i>. Este aplicativo também filtrava essas mensagens para evitar as notificações e poluição do aplicativo de SMS padrão.",
         "O lançamento da versão 4.4 (KitKat), no entanto, <a href='https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html'>removeu</a> a possibilidade de interceptar e bloquear mensagens SMS para aplicativos que não fossem definidos como o padrão. Isto me levou a conhecer o <a href='https://forum.xda-developers.com/xposed'><i>framework</i> Xposed</a>. Fiz um breve trabalho de engenharia reversa no aplicativo padrão de SMS do Android e criei um módulo para Xposed que interceptava métodos deste aplicativo para aplicar uma série de filtros que eram cadastráveis numa interface. Este aplicativo me serviu pra me livrar de propagandas SMS irritantes por um longo tempo.",
         "Desde então, tenho acompanhado a evolução do Android mais como usuário que como desenvolvedor. Tenho tido mais interesse em aprender <a href='https://facebook.github.io/react-native'>React Native</a> ou <a href='https://flutter.dev'>Flutter</a> para desenvolvimento de aplicações <i>mobile</i>. Nunca tive experiência profissional como desenvolvedor <i>mobile</i>, nativo ou não."
+      ],
+      sql: [
+        "Minha experiência com bancos de dados relacionais é bastante prática. Meu conhecimento é suficiente para conseguir elaborar <i>queries</i> para cumprir objetivos complexos. Já utilizei bancos em <a href='https://www.mysql.com'>MySQL</a>, <a href='https://www.postgresql.org'>PostgreSQL</a> e <a href='https://www.microsoft.com/sql-server'>Microsoft SQL Server</a>. Conheço alguns conceitos por trás de um gerenciador de banco de dados, mas não profundamente o suficiente para fazer otimizações insanas. Não tenho muita experiência na utilização de algumas funcionalidades como <i>procedures</i> ou <i>triggers</i>.",
+        "Dada a importância do tópico e minhas lacunas em algumas áreas dele, com certeza pretendo o estudar mais."
       ]
     },
     projects: {
