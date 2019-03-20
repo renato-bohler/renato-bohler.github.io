@@ -96,7 +96,11 @@
       title="Android"
       :moreInfo="{ skillLevel: 4, recentUsage: 'low' }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.android')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/sql.png"
