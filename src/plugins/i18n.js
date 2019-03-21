@@ -133,6 +133,10 @@ const messages = {
       sql: [
         "My experience with relational databases is quite practical. My knowledge is enough to be able to elaborate some complex queries. I've already used <a href='https://www.mysql.com'>MySQL</a>, <a href='https://www.postgresql.org'>PostgreSQL</a> and <a href='https://www.microsoft.com/sql-server'>Microsoft SQL Server</a>. I know some core concepts behind a database management system, but not deeply enough to do insane query optimizations. I don't have much experience in using features like procedures or triggers.",
         "Given the importance of this topic and my gaps in some areas of it, I certainly plan to study it further."
+      ],
+      git: [
+        "Git is pratically mandatory to be a developer nowadays. I learned the concept of versioning and learned how to use Git early in my professional career. I've studied and used some different branching strategies, all of them were variations of <a href='https://nvie.com/posts/a-successful-git-branching-model/'>Git Flow</a>.",
+        "In my projects, I like to commit changes with messages according to the <a href='https://www.conventionalcommits.org'>Conventional Commits</a> conventions. You can check them in this page's changelog (which is automatically generated)."
       ]
     },
     projects: {
@@ -278,6 +282,10 @@ const messages = {
       sql: [
         "Minha experiência com bancos de dados relacionais é bastante prática. Meu conhecimento é suficiente para conseguir elaborar <i>queries</i> para cumprir objetivos complexos. Já utilizei bancos em <a href='https://www.mysql.com'>MySQL</a>, <a href='https://www.postgresql.org'>PostgreSQL</a> e <a href='https://www.microsoft.com/sql-server'>Microsoft SQL Server</a>. Conheço alguns conceitos por trás de um gerenciador de banco de dados, mas não profundamente o suficiente para fazer otimizações insanas. Não tenho muita experiência na utilização de algumas funcionalidades como <i>procedures</i> ou <i>triggers</i>.",
         "Dada a importância do tópico e minhas lacunas em algumas áreas dele, com certeza pretendo o estudar mais."
+      ],
+      git: [
+        "Git é praticamente um pré-requisito para ser desenvolvedor. Conheci o conceito de versionamento de código e aprendi a utilizar o Git no começo da minha carreira profissional. Já estudei e utilizei profissionalmente algumas estratégias de <i>branching</i> diferentes, todas elas variações do <a href='https://nvie.com/posts/a-successful-git-branching-model/'>Git Flow</a>.",
+        "Nos meus projetos, gosto de padronizar mensagens de <i>commit</i> de acordo com <a href='https://www.conventionalcommits.org'>Conventional Commits</a>. Você pode conferir isto no changelog desta página (que é gerado automaticamente)."
       ]
     },
     projects: {
