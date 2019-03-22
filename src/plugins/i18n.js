@@ -137,6 +137,10 @@ const messages = {
       git: [
         "Git is pratically mandatory to be a developer nowadays. I learned the concept of versioning and learned how to use Git early in my professional career. I've studied and used some different branching strategies, all of them were variations of <a href='https://nvie.com/posts/a-successful-git-branching-model/'>Git Flow</a>.",
         "In my projects, I like to commit changes with messages according to the <a href='https://www.conventionalcommits.org'>Conventional Commits</a> conventions. You can check them in this page's changelog (which is automatically generated)."
+      ],
+      docker: [
+        "Docker is relatively new to me. I started learning and using it halfway through 2018. I know its concepts and I've implemented some Dockerfiles, but I can't say that I'm experienced with it.",
+        "I consider mastering Docker very important, mainly to facilitate and standardize environment for deployments. For this reason, Docker is one of the areas that I intend to deepen my studies on in the near future."
       ]
     },
     projects: {
@@ -286,6 +290,10 @@ const messages = {
       git: [
         "Git é praticamente um pré-requisito para ser desenvolvedor. Conheci o conceito de versionamento de código e aprendi a utilizar o Git no começo da minha carreira profissional. Já estudei e utilizei profissionalmente algumas estratégias de <i>branching</i> diferentes, todas elas variações do <a href='https://nvie.com/posts/a-successful-git-branching-model/'>Git Flow</a>.",
         "Nos meus projetos, gosto de padronizar mensagens de <i>commit</i> de acordo com <a href='https://www.conventionalcommits.org'>Conventional Commits</a>. Você pode conferir isto no changelog desta página (que é gerado automaticamente)."
+      ],
+      docker: [
+        "Docker é relativamente uma novidade para mim. Comecei a aprender e utilizar na metade de 2018. Conheço os conceitos e já implementei alguns <i>Dockerfiles</i>, mas não posso dizer que tenho uma grande vivência com ele.",
+        "Considero o domínio de Docker bastante importante, principalmente para facilitar e padronizar ambientes para <i>deployments</i>. Por esta razão, Docker é uma das áreas que pretendo me aprofundar num futuro próximo."
       ]
     },
     projects: {
