@@ -141,6 +141,9 @@ const messages = {
       docker: [
         "Docker is relatively new to me. I started learning and using it halfway through 2018. I know its concepts and I've implemented some Dockerfiles, but I can't say that I'm experienced with it.",
         "I consider mastering Docker very important, mainly to facilitate and standardize environment for deployments. For this reason, Docker is one of the areas that I intend to deepen my studies on in the near future."
+      ],
+      kubernetes: [
+        "I know the concepts and I recognize the importance of Kubernetes for the scalability and management of microservices based platforms. I've never had the opportunity to study the inner details of Kubernetes, and I never got to actually use it. For these reasons, I certainly plan to study Kubernetes further."
       ]
     },
     projects: {
@@ -294,6 +297,9 @@ const messages = {
       docker: [
         "Docker é relativamente uma novidade para mim. Comecei a aprender e utilizar na metade de 2018. Conheço os conceitos e já implementei alguns <i>Dockerfiles</i>, mas não posso dizer que tenho uma grande vivência com ele.",
         "Considero o domínio de Docker bastante importante, principalmente para facilitar e padronizar ambientes para <i>deployments</i>. Por esta razão, Docker é uma das áreas que pretendo me aprofundar num futuro próximo."
+      ],
+      kubernetes: [
+        "Conheço os conceitos e reconheço a importância de Kubernetes para a escalabilidade e para o gerenciamento de plataformas baseadas em microsserviços. Nunca tive oportunidade de estudar o funcionamento interno do Kubernetes nem utilizá-lo. Por estas razões, o Kubernetes está na minha lista para estudos."
       ]
     },
     projects: {
