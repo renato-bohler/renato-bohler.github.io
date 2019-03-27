@@ -144,6 +144,11 @@ const messages = {
       ],
       kubernetes: [
         "I know the concepts and I recognize the importance of Kubernetes for the scalability and management of microservices based platforms. I've never had the opportunity to study the inner details of Kubernetes, and I never got to actually use it. For these reasons, I certainly plan to study Kubernetes further."
+      ],
+      kafka: [
+        "I've been using Kafka professionaly in specific projects of systems integrations since mid-2018.",
+        "I know its concepts and some APIs, such as the <a href='https://kafka.apache.org/documentation.html#connect'>Connect API</a>, for having developed <a href='https://github.com/renato-bohler/kafka-connect-dota'>kafka-connect-dota</a>, a source connector for <a href='http://dota2.com'>DotA 2</a> matches made available on the <a href='https://developer.valvesoftware.com/wiki/Steam_Web_API'>Steam Web API</a>. I know some of the solutions developed by <a href='https://www.confluent.io'>Confluent</a> aswell, such as <a href='https://www.confluent.io/confluent-schema-registry'>Schema Registry</a> (for using <a href='https://avro.apache.org'>Avro</a>) and <a href='https://www.confluent.io/product/ksql'>KSQL</a>.",
+        "I'm no specialist in Kafka, however: I have experience in developing, but not designing, solutions with it. For that to happen, I would certainly need to devote more time, especially in use case studies."
       ]
     },
     projects: {
@@ -300,6 +305,11 @@ const messages = {
       ],
       kubernetes: [
         "Conheço os conceitos e reconheço a importância de Kubernetes para a escalabilidade e para o gerenciamento de plataformas baseadas em microsserviços. Nunca tive oportunidade de estudar o funcionamento interno do Kubernetes nem utilizá-lo. Por estas razões, o Kubernetes está na minha lista para estudos."
+      ],
+      kafka: [
+        "Tenho utilizado Kafka profissionalmente em projetos pontuais de integração entre sistemas desde a metade de 2018.",
+        "Conheço os conceitos e algumas <i>API</i>s, como por exemplo a <a href='https://kafka.apache.org/documentation.html#connect'>Connect API</a>, por ter criado o <a href='https://github.com/renato-bohler/kafka-connect-dota'>kafka-connect-dota</a>, um <i>source connector</i> para as partidas de <a href='http://dota2.com'>DotA 2</a> disponibilizadas na <a href='https://developer.valvesoftware.com/wiki/Steam_Web_API'><i>WebAPI</i> da Steam</a>. Conheço algumas soluções da <a href='https://www.confluent.io'>Confluent</a>, como o <a href='https://www.confluent.io/confluent-schema-registry'>Schema Registry</a> (por utilizar <a href='https://avro.apache.org'>Avro</a>) e <a href='https://www.confluent.io/product/ksql'>KSQL</a>.",
+        "Não sou nenhum especialista em Kafka, no entanto: tenho experiência em desenvolver - e não projetar - soluções com Kafka. Para isto, certamente eu precisaria dedicar mais tempo, principalmente em estudos de caso de uso."
       ]
     },
     projects: {
