@@ -177,7 +177,11 @@
       title="MQTT"
       :moreInfo="{ skillLevel: 4, recentUsage: 'medium' }"
     >
-      <p>Lorem</p>
+      <p
+        v-for="(paragraph, index) in $t('skills.mqtt')"
+        :key="index"
+        v-html="paragraph"
+      />
     </ExpandableFrame>
     <ExpandableFrame
       image="skills/websockets.png"
