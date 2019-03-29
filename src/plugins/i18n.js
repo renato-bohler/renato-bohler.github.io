@@ -152,6 +152,9 @@ const messages = {
       ],
       mqtt: [
         "I used MQTT to integrate measurement devices with cloud applications, displaying those measurements to the user in real time."
+      ],
+      websockets: [
+        "WebSockets is simple to use and efficient. I've used it for asynchronous notifications and data updates... and that's it, really."
       ]
     },
     projects: {
@@ -316,6 +319,9 @@ const messages = {
       ],
       mqtt: [
         "Utilizei MQTT para integrar dispositivos de aferições com aplicações em nuvem, exibindo ao usuário valores aferidos em tempo real."
+      ],
+      websockets: [
+        "WebSockets é simples de utilizar e eficiente. O utilizei para notificações e atualizações de dados assíncronas... e é isso."
       ]
     },
     projects: {
