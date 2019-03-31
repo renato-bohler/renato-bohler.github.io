@@ -159,6 +159,10 @@ const messages = {
       regexp: [
         "Regular expressions are like a Swiss Army Knife to any developer. It can be super useful, but you must know how to use it - and it isn't always easy.",
         "My skills in RegExp allow me to fetch data and refactor code more efficiently. I realize that regular expressions are much more powerful than this, and this is why I intend to take a time to dig deeper into this topic."
+      ],
+      nosql: [
+        "NoSQL is one of those thinkgs that a lot of people use, so it must be good for something. I have no experience nor deep knowledge on NoSQL, I know only some basic concepts.",
+        "The possibility of an oportunity of using NoSQL makes it one of the topics that I intend to study in the near future."
       ]
     },
     projects: {
@@ -330,6 +334,10 @@ const messages = {
       regexp: [
         "Expressões regulares são como um canivete suíço para quem é desenvolvedor. Podem ser extremamente úteis, mas é preciso saber usá-las - e nem sempre é fácil.",
         "Minhas habilidades em expressões regulares me permitem realizar buscas um pouco mais específicas ou refatorar código mais eficientemente. Sei que expressões regulares são muito mais poderosas que isso, e por esta razão pretendo tomar um tempo para me aprofundar mais neste tópico."
+      ],
+      nosql: [
+        "NoSQL é uma daquelas coisas que muita gente usa, então deve ser bom. Não tenho experiência nem conhecimento profundo de NoSQL, sei somente alguns conceitos básicos.",
+        "A possibilidade de aparecer uma oportunidade de utilizar NoSQL faz com que este seja um dos tópicos que pretendo estudar em breve."
       ]
     },
     projects: {
