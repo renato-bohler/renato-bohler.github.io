@@ -155,6 +155,10 @@ const messages = {
       ],
       websockets: [
         "WebSockets is simple to use and efficient. I've used it for asynchronous notifications and data updates... and that's it, really."
+      ],
+      regexp: [
+        "Regular expressions are like a Swiss Army Knife to any developer. It can be super useful, but you must know how to use it - and it isn't always easy.",
+        "My skills in RegExp allow me to fetch data and refactor code more efficiently. I realize that regular expressions are much more powerful than this, and this is why I intend to take a time to dig deeper into this topic."
       ]
     },
     projects: {
@@ -322,6 +326,10 @@ const messages = {
       ],
       websockets: [
         "WebSockets é simples de utilizar e eficiente. O utilizei para notificações e atualizações de dados assíncronas... e é isso."
+      ],
+      regexp: [
+        "Expressões regulares são como um canivete suíço para quem é desenvolvedor. Podem ser extremamente úteis, mas é preciso saber usá-las - e nem sempre é fácil.",
+        "Minhas habilidades em expressões regulares me permitem realizar buscas um pouco mais específicas ou refatorar código mais eficientemente. Sei que expressões regulares são muito mais poderosas que isso, e por esta razão pretendo tomar um tempo para me aprofundar mais neste tópico."
       ]
     },
     projects: {
