@@ -163,6 +163,11 @@ const messages = {
       nosql: [
         "NoSQL is one of those thinkgs that a lot of people use, so it must be good for something. I have no experience nor deep knowledge on NoSQL, I know only some basic concepts.",
         "The possibility of an oportunity of using NoSQL makes it one of the topics that I intend to study in the near future."
+      ],
+      cicd: [
+        "My first opportunity to learn and apply Continuous Integration and Continuous Deployment practices happened whilist I was developing <a href='https://renato-bohler.github.io/redux-form-input-masks'>redux-form-input-masks</a>.",
+        "I learned how to automate the whole delivering process of a new version by using <a href='https://semantic-release.gitbook.io/semantic-release'>semantic release</a> to determine (based on commit messages) the next version to be released, push the tag on the GitHub project, to generate the changelog and to publish the new version to npm. All of that was set to run on <a href='https://travis-ci.com'>Travis</a>, where build and test coverage happens (using <a href='https://codecov.io'>codecov</a>).",
+        "Since then, for every project I start (including this one, I always try to adopt these practices. I strongly believe that the time invested in setting up these tools easily pays off in basically any project."
       ]
     },
     projects: {
@@ -338,6 +343,11 @@ const messages = {
       nosql: [
         "NoSQL é uma daquelas coisas que muita gente usa, então deve ser bom. Não tenho experiência nem conhecimento profundo de NoSQL, sei somente alguns conceitos básicos.",
         "A possibilidade de aparecer uma oportunidade de utilizar NoSQL faz com que este seja um dos tópicos que pretendo estudar em breve."
+      ],
+      cicd: [
+        "Minha primeira oportunidade de aprender e aplicar práticas de integração contínua (CI) e implantação contínua (CD) foi no projeto <a href='https://renato-bohler.github.io/redux-form-input-masks'>redux-form-input-masks</a>.",
+        "Aprendi a automatizar todo o processo de entrega de uma versão utilizando <a href='https://semantic-release.gitbook.io/semantic-release'>semantic release</a> para determinar (com base nas mensagens de <i>commit</i>) qual a próxima versão a ser lançada, lançar a <i>tag</i> no projeto no GitHub, gerar o <i>changelog</i> e publicar a versão nova no npm. Tudo isso configurado para rodar no <a href='https://travis-ci.com'>Travis</a>, que também fazia o <i>build</i> e verificava a cobertura de testes (usando <a href='https://codecov.io'>codecov</a>).",
+        "A partir de então, para todo projeto que inicio (inclusive este), busco adotar estas práticas. Acredito fortemente que o tempo investido pra configuração destas ferramentas se pagam no decorrer de basicamente qualquer projeto."
       ]
     },
     projects: {

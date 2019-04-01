@@ -224,6 +224,20 @@
         v-html="paragraph"
       />
     </ExpandableFrame>
+    <ExpandableFrame
+      image="skills/cicd.png"
+      title="CI & CD"
+      :moreInfo="{
+        skillLevel: 4,
+        recentUsage: 'medium'
+      }"
+    >
+      <p
+        v-for="(paragraph, index) in $t('skills.cicd')"
+        :key="index"
+        v-html="paragraph"
+      />
+    </ExpandableFrame>
   </Content>
 </template>
 
