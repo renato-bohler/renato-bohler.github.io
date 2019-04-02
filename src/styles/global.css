@@ -6,11 +6,13 @@ a:link, a:visited {
   text-decoration: none;
   color: var(--font-gray-color);
   border-bottom: 1px dashed var(--theme-secondary-dark);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 a:hover, a:active {
   text-decoration: none;
   border-bottom: 1px solid var(--theme-secondary-dark);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 span > .highlight {
