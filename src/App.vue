@@ -3,7 +3,10 @@
     <Header :fullscreen="fullscreen" />
     <div class="app-content-container">
       <div v-for="(content, index) in contents" :key="content.id">
-        <div :is="content.component" :last="index === contents.length - 1" />
+        <component
+          :is="content.component"
+          :last="index === contents.length - 1"
+        />
       </div>
     </div>
     <Footer />

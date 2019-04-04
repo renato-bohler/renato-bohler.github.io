@@ -11,7 +11,7 @@
 export default {
   computed: {
     random() {
-      return Math.floor(Math.random() * 20);
+      return Math.floor(Math.random() * this.$t("footer.while").length);
     }
   }
 };

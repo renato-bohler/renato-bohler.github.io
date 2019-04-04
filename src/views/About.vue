@@ -14,10 +14,11 @@
       />
       <h1>{{ $t("about.helloWorld") }}</h1>
     </div>
-    <p v-html="$t('about.paragraphs[0]', { age })" />
-    <p v-html="$t('about.paragraphs[1]')" />
-    <p v-html="$t('about.paragraphs[2]')" />
-    <p v-html="$t('about.paragraphs[3]')" />
+    <p
+      v-for="index in $t('about.paragraphs').length"
+      :key="index"
+      v-html="$t(`about.paragraphs[${index - 1}]`, { age })"
+    />
   </Content>
 </template>
 
@@ -42,5 +43,9 @@ export default {
   flex-direction: column;
   align-items: center;
   margin-bottom: 3em;
+}
+
+.header > h1 {
+  text-align: center;
 }
 </style>
