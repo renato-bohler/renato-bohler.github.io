@@ -1,3 +1,50 @@
+# [1.9.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.8.1...v1.9.0) (2019-04-04)
+
+
+### Bug Fixes
+
+* **About:** fixes heading not being centered on small resolutions ([4fb6400](https://github.com/renato-bohler/renato-bohler.github.io/commit/4fb6400))
+* makes content titles and icons not selectable ([e82b3e3](https://github.com/renato-bohler/renato-bohler.github.io/commit/e82b3e3))
+* **ExpandableFrame:** changes the title appearance ([279b0bf](https://github.com/renato-bohler/renato-bohler.github.io/commit/279b0bf))
+* **ExpandableFrame:** fixes styling on mobile ([d16e60a](https://github.com/renato-bohler/renato-bohler.github.io/commit/d16e60a))
+* **icon:** changes icon imports ([dd88eb9](https://github.com/renato-bohler/renato-bohler.github.io/commit/dd88eb9))
+* **ImageFrame:** fixes image being selectable ([8bc3b39](https://github.com/renato-bohler/renato-bohler.github.io/commit/8bc3b39))
+* **Skills:** updates stub content ([fcbe70e](https://github.com/renato-bohler/renato-bohler.github.io/commit/fcbe70e))
+
+
+### Features
+
+* **ExpandableContent:** initial implementation ([a2dec2d](https://github.com/renato-bohler/renato-bohler.github.io/commit/a2dec2d))
+* **ExpandableFrame:** adds more info to the header ([6d13f22](https://github.com/renato-bohler/renato-bohler.github.io/commit/6d13f22))
+* **ExpandableFrame:** adds new information icon ([93d9df1](https://github.com/renato-bohler/renato-bohler.github.io/commit/93d9df1))
+* **icon:** adds icons used on Skills section ([2b1725f](https://github.com/renato-bohler/renato-bohler.github.io/commit/2b1725f))
+* **Skills:** adds android to the contents ([03c5967](https://github.com/renato-bohler/renato-bohler.github.io/commit/03c5967))
+* **Skills:** adds initial Android content ([2ad50be](https://github.com/renato-bohler/renato-bohler.github.io/commit/2ad50be))
+* **Skills:** adds initial Angular content ([dbc18ac](https://github.com/renato-bohler/renato-bohler.github.io/commit/dbc18ac))
+* **Skills:** adds initial CI & CD content ([7a2e243](https://github.com/renato-bohler/renato-bohler.github.io/commit/7a2e243))
+* **Skills:** adds initial Docker content ([60e4c7e](https://github.com/renato-bohler/renato-bohler.github.io/commit/60e4c7e))
+* **Skills:** adds initial Git content ([e27bf14](https://github.com/renato-bohler/renato-bohler.github.io/commit/e27bf14))
+* **Skills:** adds initial GraphQL content ([7019de5](https://github.com/renato-bohler/renato-bohler.github.io/commit/7019de5))
+* **Skills:** adds initial Java content ([0c819c7](https://github.com/renato-bohler/renato-bohler.github.io/commit/0c819c7))
+* **Skills:** adds initial JavaScript content in portuguese ([97454cd](https://github.com/renato-bohler/renato-bohler.github.io/commit/97454cd))
+* **Skills:** adds initial Kafka content ([f11bee7](https://github.com/renato-bohler/renato-bohler.github.io/commit/f11bee7))
+* **Skills:** adds initial Kubernetes content ([4479c77](https://github.com/renato-bohler/renato-bohler.github.io/commit/4479c77))
+* **Skills:** adds initial MQTT content ([5bfffe7](https://github.com/renato-bohler/renato-bohler.github.io/commit/5bfffe7))
+* **Skills:** adds initial NoSQL content ([6e076ae](https://github.com/renato-bohler/renato-bohler.github.io/commit/6e076ae))
+* **Skills:** adds initial React content ([1609e40](https://github.com/renato-bohler/renato-bohler.github.io/commit/1609e40))
+* **Skills:** adds initial Redux content ([4da7646](https://github.com/renato-bohler/renato-bohler.github.io/commit/4da7646))
+* **Skills:** adds initial RegExp content ([5253f02](https://github.com/renato-bohler/renato-bohler.github.io/commit/5253f02))
+* **Skills:** adds initial SQL content ([1575871](https://github.com/renato-bohler/renato-bohler.github.io/commit/1575871))
+* **Skills:** adds initial VueJS content ([141caed](https://github.com/renato-bohler/renato-bohler.github.io/commit/141caed))
+* **Skills:** adds initial WebSockets content ([e80dfac](https://github.com/renato-bohler/renato-bohler.github.io/commit/e80dfac))
+* **Skills:** adds section introduction ([ad9b929](https://github.com/renato-bohler/renato-bohler.github.io/commit/ad9b929))
+* **Skills:** adds skills info contents ([128fef4](https://github.com/renato-bohler/renato-bohler.github.io/commit/128fef4))
+* **Skills:** adds stub content to section ([098e892](https://github.com/renato-bohler/renato-bohler.github.io/commit/098e892))
+* **Skills:** adds translate messages for icon tooltips ([39abcf1](https://github.com/renato-bohler/renato-bohler.github.io/commit/39abcf1))
+* **Skills:** adds translation to javascript ([7d20f0b](https://github.com/renato-bohler/renato-bohler.github.io/commit/7d20f0b))
+* **Skills:** uploads skills images ([e771adf](https://github.com/renato-bohler/renato-bohler.github.io/commit/e771adf))
+* **style:** adds background colors to links ([b5e9fb3](https://github.com/renato-bohler/renato-bohler.github.io/commit/b5e9fb3))
+
 ## [1.8.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.8.0...v1.8.1) (2019-02-25)
 
 
