@@ -346,17 +346,20 @@ const messages = {
           confortável em trabalhar em ambientes descontraídos, mas não abro mão de profissionalismo, respeito,
           honestidade e comprometimento.`,
         `Costumo dedicar boa parte do meu tempo livre aos estudos, seja lendo sobre novas tecnologicas ou
-          testando novas bibliotecas e ferramentas. Ultimamente também tenho contribuído com projetos open source,
-          sempre que uma boa oportunidade aparece. Gosto de fazer isto tudo assistindo a um jogo de futebol na TV,
-          esportes eletrônicos no <a href='https://twitch.tv'>Twitch</a> ou ouvindo música. Pra descansar, gosto
-          bastante de passar tempo com minha noiva ou jogar algum jogo no computador.`
+          testando novas bibliotecas e ferramentas. Ultimamente também tenho contribuído com projetos open
+          source, sempre que uma boa oportunidade aparece. Gosto de fazer isto tudo assistindo a um jogo de
+          futebol na TV, esportes eletrônicos no <a href='https://twitch.tv'>Twitch</a> ou ouvindo música. Pra
+          descansar, gosto bastante de passar tempo com minha noiva ou jogar algum jogo no computador.`
       ]
     },
     skills: {
       title: "Skills",
       introduction: [
-        "Esta seção contém algumas das minhas principais habilidades, bem como alguns tópicos que estou estudando ou pretendo estudar. Cada habilidade possui um conteúdo ampliável com uma descrição para contextualização. Além disso, alguns ícones indicam um nível de habilidade, frequência de uso recente e se estou estudando ou pretendo estudar o tópico em questão.",
-        "Todas estas informações são resultado de uma autoavaliação, então por favor as tome com cautela."
+        `Esta seção contém algumas das minhas principais habilidades, bem como alguns tópicos que estou estudando
+          ou pretendo estudar. Cada habilidade possui um conteúdo ampliável com uma descrição para
+          contextualização. Além disso, alguns ícones indicam um nível de habilidade, frequência de uso recente e
+          se estou estudando ou pretendo estudar o tópico em questão.`,
+        `Todas estas informações são resultado de uma autoavaliação, então por favor as tome com cautela.`
       ],
       moreInfo: {
         skillLevel: {
@@ -377,78 +380,184 @@ const messages = {
         planningToStudy: "Pretendo estudar isto"
       },
       javascript: [
-        "Conheço JavaScript há praticamente uma década. Comecei aprendendo o básico ao fazer alguns websites por hobby, sem o uso de nenhuma ferramenta. Após algum tempo, descobri e aprendi a utilizar o <a href='https://jquery.com'>jQuery</a>.",
-        "Atualmente utilizo JavaScript principalmente para desenvolver interfaces, utilizando a biblioteca <a href='https://reactjs.org'>React</a>. Também utilizo JavaScript para fazer <i>backends</i> com <a href='https://expressjs.com'>expressJS</a> e integração entre sistemas com <a href='https://kafka.apache.org'>Kafka</a> em aplicações <a href='https://nodejs.org'>NodeJS</a>.",
-        "Tenho estudado o <i>framework</i> <a href='https://vuejs.org'>VueJS</a> como alternativa para desenvolvimento de interfaces. Na verdade, esta página é minha primeira experiência com VueJS. Eu também procuro me manter atualizado das novas funcionalidades da lingugagem."
+        `Conheço JavaScript há praticamente uma década. Comecei aprendendo o básico ao fazer alguns websites por
+          hobby, sem o uso de nenhuma ferramenta. Após algum tempo, descobri e aprendi a utilizar o
+          <a href='https://jquery.com'>jQuery</a>.`,
+        `Atualmente utilizo JavaScript principalmente para desenvolver interfaces, utilizando a biblioteca
+          <a href='https://reactjs.org'>React</a>. Também utilizo JavaScript para fazer <i>backends</i> com
+          <a href='https://expressjs.com'>expressJS</a> e integração entre sistemas com
+          <a href='https://kafka.apache.org'>Kafka</a> em aplicações <a href='https://nodejs.org'>NodeJS</a>.`,
+        `Tenho estudado o <i>framework</i> <a href='https://vuejs.org'>VueJS</a> como alternativa para
+          desenvolvimento de interfaces. Na verdade, esta página é minha primeira experiência com VueJS. Eu
+          também procuro me manter atualizado das novas funcionalidades da lingugagem.`
       ],
       java: [
-        "Comecei a estudar Java por interesse em aprender a desenvolver aplicativos nativos Android, por meados de 2014. Atualmente desenvolvo <i>API</i>s <i>REST</i> com Java, utilizando principalmente <a href='https://maven.apache.org'>Maven</a>, <a href='https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services'>JAX-RS</a> e <a href='http://hibernate.org/'>Hibernate</a>."
+        `Comecei a estudar Java por interesse em aprender a desenvolver aplicativos nativos Android, por meados
+          de 2014. Atualmente desenvolvo <i>API</i>s <i>REST</i> com Java, utilizando principalmente
+          <a href='https://maven.apache.org'>Maven</a>,
+          <a href='https://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services'>JAX-RS</a> e
+          <a href='http://hibernate.org/'>Hibernate</a>.`
       ],
       react: [
-        "Meu primeiro contato com React foi já como desenvolvedor profissional, no começo de 2017. Desde então tenho me apaixonado pela biblioteca: ela é com certeza minha solução preferida para desenvolvimento de interfaces. A maior parte do meu trabalho atualmente tem sido desenvolver e manter projetos em React.",
-        "Nos projetos que participei, utilizei bibliotecas como <a href='https://redux.js.org'>redux</a>, <a href='https://github.com/reduxjs/redux-thunk'>redux-thunk</a>, <a href='https://redux-form.com'>redux-form</a>, <a href='https://material-ui.com'>material-ui</a>, <a href='https://www.styled-components.com'>styled-components</a>, entre outros. Colaborei com o desenvolvimento e manutenção de um projeto de componentes implementando um <i>styleguide</i>, utilizando <a href='https://github.com/storybooks/storybook'>storybook</a> para testes. Desenvolvi um editor de <i>rich text</i> customizado com <a href='https://draftjs.org'>draft-js</a>, geração de documentos PDF e integração com dispositivos de leitura de QRCode.",
-        "Estou sempre de olho nas novidades da biblioteca. Para isso, participo de <a href='https://react-brasil.github.io/react-brasil-slack'>comunidades brasileiras</a> e <a href='https://www.reactiflux.com'>internacionais</a>. Tive a oportunidade de <a href='https://github.com/reactjs/pt-BR.reactjs.org/pull/31'>colaborar</a> com a tradução da <a href='https://pt-br.reactjs.org/docs/react-api.html'>referência da <i>API</i></a> da documentação oficial do projeto.",
-        "Sempre que consigo, participo do <a href='https://www.meetup.com/ReactJS-CWB/events/259667650'>React CWB</a> (meetup de React em Curitiba). No React CWB #11, palestrei sobre uma biblioteca de minha autoria <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>(vídeo)</a>."
+        `Meu primeiro contato com React foi já como desenvolvedor profissional, no começo de 2017. Desde então
+          tenho me apaixonado pela biblioteca: ela é com certeza minha solução preferida para desenvolvimento de
+          interfaces. A maior parte do meu trabalho atualmente tem sido desenvolver e manter projetos em React.`,
+        `Nos projetos que participei, utilizei bibliotecas como <a href='https://redux.js.org'>redux</a>,
+          <a href='https://github.com/reduxjs/redux-thunk'>redux-thunk</a>,
+          <a href='https://redux-form.com'>redux-form</a>, <a href='https://material-ui.com'>material-ui</a>,
+          <a href='https://www.styled-components.com'>styled-components</a>, entre outros. Colaborei com o
+          desenvolvimento e manutenção de um projeto de componentes implementando um <i>styleguide</i>,
+          utilizando <a href='https://github.com/storybooks/storybook'>storybook</a> para testes. Desenvolvi um
+          editor de <i>rich text</i> customizado com <a href='https://draftjs.org'>draft-js</a>, geração de
+          documentos PDF e integração com dispositivos de leitura de QRCode.`,
+        `Estou sempre de olho nas novidades da biblioteca. Para isso, participo de
+          <a href='https://react-brasil.github.io/react-brasil-slack'>comunidades brasileiras</a> e
+          <a href='https://www.reactiflux.com'>internacionais</a>. Tive a oportunidade de
+          <a href='https://github.com/reactjs/pt-BR.reactjs.org/pull/31'>colaborar</a> com a tradução da
+          <a href='https://pt-br.reactjs.org/docs/react-api.html'>referência da <i>API</i></a> da documentação
+          oficial do projeto.`,
+        `Sempre que consigo, participo do
+          <a href='https://www.meetup.com/ReactJS-CWB/events/259667650'>React CWB</a> (meetup de React em
+          Curitiba). No React CWB #11, palestrei sobre uma biblioteca de minha autoria
+          <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>(vídeo)</a>.`
       ],
       redux: [
-        "Redux é a biblioteca que sempre utilizei para gerenciar estado no React. No começo, existiu uma curva de aprendizagem um pouco íngreme. Com o tempo, comecei a perceber o valor de se ter o estado da aplicação explicitamente definido.",
-        "Publiquei, em março de 2018, o redux-form-input-masks: uma biblioteca para formatação de <i>inputs</i> para <a href='https://redux-form.com'>redux-form</a>. Você pode ver a <a href='https://renato-bohler.github.io/redux-form-input-masks'>documentação</a>, <a href='http://npmjs.org/package/redux-form-input-masks'>página no NPM</a> e o <a href='https://github.com/renato-bohler/redux-form-input-masks'>projeto no GitHub</a>. Apresentei este projeto no <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>React CWB #11</a>."
+        `Redux é a biblioteca que sempre utilizei para gerenciar estado no React. No começo, existiu uma curva de
+          aprendizagem um pouco íngreme. Com o tempo, comecei a perceber o valor de se ter o estado da aplicação
+          explicitamente definido.`,
+        `Publiquei, em março de 2018, o redux-form-input-masks: uma biblioteca para formatação de <i>inputs</i>
+          para <a href='https://redux-form.com'>redux-form</a>. Você pode ver a
+          <a href='https://renato-bohler.github.io/redux-form-input-masks'>documentação</a>,
+          <a href='http://npmjs.org/package/redux-form-input-masks'>página no NPM</a> e o
+          <a href='https://github.com/renato-bohler/redux-form-input-masks'>projeto no GitHub</a>. Apresentei
+          este projeto no <a href='https://www.youtube.com/watch?v=_xG9sPi45vg'>React CWB #11</a>.`
       ],
       vuejs: [
-        "Ouvi muita gente comentando sobre VueJS, até que um dia resolvi dar uma chance. Construí esta minha página pessoal usando este <i>framework</i>, com o objetivo de aprender um pouco sobre ele. Você pode conferir o <a href='https://github.com/renato-bohler/renato-bohler.github.io'>projeto no GitHub</a>.",
-        "Ainda não tive a oportunidade de utilizar VueJS profissionalmente. Sinto que para isso acontecer ainda precisaria de mais estudo e prática. Por exemplo: não utilizei ferramentas como <a href='https://vuex.vuejs.org'>VueX</a> ainda, apesar de saber que os conceitos são bastante semelhantes com <a href='https://redux.js.org'>Redux</a>."
+        `Ouvi muita gente comentando sobre VueJS, até que um dia resolvi dar uma chance. Construí esta minha
+          página pessoal usando este <i>framework</i>, com o objetivo de aprender um pouco sobre ele. Você pode
+          conferir o <a href='https://github.com/renato-bohler/renato-bohler.github.io'>projeto no GitHub</a>.`,
+        `Ainda não tive a oportunidade de utilizar VueJS profissionalmente. Sinto que para isso acontecer ainda
+          precisaria de mais estudo e prática. Por exemplo: não utilizei ferramentas como
+          <a href='https://vuex.vuejs.org'>VueX</a> ainda, apesar de saber que os conceitos são bastante
+          semelhantes com <a href='https://redux.js.org'>Redux</a>.`
       ],
       graphql: [
-        "GraphQL tem recebido uma atenção muito grande da comunidade de desenvolvedores estes últimos anos. Nunca tive oportunidade de utilizar ou estudar profundamente o GraphQL, mas é uma das principais áreas na qual pretendo focar meus próximos estudos."
+        `GraphQL tem recebido uma atenção muito grande da comunidade de desenvolvedores estes últimos anos. Nunca
+          tive oportunidade de utilizar ou estudar profundamente o GraphQL, mas é uma das principais áreas na
+          qual pretendo focar meus próximos estudos.`
       ],
       angular: [
-        "Minha experiência com Angular se limita ao AngularJS (até a versão 1.7.x LTS). AngularJS foi a primeira tecnologia com a qual tive contato profissional. Meu trabalho com AngularJS atualmente tem sido realizar manutenções e pequenas alterações esporadicamente.",
-        "Desde que comecei a utilizar React e a estudar VueJS, a prioridade para estudar as versões mais modernas de Angular caiu bastante."
+        `Minha experiência com Angular se limita ao AngularJS (até a versão 1.7.x LTS). AngularJS foi a primeira
+          tecnologia com a qual tive contato profissional. Meu trabalho com AngularJS atualmente tem sido
+          realizar manutenções e pequenas alterações esporadicamente.`,
+        `Desde que comecei a utilizar React e a estudar VueJS, a prioridade para estudar as versões mais modernas
+          de Angular caiu bastante.`
       ],
       android: [
-        "Comecei a aprender Java para desenvolver aplicações nativas para Android, um pouco antes do lançamento do Android Studio, em 2013. Fiz algumas aplicações Android por hobby ou para utilidade própria, mas nunca publiquei nenhuma destas aplicações ou seus códigos.",
-        "Por exemplo: a maior aplicação que desenvolvi para Android servia para receber (via SMS) informações de clima, cotação do dólar e ganhos diários da minha conta do AdSense e as exibia num <i>widget</i>. Este aplicativo também filtrava essas mensagens para evitar as notificações e poluição do aplicativo de SMS padrão.",
-        "O lançamento da versão 4.4 (KitKat), no entanto, <a href='https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html'>removeu</a> a possibilidade de interceptar e bloquear mensagens SMS para aplicativos que não fossem definidos como o padrão. Isto me levou a conhecer o <a href='https://forum.xda-developers.com/xposed'><i>framework</i> Xposed</a>. Fiz um breve trabalho de engenharia reversa no aplicativo padrão de SMS do Android e criei um módulo para Xposed que interceptava métodos deste aplicativo para aplicar uma série de filtros que eram cadastráveis numa interface. Este aplicativo me serviu pra me livrar de propagandas SMS irritantes por um longo tempo.",
-        "Desde então, tenho acompanhado a evolução do Android mais como usuário que como desenvolvedor. Tenho tido mais interesse em aprender <a href='https://facebook.github.io/react-native'>React Native</a> ou <a href='https://flutter.dev'>Flutter</a> para desenvolvimento de aplicações <i>mobile</i>. Nunca tive experiência profissional como desenvolvedor <i>mobile</i>, nativo ou não."
+        `Comecei a aprender Java para desenvolver aplicações nativas para Android, um pouco antes do lançamento
+          do Android Studio, em 2013. Fiz algumas aplicações Android por hobby ou para utilidade própria, mas
+          nunca publiquei nenhuma destas aplicações ou seus códigos.`,
+        `Por exemplo: a maior aplicação que desenvolvi para Android servia para receber (via SMS) informações de
+          clima, cotação do dólar e ganhos diários da minha conta do AdSense e as exibia num <i>widget</i>. Este
+          aplicativo também filtrava essas mensagens para evitar as notificações e poluição do aplicativo de SMS
+          padrão.`,
+        `O lançamento da versão 4.4 (KitKat), no entanto,
+          <a href='https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html'>removeu</a>
+          a possibilidade de interceptar e bloquear mensagens SMS para aplicativos que não fossem definidos como
+          o padrão. Isto me levou a conhecer o
+          <a href='https://forum.xda-developers.com/xposed'><i>framework</i> Xposed</a>. Fiz um breve trabalho de
+          engenharia reversa no aplicativo padrão de SMS do Android e criei um módulo para Xposed que
+          interceptava métodos deste aplicativo para aplicar uma série de filtros que eram cadastráveis numa
+          interface. Este aplicativo me serviu pra me livrar de propagandas SMS irritantes por um longo tempo.`,
+        `Desde então, tenho acompanhado a evolução do Android mais como usuário que como desenvolvedor. Tenho
+          tido mais interesse em aprender <a href='https://facebook.github.io/react-native'>React Native</a> ou
+          <a href='https://flutter.dev'>Flutter</a> para desenvolvimento de aplicações <i>mobile</i>. Nunca tive
+          experiência profissional como desenvolvedor <i>mobile</i>, nativo ou não.`
       ],
       sql: [
-        "Minha experiência com bancos de dados relacionais é bastante prática. Meu conhecimento é suficiente para conseguir elaborar <i>queries</i> para cumprir objetivos complexos. Já utilizei bancos em <a href='https://www.mysql.com'>MySQL</a>, <a href='https://www.postgresql.org'>PostgreSQL</a> e <a href='https://www.microsoft.com/sql-server'>Microsoft SQL Server</a>. Conheço alguns conceitos por trás de um gerenciador de banco de dados, mas não profundamente o suficiente para fazer otimizações insanas. Não tenho muita experiência na utilização de algumas funcionalidades como <i>procedures</i> ou <i>triggers</i>.",
-        "Dada a importância do tópico e minhas lacunas em algumas áreas dele, com certeza pretendo o estudar mais."
+        `Minha experiência com bancos de dados relacionais é bastante prática. Meu conhecimento é suficiente para
+          conseguir elaborar <i>queries</i> para cumprir objetivos complexos. Já utilizei bancos em
+          <a href='https://www.mysql.com'>MySQL</a>, <a href='https://www.postgresql.org'>PostgreSQL</a> e
+          <a href='https://www.microsoft.com/sql-server'>Microsoft SQL Server</a>. Conheço alguns conceitos por
+          trás de um gerenciador de banco de dados, mas não profundamente o suficiente para fazer otimizações
+          insanas. Não tenho muita experiência na utilização de algumas funcionalidades como <i>procedures</i> ou
+          <i>triggers</i>.`,
+        `Dada a importância do tópico e minhas lacunas em algumas áreas dele, com certeza pretendo o estudar
+          mais.`
       ],
       git: [
-        "Git é praticamente um pré-requisito para ser desenvolvedor. Conheci o conceito de versionamento de código e aprendi a utilizar o Git no começo da minha carreira profissional. Já estudei e utilizei profissionalmente algumas estratégias de <i>branching</i> diferentes, todas elas variações do <a href='https://nvie.com/posts/a-successful-git-branching-model/'>Git Flow</a>.",
-        "Nos meus projetos, gosto de padronizar mensagens de <i>commit</i> de acordo com <a href='https://www.conventionalcommits.org'>Conventional Commits</a>. Você pode conferir isto no changelog desta página (que é gerado automaticamente)."
+        `Git é praticamente um pré-requisito para ser desenvolvedor. Conheci o conceito de versionamento de
+          código e aprendi a utilizar o Git no começo da minha carreira profissional. Já estudei e utilizei
+          profissionalmente algumas estratégias de <i>branching</i> diferentes, todas elas variações do
+          <a href='https://nvie.com/posts/a-successful-git-branching-model/'>Git Flow</a>.`,
+        `Nos meus projetos, gosto de padronizar mensagens de <i>commit</i> de acordo com
+          <a href='https://www.conventionalcommits.org'>Conventional Commits</a>. Você pode conferir isto no
+          changelog desta página (que é gerado automaticamente).`
       ],
       docker: [
-        "Docker é relativamente uma novidade para mim. Comecei a aprender e utilizar na metade de 2018. Conheço os conceitos e já implementei alguns <i>Dockerfiles</i>, mas não posso dizer que tenho uma grande vivência com ele.",
-        "Considero o domínio de Docker bastante importante, principalmente para facilitar e padronizar ambientes para <i>deployments</i>. Por esta razão, Docker é uma das áreas que pretendo me aprofundar num futuro próximo."
+        `Docker é relativamente uma novidade para mim. Comecei a aprender e utilizar na metade de 2018. Conheço
+          os conceitos e já implementei alguns <i>Dockerfiles</i>, mas não posso dizer que tenho uma grande
+          vivência com ele.`,
+        `Considero o domínio de Docker bastante importante, principalmente para facilitar e padronizar ambientes
+          para <i>deployments</i>. Por esta razão, Docker é uma das áreas que pretendo me aprofundar num futuro
+          próximo.`
       ],
       kubernetes: [
-        "Conheço os conceitos e reconheço a importância de Kubernetes para a escalabilidade e para o gerenciamento de plataformas baseadas em microsserviços. Nunca tive oportunidade de estudar o funcionamento interno do Kubernetes nem utilizá-lo. Por estas razões, o Kubernetes está na minha lista para estudos."
+        `Conheço os conceitos e reconheço a importância de Kubernetes para a escalabilidade e para o
+          gerenciamegnto de plataformas baseadas em microsserviços. Nunca tive oportunidade de estudar o
+          funcionamento interno do Kubernetes nem utilizá-lo. Por estas razões, o Kubernetes está na minha lista
+          para estudos.`
       ],
       kafka: [
-        "Tenho utilizado Kafka profissionalmente em projetos pontuais de integração entre sistemas desde a metade de 2018.",
-        "Conheço os conceitos e algumas <i>API</i>s, como por exemplo a <a href='https://kafka.apache.org/documentation.html#connect'>Connect API</a>, por ter criado o <a href='https://github.com/renato-bohler/kafka-connect-dota'>kafka-connect-dota</a>, um <i>source connector</i> para as partidas de <a href='http://dota2.com'>DotA 2</a> disponibilizadas na <a href='https://developer.valvesoftware.com/wiki/Steam_Web_API'><i>WebAPI</i> da Steam</a>. Conheço algumas soluções da <a href='https://www.confluent.io'>Confluent</a>, como o <a href='https://www.confluent.io/confluent-schema-registry'>Schema Registry</a> (por utilizar <a href='https://avro.apache.org'>Avro</a>) e <a href='https://www.confluent.io/product/ksql'>KSQL</a>.",
-        "Não sou nenhum especialista em Kafka, no entanto: tenho experiência em desenvolver - e não projetar - soluções com Kafka. Para isto, certamente eu precisaria dedicar mais tempo, principalmente em estudos de caso de uso."
+        `Tenho utilizado Kafka profissionalmente em projetos pontuais de integração entre sistemas desde a metade
+          de 2018.`,
+        `Conheço os conceitos e algumas <i>API</i>s, como por exemplo a
+          <a href='https://kafka.apache.org/documentation.html#connect'>Connect API</a>, por ter criado o
+          <a href='https://github.com/renato-bohler/kafka-connect-dota'>kafka-connect-dota</a>, um
+          <i>source connector</i> para as partidas de <a href='http://dota2.com'>DotA 2</a> disponibilizadas na
+          <a href='https://developer.valvesoftware.com/wiki/Steam_Web_API'><i>WebAPI</i> da Steam</a>. Conheço
+          algumas soluções da <a href='https://www.confluent.io'>Confluent</a>, como o
+          <a href='https://www.confluent.io/confluent-schema-registry'>Schema Registry</a> (por utilizar
+          <a href='https://avro.apache.org'>Avro</a>) e
+          <a href='https://www.confluent.io/product/ksql'>KSQL</a>.`,
+        `Não sou nenhum especialista em Kafka, no entanto: tenho experiência em desenvolver - e não projetar -
+          soluções com Kafka. Para isto, certamente eu precisaria dedicar mais tempo, principalmente em estudos
+          de caso de uso.`
       ],
       mqtt: [
-        "Utilizei MQTT para integrar dispositivos de aferições com aplicações em nuvem, exibindo ao usuário valores aferidos em tempo real."
+        `Utilizei MQTT para integrar dispositivos de aferições com aplicações em nuvem, exibindo ao usuário
+          valores aferidos em tempo real.`
       ],
       websockets: [
-        "WebSockets é simples de utilizar e eficiente. O utilizei para notificações e atualizações de dados assíncronas... e é isso."
+        `WebSockets é simples de utilizar e eficiente. O utilizei para notificações e atualizações de dados
+          assíncronas... e é isso.`
       ],
       regexp: [
-        "Expressões regulares são como um canivete suíço para quem é desenvolvedor. Podem ser extremamente úteis, mas é preciso saber usá-las - e nem sempre é fácil.",
-        "Minhas habilidades em expressões regulares me permitem realizar buscas um pouco mais específicas ou refatorar código mais eficientemente. Sei que expressões regulares são muito mais poderosas que isso, e por esta razão pretendo tomar um tempo para me aprofundar mais neste tópico."
+        `Expressões regulares são como um canivete suíço para quem é desenvolvedor. Podem ser extremamente úteis,
+          mas é preciso saber usá-las - e nem sempre é fácil.`,
+        `Minhas habilidades em expressões regulares me permitem realizar buscas um pouco mais específicas ou
+          refatorar código mais eficientemente. Sei que expressões regulares são muito mais poderosas que isso, e
+          por esta razão pretendo tomar um tempo para me aprofundar mais neste tópico.`
       ],
       nosql: [
-        "NoSQL é uma daquelas coisas que muita gente usa, então deve ser bom. Não tenho experiência nem conhecimento profundo de NoSQL, sei somente alguns conceitos básicos.",
-        "A possibilidade de aparecer uma oportunidade de utilizar NoSQL faz com que este seja um dos tópicos que pretendo estudar em breve."
+        `NoSQL é uma daquelas coisas que muita gente usa, então deve ser bom. Não tenho experiência nem
+          conhecimento profundo de NoSQL, sei somente alguns conceitos básicos.`,
+        `A possibilidade de aparecer uma oportunidade de utilizar NoSQL faz com que este seja um dos tópicos que
+          pretendo estudar em breve.`
       ],
       cicd: [
-        "Minha primeira oportunidade de aprender e aplicar práticas de integração contínua (CI) e implantação contínua (CD) foi no projeto <a href='https://renato-bohler.github.io/redux-form-input-masks'>redux-form-input-masks</a>.",
-        "Aprendi a automatizar todo o processo de entrega de uma versão utilizando <a href='https://semantic-release.gitbook.io/semantic-release'>semantic release</a> para determinar (com base nas mensagens de <i>commit</i>) qual a próxima versão a ser lançada, lançar a <i>tag</i> no projeto no GitHub, gerar o <i>changelog</i> e publicar a versão nova no npm. Tudo isso configurado para rodar no <a href='https://travis-ci.com'>Travis</a>, que também fazia o <i>build</i> e verificava a cobertura de testes (usando <a href='https://codecov.io'>codecov</a>).",
-        "A partir de então, para todo projeto que inicio (inclusive este), busco adotar estas práticas. Acredito fortemente que o tempo investido pra configuração destas ferramentas se pagam no decorrer de basicamente qualquer projeto."
+        `Minha primeira oportunidade de aprender e aplicar práticas de integração contínua (CI) e implantação
+          contínua (CD) foi no projeto
+          <a href='https://renato-bohler.github.io/redux-form-input-masks'>redux-form-input-masks</a>.`,
+        `Aprendi a automatizar todo o processo de entrega de uma versão utilizando
+          <a href='https://semantic-release.gitbook.io/semantic-release'>semantic release</a> para determinar
+          (com base nas mensagens de <i>commit</i>) qual a próxima versão a ser lançada, lançar a <i>tag</i> no
+          projeto no GitHub, gerar o <i>changelog</i> e publicar a versão nova no npm. Tudo isso configurado para
+          rodar no <a href='https://travis-ci.com'>Travis</a>, que também fazia o <i>build</i> e verificava a
+          cobertura de testes (usando <a href='https://codecov.io'>codecov</a>).`,
+        `A partir de então, para todo projeto que inicio (inclusive este), busco adotar estas práticas. Acredito
+          fortemente que o tempo investido pra configuração destas ferramentas se pagam no decorrer de
+          basicamente qualquer projeto.`
       ]
     },
     projects: {
