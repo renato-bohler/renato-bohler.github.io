@@ -1,3 +1,17 @@
+# [1.10.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.9.0...v1.10.0) (2019-04-06)
+
+
+### Bug Fixes
+
+* **Skills:** fixes last edited time ([f0f8ff1](https://github.com/renato-bohler/renato-bohler.github.io/commit/f0f8ff1))
+
+
+### Features
+
+* **Changelog:** initial component implementation ([448255e](https://github.com/renato-bohler/renato-bohler.github.io/commit/448255e))
+* **Version:** initial component implementation ([7146d63](https://github.com/renato-bohler/renato-bohler.github.io/commit/7146d63))
+* adds version and changelog ([374c556](https://github.com/renato-bohler/renato-bohler.github.io/commit/374c556))
+
 # [1.9.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.8.1...v1.9.0) (2019-04-04)
 
 
