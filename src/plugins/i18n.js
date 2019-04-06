@@ -287,6 +287,9 @@ const messages = {
     },
     content: {
       lastEdited: "Last edited"
+    },
+    action: {
+      close: "Close"
     }
   },
   "pt-BR": {
@@ -576,6 +579,9 @@ const messages = {
     },
     content: {
       lastEdited: "Última edição"
+    },
+    action: {
+      close: "Fechar"
     }
   }
 };

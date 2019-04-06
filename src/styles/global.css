@@ -34,3 +34,18 @@ span > .heart {
   -webkit-text-stroke: 1px var(--theme-primary-dark);
   font-style: normal;
 }
+
+section.changelog > h1 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 2.5em;
+}
+
+section.changelog > h3 {
+  font-family: "Major Mono Display", monospace;
+  font-size: 2em;
+  color: var(--theme-secondary-bright);
+}
+
+section.changelog a {
+  color: var(--theme-secondary-dark);
+}

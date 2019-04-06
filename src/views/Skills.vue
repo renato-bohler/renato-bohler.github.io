@@ -3,7 +3,7 @@
     id="skills"
     :title="$t('skills.title')"
     :last="last"
-    :lastEditedAt="new Date() - 60 * 1000"
+    :lastEditedAt="new Date('April 1, 2019 11:36:48')"
   >
     <p
       v-for="(paragraph, index) in $t('skills.introduction')"

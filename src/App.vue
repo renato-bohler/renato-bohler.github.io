@@ -10,12 +10,16 @@
       </div>
     </div>
     <Footer />
+    <Changelog :isOpen="changelogOpen" :close="toggleChangelog" />
+    <Version :onClick="toggleChangelog" />
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Changelog from "@/components/Changelog";
+import Version from "@/components/Version";
 import contents from "@/consts/contents";
 import { getRandomTheme } from "@/consts/themes";
 import { changeFavicon } from "@/utils/favicon";
@@ -31,11 +35,14 @@ changeFavicon(theme);
 export default {
   components: {
     Header,
-    Footer
+    Footer,
+    Changelog,
+    Version
   },
   data: () => ({
     contents,
-    fullscreen: true
+    fullscreen: true,
+    changelogOpen: false
   }),
   methods: {
     handleScroll() {
@@ -52,6 +59,9 @@ export default {
 
       body.overflow = "hidden";
       setTimeout(() => (body.overflow = "auto"), 300);
+    },
+    toggleChangelog() {
+      this.changelogOpen = !this.changelogOpen;
     }
   },
   mounted() {
