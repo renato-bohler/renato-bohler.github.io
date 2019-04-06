@@ -14,5 +14,6 @@ import "vue-awesome/icons/dice-five";
 import "vue-awesome/icons/dice-six";
 import "vue-awesome/icons/book";
 import "vue-awesome/icons/book-reader";
+import "vue-awesome/icons/times-circle";
 
 export default Icon;
