@@ -1,15 +1,16 @@
 <template>
   <div class="container" :style="cssVariables">
-    <div class="fullscreen-background" v-if="fullscreen" />
-    <div class="header" :class="fullscreen ? 'fullscreen' : 'shrinked'">
-      <div class="fullscreen-container" v-if="fullscreen">
+    <!-- <div class="fullscreen-background" v-if="fullscreen" /> -->
+    <!-- <div class="header" :class="fullscreen ? 'fullscreen' : 'shrinked'"> -->
+    <div class="header fullscreen">
+      <div class="fullscreen-container" v-if="this.isVisible">
         <Title />
-        <LanguageSelect :fullscreen="fullscreen" />
+        <LanguageSelect />
         <ScrollHint />
         <MenuFullscreen />
       </div>
 
-      <div class="shrinked-container" v-else>
+      <div class="shrinked-container" :class="this.isVisible ? '' : 'fixed'">
         <MenuShrinkedButton :open="this.open" :toggle="toggle" />
         <MenuShrinkedContent :open="this.open" :toggle="toggle" />
         <MenuShrinkedBorder />
@@ -30,7 +31,7 @@ import MenuShrinkedContent from "./Menu/Shrinked/MenuShrinkedContent";
 const SHRINKED_MENU_TRANSITION_DURATION_SECS = 0.5;
 
 export default {
-  props: ["fullscreen"],
+  props: ["position", "windowHeight"],
   components: {
     Title,
     LanguageSelect,
@@ -63,18 +64,18 @@ export default {
       }
     }
   },
-  watch: {
-    fullscreen(newValue, oldValue) {
-      if (!oldValue && newValue) {
-        this.open = false;
-      }
-    }
-  },
   computed: {
+    percentage() {
+      return this.position / this.windowHeight;
+    },
+    isVisible() {
+      return this.percentage <= 0.5;
+    },
     cssVariables() {
       return {
         "--menu-shrinked-content-transition-duration": `${SHRINKED_MENU_TRANSITION_DURATION_SECS}s`,
-        "--menu-shrinked-content-display": this.shrinkedMenuDisplay
+        "--menu-shrinked-content-display": this.shrinkedMenuDisplay,
+        top: `-${this.percentage * 200}%`
       };
     }
   }
@@ -85,6 +86,9 @@ export default {
 .container {
   font-family: "Major Mono Display", monospace !important;
   user-select: none;
+  position: fixed;
+  left: 0;
+  z-index: 200;
 }
 
 .header {
@@ -94,10 +98,7 @@ export default {
     var(--theme-secondary-dark)
   );
   background-size: 150% 150%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  width: 100vw;
 }
 
 .fullscreen {
@@ -145,6 +146,13 @@ export default {
   flex-direction: column;
   flex-grow: 1;
   background: rgba(0, 0, 0, 0.5);
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
 }
 
 @media screen and (max-width: 1023px), screen and (max-aspect-ratio: 4/3) {

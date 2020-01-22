@@ -1,6 +1,6 @@
 <template>
   <div class="app-container" :style="cssVariables">
-    <Header :fullscreen="fullscreen" />
+    <Header :position="position" :windowHeight="windowHeight" />
     <div class="app-content-container">
       <div v-for="(content, index) in contents" :key="content.id">
         <component
@@ -41,30 +41,23 @@ export default {
   },
   data: () => ({
     contents,
-    fullscreen: true,
+    position: 0,
     changelogOpen: false
   }),
   methods: {
     handleScroll() {
-      if (this.fullscreen) {
-        window.scroll(0, 1);
-        this.preventOverscrolling();
-      } else {
-        window.scroll(0, window.scrollY);
-      }
-      this.fullscreen = !window.scrollY;
+      this.position = window.scrollY;
     },
-    preventOverscrolling() {
-      const body = document.getElementsByTagName("body")[0].style;
-
-      body.overflow = "hidden";
-      setTimeout(() => (body.overflow = "auto"), 300);
+    handleResize() {
+      this.windowHeight = window.screen.availHeight;
     },
     toggleChangelog() {
       this.changelogOpen = !this.changelogOpen;
     }
   },
   mounted() {
+    this.windowHeight = window.screen.availHeight;
+    window.onresize = this.handleResize;
     window.onscroll = this.handleScroll;
   },
   computed: {
@@ -104,6 +97,6 @@ body {
 }
 
 .app-content-container {
-  padding-top: 200px;
+  padding-top: 800px;
 }
 </style>
