@@ -17,7 +17,6 @@ const MIN_KEYSTROKE_TIME = 50;
 const MAX_KEYSTROKE_VARIANCE = 70;
 
 export default {
-  props: ["fullscreen"],
   data: () => ({
     name: "",
     surname: "",
@@ -95,13 +94,6 @@ export default {
         this.writeTitle,
         Math.random() * MAX_KEYSTROKE_VARIANCE + MIN_KEYSTROKE_TIME
       );
-    }
-  },
-  watch: {
-    fullscreen(newValue, oldValue) {
-      if (!oldValue && newValue) {
-        this.initWriting();
-      }
     }
   },
   mounted() {
