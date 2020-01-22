@@ -1,3 +1,15 @@
+# [1.11.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.10.0...v1.11.0) (2020-01-22)
+
+
+### Bug Fixes
+
+* **Header:** header scroll fix, initial implementation ([01598aa](https://github.com/renato-bohler/renato-bohler.github.io/commit/01598aa))
+
+
+### Features
+
+* **Header:** implements header parallax effect ([a7fd489](https://github.com/renato-bohler/renato-bohler.github.io/commit/a7fd489))
+
 # [1.10.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.9.0...v1.10.0) (2019-04-06)
 
 
