@@ -6,7 +6,7 @@
 .scroll-hint {
   position: absolute;
   align-self: center;
-  bottom: 3vh;
+  bottom: 10vh;
   font-size: 3vmin;
   transition: 0.5s ease;
   animation: bounce 2s infinite, fade-in-bottom 0.5s ease 5s backwards;
@@ -15,7 +15,6 @@
 
 @media screen and (max-width: 767px) {
   .scroll-hint {
-    bottom: 10vh !important;
     font-size: 20vmin !important;
   }
 }

@@ -1,18 +1,19 @@
 <template>
-  <div class="container" :style="cssVariables">
-    <div class="fullscreen-background" v-if="fullscreen" />
-    <div class="header" :class="fullscreen ? 'fullscreen' : 'shrinked'">
-      <div class="fullscreen-container" v-if="fullscreen">
-        <Title />
-        <LanguageSelect :fullscreen="fullscreen" />
-        <ScrollHint />
-        <MenuFullscreen />
-      </div>
+  <div class="parallax" :style="parallax">
+    <div class="container" :style="cssVariables">
+      <div class="header">
+        <div class="fullscreen" v-if="this.isVisible">
+          <Title />
+          <LanguageSelect />
+          <ScrollHint />
+          <MenuFullscreen />
+        </div>
 
-      <div class="shrinked-container" v-else>
-        <MenuShrinkedButton :open="this.open" :toggle="toggle" />
-        <MenuShrinkedContent :open="this.open" :toggle="toggle" />
-        <MenuShrinkedBorder />
+        <div class="shrinked" :class="this.isVisible ? '' : 'fixed'">
+          <MenuShrinkedButton :open="this.open" :toggle="toggle" />
+          <MenuShrinkedContent :open="this.open" :toggle="toggle" />
+          <MenuShrinkedBorder />
+        </div>
       </div>
     </div>
   </div>
@@ -30,7 +31,7 @@ import MenuShrinkedContent from "./Menu/Shrinked/MenuShrinkedContent";
 const SHRINKED_MENU_TRANSITION_DURATION_SECS = 0.5;
 
 export default {
-  props: ["fullscreen"],
+  props: ["position", "windowHeight"],
   components: {
     Title,
     LanguageSelect,
@@ -63,14 +64,18 @@ export default {
       }
     }
   },
-  watch: {
-    fullscreen(newValue, oldValue) {
-      if (!oldValue && newValue) {
-        this.open = false;
-      }
-    }
-  },
   computed: {
+    percentage() {
+      return this.position / this.windowHeight;
+    },
+    isVisible() {
+      return this.percentage <= 0.5;
+    },
+    parallax() {
+      return {
+        top: `-${this.percentage * 200}%`
+      };
+    },
     cssVariables() {
       return {
         "--menu-shrinked-content-transition-duration": `${SHRINKED_MENU_TRANSITION_DURATION_SECS}s`,
@@ -82,6 +87,12 @@ export default {
 </script>
 
 <style scoped>
+.parallax {
+  position: fixed;
+  left: 0;
+  z-index: 200;
+}
+
 .container {
   font-family: "Major Mono Display", monospace !important;
   user-select: none;
@@ -94,17 +105,7 @@ export default {
     var(--theme-secondary-dark)
   );
   background-size: 150% 150%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.fullscreen {
-  animation: expand var(--menu-animation-duration) ease forwards,
-    var(--gradient-animation);
-  -webkit-animation: expand var(--menu-animation-duration) ease forwards,
-    var(--gradient-animation);
+  width: 100vw;
 }
 
 .shrinked {
@@ -118,7 +119,7 @@ export default {
     var(--gradient-animation);
 }
 
-.fullscreen-container {
+.fullscreen {
   z-index: 101;
   display: flex;
   flex-direction: column;
@@ -129,33 +130,30 @@ export default {
   box-sizing: border-box;
 }
 
-.fullscreen-background {
-  z-index: 99;
-  width: 100vw;
-  height: 100vh;
-  background: var(--theme-background);
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.shrinked-container {
+.shrinked {
   display: flex;
   align-self: flex-end;
   flex-direction: column;
   flex-grow: 1;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.95);
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
 }
 
 @media screen and (max-width: 1023px), screen and (max-aspect-ratio: 4/3) {
-  .fullscreen-container {
+  .fullscreen {
     align-items: center;
     padding: 15vmin 5vmin;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .fullscreen-container {
+  .fullscreen {
     align-items: center;
     padding: 15vmin 3vmin;
   }
