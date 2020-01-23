@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.11.0...v1.11.1) (2020-01-23)
+
+
+### Bug Fixes
+
+* adjusts content-header spacing ([4105f8c](https://github.com/renato-bohler/renato-bohler.github.io/commit/4105f8c))
+
 # [1.11.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.10.0...v1.11.0) (2020-01-22)
 
 
