@@ -97,6 +97,6 @@ body {
 }
 
 .app-content-container {
-  padding-top: 800px;
+  padding-top: calc(50vh + 200px);
 }
 </style>
