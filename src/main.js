@@ -16,7 +16,8 @@ Vue.use(Toasted, {
 });
 Vue.use(Tooltip);
 Vue.use(ScrollTo, {
-  offset: -100
+  offset: -100,
+  duration: 1000
 });
 Vue.use(Moment, { moment });
 

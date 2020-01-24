@@ -38,4 +38,10 @@ export default {
     display: none !important;
   }
 }
+
+@media screen and (max-width: 1023px), screen and (max-aspect-ratio: 4/3) {
+  .container {
+    padding-bottom: 10vh;
+  }
+}
 </style>

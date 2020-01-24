@@ -42,6 +42,7 @@ export default {
   data: () => ({
     contents,
     position: 0,
+    windowHeight: 1000,
     changelogOpen: false
   }),
   methods: {
