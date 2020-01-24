@@ -1,3 +1,11 @@
+## [1.11.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.11.1...v1.11.2) (2020-01-24)
+
+
+### Bug Fixes
+
+* **Header:** fixes scroll hint overlaying menu on some resolutions ([bcca7c6](https://github.com/renato-bohler/renato-bohler.github.io/commit/bcca7c6))
+* **Link:** adjusts scrolling duration ([295266f](https://github.com/renato-bohler/renato-bohler.github.io/commit/295266f))
+
 ## [1.11.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.11.0...v1.11.1) (2020-01-23)
 
 
