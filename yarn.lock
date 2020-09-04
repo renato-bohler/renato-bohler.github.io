@@ -6332,9 +6332,9 @@ moment-locales-webpack-plugin@^1.0.7:
   dependencies:
     lodash.difference "^4.5.0"
 
-moment@^2.11.1, moment@^2.24.0:
-  version "2.24.0"
-  resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
+moment@^2.19.2, moment@^2.24.0:
+  version "2.27.0"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.27.0.tgz#8bff4e3e26a236220dfe3e36de756b6ebaa0105d"
 
 move-concurrently@^1.0.1:
   version "1.0.1"
@@ -9752,11 +9752,11 @@ vue-md-loader@^1.1.0:
     loader-utils "^1.1.0"
     markdown-it "^8.4.0"
 
-vue-moment@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/vue-moment/-/vue-moment-4.0.0.tgz#20809d1e7d7fca63d556fb8d008b95993d32f5ea"
+vue-moment@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/vue-moment/-/vue-moment-4.1.0.tgz#092a8ff723a96c6f85a0a8e23ad30f0bf320f3b0"
   dependencies:
-    moment "^2.11.1"
+    moment "^2.19.2"
 
 vue-resize@^0.4.3:
   version "0.4.5"
