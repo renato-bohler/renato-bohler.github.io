@@ -15,7 +15,7 @@
     "vue-awesome": "^3.4.0",
     "vue-clickaway": "^2.2.2",
     "vue-i18n": "^8.7.0",
-    "vue-moment": "^4.0.0",
+    "vue-moment": "^4.1.0",
     "vue-scrollto": "^2.13.0",
     "vue-toasted": "^1.1.26"
   },
