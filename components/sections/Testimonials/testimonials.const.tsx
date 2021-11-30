@@ -154,6 +154,26 @@ const testimonials = [
   },
   {
     quote: (
+      <>
+        <p>
+          Renato is an <strong>easy to talk</strong> person. We were{' '}
+          <strong>blown away</strong> by his knowledge depth.
+        </p>
+        <p>
+          Having Renato in your team is an opportunity, this is a very
+          hard candidate to come by.
+        </p>
+      </>
+    ),
+    author: {
+      name: "Renato's G2i Profile",
+      picture:
+        'https://global-uploads.webflow.com/5f64c4e9139e4648fc773aed/5f734682ef5e2597199a20b1_G2i%20Logo-1.svg',
+      role: '',
+    },
+  },
+  {
+    quote: (
       <p>
         Renato is the <strong>best</strong> developer I know 🤣
       </p>
@@ -162,7 +182,7 @@ const testimonials = [
       name: 'Maynara Böhler',
       picture:
         'https://media-exp1.licdn.com/dms/image/C4D03AQE6D8thF4eCEw/profile-displayphoto-shrink_100_100/0/1625004609375?e=1643241600&v=beta&t=UKEfHAyCeQRBSlqqQsZkgxp4eLQXzA3iosenwKOjLA0',
-      role: 'Wife',
+      role: 'Wife (100% not biased)',
     },
   },
 ];
