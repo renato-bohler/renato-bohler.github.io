@@ -1,0 +1,142 @@
+.card {
+  box-shadow: var(--theme-shadow) 0px 4px 12px;
+  border-radius: 8px;
+
+  transition: 500ms;
+  transition-delay: 100ms;
+}
+
+.tilt {
+  height: 150px;
+}
+
+.large {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+.large > .tilt {
+  height: 450px;
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.button {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100%;
+  width: 100%;
+
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+
+  cursor: pointer;
+}
+
+.name {
+  margin: 0;
+  padding: 8px 16px 2px 0;
+  text-align: right;
+  font-size: 1.2em;
+  font-weight: normal;
+  width: 100%;
+}
+
+.image {
+  position: absolute;
+  transform: translate(20%, -25%);
+
+  width: 40px;
+}
+
+.image > svg {
+  paint-order: stroke;
+}
+
+.large .image {
+  width: 80px;
+}
+
+.teaser {
+  width: 100%;
+  min-height: 200px;
+  padding: 32px 16px;
+  text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: linear-gradient(
+    176deg,
+    transparent 0%,
+    transparent 10%,
+    var(--theme-background) 10.1%,
+    var(--theme-background) 89.9%,
+    transparent 90%,
+    transparent 100%
+  );
+  color: var(--theme-text);
+  opacity: 90%;
+}
+
+.info {
+  padding: 4px;
+  width: 100%;
+}
+
+.info > .wave-divider {
+  display: block;
+}
+
+.info > .content-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  padding: 16px 8px 8px 8px;
+
+  width: 100%;
+  height: 60px;
+
+  font-weight: bold;
+  color: var(--theme-text);
+
+  background: var(--theme-background-opaque);
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.content-wrapper > .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  font-size: 0.9em;
+  height: 100%;
+}
+
+.large .content-wrapper > .content {
+  font-size: 1.15em;
+}
+
+.content > .content-title {
+  font-family: Major Mono Display, monospace;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+.content-wrapper > .divider {
+  border-right: 1px solid var(--theme-text);
+  height: 100%;
+  opacity: 15%;
+  margin: 0 4px;
+}
