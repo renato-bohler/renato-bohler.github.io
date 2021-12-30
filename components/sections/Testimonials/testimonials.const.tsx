@@ -17,8 +17,7 @@ const testimonials = [
     ),
     author: {
       name: 'Dione Betanin',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4E03AQFr-Sb2Bs294g/profile-displayphoto-shrink_100_100/0/1627231266917?e=1643241600&v=beta&t=G673GXH7hne1DA8MFLx8Z2rDeZA7t1Oejm2qeBOTT-k',
+      picture: '/images/testimonials/dione-betanin.webp',
       role: 'Software Engineer',
     },
   },
@@ -33,8 +32,7 @@ const testimonials = [
     ),
     author: {
       name: 'Gustavo Bigardi',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQGbVYmm0wyfOw/profile-displayphoto-shrink_100_100/0/1580839835590?e=1638403200&v=beta&t=S37uUOCeqyboepPOsc5rrBBvB164Qn9Sw00xYwq_Ozs',
+      picture: '/images/testimonials/gustavo-bigardi.webp',
       role: 'Backend Engineer',
     },
   },
@@ -50,8 +48,7 @@ const testimonials = [
     ),
     author: {
       name: 'Rafael de Paula',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQGWBFez2tfHCw/profile-displayphoto-shrink_100_100/0/1598541607741?e=1643241600&v=beta&t=lyLZ0kYES0AH7o_NCj31H5C1qI2x08nhNHMkpTn-OAg',
+      picture: '/images/testimonials/rafael-paula.webp',
       role: 'Backend Engineer',
     },
   },
@@ -73,8 +70,7 @@ const testimonials = [
     ),
     author: {
       name: 'Luiz Eduardo Oku',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQGtRpIheCSFDQ/profile-displayphoto-shrink_100_100/0/1601225400366?e=1643241600&v=beta&t=8D6wB3Uw5bUwlgyt8AgnvOjl04pLgjUuj1yPv5ytE7s',
+      picture: '/images/testimonials/luiz-oku.webp',
       role: 'Frontend Engineer',
     },
   },
@@ -96,8 +92,7 @@ const testimonials = [
     ),
     author: {
       name: 'Daniela Jagher',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQF_wppTSLR3BA/profile-displayphoto-shrink_100_100/0/1623177434518?e=1643241600&v=beta&t=Io47ocNU_mWnJHHmzoTxttElZqwz_MrK0MI5-f0GyJg',
+      picture: '/images/testimonials/daniela-jagher.webp',
       role: 'UI/UX Designer',
     },
   },
@@ -118,8 +113,7 @@ const testimonials = [
     ),
     author: {
       name: 'Rodrigo Diego',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4E03AQGzCqKhVjS0tw/profile-displayphoto-shrink_100_100/0/1598981460468?e=1643241600&v=beta&t=BCLJ7rxIr1rCg7pcE_E4vcM5HPHVd6Esjb_smONyAeQ',
+      picture: '/images/testimonials/rodrigo-diego.webp',
       role: 'Head of UX',
     },
   },
@@ -131,8 +125,7 @@ const testimonials = [
     ),
     author: {
       name: 'Olivia Hendrick',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4E03AQGs-Hixpbr_og/profile-displayphoto-shrink_100_100/0/1532033156782?e=1643241600&v=beta&t=7bRRC1Nkl1y8xOVILcDJMxdt4BShIXNYV5gvChfE2zg',
+      picture: '/images/testimonials/olivia-hendrick.webp',
       role: 'UX Designer',
     },
   },
@@ -147,8 +140,7 @@ const testimonials = [
     ),
     author: {
       name: 'Ema Casas',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4E03AQFdm6lDXsQfwA/profile-displayphoto-shrink_100_100/0/1617201077114?e=1643241600&v=beta&t=iMp9Ed3m_d514yWqkFACY-kmynI9R00u-AyEjjaFK-4',
+      picture: '/images/testimonials/ema-casas.webp',
       role: 'Product Owner',
     },
   },
@@ -167,22 +159,8 @@ const testimonials = [
     ),
     author: {
       name: "Renato's G2i Profile",
-      picture:
-        'https://global-uploads.webflow.com/5f64c4e9139e4648fc773aed/5f734682ef5e2597199a20b1_G2i%20Logo-1.svg',
+      picture: '/images/testimonials/g2i.svg',
       role: '',
-    },
-  },
-  {
-    quote: (
-      <p>
-        Renato is the <strong>best</strong> developer I know 🤣
-      </p>
-    ),
-    author: {
-      name: 'Maynara Böhler',
-      picture:
-        'https://media-exp1.licdn.com/dms/image/C4D03AQE6D8thF4eCEw/profile-displayphoto-shrink_100_100/0/1625004609375?e=1643241600&v=beta&t=UKEfHAyCeQRBSlqqQsZkgxp4eLQXzA3iosenwKOjLA0',
-      role: 'Wife (100% not biased)',
     },
   },
 ];

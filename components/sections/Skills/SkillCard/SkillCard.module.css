@@ -1,5 +1,5 @@
 .card {
-  box-shadow: var(--theme-shadow) 0px 4px 12px;
+  box-shadow: var(--theme-shadow) 5px 5px 20px;
   border-radius: 8px;
 
   transition: 500ms;
