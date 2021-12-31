@@ -1,18 +1,13 @@
-import { RefObject, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
-import { Tabbable } from 'reakit/Tabbable';
 
 import SkillCard from './SkillCard/SkillCard';
 import SkillRadar from './SkillRadar/SkillRadar';
 import skills from './skills.const';
 import styles from './Skills.module.css';
 
-type Props = {
-  firstRef: RefObject<HTMLHeadingElement>;
-};
-
-const Skills: React.VFC<Props> = ({ firstRef }) => {
+const Skills: React.VFC = () => {
   const [header, setHeader] = useState('');
 
   const [ref1, inView1] = useInView({ threshold: 1 });
@@ -39,14 +34,9 @@ const Skills: React.VFC<Props> = ({ firstRef }) => {
   return (
     <section className={styles.section}>
       <div className={styles.scroll}>
-        <Tabbable
-          as="h2"
-          className={styles.title}
-          aria-label="Skills"
-          ref={firstRef}
-        >
+        <h2 className={styles.title} aria-label="Skills">
           {header}
-        </Tabbable>
+        </h2>
 
         {refs.map((ref, index) => (
           <div
@@ -59,6 +49,8 @@ const Skills: React.VFC<Props> = ({ firstRef }) => {
           ></div>
         ))}
       </div>
+
+      <div id="skills" className={styles.anchor} aria-hidden />
 
       <SkillRadar />
 

@@ -1,3 +1,7 @@
+.anchor {
+  transform: translateY(-160px);
+}
+
 .section {
   display: flex;
   flex-direction: column;
@@ -33,7 +37,6 @@
   top: 50%;
   transform: translateY(-50%);
   margin: 0;
-  z-index: 1;
 }
 
 .title:after {
