@@ -154,3 +154,15 @@
     transform: translateX(50vw);
   }
 }
+
+@media screen and (max-width: 750px) {
+  .picture > .greeting {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .picture > .greeting {
+    font-size: 1.25em;
+  }
+}

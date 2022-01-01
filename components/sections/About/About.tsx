@@ -31,7 +31,7 @@ const About: React.VFC = () => {
           className={styles.picture}
           {...(pictureInView ? { 'data-enter': '' } : {})}
         >
-          <h2 className={styles.greeting}>Hello world!</h2>
+          <h2 className={styles.greeting}>Hello, world!</h2>
           <Tilt className={styles.tilt}>
             <img
               src="/images/me.webp"
