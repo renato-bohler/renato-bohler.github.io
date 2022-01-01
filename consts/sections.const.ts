@@ -3,6 +3,8 @@ import Header from '~/components/sections/Header/Header';
 import Skills from '~/components/sections/Skills/Skills';
 import Testimonials from '~/components/sections/Testimonials/Testimonials';
 
+const TITLE = 'Renato Böhler';
+
 export type SectionName = typeof SECTIONS[number]['name'];
 
 export type Section = {
@@ -16,25 +18,25 @@ export const SECTIONS = [
   {
     name: 'header',
     anchor: ' ',
-    title: 'Renato Böhler',
+    title: TITLE,
     Component: Header,
   },
   {
     name: 'about',
     anchor: '#about',
-    title: 'About / Renato Böhler',
+    title: `About / ${TITLE}`,
     Component: About,
   },
   {
     name: 'testimonials',
     anchor: '#testimonials',
-    title: 'Testimonials / Renato Böhler',
+    title: `Testimonials / ${TITLE}`,
     Component: Testimonials,
   },
   {
     name: 'skills',
     anchor: '#skills',
-    title: 'Skills / Renato Böhler',
+    title: `Skills / ${TITLE}`,
     Component: Skills,
   },
 ] as const;

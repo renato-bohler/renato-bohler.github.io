@@ -6,6 +6,7 @@ const light = {
   'card-border': '#d3d3d3',
   'card-text': '#292e31',
   shadow: 'rgba(0, 0, 0, 0.2)',
+  'table-cell-background': 'rgba(0, 0, 0, 0.02)',
 };
 
 const dark = {
@@ -16,6 +17,7 @@ const dark = {
   'card-border': '#3e3e3e',
   'card-text': '#f3f3f3',
   shadow: 'rgba(100, 100, 100, 0.2)',
+  'table-cell-background': 'rgba(255, 255, 255, 0.02)',
 };
 
 const themes = [

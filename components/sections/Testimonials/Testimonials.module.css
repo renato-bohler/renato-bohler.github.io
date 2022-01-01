@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .anchor {
   transform: translateY(-80px);
 }
@@ -7,6 +11,7 @@
   width: 100%;
   height: 8vw;
   transform: translateY(5px);
+  z-index: 1;
 }
 
 .divider-bottom {
