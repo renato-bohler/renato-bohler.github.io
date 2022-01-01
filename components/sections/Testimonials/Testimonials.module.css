@@ -45,14 +45,24 @@
   max-width: calc(80vw - 200px);
 }
 
-.swiper > :global(.swiper-button-prev) {
-  left: -100px;
+.navigation-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  background: none;
+
+  font-size: 64px;
   color: white;
 }
 
-.swiper > :global(.swiper-button-next) {
-  right: -100px;
-  color: white;
+.navigation-button.previous-button {
+  left: -125px;
+}
+
+.navigation-button.next-button {
+  right: -125px;
 }
 
 .swiper :global(.swiper-slide) {
@@ -70,11 +80,7 @@
     max-width: 80vw;
   }
 
-  .swiper > :global(.swiper-button-prev) {
-    display: none;
-  }
-
-  .swiper > :global(.swiper-button-next) {
+  .navigation-button {
     display: none;
   }
 }

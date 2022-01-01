@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
 import classNames from 'classnames';
-import { Tabbable } from 'reakit/Tabbable';
-import SwipeCore, {
+import { Button } from 'reakit/Button';
+import {
+  A11y,
   Autoplay,
   Controller,
   EffectCards,
@@ -10,27 +11,26 @@ import SwipeCore, {
 } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import Icon from '~/components/Icon/Icon';
+
 import TestimonialCard from './TestimonialCard/TestimonialCard';
 import testimonials from './testimonials.const';
 import styles from './Testimonials.module.css';
 
 import 'swiper/css';
-import 'swiper/css/effect-cards';
-import 'swiper/css/navigation';
+import 'swiper/css/a11y';
 import 'swiper/css/autoplay';
 import 'swiper/css/controller';
+import 'swiper/css/effect-cards';
+import 'swiper/css/navigation';
 
 const Testimonials: React.VFC = () => {
-  const [swiper, setSwiper] = useState<SwipeCore>();
-
-  const handleCardFocus = (index: number) => {
-    swiper?.slideTo(index);
-    swiper?.autoplay.stop();
-  };
-
-  const handleCardBlur = () => {
-    swiper?.autoplay.start();
-  };
+  const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(
+    null,
+  );
+  const [nextEl, setNextEl] = useState<HTMLButtonElement | null>(
+    null,
+  );
 
   return (
     <>
@@ -53,35 +53,61 @@ const Testimonials: React.VFC = () => {
         </h2>
 
         <Swiper
-          modules={[Autoplay, Controller, EffectCards, Navigation]}
+          modules={[
+            A11y,
+            Autoplay,
+            Controller,
+            EffectCards,
+            Navigation,
+          ]}
           effect="cards"
           autoplay={{
             delay: 8000,
-            disableOnInteraction: false,
           }}
-          navigation
+          navigation={{ prevEl, nextEl }}
           grabCursor
           loop
-          onSwiper={setSwiper}
           className={styles.swiper}
+          a11y={{
+            enabled: true,
+            containerMessage: 'Testimonials carousel',
+            containerRoleDescriptionMessage: 'carousel',
+            itemRoleDescriptionMessage: 'slide',
+          }}
         >
-          {testimonials.map((testimonial, index) => (
+          <Button
+            aria-label="Previous testimonial"
+            className={classNames(
+              styles['navigation-button'],
+              styles['previous-button'],
+            )}
+            ref={setPrevEl}
+          >
+            <Icon name="chevron-small-left" animationDelay={2000} />
+          </Button>
+
+          {testimonials.map((testimonial) => (
             <SwiperSlide key={testimonial.author.name}>
-              {/* TODO: cards shoudln't be tabbable */}
-              <Tabbable
-                onFocus={() => handleCardFocus(index + 1)}
-                onBlur={handleCardBlur}
+              <TestimonialCard
+                authorName={testimonial.author.name}
+                authorPicture={testimonial.author.picture}
+                authorRole={testimonial.author.role}
               >
-                <TestimonialCard
-                  authorName={testimonial.author.name}
-                  authorPicture={testimonial.author.picture}
-                  authorRole={testimonial.author.role}
-                >
-                  {testimonial.quote}
-                </TestimonialCard>
-              </Tabbable>
+                {testimonial.quote}
+              </TestimonialCard>
             </SwiperSlide>
           ))}
+
+          <Button
+            aria-label="Next testimonial"
+            className={classNames(
+              styles['navigation-button'],
+              styles['next-button'],
+            )}
+            ref={setNextEl}
+          >
+            <Icon name="chevron-small-right" animationDelay={2500} />
+          </Button>
         </Swiper>
       </section>
 
