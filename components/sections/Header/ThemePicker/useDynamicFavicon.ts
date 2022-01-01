@@ -7,7 +7,8 @@ const FONT_SIZE = 256 * 1.4375;
 const BLANK =
   'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
 
-const useDynamicFavicon = (theme: Theme): void => {
+const useDynamicFavicon = (theme: Theme): string => {
+  const [favicon, setFavicon] = useState('/favicon.ico');
   const [canvas, setCanvas] = useState<HTMLCanvasElement>();
 
   useEffect(() => {
@@ -21,8 +22,13 @@ const useDynamicFavicon = (theme: Theme): void => {
 
     const image = new Image();
     image.src = BLANK;
-    image.onload = () => drawFavicon(canvas, image, theme);
+    image.onload = async () => {
+      const newFavicon = await drawFavicon(canvas, image, theme);
+      if (newFavicon) setFavicon(newFavicon);
+    };
   }, [theme, canvas]);
+
+  return favicon;
 };
 
 const drawFavicon = async (
@@ -76,7 +82,7 @@ const drawFavicon = async (
     (29.6 * FONT_SIZE) / 100,
   );
 
-  favicon.href = canvas.toDataURL('image/x-icon');
+  return canvas.toDataURL('image/x-icon');
 };
 
 export default useDynamicFavicon;
