@@ -139,6 +139,10 @@
     text-align: center;
   }
 
+  .picture[data-enter] > .greeting {
+    transform: translateX(0);
+  }
+
   .picture > .tilt {
     margin: 0 auto;
   }
