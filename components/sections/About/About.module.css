@@ -58,7 +58,12 @@
 }
 
 .picture[data-enter] > .greeting {
-  transform: translateX(0);
+  transform: translateX(0.75em);
+}
+
+.picture > .greeting:after {
+  content: '_';
+  animation: blink ease 1s infinite;
 }
 
 .content {
@@ -164,5 +169,14 @@
 @media screen and (max-width: 550px) {
   .picture > .greeting {
     font-size: 1.25em;
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

@@ -6,7 +6,7 @@ import Icon from '~/components/Icon/Icon';
 
 import styles from './Header.module.css';
 import ThemePicker from './ThemePicker/ThemePicker';
-import useTypingEffect from './useTypingEffect';
+import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
 
 const Header: React.VFC = () => {
@@ -20,13 +20,9 @@ const Header: React.VFC = () => {
     subtitle,
     isNameTypingComplete,
     isLastNameTypingComplete,
-  } = useTypingEffect({
+  } = useHeaderTypingEffect({
     firstName: 'renato',
     lastName: 'Böhler',
-    startDelayMs: 1000,
-    changeSubtitleDelayMs: 3000,
-    keyStrokeMinTimeMs: 50,
-    keyStrokeMaxVarianceMs: 70,
     subtitles: [
       'react developer',
       'frontend developer',

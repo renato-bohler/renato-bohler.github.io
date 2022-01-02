@@ -2,6 +2,8 @@ import { useInView } from 'react-intersection-observer';
 import Tilt from 'react-parallax-tilt';
 import { useMediaQuery } from 'react-responsive';
 
+import useTypingEffect from '~/hooks/useTypingEffect';
+
 import styles from './About.module.css';
 
 const age = Math.floor(
@@ -21,6 +23,11 @@ const About: React.VFC = () => {
     triggerOnce: true,
   });
 
+  const greeting = useTypingEffect({
+    targetText: pictureInView ? 'hello, world!' : '',
+    startDelayMs: 2000,
+  });
+
   return (
     <section
       className={styles.scroll}
@@ -31,7 +38,9 @@ const About: React.VFC = () => {
           className={styles.picture}
           {...(pictureInView ? { 'data-enter': '' } : {})}
         >
-          <h2 className={styles.greeting}>Hello, world!</h2>
+          <h2 className={styles.greeting} aria-label="Hello, world!">
+            {`>${greeting}`}
+          </h2>
           <Tilt className={styles.tilt}>
             <img
               src="/images/me.webp"
