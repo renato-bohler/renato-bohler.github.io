@@ -26,11 +26,11 @@
 
 /* Flip */
 .flip {
-  perspective: 2500px;
+  perspective: 10000px;
   height: 600px;
   width: 800px;
-  max-width: 100vw;
-  overflow: auto none;
+  max-width: 80vw;
+  overflow: auto hidden;
 }
 
 .flipper {
