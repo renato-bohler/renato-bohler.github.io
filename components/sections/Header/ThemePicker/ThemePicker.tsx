@@ -2,6 +2,7 @@ import { memo, useState } from 'react';
 
 import Head from 'next/head';
 
+import { useMediaQuery } from 'react-responsive';
 import { Button } from 'reakit/Button';
 import {
   usePopoverState,
@@ -19,8 +20,11 @@ import usePreferredColorScheme from './usePreferredColorScheme';
 import useTheme from './useTheme';
 
 const ThemePicker: React.FC = () => {
+  const isMobile = useMediaQuery({
+    query: '(max-width: 550px)',
+  });
   const popover = usePopoverState({
-    placement: 'right-start',
+    placement: isMobile ? 'bottom-start' : 'right-start',
     animated: 500,
   });
   const [isDarkMode, setDarkMode] = useState(false);
