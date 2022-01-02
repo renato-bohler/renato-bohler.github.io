@@ -213,3 +213,11 @@
     margin-bottom: 20px;
   }
 }
+
+@supports not (
+  (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+) {
+  .navigation-header[data-folded] {
+    background: var(--theme-menu-background);
+  }
+}

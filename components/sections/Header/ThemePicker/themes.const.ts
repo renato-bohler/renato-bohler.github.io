@@ -1,6 +1,7 @@
 const light = {
   background: '#f8f9fa',
   'background-opaque': 'rgba(255, 255, 255, 0.5)',
+  'menu-background': 'rgba(255, 255, 255, 0.75)',
   text: '#292e31',
   'card-background': '#f8f9fa',
   'card-border': '#d3d3d3',
@@ -12,6 +13,7 @@ const light = {
 const dark = {
   background: '#0e141b',
   'background-opaque': 'rgba(0, 0, 0, 0.2)',
+  'menu-background': 'rgba(0, 0, 0, 0.75)',
   text: '#ffffff',
   'card-background': '#282828',
   'card-border': '#3e3e3e',
