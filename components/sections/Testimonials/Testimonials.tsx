@@ -71,7 +71,6 @@ const Testimonials: React.VFC = () => {
           a11y={{
             enabled: true,
             containerMessage: 'Testimonials carousel',
-            containerRoleDescriptionMessage: 'carousel',
             itemRoleDescriptionMessage: 'slide',
           }}
         >
