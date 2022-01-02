@@ -44,7 +44,6 @@ const useTypingEffect = ({
     if (currentText === targetText) return;
 
     const timeout = setTimeout(() => {
-      console.log(targetText.slice(0, currentText.length + 1));
       setCurrentText(targetText.slice(0, currentText.length + 1));
     }, keyStrokeMinTimeMs + Math.random() * keyStrokeMaxVarianceMs);
 
