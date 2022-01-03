@@ -12,6 +12,7 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Icon from '~/components/Icon/Icon';
+import useTheme from '~/hooks/useTheme';
 
 import TestimonialCard from './TestimonialCard/TestimonialCard';
 import testimonials from './testimonials.const';
@@ -25,6 +26,8 @@ import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 
 const Testimonials: React.VFC = () => {
+  const { isContrastMode, isDarkMode } = useTheme();
+
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(
     null,
   );
@@ -48,7 +51,11 @@ const Testimonials: React.VFC = () => {
       </svg>
 
       <section className={styles.section}>
-        <h2 className={styles.title}>
+        <h2
+          className={classNames(styles.title, {
+            [styles.contrast]: isContrastMode && isDarkMode,
+          })}
+        >
           What my colleagues have to say about me?
         </h2>
 
@@ -79,6 +86,7 @@ const Testimonials: React.VFC = () => {
             className={classNames(
               styles['navigation-button'],
               styles['previous-button'],
+              { [styles.contrast]: isContrastMode && isDarkMode },
             )}
             ref={setPrevEl}
           >
@@ -102,6 +110,7 @@ const Testimonials: React.VFC = () => {
             className={classNames(
               styles['navigation-button'],
               styles['next-button'],
+              { [styles.contrast]: isContrastMode && isDarkMode },
             )}
             ref={setNextEl}
           >

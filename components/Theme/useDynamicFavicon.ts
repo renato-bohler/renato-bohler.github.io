@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Theme } from './themes.const';
+import { Theme } from '../../consts/themes.const';
 
 const FAVICON_DIMENSION = 256;
 const FONT_SIZE = 256 * 1.4375;

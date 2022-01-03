@@ -65,13 +65,13 @@
 
 .line {
   stroke: var(--theme-text);
-  opacity: 50%;
+  opacity: calc(0.5 * (1 + var(--theme-is-contrast)));
   stroke-dasharray: 3px;
 }
 
 .data {
   fill: var(--theme-secondary-dark);
-  fill-opacity: 25%;
+  fill-opacity: calc(0.25 + 0.5 * var(--theme-is-contrast));
 
   stroke: var(--theme-primary-bright);
   stroke-width: 2px;
@@ -80,6 +80,7 @@
 .feedback {
   stroke-width: 2px;
   fill-opacity: 50%;
+  fill-opacity: calc(0.5 + 0.3 * var(--theme-is-contrast));
 }
 
 .data:hover,

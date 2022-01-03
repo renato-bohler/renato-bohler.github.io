@@ -2,14 +2,18 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
+import useTheme from '~/hooks/useTheme';
+
 import SkillCard from './SkillCard/SkillCard';
 import SkillFeedbacks from './SkillFeedbacks/SkillFeedbacks';
-import skills from './skills.const';
+import skills, { getColors } from './skills.const';
 import styles from './Skills.module.css';
 
 const HEADER = '>skills';
 
 const Skills: React.VFC = () => {
+  const { isContrastMode } = useTheme();
+
   const [header, setHeader] = useState('');
 
   const [ref1, inView1] = useInView({ threshold: 1 });
@@ -87,21 +91,25 @@ const Skills: React.VFC = () => {
         <SkillFeedbacks />
 
         <div className={styles.grid}>
-          {skills.map((skill) => (
-            <SkillCard
-              key={skill.name}
-              name={skill.name}
-              icon={skill?.icon?.()}
-              favorite={skill.favorite}
-              color={skill.color}
-              textColor={skill.textColor}
-              usageLevel={skill.usageLevel}
-              yearsExperience={skill.yearsExperience}
-              studying={skill.studying}
-              description={skill.description}
-              teaser={skill.teaser}
-            />
-          ))}
+          {skills.map((skill) => {
+            const colors = getColors(skill, isContrastMode);
+
+            return (
+              <SkillCard
+                key={skill.name}
+                name={skill.name}
+                icon={skill?.icon?.(isContrastMode)}
+                favorite={skill.favorite}
+                backgroundColor={colors.background}
+                textColor={colors.text}
+                usageLevel={skill.usageLevel}
+                yearsExperience={skill.yearsExperience}
+                studying={skill.studying}
+                description={skill.description}
+                teaser={skill.teaser}
+              />
+            );
+          })}
         </div>
       </section>
     </div>

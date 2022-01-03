@@ -6,6 +6,7 @@ import Tilt from 'react-parallax-tilt';
 import { Button } from 'reakit/Button';
 
 import Icon from '~/components/Icon/Icon';
+import useTheme from '~/hooks/useTheme';
 
 import styles from './SkillCard.module.css';
 
@@ -15,7 +16,7 @@ type Props = {
   teaser?: React.ReactElement;
   icon: React.ReactNode;
   favorite: boolean;
-  color: string;
+  backgroundColor: string;
   textColor: string;
   usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
   yearsExperience?: number;
@@ -67,12 +68,14 @@ const SkillCard: React.VFC<Props> = ({
   teaser,
   icon,
   favorite,
-  color,
+  backgroundColor,
   textColor,
   usageLevel,
   yearsExperience,
   studying,
 }) => {
+  const { isContrastMode } = useTheme();
+
   const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
@@ -85,7 +88,6 @@ const SkillCard: React.VFC<Props> = ({
   const usage = USAGE[usageLevel];
 
   // TODO: dialogs
-  // TODO: adjust colors for contrast (a11y) - lighthouse
 
   return (
     <div
@@ -93,9 +95,10 @@ const SkillCard: React.VFC<Props> = ({
       className={classNames(styles.card, {
         [styles.large]: favorite,
         [styles.hidden]: !inView,
+        [styles.border]: isContrastMode,
       })}
       style={{
-        background: color,
+        background: backgroundColor,
       }}
     >
       <Tilt
@@ -112,20 +115,29 @@ const SkillCard: React.VFC<Props> = ({
           <span className={styles.name}>{name}</span>
 
           {favorite && teaser && (
-            <div className={styles.teaser}>{teaser}</div>
+            <div
+              className={classNames(styles.teaser, {
+                [styles.contrast]: isContrastMode,
+              })}
+            >
+              {teaser}
+            </div>
           )}
 
           <div className={styles.info}>
             <svg
               viewBox="0 0 1440 320"
-              className={styles['wave-divider']}
+              className={classNames(styles['wave-divider'], {
+                [styles.contrast]: isContrastMode,
+              })}
             >
-              <path
-                fill="var(--theme-background-opaque)"
-                d={wavePath}
-              ></path>
+              <path d={wavePath}></path>
             </svg>
-            <div className={styles['content-wrapper']}>
+            <div
+              className={classNames(styles['content-wrapper'], {
+                [styles.contrast]: isContrastMode,
+              })}
+            >
               {yearsExperience && (
                 <>
                   <div className={styles.content}>

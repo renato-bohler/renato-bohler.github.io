@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 
 import Icon from '~/components/Icon/Icon';
+import useTheme from '~/hooks/useTheme';
 
 import styles from './Header.module.css';
 import ThemePicker from './ThemePicker/ThemePicker';
@@ -10,6 +11,8 @@ import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
 
 const Header: React.VFC = () => {
+  const { isContrastMode } = useTheme();
+
   const [isScrollHintVisible, setScrollHintVisible] = useState(false);
 
   const {
@@ -86,7 +89,12 @@ const Header: React.VFC = () => {
         </span>
       </h1>
 
-      <div className={styles['navigation-header']} {...dataFolded}>
+      <div
+        className={classNames(styles['navigation-header'], {
+          [styles['navigation-header-contrast']]: isContrastMode,
+        })}
+        {...dataFolded}
+      >
         <div className={styles.container}>
           <ThemePicker />
         </div>

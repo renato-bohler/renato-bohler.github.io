@@ -26,8 +26,13 @@
     padding 250ms ease-in-out;
 }
 
+.navigation-header-contrast {
+  background: var(--theme-menu-background);
+}
+
 .navigation-header[data-folded] {
   backdrop-filter: blur(10px);
+  background: var(--theme-menu-background);
   padding-left: 80px;
   transition: backdrop-filter 500ms ease-in-out 750ms,
     padding 500ms ease-in-out 750ms;
@@ -218,6 +223,6 @@
   (-webkit-backdrop-filter: none) or (backdrop-filter: none)
 ) {
   .navigation-header[data-folded] {
-    background: var(--theme-menu-background);
+    background: var(--theme-menu-background-fallback);
   }
 }

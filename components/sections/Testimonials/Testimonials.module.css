@@ -1,6 +1,7 @@
 .container {
   position: relative;
   z-index: 1;
+  filter: contrast(calc(1 + 0.5 * var(--theme-is-contrast)));
 }
 
 .anchor {
@@ -37,13 +38,13 @@
     var(--theme-primary-dark),
     var(--theme-secondary-bright)
   );
-  color: white;
 }
 
 .title {
   font-weight: bolder;
   font-size: 2em;
   text-align: center;
+  color: white;
 }
 
 .swiper {
@@ -79,6 +80,10 @@
   border-radius: 15px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+}
+
+.contrast {
+  color: black;
 }
 
 @media screen and (max-width: 550px) {

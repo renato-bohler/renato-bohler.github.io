@@ -1,6 +1,4 @@
-import { memo, useState } from 'react';
-
-import Head from 'next/head';
+import { memo } from 'react';
 
 import { useMediaQuery } from 'react-responsive';
 import { Button } from 'reakit/Button';
@@ -12,14 +10,21 @@ import {
 } from 'reakit/Popover';
 
 import Icon from '~/components/Icon/Icon';
+import themes from '~/consts/themes.const';
+import useTheme from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
-import themes, { Theme } from './themes.const';
-import useDynamicFavicon from './useDynamicFavicon';
-import usePreferredColorScheme from './usePreferredColorScheme';
-import useTheme from './useTheme';
 
 const ThemePicker: React.FC = () => {
+  const {
+    theme,
+    setTheme,
+    isDarkMode,
+    setDarkMode,
+    isContrastMode,
+    setContrastMode,
+  } = useTheme();
+
   const isMobile = useMediaQuery({
     query: '(max-width: 550px)',
   });
@@ -27,21 +32,9 @@ const ThemePicker: React.FC = () => {
     placement: isMobile ? 'bottom-start' : 'right-start',
     animated: 500,
   });
-  const [isDarkMode, setDarkMode] = useState(false);
-  const [theme, setTheme] = useState<Theme>(
-    themes[Math.floor(Math.random() * themes.length)],
-  );
-
-  useTheme(theme, isDarkMode);
-  usePreferredColorScheme(setDarkMode);
-  const favicon = useDynamicFavicon(theme);
 
   return (
     <>
-      <Head>
-        <link rel="icon" href={favicon} />
-      </Head>
-
       <Button
         title={
           isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
@@ -79,25 +72,38 @@ const ThemePicker: React.FC = () => {
                   key={t.name}
                   title={t.name}
                   className={styles['theme-button']}
+                  aria-pressed={theme.name === t.name}
                   style={{
                     background: `
-                  linear-gradient(
-                    135deg,
-                    ${primary} 0%,
-                    ${primary} 50%,
-                    ${secondary} 50%,
-                    ${secondary} 50%
-                  )
-                `,
+                      linear-gradient(
+                        135deg,
+                        ${primary} 0%,
+                        ${primary} 50%,
+                        ${secondary} 50%,
+                        ${secondary} 50%
+                      )
+                    `,
                   }}
-                  onClick={() => {
-                    setTheme(t);
-                    setTimeout(popover.hide, 100);
-                  }}
+                  onClick={() => setTheme(t)}
                 ></Button>
               );
             })}
           </div>
+
+          <label
+            className={styles.checkbox}
+            style={{
+              background: isDarkMode ? 'white' : 'black',
+              color: isDarkMode ? 'black' : 'white',
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={isContrastMode}
+              onChange={(e) => setContrastMode(e.target.checked)}
+            />
+            High contrast mode
+          </label>
         </div>
       </Popover>
     </>

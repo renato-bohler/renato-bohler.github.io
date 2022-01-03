@@ -24,6 +24,10 @@
   transform: translateY(50px);
 }
 
+.border {
+  border: 2px solid var(--theme-text);
+}
+
 .button {
   display: flex;
   flex-direction: column;
@@ -87,6 +91,10 @@
   opacity: 90%;
 }
 
+.teaser.contrast {
+  opacity: 100%;
+}
+
 .info {
   padding: 4px;
   width: 100%;
@@ -94,6 +102,11 @@
 
 .info > .wave-divider {
   display: block;
+  fill: var(--theme-background-opaque);
+}
+
+.wave-divider.contrast > path {
+  fill: var(--theme-background);
 }
 
 .info > .content-wrapper {
@@ -112,6 +125,10 @@
   background: var(--theme-background-opaque);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+}
+
+.content-wrapper.contrast {
+  background: var(--theme-background);
 }
 
 .content-wrapper > .content {

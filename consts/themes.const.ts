@@ -1,25 +1,69 @@
 const light = {
+  'is-contrast': '0',
   background: '#f8f9fa',
   'background-opaque': 'rgba(255, 255, 255, 0.5)',
-  'menu-background': 'rgba(255, 255, 255, 0.75)',
+  'menu-background': 'transparent',
+  'menu-background-fallback': 'rgba(255, 255, 255, 0.75)',
   text: '#292e31',
-  'card-background': '#f8f9fa',
-  'card-border': '#d3d3d3',
-  'card-text': '#292e31',
+  'testimonial-card-background': '#f8f9fa',
+  'testimonial-card-border': '#d3d3d3',
+  'testimonial-card-text': '#292e31',
   shadow: 'rgba(0, 0, 0, 0.2)',
   'table-cell-background': 'rgba(0, 0, 0, 0.02)',
 };
 
 const dark = {
+  'is-contrast': '0',
   background: '#0e141b',
   'background-opaque': 'rgba(0, 0, 0, 0.2)',
-  'menu-background': 'rgba(0, 0, 0, 0.75)',
+  'menu-background': 'transparent',
+  'menu-background-fallback': 'rgba(0, 0, 0, 0.75)',
   text: '#ffffff',
-  'card-background': '#282828',
-  'card-border': '#3e3e3e',
-  'card-text': '#f3f3f3',
+  'testimonial-card-background': '#282828',
+  'testimonial-card-border': '#3e3e3e',
+  'testimonial-card-text': '#f3f3f3',
   shadow: 'rgba(100, 100, 100, 0.2)',
   'table-cell-background': 'rgba(255, 255, 255, 0.02)',
+};
+
+export const contrast = {
+  name: 'Contrast',
+  light: {
+    'is-contrast': '1',
+    background: 'white',
+    'background-opaque': 'rgba(255, 255, 255, 0.5)',
+    'menu-background': 'white',
+    'menu-background-fallback': 'white',
+    text: 'black',
+    'testimonial-card-background': 'white',
+    'testimonial-card-border': 'black',
+    'testimonial-card-text': 'black',
+    shadow: 'transparent',
+    'table-cell-background': 'rgba(0, 0, 0, 0.01)',
+    //
+    'primary-bright': '#383838',
+    'primary-dark': 'black',
+    'secondary-bright': '#525252',
+    'secondary-dark': '#282828',
+  },
+  dark: {
+    'is-contrast': '1',
+    background: 'black',
+    'background-opaque': 'rgba(0, 0, 0, 0.2)',
+    'menu-background': 'black',
+    'menu-background-fallback': 'black',
+    text: 'white',
+    'testimonial-card-background': 'black',
+    'testimonial-card-border': 'white',
+    'testimonial-card-text': 'white',
+    shadow: 'transparent',
+    'table-cell-background': 'rgba(255, 255, 255, 0.01)',
+    //
+    'primary-bright': 'white',
+    'primary-dark': '#bfbfbf',
+    'secondary-bright': '#ededed',
+    'secondary-dark': '#b3b3b3',
+  },
 };
 
 const themes = [
@@ -93,6 +137,6 @@ const themes = [
   },
 ];
 
-export type Theme = typeof themes[0];
+export type Theme = typeof themes[number];
 
 export default themes;
