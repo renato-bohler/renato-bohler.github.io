@@ -42,11 +42,37 @@ const About: React.VFC = () => {
             {`>${greeting}`}
           </h2>
           <Tilt className={styles.tilt}>
-            <img
-              src="/images/me.webp"
-              alt="A picture of a smiley Renato"
-              className={styles.image}
-            />
+            <picture className={styles.image}>
+              <source
+                srcSet="/images/me/full.webp"
+                media="(min-width: 1921px)"
+              />
+              <source
+                srcSet="/images/me/full.webp"
+                media="(min-height: 1500px)"
+              />
+              <source
+                srcSet="/images/me/300.webp"
+                media="(max-width: 360px)"
+              />
+              <source
+                srcSet="/images/me/475.webp"
+                media="(max-width: 600px)"
+              />
+              <source
+                srcSet="/images/me/660.webp"
+                media="(max-width: 1024px)"
+              />
+              <source
+                srcSet="/images/me/550.webp"
+                media="(max-width: 1920px)"
+              />
+              <img
+                src="/images/me/300.webp"
+                alt="A smiley Renato"
+                loading="lazy"
+              />
+            </picture>
           </Tilt>
           {isTabletOrMobile && (
             <div

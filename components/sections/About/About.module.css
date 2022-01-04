@@ -37,7 +37,7 @@
   height: 100%;
 }
 
-.picture > .tilt > .image {
+.picture > .tilt > .image > * {
   border-radius: 8px;
   max-height: 100%;
 }
@@ -147,7 +147,7 @@
     margin: 0 auto;
   }
 
-  .picture > .tilt > .image {
+  .picture > .tilt > .image > * {
     max-width: 80vw;
     max-height: 80vh;
   }
