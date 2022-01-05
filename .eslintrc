@@ -25,5 +25,18 @@
         "alphabetize": { "order": "asc", "ignoreCase": true }
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(test).[jt]s?(x)"
+      ],
+      "plugins": ["jest-dom", "testing-library"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ]
+    }
+  ]
 }
