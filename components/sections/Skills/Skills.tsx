@@ -43,52 +43,50 @@ const Skills: React.VFC = () => {
   }, [inView]);
 
   return (
-    <div>
-      <section className={styles.section}>
-        <div className={styles.scroll}>
-          <h2 className={styles.title} aria-label="Skills">
-            {header}
-          </h2>
+    <section className={styles.section}>
+      <div className={styles.scroll}>
+        <h2 className={styles.title} aria-label="Skills">
+          {header}
+        </h2>
 
-          {refs.map((ref, index) => (
-            <div
-              key={index}
-              ref={ref}
-              className={styles.trigger}
-              style={{
-                top: `${40 + index * 10}%`,
-              }}
-            ></div>
-          ))}
-        </div>
+        {refs.map((ref, index) => (
+          <div
+            key={index}
+            ref={ref}
+            className={styles.trigger}
+            style={{
+              top: `${40 + index * 10}%`,
+            }}
+          ></div>
+        ))}
+      </div>
 
-        <div id="skills" className={styles.anchor} aria-hidden />
+      <div id="skills" className={styles.anchor} aria-hidden />
 
-        <SkillFeedbacks />
+      <SkillFeedbacks />
 
-        <div className={styles.grid}>
-          {skills.map((skill) => {
-            const colors = getColors(skill, isContrastMode);
+      <div className={styles.grid}>
+        {skills.map((skill) => {
+          const colors = getColors(skill, isContrastMode);
 
-            return (
-              <SkillCard
-                key={skill.name}
-                name={skill.name}
-                icon={skill?.icon?.(isContrastMode)}
-                favorite={skill.favorite}
-                backgroundColor={colors.background}
-                textColor={colors.text}
-                usageLevel={skill.usageLevel}
-                yearsExperience={skill.yearsExperience}
-                studying={skill.studying}
-                description={skill.description}
-                teaser={skill.teaser}
-              />
-            );
-          })}
-        </div>
-      </section>
-    </div>
+          return (
+            <SkillCard
+              key={skill.name}
+              name={skill.name}
+              icon={skill?.icon?.(isContrastMode)}
+              favorite={skill.favorite}
+              backgroundColor={colors.background}
+              textColor={colors.text}
+              usageLevel={skill.usageLevel}
+              yearsExperience={skill.yearsExperience}
+              studying={skill.studying}
+              description={skill.description}
+              teaser={skill.teaser}
+            />
+          );
+        })}
+      </div>
+    </section>
   );
 };
 
