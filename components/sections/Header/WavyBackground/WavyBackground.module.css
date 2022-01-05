@@ -18,9 +18,12 @@
   stroke-width: 0;
 }
 
+.wave-pattern {
+  transition: fill 500ms ease-in-out;
+}
+
 .wave {
   animation: wave 10s infinite ease-in-out;
-  transition: fill 500ms ease-in-out;
   will-change: transform, fill;
 }
 
