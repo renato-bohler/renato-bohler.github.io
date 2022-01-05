@@ -137,7 +137,7 @@ const Header: React.VFC = () => {
         aria-hidden
       />
 
-      <WavyBackground waves={20} />
+      <WavyBackground />
     </header>
   );
 };
