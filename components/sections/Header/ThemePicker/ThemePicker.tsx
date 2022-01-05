@@ -11,6 +11,7 @@ import {
 
 import Icon from '~/components/Icon/Icon';
 import themes from '~/consts/themes.const';
+import useFirstMount from '~/hooks/useFirstMount';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
@@ -24,6 +25,8 @@ const ThemePicker: React.FC = () => {
     isContrastMode,
     setContrastMode,
   } = useTheme();
+
+  const isFirstMount = useFirstMount();
 
   const isMobile = useMediaQuery({
     query: '(max-width: 550px)',
@@ -67,12 +70,15 @@ const ThemePicker: React.FC = () => {
               const colors = isDarkMode ? t.dark : t.light;
               const primary = colors['primary-bright'];
               const secondary = colors['secondary-bright'];
+
               return (
                 <Button
                   key={t.name}
                   title={t.name}
                   className={styles['theme-button']}
-                  aria-pressed={theme.name === t.name}
+                  aria-pressed={
+                    !isFirstMount && t.name === theme.name
+                  }
                   style={{
                     background: `
                       linear-gradient(
