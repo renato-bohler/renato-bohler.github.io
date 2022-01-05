@@ -10,6 +10,9 @@
 
   padding: 80px 40px 40px 40px;
   margin: 0;
+
+  position: relative;
+  z-index: 1;
 }
 
 .scroll {
