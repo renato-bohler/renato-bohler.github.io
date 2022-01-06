@@ -77,7 +77,6 @@ const useHeaderTypingEffect = ({
   );
 
   const [targetSubtitle, setTargetSubtitle] = useState('');
-  const [newSubtitleTimeout, setNewSubtitleTimeout] = useState(0);
   const subtitle = useTypingEffect({
     targetText: targetSubtitle,
     halt: !isLastNameTypingComplete,
@@ -94,7 +93,6 @@ const useHeaderTypingEffect = ({
       setTargetFirstName('');
       setTargetLastName('');
       setTargetSubtitle('');
-      clearTimeout(newSubtitleTimeout);
       return;
     }
 
@@ -116,8 +114,6 @@ const useHeaderTypingEffect = ({
         ),
       changeSubtitleDelayMs,
     );
-
-    setNewSubtitleTimeout(timeout);
 
     return () => window.clearTimeout(timeout);
   }, [
