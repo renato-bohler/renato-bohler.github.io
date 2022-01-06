@@ -25,7 +25,7 @@ const WavyBackground: React.VFC = () => {
                 }
                 className={styles['wave-pattern']}
                 d="M 0 47.8 C 50.432 47.8 90.43 0 139.988 0 C 189.548 0 229.545 47.8 279.977 47.8 L 279.977 48.938 C 229.545 48.938 189.548 1.138 139.988 1.138 C 90.43 1.138 50.432 48.938 0 48.938 Z"
-              ></path>
+              />
             </pattern>
           ))}
         </defs>
@@ -43,7 +43,7 @@ const WavyBackground: React.VFC = () => {
               styles.wave,
               styles['wave-primary'],
             )}
-          ></rect>
+          />
         </g>
         <g
           style={{
@@ -58,7 +58,7 @@ const WavyBackground: React.VFC = () => {
               styles.wave,
               styles['wave-secondary'],
             )}
-          ></rect>
+          />
         </g>
       </svg>
     </div>

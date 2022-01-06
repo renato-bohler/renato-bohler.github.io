@@ -147,7 +147,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
             key={index}
             className={styles.hexagon}
             points={points.map((point) => point.join(',')).join(' ')}
-          ></polygon>
+          />
         ))}
 
         <text
@@ -229,10 +229,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
         />
 
         {showFeedback === 0 && (
-          <polygon
-            className={styles.data}
-            points={AVERAGE_POINTS}
-          ></polygon>
+          <polygon className={styles.data} points={AVERAGE_POINTS} />
         )}
 
         {showFeedback > 0 && (
@@ -245,7 +242,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
                 HEXAGON_VERTICES[vote][voteIndex].join(','),
               )
               .join(' ')}
-          ></polygon>
+          />
         )}
       </svg>
 

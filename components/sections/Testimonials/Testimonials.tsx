@@ -140,7 +140,7 @@ const Testimonials: React.VFC = () => {
           width="100%"
           height="100%"
           fill="url(#circuit-board)"
-        ></rect>
+        />
       </svg>
 
       <svg

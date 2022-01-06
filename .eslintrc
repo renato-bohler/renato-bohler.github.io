@@ -7,10 +7,11 @@
     "plugin:prettier/recommended"
   ],
   "rules": {
+    "@next/next/no-img-element": "off",
     "@typescript-eslint/no-unused-vars": "error",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-empty-function": "off",
-    "@next/next/no-img-element": "off",
+    "react/self-closing-comp": "warn",
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
       "warn",

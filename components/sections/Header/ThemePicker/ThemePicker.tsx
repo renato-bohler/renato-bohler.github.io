@@ -91,7 +91,7 @@ const ThemePicker: React.FC = () => {
                     `,
                   }}
                   onClick={() => setTheme(t)}
-                ></Button>
+                />
               );
             })}
           </div>

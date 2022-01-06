@@ -131,7 +131,7 @@ const SkillCard: React.VFC<Props> = ({
                 [styles.contrast]: isContrastMode,
               })}
             >
-              <path d={wavePath}></path>
+              <path d={wavePath} />
             </svg>
             <div
               className={classNames(styles['content-wrapper'], {
@@ -157,7 +157,7 @@ const SkillCard: React.VFC<Props> = ({
                     </span>
                   </div>
 
-                  <span className={styles.divider}></span>
+                  <span className={styles.divider} />
                 </>
               )}
               <div className={styles.content}>
@@ -173,7 +173,7 @@ const SkillCard: React.VFC<Props> = ({
               </div>
               {studying && (
                 <>
-                  <span className={styles.divider}></span>
+                  <span className={styles.divider} />
 
                   <div className={styles.content}>
                     <span

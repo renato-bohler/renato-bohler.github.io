@@ -57,7 +57,7 @@ const Skills: React.VFC = () => {
             style={{
               top: `${40 + index * 10}%`,
             }}
-          ></div>
+          />
         ))}
       </div>
 
