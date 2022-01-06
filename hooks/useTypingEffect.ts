@@ -5,7 +5,7 @@ import usePrevious from './usePrevious';
 type Options = {
   targetText: string;
   halt?: boolean;
-  skipDelete?: boolean;
+  animateDelete?: boolean;
   startDelayMs?: number;
   keyStrokeMinTimeMs?: number;
   keyStrokeMaxVarianceMs?: number;
@@ -16,7 +16,7 @@ type State = 'stale' | 'typing' | 'deleting';
 const useTypingEffect = ({
   targetText,
   halt,
-  skipDelete,
+  animateDelete = false,
   startDelayMs = 0,
   keyStrokeMinTimeMs = 50,
   keyStrokeMaxVarianceMs = 70,
@@ -95,7 +95,7 @@ const useTypingEffect = ({
       return;
     }
 
-    if (skipDelete) {
+    if (!animateDelete) {
       setCurrentText('');
       return;
     }
@@ -111,7 +111,7 @@ const useTypingEffect = ({
     halt,
     state,
     currentText,
-    skipDelete,
+    animateDelete,
     keyStrokeMinTimeMs,
     keyStrokeMaxVarianceMs,
   ]);

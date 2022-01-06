@@ -39,15 +39,16 @@ const useHeaderTypingEffect = ({
   keyStrokeMaxVarianceMs = 70,
   ...options
 }: Options): Result => {
-  const keyStrokeOptions = {
-    keyStrokeMinTimeMs,
-    keyStrokeMaxVarianceMs,
-  };
-
   const { ref, inView } = useInView({
     threshold: 0.75,
     initialInView: true,
   });
+
+  const commonOptions = {
+    animateDelete: inView,
+    keyStrokeMinTimeMs,
+    keyStrokeMaxVarianceMs,
+  };
 
   const [targetFirstName, setTargetFirstName] = useState(
     options.firstName,
@@ -55,8 +56,7 @@ const useHeaderTypingEffect = ({
   const firstName = useTypingEffect({
     targetText: targetFirstName,
     startDelayMs,
-    skipDelete: !inView,
-    ...keyStrokeOptions,
+    ...commonOptions,
   });
   const isFirstNameTypingComplete = useMemo(
     () => firstName === options.firstName,
@@ -69,8 +69,7 @@ const useHeaderTypingEffect = ({
   const lastName = useTypingEffect({
     targetText: targetLastName,
     halt: !isFirstNameTypingComplete,
-    skipDelete: !inView,
-    ...keyStrokeOptions,
+    ...commonOptions,
   });
   const isLastNameTypingComplete = useMemo(
     () => lastName === options.lastName,
@@ -82,8 +81,7 @@ const useHeaderTypingEffect = ({
   const subtitle = useTypingEffect({
     targetText: targetSubtitle,
     halt: !isLastNameTypingComplete,
-    skipDelete: !inView,
-    ...keyStrokeOptions,
+    ...commonOptions,
   });
   const isSubtitleTypingComplete = useMemo(
     () => subtitle === targetSubtitle,
