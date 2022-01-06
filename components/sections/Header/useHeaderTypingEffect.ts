@@ -50,11 +50,8 @@ const useHeaderTypingEffect = ({
     keyStrokeMaxVarianceMs,
   };
 
-  const [targetFirstName, setTargetFirstName] = useState(
-    options.firstName,
-  );
   const firstName = useTypingEffect({
-    targetText: targetFirstName,
+    targetText: inView ? options.firstName : '',
     startDelayMs,
     ...commonOptions,
   });
@@ -63,11 +60,8 @@ const useHeaderTypingEffect = ({
     [firstName, options.firstName],
   );
 
-  const [targetLastName, setTargetLastName] = useState(
-    options.lastName,
-  );
   const lastName = useTypingEffect({
-    targetText: targetLastName,
+    targetText: inView ? options.lastName : '',
     halt: !isFirstNameTypingComplete,
     ...commonOptions,
   });
@@ -79,7 +73,7 @@ const useHeaderTypingEffect = ({
   const [targetSubtitle, setTargetSubtitle] = useState('');
   const subtitle = useTypingEffect({
     targetText: targetSubtitle,
-    halt: !isLastNameTypingComplete,
+    halt: inView && !isLastNameTypingComplete,
     ...commonOptions,
   });
   const isSubtitleTypingComplete = useMemo(
@@ -90,14 +84,10 @@ const useHeaderTypingEffect = ({
   // Header folding/unfolding
   useEffect(() => {
     if (!inView) {
-      setTargetFirstName('');
-      setTargetLastName('');
       setTargetSubtitle('');
       return;
     }
 
-    setTargetFirstName(options.firstName);
-    setTargetLastName(options.lastName);
     setTargetSubtitle(
       getNewSubtitle(options.subtitles, targetSubtitle),
     );
