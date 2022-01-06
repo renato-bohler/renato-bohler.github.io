@@ -34,10 +34,7 @@ const About: React.VFC = () => {
       id={isTabletOrMobile ? 'about' : ''}
     >
       <div className={styles.about}>
-        <div
-          className={styles.picture}
-          {...(pictureInView ? { 'data-enter': '' } : {})}
-        >
+        <div className={styles.picture} data-enter={pictureInView}>
           <h2 className={styles.greeting} aria-label="Hello, world!">
             {`>${greeting}`}
           </h2>
@@ -83,10 +80,7 @@ const About: React.VFC = () => {
           )}
         </div>
 
-        <div
-          className={styles.content}
-          {...(contentInView ? { 'data-enter': '' } : {})}
-        >
+        <div className={styles.content} data-enter={contentInView}>
           <p>
             Hi, I am <strong>Renato Böhler</strong>, {age} years old,
             a Brazilian computer engineer, addicted to soccer, video

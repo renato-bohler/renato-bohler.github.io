@@ -27,7 +27,7 @@
   transition: transform cubic-bezier(1, 0, 0, 1) 1s;
 }
 
-.picture[data-enter] {
+.picture[data-enter='true'] {
   transform: translateX(0);
 }
 
@@ -57,7 +57,7 @@
   transition: transform cubic-bezier(1, 0, 0, 1) 2s;
 }
 
-.picture[data-enter] > .greeting {
+.picture[data-enter='true'] > .greeting {
   transform: translateX(0.75em);
 }
 
@@ -89,7 +89,7 @@
   transition: transform cubic-bezier(1, 0, 0, 1) 1s;
 }
 
-.content[data-enter] {
+.content[data-enter='true'] {
   transform: translateX(0);
 }
 
@@ -139,7 +139,7 @@
     text-align: center;
   }
 
-  .picture[data-enter] > .greeting {
+  .picture[data-enter='true'] > .greeting {
     transform: translateX(0);
   }
 
