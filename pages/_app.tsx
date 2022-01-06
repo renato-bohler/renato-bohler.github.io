@@ -1,3 +1,4 @@
+import 'normalize.css';
 import '~/styles/globals.css';
 import '~/styles/line-md.css';
 

@@ -12,7 +12,9 @@
   margin-bottom: 16px;
   padding: 8px;
 
+  font-size: 14px;
   color: var(--theme-text);
+
   background: var(--theme-background-opaque);
   box-shadow: var(--theme-shadow) 0px 4px 12px;
   border: 2px solid var(--theme-primary-dark);
@@ -111,6 +113,7 @@
   border: none;
   background: none;
 
+  font-size: 14px;
   color: var(--theme-text);
 
   padding: 16px;

@@ -2,6 +2,8 @@
   box-shadow: var(--theme-shadow) 5px 5px 20px;
   border-radius: 8px;
 
+  font-size: 14px;
+
   transition: 500ms;
   transition-delay: 100ms;
 }
