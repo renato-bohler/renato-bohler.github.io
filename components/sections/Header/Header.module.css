@@ -30,7 +30,7 @@
   background: var(--theme-menu-background);
 }
 
-.navigation-header[data-folded] {
+.navigation-header[data-folded='true'] {
   backdrop-filter: blur(10px);
   background: var(--theme-menu-background);
   padding-left: 80px;
@@ -97,6 +97,10 @@
   animation: blink ease 1s infinite;
 }
 
+.heading[data-folded='true'] .caret:after {
+  display: none;
+}
+
 .subtitle {
   margin: 1vmin -2vmin 0 auto;
 
@@ -123,7 +127,7 @@
   font-style: normal;
 }
 
-.heading[data-folded] {
+.heading[data-folded='true'] {
   min-height: 40px;
   min-width: 60px;
 
@@ -131,24 +135,29 @@
   transition: transform 1s ease-in-out 250ms;
 }
 
-.heading[data-folded] > .title {
+.heading[data-folded='true'] > .title {
   font-size: 0;
   transition: font-size 500ms ease-in-out;
 }
 
-.heading[data-folded] > .subtitle {
+.heading[data-folded='true'] > .subtitle {
   opacity: 0;
   font-size: 0;
   transition: opacity 250ms ease-in-out,
     font-size 250ms ease-in-out 750ms;
 }
 
-.heading[data-folded] .name {
+.heading[data-folded='true'] .name {
   opacity: 0;
   transition: 250ms ease-in-out;
 }
 
-.heading[data-folded] .initial {
+.heading[data-folded='true'] .name[data-complete='false'] {
+  color: transparent;
+  transition: 250ms ease-in-out, color 0ms;
+}
+
+.heading[data-folded='true'] .initial {
   font-size: 40px;
   line-height: 1em;
 
@@ -156,7 +165,7 @@
     font-size 500ms ease-in-out 250ms;
 }
 
-.heading[data-folded] > .title:nth-child(2) > .initial {
+.heading[data-folded='true'] > .title:nth-child(2) > .initial {
   position: fixed;
   transform: translate(10px);
   z-index: -1;
@@ -222,7 +231,7 @@
 @supports not (
   (-webkit-backdrop-filter: none) or (backdrop-filter: none)
 ) {
-  .navigation-header[data-folded] {
+  .navigation-header[data-folded='true'] {
     background: var(--theme-menu-background-fallback);
   }
 }

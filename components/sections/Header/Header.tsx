@@ -10,6 +10,15 @@ import ThemePicker from './ThemePicker/ThemePicker';
 import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
 
+const SUBTITLES = [
+  'react developer',
+  'frontend developer',
+  'web developer',
+  '.* developer',
+  'css enthusiast',
+  'bacon lover =)',
+];
+
 const Header: React.VFC = () => {
   const { isContrastMode } = useTheme();
 
@@ -21,19 +30,13 @@ const Header: React.VFC = () => {
     firstName,
     lastName,
     subtitle,
-    isNameTypingComplete,
+    isFirstNameTypingComplete,
     isLastNameTypingComplete,
+    isFullNameTypingComplete,
   } = useHeaderTypingEffect({
     firstName: 'renato',
     lastName: 'Böhler',
-    subtitles: [
-      'react developer',
-      'frontend developer',
-      'web developer',
-      '.* developer',
-      'css enthusiast',
-      'bacon lover =)',
-    ],
+    subtitles: SUBTITLES,
   });
 
   useEffect(() => {
@@ -48,40 +51,48 @@ const Header: React.VFC = () => {
     return () => clearTimeout(timeout);
   }, [inView]);
 
-  const dataFolded = inView ? {} : { 'data-folded': 'true' };
-
   return (
     <header ref={ref} className={styles.header}>
       <h1
         className={styles.heading}
         aria-label="Renato Böhler, frontend developer"
-        {...dataFolded}
+        data-folded={!inView}
       >
         <span
           className={classNames(styles.title, {
-            [styles.caret]: !isNameTypingComplete,
+            [styles.caret]: !isFirstNameTypingComplete,
           })}
           aria-hidden
         >
           <em className={styles.initial}>{firstName[0]}</em>
-          <em className={styles.name}>{firstName}</em>
+          <em
+            className={styles.name}
+            data-complete={isFullNameTypingComplete}
+          >
+            {firstName}
+          </em>
         </span>
 
         <span
           className={classNames(styles.title, {
             [styles.caret]:
-              isNameTypingComplete && !isLastNameTypingComplete,
+              isFirstNameTypingComplete && !isLastNameTypingComplete,
           })}
           aria-hidden
         >
           <em className={styles.initial}>{lastName[0]}</em>
-          <em className={styles.name}>{lastName}</em>
+          <em
+            className={styles.name}
+            data-complete={isFullNameTypingComplete}
+          >
+            {lastName}
+          </em>
         </span>
 
         <span
           className={classNames(styles.subtitle, {
             [styles['subtitle-caret']]:
-              isNameTypingComplete && isLastNameTypingComplete,
+              isFirstNameTypingComplete && isLastNameTypingComplete,
           })}
           aria-hidden
         >
@@ -93,7 +104,7 @@ const Header: React.VFC = () => {
         className={classNames(styles['navigation-header'], {
           [styles['navigation-header-contrast']]: isContrastMode,
         })}
-        {...dataFolded}
+        data-folded={!inView}
       >
         <div className={styles.container}>
           <ThemePicker />

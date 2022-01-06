@@ -1,0 +1,167 @@
+import { useEffect, useMemo, useState } from 'react';
+
+import { useInView } from 'react-intersection-observer';
+
+import useTypingEffect from '~/hooks/useTypingEffect';
+
+type Options = {
+  firstName: string;
+  lastName: string;
+  subtitles: string[];
+  startDelayMs?: number;
+  changeSubtitleDelayMs?: number;
+  keyStrokeMinTimeMs?: number;
+  keyStrokeMaxVarianceMs?: number;
+};
+
+type Result = {
+  ref: (node?: Element | null | undefined) => void;
+  inView: boolean;
+  firstName: string;
+  lastName: string;
+  subtitle: string;
+  isFirstNameTypingComplete: boolean;
+  isLastNameTypingComplete: boolean;
+  isFullNameTypingComplete: boolean;
+};
+
+const getNewSubtitle = (subtitles: string[], current?: string) => {
+  const candidates = subtitles.filter(
+    (candidate) => candidate !== current,
+  );
+  return candidates[Math.floor(Math.random() * candidates.length)];
+};
+
+const useHeaderTypingEffect = ({
+  startDelayMs = 1000,
+  changeSubtitleDelayMs = 3000,
+  keyStrokeMinTimeMs = 50,
+  keyStrokeMaxVarianceMs = 70,
+  ...options
+}: Options): Result => {
+  const keyStrokeOptions = {
+    keyStrokeMinTimeMs,
+    keyStrokeMaxVarianceMs,
+  };
+
+  const { ref, inView } = useInView({
+    threshold: 0.75,
+    initialInView: true,
+  });
+
+  const [targetFirstName, setTargetFirstName] = useState(
+    options.firstName,
+  );
+  const firstName = useTypingEffect({
+    targetText: targetFirstName,
+    startDelayMs,
+    skipDelete: !inView,
+    ...keyStrokeOptions,
+  });
+  const isFirstNameTypingComplete = useMemo(
+    () => firstName === options.firstName,
+    [firstName, options.firstName],
+  );
+
+  const [targetLastName, setTargetLastName] = useState(
+    options.lastName,
+  );
+  const lastName = useTypingEffect({
+    targetText: targetLastName,
+    halt: !isFirstNameTypingComplete,
+    skipDelete: !inView,
+    ...keyStrokeOptions,
+  });
+  const isLastNameTypingComplete = useMemo(
+    () => lastName === options.lastName,
+    [lastName, options.lastName],
+  );
+
+  const [targetSubtitle, setTargetSubtitle] = useState('');
+  const [newSubtitleTimeout, setNewSubtitleTimeout] = useState(0);
+  const subtitle = useTypingEffect({
+    targetText: targetSubtitle,
+    halt: !isLastNameTypingComplete,
+    skipDelete: !inView,
+    ...keyStrokeOptions,
+  });
+  const isSubtitleTypingComplete = useMemo(
+    () => subtitle === targetSubtitle,
+    [subtitle, targetSubtitle],
+  );
+
+  // Header folding/unfolding
+  useEffect(() => {
+    if (!inView) {
+      setTargetFirstName('');
+      setTargetLastName('');
+      setTargetSubtitle('');
+      clearTimeout(newSubtitleTimeout);
+      return;
+    }
+
+    setTargetFirstName(options.firstName);
+    setTargetLastName(options.lastName);
+    setTargetSubtitle(
+      getNewSubtitle(options.subtitles, targetSubtitle),
+    );
+  }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Subtitle recycling
+  useEffect(() => {
+    if (!isSubtitleTypingComplete || !inView) return;
+
+    const timeout = window.setTimeout(
+      () =>
+        setTargetSubtitle(
+          getNewSubtitle(options.subtitles, targetSubtitle),
+        ),
+      changeSubtitleDelayMs,
+    );
+
+    setNewSubtitleTimeout(timeout);
+
+    return () => window.clearTimeout(timeout);
+  }, [
+    isSubtitleTypingComplete,
+    inView,
+    targetSubtitle,
+    options.subtitles,
+    changeSubtitleDelayMs,
+  ]);
+
+  const [isFullNameTypingComplete, setFullNameTypingComplete] =
+    useState(false);
+
+  useEffect(() => {
+    if (!inView) {
+      // Waits a while for folding animation to complete
+      setTimeout(() => setFullNameTypingComplete(false), 1000);
+      return;
+    }
+
+    if (isFullNameTypingComplete) return;
+
+    setFullNameTypingComplete(
+      isFirstNameTypingComplete && isLastNameTypingComplete,
+    );
+  }, [
+    inView,
+    isFullNameTypingComplete,
+    isFirstNameTypingComplete,
+    isLastNameTypingComplete,
+  ]);
+
+  return {
+    ref,
+    inView,
+    firstName: inView ? firstName : options.firstName,
+    lastName: inView ? lastName : options.lastName,
+    subtitle: inView ? subtitle : '',
+    isFirstNameTypingComplete,
+    isLastNameTypingComplete,
+    isFullNameTypingComplete,
+  };
+};
+
+export default useHeaderTypingEffect;
