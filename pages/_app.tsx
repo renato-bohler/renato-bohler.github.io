@@ -1,11 +1,11 @@
+import '~/styles/globals.css';
+import '~/styles/line-md.css';
+
 import { AppProps } from 'next/app';
 
 import { Provider } from 'reakit';
 
 import { ThemeProvider } from '~/components/Theme/ThemeProvider';
-
-import '~/styles/globals.css';
-import '~/styles/line-md.css';
 
 const App: React.VFC<AppProps> = ({ Component, pageProps }) => (
   <ThemeProvider>

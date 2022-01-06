@@ -1,3 +1,10 @@
+import 'swiper/css';
+import 'swiper/css/a11y';
+import 'swiper/css/autoplay';
+import 'swiper/css/controller';
+import 'swiper/css/effect-cards';
+import 'swiper/css/navigation';
+
 import { useState } from 'react';
 
 import classNames from 'classnames';
@@ -17,13 +24,6 @@ import useTheme from '~/hooks/useTheme';
 import TestimonialCard from './TestimonialCard/TestimonialCard';
 import testimonials from './testimonials.const';
 import styles from './Testimonials.module.css';
-
-import 'swiper/css';
-import 'swiper/css/a11y';
-import 'swiper/css/autoplay';
-import 'swiper/css/controller';
-import 'swiper/css/effect-cards';
-import 'swiper/css/navigation';
 
 const Testimonials: React.VFC = () => {
   const { isContrastMode, isDarkMode } = useTheme();

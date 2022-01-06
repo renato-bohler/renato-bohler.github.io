@@ -3,10 +3,10 @@ import { memo } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Button } from 'reakit/Button';
 import {
-  usePopoverState,
   Popover,
-  PopoverDisclosure,
   PopoverArrow,
+  PopoverDisclosure,
+  usePopoverState,
 } from 'reakit/Popover';
 
 import Icon from '~/components/Icon/Icon';
