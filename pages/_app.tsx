@@ -7,7 +7,7 @@ import { ThemeProvider } from '~/components/Theme/ThemeProvider';
 import '~/styles/globals.css';
 import '~/styles/line-md.css';
 
-const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => (
+const App: React.VFC<AppProps> = ({ Component, pageProps }) => (
   <ThemeProvider>
     <Provider>
       <Component {...pageProps} />
@@ -15,4 +15,4 @@ const MyApp: React.VFC<AppProps> = ({ Component, pageProps }) => (
   </ThemeProvider>
 );
 
-export default MyApp;
+export default App;
