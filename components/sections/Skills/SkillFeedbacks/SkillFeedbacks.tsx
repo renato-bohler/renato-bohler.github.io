@@ -295,9 +295,9 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
 const TableView: React.FC = () => (
   <table className={styles['table-view']}>
     <caption>
-      Maximum score is 4.
+      All data collected from colleagues on my latest feedback round.
       <br />
-      Feedbacks collected from colleagues and former colleagues.
+      Maximum score is 4.
     </caption>
     <thead>
       <tr>
