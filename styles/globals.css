@@ -4,10 +4,8 @@
   font-weight: 400;
   font-display: swap;
   src: local(''),
-    url('/fonts/major-mono-display-v7-latin-regular.woff2')
-      format('woff2'),
-    url('/fonts/major-mono-display-v7-latin-regular.woff')
-      format('woff');
+    url('/fonts/major-mono-display-regular.woff2') format('woff2'),
+    url('/fonts/major-mono-display-regular.woff') format('woff');
 }
 
 @font-face {
@@ -15,9 +13,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: local(''),
-    url('/fonts/inter-v7-latin-regular.woff2') format('woff2'),
-    url('/fonts/inter-v7-latin-regular.woff') format('woff');
+  src: local(''), url('/fonts/inter-regular.woff2') format('woff2'),
+    url('/fonts/inter-regular.woff') format('woff');
 }
 
 @font-face {
@@ -25,14 +22,15 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: local(''),
-    url('/fonts/inter-v7-latin-900.woff2') format('woff2'),
-    url('/fonts/inter-v7-latin-900.woff') format('woff');
+  src: local(''), url('/fonts/inter-black.woff2') format('woff2'),
+    url('/fonts/inter-black.woff') format('woff');
 }
 
 * {
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
+  font-feature-settings: 'ss03', 'cv08', 'cv11', 'zero', 'cv02',
+    'cv03', 'cv04', 'cv09';
 }
 
 html {
@@ -44,7 +42,6 @@ body {
   padding: 0;
   margin: 0;
 
-  font-family: 'Inter', sans-serif;
   font-size: 18px;
   line-height: 1.75em;
   letter-spacing: -0.014em;
