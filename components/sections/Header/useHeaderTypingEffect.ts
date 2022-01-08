@@ -45,7 +45,6 @@ const useHeaderTypingEffect = ({
   });
 
   const commonOptions = {
-    animateDelete: inView,
     keyStrokeMinTimeMs,
     keyStrokeMaxVarianceMs,
   };
@@ -74,6 +73,7 @@ const useHeaderTypingEffect = ({
   const subtitle = useTypingEffect({
     targetText: targetSubtitle,
     halt: inView && !isLastNameTypingComplete,
+    animateDelete: inView,
     ...commonOptions,
   });
   const isSubtitleTypingComplete = useMemo(
