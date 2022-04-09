@@ -9,7 +9,7 @@
     "danger-ci": "danger ci --verbose"
   },
   "dependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "v-tooltip": "^2.0.0-rc.33",
     "vue": "^2.5.21",
     "vue-awesome": "^3.4.0",
