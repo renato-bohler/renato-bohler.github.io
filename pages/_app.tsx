@@ -1,10 +1,9 @@
 import 'normalize.css';
 import '~/styles/globals.css';
-import '~/styles/line-md.css';
 
 import { AppProps } from 'next/app';
 
-import { Provider } from 'reakit';
+import { Provider } from 'reakit/Provider';
 
 import { ThemeProvider } from '~/components/Theme/ThemeProvider';
 

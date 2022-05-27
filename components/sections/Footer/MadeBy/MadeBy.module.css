@@ -1,0 +1,132 @@
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+
+  font-family: Major Mono Display, monospace;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.name[data-caret='true']:after {
+  content: '_';
+  animation: blink ease 1s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* SVG */
+.handwriting {
+  fill: none;
+
+  stroke: currentColor;
+  stroke-width: 3.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.visible > path {
+  stroke-dashoffset: 0;
+
+  transition-property: stroke-dashoffset;
+  transition-timing-function: cubic-bezier(0.51, 0.1, 0.13, 0.72);
+}
+
+.made-m {
+  stroke-dashoffset: 226.86068725585938px;
+  stroke-dasharray: 226.86068725585938px;
+}
+
+.visible > .made-m {
+  transition-delay: 0;
+  transition-duration: 0.75s;
+}
+
+.made-a {
+  stroke-dashoffset: 91.60891723632812px;
+  stroke-dasharray: 91.60891723632812px;
+}
+
+.visible > .made-a {
+  transition-delay: 0.5s;
+  transition-duration: 0.5s;
+}
+
+.made-de {
+  stroke-dashoffset: 235.08343505859375px;
+  stroke-dasharray: 235.08343505859375px;
+}
+
+.visible > .made-de {
+  transition-delay: 0.75s;
+  transition-duration: 1s;
+}
+
+.with {
+  stroke-dashoffset: 493.6622009277344px;
+  stroke-dasharray: 493.6622009277344px;
+}
+
+.visible > .with {
+  transition-delay: 1.5s;
+  transition-duration: 1.5s;
+}
+
+.with-i-dot {
+  stroke-dashoffset: 36.069515228271484px;
+  stroke-dasharray: 36.069515228271484px;
+}
+
+.visible > .with-i-dot {
+  transition-delay: 3s;
+  transition-duration: 0.25s;
+}
+
+.with-t-cross {
+  stroke-dashoffset: 29.985427856445312px;
+  stroke-dasharray: 29.985427856445312px;
+}
+
+.visible > .with-t-cross {
+  transition-delay: 3.25s;
+  transition-duration: 0.25s;
+}
+
+.heart {
+  fill: transparent;
+
+  stroke-dashoffset: 233.1723175048828px;
+  stroke-dasharray: 233.1723175048828px;
+}
+
+.visible > .heart {
+  stroke-width: 6px;
+  fill: rgba(255, 0, 0, 50%);
+
+  transition-property: stroke-dashoffset, fill;
+  transition-delay: 3.5s, 4s;
+  transition-duration: 0.5s, 0.5s;
+}
+
+.by {
+  stroke-dashoffset: 497.6337890625px;
+  stroke-dasharray: 497.6337890625px;
+}
+
+.visible > .by {
+  transition-delay: 4.25s;
+  transition-duration: 0.75s;
+}

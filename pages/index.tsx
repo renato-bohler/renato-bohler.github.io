@@ -6,9 +6,9 @@ import Head from 'next/head';
 import KeyboardNavigation from '~/components/KeyboardNavigation/KeyboardNavigation';
 import SectionAnchor from '~/components/SectionAnchor/SectionAnchor';
 import useSectionAnchor from '~/components/SectionAnchor/useSectionAnchor';
+import Footer from '~/components/sections/Footer/Footer';
 import Header from '~/components/sections/Header/Header';
 import { SECTIONS } from '~/consts/sections.const';
-import styles from '~/styles/index.module.css';
 
 const HEADER_SECTION = SECTIONS[0];
 const CONTENT_SECTIONS = SECTIONS.filter(
@@ -91,19 +91,10 @@ const Index: NextPage = () => {
               fill="none"
             />
           </svg>
-          next
         </div>
       </main>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by Renato
-        </a>
-      </footer>
+      <Footer />
     </>
   );
 };

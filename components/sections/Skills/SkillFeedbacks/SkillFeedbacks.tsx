@@ -101,7 +101,7 @@ const AVERAGE_POINTS = AVERAGE.map((average, index) => {
   ].join(',');
 }).join(' ');
 
-const SkillFeedbacks: React.FC = () => {
+const SkillFeedbacks: React.VFC = () => {
   const [tableView, setTableView] = useState(false);
 
   return (
@@ -132,16 +132,14 @@ const SkillFeedbacks: React.FC = () => {
   );
 };
 
-const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
+const GraphicalView: React.VFC<{ active: boolean }> = ({
+  active,
+}) => {
   const [showFeedback, setShowFeedback] = useState(0);
 
   return (
-    <div>
-      <svg
-        role="graphics-document"
-        aria-label="Renato's skill radar chart"
-        viewBox="-125 -25 550 350"
-      >
+    <div aria-hidden>
+      <svg viewBox="-125 -25 550 350">
         {Object.values(HEXAGON_VERTICES).map((points, index) => (
           <polygon
             key={index}
@@ -292,7 +290,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
   );
 };
 
-const TableView: React.FC = () => (
+const TableView: React.VFC = () => (
   <table className={styles['table-view']}>
     <caption>
       All data collected from colleagues on my latest feedback round.

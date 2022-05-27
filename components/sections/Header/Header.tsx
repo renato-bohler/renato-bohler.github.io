@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 
 import classNames from 'classnames';
+import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import Icon from '~/components/Icon/Icon';
+import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import ArrowDownIcon from '~/components/icons/ArrowDown';
+import GitHubIcon from '~/components/icons/GitHub';
+import LinkedInIcon from '~/components/icons/LinkedIn';
+import TwitterIcon from '~/components/icons/Twitter';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './Header.module.css';
@@ -53,11 +58,7 @@ const Header: React.VFC = () => {
 
   return (
     <header ref={ref} className={styles.header}>
-      <h1
-        className={styles.heading}
-        aria-label="Renato Böhler, frontend developer"
-        data-folded={!inView}
-      >
+      <h1 className={styles.heading} data-folded={!inView}>
         <span
           className={classNames(styles.title, {
             [styles.caret]: !isFirstNameTypingComplete,
@@ -91,13 +92,17 @@ const Header: React.VFC = () => {
 
         <span
           className={classNames(styles.subtitle, {
-            [styles['subtitle-caret']]:
+            [styles.caret]:
               isFirstNameTypingComplete && isLastNameTypingComplete,
           })}
           aria-hidden
         >
           {subtitle}
         </span>
+
+        <VisuallyHidden>
+          Renato Böhler, frontend developer
+        </VisuallyHidden>
       </h1>
 
       <div
@@ -118,7 +123,9 @@ const Header: React.VFC = () => {
             rel="noopener noreferrer"
             className={styles.social}
           >
-            <Icon name="twitter-twotone" animationDelay={4000} />
+            <AnimatedIcon animationDelay={5500}>
+              <TwitterIcon />
+            </AnimatedIcon>
           </a>
           <a
             title="LinkedIn"
@@ -127,7 +134,9 @@ const Header: React.VFC = () => {
             rel="noopener noreferrer"
             className={styles.social}
           >
-            <Icon name="linkedin" animationDelay={3000} />
+            <AnimatedIcon animationDelay={4500}>
+              <LinkedInIcon />
+            </AnimatedIcon>
           </a>
           <a
             title="GitHub"
@@ -136,17 +145,18 @@ const Header: React.VFC = () => {
             rel="noopener noreferrer"
             className={styles.social}
           >
-            <Icon name="github-twotone" animationDelay={2000} />
+            <AnimatedIcon animationDelay={3500}>
+              <GitHubIcon />
+            </AnimatedIcon>
           </a>
         </nav>
       </div>
 
-      <Icon
-        name="arrow-small-down"
-        className={styles['scroll-down']}
-        style={{ display: isScrollHintVisible ? 'block' : 'none' }}
-        aria-hidden
-      />
+      {isScrollHintVisible && (
+        <AnimatedIcon className={styles['scroll-down']} aria-hidden>
+          <ArrowDownIcon />
+        </AnimatedIcon>
+      )}
 
       <WavyBackground />
     </header>

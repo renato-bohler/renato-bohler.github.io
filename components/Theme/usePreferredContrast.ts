@@ -9,14 +9,16 @@ const usePreferredContrast = (
   // Initial contrast preferences
   useEffect(() => {
     const userPrefersContrastMode = window.matchMedia(
-      '(prefers-contrast)',
+      '(prefers-contrast: more)',
     )?.matches;
     setContrastMode(userPrefersContrastMode);
   }, [setContrastMode]);
 
   // Watches for system contrast preferences changes
   useEffect(() => {
-    const mediaQueryList = window.matchMedia('(prefers-contrast)');
+    const mediaQueryList = window.matchMedia(
+      '(prefers-contrast: more)',
+    );
     const handleSystemPreferenceChange = (e: MediaQueryListEvent) =>
       setContrastMode(e.matches);
 

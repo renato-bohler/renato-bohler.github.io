@@ -12,6 +12,8 @@
 
   transition: color 1s ease-in-out;
   padding: 6px;
+
+  cursor: pointer;
 }
 
 .button:hover svg {
@@ -78,7 +80,6 @@
 
 .checkbox {
   display: flex;
-  justify-content: space-around;
   align-items: center;
 
   font-size: 16px;
@@ -91,6 +92,7 @@
 .checkbox > input {
   width: 16px;
   height: 16px;
+  margin-right: 8px;
 }
 
 @media screen and (max-width: 550px) {

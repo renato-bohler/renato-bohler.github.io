@@ -379,13 +379,6 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@iconify/react@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@iconify/react/-/react-3.1.1.tgz#a517147b22c6e437529a539fcada4411e2f0cbe6"
-  integrity sha512-KsMXgZD94UTah5kFO41qMTQGVSt9xYnC2OCX3LiV7aRThUuTdjTFyu9EfVzHLjwhgYnkP54/DZNa+3ssBqiLBQ==
-  dependencies:
-    cross-fetch "^3.1.4"
-
 "@istanbuljs/load-nyc-config@^1.0.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@istanbuljs/load-nyc-config/-/load-nyc-config-1.1.0.tgz#fd3db1d59ecf7cf121e80650bb86712f9b55eced"
@@ -1720,13 +1713,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.4, create-hmac@^1.1.7:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-fetch@^3.1.4:
-  version "3.1.4"
-  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.4.tgz#9723f3a3a247bf8b89039f3a380a9244e8fa2f39"
-  integrity sha512-1eAtFWdIubi6T4XPy6ei9iUFoKpUkIF971QLN8lIvvvwueI65+Nw5haMNKUwfJxabqlIIDODJKGrQ66gxC0PbQ==
-  dependencies:
-    node-fetch "2.6.1"
-
 cross-spawn@^7.0.2, cross-spawn@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-7.0.3.tgz#f73a85b9d5d41d045551c177e2882d4ac85728a6"
@@ -1980,10 +1966,10 @@ dom-accessibility-api@^0.5.6, dom-accessibility-api@^0.5.9:
   resolved "https://registry.yarnpkg.com/dom-accessibility-api/-/dom-accessibility-api-0.5.10.tgz#caa6d08f60388d0bb4539dd75fe458a9a1d0014c"
   integrity sha512-Xu9mD0UjrJisTmv7lmVSDMagQcU9R5hwAbxsaAE/35XPnPLJobbuREfV/rraiSaEj/UOvgrzQs66zyTWTlyd+g==
 
-dom7@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/dom7/-/dom7-4.0.2.tgz#b3595f34c9658d72e88bb6fa6a6e7b430d4bd5fd"
-  integrity sha512-Ji4t3Y/vNQg6Q9bR+Syx6Td8qiq8116LE9h4OzbPuxdxK7DyyX7i8EXkYgBX6+EiX6+oYXDTH5BSN29G/n4jug==
+dom7@^4.0.4:
+  version "4.0.4"
+  resolved "https://registry.yarnpkg.com/dom7/-/dom7-4.0.4.tgz#8b68c5d8e5e2ed0fddb1cb93e433bc9060c8f3fb"
+  integrity sha512-DSSgBzQ4rJWQp1u6o+3FVwMNnT5bzQbMb+o31TjYYeRi05uAcpF8koxdfzeoe5ElzPmua7W7N28YJhF7iEKqIw==
   dependencies:
     ssr-window "^4.0.0"
 
@@ -5184,12 +5170,12 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-swiper@^7.4.1:
-  version "7.4.1"
-  resolved "https://registry.yarnpkg.com/swiper/-/swiper-7.4.1.tgz#99fc586d1335b45250d2c6b3128dc91f8047d3e7"
-  integrity sha512-dhbL4tpYFvHug1J7GnKElfTi6EYhlZy/vNZRhHkWFyUsWZ1Vovipxj3la5gqllMogygXJMe3zvVv+f6eppvWiA==
+swiper@^8.1.4:
+  version "8.1.4"
+  resolved "https://registry.yarnpkg.com/swiper/-/swiper-8.1.4.tgz#c105050c06d2a105fcc9e707894ddf20afd238ba"
+  integrity sha512-ho6ceKxqbDxV51qymVxwn1oB4CqTrsG3Y5pGW2aKlZxsT6NMdlow8ICUa+wD/m5l2T5ZD2B0yyqTihSSmLBV4A==
   dependencies:
-    dom7 "^4.0.2"
+    dom7 "^4.0.4"
     ssr-window "^4.0.2"
 
 symbol-tree@^3.2.4:

@@ -12,12 +12,14 @@ const skills: Skill[] = [
         background: '#f7df1e',
         text: 'black',
       },
+      scrollBar: { trackColor: '#645a0a' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="152.441 275.281 446.124 321.514"
           fill={colors.text}
           stroke={colors.background}
@@ -32,25 +34,44 @@ const skills: Skill[] = [
     teaser: (
       <>
         <p>
-          <strong>JavaScript</strong> was probably the first
-          programming language I had contact with, when I was 12. At
-          that time, I&apos;d create websites just for fun.
+          <strong>JavaScript</strong> was the first programming
+          language I had contact with when I was 12. At that time,
+          I&apos;d create websites just for fun.
         </p>
         <p>
-          I&apos;ve seen the evolution of this language over the last
-          decade or so, and the rise and fall of libraries like
-          jQuery.
+          I&apos;ve been closely following the evolution of JS ever
+          since, from the pre-ES3, jQuery times to the modern JS we
+          have today.
         </p>
       </>
     ),
     description: (
       <>
-        <strong>Lorem</strong> ipsum dolor sit amet, consectetur
-        adipiscing elit. Maecenas semper gravida lacus. Suspendisse a
-        vehicula purus, nec ultricies urna. Donec in suscipit dolor.
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Maecenas semper gravida lacus. Suspendisse a vehicula purus,
-        nec ultricies urna.
+        <p>
+          <strong>
+            JavaScript is the programming language I&apos;m the most
+            experienced with:
+          </strong>
+          . I&apos;ve been using it since the ES3 days (in the early
+          2000s).
+        </p>
+        <p>
+          I started learning JS because I used to build
+          videogame-related websites just as a hobby. In fact, some of
+          the websites I&apos;ve created are still up and running (and
+          actually being used 😱).
+        </p>
+        <p>
+          Professionally, I&apos;ve been using JavaScript mainly to
+          build user interfaces (with React, Angular, etc.). I also
+          have experience writing backend applications using Express
+          and developing Kafka integrations in Node.js applications.
+        </p>
+        <p>
+          I love this language, and{' '}
+          <strong>I&apos;m always keeping myself updated</strong> with
+          its new libraries and features.
+        </p>
       </>
     ),
   },
@@ -67,12 +88,14 @@ const skills: Skill[] = [
         background: '#aae06a',
         text: 'black',
       },
+      scrollBar: { trackColor: '#3c6011' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="2.929 -2.196 124.777 133.564"
           fill={colors.text}
           stroke={colors.background}
@@ -84,8 +107,20 @@ const skills: Skill[] = [
     },
     studying: false,
     favorite: false,
-    // TODO: Kafka...
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          Even though I&apos;ve been focusing my career on the
+          frontend path these last few years, I have experience
+          building server-side Node.js applications.
+        </p>
+        <p>
+          My experience with server-side Node.js includes small
+          backends developed using Express and multi-system Kafka
+          integration applications.
+        </p>
+      </>
+    ),
   },
   {
     name: 'RegExp',
@@ -99,10 +134,45 @@ const skills: Skill[] = [
         background: '#004026',
         text: 'white',
       },
+      scrollBar: { trackColor: '#69d7ab' },
     },
-    studying: false,
+    icon: function (isContrastMode: boolean): React.ReactElement {
+      const colors = getColors(this, isContrastMode);
+
+      return (
+        <svg
+          aria-hidden
+          viewBox="0 50 1024 1024"
+          fill={colors.text}
+          stroke={colors.background}
+          strokeWidth={150}
+        >
+          <path d="M682.666667 721.92c-14.08 2.133333-28.16 3.413333-42.666667 3.413333-14.506667 0-28.586667-1.28-42.666667-3.413333v-149.76l-106.666666 105.813333c-21.333333-16.64-42.666667-37.973333-59.306667-59.306666l105.813333-106.666667H387.413333c-2.133333-14.08-3.413333-28.16-3.413333-42.666667 0-14.506667 1.28-28.586667 3.413333-42.666666h149.76l-105.813333-106.666667c8.106667-10.666667 16.64-21.333333 27.733333-31.573333 10.24-11.093333 20.906667-19.626667 31.573334-27.733334L597.333333 366.506667V216.746667c14.08-2.133333 28.16-3.413333 42.666667-3.413334 14.506667 0 28.586667 1.28 42.666667 3.413334v149.76l106.666666-105.813334c21.333333 16.64 42.666667 37.973333 59.306667 59.306667L742.826667 426.666667h149.76c2.133333 14.08 3.413333 28.16 3.413333 42.666666 0 14.506667-1.28 28.586667-3.413333 42.666667h-149.76l105.813333 106.666667c-8.106667 10.666667-16.64 21.333333-27.733333 31.573333-10.24 11.093333-20.906667 19.626667-31.573334 27.733333L682.666667 572.16v149.76M213.333333 810.666667a85.333333 85.333333 0 0 1 85.333334-85.333334 85.333333 85.333333 0 0 1 85.333333 85.333334 85.333333 85.333333 0 0 1-85.333333 85.333333 85.333333 85.333333 0 0 1-85.333334-85.333333z" />
+        </svg>
+      );
+    },
+    studying: true,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          <strong>
+            Regular expressions are like a Swiss Army Knife
+          </strong>{' '}
+          for developers. It can be super convenient, but you must
+          know how to use it — and it isn&apos;t always easy.
+        </p>
+
+        <p>
+          My skills in RegExp allow me to fetch data and refactor code
+          more efficiently.
+        </p>
+        <p>
+          RegExp is a fantastic and powerful tool, and this is why
+          I&apos;m always eager to learn more about it!
+        </p>
+      </>
+    ),
   },
   {
     name: 'TypeScript',
@@ -117,12 +187,14 @@ const skills: Skill[] = [
         background: '#005c9a',
         text: 'white',
       },
+      scrollBar: { trackColor: '#8dd1ff' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="156.454 127.217 409.628 296.705"
           fill={colors.text}
           stroke={colors.background}
@@ -139,17 +211,48 @@ const skills: Skill[] = [
       <>
         <p>
           <strong>TypeScript</strong> is one of those things that you
-          might ask yourself <em>&quot;why do I need that?&quot;</em>,
-          but when you get used to it, you&apos;ll never look back.
+          might ask yourself: <em>&quot;why do I need that?&quot;</em>{' '}
+          — but when you get used to it, you&apos;ll never look back.
         </p>
         <p>
-          I&apos;ve been using <strong>TypeScript</strong> since mid
-          2019, and I&apos;ll add it in every project I start today,
-          no matter how small it might be.
+          I&apos;ve been using <strong>TypeScript</strong> since
+          mid-2019, and I&apos;ll add it to every project I start
+          today, no matter how small it might be.
         </p>
       </>
     ),
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          To be honest, when I first heard about TypeScript, I did not
+          get super hyped. My first experience with types in
+          JavaScript was with Flow + AngularJS, and the lack of proper
+          documentation made the whole experience a kind of a mess.
+        </p>
+        <p>
+          But when I started using TypeScript professionally in 2019,
+          everything changed. TypeScript makes everything much more
+          explicit, easy, and reliable that{' '}
+          <strong>
+            it&apos;s hard for me to think about starting a new
+            project without it these days
+          </strong>
+          .
+        </p>
+        <p>
+          I do realize that not everything about TypeScript is
+          perfect, though. Libraries with incorrect or incompatible
+          typings can be a pain to deal with. Also, assigning the
+          correct type for complex scenarios gets hard pretty fast.
+        </p>
+        <p>
+          But TypeScript has come a long way. Having such a great
+          community also helps: any problem you might have has
+          probably already been solved by someone (Google for the
+          rescue 😅).
+        </p>
+      </>
+    ),
   },
   {
     name: 'Git',
@@ -164,12 +267,14 @@ const skills: Skill[] = [
         background: '#a92709',
         text: 'white',
       },
+      scrollBar: { trackColor: '#ffbdaf' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="-4.38 -5.338 107.676 107.949"
           stroke={colors.background}
           strokeWidth={10}
@@ -187,7 +292,44 @@ const skills: Skill[] = [
     },
     studying: false,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          I really like using Git directly through the terminal: it
+          enabled me to understand fundamentally what every action is
+          doing under the hood.
+        </p>
+        <p>
+          Git has various helpful (but not so often used) features. My
+          favorite one is <code>bisect</code>, as it makes it easy to
+          find the commit which introduced a behavior on the system.
+        </p>
+        <p>
+          I have experienced a lot of different branching strategies
+          throughout my career — most of them were variations of the{' '}
+          <a
+            href="https://nvie.com/posts/a-successful-git-branching-model"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Git Flow
+          </a>
+          .
+        </p>
+        <p>
+          In my personal projects, I like to commit changes with
+          messages according to the{' '}
+          <a
+            href="https://www.conventionalcommits.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Conventional Commits
+          </a>
+          .
+        </p>
+      </>
+    ),
   },
   {
     name: 'CI/CD',
@@ -201,16 +343,64 @@ const skills: Skill[] = [
         background: '#c0c0c0',
         text: 'black',
       },
+      scrollBar: { trackColor: '#4c4c4c' },
     },
+    icon: function (isContrastMode: boolean): React.ReactElement {
+      const colors = getColors(this, isContrastMode);
+
+      return (
+        <svg
+          aria-hidden
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="-5 -5 52 42"
+          fill={colors.text}
+          stroke={colors.background}
+          strokeWidth={5}
+        >
+          <path d="M3.692 21.72c.176.042.415.259.484.457l.35.844c.079.162.064.483-.03.637l-1.397 2.284c-.299.49-.237 1.184.165 1.634l1.183 1.182c.412.366 1.139.432 1.613.145l2.284-1.397c.143-.088.45-.119.665-.018l.843.348c.17.059.387.297.429.473l.627 2.604c.133.552.66 1.006 1.226 1.058c0 0 .347.032.867.032s.867-.032.868-.032a1.444 1.444 0 0 0 1.225-1.058l.628-2.604c.042-.175.258-.414.456-.483l.844-.35c.149-.073.494-.058.637.03l2.284 1.397c.201.123.441.188.696.188c.345 0 .679-.121.938-.352l1.182-1.183a1.407 1.407 0 0 0 .145-1.613l-1.397-2.284c-.094-.154-.109-.475-.018-.665l.348-.843c.059-.17.297-.387.473-.429l2.604-.627a1.446 1.446 0 0 0 1.058-1.226s.032-.347.032-.867s-.032-.867-.032-.868a1.447 1.447 0 0 0-1.058-1.226l-2.603-.626c-.176-.042-.415-.259-.484-.457l-.35-.844c-.079-.162-.064-.483.03-.637l1.397-2.284c.299-.49.237-1.184-.165-1.634l-1.183-1.182c-.413-.367-1.141-.433-1.613-.145l-2.284 1.397c-.143.087-.451.12-.665.018l-.843-.348c-.17-.059-.386-.297-.428-.473l-.628-2.604a1.446 1.446 0 0 0-1.226-1.058C13.867 6.032 13.52 6 13 6s-.867.032-.868.032a1.447 1.447 0 0 0-1.226 1.058l-.626 2.602c-.042.176-.259.415-.457.484l-.844.35c-.15.073-.494.057-.637-.03L6.059 9.099c-.473-.288-1.185-.238-1.634.164l-1.182 1.183a1.407 1.407 0 0 0-.145 1.613l1.397 2.284c.094.154.109.475.018.665l-.348.843c-.059.17-.297.387-.473.429l-2.604.627A1.446 1.446 0 0 0 .03 18.133c.002 0-.03.347-.03.867s.032.867.032.868a1.447 1.447 0 0 0 1.058 1.226l2.602.626zM1 19c0-.458.027-.767.028-.777a.466.466 0 0 1 .296-.344l2.604-.627c.505-.122 1.014-.584 1.172-1.047l.324-.787c.228-.467.196-1.153-.075-1.597l-1.397-2.283c-.067-.111-.048-.331.018-.406L5.111 9.99c.091-.081.323-.101.427-.038l2.284 1.397c.433.265 1.175.283 1.568.088l.788-.326c.491-.169.953-.678 1.075-1.184l.626-2.603a.465.465 0 0 1 .344-.297c.01 0 .319-.027.777-.027s.767.027.777.028a.466.466 0 0 1 .344.296l.627 2.603c.122.505.583 1.015 1.047 1.173l.787.324c.457.224 1.165.189 1.597-.075l2.283-1.397c.104-.063.35-.03.406.018l1.142 1.141c.086.097.105.316.038.427l-1.397 2.284c-.271.443-.303 1.13-.088 1.568l.326.788c.169.491.678.953 1.184 1.075l2.603.626a.465.465 0 0 1 .297.344c0 .01.027.319.027.777s-.027.767-.028.777a.466.466 0 0 1-.296.344l-2.604.627c-.505.122-1.014.584-1.172 1.047l-.324.787c-.228.467-.196 1.153.075 1.597l1.397 2.283c.067.111.048.331-.018.406l-1.141 1.142a.398.398 0 0 1-.251.079a.346.346 0 0 1-.175-.041l-2.284-1.397c-.432-.264-1.174-.283-1.568-.088l-.788.326c-.491.169-.953.679-1.074 1.184l-.627 2.603a.465.465 0 0 1-.344.297c-.011 0-.32.027-.778.027s-.767-.027-.777-.028a.466.466 0 0 1-.344-.296l-.627-2.604c-.122-.505-.584-1.014-1.047-1.172l-.787-.324a1.633 1.633 0 0 0-.715-.152c-.329 0-.642.081-.882.228l-2.283 1.397c-.104.063-.351.029-.406-.018L3.99 26.889c-.086-.097-.105-.316-.038-.427l1.397-2.284c.271-.443.303-1.13.088-1.568l-.326-.788c-.169-.491-.678-.953-1.184-1.075l-2.603-.626a.465.465 0 0 1-.297-.344c0-.01-.027-.319-.027-.777z" />
+          <path d="M13 24.5c3.033 0 5.5-2.467 5.5-5.5s-2.467-5.5-5.5-5.5s-5.5 2.467-5.5 5.5s2.467 5.5 5.5 5.5zm0-10c2.481 0 4.5 2.019 4.5 4.5s-2.019 4.5-4.5 4.5s-4.5-2.019-4.5-4.5s2.019-4.5 4.5-4.5zm14.477-9.186a.424.424 0 0 1-.259.138l-1.861-.018a1.16 1.16 0 0 0-1.053.746s-.082.233-.172.59c-.09.357-.128.601-.128.601c-.07.451.181.95.584 1.161l1.641.86a.435.435 0 0 1 .166.273l.093.635a.426.426 0 0 1-.084.28l-1.322 1.296c-.331.324-.418.878-.19 1.313l.599 1c.253.372.801.562 1.231.428l1.824-.558c.099 0 .198.038.254.083l.515.38a.43.43 0 0 1 .138.259l-.018 1.852c-.004.456.316.913.746 1.063c0 0 .233.082.59.172c.357.09.601.128.601.128c.026.004.13.012.156.012a1.17 1.17 0 0 0 1.005-.596l.86-1.641a.435.435 0 0 1 .273-.166l.663-.096c.1 0 .218.052.251.086l1.296 1.322c.315.322.846.437 1.313.19l.999-.599c.382-.26.567-.79.429-1.231l-.552-1.767a.433.433 0 0 1 .078-.311l.38-.515a.424.424 0 0 1 .259-.138l1.861.018a1.16 1.16 0 0 0 1.053-.746s.082-.233.172-.59c.09-.357.128-.601.128-.601a1.16 1.16 0 0 0-.584-1.161l-1.641-.86a.435.435 0 0 1-.166-.273l-.092-.633a.426.426 0 0 1 .084-.28l1.322-1.296c.331-.324.418-.878.19-1.313l-.599-1c-.253-.371-.8-.563-1.231-.429l-1.825.558a.432.432 0 0 1-.254-.083l-.515-.38a.43.43 0 0 1-.138-.259l.018-1.852a1.158 1.158 0 0 0-.746-1.063s-.233-.082-.59-.172c-.357-.09-.601-.128-.601-.128a2.725 2.725 0 0 0-.156-.011a1.17 1.17 0 0 0-1.005.596l-.86 1.641a.435.435 0 0 1-.273.166l-.663.095a.437.437 0 0 1-.251-.086l-1.296-1.322a1.112 1.112 0 0 0-1.313-.19l-1 .598c-.382.26-.567.79-.429 1.231l.552 1.767a.433.433 0 0 1-.078.311l-.379.515zm.82.572l.343-.466c.268-.317.372-.834.248-1.229l-.551-1.766c-.005-.028.017-.091.012-.092l.948-.568l.113.017l1.297 1.322c.23.234.609.386.965.386a.945.945 0 0 0 .204-.019l.575-.085a1.393 1.393 0 0 0 1.043-.694l.859-1.64a.185.185 0 0 1 .12-.061c.011.001.215.035.513.109c.297.075.493.142.502.146c.031.013.076.078.078.11l-.018 1.852c-.004.414.245.879.567 1.089l.465.343c.309.261.839.371 1.229.248l1.774-.552c.042 0 .089.026.083.013l.568.948c.011.026 0 .092-.017.113l-1.322 1.297c-.295.291-.448.795-.367 1.169l.084.575c.036.412.328.851.695 1.043l1.64.859a.189.189 0 0 1 .061.12a6.405 6.405 0 0 1-.109.513a6.095 6.095 0 0 1-.146.502c-.013.031-.078.076-.11.078l-1.862-.018c-.411 0-.871.249-1.079.567l-.342.465a1.386 1.386 0 0 0-.248 1.229l.551 1.766c.005.027-.017.091-.012.092l-.948.568l-.113-.017l-1.297-1.322c-.23-.234-.609-.386-.965-.386a.945.945 0 0 0-.204.019l-.575.085a1.393 1.393 0 0 0-1.043.694l-.859 1.64a.185.185 0 0 1-.12.061a6.405 6.405 0 0 1-.513-.109a6.095 6.095 0 0 1-.502-.146c-.031-.013-.076-.078-.078-.11l.018-1.852c.004-.414-.245-.879-.567-1.089l-.465-.343a1.387 1.387 0 0 0-1.23-.248l-1.774.552c-.043 0-.09-.023-.083-.013l-.568-.948c-.011-.026 0-.092.017-.113l1.322-1.297c.295-.291.448-.795.367-1.169l-.084-.574a1.392 1.392 0 0 0-.695-1.043l-1.64-.859a.189.189 0 0 1-.061-.12c.001-.011.035-.215.109-.513c.075-.297.142-.493.146-.502c.013-.031.078-.076.11-.078l1.862.018c.411 0 .871-.249 1.079-.567z" />
+          <path d="M33 12c1.654 0 3-1.346 3-3s-1.346-3-3-3s-3 1.346-3 3s1.346 3 3 3zm0-5c1.103 0 2 .897 2 2s-.897 2-2 2s-2-.897-2-2s.897-2 2-2z" />
+        </svg>
+      );
+    },
+
     studying: false,
     favorite: false,
-    // TODO: Travis, CircleCI, Jenkins, GitHub Actions...
-    // TODO: feature flagging?
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          My first opportunity to learn and apply Continuous
+          Integration and Continuous Deployment practices happened
+          while developing{' '}
+          <a
+            href="https://renato-bohler.github.io/redux-form-input-masks"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            redux-form-input-masks
+          </a>
+          .
+        </p>
+        <p>
+          Since then, I&apos;ll always follow these practices on every
+          project. I firmly believe that the time invested in setting
+          up these tools pays off in any project.
+        </p>
+        <p>
+          Professionally, I had experience using Travis, CircleCI,
+          Jenkins, and GitHub Actions.
+        </p>
+        <p>
+          🚩 I&apos;m also experienced in using feature flags to
+          control and experiment with the release of new features
+          (using Optimizely or LaunchDarkly).
+        </p>
+      </>
+    ),
   },
   {
     name: 'React',
-    usageLevel: 2,
+    usageLevel: 3,
     yearsExperience: 5,
     colors: {
       normal: {
@@ -221,12 +411,14 @@ const skills: Skill[] = [
         background: '#61dbfb',
         text: 'black',
       },
+      scrollBar: { trackColor: '#2e4f58' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="155.266 60.972 537.598 477.767"
           fill={colors.text}
           stroke={colors.background}
@@ -241,13 +433,13 @@ const skills: Skill[] = [
     teaser: (
       <>
         <p>
-          I&apos;ve been in love with <strong>React</strong> ever
-          since I first used it, back in 2017.
+          I&apos;ve been in love with <strong>React</strong> since I
+          first used it in 2017.
         </p>
         <p>
-          What I really like about <strong>React</strong>, apart from
-          the component-based architecture, is the fact that it&apos;s
-          all just JavaScript.
+          What I really enjoy about <strong>React</strong>, apart from
+          its component-based architecture, is that it&apos;s all just
+          JavaScript.
         </p>
         <p>
           The whole <strong>React</strong> ecosystem also helps make
@@ -255,11 +447,112 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          React is definitely my preferred solution when it comes to
+          UI development. Recently, most of my work has been
+          developing React projects.
+        </p>
+        <p>
+          Alongside React, I generally use libraries like{' '}
+          <code>redux</code>, <code>redux-thunk</code>,{' '}
+          <code>redux-form</code>, <code>material-ui</code>,{' '}
+          <code>styled-components</code>, among others.
+        </p>
+        <p>
+          <strong>Fun fact 😆:</strong> the page you&apos;re reading
+          right now was made using React using static-site generation
+          from{' '}
+          <a
+            href="https://nextjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Next.js
+          </a>
+          .
+        </p>
+        <p>
+          Some of the most complex things I&apos;ve built with React
+          are open-source projects:{' '}
+          <a
+            href="https://renato-bohler.github.io/logossim"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Logossim
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://renato-bohler.github.io/what-the-filter"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            what the filter?
+          </a>
+          .
+        </p>
+        <p>
+          I have experience developing server-side React applications
+          and building more complex components such as:
+        </p>
+        <ul>
+          <li>
+            customized rich text editors using{' '}
+            <a
+              href="https://draftjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <code>draft-js</code>
+            </a>
+          </li>
+          <li>integrations with QRCode reading devices</li>
+          <li>integrations with real-time measurement devices</li>
+        </ul>
+        <p>
+          I also have experience with building and maintaining
+          component libraries using{' '}
+          <a
+            href="https://storybook.js.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Storybook
+          </a>
+          .
+        </p>
+        <p>
+          I&apos;m always on the lookout for new React features, and
+          I&apos;m an active member of React communities. I also had
+          the opportunity to{' '}
+          <a
+            href="https://github.com/reactjs/pt-BR.reactjs.org/pull/31"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            collaborate
+          </a>{' '}
+          with the original translation of the{' '}
+          <a
+            href="https://pt-br.reactjs.org/docs/react-api.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            API Reference (in Portuguese)
+          </a>{' '}
+          on the official React docs.
+        </p>
+        <p>
+          <strong>TL;DR:</strong> I am a React fanboy 😅
+        </p>
+      </>
+    ),
   },
   {
     name: 'React Native',
-    usageLevel: 2,
+    usageLevel: 1,
     yearsExperience: 1,
     colors: {
       normal: {
@@ -270,12 +563,14 @@ const skills: Skill[] = [
         background: '#222222',
         text: '#7ee1fb',
       },
+      scrollBar: { trackColor: '#5fbbd3' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="155.266 60.972 537.598 477.767"
           fill={colors.text}
           stroke={colors.background}
@@ -296,11 +591,58 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          While there definitely are fundamental differences between
+          React and React Native,{' '}
+          <strong>
+            coding React Native apps is very similar to coding React
+            apps
+          </strong>
+          .
+        </p>
+        <p>
+          I&apos;m way more experienced with React than with React
+          Native, and the similarity between them allows me to feel
+          pretty confident while working on React Native applications.
+        </p>
+        <p>
+          In my only professional experience with it, I built a
+          healthcare marketplace app (
+          <a
+            href="https://play.google.com/store/apps/details?id=com.compar.tudobem"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Android
+          </a>
+          ,{' '}
+          <a
+            href="https://apps.apple.com/br/app/tudobem/id1527314081"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            iOS
+          </a>{' '}
+          — in Portuguese) up until just before its first production
+          release. For that reason, handling app releases is where my
+          knowledge falls short. I know people use tools like{' '}
+          <a
+            href="https://fastlane.tools"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            fastlane
+          </a>{' '}
+          — I just never used them 😅
+        </p>
+      </>
+    ),
   },
   {
     name: 'Redux',
-    usageLevel: -1,
+    usageLevel: 1,
     yearsExperience: 4,
     colors: {
       normal: {
@@ -311,12 +653,14 @@ const skills: Skill[] = [
         background: '#4e3784',
         text: 'white',
       },
+      scrollBar: { trackColor: '#b0a0d7' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="-45.112 -32.683 301.112 276.683"
           fill={colors.text}
           stroke={colors.background}
@@ -328,11 +672,40 @@ const skills: Skill[] = [
     },
     studying: false,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          I get it, I get it... Redux is not the cool kid in the block
+          these days. But I believe{' '}
+          <strong>
+            it&apos;s still a notable state management library
+          </strong>{' '}
+          when used adequately. It has incredible tooling and a large
+          community around it. Libraries like{' '}
+          <a
+            href="https://redux-toolkit.js.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Redux Toolkit
+          </a>{' '}
+          also help reduce boilerplate code, one of the main concerns
+          devs seem to have with Redux.
+        </p>
+        <p>
+          I&apos;ve got experience using Redux with{' '}
+          <code>redux-thunk</code> and <code>redux-saga</code>.
+          They&apos;ve been used mainly for API fetching, though, and,
+          for that purpose, I&apos;d prefer using{' '}
+          <code>react-query</code>, RTK Query, or <code>swr</code>{' '}
+          nowadays instead.
+        </p>
+      </>
+    ),
   },
   {
     name: 'Angular',
-    usageLevel: 3,
+    usageLevel: 1,
     yearsExperience: 2,
     colors: {
       normal: {
@@ -343,12 +716,14 @@ const skills: Skill[] = [
         background: '#b20027',
         text: 'white',
       },
+      scrollBar: { trackColor: '#ffa0b6' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="0 0 551.226 533.485"
           fill={colors.text}
           stroke={colors.background}
@@ -360,7 +735,31 @@ const skills: Skill[] = [
     },
     studying: false,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          Though Angular is not my favorite technology,{' '}
+          <strong>
+            it was the first frontend framework I used professionally
+          </strong>
+          . It was actually AngularJS (1.x) using Material components,
+          and it was kinda buggy sometimes, to be honest. This is why
+          I was happy when my team decided to switch from AngularJS to
+          React back in the day 😅
+        </p>
+        <p>
+          I&apos;ve had the opportunity to work with Angular 12
+          recently, and it is undoubtedly an improvement over the old
+          AngularJS.
+        </p>
+        <p>
+          <strong>Don&apos;t get me wrong:</strong> I like working
+          with Angular. In fact, I really enjoy trying different
+          stuff, as it pushes me out of my comfort zone, which is
+          always an opportunity to learn new things.
+        </p>
+      </>
+    ),
   },
   {
     name: 'Vue',
@@ -375,12 +774,13 @@ const skills: Skill[] = [
         background: '#7dd1ac',
         text: 'black',
       },
+      scrollBar: { trackColor: '#292e31' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
-        <svg viewBox="-60.623 -57.208 327.091 283.898">
+        <svg aria-hidden viewBox="-60.623 -57.208 327.091 283.898">
           <path
             d="M 135.328 -54.273 L 102.473 1.162 L 70.365 -54.273 L -57.524 -54.273 L 102.476 222.859 L 262.476 -54.273 Z"
             fill="var(--theme-background)"
@@ -398,11 +798,23 @@ const skills: Skill[] = [
     },
     studying: false,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          Vue has an appealing concept, which is a middle ground
+          between Angular and React, with a more gentle learning curve
+          than both.
+        </p>
+        <p>
+          My only experience with Vue was building the first version
+          of my portfolio, using version 2.
+        </p>
+      </>
+    ),
   },
   {
     name: 'GraphQL',
-    usageLevel: 2,
+    usageLevel: 1,
     yearsExperience: 1,
     colors: {
       normal: {
@@ -413,12 +825,14 @@ const skills: Skill[] = [
         background: '#901266',
         text: 'white',
       },
+      scrollBar: { trackColor: '#ffc9ed' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="0 -17.849 445.309 438.902"
           fill={colors.text}
           stroke={colors.background}
@@ -430,7 +844,41 @@ const skills: Skill[] = [
     },
     studying: true,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          For frontend developers, there&apos;s nothing better than
+          GraphQL when it comes to data fetching. The ability to ask
+          for exactly what you need and get predictable results is
+          incredible and removes a lot of complexity in managing data
+          that otherwise would potentially be spread across different
+          endpoints (or even different services).
+        </p>
+        <p>
+          I have professional experience using GraphQL with{' '}
+          <a
+            href="https://www.apollographql.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apollo
+          </a>{' '}
+          on the frontend, but I never developed an API using GraphQL.
+        </p>
+        <p>
+          <a
+            href="https://relay.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Relay
+          </a>{' '}
+          seems to be a very interesting GraphQL client. I&apos;ve
+          been studying it for a while now, but I never had the chance
+          to use it.
+        </p>
+      </>
+    ),
   },
   {
     name: 'SQL',
@@ -445,10 +893,58 @@ const skills: Skill[] = [
         background: '#545454',
         text: 'white',
       },
+      scrollBar: { trackColor: '#a1a1a1' },
+    },
+    icon: function (isContrastMode: boolean): React.ReactElement {
+      const colors = getColors(this, isContrastMode);
+
+      return (
+        <svg
+          aria-hidden
+          viewBox="0 0 339 362"
+          fill={colors.text}
+          stroke={colors.background}
+          strokeWidth={50}
+        >
+          <g transform="matrix(1, 0, 0, 1, -76.58812, 40)">
+            <path
+              d="M245.333,0C172.928,0,96,22.421,96,64v192c0,42.027,75.115,64,149.333,64s149.333-21.973,149.333-64V64
+			C394.667,22.421,317.739,0,245.333,0z M373.333,256c0,20.181-52.565,42.667-128,42.667s-128-22.485-128-42.667v-29.909
+			c27.883,19.584,78.933,29.909,128,29.909s100.117-10.325,128-29.909V256z M373.333,192c0,17.813-48.704,42.667-128,42.667
+			s-128-24.853-128-42.667v-29.909c27.883,19.584,78.933,29.909,128,29.909s100.117-10.325,128-29.909V192z M373.333,128
+			c0,17.813-48.704,42.667-128,42.667s-128-24.853-128-42.667V98.091c27.883,19.584,78.933,29.909,128,29.909
+			s100.117-10.325,128-29.909V128z M245.333,106.667c-79.296,0-128-24.853-128-42.667c0-17.813,48.704-42.667,128-42.667
+			s128,24.853,128,42.667C373.333,81.813,324.629,106.667,245.333,106.667z"
+            />
+          </g>
+        </svg>
+      );
     },
     studying: false,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          With my knowledge of relational databases, I&apos;m able to
+          elaborate complex queries (with multiple and different types
+          of <code>JOIN</code>, <code>GROUP BY</code>,{' '}
+          <code>HAVING</code>, subqueries, etc.).
+        </p>
+        <p>
+          I know the core concepts behind a database management
+          system, but not deeply enough to do insane query
+          optimizations. Also, I don&apos;t have much experience using
+          features like procedures or triggers. So, to summarize, I
+          don&apos;t consider myself a DB specialist 😅 but I can
+          certainly get most of the job done.
+        </p>
+        <p>
+          Professionally, I have experience using MySQL, PostgreSQL,
+          and Microsoft SQL Server. I also have experience using ORMs
+          such as Hibernate.
+        </p>
+      </>
+    ),
   },
   {
     name: 'Java',
@@ -463,12 +959,14 @@ const skills: Skill[] = [
         background: '#b00d0f',
         text: 'white',
       },
+      scrollBar: { trackColor: '#ffbdbe' },
     },
     icon: function (isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg
+          aria-hidden
           viewBox="-23.192 0 327.821 432.784"
           fill={colors.text}
           stroke={colors.background}
@@ -480,7 +978,67 @@ const skills: Skill[] = [
     },
     studying: false,
     favorite: false,
-    description: <>TODO</>,
+    description: (
+      <>
+        <p>
+          Interested in developing native Android applications, I
+          started studying Java around 2014. At that time, I developed
+          some Android apps for personal use but never actually
+          released them (or their source codes).
+        </p>
+        <p>
+          One of those apps, for instance, was an{' '}
+          <a
+            href="https://forum.xda-developers.com/xposed"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Xposed framework
+          </a>{' '}
+          module that acted as an SMS blocker, built by
+          reverse-engineering the default Android SMS app. This app
+          allowed me to overcome the fact that Android 4.4 (KitKat){' '}
+          <a
+            href="https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            removed the ability for apps to intercept and block SMS
+            messages
+          </a>
+          . I used that app for a long time to get rid of annoying SMS
+          ads 🦶👋
+        </p>
+        <p>
+          Professionally, I&apos;ve used Java to build backend
+          applications using mainly{' '}
+          <a
+            href="https://maven.apache.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Maven
+          </a>
+          ,{' '}
+          <a
+            href="https://www.ibm.com/docs/en/was/8.5.5?topic=SSEQTP_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/cwbs_jaxrs_overview.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            JAX-RS
+          </a>
+          , and{' '}
+          <a
+            href="https://hibernate.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Hibernate
+          </a>
+          .
+        </p>
+      </>
+    ),
   },
 ];
 
@@ -500,6 +1058,9 @@ export type Skill = {
     contrast: {
       background: string;
       text: string;
+    };
+    scrollBar?: {
+      trackColor?: string;
     };
   };
   icon?: (isContrastMode: boolean) => React.ReactElement;

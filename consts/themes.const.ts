@@ -1,7 +1,9 @@
 const light = {
   'is-contrast': '0',
+  'is-dark': '0',
   background: '#f8f9fa',
   'background-opaque': 'rgba(255, 255, 255, 0.5)',
+  backdrop: 'rgba(0, 0, 0, 0.5)',
   'menu-background': 'transparent',
   'menu-background-fallback': 'rgba(255, 255, 255, 0.75)',
   text: '#292e31',
@@ -10,12 +12,16 @@ const light = {
   'testimonial-card-text': '#292e31',
   shadow: 'rgba(0, 0, 0, 0.2)',
   'table-cell-background': 'rgba(0, 0, 0, 0.02)',
+  'scrollbar-track-color': '#838383',
+  'accent-color': 'auto',
 };
 
 const dark = {
   'is-contrast': '0',
+  'is-dark': '1',
   background: '#0e141b',
   'background-opaque': 'rgba(0, 0, 0, 0.2)',
+  backdrop: 'rgba(255, 255, 255, 0.05)',
   'menu-background': 'transparent',
   'menu-background-fallback': 'rgba(0, 0, 0, 0.75)',
   text: '#ffffff',
@@ -24,14 +30,18 @@ const dark = {
   'testimonial-card-text': '#f3f3f3',
   shadow: 'rgba(100, 100, 100, 0.2)',
   'table-cell-background': 'rgba(255, 255, 255, 0.02)',
+  'scrollbar-track-color': '#424242',
+  'accent-color': 'auto',
 };
 
 export const contrast = {
   name: 'Contrast',
   light: {
     'is-contrast': '1',
+    'is-dark': '0',
     background: 'white',
     'background-opaque': 'rgba(255, 255, 255, 0.5)',
+    backdrop: 'rgba(0, 0, 0, 0.8)',
     'menu-background': 'white',
     'menu-background-fallback': 'white',
     text: 'black',
@@ -40,16 +50,22 @@ export const contrast = {
     'testimonial-card-text': 'black',
     shadow: 'transparent',
     'table-cell-background': 'rgba(0, 0, 0, 0.01)',
+    'scrollbar-track-color': '#838383',
     //
     'primary-bright': '#383838',
     'primary-dark': 'black',
     'secondary-bright': '#525252',
     'secondary-dark': '#282828',
+    'highlight-accent-rgb': '255, 255, 255',
+    'highlight-rgb': '0, 0, 0',
+    'accent-color': 'white',
   },
   dark: {
     'is-contrast': '1',
+    'is-dark': '1',
     background: 'black',
     'background-opaque': 'rgba(0, 0, 0, 0.2)',
+    backdrop: 'rgba(255, 255, 255, 0.5)',
     'menu-background': 'black',
     'menu-background-fallback': 'black',
     text: 'white',
@@ -58,11 +74,15 @@ export const contrast = {
     'testimonial-card-text': 'white',
     shadow: 'transparent',
     'table-cell-background': 'rgba(255, 255, 255, 0.01)',
+    'scrollbar-track-color': '#424242',
     //
     'primary-bright': 'white',
     'primary-dark': '#bfbfbf',
     'secondary-bright': '#ededed',
     'secondary-dark': '#b3b3b3',
+    'highlight-rgb': '255, 255, 255',
+    'highlight-accent-rgb': '0, 0, 0',
+    'accent-color': 'black',
   },
 };
 
@@ -75,6 +95,9 @@ const themes = [
       'primary-dark': '#77043c',
       'secondary-bright': '#ff6a00',
       'secondary-dark': '#7f3401',
+      'highlight-rgb': '238, 9, 121',
+      'highlight-accent-rgb': '255, 106, 0',
+      'accent-color': '#ee0979',
     },
     dark: {
       ...dark,
@@ -82,6 +105,9 @@ const themes = [
       'primary-dark': '#77043c',
       'secondary-bright': '#ff6a00',
       'secondary-dark': '#7f3401',
+      'highlight-rgb': '238, 9, 121',
+      'highlight-accent-rgb': '255, 106, 0',
+      'accent-color': '#ee0979',
     },
   },
   {
@@ -92,6 +118,9 @@ const themes = [
       'primary-dark': '#265057',
       'secondary-bright': '#c4e0e5',
       'secondary-dark': '#606f72',
+      'highlight-rgb': '76, 161, 175',
+      'highlight-accent-rgb': '73, 134, 145',
+      'accent-color': '#4ca1af',
     },
     dark: {
       ...dark,
@@ -99,6 +128,9 @@ const themes = [
       'primary-dark': '#265057',
       'secondary-bright': '#c4e0e5',
       'secondary-dark': '#606f72',
+      'highlight-rgb': '76, 161, 175',
+      'highlight-accent-rgb': '196, 224, 229',
+      'accent-color': '#4ca1af',
     },
   },
   {
@@ -109,6 +141,9 @@ const themes = [
       'primary-dark': '#763756',
       'secondary-bright': '#3494e6',
       'secondary-dark': '#1d4972',
+      'highlight-rgb': '236, 110, 173',
+      'highlight-accent-rgb': '52, 148, 230',
+      'accent-color': '#ec6ead',
     },
     dark: {
       ...dark,
@@ -116,6 +151,9 @@ const themes = [
       'primary-dark': '#763756',
       'secondary-bright': '#3494e6',
       'secondary-dark': '#1d4972',
+      'highlight-rgb': '236, 110, 173',
+      'highlight-accent-rgb': '52, 148, 230',
+      'accent-color': '#ec6ead',
     },
   },
   {
@@ -126,6 +164,9 @@ const themes = [
       'primary-dark': '#3f007f',
       'secondary-bright': '#e100ff',
       'secondary-dark': '#6f007f',
+      'highlight-rgb': '127, 0, 255',
+      'highlight-accent-rgb': '225, 0, 255',
+      'accent-color': '#7f00ff',
     },
     dark: {
       ...dark,
@@ -133,6 +174,9 @@ const themes = [
       'primary-dark': '#3f007f',
       'secondary-bright': '#e100ff',
       'secondary-dark': '#6f007f',
+      'highlight-rgb': '72, 0, 145',
+      'highlight-accent-rgb': '225, 0, 255',
+      'accent-color': '#7f00ff',
     },
   },
 ];

@@ -1,0 +1,8 @@
+.container {
+  display: flex;
+}
+
+.stub {
+  width: 1em;
+  height: 1em;
+}

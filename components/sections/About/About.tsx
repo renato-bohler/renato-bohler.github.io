@@ -1,6 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 import Tilt from 'react-parallax-tilt';
 import { useMediaQuery } from 'react-responsive';
+import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import useTypingEffect from '~/hooks/useTypingEffect';
 
@@ -10,6 +11,8 @@ const age = Math.floor(
   (new Date().getTime() - new Date('June 6, 1992').getTime()) /
     (1000 * 60 * 60 * 24 * 365),
 );
+
+const GREETING_TARGET = 'about me';
 
 const About: React.VFC = () => {
   const isTabletOrMobile = useMediaQuery({
@@ -24,7 +27,7 @@ const About: React.VFC = () => {
   });
 
   const greeting = useTypingEffect({
-    targetText: pictureInView ? 'hello, world!' : '',
+    targetText: pictureInView ? GREETING_TARGET : '',
     startDelayMs: 2000,
   });
 
@@ -35,9 +38,14 @@ const About: React.VFC = () => {
     >
       <div className={styles.about}>
         <div className={styles.picture} data-enter={pictureInView}>
-          <h2 className={styles.greeting} aria-label="Hello, world!">
-            {`>${greeting}`}
+          <h2 className={styles.greeting}>
+            <span aria-hidden>{`>${greeting}`}</span>
+            <span className={styles.caret} aria-hidden>
+              _
+            </span>
+            <VisuallyHidden>{GREETING_TARGET}</VisuallyHidden>
           </h2>
+
           <Tilt className={styles.tilt}>
             <picture className={styles.image}>
               <source

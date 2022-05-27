@@ -33,7 +33,7 @@ describe('Index', () => {
       render(<Index />);
 
       const greeting = screen.getByRole('heading', {
-        name: /hello, world!/i,
+        name: /about me$/i,
       });
 
       expect(greeting).toBeInTheDocument();

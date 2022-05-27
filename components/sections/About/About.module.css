@@ -58,12 +58,17 @@
 }
 
 .picture[data-enter='true'] > .greeting {
-  transform: translateX(0.75em);
+  transform: translateX(0);
 }
 
-.picture > .greeting:after {
-  content: '_';
+.caret {
+  position: absolute;
   animation: blink ease 1s infinite;
+}
+
+.visually-hidden {
+  position: absolute;
+  opacity: 0;
 }
 
 .content {

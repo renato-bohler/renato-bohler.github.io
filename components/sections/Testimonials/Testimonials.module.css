@@ -59,6 +59,19 @@
   color: white;
 }
 
+.title-description {
+  font-size: 0.8em;
+  color: white;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.swiper-container {
+  position: relative;
+  width: 80vw;
+  max-width: 900px;
+}
+
 .swiper {
   width: 600px;
   max-width: calc(80vw - 200px);
@@ -74,14 +87,18 @@
 
   font-size: 64px;
   color: white;
+
+  padding: 0;
+
+  cursor: pointer;
 }
 
-.navigation-button.previous-button {
-  left: -125px;
+.previous-button {
+  left: 0;
 }
 
-.navigation-button.next-button {
-  right: -125px;
+.next-button {
+  right: 0;
 }
 
 .swiper :global(.swiper-slide) {
@@ -98,7 +115,7 @@
   color: black;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 750px) {
   .swiper {
     max-width: 80vw;
   }

@@ -1,16 +1,15 @@
 import 'swiper/css';
-import 'swiper/css/a11y';
 import 'swiper/css/autoplay';
 import 'swiper/css/controller';
 import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import classNames from 'classnames';
+import { useInView } from 'react-intersection-observer';
 import { Button } from 'reakit/Button';
-import {
-  A11y,
+import SwiperInstance, {
   Autoplay,
   Controller,
   EffectCards,
@@ -18,7 +17,9 @@ import {
 } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import Icon from '~/components/Icon/Icon';
+import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import ChevronLeftIcon from '~/components/icons/ChevronLeft';
+import ChevronRightIcon from '~/components/icons/ChevronRight';
 import useTheme from '~/hooks/useTheme';
 
 import TestimonialCard from './TestimonialCard/TestimonialCard';
@@ -26,6 +27,10 @@ import testimonials from './testimonials.const';
 import styles from './Testimonials.module.css';
 
 const Testimonials: React.VFC = () => {
+  const [ref, inView] = useInView();
+
+  const [swiper, setSwiper] = useState<SwiperInstance>();
+
   const { isContrastMode, isDarkMode } = useTheme();
 
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(
@@ -35,6 +40,18 @@ const Testimonials: React.VFC = () => {
     null,
   );
 
+  const handleFocus = () => {
+    swiper?.autoplay.stop();
+  };
+
+  useEffect(() => {
+    if (inView) {
+      swiper?.autoplay.start();
+    } else {
+      swiper?.autoplay.stop();
+    }
+  }, [inView, swiper]);
+
   return (
     <div className={styles.container}>
       <div id="testimonials" className={styles.anchor} aria-hidden />
@@ -43,6 +60,7 @@ const Testimonials: React.VFC = () => {
         className={styles.divider}
         viewBox="-6.4 143 1600 116.2"
         preserveAspectRatio="xMinYMax slice"
+        aria-hidden
       >
         <path
           fill="var(--theme-primary-dark)"
@@ -59,28 +77,7 @@ const Testimonials: React.VFC = () => {
           What my colleagues have to say about me?
         </h2>
 
-        <Swiper
-          modules={[
-            A11y,
-            Autoplay,
-            Controller,
-            EffectCards,
-            Navigation,
-          ]}
-          effect="cards"
-          autoplay={{
-            delay: 8000,
-          }}
-          navigation={{ prevEl, nextEl }}
-          grabCursor
-          loop
-          className={styles.swiper}
-          a11y={{
-            enabled: true,
-            containerMessage: 'Testimonials carousel',
-            itemRoleDescriptionMessage: 'slide',
-          }}
-        >
+        <div className={styles['swiper-container']} ref={ref}>
           <Button
             aria-label="Previous testimonial"
             className={classNames(
@@ -88,22 +85,39 @@ const Testimonials: React.VFC = () => {
               styles['previous-button'],
               { [styles.contrast]: isContrastMode && isDarkMode },
             )}
+            onFocus={handleFocus}
             ref={setPrevEl}
           >
-            <Icon name="chevron-small-left" animationDelay={2000} />
+            <AnimatedIcon animationDelay={1000}>
+              <ChevronLeftIcon />
+            </AnimatedIcon>
           </Button>
 
-          {testimonials.map((testimonial) => (
-            <SwiperSlide key={testimonial.author.name}>
-              <TestimonialCard
-                authorName={testimonial.author.name}
-                authorPicture={testimonial.author.picture}
-                authorRole={testimonial.author.role}
-              >
-                {testimonial.quote}
-              </TestimonialCard>
-            </SwiperSlide>
-          ))}
+          <Swiper
+            modules={[Autoplay, Controller, EffectCards, Navigation]}
+            effect="cards"
+            autoplay={{ delay: 8000 }}
+            navigation={{ prevEl, nextEl }}
+            grabCursor
+            loop
+            className={styles.swiper}
+            onSwiper={(swiper) => setSwiper(swiper)}
+            onFocus={handleFocus}
+          >
+            {testimonials.map((testimonial, index) => (
+              <SwiperSlide key={testimonial.author.name}>
+                <TestimonialCard
+                  authorName={testimonial.author.name}
+                  authorPicture={testimonial.author.picture}
+                  authorRole={testimonial.author.role}
+                  currentTestimonial={index + 1}
+                  totalTestimonial={testimonials.length}
+                >
+                  {testimonial.quote}
+                </TestimonialCard>
+              </SwiperSlide>
+            ))}
+          </Swiper>
 
           <Button
             aria-label="Next testimonial"
@@ -112,14 +126,21 @@ const Testimonials: React.VFC = () => {
               styles['next-button'],
               { [styles.contrast]: isContrastMode && isDarkMode },
             )}
+            onFocus={handleFocus}
             ref={setNextEl}
           >
-            <Icon name="chevron-small-right" animationDelay={2500} />
+            <AnimatedIcon animationDelay={1500}>
+              <ChevronRightIcon />
+            </AnimatedIcon>
           </Button>
-        </Swiper>
+        </div>
+
+        <em className={styles['title-description']}>
+          All testimonials spontaneously provided by colleagues
+        </em>
       </section>
 
-      <svg className={styles.transition}>
+      <svg className={styles.transition} aria-hidden>
         <defs>
           <pattern
             id="circuit-board"
@@ -150,6 +171,7 @@ const Testimonials: React.VFC = () => {
         )}
         viewBox="-6.4 143 1600 116.2"
         preserveAspectRatio="xMinYMax slice"
+        aria-hidden
       >
         <path
           fill="var(--theme-secondary-bright)"

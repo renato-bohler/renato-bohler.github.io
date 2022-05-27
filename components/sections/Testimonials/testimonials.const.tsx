@@ -3,14 +3,14 @@ const testimonials = [
     quote: (
       <>
         <p>
-          Renato seems to <strong>have no limits</strong>. He started
+          Renato seems to have <strong>no limits</strong>. He started
           as an intern and soon became a key player in the dev team at{' '}
           <em>Agrotis</em>.
         </p>
         <p>
-          Always learning and applying his knowledge, he motivates his
-          colleagues to go further, and his good mood helps to keep
-          the team together.
+          Always learning and applying his knowledge,{' '}
+          <strong>he motivates his colleagues to go further</strong>,
+          and his good mood helps to keep the team together.
         </p>
         <p>It was a privilege to work with him.</p>
       </>
@@ -105,9 +105,13 @@ const testimonials = [
           help.
         </p>
         <p>
-          Even in critical situations, Renato has a good attitude on
-          problem-solving and an innate ability to analyze. He&apos;s
-          also a reference in React, I learned a lot working with him.
+          Even in critical situations, Renato has a{' '}
+          <strong>
+            good attitude on problem-solving and an innate ability to
+            analyze
+          </strong>
+          . He&apos;s also a reference in React, I learned a lot
+          working with him.
         </p>
       </>
     ),

@@ -1,14 +1,21 @@
-import { useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
-import Tilt from 'react-parallax-tilt';
-import { Button } from 'reakit/Button';
+import { DialogDisclosure, useDialogState } from 'reakit/Dialog';
+import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import Icon from '~/components/Icon/Icon';
+import ChevronDoubleDownIcon from '~/components/icons/ChevronDoubleDown';
+import ChevronDoubleUpIcon from '~/components/icons/ChevronDoubleUp';
+import ChevronDownIcon from '~/components/icons/ChevronDown';
+import ChevronTripleDownIcon from '~/components/icons/ChevronTripleDown';
+import ChevronTripleUpIcon from '~/components/icons/ChevronTripleUp';
+import ChevronUpIcon from '~/components/icons/ChevronUp';
+import OpenBookIcon from '~/components/icons/OpenBook';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './SkillCard.module.css';
+import SkillCardDialog from './SkillCardDialog/SkillCardDialog';
 
 type Props = {
   name: string;
@@ -18,6 +25,7 @@ type Props = {
   favorite: boolean;
   backgroundColor: string;
   textColor: string;
+  scrollBarTrackColor?: string;
   usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
   yearsExperience?: number;
   studying: boolean;
@@ -38,60 +46,72 @@ const WAVE_PATHS = [
 
 const USAGE = {
   [-3]: {
-    icon: 'chevron-triple-down',
+    Icon: ChevronTripleDownIcon,
     description: "I haven't used this in the last five years",
   },
   [-2]: {
-    icon: 'chevron-double-down',
+    Icon: ChevronDoubleDownIcon,
     description: "I haven't used this in the last two years",
   },
   [-1]: {
-    icon: 'chevron-down',
+    Icon: ChevronDownIcon,
     description: "I haven't used this in the last year",
   },
   1: {
-    icon: 'chevron-up',
+    Icon: ChevronUpIcon,
     description: "I've used this it the last year",
   },
   2: {
-    icon: 'chevron-double-up',
+    Icon: ChevronDoubleUpIcon,
     description: "I've been using this recently",
   },
   3: {
-    icon: 'chevron-triple-up',
+    Icon: ChevronTripleUpIcon,
     description: "I've been using this everyday",
   },
 };
 
+const STUDYING_LABEL = "I've been studying this recently";
+
 const SkillCard: React.VFC<Props> = ({
   name,
+  description,
   teaser,
   icon,
   favorite,
   backgroundColor,
   textColor,
+  scrollBarTrackColor,
   usageLevel,
   yearsExperience,
   studying,
 }) => {
   const { isContrastMode } = useTheme();
 
-  const { ref, inView } = useInView({
+  const cardRef = useRef<HTMLDivElement | null>(null);
+  const { ref: inViewRef, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
+  const setRefs = useCallback(
+    (node: HTMLDivElement) => {
+      cardRef.current = node;
+      inViewRef(node);
+    },
+    [inViewRef],
+  );
 
   const [wavePath] = useState(
     WAVE_PATHS[Math.floor(Math.random() * WAVE_PATHS.length)],
   );
 
-  const usage = USAGE[usageLevel];
+  const { Icon, description: usageDescription } = USAGE[usageLevel];
 
-  // TODO: dialogs
+  const dialog = useDialogState();
 
   return (
     <div
-      ref={ref}
+      ref={setRefs}
       className={classNames(styles.card, {
         [styles.large]: favorite,
         [styles.hidden]: !inView,
@@ -101,18 +121,31 @@ const SkillCard: React.VFC<Props> = ({
         background: backgroundColor,
       }}
     >
-      <Tilt
-        className={styles.tilt}
-        tiltMaxAngleX={favorite ? 5 : 10}
-        tiltMaxAngleY={favorite ? 5 : 10}
-      >
-        <Button
+      <div className={styles.content}>
+        <SkillCardDialog
+          cardRect={cardRef.current?.getBoundingClientRect()}
+          dialog={dialog}
+          name={name}
+          description={description}
+          icon={icon}
+          backgroundColor={backgroundColor}
+          textColor={textColor}
+          scrollBarTrackColor={scrollBarTrackColor}
+          yearsExperience={yearsExperience}
+          wavePath={wavePath}
+        />
+
+        <DialogDisclosure
+          {...dialog}
           className={styles.button}
           style={{ color: textColor }}
         >
           <div className={styles.image}>{icon}</div>
 
-          <span className={styles.name}>{name}</span>
+          <span className={styles.name}>
+            {name}
+            <VisuallyHidden>.</VisuallyHidden>
+          </span>
 
           {favorite && teaser && (
             <div
@@ -130,6 +163,7 @@ const SkillCard: React.VFC<Props> = ({
               className={classNames(styles['wave-divider'], {
                 [styles.contrast]: isContrastMode,
               })}
+              aria-hidden
             >
               <path d={wavePath} />
             </svg>
@@ -143,18 +177,19 @@ const SkillCard: React.VFC<Props> = ({
                   <div className={styles.content}>
                     <span
                       className={styles['content-title']}
-                      aria-label="experience"
+                      title="experience"
                     >
                       {favorite ? 'experience' : 'exp.'}
                     </span>
                     <span
-                      aria-label={`${yearsExperience} year${
+                      title={`${yearsExperience} year${
                         yearsExperience > 1 ? 's' : ''
                       }`}
                     >
                       {yearsExperience} yr
                       {yearsExperience > 1 ? 's' : ''}
                     </span>
+                    <VisuallyHidden>.</VisuallyHidden>
                   </div>
 
                   <span className={styles.divider} />
@@ -163,13 +198,14 @@ const SkillCard: React.VFC<Props> = ({
               <div className={styles.content}>
                 <span
                   className={styles['content-title']}
-                  aria-label="usage"
+                  title="usage"
                 >
                   {favorite ? 'usage' : 'usg.'}
                 </span>
-                <span title={usage.description}>
-                  <Icon set="mdi" name={usage.icon} />
+                <span title={usageDescription}>
+                  <Icon aria-label={usageDescription} />
                 </span>
+                <VisuallyHidden>.</VisuallyHidden>
               </div>
               {studying && (
                 <>
@@ -178,20 +214,21 @@ const SkillCard: React.VFC<Props> = ({
                   <div className={styles.content}>
                     <span
                       className={styles['content-title']}
-                      aria-label="studying"
+                      title="studying"
                     >
                       {favorite ? 'studying' : 'stu.'}
                     </span>
-                    <span title="I've been studying this recently">
-                      <Icon set="mdi" name="book-open-page-variant" />
+                    <span title={STUDYING_LABEL}>
+                      <OpenBookIcon aria-label={STUDYING_LABEL} />
                     </span>
+                    <VisuallyHidden>.</VisuallyHidden>
                   </div>
                 </>
               )}
             </div>
           </div>
-        </Button>
-      </Tilt>
+        </DialogDisclosure>
+      </div>
     </div>
   );
 };

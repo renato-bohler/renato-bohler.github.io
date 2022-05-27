@@ -1,0 +1,150 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+
+  background: var(--theme-backdrop);
+  backdrop-filter: blur(15px);
+  opacity: 0;
+
+  transition: opacity 500ms ease-in-out 125ms;
+}
+
+.backdrop[data-enter] {
+  opacity: 1;
+
+  transition: opacity 500ms ease-in-out;
+}
+
+html[data-reduced-motion='true'] .backdrop {
+  opacity: 1;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+
+  background: var(--theme-background);
+  border-radius: 16px;
+  border: calc(var(--theme-is-contrast) * 2px) solid var(--theme-text);
+
+  opacity: 0;
+
+  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out,
+    width 250ms ease-in-out, height 250ms ease-in-out;
+}
+
+.dialog[data-enter],
+html[data-reduced-motion='true'] .dialog {
+  opacity: 1;
+
+  width: min(600px, 100vw);
+  height: min(800px, calc(var(--dvh, 1vh) * 100));
+}
+
+.header {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 1rem;
+  transform: translate(96px);
+  margin: 0;
+}
+
+.close-button {
+  background: none;
+  border: none;
+
+  padding: 0;
+
+  font-size: 2em;
+  color: #ebebeb;
+
+  cursor: pointer;
+
+  mix-blend-mode: hard-light;
+  filter: drop-shadow(2px 2px 6px #666);
+}
+
+.wave {
+  display: block;
+  transform: translateY(1px);
+
+  fill: var(--theme-background);
+}
+
+.content {
+  padding: 0 24px 0 32px;
+  margin: 8px 8px 8px 0;
+
+  overflow-y: auto;
+}
+
+.content::-webkit-scrollbar {
+  width: 16px;
+}
+
+.content::-webkit-scrollbar-track {
+  background-color: var(--theme-scrollbar-track-color);
+  border-radius: 100px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: var(--theme-scrollbar-thumb-color);
+  border-radius: 100px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.image {
+  position: absolute;
+  transform: translate(10%, -45%);
+
+  z-index: 1;
+  width: 80px;
+}
+
+.image > svg {
+  paint-order: stroke;
+}
+
+@media screen and (max-width: 750px) {
+  .dialog {
+    position: fixed;
+    top: 0;
+
+    border-radius: 0;
+    width: 100%;
+    height: calc(var(--dvh, 1vh) * 100);
+  }
+
+  .dialog[data-enter] {
+    width: 100%;
+    height: calc(var(--dvh, 1vh) * 100);
+  }
+
+  .header {
+    border-radius: 0;
+  }
+
+  .image {
+    transform: translate(10%);
+  }
+}

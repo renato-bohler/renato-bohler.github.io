@@ -1,4 +1,5 @@
 import { useInView } from 'react-intersection-observer';
+import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import useTheme from '~/hooks/useTheme';
 
@@ -26,8 +27,16 @@ const Skills: React.VFC = () => {
   return (
     <section className={styles.section}>
       <div className={styles.scroll}>
-        <h2 className={styles.title} aria-label="Skills">
-          {`>${HEADER.slice(0, currentCharacterIndex)}`}
+        <h2 className={styles.title}>
+          <span aria-hidden>{`>${HEADER.slice(
+            0,
+            currentCharacterIndex,
+          )}`}</span>
+          <span className={styles.caret} aria-hidden>
+            _
+          </span>
+
+          <VisuallyHidden>{HEADER}</VisuallyHidden>
         </h2>
 
         <div ref={ref} className={styles.trigger} />
@@ -35,8 +44,17 @@ const Skills: React.VFC = () => {
 
       <div id="skills" className={styles.anchor} aria-hidden />
 
+      <h3 className={styles.subtitle}>Competences</h3>
+      <em className={styles['subtitle-description']}>
+        Based on feedbacks collected from my colleagues
+      </em>
       <SkillFeedbacks />
 
+      <h3 className={styles.subtitle}>Technologies</h3>
+      <em className={styles['subtitle-description']}>
+        Click each one of the cards below for more context on my
+        experience with these technologies
+      </em>
       <div className={styles.grid}>
         {skills.map((skill) => {
           const colors = getColors(skill, isContrastMode);
@@ -49,6 +67,7 @@ const Skills: React.VFC = () => {
               favorite={skill.favorite}
               backgroundColor={colors.background}
               textColor={colors.text}
+              scrollBarTrackColor={skill.colors.scrollBar?.trackColor}
               usageLevel={skill.usageLevel}
               yearsExperience={skill.yearsExperience}
               studying={skill.studying}

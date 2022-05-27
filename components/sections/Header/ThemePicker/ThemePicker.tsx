@@ -9,14 +9,17 @@ import {
   usePopoverState,
 } from 'reakit/Popover';
 
-import Icon from '~/components/Icon/Icon';
+import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import DarkIcon from '~/components/icons/Dark';
+import LightIcon from '~/components/icons/Light';
+import ThemeIcon from '~/components/icons/Theme';
 import themes from '~/consts/themes.const';
 import useFirstMount from '~/hooks/useFirstMount';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
 
-const ThemePicker: React.FC = () => {
+const ThemePicker: React.VFC = () => {
   const {
     theme,
     setTheme,
@@ -24,6 +27,8 @@ const ThemePicker: React.FC = () => {
     setDarkMode,
     isContrastMode,
     setContrastMode,
+    isReducedMotion,
+    setReducedMotion,
   } = useTheme();
 
   const isFirstMount = useFirstMount();
@@ -45,10 +50,9 @@ const ThemePicker: React.FC = () => {
         className={styles.button}
         onClick={() => setDarkMode((darkMode) => !darkMode)}
       >
-        <Icon
-          set="mdi"
-          name={isDarkMode ? 'weather-sunny' : 'weather-night'}
-        />
+        <AnimatedIcon animationDelay={1000}>
+          {isDarkMode ? <DarkIcon /> : <LightIcon />}
+        </AnimatedIcon>
       </Button>
 
       <PopoverDisclosure
@@ -56,7 +60,9 @@ const ThemePicker: React.FC = () => {
         className={styles.button}
         title="Switch theme color"
       >
-        <Icon name="paint-drop-half-twotone" animationDelay={1000} />
+        <AnimatedIcon animationDelay={2000}>
+          <ThemeIcon />
+        </AnimatedIcon>
       </PopoverDisclosure>
       <Popover {...popover} aria-label="Theme color select popover">
         <div className={styles.popover}>
@@ -96,20 +102,30 @@ const ThemePicker: React.FC = () => {
             })}
           </div>
 
-          <label
-            className={styles.checkbox}
+          <div
             style={{
               background: isDarkMode ? 'white' : 'black',
               color: isDarkMode ? 'black' : 'white',
             }}
           >
-            <input
-              type="checkbox"
-              checked={isContrastMode}
-              onChange={(e) => setContrastMode(e.target.checked)}
-            />
-            High contrast mode
-          </label>
+            <label className={styles.checkbox}>
+              <input
+                type="checkbox"
+                checked={isContrastMode}
+                onChange={(e) => setContrastMode(e.target.checked)}
+              />
+              Contrast mode
+            </label>
+
+            <label className={styles.checkbox}>
+              <input
+                type="checkbox"
+                checked={isReducedMotion}
+                onChange={(e) => setReducedMotion(e.target.checked)}
+              />
+              Reduce motion
+            </label>
+          </div>
         </div>
       </Popover>
     </>

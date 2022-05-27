@@ -14,6 +14,7 @@ import themes, { contrast, Theme } from '~/consts/themes.const';
 import useDynamicFavicon from './useDynamicFavicon';
 import usePreferredColorScheme from './usePreferredColorScheme';
 import usePreferredContrast from './usePreferredContrast';
+import usePreferredMotion from './usePreferredMotion';
 import useThemeApply from './useThemeApply';
 
 const RANDOM_THEME =
@@ -26,6 +27,8 @@ export type ThemeContextType = {
   setDarkMode: Dispatch<SetStateAction<boolean>>;
   isContrastMode: boolean;
   setContrastMode: (value: boolean) => void;
+  isReducedMotion: boolean;
+  setReducedMotion: (value: boolean) => void;
 };
 
 const ThemeContext = createContext<ThemeContextType>({
@@ -35,6 +38,8 @@ const ThemeContext = createContext<ThemeContextType>({
   setDarkMode: () => {},
   isContrastMode: false,
   setContrastMode: () => {},
+  isReducedMotion: false,
+  setReducedMotion: () => {},
 });
 
 export const ThemeProvider: React.FC = (props) => {
@@ -56,7 +61,8 @@ export const ThemeProvider: React.FC = (props) => {
 
   const [isDarkMode, setDarkMode] = usePreferredColorScheme();
   const isContrastMode = usePreferredContrast(theme, setContrastMode);
-  useThemeApply(theme, isDarkMode);
+  const [isReducedMotion, setReducedMotion] = usePreferredMotion();
+  useThemeApply(theme, isDarkMode, isReducedMotion);
   const favicon = useDynamicFavicon(theme);
 
   useEffect(() => {
@@ -70,6 +76,8 @@ export const ThemeProvider: React.FC = (props) => {
     setDarkMode,
     isContrastMode,
     setContrastMode,
+    isReducedMotion,
+    setReducedMotion,
   };
 
   return (
