@@ -24,6 +24,10 @@ const useThemeApply = (
       'data-reduced-motion',
       `${isReducedMotion}`,
     );
+
+    document.documentElement.style.colorScheme = isDarkMode
+      ? 'dark'
+      : 'light';
   }, [theme, isDarkMode, isReducedMotion]);
 };
 
