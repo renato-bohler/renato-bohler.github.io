@@ -24,76 +24,16 @@ const testimonials = [
   {
     quote: (
       <p>
-        Renato is an <strong>excellent</strong> professional, one of
-        the best frontend engineers I&apos;ve worked with at{' '}
-        <em>Dextra</em>. He&apos;s very <strong>focused</strong> and
-        has a strong <strong>commitment</strong> to his clients.
+        Renato <strong>crushes</strong> frontend work. He&apos;s
+        always willing to jump in and help, so <strong>fast</strong>{' '}
+        and <strong>efficient</strong>, just an all around{' '}
+        <strong>excellent</strong> dev.
       </p>
     ),
     author: {
-      name: 'Gustavo Bigardi',
-      picture: '/images/testimonials/gustavo-bigardi.webp',
-      role: 'Backend Engineer',
-    },
-  },
-  {
-    quote: (
-      <p>
-        I&apos;ve worked with Renato for only about a month, but even
-        in this short time he was able to do an{' '}
-        <strong>excellent</strong> job, delivering a core feature to
-        the client. He&apos;s very <strong>engaged</strong> and{' '}
-        <strong>committed</strong> on delivering quality software.
-      </p>
-    ),
-    author: {
-      name: 'Rafael de Paula',
-      picture: '/images/testimonials/rafael-paula.webp',
-      role: 'Backend Engineer',
-    },
-  },
-  {
-    quote: (
-      <>
-        <p>
-          Renato is an <strong>excellent</strong> professional,
-          he&apos;s very <strong>dedicated</strong> and he&apos;s
-          always looking to improve his skills.
-        </p>
-        <p>
-          I&apos;ve worked with him in 2 different projects, and he
-          always stood out thanks to his <strong>knowledge</strong>,{' '}
-          <strong>willpower</strong> and his easy-going way of
-          interacting with the team.
-        </p>
-      </>
-    ),
-    author: {
-      name: 'Luiz Eduardo Oku',
-      picture: '/images/testimonials/luiz-oku.webp',
-      role: 'Frontend Engineer',
-    },
-  },
-  {
-    quote: (
-      <>
-        <p>
-          I&apos;ve worked with Renato in a very detailed and
-          extensive project, where he proved to be a very{' '}
-          <strong>dedicated</strong> and <strong>committed</strong>{' '}
-          professional, paying attention to all details.
-        </p>
-        <p>
-          Renato is very <strong>communicative</strong>, and had a
-          great performance aligning design and code, being able to
-          develop exceptional interfaces.
-        </p>
-      </>
-    ),
-    author: {
-      name: 'Daniela Jagher',
-      picture: '/images/testimonials/daniela-jagher.webp',
-      role: 'UI/UX Designer',
+      name: 'Ema Casas',
+      picture: '/images/testimonials/ema-casas.webp',
+      role: 'Product Owner',
     },
   },
   {
@@ -136,16 +76,77 @@ const testimonials = [
   {
     quote: (
       <p>
-        Renato <strong>crushes</strong> frontend work. He&apos;s
-        always willing to jump in and help, so <strong>fast</strong>{' '}
-        and <strong>efficient</strong>, just an all around{' '}
-        <strong>excellent</strong> dev.
+        I&apos;ve worked with Renato for only about a month, but even
+        in this short time he was able to do an{' '}
+        <strong>excellent</strong> job, delivering a core feature to
+        the client. He&apos;s very <strong>engaged</strong> and{' '}
+        <strong>committed</strong> on delivering quality software.
       </p>
     ),
     author: {
-      name: 'Ema Casas',
-      picture: '/images/testimonials/ema-casas.webp',
-      role: 'Product Owner',
+      name: 'Rafael de Paula',
+      picture: '/images/testimonials/rafael-paula.webp',
+      role: 'Backend Engineer',
+    },
+  },
+  {
+    quote: (
+      <p>
+        Renato is one of the best frontend engineers I&apos;ve worked
+        with at <em>Dextra</em>. He&apos;s very{' '}
+        <strong>focused</strong> and has a strong{' '}
+        <strong>commitment</strong> to his clients. He&apos;s an{' '}
+        <strong>excellent</strong> professional.
+      </p>
+    ),
+    author: {
+      name: 'Gustavo Bigardi',
+      picture: '/images/testimonials/gustavo-bigardi.webp',
+      role: 'Backend Engineer',
+    },
+  },
+  {
+    quote: (
+      <>
+        <p>
+          Renato is an <strong>excellent</strong> professional:
+          he&apos;s very <strong>dedicated</strong> and he&apos;s
+          always looking to improve his skills.
+        </p>
+        <p>
+          I&apos;ve worked with Renato in 2 different projects, and he
+          always stood out thanks to his <strong>knowledge</strong>,{' '}
+          <strong>willpower</strong> and his easy-going way of
+          interacting with the team.
+        </p>
+      </>
+    ),
+    author: {
+      name: 'Luiz Eduardo Oku',
+      picture: '/images/testimonials/luiz-oku.webp',
+      role: 'Frontend Engineer',
+    },
+  },
+  {
+    quote: (
+      <>
+        <p>
+          I&apos;ve worked with Renato in a very detailed and
+          extensive project, where he proved to be a very{' '}
+          <strong>dedicated</strong> and <strong>committed</strong>{' '}
+          professional, paying attention to all details.
+        </p>
+        <p>
+          Renato is very <strong>communicative</strong>, and had a
+          great performance aligning design and code, being able to
+          develop exceptional interfaces.
+        </p>
+      </>
+    ),
+    author: {
+      name: 'Daniela Jagher',
+      picture: '/images/testimonials/daniela-jagher.webp',
+      role: 'UI/UX Designer',
     },
   },
   {

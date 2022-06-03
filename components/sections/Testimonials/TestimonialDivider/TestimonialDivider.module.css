@@ -1,0 +1,76 @@
+.divider-stroke {
+  stroke-width: 15px;
+  stroke-dashoffset: 456px;
+  stroke-dasharray: 456px;
+  stroke-linecap: round;
+}
+
+.divider {
+  display: block;
+  z-index: 1;
+
+  fill: var(--theme-testimonial-background);
+  stroke: var(--theme-primary-dark);
+}
+
+.divider {
+  filter: drop-shadow(0 35px 0 var(--theme-primary-bright));
+}
+
+.divider-glow {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+
+  fill: none;
+  stroke: var(--theme-primary-dark);
+}
+
+.divider-glow > path {
+  filter: drop-shadow(10px 10px 20px var(--theme-accent-color));
+}
+
+.divider-bottom {
+  transform: translateY(-5%);
+
+  fill: var(--theme-testimonial-background);
+  stroke: var(--theme-secondary-bright);
+  stroke-width: 10px;
+  stroke-dashoffset: 1300px;
+  stroke-dasharray: 1300px;
+  stroke-linecap: round;
+}
+
+.animate {
+  stroke-dashoffset: 0 !important;
+
+  transition-property: stroke-dashoffset;
+  transition-timing-function: cubic-bezier(0.65, 0.18, 0.21, 0.65);
+}
+
+.animate.divider,
+.animate.divider-glow {
+  transition-delay: 0;
+  transition-duration: 1.5s;
+}
+
+.animate.divider-bottom {
+  transition-duration: 1s;
+}
+
+@media screen and (max-width: 750px) {
+  .divider-stroke {
+    stroke-width: 35px;
+    stroke-dashoffset: 456px;
+    stroke-dasharray: 456px;
+    stroke-linecap: round;
+  }
+
+  .divider-glow > path {
+    filter: drop-shadow(10px 10px 16px var(--theme-accent-color));
+  }
+
+  .divider-bottom {
+    stroke-width: 50px;
+  }
+}
