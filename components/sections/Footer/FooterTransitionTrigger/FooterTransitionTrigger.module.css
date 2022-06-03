@@ -1,0 +1,12 @@
+.nav-header-hide-trigger {
+  position: absolute;
+  transform: translateY(-200px);
+  width: 10px;
+  height: 10px;
+}
+
+.progress-trigger {
+  position: absolute;
+  width: 10px;
+  height: 400px;
+}

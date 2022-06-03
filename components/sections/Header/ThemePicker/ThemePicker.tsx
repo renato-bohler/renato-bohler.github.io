@@ -106,6 +106,7 @@ const ThemePicker: React.VFC = () => {
             style={{
               background: isDarkMode ? 'white' : 'black',
               color: isDarkMode ? 'black' : 'white',
+              borderRadius: 'inherit',
             }}
           >
             <label className={styles.checkbox}>

@@ -44,6 +44,7 @@ const MadeBy: React.VFC = () => {
           [styles.visible]: inView,
         })}
         ref={ref}
+        aria-label="Made with love by: Renato Böhler"
       >
         {/* made */}
         <path

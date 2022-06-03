@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import {
   Section,
   SectionName,
-  SECTIONS,
+  SECTIONS_WITH_HEADER,
 } from '~/consts/sections.const';
 
 type SectionInView = {
@@ -16,11 +16,11 @@ const useSectionAnchor = (): {
   handleSectionChange: (sectionName: string, inView: boolean) => void;
 } => {
   const [activeSection, setActiveSection] = useState<Section>(
-    SECTIONS[0],
+    SECTIONS_WITH_HEADER[0],
   );
 
   const [sections, setSections] = useState<SectionInView[]>(
-    SECTIONS.map((section) => ({
+    SECTIONS_WITH_HEADER.map((section) => ({
       name: section.name,
       inView: false,
     })),
@@ -47,7 +47,7 @@ const useSectionAnchor = (): {
       const sectionName = sections.find(
         (section) => section.inView,
       )?.name;
-      const section = SECTIONS.find(
+      const section = SECTIONS_WITH_HEADER.find(
         (section) => section.name === sectionName,
       );
       if (!section) return;

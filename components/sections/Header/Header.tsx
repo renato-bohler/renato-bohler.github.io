@@ -24,7 +24,11 @@ const SUBTITLES = [
   'bacon lover =)',
 ];
 
-const Header: React.VFC = () => {
+type Props = {
+  isNavigationHeaderHidden: boolean;
+};
+
+const Header: React.VFC<Props> = ({ isNavigationHeaderHidden }) => {
   const { isContrastMode } = useTheme();
 
   const [isScrollHintVisible, setScrollHintVisible] = useState(false);
@@ -58,7 +62,13 @@ const Header: React.VFC = () => {
 
   return (
     <header ref={ref} className={styles.header}>
-      <h1 className={styles.heading} data-folded={!inView}>
+      <h1
+        className={classNames(styles.heading, {
+          [styles['navigation-header-hidden']]:
+            isNavigationHeaderHidden,
+        })}
+        data-folded={!inView}
+      >
         <span
           className={classNames(styles.title, {
             [styles.caret]: !isFirstNameTypingComplete,
@@ -108,6 +118,8 @@ const Header: React.VFC = () => {
       <div
         className={classNames(styles['navigation-header'], {
           [styles['navigation-header-contrast']]: isContrastMode,
+          [styles['navigation-header-hidden']]:
+            isNavigationHeaderHidden,
         })}
         data-folded={!inView}
       >

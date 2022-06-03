@@ -1,0 +1,12 @@
+.main-container {
+  transition: transform 250ms ease-in-out,
+    border-radius 250ms ease-in-out, box-shadow 500ms ease-in-out,
+    background-color 250ms;
+  background-color: var(--theme-background);
+}
+
+.transitioning {
+  overflow: hidden;
+  box-shadow: 1px 1px 60px rgb(255, 255, 255, 0.6);
+  will-change: transform, border-radius;
+}

@@ -35,7 +35,11 @@
   background: var(--theme-menu-background);
   padding-left: 80px;
   transition: backdrop-filter 500ms ease-in-out 750ms,
-    padding 500ms ease-in-out 750ms;
+    padding 500ms ease-in-out 750ms, margin-top 500ms ease-in-out;
+}
+
+.navigation-header-hidden {
+  margin-top: -200px !important;
 }
 
 .container {
@@ -132,7 +136,8 @@
   min-width: 60px;
 
   transform: translate(20px, 20px);
-  transition: transform 1s ease-in-out 250ms;
+  transition: transform 1s ease-in-out 250ms,
+    margin-top 500ms ease-in-out;
 }
 
 .heading[data-folded='true'] > .title {

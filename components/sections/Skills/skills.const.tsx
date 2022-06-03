@@ -458,7 +458,8 @@ const skills: Skill[] = [
           Alongside React, I generally use libraries like{' '}
           <code>redux</code>, <code>redux-thunk</code>,{' '}
           <code>redux-form</code>, <code>material-ui</code>,{' '}
-          <code>styled-components</code>, among others.
+          <code>styled-components</code>, <code>reakit</code>, among
+          others.
         </p>
         <p>
           <strong>Fun fact 😆:</strong> the page you&apos;re reading

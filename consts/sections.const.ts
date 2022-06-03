@@ -5,22 +5,27 @@ import Testimonials from '~/components/sections/Testimonials/Testimonials';
 
 const TITLE = 'Renato Böhler';
 
-export type SectionName = typeof SECTIONS[number]['name'];
+export type SectionName =
+  | typeof HEADER['name']
+  | typeof SECTIONS[number]['name'];
 
 export type Section = {
   name: SectionName;
   anchor: string;
   title: string;
-  Component: React.VFC;
+  Component:
+    | typeof HEADER['Component']
+    | typeof SECTIONS[number]['Component'];
 };
 
+export const HEADER = {
+  name: 'header',
+  anchor: ' ',
+  title: TITLE,
+  Component: Header,
+} as const;
+
 export const SECTIONS = [
-  {
-    name: 'header',
-    anchor: ' ',
-    title: TITLE,
-    Component: Header,
-  },
   {
     name: 'about',
     anchor: '#about',
@@ -40,3 +45,5 @@ export const SECTIONS = [
     Component: Skills,
   },
 ] as const;
+
+export const SECTIONS_WITH_HEADER = [HEADER, ...SECTIONS];

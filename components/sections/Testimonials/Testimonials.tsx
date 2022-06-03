@@ -33,7 +33,7 @@ const Testimonials: React.VFC = () => {
 
   const [swiper, setSwiper] = useState<SwiperInstance>();
 
-  const { isContrastMode, isDarkMode } = useTheme();
+  const { isContrastMode } = useTheme();
 
   const [prevEl, setPrevEl] = useState<HTMLButtonElement | null>(
     null,
@@ -63,7 +63,7 @@ const Testimonials: React.VFC = () => {
       <section className={styles.content}>
         <h2
           className={classNames(styles.title, {
-            [styles.contrast]: isContrastMode && isDarkMode,
+            [styles.contrast]: isContrastMode,
           })}
         >
           What my colleagues have to say about me?
@@ -75,7 +75,6 @@ const Testimonials: React.VFC = () => {
             className={classNames(
               styles['navigation-button'],
               styles['previous-button'],
-              { [styles.contrast]: isContrastMode && isDarkMode },
             )}
             onFocus={handleFocus}
             ref={setPrevEl}
@@ -116,7 +115,6 @@ const Testimonials: React.VFC = () => {
             className={classNames(
               styles['navigation-button'],
               styles['next-button'],
-              { [styles.contrast]: isContrastMode && isDarkMode },
             )}
             onFocus={handleFocus}
             ref={setNextEl}

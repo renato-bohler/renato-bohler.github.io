@@ -31,9 +31,9 @@
   font-weight: bolder;
   font-size: 2em;
   text-align: center;
-  
+
   filter: drop-shadow(2px 2px 0 var(--theme-secondary-bright));
-  
+
   z-index: 2;
 }
 
@@ -61,7 +61,7 @@
 
   border: none;
   background: none;
-  
+
   font-size: 64px;
   color: inherit;
 
@@ -89,7 +89,7 @@
 }
 
 .contrast {
-  color: black;
+  filter: none;
 }
 
 @media screen and (max-width: 750px) {
