@@ -69,5 +69,5 @@ describe('Index', () => {
     });
 
     expect(results).toHaveNoViolations();
-  });
+  }, 30000);
 });
