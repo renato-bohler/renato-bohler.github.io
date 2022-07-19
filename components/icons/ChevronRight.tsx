@@ -1,4 +1,4 @@
-const ChevronRightIcon: React.VFC<{
+const ChevronRightIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

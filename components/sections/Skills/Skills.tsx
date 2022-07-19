@@ -10,7 +10,7 @@ import styles from './Skills.module.css';
 
 const HEADER = 'skills';
 
-const Skills: React.VFC = () => {
+const Skills: React.FC = () => {
   const { isContrastMode } = useTheme();
 
   const { ref, entry } = useInView({

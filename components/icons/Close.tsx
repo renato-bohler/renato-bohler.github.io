@@ -1,4 +1,4 @@
-const CloseIcon: React.VFC<{
+const CloseIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from './WavyBackground.module.css';
 
-const WavyBackground: React.VFC = () => {
+const WavyBackground: React.FC = () => {
   return (
     <div className={styles['wave-background']} aria-hidden>
       <svg>

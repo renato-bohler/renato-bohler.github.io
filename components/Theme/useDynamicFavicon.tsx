@@ -4,7 +4,7 @@ import { Theme } from '~/consts/themes.const';
 
 const FAVICON_DIMENSION = 256;
 
-const FavIcon: React.VFC<{ theme: Theme; size?: number }> = ({
+const FavIcon: React.FC<{ theme: Theme; size?: number }> = ({
   theme,
   size = FAVICON_DIMENSION,
 }) => {

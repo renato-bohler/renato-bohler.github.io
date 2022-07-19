@@ -71,6 +71,7 @@ const Index: NextPage = () => {
             </Fragment>
           ))}
 
+          {/* TODO: move this transition into its own component */}
           <div style={{ height: 'auto' }}>
             <svg
               style={{

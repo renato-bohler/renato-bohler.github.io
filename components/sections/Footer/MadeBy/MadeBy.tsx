@@ -8,7 +8,7 @@ import useTypingEffect from '~/hooks/useTypingEffect';
 
 import styles from './MadeBy.module.css';
 
-const MadeBy: React.VFC = () => {
+const MadeBy: React.FC = () => {
   const { isReducedMotion } = useTheme();
 
   const [handWritingFinished, setHandwritingFinished] =

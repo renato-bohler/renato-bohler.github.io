@@ -7,7 +7,7 @@ type Props = {
   onNavigationHeaderTrigger: (hide: boolean) => void;
 };
 
-const Footer: React.VFC<Props> = ({
+const Footer: React.FC<Props> = ({
   onProgressChange,
   onNavigationHeaderTrigger,
 }) => {
@@ -18,7 +18,6 @@ const Footer: React.VFC<Props> = ({
         onNavigationHeaderTrigger={onNavigationHeaderTrigger}
       />
 
-      {/* TODO: use progress to move footer up */}
       <footer className={styles.footer}>
         <MadeBy />
       </footer>

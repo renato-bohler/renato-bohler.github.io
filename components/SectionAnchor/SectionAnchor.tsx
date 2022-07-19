@@ -11,7 +11,7 @@ type Props = {
   onChange: (sectionName: string, inView: boolean) => void;
 };
 
-const SectionAnchor: React.VFC<Props> = ({
+const SectionAnchor: React.FC<Props> = ({
   sectionName,
   onChange,
 }) => {

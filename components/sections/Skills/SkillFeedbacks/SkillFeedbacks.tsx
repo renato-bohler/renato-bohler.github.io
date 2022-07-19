@@ -101,7 +101,7 @@ const AVERAGE_POINTS = AVERAGE.map((average, index) => {
   ].join(',');
 }).join(' ');
 
-const SkillFeedbacks: React.VFC = () => {
+const SkillFeedbacks: React.FC = () => {
   const [tableView, setTableView] = useState(false);
 
   return (
@@ -132,9 +132,7 @@ const SkillFeedbacks: React.VFC = () => {
   );
 };
 
-const GraphicalView: React.VFC<{ active: boolean }> = ({
-  active,
-}) => {
+const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
   const [showFeedback, setShowFeedback] = useState(0);
 
   return (
@@ -290,7 +288,7 @@ const GraphicalView: React.VFC<{ active: boolean }> = ({
   );
 };
 
-const TableView: React.VFC = () => (
+const TableView: React.FC = () => (
   <table className={styles['table-view']}>
     <caption>
       All data collected from colleagues on my latest feedback round.

@@ -28,7 +28,7 @@ type Props = {
   isNavigationHeaderHidden: boolean;
 };
 
-const Header: React.VFC<Props> = ({ isNavigationHeaderHidden }) => {
+const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
   const { isContrastMode } = useTheme();
 
   const [isScrollHintVisible, setScrollHintVisible] = useState(false);

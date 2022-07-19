@@ -1,4 +1,4 @@
-const DarkIcon: React.VFC<{
+const DarkIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

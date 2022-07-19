@@ -3,6 +3,7 @@ import { useSwiperSlide } from 'swiper/react';
 
 import styles from './TestimonialCard.module.css';
 type Props = {
+  children: React.ReactNode;
   authorPicture: string;
   authorName: string;
   authorRole: string;

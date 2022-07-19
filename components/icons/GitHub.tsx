@@ -1,4 +1,4 @@
-const GitHubIcon: React.VFC<{
+const GitHubIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

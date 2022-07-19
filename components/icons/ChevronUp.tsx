@@ -1,4 +1,4 @@
-const ChevronUpIcon: React.VFC<{
+const ChevronUpIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
   'aria-label'?: string;

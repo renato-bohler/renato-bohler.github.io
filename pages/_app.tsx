@@ -7,7 +7,7 @@ import { Provider } from 'reakit/Provider';
 
 import { ThemeProvider } from '~/components/Theme/ThemeProvider';
 
-const App: React.VFC<AppProps> = ({ Component, pageProps }) => (
+const App: React.FC<AppProps> = ({ Component, pageProps }) => (
   <ThemeProvider>
     <Provider>
       <Component {...pageProps} />

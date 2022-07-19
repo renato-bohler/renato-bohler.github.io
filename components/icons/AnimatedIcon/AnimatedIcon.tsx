@@ -6,6 +6,7 @@ import { useInView } from 'react-intersection-observer';
 import styles from './AnimatedIcon.module.css';
 
 type Props = {
+  children: React.ReactNode;
   animationDelay?: number;
   className?: string;
   style?: React.CSSProperties;

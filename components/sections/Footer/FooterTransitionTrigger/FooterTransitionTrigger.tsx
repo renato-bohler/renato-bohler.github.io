@@ -10,7 +10,7 @@ type Props = {
   onNavigationHeaderTrigger: (hide: boolean) => void;
 };
 
-const FooterTransitionTrigger: React.VFC<Props> = ({
+const FooterTransitionTrigger: React.FC<Props> = ({
   onProgressChange,
   onNavigationHeaderTrigger,
 }) => {

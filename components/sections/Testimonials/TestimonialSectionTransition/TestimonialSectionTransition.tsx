@@ -1,6 +1,6 @@
 import styles from './TestimonialSectionTransition.module.css';
 
-const TestimonialSectionTransition: React.VFC = () => {
+const TestimonialSectionTransition: React.FC = () => {
   return (
     <svg className={styles.transition} aria-hidden>
       <defs>

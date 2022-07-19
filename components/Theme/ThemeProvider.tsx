@@ -42,7 +42,11 @@ const ThemeContext = createContext<ThemeContextType>({
   setReducedMotion: () => {},
 });
 
-export const ThemeProvider: React.FC = (props) => {
+type Props = {
+  children: React.ReactNode;
+};
+
+export const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(RANDOM_THEME);
   const [lastTheme, setLastTheme] = useState(theme);
 
@@ -87,7 +91,7 @@ export const ThemeProvider: React.FC = (props) => {
       </Head>
 
       <ThemeContext.Provider value={context}>
-        {props.children}
+        {children}
       </ThemeContext.Provider>
     </>
   );

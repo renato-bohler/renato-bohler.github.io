@@ -1,4 +1,4 @@
-const ArrowDownIcon: React.VFC<{
+const ArrowDownIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

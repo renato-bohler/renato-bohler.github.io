@@ -4,7 +4,7 @@ import { SECTIONS } from '~/consts/sections.const';
 
 import styles from './KeyboardNavigation.module.css';
 
-const KeyboardNavigation: React.VFC = () => (
+const KeyboardNavigation: React.FC = () => (
   <>
     {SECTIONS.map((section) => (
       <a

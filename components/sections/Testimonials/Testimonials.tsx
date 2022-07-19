@@ -28,7 +28,7 @@ import testimonials from './testimonials.const';
 import styles from './Testimonials.module.css';
 import TestimonialSectionTransition from './TestimonialSectionTransition/TestimonialSectionTransition';
 
-const Testimonials: React.VFC = () => {
+const Testimonials: React.FC = () => {
   const [ref, inView] = useInView();
 
   const [swiper, setSwiper] = useState<SwiperInstance>();
@@ -43,14 +43,14 @@ const Testimonials: React.VFC = () => {
   );
 
   const handleFocus = () => {
-    swiper?.autoplay.stop();
+    swiper?.autoplay?.stop();
   };
 
   useEffect(() => {
     if (inView) {
-      swiper?.autoplay.start();
+      swiper?.autoplay?.start();
     } else {
-      swiper?.autoplay.stop();
+      swiper?.autoplay?.stop();
     }
   }, [inView, swiper]);
 

@@ -1,9 +1,21 @@
-import About from '~/components/sections/About/About';
+import dynamic from 'next/dynamic';
+
 import Header from '~/components/sections/Header/Header';
-import Skills from '~/components/sections/Skills/Skills';
-import Testimonials from '~/components/sections/Testimonials/Testimonials';
 
 const TITLE = 'Renato Böhler';
+
+const About = dynamic(
+  () => import('~/components/sections/About/About'),
+  { ssr: false },
+);
+const Testimonials = dynamic(
+  () => import('~/components/sections/Testimonials/Testimonials'),
+  { ssr: false },
+);
+const Skills = dynamic(
+  () => import('~/components/sections/Skills/Skills'),
+  { ssr: false },
+);
 
 export type SectionName =
   | typeof HEADER['name']

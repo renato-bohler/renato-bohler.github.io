@@ -1,4 +1,4 @@
-const LinkedInIcon: React.VFC<{
+const LinkedInIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

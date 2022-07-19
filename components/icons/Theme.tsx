@@ -1,4 +1,4 @@
-const ThemeIcon: React.VFC<{
+const ThemeIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

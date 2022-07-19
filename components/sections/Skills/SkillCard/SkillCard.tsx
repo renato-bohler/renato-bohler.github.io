@@ -73,7 +73,7 @@ const USAGE = {
 
 const STUDYING_LABEL = "I've been studying this recently";
 
-const SkillCard: React.VFC<Props> = ({
+const SkillCard: React.FC<Props> = ({
   name,
   description,
   teaser,

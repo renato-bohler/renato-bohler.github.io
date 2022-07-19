@@ -19,7 +19,7 @@ import useTheme from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
 
-const ThemePicker: React.VFC = () => {
+const ThemePicker: React.FC = () => {
   const {
     theme,
     setTheme,

@@ -27,7 +27,7 @@ type Props = {
   wavePath: string;
 };
 
-const SkillCardDialog: React.VFC<Props> = ({
+const SkillCardDialog: React.FC<Props> = ({
   cardRect,
   dialog,
   name,

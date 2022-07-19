@@ -1,4 +1,4 @@
-const LightIcon: React.VFC<{
+const LightIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => (

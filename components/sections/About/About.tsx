@@ -14,7 +14,7 @@ const age = Math.floor(
 
 const GREETING_TARGET = 'about me';
 
-const About: React.VFC = () => {
+const About: React.FC = () => {
   const isTabletOrMobile = useMediaQuery({
     query: '(max-width: 1224px)',
   });

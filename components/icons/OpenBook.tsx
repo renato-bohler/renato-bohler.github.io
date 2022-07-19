@@ -1,4 +1,4 @@
-const OpenBookIcon: React.VFC<{
+const OpenBookIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
   'aria-label'?: string;
