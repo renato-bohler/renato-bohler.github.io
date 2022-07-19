@@ -27,6 +27,7 @@ type Props = {
   wavePath: string;
 };
 
+// TODO: add URL to handle back button
 const SkillCardDialog: React.FC<Props> = ({
   cardRect,
   dialog,
