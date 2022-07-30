@@ -15,6 +15,7 @@ const light = {
   'table-cell-background': 'rgba(0, 0, 0, 0.02)',
   'scrollbar-track-color': '#838383',
   'accent-color': 'auto',
+  'chat-background': '#e9e9e9',
 };
 
 const dark = {
@@ -34,6 +35,7 @@ const dark = {
   'table-cell-background': 'rgba(255, 255, 255, 0.02)',
   'scrollbar-track-color': '#424242',
   'accent-color': 'auto',
+  'chat-background': '#1f242a',
 };
 
 export const contrast = {
@@ -54,6 +56,8 @@ export const contrast = {
     shadow: 'transparent',
     'table-cell-background': 'rgba(0, 0, 0, 0.01)',
     'scrollbar-track-color': '#838383',
+    'accent-color': 'white',
+    'chat-background': '#e9e9e9',
     //
     'primary-bright': '#383838',
     'primary-dark': 'black',
@@ -61,7 +65,6 @@ export const contrast = {
     'secondary-dark': '#282828',
     'highlight-accent-rgb': '255, 255, 255',
     'highlight-rgb': '0, 0, 0',
-    'accent-color': 'white',
   },
   dark: {
     'is-contrast': '1',
@@ -79,6 +82,8 @@ export const contrast = {
     shadow: 'transparent',
     'table-cell-background': 'rgba(255, 255, 255, 0.01)',
     'scrollbar-track-color': '#424242',
+    'accent-color': 'black',
+    'chat-background': '#0d0f12',
     //
     'primary-bright': 'white',
     'primary-dark': '#bfbfbf',
@@ -86,7 +91,6 @@ export const contrast = {
     'secondary-dark': '#b3b3b3',
     'highlight-rgb': '255, 255, 255',
     'highlight-accent-rgb': '0, 0, 0',
-    'accent-color': 'black',
   },
 };
 

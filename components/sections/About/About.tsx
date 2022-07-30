@@ -1,149 +1,82 @@
-import { useInView } from 'react-intersection-observer';
-import Tilt from 'react-parallax-tilt';
-import { useMediaQuery } from 'react-responsive';
-import { VisuallyHidden } from 'reakit/VisuallyHidden';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-import useTypingEffect from '~/hooks/useTypingEffect';
+import { useInView } from 'react-intersection-observer';
+import { useMediaQuery } from 'react-responsive';
+import { throttle } from 'throttle-debounce';
 
 import styles from './About.module.css';
-
-const age = Math.floor(
-  (new Date().getTime() - new Date('June 6, 1992').getTime()) /
-    (1000 * 60 * 60 * 24 * 365),
-);
-
-const GREETING_TARGET = 'about me';
+import AnimatedChatMessage from './ChatMessage/AnimatedChatMessage';
+import ChatMessage from './ChatMessage/ChatMessage';
 
 const About: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const aboutRef = useRef<HTMLDivElement | null>(null);
+  const [aboutInViewRef, aboutInView] = useInView();
+  const setAboutRefs = useCallback(
+    (node: HTMLDivElement) => {
+      aboutRef.current = node;
+      aboutInViewRef(node);
+    },
+    [aboutInViewRef],
+  );
+
   const isTabletOrMobile = useMediaQuery({
     query: '(max-width: 1224px)',
   });
 
-  const [pictureRef, pictureInView] = useInView({
-    triggerOnce: true,
-  });
-  const [contentRef, contentInView] = useInView({
-    triggerOnce: true,
-  });
+  const [progress, setProgress] = useState(0);
 
-  const greeting = useTypingEffect({
-    targetText: pictureInView ? GREETING_TARGET : '',
-    startDelayMs: 2000,
-  });
+  useEffect(() => {
+    if (!aboutInView) return;
+
+    const scrollHandler = throttle(10, () => {
+      if (!scrollRef.current || !aboutRef.current) return;
+
+      const percentage =
+        aboutRef.current.offsetTop /
+        (scrollRef.current.clientHeight -
+          aboutRef.current.clientHeight);
+
+      setProgress(percentage);
+    });
+    document.addEventListener('scroll', scrollHandler);
+    scrollHandler();
+
+    return () =>
+      document.removeEventListener('scroll', scrollHandler);
+  }, [aboutInView]);
 
   return (
-    <section
-      className={styles.scroll}
-      id={isTabletOrMobile ? 'about' : ''}
-    >
-      <div className={styles.about}>
-        <div className={styles.picture} data-enter={pictureInView}>
-          <h2 className={styles.greeting}>
-            <span aria-hidden>{`>${greeting}`}</span>
-            <span className={styles.caret} aria-hidden>
-              _
-            </span>
-            <VisuallyHidden>{GREETING_TARGET}</VisuallyHidden>
-          </h2>
-
-          <Tilt className={styles.tilt}>
-            <picture className={styles.image}>
-              <source
-                srcSet="/images/me/full.webp"
-                media="(min-width: 1921px)"
-              />
-              <source
-                srcSet="/images/me/full.webp"
-                media="(min-height: 1500px)"
-              />
-              <source
-                srcSet="/images/me/300.webp"
-                media="(max-width: 360px)"
-              />
-              <source
-                srcSet="/images/me/475.webp"
-                media="(max-width: 600px)"
-              />
-              <source
-                srcSet="/images/me/660.webp"
-                media="(max-width: 1024px)"
-              />
-              <source
-                srcSet="/images/me/550.webp"
-                media="(max-width: 1920px)"
-              />
-              <img
-                src="/images/me/300.webp"
-                alt="A smiley Renato"
-                loading="lazy"
-              />
-            </picture>
-          </Tilt>
-          {isTabletOrMobile && (
-            <div
-              ref={pictureRef}
-              className={styles['picture-trigger']}
-              aria-hidden
-            />
-          )}
-        </div>
-
-        <div className={styles.content} data-enter={contentInView}>
-          <p>
-            Hi, I am <strong>Renato Böhler</strong>, {age} years old,
-            a Brazilian computer engineer, addicted to soccer, video
-            games, and coding.
-          </p>
-          <p>
-            I started my journey as a developer very young, at the age
-            of 12. At that time, I began learning some basic concepts
-            of programming by myself. Before entering Computer
-            Engineering school, I attended a few years of Chemical
-            Engineering. At the age of 24, I had my first experience
-            as a professional developer. Since then, I&apos;ve been
-            learning a lot, both professionally and personally.
-          </p>
-          <p>
-            I love what I do, and I like to work with people that are
-            also passionate about what they do. I feel very
-            comfortable when working in relaxed environments. I do,
-            though, make a point on professionalism, respect, honesty,
-            and compromise. I consider myself a pretty easy guy to
-            work with. I like making things simpler for people around
-            me, and I&apos;m always more than happy to help whoever I
-            can.
-          </p>
-          <p>
-            These last couple of years, I&apos;ve been focusing my
-            career on frontend development, mainly on{' '}
-            <strong>React</strong>, which I&apos;m more enthusiastic
-            about.
-          </p>
-          {isTabletOrMobile && (
-            <div
-              ref={contentRef}
-              className={styles['content-trigger']}
-              aria-hidden
-            />
-          )}
+    <section>
+      <div className={styles.scroll} ref={scrollRef}>
+        <div className={styles.messages} ref={setAboutRefs}>
+          <AnimatedChatMessage progress={progress}>
+            Hello there 👋
+          </AnimatedChatMessage>
         </div>
       </div>
 
-      {!isTabletOrMobile && (
-        <>
-          <div
-            ref={pictureRef}
-            className={styles['picture-trigger']}
-            aria-hidden
-          />
-          <div
-            ref={contentRef}
-            className={styles['content-trigger']}
-            aria-hidden
-          />
-          <div id="about" aria-hidden />
-        </>
-      )}
+      <div id="about" aria-hidden className={styles.anchor} />
+      <div className={styles.messages}>
+        <ChatMessage>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+          sem lorem, viverra vitae aliquam sed, ultricies et tellus.
+          Quisque in iaculis nibh. In ut eros libero. Nulla ac sem ac
+          ante blandit faucibus a ac tellus. Orci varius natoque
+          penatibus et magnis dis parturient montes, nascetur
+          ridiculus mus. Aenean posuere erat nec cursus rutrum.
+          Praesent gravida nisl eu leo finibus condimentum. Cras augue
+          quam, sodales vel malesuada eget, tincidunt eget mi. In eget
+          fringilla nulla. Donec laoreet, mi at convallis malesuada,
+          mauris magna facilisis neque, eget convallis urna nisi a
+          velit. Nunc semper aliquam tortor eget lobortis. Proin eu
+          massa nec elit finibus aliquet. Phasellus mollis ultricies
+          diam, vitae tempus mauris posuere eget. Integer et nunc
+          gravida, pretium tellus quis, viverra tortor. Integer
+          tincidunt dapibus erat, a varius metus aliquet quis.
+        </ChatMessage>
+        <ChatMessage>Test 123</ChatMessage>
+      </div>
     </section>
   );
 };

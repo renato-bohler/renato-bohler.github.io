@@ -1,0 +1,82 @@
+import React from 'react';
+
+import ChatMessage from './ChatMessage';
+
+type Props = {
+  children: React.ReactNode;
+  progress: number;
+};
+
+const delayProgress = (progress: number, delay: number) =>
+  Math.max(0, (progress - delay) / (1 - delay));
+
+const transition = (from: number, to: number, progress: number) => {
+  return from + (to - from) * progress;
+};
+
+const AnimatedChatMessage: React.FC<Props> = ({
+  children,
+  progress,
+}) => {
+  const progress80 = delayProgress(progress, 0.8);
+  const progress90 = delayProgress(progress, 0.9);
+
+  return (
+    <ChatMessage
+      style={{
+        container: {
+          position: 'relative',
+          height: `${
+            transition(16, 8, progress) -
+            transition(0, 8 - 3.75, progress80)
+          }em`,
+          width: '100%',
+          top: `${transition(50, 100, progress)}%`,
+          left: `${transition(50, 0, progress)}%`,
+          transform: `translate(${transition(
+            -50,
+            0,
+            progress,
+          )}%, ${transition(-50, -100, progress)}%)`,
+          fontSize: `${transition(2, 1, progress)}em`,
+        },
+        picture: {
+          position: 'absolute',
+          top: '0',
+          left: `${transition(50, 0, progress)}%`,
+          transform: `translateX(${transition(-50, 0, progress)}%)`,
+          width: `${transition(10, 2.75, progress)}em`,
+          height: `${transition(10, 2.75, progress)}em`,
+          maxWidth: 'none',
+        },
+        bubble: {
+          position: 'absolute',
+          bottom: '0',
+          left: `${transition(50, 0, progress)}%`,
+          transform: `translateX(calc(${transition(
+            -50,
+            0,
+            progress,
+          )}% + ${transition(0, 3.75, progress)}em))`,
+        },
+        bubblePointer: {
+          top: `${transition(0.2, 1.7, progress90)}em`,
+          left: `${transition(50, 0, progress)}%`,
+          transform: `rotate(${transition(
+            90,
+            0,
+            progress90,
+          )}deg) translate(${transition(
+            -50,
+            0,
+            progress90,
+          )}%, ${transition(-50, 0, progress)}%)`,
+        },
+      }}
+    >
+      {children}
+    </ChatMessage>
+  );
+};
+
+export default AnimatedChatMessage;

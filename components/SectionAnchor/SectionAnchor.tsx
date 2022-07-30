@@ -15,7 +15,7 @@ const SectionAnchor: React.FC<Props> = ({
   sectionName,
   onChange,
 }) => {
-  const [ref, inView] = useInView({ threshold: 0 });
+  const [ref, inView] = useInView({ threshold: 0.5 });
 
   useEffect(() => {
     onChange(sectionName, inView);
