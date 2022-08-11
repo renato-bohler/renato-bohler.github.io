@@ -366,6 +366,7 @@ const skills: Skill[] = [
 
     studying: false,
     favorite: false,
+    // TODO: talk about ADA
     description: (
       <>
         <p>

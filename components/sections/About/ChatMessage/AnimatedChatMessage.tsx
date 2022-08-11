@@ -18,8 +18,8 @@ const AnimatedChatMessage: React.FC<Props> = ({
   children,
   progress,
 }) => {
+  const progress75 = delayProgress(progress, 0.75);
   const progress80 = delayProgress(progress, 0.8);
-  const progress90 = delayProgress(progress, 0.9);
 
   return (
     <ChatMessage
@@ -28,7 +28,7 @@ const AnimatedChatMessage: React.FC<Props> = ({
           position: 'relative',
           height: `${
             transition(16, 8, progress) -
-            transition(0, 8 - 3.75, progress80)
+            transition(0, 8 - 3.75, progress75)
           }em`,
           width: '100%',
           top: `${transition(50, 100, progress)}%`,
@@ -60,16 +60,16 @@ const AnimatedChatMessage: React.FC<Props> = ({
           )}% + ${transition(0, 3.75, progress)}em))`,
         },
         bubblePointer: {
-          top: `${transition(0.2, 1.7, progress90)}em`,
+          top: `${transition(0.2, 1.7, progress80)}em`,
           left: `${transition(50, 0, progress)}%`,
           transform: `rotate(${transition(
             90,
             0,
-            progress90,
+            progress80,
           )}deg) translate(${transition(
             -50,
             0,
-            progress90,
+            progress80,
           )}%, ${transition(-50, 0, progress)}%)`,
         },
       }}

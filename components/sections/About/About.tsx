@@ -21,7 +21,7 @@ const About: React.FC = () => {
   );
 
   const isTabletOrMobile = useMediaQuery({
-    query: '(max-width: 1224px)',
+    query: '(max-width: 1475px)',
   });
 
   const [progress, setProgress] = useState(0);
@@ -32,10 +32,21 @@ const About: React.FC = () => {
     const scrollHandler = throttle(10, () => {
       if (!scrollRef.current || !aboutRef.current) return;
 
-      const percentage =
-        aboutRef.current.offsetTop /
-        (scrollRef.current.clientHeight -
-          aboutRef.current.clientHeight);
+      const PADDING_HEIGHT = isTabletOrMobile ? 150 : 300;
+
+      const maxOffset =
+        aboutRef.current.clientHeight / (isTabletOrMobile ? 2 : 1) +
+        PADDING_HEIGHT;
+
+      const offset = Math.max(
+        0,
+        Math.min(
+          maxOffset,
+          window.scrollY - aboutRef.current.clientHeight,
+        ),
+      );
+
+      const percentage = offset / maxOffset;
 
       setProgress(percentage);
     });
@@ -44,7 +55,7 @@ const About: React.FC = () => {
 
     return () =>
       document.removeEventListener('scroll', scrollHandler);
-  }, [aboutInView]);
+  }, [aboutInView, isTabletOrMobile]);
 
   return (
     <section>
@@ -58,6 +69,8 @@ const About: React.FC = () => {
 
       <div id="about" aria-hidden className={styles.anchor} />
       <div className={styles.messages}>
+        {/* TODO: picture, rotating glow */}
+        {/* TODO: typing state, date/time (?), check (?) */}
         <ChatMessage>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
           sem lorem, viverra vitae aliquam sed, ultricies et tellus.
