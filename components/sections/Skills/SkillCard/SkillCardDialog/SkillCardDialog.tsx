@@ -1,5 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
+import {
+  disableBodyScroll,
+  enableBodyScroll,
+} from 'body-scroll-lock';
 import { Button } from 'reakit/Button';
 import {
   Dialog,
@@ -39,6 +43,8 @@ const SkillCardDialog: React.FC<Props> = ({
   scrollBarTrackColor,
   wavePath,
 }) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
   const { isReducedMotion } = useTheme();
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
@@ -50,6 +56,18 @@ const SkillCardDialog: React.FC<Props> = ({
         }
       : {}),
   } as React.CSSProperties;
+
+  useEffect(() => {
+    if (!scrollRef.current) return;
+
+    if (dialog.visible) {
+      disableBodyScroll(scrollRef.current, {
+        reserveScrollBarGap: true,
+      });
+    } else {
+      enableBodyScroll(scrollRef.current);
+    }
+  }, [dialog.visible]);
 
   /**
    * This hack will not be needed when `dvh` gets supported by
@@ -96,6 +114,7 @@ const SkillCardDialog: React.FC<Props> = ({
         {...dialog}
         aria-label={`My experience with ${name}`}
         className={styles.dialog}
+        preventBodyScroll={false}
         style={
           dialog.animating && !isReducedMotion
             ? {
@@ -142,7 +161,9 @@ const SkillCardDialog: React.FC<Props> = ({
           </svg>
         </header>
 
-        <div className={styles.content}>{description}</div>
+        <div className={styles.content} ref={scrollRef}>
+          {description}
+        </div>
       </Dialog>
     </DialogBackdrop>
   );
