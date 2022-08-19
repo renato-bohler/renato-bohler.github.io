@@ -69,8 +69,7 @@ const About: React.FC = () => {
 
       <div id="about" aria-hidden className={styles.anchor} />
       <div className={styles.messages}>
-        {/* TODO: picture, rotating glow */}
-        {/* TODO: typing state, date/time (?), check (?) */}
+        {/* TODO: typing state, name */}
         <ChatMessage>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
           sem lorem, viverra vitae aliquam sed, ultricies et tellus.

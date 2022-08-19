@@ -3,14 +3,43 @@
 }
 
 .picture {
+  position: relative;
   width: 2.75em;
   height: 2.75em;
   flex: 1 0 auto;
   max-width: 2.75em;
-  border-radius: 100%;
-  border: 0.21em solid var(--theme-primary-bright);
   margin-right: 1em;
   margin-top: 0.5em;
+}
+
+.pictureImage {
+  width: 107%;
+  height: 107%;
+  clip-path: circle(50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+}
+
+.pictureArc {
+  position: absolute;
+  top: 0;
+}
+
+.pictureArcStroke {
+  stroke: url(#gradient);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  fill: none;
+
+  filter: drop-shadow(0 0 2px var(--theme-primary-bright));
+}
+
+.pictureArcFill {
+  fill: url(#gradient);
+  fill-opacity: 0.3;
+  filter: blur(2px);
 }
 
 .bubble {
@@ -45,6 +74,8 @@
 .bubble:after {
   content: '';
 
+  pointer-events: none;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -58,4 +89,6 @@
   border-top-right-radius: 0.3em;
   border-bottom-right-radius: 0.4em;
   border-bottom-left-radius: 0.3em;
+
+  transition: border-color 500ms ease-in-out;
 }

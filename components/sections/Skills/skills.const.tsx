@@ -366,7 +366,7 @@ const skills: Skill[] = [
 
     studying: false,
     favorite: false,
-    // TODO: talk about ADA
+    // TODO: write about ADA compliance bot
     description: (
       <>
         <p>
@@ -448,6 +448,7 @@ const skills: Skill[] = [
         </p>
       </>
     ),
+    // TODO: write about design system, chromatic, etc.
     description: (
       <>
         <p>
