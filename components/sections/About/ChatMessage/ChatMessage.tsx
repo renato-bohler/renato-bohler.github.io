@@ -1,9 +1,13 @@
 import React from 'react';
 
+import classNames from 'classnames';
+
 import styles from './ChatMessage.module.css';
+import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAnimation';
 
 type Props = {
   children: React.ReactNode;
+  loading?: boolean;
   style?: {
     container: React.CSSProperties;
     picture: React.CSSProperties;
@@ -16,10 +20,12 @@ type Props = {
 };
 
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
-  ({ children, style }, ref) => (
+  ({ children, loading, style }, ref) => (
     <div
       ref={ref}
-      className={styles.container}
+      className={classNames(styles.container, {
+        [styles['fade-in']]: !ref,
+      })}
       style={style?.container}
     >
       <div className={styles.picture} style={style?.picture}>
@@ -60,7 +66,7 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
           className={styles['bubble-pointer']}
           style={style?.bubblePointer}
         />
-        {children}
+        {loading ? <MessageWritingAnimation /> : children}
       </div>
     </div>
   ),

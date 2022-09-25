@@ -2,6 +2,10 @@
   display: flex;
 }
 
+.fade-in {
+  animation: fade-in 1s;
+}
+
 .picture {
   position: relative;
   width: 2.75em;
@@ -91,4 +95,15 @@
   border-bottom-left-radius: 0.3em;
 
   transition: border-color 500ms ease-in-out;
+}
+
+@keyframes fade-in {
+  0% {
+    transform: translateX(2em);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 100%;
+  }
 }

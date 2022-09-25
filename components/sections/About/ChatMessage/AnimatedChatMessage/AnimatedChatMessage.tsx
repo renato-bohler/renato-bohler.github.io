@@ -3,7 +3,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
 
-import ChatMessage from './ChatMessage';
+import ChatMessage from '../ChatMessage';
 
 type Props = {
   children: React.ReactNode;
