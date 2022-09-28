@@ -7,7 +7,18 @@ export type Message = {
   status: 'invisible' | 'writing' | 'visible';
 };
 
-const MESSAGE_TICK_MS = 1000;
+// Time it takes for a message to be added
+const MESSAGE_START_BASE_MS = 1000;
+const MESSAGE_START_VARIANCE_MS = 500;
+
+// Time it takes for a message to finish writing
+const MESSAGE_WRITE_BASE_MS = 3000;
+const MESSAGE_WRITE_VARIANCE_MS = 1500;
+
+const getTime = (base: number, variance: number) => {
+  const varianceSignal = Math.random() < 0.5 ? 1 : -1;
+  return base + varianceSignal * Math.random() * variance;
+};
 
 class MessageService {
   connected = false;
@@ -84,7 +95,7 @@ class MessageService {
     this.timeouts.push(
       window.setTimeout(
         () => this.sendNextMessage(),
-        MESSAGE_TICK_MS,
+        getTime(MESSAGE_START_BASE_MS, MESSAGE_START_VARIANCE_MS),
       ),
     );
   }
@@ -107,7 +118,10 @@ class MessageService {
 
   queueWriteMessage() {
     this.timeouts.push(
-      window.setTimeout(() => this.writeMessage(), MESSAGE_TICK_MS),
+      window.setTimeout(
+        () => this.writeMessage(),
+        getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS),
+      ),
     );
   }
 
@@ -131,7 +145,7 @@ class MessageService {
     this.timeouts.push(
       window.setTimeout(
         () => this.finishMessage(),
-        MESSAGE_TICK_MS * 4,
+        getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS),
       ),
     );
   }

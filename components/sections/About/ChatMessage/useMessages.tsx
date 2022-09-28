@@ -4,8 +4,6 @@ import { useInView } from 'react-intersection-observer';
 
 import messageService, { Message } from './messageService';
 
-// TODO(renato): move MessageService and export messageService from its own file?
-
 const useMessages = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [messagesInViewRef, messagesInView] = useInView();
