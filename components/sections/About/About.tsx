@@ -3,8 +3,8 @@ import classNames from 'classnames';
 import styles from './About.module.css';
 import AnimatedChatMessage from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
 import ChatMessage from './ChatMessage/ChatMessage';
+import useMessages from './ChatMessage/useMessages';
 import useAboutProgress from './useAboutProgress';
-import useMessages from './useMessages';
 
 const About: React.FC = () => {
   const { progress, scrollRef, setAboutRefs } = useAboutProgress();
@@ -39,7 +39,7 @@ const About: React.FC = () => {
           .map((message, index) => (
             <ChatMessage
               key={index}
-              loading={message.status === 'loading'}
+              loading={message.status === 'writing'}
             >
               {message.content}
             </ChatMessage>

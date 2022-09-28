@@ -8,7 +8,10 @@
   ],
   "rules": {
     "@next/next/no-img-element": "off",
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-empty-function": "off",
     "react/self-closing-comp": "warn",
