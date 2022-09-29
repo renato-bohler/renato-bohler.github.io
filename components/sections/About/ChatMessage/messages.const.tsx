@@ -5,6 +5,8 @@ const messages: Message[] = Array.from({ length: 10 })
   .map((i) => ({
     id: i,
     type: 'text',
+    direction: i % 2 ? 'incoming' : 'outgoing',
+    status: 'writing',
     content: (
       <>
         {Array.from({ length: i })
@@ -19,7 +21,6 @@ const messages: Message[] = Array.from({ length: 10 })
           ))}
       </>
     ),
-    status: 'writing',
   }));
 
 export default messages;

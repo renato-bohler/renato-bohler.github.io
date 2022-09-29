@@ -3,6 +3,7 @@ import messages from './messages.const';
 export type Message = {
   id: number;
   type: 'text' | 'audio';
+  direction: 'incoming' | 'outgoing';
   content: JSX.Element;
   status: 'invisible' | 'writing' | 'visible';
 };
@@ -12,8 +13,8 @@ const MESSAGE_START_BASE_MS = 1000;
 const MESSAGE_START_VARIANCE_MS = 500;
 
 // Time it takes for a message to finish writing
-const MESSAGE_WRITE_BASE_MS = 3000;
-const MESSAGE_WRITE_VARIANCE_MS = 1500;
+const MESSAGE_WRITE_BASE_MS = 2500;
+const MESSAGE_WRITE_VARIANCE_MS = 1000;
 
 const getTime = (base: number, variance: number) => {
   const varianceSignal = Math.random() < 0.5 ? 1 : -1;
@@ -68,8 +69,10 @@ class MessageService {
   }
 
   sendFirstMessage() {
-    const firstMessage = messages[0];
-    firstMessage.status = 'visible';
+    const firstMessage: Message = {
+      ...messages[0],
+      status: 'visible',
+    };
 
     this.sentMessages.push(firstMessage);
     this.onMessage(firstMessage);
@@ -86,9 +89,17 @@ class MessageService {
 
     if (!nextMessage) return;
 
-    this.sentMessages.push(nextMessage);
-    this.onMessage(nextMessage);
-    this.queueFinishMessage();
+    const isOutgoing = nextMessage.direction === 'outgoing';
+
+    const nextMessageStatus: Message = {
+      ...nextMessage,
+      status: isOutgoing ? 'visible' : 'writing',
+    };
+
+    this.sentMessages.push(nextMessageStatus);
+    this.onMessage(nextMessageStatus);
+    if (isOutgoing) this.queueSendNextMessage();
+    else this.queueFinishMessage();
   }
 
   queueSendNextMessage() {
@@ -126,18 +137,22 @@ class MessageService {
   }
 
   finishMessage() {
-    const writingMessage = messages.find(
+    const writingMessage = this.sentMessages.find(
       (message) => message.status === 'writing',
     );
 
     if (!writingMessage) return;
 
-    writingMessage.status = 'visible';
+    const writingMessageStatus: Message = {
+      ...writingMessage,
+      status: 'visible',
+    };
     this.sentMessages = this.sentMessages.map((sentMessage) => {
-      if (sentMessage.id !== writingMessage.id) return sentMessage;
-      return writingMessage;
+      if (sentMessage.id !== writingMessageStatus.id)
+        return sentMessage;
+      return writingMessageStatus;
     });
-    this.onMessage(writingMessage);
+    this.onMessage(writingMessageStatus);
     this.queueSendNextMessage();
   }
 

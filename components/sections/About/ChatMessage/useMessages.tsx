@@ -28,7 +28,6 @@ const useMessages = () => {
 
   useEffect(() => {
     messageService.onMessage = (message) => {
-      console.log('onMessage:', message);
       setMessages((messages) => {
         if (messages.find((msg) => msg.id === message.id)) {
           return messages.map((msg) => {
@@ -39,6 +38,7 @@ const useMessages = () => {
 
         return [...messages, message];
       });
+
       scrollBottom();
     };
 

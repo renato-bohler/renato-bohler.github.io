@@ -62,7 +62,7 @@
 
 .message-list {
   height: 50vh;
-  height: 50vh;
+  padding-right: 2em;
 
   overflow: hidden auto;
 }

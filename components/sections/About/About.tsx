@@ -39,6 +39,7 @@ const About: React.FC = () => {
           .map((message, index) => (
             <ChatMessage
               key={index}
+              direction={message.direction}
               loading={message.status === 'writing'}
             >
               {message.content}

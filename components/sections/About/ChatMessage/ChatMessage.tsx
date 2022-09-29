@@ -8,6 +8,7 @@ import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAni
 type Props = {
   children: React.ReactNode;
   loading?: boolean;
+  direction: 'incoming' | 'outgoing';
   style?: {
     container: React.CSSProperties;
     picture: React.CSSProperties;
@@ -20,10 +21,11 @@ type Props = {
 };
 
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
-  ({ children, loading, style }, ref) => (
+  ({ children, direction, loading, style }, ref) => (
     <div
       ref={ref}
       className={classNames(styles.container, {
+        [styles.outgoing]: direction === 'outgoing',
         [styles['fade-in']]: !ref,
       })}
       style={style?.container}
