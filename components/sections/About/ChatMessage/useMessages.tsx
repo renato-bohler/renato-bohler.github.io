@@ -48,7 +48,11 @@ const useMessages = () => {
     return () => messageService.disconnect();
   }, [messagesInView]);
 
-  return { messages, setMessagesRefs };
+  return {
+    messages,
+    onResponse: messageService.onResponse.bind(messageService),
+    setMessagesRefs,
+  };
 };
 
 export default useMessages;

@@ -8,7 +8,7 @@ import useAboutProgress from './useAboutProgress';
 
 const About: React.FC = () => {
   const { progress, scrollRef, setAboutRefs } = useAboutProgress();
-  const { messages, setMessagesRefs } = useMessages();
+  const { messages, onResponse, setMessagesRefs } = useMessages();
 
   return (
     <section>
@@ -36,14 +36,12 @@ const About: React.FC = () => {
       >
         {messages
           .filter((message) => message.status !== 'invisible')
-          .map((message, index) => (
+          .map((message) => (
             <ChatMessage
-              key={index}
-              direction={message.direction}
-              loading={message.status === 'writing'}
-            >
-              {message.content}
-            </ChatMessage>
+              key={message.id}
+              message={message}
+              onResponse={onResponse}
+            />
           ))}
       </div>
     </section>

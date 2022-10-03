@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import classNames from 'classnames';
+import { Button } from 'reakit/Button';
 
 import styles from './ChatMessage.module.css';
+import { Message } from './messageService';
 import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAnimation';
 
 type Props = {
-  children: React.ReactNode;
-  loading?: boolean;
-  direction: 'incoming' | 'outgoing';
+  message: Message;
+  onResponse: (messages: Message[], label: string) => void;
   style?: {
     container: React.CSSProperties;
     picture: React.CSSProperties;
@@ -20,12 +21,42 @@ type Props = {
   };
 };
 
+const ChatMessageContent: React.FC<Props> = ({
+  message,
+  onResponse,
+}) => {
+  const [responded, setResponded] = useState(false);
+
+  switch (message.type) {
+    case 'text':
+      return <>{message.content}</>;
+    case 'response':
+      return (
+        <div className={styles['response-container']}>
+          {message.content.map((option) => (
+            <Button
+              key={option.label}
+              className={styles['response-button']}
+              disabled={responded || option.disabled}
+              onClick={() => {
+                onResponse(option.responses, option.label);
+                setResponded(true);
+              }}
+            >
+              {option.label}
+            </Button>
+          ))}
+        </div>
+      );
+  }
+};
+
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
-  ({ children, direction, loading, style }, ref) => (
+  ({ message, onResponse, style }, ref) => (
     <div
       ref={ref}
       className={classNames(styles.container, {
-        [styles.outgoing]: direction === 'outgoing',
+        [styles.outgoing]: message.direction === 'outgoing',
         [styles['fade-in']]: !ref,
       })}
       style={style?.container}
@@ -68,7 +99,14 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
           className={styles['bubble-pointer']}
           style={style?.bubblePointer}
         />
-        {loading ? <MessageWritingAnimation /> : children}
+        {message.status === 'writing' ? (
+          <MessageWritingAnimation />
+        ) : (
+          <ChatMessageContent
+            message={message}
+            onResponse={onResponse}
+          />
+        )}
       </div>
     </div>
   ),

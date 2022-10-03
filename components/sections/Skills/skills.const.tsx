@@ -448,7 +448,7 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-    // TODO: write about design system, chromatic, etc.
+    // TODO: write about design system, component library, chromatic, etc.
     description: (
       <>
         <p>

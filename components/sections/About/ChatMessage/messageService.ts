@@ -1,20 +1,34 @@
-import messages from './messages.const';
+import messages, { end, outgoing } from './messages.const';
 
-export type Message = {
-  id: number;
-  type: 'text' | 'audio';
+type BaseMessage = {
+  id: string;
   direction: 'incoming' | 'outgoing';
-  content: JSX.Element;
   status: 'invisible' | 'writing' | 'visible';
 };
+
+type TextMessage = BaseMessage & {
+  type: 'text';
+  content: React.ReactNode;
+};
+
+export type ResponseMessage = BaseMessage & {
+  type: 'response';
+  content: {
+    label: string;
+    disabled?: boolean;
+    responses: Message[];
+  }[];
+};
+
+export type Message = TextMessage | ResponseMessage;
 
 // Time it takes for a message to be added
 const MESSAGE_START_BASE_MS = 1000;
 const MESSAGE_START_VARIANCE_MS = 500;
 
 // Time it takes for a message to finish writing
-const MESSAGE_WRITE_BASE_MS = 2500;
-const MESSAGE_WRITE_VARIANCE_MS = 1000;
+const MESSAGE_WRITE_BASE_MS = 2750;
+const MESSAGE_WRITE_VARIANCE_MS = 750;
 
 const getTime = (base: number, variance: number) => {
   const varianceSignal = Math.random() < 0.5 ? 1 : -1;
@@ -23,12 +37,15 @@ const getTime = (base: number, variance: number) => {
 
 class MessageService {
   connected = false;
+  finished = false;
   timeouts: number[] = [];
   sentMessages: Message[] = [];
+  selectedResponses: string[] = [];
 
   connect() {
-    this.connected = true;
+    if (this.finished) return;
 
+    this.connected = true;
     this.resumeMessages();
   }
 
@@ -40,6 +57,12 @@ class MessageService {
   }
 
   onMessage(_message: Message) {}
+
+  onResponse(messages: Message[], label: string) {
+    this.selectedResponses.push(label);
+    this.sentMessages.push(...messages);
+    this.sendNextMessage();
+  }
 
   resumeMessages() {
     if (this.sentMessages.length === 0) {
@@ -53,15 +76,6 @@ class MessageService {
       )
     ) {
       this.queueFinishMessage();
-      return;
-    }
-
-    if (
-      this.sentMessages.find(
-        (message) => message.status === 'invisible',
-      )
-    ) {
-      this.queueWriteMessage();
       return;
     }
 
@@ -80,14 +94,21 @@ class MessageService {
   }
 
   sendNextMessage() {
-    const nextMessage = messages.find(
-      (message) =>
-        !this.sentMessages.some(
-          (sentMessage) => sentMessage.id === message.id,
-        ),
-    );
+    const nextMessage =
+      this.sentMessages.find(
+        (message) => message.status === 'invisible',
+      ) ||
+      messages.find(
+        (message) =>
+          !this.sentMessages.some(
+            (sentMessage) => sentMessage.id === message.id,
+          ),
+      );
 
-    if (!nextMessage) return;
+    if (!nextMessage) {
+      this.handleOutgoing();
+      return;
+    }
 
     const isOutgoing = nextMessage.direction === 'outgoing';
 
@@ -107,31 +128,6 @@ class MessageService {
       window.setTimeout(
         () => this.sendNextMessage(),
         getTime(MESSAGE_START_BASE_MS, MESSAGE_START_VARIANCE_MS),
-      ),
-    );
-  }
-
-  writeMessage() {
-    const invisibleMessage = messages.find(
-      (message) => message.status === 'invisible',
-    );
-
-    if (!invisibleMessage) return;
-
-    invisibleMessage.status = 'writing';
-    this.sentMessages = this.sentMessages.map((sentMessage) => {
-      if (sentMessage.id !== invisibleMessage.id) return sentMessage;
-      return invisibleMessage;
-    });
-    this.onMessage(invisibleMessage);
-    this.queueFinishMessage();
-  }
-
-  queueWriteMessage() {
-    this.timeouts.push(
-      window.setTimeout(
-        () => this.writeMessage(),
-        getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS),
       ),
     );
   }
@@ -162,6 +158,86 @@ class MessageService {
         () => this.finishMessage(),
         getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS),
       ),
+    );
+  }
+
+  handleOutgoing() {
+    if (this.shouldEndChat()) {
+      this.queueEndChat();
+      return;
+    }
+
+    if (this.shouldResendOutgoing()) {
+      this.resendOutgoing();
+    }
+  }
+
+  shouldResendOutgoing() {
+    if (
+      this.sentMessages.every(
+        (message) => message.direction !== 'outgoing',
+      )
+    )
+      return false;
+
+    if (
+      this.sentMessages[this.sentMessages.length - 1].direction ===
+      'outgoing'
+    )
+      return false;
+
+    return true;
+  }
+
+  resendOutgoing() {
+    const newOutgoing = {
+      ...outgoing,
+      id: `${outgoing.id}-${
+        this.sentMessages.filter(
+          (message) => message.direction === 'outgoing',
+        ).length + 1
+      }`,
+      content: (outgoing.content || []).map((option) => {
+        if (!this.selectedResponses.includes(option.label))
+          return option;
+
+        return { ...option, disabled: true };
+      }),
+    };
+    this.sentMessages.push(newOutgoing);
+    this.onMessage(newOutgoing);
+  }
+
+  shouldEndChat() {
+    if (this.sentMessages.some((message) => message.id === end.id))
+      return false;
+
+    if (
+      outgoing.content.some(
+        (message) => !this.selectedResponses.includes(message.label),
+      )
+    )
+      return false;
+
+    return true;
+  }
+
+  endChat() {
+    this.sentMessages.push(end);
+    this.onMessage(end);
+
+    this.timeouts.push(
+      window.setTimeout(() => {
+        this.finishMessage();
+        this.finished = true;
+        this.disconnect();
+      }, getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS)),
+    );
+  }
+
+  queueEndChat() {
+    this.timeouts.push(
+      window.setTimeout(() => this.endChat(), getTime(1500, 250)),
     );
   }
 }

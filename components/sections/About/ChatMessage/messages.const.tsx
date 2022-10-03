@@ -1,26 +1,77 @@
-import { Message } from './messageService';
+import { Message, ResponseMessage } from './messageService';
 
-const messages: Message[] = Array.from({ length: 10 })
-  .map((_, i) => i + 1)
-  .map((i) => ({
-    id: i,
+export const incoming: Message[] = [
+  {
+    id: '1',
     type: 'text',
-    direction: i % 2 ? 'incoming' : 'outgoing',
+    direction: 'incoming',
     status: 'writing',
-    content: (
-      <>
-        {Array.from({ length: i })
-          .map((_, j) => j + 1)
-          .map((j) => (
-            <div key={`${i}-${j}`}>
-              Message{' '}
-              <strong>
-                {i}-{j}
-              </strong>
-            </div>
-          ))}
-      </>
-    ),
-  }));
+    content: <>Message 1</>,
+  },
+  {
+    id: '2',
+    type: 'text',
+    direction: 'incoming',
+    status: 'writing',
+    content: <>Message 2</>,
+  },
+];
+
+export const outgoing: ResponseMessage = {
+  id: 'outgoing',
+  type: 'response',
+  direction: 'outgoing',
+  status: 'visible',
+  content: [
+    {
+      label: 'Option #1',
+      responses: [
+        {
+          id: 'response-1-1',
+          type: 'text',
+          direction: 'incoming',
+          status: 'invisible',
+          content: <>Response 1-1</>,
+        },
+        {
+          id: '3-1-2',
+          type: 'text',
+          direction: 'incoming',
+          status: 'invisible',
+          content: <>Response 1-2</>,
+        },
+      ],
+    },
+    {
+      label: 'Option #2',
+      responses: [
+        {
+          id: 'response-2-1',
+          type: 'text',
+          direction: 'incoming',
+          status: 'invisible',
+          content: <>Response 2-1</>,
+        },
+        {
+          id: 'response-2-2',
+          type: 'text',
+          direction: 'incoming',
+          status: 'invisible',
+          content: <>Response 2-2</>,
+        },
+      ],
+    },
+  ],
+};
+
+export const end: Message = {
+  id: 'end',
+  type: 'text',
+  direction: 'incoming',
+  status: 'writing',
+  content: <>Thanks!</>,
+};
+
+const messages = [...incoming, outgoing];
 
 export default messages;

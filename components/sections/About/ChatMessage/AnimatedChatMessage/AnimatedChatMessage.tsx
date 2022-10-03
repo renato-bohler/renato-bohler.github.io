@@ -107,9 +107,15 @@ const AnimatedChatMessage: React.FC<Props> = ({
           )}%, ${transition(-50, 0, progress)}%)`,
         },
       }}
-    >
-      {children}
-    </ChatMessage>
+      message={{
+        content: children,
+        id: '0',
+        direction: 'incoming',
+        type: 'text',
+        status: 'visible',
+      }}
+      onResponse={() => {}}
+    />
   );
 };
 
