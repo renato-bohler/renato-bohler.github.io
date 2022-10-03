@@ -11,13 +11,16 @@ type TextMessage = BaseMessage & {
   content: React.ReactNode;
 };
 
+export type ResponseOption = {
+  id: string;
+  label: string;
+  disabled?: boolean;
+  responses: Message[];
+};
+
 export type ResponseMessage = BaseMessage & {
   type: 'response';
-  content: {
-    label: string;
-    disabled?: boolean;
-    responses: Message[];
-  }[];
+  content: ResponseOption[];
 };
 
 export type Message = TextMessage | ResponseMessage;
@@ -30,14 +33,11 @@ const MESSAGE_START_VARIANCE_MS = 500;
 const MESSAGE_WRITE_BASE_MS = 2750;
 const MESSAGE_WRITE_VARIANCE_MS = 750;
 
-const getTime = (base: number, variance: number) => {
-  const varianceSignal = Math.random() < 0.5 ? 1 : -1;
-  return base + varianceSignal * Math.random() * variance;
-};
-
 class MessageService {
   connected = false;
   finished = false;
+  fastMode = false;
+
   timeouts: number[] = [];
   sentMessages: Message[] = [];
   selectedResponses: string[] = [];
@@ -58,9 +58,11 @@ class MessageService {
 
   onMessage(_message: Message) {}
 
-  onResponse(messages: Message[], label: string) {
-    this.selectedResponses.push(label);
-    this.sentMessages.push(...messages);
+  onResponse(option: ResponseOption) {
+    if (option.id === 'fast-mode') this.fastMode = true;
+
+    this.selectedResponses.push(option.id);
+    this.sentMessages.push(...option.responses);
     this.sendNextMessage();
   }
 
@@ -127,7 +129,10 @@ class MessageService {
     this.timeouts.push(
       window.setTimeout(
         () => this.sendNextMessage(),
-        getTime(MESSAGE_START_BASE_MS, MESSAGE_START_VARIANCE_MS),
+        this.getTime(
+          MESSAGE_START_BASE_MS,
+          MESSAGE_START_VARIANCE_MS,
+        ),
       ),
     );
   }
@@ -156,7 +161,10 @@ class MessageService {
     this.timeouts.push(
       window.setTimeout(
         () => this.finishMessage(),
-        getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS),
+        this.getTime(
+          MESSAGE_WRITE_BASE_MS,
+          MESSAGE_WRITE_VARIANCE_MS,
+        ),
       ),
     );
   }
@@ -198,7 +206,7 @@ class MessageService {
         ).length + 1
       }`,
       content: (outgoing.content || []).map((option) => {
-        if (!this.selectedResponses.includes(option.label))
+        if (!this.selectedResponses.includes(option.id))
           return option;
 
         return { ...option, disabled: true };
@@ -214,7 +222,7 @@ class MessageService {
 
     if (
       outgoing.content.some(
-        (message) => !this.selectedResponses.includes(message.label),
+        (option) => !this.selectedResponses.includes(option.id),
       )
     )
       return false;
@@ -231,13 +239,25 @@ class MessageService {
         this.finishMessage();
         this.finished = true;
         this.disconnect();
-      }, getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS)),
+      }, this.getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS)),
     );
   }
 
   queueEndChat() {
     this.timeouts.push(
-      window.setTimeout(() => this.endChat(), getTime(1500, 250)),
+      window.setTimeout(
+        () => this.endChat(),
+        this.getTime(1500, 250),
+      ),
+    );
+  }
+
+  getTime(base: number, variance: number) {
+    const varianceSignal = Math.random() < 0.5 ? 1 : -1;
+
+    return (
+      (base + varianceSignal * Math.random() * variance) /
+      (this.fastMode ? 5 : 1)
     );
   }
 }

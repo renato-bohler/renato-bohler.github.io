@@ -1,5 +1,7 @@
 import { Message, ResponseMessage } from './messageService';
 
+export const FAST_MODE_ID = 'fast-mode';
+
 export const incoming: Message[] = [
   {
     id: '1',
@@ -24,6 +26,7 @@ export const outgoing: ResponseMessage = {
   status: 'visible',
   content: [
     {
+      id: 'option-1',
       label: 'Option #1',
       responses: [
         {
@@ -43,6 +46,7 @@ export const outgoing: ResponseMessage = {
       ],
     },
     {
+      id: 'option-2',
       label: 'Option #2',
       responses: [
         {
@@ -58,6 +62,25 @@ export const outgoing: ResponseMessage = {
           direction: 'incoming',
           status: 'invisible',
           content: <>Response 2-2</>,
+        },
+      ],
+    },
+    {
+      id: FAST_MODE_ID,
+      label: 'Can you please just type faster?',
+      responses: [
+        {
+          id: `${FAST_MODE_ID}-response`,
+          type: 'text',
+          direction: 'incoming',
+          status: 'invisible',
+          content: (
+            <>
+              Absolutely!
+              <br />
+              <em style={{ fontSize: '0.8em' }}>*Cracks knuckles*</em>
+            </>
+          ),
         },
       ],
     },

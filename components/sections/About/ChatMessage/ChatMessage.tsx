@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import { Button } from 'reakit/Button';
 
 import styles from './ChatMessage.module.css';
-import { Message } from './messageService';
+import { Message, ResponseOption } from './messageService';
 import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAnimation';
 
 type Props = {
   message: Message;
-  onResponse: (messages: Message[], label: string) => void;
+  onResponse: (option: ResponseOption) => void;
   style?: {
     container: React.CSSProperties;
     picture: React.CSSProperties;
@@ -39,7 +39,7 @@ const ChatMessageContent: React.FC<Props> = ({
               className={styles['response-button']}
               disabled={responded || option.disabled}
               onClick={() => {
-                onResponse(option.responses, option.label);
+                onResponse(option);
                 setResponded(true);
               }}
             >
