@@ -1,4 +1,8 @@
-import messages, { end, outgoing } from './messages.const';
+import messages, {
+  end,
+  FAST_MODE_ID,
+  outgoing,
+} from './messages.const';
 
 type BaseMessage = {
   id: string;
@@ -11,19 +15,19 @@ type TextMessage = BaseMessage & {
   content: React.ReactNode;
 };
 
-export type ResponseOption = {
+export type Option = {
   id: string;
   label: string;
   disabled?: boolean;
   responses: Message[];
 };
 
-export type ResponseMessage = BaseMessage & {
-  type: 'response';
-  content: ResponseOption[];
+export type OptionSelectMessage = BaseMessage & {
+  type: 'option-select';
+  content: Option[];
 };
 
-export type Message = TextMessage | ResponseMessage;
+export type Message = TextMessage | OptionSelectMessage;
 
 // Time it takes for a message to be added
 const MESSAGE_START_BASE_MS = 1000;
@@ -58,7 +62,7 @@ class MessageService {
 
   onMessage(_message: Message) {}
 
-  onResponse(option: ResponseOption) {
+  onResponse(option: Option) {
     if (option.id === 'fast-mode') this.fastMode = true;
 
     this.selectedResponses.push(option.id);
@@ -222,7 +226,10 @@ class MessageService {
 
     if (
       outgoing.content.some(
-        (option) => !this.selectedResponses.includes(option.id),
+        (option) =>
+          ![...this.selectedResponses, FAST_MODE_ID].includes(
+            option.id,
+          ),
       )
     )
       return false;

@@ -1,4 +1,4 @@
-import { Message, ResponseMessage } from './messageService';
+import { Message, OptionSelectMessage } from './messageService';
 
 export const FAST_MODE_ID = 'fast-mode';
 
@@ -19,9 +19,9 @@ export const incoming: Message[] = [
   },
 ];
 
-export const outgoing: ResponseMessage = {
+export const outgoing: OptionSelectMessage = {
   id: 'outgoing',
-  type: 'response',
+  type: 'option-select',
   direction: 'outgoing',
   status: 'visible',
   content: [

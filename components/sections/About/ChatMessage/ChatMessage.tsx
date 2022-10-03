@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import { Button } from 'reakit/Button';
 
 import styles from './ChatMessage.module.css';
-import { Message, ResponseOption } from './messageService';
+import { Message, Option } from './messageService';
 import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAnimation';
 
 type Props = {
   message: Message;
-  onResponse: (option: ResponseOption) => void;
+  onResponse: (option: Option) => void;
   style?: {
     container: React.CSSProperties;
     picture: React.CSSProperties;
@@ -30,7 +30,7 @@ const ChatMessageContent: React.FC<Props> = ({
   switch (message.type) {
     case 'text':
       return <>{message.content}</>;
-    case 'response':
+    case 'option-select':
       return (
         <div className={styles['response-container']}>
           {message.content.map((option) => (
