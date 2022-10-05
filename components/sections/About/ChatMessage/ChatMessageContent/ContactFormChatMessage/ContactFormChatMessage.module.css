@@ -1,0 +1,99 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 400px;
+}
+
+.label-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 0.6em;
+  font-weight: bold;
+  text-transform: uppercase;
+  transform: translateY(0.3em);
+}
+
+.input {
+  font-size: 0.8em;
+  padding: 0.5em;
+  border-radius: 4px;
+  border: 1px solid rgba(var(--theme-highlight-rgb), 0.5);
+  background: var(--theme-background);
+}
+
+.input:disabled {
+  opacity: 75%;
+}
+
+.textarea {
+  height: 75px;
+  min-width: 100%;
+  max-width: 100%;
+  max-height: 300px;
+}
+
+.footer {
+  display: flex;
+  align-self: flex-end;
+  gap: 16px;
+
+  margin-top: 8px;
+}
+
+.status {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  background: var(--theme-text);
+  color: var(--theme-background);
+  border-radius: 8px;
+  font-size: 0.8em;
+
+  padding: 0 1em;
+}
+
+.status::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 12px solid var(--theme-text);
+  margin-top: -0.6em;
+  margin-left: -0.6em;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  padding: 0.25em;
+
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+
+  background: rgba(var(--theme-highlight-rgb), 0.5);
+  color: white;
+  border-radius: 8px;
+  border: none;
+
+  transition: background-color 250ms ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  background: rgba(var(--theme-highlight-rgb), 0.75);
+}

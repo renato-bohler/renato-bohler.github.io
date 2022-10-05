@@ -1,33 +1,9 @@
 import messages, {
   end,
   FAST_MODE_ID,
-  outgoing,
+  optionSelect,
 } from './messages.const';
-
-type BaseMessage = {
-  id: string;
-  direction: 'incoming' | 'outgoing';
-  status: 'invisible' | 'writing' | 'visible';
-};
-
-type TextMessage = BaseMessage & {
-  type: 'text';
-  content: React.ReactNode;
-};
-
-export type Option = {
-  id: string;
-  label: string;
-  disabled?: boolean;
-  responses: Message[];
-};
-
-export type OptionSelectMessage = BaseMessage & {
-  type: 'option-select';
-  content: Option[];
-};
-
-export type Message = TextMessage | OptionSelectMessage;
+import { Message, Option } from './messages.types';
 
 // Time it takes for a message to be added
 const MESSAGE_START_BASE_MS = 1000;
@@ -88,6 +64,13 @@ class MessageService {
     this.queueSendNextMessage();
   }
 
+  updateSentMessage(updated: Message) {
+    this.sentMessages = this.sentMessages.map((sentMessage) => {
+      if (sentMessage.id !== updated.id) return sentMessage;
+      return updated;
+    });
+  }
+
   sendFirstMessage() {
     const firstMessage: Message = {
       ...messages[0],
@@ -112,7 +95,7 @@ class MessageService {
       );
 
     if (!nextMessage) {
-      this.handleOutgoing();
+      this.handleStale();
       return;
     }
 
@@ -123,8 +106,12 @@ class MessageService {
       status: isOutgoing ? 'visible' : 'writing',
     };
 
-    this.sentMessages.push(nextMessageStatus);
+    if (nextMessage.status === 'invisible')
+      this.updateSentMessage(nextMessageStatus);
+    else this.sentMessages.push(nextMessageStatus);
+
     this.onMessage(nextMessageStatus);
+
     if (isOutgoing) this.queueSendNextMessage();
     else this.queueFinishMessage();
   }
@@ -152,11 +139,7 @@ class MessageService {
       ...writingMessage,
       status: 'visible',
     };
-    this.sentMessages = this.sentMessages.map((sentMessage) => {
-      if (sentMessage.id !== writingMessageStatus.id)
-        return sentMessage;
-      return writingMessageStatus;
-    });
+    this.updateSentMessage(writingMessageStatus);
     this.onMessage(writingMessageStatus);
     this.queueSendNextMessage();
   }
@@ -173,51 +156,52 @@ class MessageService {
     );
   }
 
-  handleOutgoing() {
+  handleStale() {
     if (this.shouldEndChat()) {
       this.queueEndChat();
       return;
     }
 
-    if (this.shouldResendOutgoing()) {
-      this.resendOutgoing();
+    if (this.shouldResendOptionSelect()) {
+      this.resendOptionSelect();
     }
   }
 
-  shouldResendOutgoing() {
+  shouldResendOptionSelect() {
     if (
       this.sentMessages.every(
-        (message) => message.direction !== 'outgoing',
+        (message) => message.type !== 'option-select',
       )
     )
       return false;
 
     if (
-      this.sentMessages[this.sentMessages.length - 1].direction ===
-      'outgoing'
+      this.sentMessages[this.sentMessages.length - 1].type ===
+      'option-select'
     )
       return false;
 
     return true;
   }
 
-  resendOutgoing() {
-    const newOutgoing = {
-      ...outgoing,
-      id: `${outgoing.id}-${
+  resendOptionSelect() {
+    const newOptionSelect = {
+      ...optionSelect,
+      id: `${optionSelect.id}-${
         this.sentMessages.filter(
-          (message) => message.direction === 'outgoing',
+          (message) => message.type === 'option-select',
         ).length + 1
       }`,
-      content: (outgoing.content || []).map((option) => {
+      content: (optionSelect.content || []).map((option) => {
         if (!this.selectedResponses.includes(option.id))
           return option;
 
         return { ...option, disabled: true };
       }),
     };
-    this.sentMessages.push(newOutgoing);
-    this.onMessage(newOutgoing);
+
+    this.sentMessages.push(newOptionSelect);
+    this.onMessage(newOptionSelect);
   }
 
   shouldEndChat() {
@@ -225,7 +209,7 @@ class MessageService {
       return false;
 
     if (
-      outgoing.content.some(
+      optionSelect.content.some(
         (option) =>
           ![...this.selectedResponses, FAST_MODE_ID].includes(
             option.id,

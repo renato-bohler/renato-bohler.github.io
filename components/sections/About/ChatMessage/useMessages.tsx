@@ -2,7 +2,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import messageService, { Message } from './messageService';
+import { Message } from './messages.types';
+import messageService from './messageService';
 
 const useMessages = () => {
   const [messages, setMessages] = useState<Message[]>([]);

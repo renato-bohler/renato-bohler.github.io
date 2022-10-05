@@ -8,6 +8,7 @@ import ArrowDownIcon from '~/components/icons/ArrowDown';
 import GitHubIcon from '~/components/icons/GitHub';
 import LinkedInIcon from '~/components/icons/LinkedIn';
 import TwitterIcon from '~/components/icons/Twitter';
+import socials from '~/consts/socials.const';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './Header.module.css';
@@ -130,7 +131,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
         <nav className={styles.container}>
           <a
             title="Twitter"
-            href="https://twitter.com/renato_bohler"
+            href={socials.twitter}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.social}
@@ -141,7 +142,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
           </a>
           <a
             title="LinkedIn"
-            href="https://www.linkedin.com/in/renato-b%C3%B6hler-5b2202157/"
+            href={socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.social}
@@ -152,7 +153,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
           </a>
           <a
             title="GitHub"
-            href="https://github.com/renato-bohler/"
+            href={socials.github}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.social}

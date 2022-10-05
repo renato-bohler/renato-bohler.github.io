@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import classNames from 'classnames';
-import { Button } from 'reakit/Button';
 
 import styles from './ChatMessage.module.css';
-import { Message, Option } from './messageService';
+import ChatMessageContent from './ChatMessageContent/ChatMessageContent';
+import { Message, Option } from './messages.types';
 import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAnimation';
 
 type Props = {
@@ -19,36 +19,6 @@ type Props = {
     bubble: React.CSSProperties;
     bubblePointer: React.CSSProperties;
   };
-};
-
-const ChatMessageContent: React.FC<Props> = ({
-  message,
-  onResponse,
-}) => {
-  const [responded, setResponded] = useState(false);
-
-  switch (message.type) {
-    case 'text':
-      return <>{message.content}</>;
-    case 'option-select':
-      return (
-        <div className={styles['response-container']}>
-          {message.content.map((option) => (
-            <Button
-              key={option.label}
-              className={styles['response-button']}
-              disabled={responded || option.disabled}
-              onClick={() => {
-                onResponse(option);
-                setResponded(true);
-              }}
-            >
-              {option.label}
-            </Button>
-          ))}
-        </div>
-      );
-  }
 };
 
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(

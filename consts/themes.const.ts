@@ -108,7 +108,7 @@ const themes = [
       'highlight-rgb': '238, 9, 121',
       'highlight-accent-rgb': '255, 106, 0',
       'accent-color': '#ee0979',
-      'chat-outgoing-background': '#ffb482',
+      'chat-outgoing-background': '#ff9acc',
     },
     dark: {
       ...dark,
@@ -119,7 +119,7 @@ const themes = [
       'highlight-rgb': '238, 9, 121',
       'highlight-accent-rgb': '255, 106, 0',
       'accent-color': '#ee0979',
-      'chat-outgoing-background': '#bb5f00',
+      'chat-outgoing-background': '#9f034f',
     },
   },
   {

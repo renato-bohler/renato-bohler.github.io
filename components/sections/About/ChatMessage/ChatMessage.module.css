@@ -97,32 +97,6 @@
   transition: border-color 500ms ease-in-out;
 }
 
-.response-container {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.response-button {
-  background: rgb(var(--theme-highlight-accent-rgb), 0.25);
-  border: none;
-  border-radius: 4px;
-
-  padding: 8px 24px;
-  cursor: pointer;
-}
-
-.response-button:hover,
-.response-button:focus {
-  background: rgb(var(--theme-highlight-rgb), 0.25);
-
-  transition: background-color 150ms ease-in-out;
-}
-
-.response-button:disabled {
-  opacity: 75%;
-}
-
 /* Outgoing styles */
 .outgoing.container {
   align-self: flex-end;
