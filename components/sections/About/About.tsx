@@ -1,4 +1,9 @@
+import { useCallback, useRef, useState } from 'react';
+
 import classNames from 'classnames';
+import { Button } from 'reakit/Button';
+
+import ArrowDownIcon from '~/components/icons/ArrowDown';
 
 import styles from './About.module.css';
 import AnimatedChatMessage from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
@@ -8,7 +13,40 @@ import useAboutProgress from './useAboutProgress';
 
 const About: React.FC = () => {
   const { progress, scrollRef, setAboutRefs } = useAboutProgress();
-  const { messages, onResponse, setMessagesRefs } = useMessages();
+
+  const [fullyScrolled, setFullyScrolled] = useState(true);
+  const messagesRef = useRef<HTMLDivElement | null>(null);
+  const scrollBottom = () => {
+    setTimeout(() =>
+      messagesRef.current?.scrollTo({
+        top: messagesRef.current.scrollHeight,
+        behavior: 'smooth',
+      }),
+    );
+  };
+  const onMessage = useCallback(() => {
+    if (!fullyScrolled) return;
+    scrollBottom();
+  }, [fullyScrolled]);
+
+  const { messages, onResponse, messagesInViewRef } = useMessages({
+    onMessage: onMessage,
+  });
+  const setMessagesRefs = useCallback(
+    (node: HTMLDivElement) => {
+      messagesRef.current = node;
+      messagesInViewRef(node);
+    },
+    [messagesInViewRef],
+  );
+
+  const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
+    const { scrollHeight, scrollTop, offsetHeight } =
+      event.currentTarget;
+    const scrollY = scrollTop + offsetHeight;
+
+    setFullyScrolled(scrollY >= scrollHeight - 50);
+  };
 
   return (
     <section>
@@ -29,11 +67,23 @@ const About: React.FC = () => {
       <div id="about" aria-hidden className={styles.anchor} />
       <div
         ref={setMessagesRefs}
+        onScroll={scrollHandler}
         className={classNames(
           styles.messages,
           styles['message-list'],
         )}
       >
+        <Button
+          onClick={scrollBottom}
+          className={classNames(styles['scroll-button'], {
+            [styles['scroll-button-hidden']]: fullyScrolled,
+          })}
+        >
+          <ArrowDownIcon />
+          Scroll to bottom
+          <ArrowDownIcon />
+        </Button>
+
         {messages
           .filter((message) => message.status !== 'invisible')
           .map((message) => (

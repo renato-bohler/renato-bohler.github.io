@@ -61,6 +61,8 @@
 }
 
 .message-list {
+  position: relative;
+
   height: 50vh;
   padding-right: 1em;
 
@@ -81,4 +83,32 @@
   border-radius: 100px;
   border: 3px solid transparent;
   background-clip: content-box;
+}
+
+.scroll-button {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+
+  display: flex;
+  gap: 8px;
+
+  margin: 0 auto;
+  padding: 0.5em 1.5em;
+
+  border: none;
+  border-radius: 50px;
+
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--theme-chat-outgoing-background);
+  color: var(--theme-text);
+
+  cursor: pointer;
+  transition: top 250ms ease-in-out;
+}
+
+.scroll-button-hidden {
+  top: -3em;
 }
