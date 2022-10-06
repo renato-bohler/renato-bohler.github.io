@@ -366,7 +366,6 @@ const skills: Skill[] = [
 
     studying: false,
     favorite: false,
-    // TODO: write about ADA compliance bot
     description: (
       <>
         <p>
