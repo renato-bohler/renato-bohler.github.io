@@ -388,8 +388,24 @@ const skills: Skill[] = [
           up these tools pays off in any project.
         </p>
         <p>
-          Professionally, I had experience using Travis, CircleCI,
+          Professionally, I have experience using Travis, CircleCI,
           Jenkins, and GitHub Actions.
+        </p>
+        <p>
+          One of the most recent improvements I&apos;ve implemented on
+          a project&apos;s pipeline was an{' '}
+          <strong>ADA compliance bot</strong>. This bot would use{' '}
+          <a
+            href="https://www.deque.com/axe"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            axe
+          </a>{' '}
+          to scan for accessibility violations and upload the report
+          to an S3 bucket. This triggered a Lambda function that
+          parsed and filtered the report to post a pull request
+          comment to summarize the findings.
         </p>
         <p>
           🚩 I&apos;m also experienced in using feature flags to
