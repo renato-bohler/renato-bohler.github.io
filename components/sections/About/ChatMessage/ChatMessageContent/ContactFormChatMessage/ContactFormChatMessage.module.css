@@ -102,4 +102,8 @@
   .form {
     width: auto;
   }
+
+  .input {
+    font-size: 1em;
+  }
 }
