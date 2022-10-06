@@ -61,9 +61,25 @@ const AnimatedChatMessage: React.FC<Props> = ({
           position: 'absolute',
           top: '0',
           left: `${transition(50, 0, progress)}%`,
-          transform: `translateX(${transition(-50, 0, progress)}%)`,
-          width: `${transition(10, 2.75, progress)}em`,
-          height: `${transition(10, 2.75, progress)}em`,
+          transform: `translateX(${transition(
+            -50,
+            0,
+            progress,
+          )}%) translateY(${transition(
+            0,
+            isMobile ? 0.75 : 0,
+            progress,
+          )}em)`,
+          width: `${transition(
+            10,
+            isMobile ? 1.75 : 2.75,
+            progress,
+          )}em`,
+          height: `${transition(
+            10,
+            isMobile ? 1.75 : 2.75,
+            progress,
+          )}em`,
           maxWidth: 'none',
         },
         pictureImage: {
@@ -87,7 +103,11 @@ const AnimatedChatMessage: React.FC<Props> = ({
             -50,
             0,
             progress,
-          )}% + ${transition(0, 3.75, progress)}em))`,
+          )}% + ${transition(
+            0,
+            isMobile ? 3.15 : 3.75,
+            progress,
+          )}em))`,
           opacity: inView ? 1 : 0,
           transition:
             'bottom 250ms 650ms ease-in-out, opacity 250ms 650ms ease-in-out',

@@ -157,3 +157,17 @@
     opacity: 100%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .picture {
+    width: 1.75em;
+    height: 1.75em;
+    max-width: 1.75em;
+    margin-right: 0.75em;
+    margin-top: 0.75em;
+  }
+
+  .bubble {
+    font-size: 0.8em;
+  }
+}

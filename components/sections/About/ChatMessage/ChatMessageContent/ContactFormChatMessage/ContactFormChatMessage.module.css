@@ -97,3 +97,9 @@
 .button:focus {
   background: rgba(var(--theme-highlight-rgb), 0.75);
 }
+
+@media screen and (max-width: 768px) {
+  .form {
+    width: auto;
+  }
+}

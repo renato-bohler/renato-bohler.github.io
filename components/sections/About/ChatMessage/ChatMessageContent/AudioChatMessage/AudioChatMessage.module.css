@@ -13,7 +13,8 @@
   opacity: 80%;
   border: none;
   background: none;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .progress {
@@ -21,7 +22,7 @@
   border-radius: 8px;
   background: var(--theme-background);
   opacity: 80%;
-  
+
   width: 225px;
   height: 8px;
 }
@@ -51,4 +52,10 @@
   opacity: 90%;
 
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .progress {
+    width: 125px;
+  }
 }
