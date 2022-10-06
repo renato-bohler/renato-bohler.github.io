@@ -106,9 +106,4 @@
   color: var(--theme-text);
 
   cursor: pointer;
-  transition: top 250ms ease-in-out;
-}
-
-.scroll-button-hidden {
-  top: -3em;
 }

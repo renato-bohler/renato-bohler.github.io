@@ -2,6 +2,7 @@ import { useCallback, useRef, useState } from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';
+import { debounce } from 'throttle-debounce';
 
 import ArrowDownIcon from '~/components/icons/ArrowDown';
 
@@ -15,6 +16,13 @@ const About: React.FC = () => {
   const { progress, scrollRef, setAboutRefs } = useAboutProgress();
 
   const [fullyScrolled, setFullyScrolled] = useState(true);
+  const setFullyScrolledDebounce = debounce(
+    500,
+    (fullyScrolled: boolean) => {
+      setFullyScrolled(fullyScrolled);
+    },
+  );
+
   const messagesRef = useRef<HTMLDivElement | null>(null);
   const scrollBottom = () => {
     setTimeout(() =>
@@ -45,7 +53,7 @@ const About: React.FC = () => {
       event.currentTarget;
     const scrollY = scrollTop + offsetHeight;
 
-    setFullyScrolled(scrollY >= scrollHeight - 50);
+    setFullyScrolledDebounce(scrollY >= scrollHeight - 50);
   };
 
   return (
@@ -73,16 +81,16 @@ const About: React.FC = () => {
           styles['message-list'],
         )}
       >
-        <Button
-          onClick={scrollBottom}
-          className={classNames(styles['scroll-button'], {
-            [styles['scroll-button-hidden']]: fullyScrolled,
-          })}
-        >
-          <ArrowDownIcon />
-          Scroll to bottom
-          <ArrowDownIcon />
-        </Button>
+        {!fullyScrolled && (
+          <Button
+            onClick={scrollBottom}
+            className={styles['scroll-button']}
+          >
+            <ArrowDownIcon />
+            Scroll to bottom
+            <ArrowDownIcon />
+          </Button>
+        )}
 
         {messages
           .filter((message) => message.status !== 'invisible')
