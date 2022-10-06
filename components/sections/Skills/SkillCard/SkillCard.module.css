@@ -4,8 +4,12 @@
 
   font-size: 14px;
 
-  transition: 500ms;
-  transition-delay: 100ms;
+  transition: all 500ms ease 100ms,
+    transform 250ms cubic-bezier(0.21, -0.56, 0.43, 1.53);
+}
+
+.card:hover {
+  transform: scale(110%);
 }
 
 .content {
