@@ -9,6 +9,10 @@
 }
 
 .card:hover {
+  transform: scale(120%);
+}
+
+.large.card:hover {
   transform: scale(110%);
 }
 
