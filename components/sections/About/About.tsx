@@ -80,6 +80,9 @@ const About: React.FC = () => {
           styles.messages,
           styles['message-list'],
         )}
+        role="region"
+        aria-live="polite"
+        aria-label="Message list"
       >
         {!fullyScrolled && (
           <Button

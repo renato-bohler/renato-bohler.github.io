@@ -1,6 +1,7 @@
 import React from 'react';
 
 import classNames from 'classnames';
+import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import styles from './ChatMessage.module.css';
 import ChatMessageContent from './ChatMessageContent/ChatMessageContent';
@@ -72,10 +73,24 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
         {message.status === 'writing' ? (
           <MessageWritingAnimation />
         ) : (
-          <ChatMessageContent
-            message={message}
-            onResponse={onResponse}
-          />
+          <>
+            {message.direction === 'incoming' && (
+              <VisuallyHidden>Message from Renato</VisuallyHidden>
+            )}
+            {message.direction === 'outgoing' &&
+              message.type === 'option-select' && (
+                <VisuallyHidden>Select an option</VisuallyHidden>
+              )}
+            {message.direction === 'outgoing' &&
+              message.type === 'contact-form' && (
+                <VisuallyHidden>Contact form</VisuallyHidden>
+              )}
+
+            <ChatMessageContent
+              message={message}
+              onResponse={onResponse}
+            />
+          </>
         )}
       </div>
     </div>
