@@ -22,8 +22,8 @@ export const incoming: Message[] = [
     status: 'writing',
     content: (
       <>
-        I&apos;m <strong>Renato Böhler</strong>, here&apos;s some
-        quick facts about me:{' '}
+        I&apos;m <strong>Renato Böhler</strong>, here are some quick
+        facts about me:{' '}
         <ul
           style={{ listStyle: 'none', margin: 0, padding: '0 1em' }}
         >
@@ -88,7 +88,7 @@ export const optionSelect: OptionSelectMessage = {
             <>
               I started my journey as a developer very young, at the
               age of <strong>12</strong>. At that time, I began
-              learning some basic concepts of programming by myself.
+              learning some basic programming concepts by myself.
             </>
           ),
         },
@@ -116,7 +116,7 @@ export const optionSelect: OptionSelectMessage = {
             <>
               My professional journey started in <strong>2016</strong>
               . Since then, I&apos;ve been focusing my career on
-              frontend development (mainly on React), having worked in
+              frontend development (mainly on React), having worked on
               many international projects.
             </>
           ),
@@ -133,10 +133,9 @@ export const optionSelect: OptionSelectMessage = {
               <strong>
                 <a href="#skills">Skills</a>
               </strong>{' '}
-              section if you&apos;re interested in reading more about
-              my trajectory. Each card on that section contains a
-              little bit of background on each technology I have
-              experience with.
+              section if you&apos;re interested in my trajectory. Each
+              card in that section contains some background on each
+              technology I have experience with.
             </>
           ),
         },
@@ -154,8 +153,8 @@ export const optionSelect: OptionSelectMessage = {
           content: (
             <>
               I&apos;m a very technical professional, so I often find
-              myself being a sort of a technical reference shortly
-              after I join a new team.
+              myself being a technical reference shortly after I join
+              a new team.
             </>
           ),
         },
@@ -166,8 +165,8 @@ export const optionSelect: OptionSelectMessage = {
           status: 'invisible',
           content: (
             <>
-              I see myself an easy person to work with: I like
-              simplifying things for people around me and{' '}
+              I see myself an easy guy to work with: I like
+              simplifying things for people around me, and{' '}
               <strong>
                 I&apos;m always happy to help whoever I can
               </strong>
