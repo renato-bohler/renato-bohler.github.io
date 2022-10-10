@@ -9,7 +9,7 @@
   width: 40px;
   height: 40px;
   font-size: 40px;
-  color: var(--theme-text);
+  color: var(--theme-chat-accent);
   opacity: 80%;
   border: none;
   background: none;
@@ -18,17 +18,17 @@
 }
 
 .progress {
-  border: 2px solid var(--theme-text);
+  border: 1px solid var(--theme-text);
   border-radius: 8px;
   background: var(--theme-background);
   opacity: 80%;
-
   width: 225px;
   height: 8px;
+  padding: 2px;
 }
 
 .progress-bar {
-  background: var(--theme-text);
+  background: var(--theme-chat-accent);
   opacity: 90%;
   width: 50%;
   height: 100%;
@@ -44,7 +44,7 @@
 }
 
 .speed-button {
-  background: var(--theme-text);
+  background: var(--theme-chat-accent);
   color: var(--theme-background);
   border: none;
   border-radius: 1em;

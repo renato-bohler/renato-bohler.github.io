@@ -67,6 +67,7 @@ export const contrast = {
     'accent-color': 'white',
     'chat-background': '#e9e9e9',
     'chat-outgoing-background': '#e9e9e9',
+    'chat-accent': '#0d0f12',
     //
     'primary-bright': '#383838',
     'primary-dark': 'black',
@@ -95,6 +96,7 @@ export const contrast = {
     'accent-color': 'black',
     'chat-background': '#0d0f12',
     'chat-outgoing-background': '#0d0f12',
+    'chat-accent': '#e9e9e9',
     //
     'primary-bright': 'white',
     'primary-dark': '#bfbfbf',
@@ -118,7 +120,8 @@ const themes = [
       'highlight-rgb': '238, 9, 121',
       'highlight-accent-rgb': '255, 106, 0',
       'accent-color': '#ee0979',
-      'chat-outgoing-background': '#ff9acc',
+      'chat-outgoing-background': '#ff9486',
+      'chat-accent': '#ff7c69',
     },
     dark: {
       ...dark,
@@ -129,7 +132,8 @@ const themes = [
       'highlight-rgb': '238, 9, 121',
       'highlight-accent-rgb': '255, 106, 0',
       'accent-color': '#ee0979',
-      'chat-outgoing-background': '#9f034f',
+      'chat-outgoing-background': '#b71607',
+      'chat-accent': '#ff5444',
     },
   },
   {
@@ -144,6 +148,7 @@ const themes = [
       'highlight-accent-rgb': '55, 165, 132',
       'accent-color': '#4ca1af',
       'chat-outgoing-background': '#86d7bf',
+      'chat-accent': '#039a6e',
     },
     dark: {
       ...dark,
@@ -155,6 +160,7 @@ const themes = [
       'highlight-accent-rgb': '196, 224, 229',
       'accent-color': '#4ca1af',
       'chat-outgoing-background': '#017855',
+      'chat-accent': '#85ffdb',
     },
   },
   {
@@ -169,6 +175,7 @@ const themes = [
       'highlight-accent-rgb': '52, 148, 230',
       'accent-color': '#ec6ead',
       'chat-outgoing-background': '#abd7ff',
+      'chat-accent': '#2189e7',
     },
     dark: {
       ...dark,
@@ -180,6 +187,7 @@ const themes = [
       'highlight-accent-rgb': '52, 148, 230',
       'accent-color': '#ec6ead',
       'chat-outgoing-background': '#0f4170',
+      'chat-accent': '#c1e1ff',
     },
   },
   {
@@ -194,6 +202,7 @@ const themes = [
       'highlight-accent-rgb': '225, 0, 255',
       'accent-color': '#7f00ff',
       'chat-outgoing-background': '#dd98e7',
+      'chat-accent': '#a833b8',
     },
     dark: {
       ...dark,
@@ -205,6 +214,7 @@ const themes = [
       'highlight-accent-rgb': '225, 0, 255',
       'accent-color': '#7f00ff',
       'chat-outgoing-background': '#630370',
+      'chat-accent': '#ff7aec',
     },
   },
 ];

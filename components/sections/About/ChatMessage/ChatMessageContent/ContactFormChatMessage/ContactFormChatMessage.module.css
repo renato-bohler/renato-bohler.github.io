@@ -21,7 +21,7 @@
   font-size: 0.8em;
   padding: 0.5em;
   border-radius: 4px;
-  border: 1px solid rgba(var(--theme-highlight-rgb), 0.5);
+  border: 1px solid var(--theme-chat-accent);
   background: var(--theme-background);
 }
 
@@ -85,17 +85,18 @@
   height: 48px;
   font-size: 48px;
 
-  background: rgba(var(--theme-highlight-rgb), 0.5);
-  color: white;
+  background: var(--theme-chat-accent);
+  color: var(--theme-chat-background);
   border-radius: 8px;
   border: none;
 
-  transition: background-color 250ms ease-in-out;
+  opacity: 100%;
+  transition: opacity 250ms ease-in-out;
 }
 
 .button:hover,
 .button:focus {
-  background: rgba(var(--theme-highlight-rgb), 0.75);
+  opacity: 90%;
 }
 
 @media screen and (max-width: 768px) {
