@@ -265,7 +265,7 @@ export const optionSelect: OptionSelectMessage = {
           status: 'invisible',
           content: (
             <>
-              I&apos;m glad you asked 😄.
+              I&apos;m glad you asked 😄
               <br />
               <br />
               Just fill this form and I&apos;ll get back to you ASAP.

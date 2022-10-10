@@ -5,6 +5,7 @@
 }
 
 .option-button {
+  color: var(--theme-text);
   background: var(--theme-background-opaque);
   border: none;
   border-radius: 4px;
@@ -21,5 +22,5 @@
 }
 
 .option-button:disabled {
-  opacity: 75%;
+  opacity: 50%;
 }

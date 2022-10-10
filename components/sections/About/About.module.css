@@ -54,6 +54,10 @@
   padding-bottom: 1em;
 }
 
+.message-list-container {
+  position: relative;
+}
+
 .message-list {
   position: relative;
 
@@ -80,14 +84,15 @@
 }
 
 .scroll-button {
-  position: sticky;
+  position: absolute;
   top: 0.5em;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1;
 
   display: flex;
   gap: 8px;
 
-  margin: 0 auto;
   padding: 0.5em 1.5em;
 
   border: none;
@@ -101,6 +106,13 @@
   color: var(--theme-text);
 
   cursor: pointer;
+
+  opacity: 100%;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.scroll-button:disabled {
+  opacity: 0%;
 }
 
 @media screen and (max-width: 768px) {

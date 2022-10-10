@@ -23,6 +23,7 @@ class MessageService {
   selectedResponses: string[] = [];
 
   connect() {
+    if (this.connected) return;
     if (this.finished) return;
 
     this.connected = true;
@@ -30,6 +31,8 @@ class MessageService {
   }
 
   disconnect() {
+    if (!this.connected) return;
+
     this.connected = false;
 
     this.timeouts.forEach((timeout) => window.clearTimeout(timeout));
@@ -175,11 +178,11 @@ class MessageService {
     )
       return false;
 
-    if (
-      this.sentMessages[this.sentMessages.length - 1].type ===
-      'option-select'
-    )
-      return false;
+    const lastSentMessage =
+      this.sentMessages[this.sentMessages.length - 1];
+
+    if (lastSentMessage.type === 'option-select') return false;
+    if (lastSentMessage.id === 'end') return false;
 
     return true;
   }
