@@ -1,0 +1,101 @@
+.title {
+  display: flex;
+  justify-content: center;
+
+  font-family: Major Mono Display, monospace;
+  font-size: 6em;
+  font-weight: bolder;
+
+  background: linear-gradient(
+    90deg,
+    rgb(var(--theme-highlight-accent-rgb)) 0%,
+    rgb(var(--theme-highlight-rgb)) 100%
+  );
+  background-clip: text;
+  color: transparent;
+}
+
+.title::before,
+.title::after {
+  content: '';
+
+  flex: 1;
+  align-self: center;
+
+  height: 0.1em;
+
+  background: linear-gradient(
+    90deg,
+    rgb(var(--theme-highlight-rgb)) 0%,
+    rgb(var(--theme-highlight-accent-rgb)) 100%
+  );
+}
+
+.title::before {
+  margin-right: 0.15em;
+  border-top-right-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+.title::after {
+  margin-left: 0.15em;
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.animate {
+  min-width: 1ch;
+  animation-name: textTransform;
+  animation-duration: calc(var(--i) * 1s);
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+  animation-iteration-count: 2;
+}
+
+@media screen and (max-width: 1700px) {
+  .title {
+    font-size: 3.5em;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .title {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .title {
+    font-size: 2.5em;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .title {
+    font-size: 2em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .title {
+    font-size: 1.5em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .title {
+    font-size: 1.25em;
+  }
+}
+
+@keyframes textTransform {
+  0% {
+    text-transform: lowercase;
+  }
+  50% {
+    text-transform: uppercase;
+  }
+  100% {
+    text-transform: lowercase;
+  }
+}

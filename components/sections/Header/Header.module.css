@@ -179,7 +179,7 @@
     var(--theme-secondary-bright)
   );
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .scroll-down {

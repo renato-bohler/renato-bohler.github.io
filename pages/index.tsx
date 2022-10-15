@@ -1,10 +1,13 @@
 import { Fragment, useState } from 'react';
 
-import { NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
 import classNames from 'classnames';
 
+import fetchProjectDetails, {
+  RepositoryInfo,
+} from '~/api/fetchProjectDetails';
 import KeyboardNavigation from '~/components/KeyboardNavigation/KeyboardNavigation';
 import SectionAnchor from '~/components/SectionAnchor/SectionAnchor';
 import useSectionAnchor from '~/components/SectionAnchor/useSectionAnchor';
@@ -14,7 +17,11 @@ import { HEADER, SECTIONS } from '~/consts/sections.const';
 
 import styles from './index.module.css';
 
-const Index: NextPage = () => {
+type StaticProps = {
+  projects: RepositoryInfo[];
+};
+
+const Index: NextPage<StaticProps> = ({ projects }) => {
   const { title, handleSectionChange } = useSectionAnchor();
 
   const [progress, setProgress] = useState(0);
@@ -121,5 +128,25 @@ const Index: NextPage = () => {
     </>
   );
 };
+
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    projects: [
+      await fetchProjectDetails({
+        owner: 'renato-bohler',
+        repo: 'logossim',
+      }),
+      await fetchProjectDetails({
+        owner: 'renato-bohler',
+        repo: 'what-the-filter',
+      }),
+      await fetchProjectDetails({
+        owner: 'renato-bohler',
+        repo: 'redux-form-input-masks',
+        packageName: 'redux-form-input-masks',
+      }),
+    ],
+  },
+});
 
 export default Index;

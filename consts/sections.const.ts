@@ -16,6 +16,10 @@ const Skills = dynamic(
   () => import('~/components/sections/Skills/Skills'),
   { ssr: false },
 );
+const Projects = dynamic(
+  () => import('~/components/sections/Projects/Projects'),
+  { ssr: false },
+);
 
 export type SectionName =
   | typeof HEADER['name']
@@ -55,6 +59,12 @@ export const SECTIONS = [
     anchor: '#skills',
     title: `Skills / ${TITLE}`,
     Component: Skills,
+  },
+  {
+    name: 'projects',
+    anchor: '#projects',
+    title: `Projects / ${TITLE}`,
+    Component: Projects,
   },
 ] as const;
 

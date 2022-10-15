@@ -96,7 +96,7 @@
 }
 
 .label {
-  font-family: 'Major Mono Display';
+  font-family: Major Mono Display, monospace;
   font-size: 10px;
   stroke: var(--theme-text);
 }
