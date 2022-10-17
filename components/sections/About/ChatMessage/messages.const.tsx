@@ -27,7 +27,7 @@ export const incoming: Message[] = [
         <ul
           style={{ listStyle: 'none', margin: 0, padding: '0 1em' }}
         >
-          <li>🇧🇷 Brazilian</li>
+          <li>🌎 Brazilian</li>
           <li>🎂 {getAge()} years old</li>
           <li>
             🎓 Computer Engineer (
