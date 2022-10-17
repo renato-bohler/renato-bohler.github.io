@@ -129,6 +129,7 @@ const Index: NextPage<StaticProps> = ({ projects }) => {
   );
 };
 
+// TODO(projects): forward and use these props on ProjectCard
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
     projects: [

@@ -1,6 +1,8 @@
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
+import ProjectCard from './ProjectCard/ProjectCard';
+import projects from './projects.const';
 import styles from './Projects.module.css';
 
 const Projects: React.FC = () => {
@@ -11,9 +13,8 @@ const Projects: React.FC = () => {
   const title = 'open.source.projects';
 
   return (
-    // TODO(renato): fix horizontal scroll
-    // TODO(renato): font too small on mobile
     <section>
+      {/* TODO(projects): improve section title design */}
       <h2 className={styles.title} ref={ref}>
         {Array.from(title).map((character, index) => (
           <span
@@ -27,6 +28,14 @@ const Projects: React.FC = () => {
           </span>
         ))}
       </h2>
+
+      {projects.map((project, index) => (
+        <ProjectCard
+          key={project.folder}
+          order={index + 1}
+          project={project}
+        />
+      ))}
 
       <div style={{ minHeight: '200vh' }} />
     </section>

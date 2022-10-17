@@ -1,0 +1,59 @@
+.container {
+  position: relative;
+
+  display: flex;
+
+  margin: auto;
+  margin-bottom: 100vh;
+
+  width: calc(100vw - 8em);
+  height: 80vh;
+  max-width: 1200px;
+  max-height: 650px;
+}
+
+.video-container {
+  position: relative;
+
+  flex: 1;
+
+  border-radius: 24px;
+  overflow: hidden;
+
+  clip-path: 0 0;
+  transform: translatez(0);
+}
+
+.title {
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
+
+  margin: 0;
+
+  font-family: Major Mono Display, monospace;
+  font-size: 3em;
+
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.container:nth-child(odd) .title {
+  right: unset;
+  left: 0;
+  transform: translateX(-100%) scale(-1);
+}
+
+.video {
+  transform: translatez(0);
+  position: absolute;
+  top: -100%;
+  bottom: -100%;
+  left: -100%;
+  right: -100%;
+
+  margin: auto;
+
+  min-width: 100%;
+  min-height: 100%;
+}
