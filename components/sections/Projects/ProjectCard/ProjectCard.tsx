@@ -74,7 +74,6 @@ const ProjectCard: React.FC<Props> = ({ order, project }) => {
             <p className={styles['card-subtitle']}>
               {project.subtitle}
             </p>
-            <hr className={styles['card-header-divider']} />
           </header>
           <div className={styles['card-description']}>
             {project.description}

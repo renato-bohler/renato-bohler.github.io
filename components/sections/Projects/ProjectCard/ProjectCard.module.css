@@ -109,8 +109,9 @@
 }
 
 .card-header {
-  margin-bottom: 1.25em;
+  margin-bottom: 2em;
   max-width: fit-content;
+  border-bottom: 1px solid rgba(var(--theme-text-rgb), 10%);
 }
 
 .card-title {
@@ -124,12 +125,10 @@
   margin: 0;
 }
 
-.card-header-divider {
-  border: none;
-  border-bottom: 1px solid var(--theme-text);
-  opacity: 25%;
-}
-
 .card-description {
   font-size: 0.9em;
+
+  column-count: 3;
+  column-gap: 50px;
+  column-rule: 1px solid rgba(var(--theme-text-rgb), 5%);
 }
