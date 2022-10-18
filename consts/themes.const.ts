@@ -23,6 +23,8 @@ const light = {
   'accent-color': 'auto',
   'chat-background': '#e9e9e9',
   'list-style-image': listStyleImage.light,
+  'glass-background': 'rgba(255, 255, 255, 0.75)',
+  'glass-border': '1px solid rgba(255, 255, 255, 0.5)',
 };
 
 const dark = {
@@ -44,6 +46,8 @@ const dark = {
   'accent-color': 'auto',
   'chat-background': '#1f242a',
   'list-style-image': listStyleImage.dark,
+  'glass-background': 'rgba(0, 0, 0, 0.85)',
+  'glass-border': '1px solid rgba(0, 0, 0, 0.5)',
 };
 
 export const contrast = {
@@ -68,7 +72,6 @@ export const contrast = {
     'chat-background': '#e9e9e9',
     'chat-outgoing-background': '#e9e9e9',
     'chat-accent': '#0d0f12',
-    //
     'primary-bright': '#383838',
     'primary-dark': 'black',
     'secondary-bright': '#525252',
@@ -76,6 +79,8 @@ export const contrast = {
     'highlight-accent-rgb': '255, 255, 255',
     'highlight-rgb': '0, 0, 0',
     'list-style-image': listStyleImage.light,
+    'glass-background': 'rgba(255, 255, 255, 1)',
+    'glass-border': '1px solid rgba(0, 0, 0, 0.5)',
   },
   dark: {
     'is-contrast': '1',
@@ -97,7 +102,6 @@ export const contrast = {
     'chat-background': '#0d0f12',
     'chat-outgoing-background': '#0d0f12',
     'chat-accent': '#e9e9e9',
-    //
     'primary-bright': 'white',
     'primary-dark': '#bfbfbf',
     'secondary-bright': '#ededed',
@@ -105,6 +109,8 @@ export const contrast = {
     'highlight-rgb': '255, 255, 255',
     'highlight-accent-rgb': '0, 0, 0',
     'list-style-image': listStyleImage.dark,
+    'glass-background': 'rgba(0, 0, 0, 1)',
+    'glass-border': '1px solid rgba(255, 255, 255, 0.5)',
   },
 };
 

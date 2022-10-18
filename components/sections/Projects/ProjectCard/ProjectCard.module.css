@@ -1,15 +1,23 @@
 .container {
-  position: relative;
+  margin-bottom: 25vh;
+}
+
+.size {
+  width: calc(100vw - 6em);
+  height: 80vh;
+  max-width: calc(1200px * 1.1);
+  max-height: calc(650px * 1.1);
+}
+
+.sticky-container {
+  position: sticky;
+  top: 0px;
 
   display: flex;
 
   margin: auto;
-  margin-bottom: 100vh;
 
-  width: calc(100vw - 8em);
-  height: 80vh;
-  max-width: 1200px;
-  max-height: 650px;
+  transform: scale(0.9) translateY(100px);
 }
 
 .video-container {
@@ -21,10 +29,10 @@
   overflow: hidden;
 
   clip-path: 0 0;
-  transform: translatez(0);
+  transform: translateZ(0);
 }
 
-.title {
+.side-title {
   position: absolute;
   right: 0;
   transform: translateX(100%);
@@ -32,13 +40,13 @@
   margin: 0;
 
   font-family: Major Mono Display, monospace;
-  font-size: 3em;
+  font-size: 1.75em;
 
   white-space: nowrap;
   writing-mode: vertical-rl;
 }
 
-.container:nth-child(odd) .title {
+.container:nth-child(odd) .side-title {
   right: unset;
   left: 0;
   transform: translateX(-100%) scale(-1);
@@ -56,4 +64,72 @@
 
   min-width: 100%;
   min-height: 100%;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+
+  margin: -135px auto auto auto;
+  padding: 2em;
+
+  background: var(--theme-glass-background);
+  border: var(--theme-glass-border);
+  border-radius: 16px;
+
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(50px);
+
+  transform: translateY(175px);
+}
+
+.card-content {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.card-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.card-content::-webkit-scrollbar-track {
+  background-color: rgb(var(--theme-highlight-rgb), 0.1);
+  border-radius: 100px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+  background-color: var(--theme-accent-color);
+  border-radius: 100px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.card-header {
+  margin-bottom: 1.25em;
+  max-width: fit-content;
+}
+
+.card-title {
+  font-size: 1.75em;
+  margin: 0;
+}
+
+.card-subtitle {
+  font-style: italic;
+  font-weight: normal;
+  margin: 0;
+}
+
+.card-header-divider {
+  border: none;
+  border-bottom: 1px solid var(--theme-text);
+  opacity: 25%;
+}
+
+.card-description {
+  font-size: 0.9em;
 }

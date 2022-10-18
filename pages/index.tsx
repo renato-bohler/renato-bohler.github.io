@@ -21,7 +21,7 @@ type StaticProps = {
   projects: RepositoryInfo[];
 };
 
-const Index: NextPage<StaticProps> = ({ projects }) => {
+const Index: NextPage<StaticProps> = () => {
   const { title, handleSectionChange } = useSectionAnchor();
 
   const [progress, setProgress] = useState(0);
@@ -54,7 +54,7 @@ const Index: NextPage<StaticProps> = ({ projects }) => {
           isMainContentTransitioning
             ? {
                 transform: `scale(${1 - progress * 0.1}) translateY(${
-                  progress * 500
+                  progress * 1000
                 }px)`,
                 borderRadius: progress * 50,
               }

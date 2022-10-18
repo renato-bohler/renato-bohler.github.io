@@ -10,3 +10,8 @@
   box-shadow: 1px 1px 60px rgb(255, 255, 255, 0.6);
   will-change: transform, border-radius;
 }
+
+/* Fixes flickering background on Chrome */
+.transitioning * {
+  backdrop-filter: none !important;
+}

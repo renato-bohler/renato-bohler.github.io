@@ -36,8 +36,6 @@ const Projects: React.FC = () => {
           project={project}
         />
       ))}
-
-      <div style={{ minHeight: '200vh' }} />
     </section>
   );
 };
