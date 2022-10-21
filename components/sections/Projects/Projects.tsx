@@ -16,25 +16,42 @@ const Projects: React.FC<Props> = ({ repositories }) => {
     threshold: 0.5,
     triggerOnce: true,
   });
-  const title = 'open.source.projects';
+  const title = 'personal projects';
 
   return (
     <section>
       <div id="projects" aria-hidden className={styles.anchor} />
 
-      {/* TODO(projects): improve section title design */}
       <h2 className={styles.title} ref={ref}>
-        {Array.from(title).map((character, index) => (
-          <span
-            key={index}
-            className={classNames({ [styles.animate]: inView })}
-            style={
-              { '--i': 0.3 + 0.1 * index } as React.CSSProperties
-            }
-          >
-            {character}
-          </span>
-        ))}
+        <div style={{ lineHeight: '1em' }}>
+          {title.split(' ').map((word) => {
+            const wordIndex = title.indexOf(word);
+
+            return (
+              <div key={word}>
+                {Array.from(word).map((character, characterIndex) => {
+                  const index = wordIndex + characterIndex;
+
+                  return (
+                    <span
+                      key={index}
+                      className={classNames({
+                        [styles.animate]: inView,
+                      })}
+                      style={
+                        {
+                          '--i': 0.3 + 0.1 * index,
+                        } as React.CSSProperties
+                      }
+                    >
+                      {character}
+                    </span>
+                  );
+                })}
+              </div>
+            );
+          })}
+        </div>
       </h2>
 
       {projects.map((project, index) => (

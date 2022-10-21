@@ -177,7 +177,7 @@
     text-align: left;
   }
 
-  .container:nth-child(odd) .side-title {
+  .container:nth-child(even) .side-title {
     transform: translateY(-100%);
     text-align: right;
   }
