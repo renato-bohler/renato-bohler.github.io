@@ -17,7 +17,6 @@ type Props = {
   repository?: RepositoryInfo;
 };
 
-// TODO(projects): mobile layout
 const ProjectCard: React.FC<Props> = ({
   order,
   project,

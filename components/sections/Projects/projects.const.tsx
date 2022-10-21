@@ -261,8 +261,8 @@ const projects: Project[] = [
         </p>
         <p>
           This is the &ldquo;2.0 version&rdquo; of my portfolio,
-          completely rewritten from the ground up using Next.js. It's
-          a personal project, so{' '}
+          completely rewritten from the ground up using Next.js.
+          It&apos;s a personal project, so{' '}
           <strong>
             everything you see here was done exclusively by myself
           </strong>
