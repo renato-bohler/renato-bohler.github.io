@@ -18,7 +18,6 @@ type Props = {
 };
 
 // TODO(projects): mobile layout
-// TODO(projects): add project live URL, github link, stars, watch, forks, NPM downloads
 const ProjectCard: React.FC<Props> = ({
   order,
   project,
