@@ -5,13 +5,11 @@ import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
 
 import { RepositoryInfo } from '~/api/fetchProjectDetails';
-import GitHubIcon from '~/components/icons/GitHub';
-import PlayIcon from '~/components/icons/Play';
 import useTheme from '~/hooks/useTheme';
-import * as format from '~/utils/format';
 
 import { Project } from '../projects.const';
 import styles from './ProjectCard.module.css';
+import RepositoryDetails from './RepositoryDetails/RepositoryDetails';
 
 type Props = {
   order: number;
@@ -89,50 +87,16 @@ const ProjectCard: React.FC<Props> = ({
             </div>
 
             {repository && (
-              <div className={styles['repository-info']}>
-                <div className={styles['repository-links']}>
-                  <a
-                    href={repository.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`See "${project.title}" in action`}
-                  >
-                    Live
-                    <PlayIcon />
-                  </a>
-                  <a
-                    href={repository.repositoryUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    title={`See "${repository.owner}/${repository.name}" on GitHub`}
-                  >
-                    <GitHubIcon />
-                    GitHub
-                  </a>
-                </div>
-                {repository.monthlyDownloads ? (
-                  <span>
-                    downloaded{' '}
-                    <strong>
-                      {format.number(repository.monthlyDownloads)}
-                    </strong>{' '}
-                    times last month
-                  </span>
-                ) : (
-                  <span>
-                    last updated{' '}
-                    <strong>
-                      {format.relativeTime(
-                        new Date(repository.lastUpdate),
-                      )}
-                    </strong>
-                  </span>
-                )}
-                <span>
-                  <strong>{format.number(repository.stars)}</strong>{' '}
-                  stars
-                </span>
-              </div>
+              <RepositoryDetails
+                title={project.title}
+                owner={repository.owner}
+                name={repository.name}
+                stars={repository.stars}
+                monthlyDownloads={repository.monthlyDownloads}
+                lastUpdate={repository.lastUpdate}
+                liveUrl={repository.liveUrl}
+                repositoryUrl={repository.repositoryUrl}
+              />
             )}
           </header>
           <div className={styles['card-description']}>
