@@ -88,6 +88,10 @@
 }
 
 .card-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
   max-height: 100%;
   overflow-y: auto;
 }
@@ -128,7 +132,11 @@
 .card-description {
   font-size: 0.9em;
 
-  column-count: 3;
-  column-gap: 50px;
+  flex: 1;
+
+  column-width: 35ch;
+  column-count: auto;
+  column-gap: 5em;
   column-rule: 1px solid rgba(var(--theme-text-rgb), 5%);
+  column-fill: auto;
 }
