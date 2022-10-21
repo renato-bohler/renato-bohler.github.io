@@ -22,6 +22,7 @@
   gap: 4px;
 
   background: rgb(var(--theme-code-accent-rgb), 0.1);
+  border: 1px solid transparent;
   border-radius: 8px;
 
   font-size: 1.25em;
@@ -33,6 +34,10 @@
 
   margin: 0;
   padding: 2px 8px;
+}
+
+.links > a:hover {
+  border-color: rgb(var(--theme-code-accent-rgb), 0.75);
 }
 
 .links > a:first-child {
