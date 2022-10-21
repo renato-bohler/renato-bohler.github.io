@@ -23,6 +23,11 @@ const fetchProjectDetails = async ({
 }: Options): Promise<RepositoryInfo> => {
   const githubResponse = await fetch(
     `https://api.github.com/repos/${owner}/${repo}`,
+    {
+      headers: {
+        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+      },
+    },
   );
   const githubData = await githubResponse.json();
 
