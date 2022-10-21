@@ -44,7 +44,6 @@ export const incoming: Message[] = [
           <li>
             ⚽{' '}
             <a
-              title="Athletico Paranaense"
               href="https://www.athletico.com.br/en/"
               target="_blank"
               rel="noopener noreferrer"

@@ -1,11 +1,17 @@
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
+import { RepositoryInfo } from '~/api/fetchProjectDetails';
+
 import ProjectCard from './ProjectCard/ProjectCard';
 import projects from './projects.const';
 import styles from './Projects.module.css';
 
-const Projects: React.FC = () => {
+type Props = {
+  repositories: RepositoryInfo[];
+};
+
+const Projects: React.FC<Props> = ({ repositories }) => {
   const [ref, inView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -34,6 +40,9 @@ const Projects: React.FC = () => {
           key={project.folder}
           order={index + 1}
           project={project}
+          repository={repositories.find(
+            (repository) => repository.name === project.repo,
+          )}
         />
       ))}
     </section>

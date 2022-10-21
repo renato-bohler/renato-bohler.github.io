@@ -1,5 +1,6 @@
 const projects: Project[] = [
   {
+    repo: 'logossim',
     folder: 'logossim',
     name: 'logossim',
     title: 'Logossim',
@@ -89,6 +90,7 @@ const projects: Project[] = [
     ),
   },
   {
+    repo: 'what-the-filter',
     folder: 'what-the-filter',
     name: 'what the filter?',
     title: 'What the Filter?',
@@ -166,6 +168,7 @@ const projects: Project[] = [
     ),
   },
   {
+    repo: 'redux-form-input-masks',
     folder: 'redux-form-input-masks',
     name: 'redux form input masks',
     title: 'redux-form-input-masks',
@@ -244,6 +247,7 @@ const projects: Project[] = [
     ),
   },
   {
+    repo: 'renato-bohler.github.io',
     folder: 'renato-bohler',
     name: 'this page',
     title: 'My portfolio',
@@ -310,6 +314,7 @@ const projects: Project[] = [
 ];
 
 export type Project = {
+  repo: string;
   folder: string;
   name: string;
   title: string;

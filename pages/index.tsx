@@ -18,10 +18,10 @@ import { HEADER, SECTIONS } from '~/consts/sections.const';
 import styles from './index.module.css';
 
 type StaticProps = {
-  projects: RepositoryInfo[];
+  repositories: RepositoryInfo[];
 };
 
-const Index: NextPage<StaticProps> = () => {
+const Index: NextPage<StaticProps> = ({ repositories }) => {
   const { title, handleSectionChange } = useSectionAnchor();
 
   const [progress, setProgress] = useState(0);
@@ -74,7 +74,7 @@ const Index: NextPage<StaticProps> = () => {
                 sectionName={name}
                 onChange={handleSectionChange}
               />
-              <Component />
+              <Component repositories={repositories} />
             </Fragment>
           ))}
 
@@ -129,10 +129,9 @@ const Index: NextPage<StaticProps> = () => {
   );
 };
 
-// TODO(projects): forward and use these props on ProjectCard
 export const getStaticProps: GetStaticProps = async () => ({
   props: {
-    projects: [
+    repositories: [
       await fetchProjectDetails({
         owner: 'renato-bohler',
         repo: 'logossim',
@@ -145,6 +144,10 @@ export const getStaticProps: GetStaticProps = async () => ({
         owner: 'renato-bohler',
         repo: 'redux-form-input-masks',
         packageName: 'redux-form-input-masks',
+      }),
+      await fetchProjectDetails({
+        owner: 'renato-bohler',
+        repo: 'renato-bohler.github.io',
       }),
     ],
   },

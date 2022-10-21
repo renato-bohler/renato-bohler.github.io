@@ -92,6 +92,7 @@
   flex-direction: column;
   flex: 1;
 
+  padding-right: 4px;
   max-height: 100%;
   overflow-y: auto;
 }
@@ -113,8 +114,10 @@
 }
 
 .card-header {
+  display: flex;
+  justify-content: space-between;
+
   margin-bottom: 2em;
-  max-width: fit-content;
   border-bottom: 1px solid rgba(var(--theme-text-rgb), 10%);
 }
 
@@ -127,6 +130,55 @@
   font-style: italic;
   font-weight: normal;
   margin: 0;
+}
+
+.repository-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 2px;
+
+  font-size: 0.75em;
+  text-align: right;
+}
+
+.repository-links {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 12px;
+  margin-bottom: auto;
+}
+
+.repository-links > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  background: rgb(var(--theme-code-accent-rgb), 0.1);
+  border-radius: 8px;
+
+  font-size: 1.25em;
+  color: rgb(var(--theme-code-accent-rgb));
+
+  text-decoration-color: rgb(var(--theme-code-accent-rgb), 0.33);
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1px;
+
+  margin: 0;
+  padding: 2px 8px;
+}
+
+.repository-links > a:first-child {
+  font-weight: bold;
+}
+
+.repository-links > a::after {
+  content: none;
+}
+
+.repository-links > a > svg {
+  font-size: 1.35em;
 }
 
 .card-description {

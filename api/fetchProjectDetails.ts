@@ -1,4 +1,6 @@
 export type RepositoryInfo = {
+  owner: string;
+  name: string;
   repositoryUrl: string;
   liveUrl: string;
   stars: number;
@@ -39,12 +41,14 @@ const fetchProjectDetails = async ({
   }
 
   return {
+    owner,
+    name: repo,
     repositoryUrl: githubData.html_url,
     liveUrl: githubData.homepage,
     stars: githubData.stargazers_count,
     subscribers: githubData.subscribers_count,
     forks: githubData.forks,
-    lastUpdate: githubData.updated_at,
+    lastUpdate: githubData.pushed_at,
     ...npmDetails,
   };
 };
