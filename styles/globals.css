@@ -108,14 +108,17 @@ p {
 }
 
 code {
+  display: inline-block;
+
   font-size: 0.8em;
   font-family: monospace;
 
-  background: #bcbec020;
-  border: 1px solid #bcbec080;
+  background: rgba(var(--theme-code-accent-rgb), 0.05);
+  border: 1px solid rgb(var(--theme-code-accent-rgb));
+  color: rgba(var(--theme-code-accent-rgb));
   border-radius: 5px;
 
-  padding: 2px;
+  padding: 0 4px;
 }
 
 html[data-reduced-motion='true'] {
