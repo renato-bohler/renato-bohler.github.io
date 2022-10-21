@@ -46,7 +46,7 @@
   writing-mode: vertical-rl;
 }
 
-.container:nth-child(odd) .side-title {
+.container:nth-child(even) .side-title {
   right: unset;
   left: 0;
   transform: translateX(-100%) scale(-1);

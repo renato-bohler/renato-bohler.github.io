@@ -20,6 +20,8 @@ const Projects: React.FC<Props> = ({ repositories }) => {
 
   return (
     <section>
+      <div id="projects" aria-hidden className={styles.anchor} />
+
       {/* TODO(projects): improve section title design */}
       <h2 className={styles.title} ref={ref}>
         {Array.from(title).map((character, index) => (
