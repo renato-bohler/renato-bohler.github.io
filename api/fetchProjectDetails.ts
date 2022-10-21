@@ -20,7 +20,7 @@ const fetchProjectDetails = async ({
   owner,
   repo,
   packageName,
-}: Options): Promise<RepositoryInfo> => {
+}: Options): Promise<RepositoryInfo | null> => {
   const githubResponse = await fetch(
     `https://api.github.com/repos/${owner}/${repo}`,
     {
@@ -29,6 +29,7 @@ const fetchProjectDetails = async ({
       },
     },
   );
+  if (githubResponse.status >= 400) return null;
   const githubData = await githubResponse.json();
 
   const npmDetails: {
@@ -39,10 +40,12 @@ const fetchProjectDetails = async ({
     const npmResponse = await fetch(
       `https://api.npmjs.org/downloads/point/last-month/${packageName}`,
     );
-    const npmData = await npmResponse.json();
+    if (npmResponse.status < 400) {
+      const npmData = await npmResponse.json();
 
-    npmDetails.monthlyDownloads = npmData.downloads;
-    npmDetails.packageUrl = `https://www.npmjs.com/package/${packageName}`;
+      npmDetails.monthlyDownloads = npmData.downloads;
+      npmDetails.packageUrl = `https://www.npmjs.com/package/${packageName}`;
+    }
   }
 
   return {

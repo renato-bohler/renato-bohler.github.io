@@ -149,7 +149,7 @@ export const getStaticProps: GetStaticProps = async () => ({
         owner: 'renato-bohler',
         repo: 'renato-bohler.github.io',
       }),
-    ],
+    ].filter(Boolean),
   },
 });
 
