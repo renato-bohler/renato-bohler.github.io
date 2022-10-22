@@ -23,7 +23,7 @@ const Projects: React.FC<Props> = ({ repositories }) => {
       <div id="projects" aria-hidden className={styles.anchor} />
 
       <h2 className={styles.title} ref={ref}>
-        <div style={{ lineHeight: '1em' }}>
+        <div>
           {title.split(' ').map((word) => {
             const wordIndex = title.indexOf(word);
 

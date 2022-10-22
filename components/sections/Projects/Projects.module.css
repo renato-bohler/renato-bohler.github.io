@@ -9,6 +9,7 @@
   font-family: Major Mono Display, monospace;
   font-size: min(14vw, 10em);
   font-weight: bolder;
+  line-height: 1em;
   -webkit-text-stroke: 0.07em;
 
   background: linear-gradient(
