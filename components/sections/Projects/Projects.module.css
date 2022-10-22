@@ -18,7 +18,8 @@
     rgb(var(--theme-highlight-rgb)) 100%
   );
   background-clip: text;
-  color: transparent;
+  color: rgb(var(--theme-code-accent-rgb), 0.05);
+  text-shadow: 0 0 var(--theme-background);
   margin: 1em 0 0 0;
 }
 
