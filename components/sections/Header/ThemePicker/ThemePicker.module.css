@@ -59,7 +59,7 @@
 .theme-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 16px;
+  gap: 16px;
 
   padding: 0 16px 16px 16px;
   margin-top: 8px;

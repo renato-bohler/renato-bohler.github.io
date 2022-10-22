@@ -45,7 +45,7 @@
 .container {
   display: grid;
   grid-auto-flow: column;
-  grid-gap: 16px;
+  gap: 16px;
 }
 
 .social {
