@@ -168,3 +168,18 @@
   opacity: 15%;
   margin: 0 4px;
 }
+
+@media screen and (max-width: 375px) {
+  .content {
+    height: 125px;
+  }
+
+  .large > .content {
+    height: 375px;
+  }
+
+  .teaser,
+  .info {
+    font-size: 0.9em;
+  }
+}
