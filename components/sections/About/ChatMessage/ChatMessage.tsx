@@ -1,11 +1,7 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import classNames from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
-
-import me from '~/public/images/me/full.png';
 
 import styles from './ChatMessage.module.css';
 import ChatMessageContent from './ChatMessageContent/ChatMessageContent';
@@ -61,12 +57,11 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
             style={style?.pictureArcFill}
           />
         </svg>
-        <Image
-          src={me}
+        <img
+          src="images/me/full.webp"
           className={styles.pictureImage}
           style={style?.pictureImage}
           alt="A smiley Renato"
-          quality={95}
         />
       </div>
       <div className={styles.bubble} style={style?.bubble}>

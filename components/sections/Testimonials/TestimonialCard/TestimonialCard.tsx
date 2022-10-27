@@ -1,5 +1,3 @@
-import Image from 'next/image';
-
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 import { useSwiperSlide } from 'swiper/react';
 
@@ -35,7 +33,7 @@ const TestimonialCard: React.FC<Props> = ({
 
       <div className={styles.quote}>{children}</div>
       <div className={styles.author} aria-hidden>
-        <Image
+        <img
           src={authorPicture}
           alt={`${authorName}'s profile picture'`}
           className={styles['author-picture']}
