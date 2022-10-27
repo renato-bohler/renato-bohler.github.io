@@ -1,3 +1,13 @@
+import danielaJagher from '~/public/images/testimonials/daniela-jagher.png';
+import dioneBetanin from '~/public/images/testimonials/dione-betanin.png';
+import emaCasas from '~/public/images/testimonials/ema-casas.png';
+import g2i from '~/public/images/testimonials/g2i.svg';
+import gustavoBigardi from '~/public/images/testimonials/gustavo-bigardi.png';
+import luizOku from '~/public/images/testimonials/luiz-oku.png';
+import oliviaHendrick from '~/public/images/testimonials/olivia-hendrick.png';
+import rafaelPaula from '~/public/images/testimonials/rafael-paula.png';
+import rodrigoDiego from '~/public/images/testimonials/rodrigo-diego.png';
+
 const testimonials = [
   {
     quote: (
@@ -17,7 +27,7 @@ const testimonials = [
     ),
     author: {
       name: 'Dione Betanin',
-      picture: '/images/testimonials/dione-betanin.webp',
+      picture: dioneBetanin,
       role: 'Software Engineer',
     },
   },
@@ -32,7 +42,7 @@ const testimonials = [
     ),
     author: {
       name: 'Ema Casas',
-      picture: '/images/testimonials/ema-casas.webp',
+      picture: emaCasas,
       role: 'Product Owner',
     },
   },
@@ -57,7 +67,7 @@ const testimonials = [
     ),
     author: {
       name: 'Rodrigo Diego',
-      picture: '/images/testimonials/rodrigo-diego.webp',
+      picture: rodrigoDiego,
       role: 'Head of UX',
     },
   },
@@ -69,7 +79,7 @@ const testimonials = [
     ),
     author: {
       name: 'Olivia Hendrick',
-      picture: '/images/testimonials/olivia-hendrick.webp',
+      picture: oliviaHendrick,
       role: 'UX Designer',
     },
   },
@@ -85,7 +95,7 @@ const testimonials = [
     ),
     author: {
       name: 'Rafael de Paula',
-      picture: '/images/testimonials/rafael-paula.webp',
+      picture: rafaelPaula,
       role: 'Backend Engineer',
     },
   },
@@ -101,7 +111,7 @@ const testimonials = [
     ),
     author: {
       name: 'Gustavo Bigardi',
-      picture: '/images/testimonials/gustavo-bigardi.webp',
+      picture: gustavoBigardi,
       role: 'Backend Engineer',
     },
   },
@@ -123,7 +133,7 @@ const testimonials = [
     ),
     author: {
       name: 'Luiz Eduardo Oku',
-      picture: '/images/testimonials/luiz-oku.webp',
+      picture: luizOku,
       role: 'Frontend Engineer',
     },
   },
@@ -145,7 +155,7 @@ const testimonials = [
     ),
     author: {
       name: 'Daniela Jagher',
-      picture: '/images/testimonials/daniela-jagher.webp',
+      picture: danielaJagher,
       role: 'UI/UX Designer',
     },
   },
@@ -164,7 +174,7 @@ const testimonials = [
     ),
     author: {
       name: "Renato's G2i Profile",
-      picture: '/images/testimonials/g2i.svg',
+      picture: g2i,
       role: '',
     },
   },
