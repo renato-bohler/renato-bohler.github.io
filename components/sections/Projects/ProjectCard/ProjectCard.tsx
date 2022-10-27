@@ -61,12 +61,7 @@ const ProjectCard: React.FC<Props> = ({
             poster={`/videos/${project.folder}/poster.png`}
             preload="auto"
             className={styles.video}
-          >
-            <img
-              src={`/videos/${project.folder}/poster.png`}
-              alt="Project poster"
-            />
-          </video>
+          />
         </div>
       </div>
       <article
