@@ -21,7 +21,7 @@ type StaticProps = {
   repositories: RepositoryInfo[];
 };
 
-const Index: NextPage<StaticProps> = ({ repositories }) => {
+const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
   const { title, handleSectionChange } = useSectionAnchor();
 
   const [progress, setProgress] = useState(0);
