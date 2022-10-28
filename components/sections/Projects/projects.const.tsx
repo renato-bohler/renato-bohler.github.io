@@ -76,16 +76,14 @@ const projects: Project[] = [
           to make <strong>Logossim</strong> look and feel like
           Logisim.
         </p>
-        <p>
-          Some other features of this application are:
-          <ul>
-            <li>Component configurator with previews</li>
-            <li>A welcoming and informative tour</li>
-            <li>Saving and loading of circuit files</li>
-            <li>Auto saving</li>
-            <li>Keyboard shortcuts</li>
-          </ul>
-        </p>
+        <p>Some other features of this application are:</p>
+        <ul>
+          <li>Component configurator with previews</li>
+          <li>A welcoming and informative tour</li>
+          <li>Saving and loading of circuit files</li>
+          <li>Auto saving</li>
+          <li>Keyboard shortcuts</li>
+        </ul>
       </>
     ),
   },
@@ -128,18 +126,18 @@ const projects: Project[] = [
         <p>
           <strong>What the Filter?</strong> also warns users about
           JavaScript methods that may have pitfalls:
-          <ul>
-            <li>
-              methods that mutate the object instead of returning new
-              ones (like <code>splice</code>)
-            </li>
-            <li>
-              <code>sort</code>, which will infamously cast numbers to
-              strings before sorting if no comparing function gets
-              provided
-            </li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            methods that mutate the object instead of returning new
+            ones (like <code>splice</code>)
+          </li>
+          <li>
+            <code>sort</code>, which will infamously cast numbers to
+            strings before sorting if no comparing function gets
+            provided
+          </li>
+        </ul>
         <p>
           <strong>Another convenient feature:</strong> should any
           error occur during a transformation, the diagram still gets
