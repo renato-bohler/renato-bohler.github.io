@@ -37,6 +37,10 @@
   text-transform: uppercase;
 }
 
+.title.contrast {
+  color: var(--theme-background);
+}
+
 .card {
   position: relative;
   margin: 0 auto;
