@@ -61,7 +61,8 @@ const Skills: React.FC = () => {
 
           return (
             <SkillCard
-              key={skill.name}
+              key={skill.id}
+              id={skill.id}
               name={skill.name}
               icon={skill?.icon?.(isContrastMode)}
               favorite={skill.favorite}

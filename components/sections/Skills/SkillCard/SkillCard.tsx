@@ -18,6 +18,7 @@ import styles from './SkillCard.module.css';
 import SkillCardDialog from './SkillCardDialog/SkillCardDialog';
 
 type Props = {
+  id: string;
   name: string;
   description: React.ReactElement;
   teaser?: React.ReactElement;
@@ -74,6 +75,7 @@ const USAGE = {
 const STUDYING_LABEL = "I've been studying this recently";
 
 const SkillCard: React.FC<Props> = ({
+  id,
   name,
   description,
   teaser,
@@ -125,6 +127,7 @@ const SkillCard: React.FC<Props> = ({
         <SkillCardDialog
           cardRect={cardRef.current?.getBoundingClientRect()}
           dialog={dialog}
+          id={id}
           name={name}
           description={description}
           icon={icon}
@@ -134,7 +137,6 @@ const SkillCard: React.FC<Props> = ({
           yearsExperience={yearsExperience}
           wavePath={wavePath}
         />
-
         <DialogDisclosure
           {...dialog}
           className={styles.button}

@@ -21,6 +21,7 @@ import styles from './SkillCardDialog.module.css';
 type Props = {
   cardRect?: DOMRect;
   dialog: DialogStateReturn;
+  id: string;
   name: string;
   description: React.ReactElement;
   icon: React.ReactNode;
@@ -31,10 +32,10 @@ type Props = {
   wavePath: string;
 };
 
-// TODO: add URL to handle back button
 const SkillCardDialog: React.FC<Props> = ({
   cardRect,
   dialog,
+  id,
   name,
   description,
   icon,
@@ -108,11 +109,37 @@ const SkillCardDialog: React.FC<Props> = ({
     });
   }, [isReducedMotion, cardRect]);
 
+  /**
+   * Handles closing dialog on back button.
+   */
+  const handleDialogClose = () => {
+    window.history.back();
+    dialog.hide();
+  };
+
+  useEffect(() => {
+    const popStateHandler = (event: PopStateEvent) => {
+      const { dialogId } = event.state;
+      if (dialogId !== `skills-${id}`) dialog.hide();
+    };
+
+    window.addEventListener('popstate', popStateHandler);
+    return () => {
+      window.removeEventListener('popstate', popStateHandler);
+    };
+  }, [dialog, id]);
+
+  useEffect(() => {
+    if (!dialog.visible) return;
+    window.history.pushState({ dialogId: `skills-${id}` }, '', '');
+  }, [dialog.visible, id]);
+
   return (
     <DialogBackdrop {...dialog} className={styles.backdrop}>
       <Dialog
         {...dialog}
         aria-label={`My experience with ${name}`}
+        hide={handleDialogClose}
         className={styles.dialog}
         preventBodyScroll={false}
         style={
@@ -140,7 +167,7 @@ const SkillCardDialog: React.FC<Props> = ({
               <VisuallyHidden>.</VisuallyHidden>
             </h1>
             <Button
-              onClick={dialog.hide}
+              onClick={handleDialogClose}
               className={styles['close-button']}
               title="Close dialog"
             >

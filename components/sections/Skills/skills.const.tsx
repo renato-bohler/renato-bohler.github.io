@@ -1,5 +1,6 @@
 const skills: Skill[] = [
   {
+    id: 'javascript',
     name: 'JavaScript',
     usageLevel: 3,
     yearsExperience: 5,
@@ -76,6 +77,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'node-js',
     name: 'Node.js',
     usageLevel: -1,
     yearsExperience: 1.5,
@@ -123,6 +125,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'regexp',
     name: 'RegExp',
     usageLevel: 2,
     colors: {
@@ -175,6 +178,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'typescript',
     name: 'TypeScript',
     usageLevel: 3,
     yearsExperience: 3,
@@ -255,6 +259,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'git',
     name: 'Git',
     usageLevel: 3,
     yearsExperience: 5,
@@ -332,6 +337,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'ci-cd',
     name: 'CI/CD',
     usageLevel: 3,
     colors: {
@@ -415,6 +421,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'react',
     name: 'React',
     usageLevel: 3,
     yearsExperience: 5,
@@ -569,6 +576,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'react-native',
     name: 'React Native',
     usageLevel: 1,
     yearsExperience: 1,
@@ -659,6 +667,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'redux',
     name: 'Redux',
     usageLevel: 1,
     yearsExperience: 4,
@@ -722,6 +731,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'angular',
     name: 'Angular',
     usageLevel: 1,
     yearsExperience: 2,
@@ -780,6 +790,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'vue',
     name: 'Vue',
     usageLevel: -2,
     yearsExperience: 0.5,
@@ -831,6 +842,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'graphql',
     name: 'GraphQL',
     usageLevel: 1,
     yearsExperience: 1,
@@ -899,6 +911,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'sql',
     name: 'SQL',
     usageLevel: -2,
     yearsExperience: 2,
@@ -965,6 +978,7 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'java',
     name: 'Java',
     usageLevel: -2,
     yearsExperience: 2,
@@ -1065,6 +1079,7 @@ export const getColors = (skill: Skill, isContrastMode: boolean) => {
 };
 
 export type Skill = {
+  id: string;
   name: string;
   usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
   yearsExperience?: number;
