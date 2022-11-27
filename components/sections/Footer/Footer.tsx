@@ -5,11 +5,13 @@ import MadeBy from './MadeBy/MadeBy';
 type Props = {
   onProgressChange: (progress: number) => void;
   onNavigationHeaderTrigger: (hide: boolean) => void;
+  isNavigationHeaderHidden: boolean;
 };
 
 const Footer: React.FC<Props> = ({
   onProgressChange,
   onNavigationHeaderTrigger,
+  isNavigationHeaderHidden,
 }) => {
   return (
     <>
@@ -19,6 +21,9 @@ const Footer: React.FC<Props> = ({
       />
 
       <footer className={styles.footer}>
+        {isNavigationHeaderHidden && (
+          <div className={styles.background} />
+        )}
         <MadeBy />
       </footer>
     </>

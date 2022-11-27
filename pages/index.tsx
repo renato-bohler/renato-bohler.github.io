@@ -86,6 +86,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       <Footer
         onProgressChange={setProgress}
         onNavigationHeaderTrigger={setNavigationHeaderHidden}
+        isNavigationHeaderHidden={isNavigationHeaderHidden}
       />
     </>
   );

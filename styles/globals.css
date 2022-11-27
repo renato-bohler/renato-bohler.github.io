@@ -63,13 +63,6 @@ body {
   color: var(--theme-text);
 }
 
-body {
-  background-color: #121212;
-  background-image: url('/images/topography.svg');
-  background-size: contain;
-  background-position: center;
-}
-
 a {
   color: inherit;
   text-decoration: underline;
