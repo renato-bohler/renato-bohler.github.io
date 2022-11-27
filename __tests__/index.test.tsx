@@ -5,14 +5,18 @@ import { axe } from 'jest-axe';
 
 import Index from '~/pages/index';
 
+const props = {
+  repositories: [],
+};
+
 // TODO: tests logging errors because of next/dynamic
 describe('Index', () => {
   it('does not crash', () => {
-    render(<Index />);
+    render(<Index {...props} />);
   });
 
   it('renders the title', () => {
-    render(<Index />);
+    render(<Index {...props} />);
 
     const title = screen.getByRole('heading', {
       name: 'Renato Böhler, frontend developer',
@@ -22,7 +26,7 @@ describe('Index', () => {
   });
 
   it('renders the navigation bar', () => {
-    render(<Index />);
+    render(<Index {...props} />);
 
     const navigationBar = screen.getByRole('navigation');
 
@@ -31,7 +35,7 @@ describe('Index', () => {
 
   describe('sections', () => {
     it('renders the About section', () => {
-      render(<Index />);
+      render(<Index {...props} />);
 
       const greeting = screen.getByText(/hello there/i);
 
@@ -39,7 +43,7 @@ describe('Index', () => {
     });
 
     it('renders the Testimonials section', () => {
-      render(<Index />);
+      render(<Index {...props} />);
 
       const testimonials = screen.getByRole('heading', {
         name: /what my colleagues have to say about me\?/i,
@@ -49,7 +53,7 @@ describe('Index', () => {
     });
 
     it('renders the Skills section', () => {
-      render(<Index />);
+      render(<Index {...props} />);
 
       const skills = screen.getByRole('heading', {
         name: /skills/i,
@@ -57,10 +61,20 @@ describe('Index', () => {
 
       expect(skills).toBeInTheDocument();
     });
+
+    it('renders the Projects section', () => {
+      render(<Index {...props} />);
+
+      const projects = screen.getByRole('heading', {
+        name: /personal projects/i,
+      });
+
+      expect(projects).toBeInTheDocument();
+    });
   });
 
   it('should pass a minimum a11y test', async () => {
-    const { container } = render(<Index />);
+    const { container } = render(<Index {...props} />);
 
     let results;
     await act(async () => {
