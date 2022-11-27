@@ -9,7 +9,6 @@ const props = {
   repositories: [],
 };
 
-// TODO: tests logging errors because of next/dynamic
 describe('Index', () => {
   it('does not crash', () => {
     render(<Index {...props} />);
