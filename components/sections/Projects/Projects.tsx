@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
+import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import { RepositoryInfo } from '~/api/fetchProjectDetails';
 
@@ -23,7 +24,9 @@ const Projects: React.FC<Props> = ({ repositories }) => {
       <div id="projects" aria-hidden className={styles.anchor} />
 
       <h2 className={styles.title} ref={ref}>
-        <div>
+        <VisuallyHidden>{title}</VisuallyHidden>
+
+        <div aria-hidden>
           {title.split(' ').map((word) => {
             const wordIndex = title.indexOf(word);
 
