@@ -56,7 +56,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-feature-settings: 'ss03', 'cv08', 'cv11', 'zero', 'cv02',
     'cv03', 'cv04', 'cv09';
-  font-size: 18px;
+  font-size: 1.06em;
   line-height: 1.75;
   letter-spacing: -0.014em;
 
@@ -134,7 +134,7 @@ ul {
   list-style-image: var(--theme-list-style-image);
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 28rem) {
   body {
     background-size: 300%;
   }

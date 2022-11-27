@@ -57,7 +57,7 @@
 
   height: fit-content;
 
-  font-size: 32px;
+  font-size: 1.75rem;
   color: var(--theme-text);
 
   transition: color 1s ease-in-out;
@@ -79,10 +79,10 @@
   position: fixed;
   z-index: 3;
 
-  font-size: min(12vmin, 120px);
+  font-size: min(12vmin, 6.67rem);
   font-family: Major Mono Display, monospace;
 
-  min-height: min(29vmin, 290px);
+  min-height: min(29vmin, 16rem);
   min-width: 6ch;
   margin: 0;
 
@@ -114,7 +114,7 @@
 .subtitle {
   margin: 1vmin 0 0 auto;
 
-  font-size: min(3vmin, 30px);
+  font-size: min(3vmin, 1.67rem);
   font-weight: normal;
   line-height: 1em;
   transition: font-size 100ms ease-in-out 100ms;
@@ -163,7 +163,7 @@
 }
 
 .heading[data-folded='true'] .initial {
-  font-size: 40px;
+  font-size: 2.22rem;
   line-height: 1em;
 
   transition: transform 500ms ease-in-out 250ms,
@@ -193,7 +193,7 @@
   animation: bounce 2s infinite 1s;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 30rem) {
   .heading {
     min-height: 43vmin;
     min-width: 80vmin;

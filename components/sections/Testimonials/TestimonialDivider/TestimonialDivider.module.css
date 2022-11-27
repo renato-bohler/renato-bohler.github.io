@@ -58,7 +58,7 @@
   transition-duration: 1s;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 42rem) {
   .divider-stroke {
     stroke-width: 35px;
     stroke-dashoffset: 456px;

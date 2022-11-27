@@ -62,7 +62,7 @@
   border: none;
   background: none;
 
-  font-size: 64px;
+  font-size: 3.5em;
   color: inherit;
 
   padding: 0;
@@ -92,7 +92,7 @@
   filter: none;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 42rem) {
   .content {
     height: min-content;
   }

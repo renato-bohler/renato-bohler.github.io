@@ -75,13 +75,13 @@
   grid-template-columns: repeat(8, 150px);
 }
 
-@media screen and (max-width: 1475px) {
+@media screen and (max-width: 82rem) {
   .grid {
     grid-template-columns: repeat(4, 150px);
   }
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 42rem) {
   .grid {
     grid-template-columns: repeat(2, 150px);
   }
@@ -91,7 +91,7 @@
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 21rem) {
   .section {
     padding: 80px 10px 40px 10px;
   }

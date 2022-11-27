@@ -10,7 +10,7 @@
   justify-content: center;
 
   height: 100vh;
-  max-width: 2200px;
+  max-width: 1600px;
 
   margin: 0 auto;
   padding: 20vh 0;
@@ -41,7 +41,7 @@
   flex-direction: column;
   gap: 1em;
 
-  max-width: min(2200px, 80vw);
+  max-width: min(1600px, 80vw);
   margin: 0 auto;
 }
 
@@ -115,13 +115,13 @@
   opacity: 0%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 42rem) {
   .message-list {
     height: 75vh;
   }
 }
 
-@media screen and (max-width: 1475px) {
+@media screen and (max-width: 82rem) {
   .scroll {
     height: 150vh;
   }

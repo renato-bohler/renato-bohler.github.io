@@ -125,7 +125,7 @@ html[data-reduced-motion='true'] .dialog {
   paint-order: stroke;
 }
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 42rem) {
   .dialog {
     position: fixed;
     top: 0;

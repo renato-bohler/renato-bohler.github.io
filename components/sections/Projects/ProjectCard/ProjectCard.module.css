@@ -144,13 +144,13 @@
   column-fill: auto;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 42rem) {
   .card-header {
     flex-direction: column;
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 30rem) {
   .container {
     font-size: 0.9em;
   }

@@ -158,7 +158,7 @@
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 42rem) {
   .picture {
     width: 1.75em;
     height: 1.75em;

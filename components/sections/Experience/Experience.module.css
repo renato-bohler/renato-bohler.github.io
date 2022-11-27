@@ -64,7 +64,7 @@
   overflow: auto;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 30rem) {
   .section {
     font-size: 0.9em;
   }

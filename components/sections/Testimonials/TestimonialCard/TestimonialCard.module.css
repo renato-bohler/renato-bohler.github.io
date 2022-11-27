@@ -68,7 +68,7 @@
   line-height: 1em;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 42rem) {
   .card {
     font-size: 0.8em;
   }
