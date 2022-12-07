@@ -31,7 +31,7 @@
 .navigation-header[data-folded='true'] {
   width: calc(100% - 40px);
   margin: 20px;
-  padding-left: 80px;
+  padding-left: 85px;
   padding-right: 40px;
   border-radius: 50px;
 
