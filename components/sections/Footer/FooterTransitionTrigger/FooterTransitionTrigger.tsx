@@ -48,7 +48,7 @@ const FooterTransitionTrigger: React.FC<Props> = ({
         (windowBottomY - targetY) / targetHeight,
       );
 
-      onProgressChange(percentage < 0 ? 0 : percentage);
+      onProgressChange(Math.max(0, percentage));
     });
     document.addEventListener('scroll', scrollHandler);
     scrollHandler();
