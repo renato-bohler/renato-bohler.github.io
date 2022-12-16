@@ -61,12 +61,9 @@ const FooterTransitionTrigger: React.FC<Props> = ({
     <>
       <div
         ref={navigationBarHideRef}
-        className={styles['nav-header-hide-trigger']}
+        className={styles.navHeaderHideTrigger}
       />
-      <div
-        ref={setProgressRefs}
-        className={styles['progress-trigger']}
-      />
+      <div ref={setProgressRefs} className={styles.progressTrigger} />
     </>
   );
 };
