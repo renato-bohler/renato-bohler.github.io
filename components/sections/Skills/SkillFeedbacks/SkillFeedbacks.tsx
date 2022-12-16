@@ -107,7 +107,7 @@ const SkillFeedbacks: React.FC = () => {
   return (
     <div className={styles.container}>
       <Button
-        className={styles['switch-button']}
+        className={styles.switchButton}
         onClick={() => setTableView((tv) => !tv)}
       >
         Switch to <strong>{tableView ? 'graphical' : 'table'}</strong>{' '}
@@ -117,7 +117,7 @@ const SkillFeedbacks: React.FC = () => {
       <div className={styles.flip}>
         <div
           className={classNames(styles.flipper, {
-            [styles['flipper-flipped']]: tableView,
+            [styles.flipperFlipped]: tableView,
           })}
         >
           <div className={styles.front} aria-hidden={tableView}>
@@ -243,7 +243,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
       </svg>
 
       <Group
-        className={styles['button-group']}
+        className={styles.buttonGroup}
         title="Select an individual feedback"
       >
         <Button
@@ -253,7 +253,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
           disabled={!active}
         >
           <div
-            className={styles['button-icon']}
+            className={styles.buttonIcon}
             style={{
               backgroundColor: 'var(--theme-secondary-dark)',
               borderColor: 'var(--theme-primary-bright)',
@@ -273,7 +273,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
               disabled={!active}
             >
               <div
-                className={styles['button-icon']}
+                className={styles.buttonIcon}
                 style={{
                   backgroundColor: feedback.color,
                   borderColor: feedback.color,
@@ -289,7 +289,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
 };
 
 const TableView: React.FC = () => (
-  <table className={styles['table-view']}>
+  <table className={styles.tableView}>
     <caption>
       All data collected from colleagues on my latest feedback round.
       <br />

@@ -7,7 +7,7 @@
   z-index: 1;
 }
 
-.switch-button {
+.switchButton {
   width: 200px;
   margin-bottom: 16px;
   padding: 8px;
@@ -22,8 +22,8 @@
   cursor: pointer;
 }
 
-.switch-button:hover,
-.switch-button:focus {
+.switchButton:hover,
+.switchButton:focus {
   border: 2px solid var(--theme-secondary-dark);
 }
 
@@ -44,7 +44,7 @@
   transform-style: preserve-3d;
 }
 
-.flipper-flipped {
+.flipperFlipped {
   transform: rotateY(180deg);
 }
 
@@ -101,7 +101,7 @@
   stroke: var(--theme-text);
 }
 
-.button-group {
+.buttonGroup {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -120,6 +120,8 @@
   padding: 16px;
   margin: 0 8px;
   border-radius: 8px;
+
+  cursor: pointer;
 }
 
 .button[aria-pressed='true'],
@@ -129,7 +131,7 @@
   box-shadow: var(--theme-shadow) 0px 4px 12px;
 }
 
-.button-icon {
+.buttonIcon {
   display: inline-block;
 
   width: 10px;
@@ -145,52 +147,52 @@
 }
 
 /* Table view */
-.table-view {
+.tableView {
   border-spacing: 8px;
   text-align: right;
   margin: 32px auto 0 auto;
 }
 
-.table-view > caption {
+.tableView > caption {
   caption-side: bottom;
   font-style: italic;
   font-size: 0.8em;
   line-height: 1.3em;
 }
 
-.table-view th,
-.table-view td {
+.tableView th,
+.tableView td {
   background: var(--theme-table-cell-background);
   border-bottom: 1px solid var(--theme-primary-bright);
   border-right: 1px solid var(--theme-primary-dark);
   padding: 8px 10px;
 }
 
-.table-view th:last-child,
-.table-view td:last-child {
+.tableView th:last-child,
+.tableView td:last-child {
   font-weight: bold;
 }
 
-.table-view > tbody > tr:nth-child(odd) > td {
+.tableView > tbody > tr:nth-child(odd) > td {
   border-bottom: 1px solid var(--theme-secondary-bright);
   border-right: 1px solid var(--theme-secondary-dark);
 }
 
-.table-view th {
+.tableView th {
   font-weight: normal;
   font-size: 0.75em;
 }
 
-.table-view td {
+.tableView td {
   font-family: Major Mono Display, monospace;
 }
 
-.table-view thead tr th:first-of-type {
+.tableView thead tr th:first-of-type {
   background: none;
   border: none;
 }
 
-.table-view tbody tr td:first-of-type {
+.tableView tbody tr td:first-of-type {
   font-weight: bold;
   font-size: 0.9em;
 }
