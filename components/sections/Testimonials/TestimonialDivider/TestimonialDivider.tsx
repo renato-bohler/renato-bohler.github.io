@@ -24,7 +24,7 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
           ref={ref}
           className={classNames(
             styles.divider,
-            styles['divider-stroke'],
+            styles.dividerStroke,
             {
               [styles.animate]: inView,
             },
@@ -41,8 +41,8 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
         </svg>
         <svg
           className={classNames(
-            styles['divider-glow'],
-            styles['divider-stroke'],
+            styles.dividerGlow,
+            styles.dividerStroke,
             {
               [styles.animate]: inView,
             },
@@ -60,7 +60,7 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
   return (
     <svg
       ref={ref}
-      className={classNames(styles['divider-bottom'], {
+      className={classNames(styles.dividerBottom, {
         [styles.animate]: inView,
       })}
       viewBox="-10 133 600 80"

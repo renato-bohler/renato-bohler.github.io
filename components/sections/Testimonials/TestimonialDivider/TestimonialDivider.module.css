@@ -1,4 +1,4 @@
-.divider-stroke {
+.dividerStroke {
   stroke-width: 15px;
   stroke-dashoffset: 456px;
   stroke-dasharray: 456px;
@@ -17,7 +17,7 @@
   filter: drop-shadow(0 35px 0 var(--theme-primary-bright));
 }
 
-.divider-glow {
+.dividerGlow {
   position: absolute;
   z-index: 2;
   top: 0;
@@ -26,11 +26,11 @@
   stroke: var(--theme-primary-dark);
 }
 
-.divider-glow > path {
+.dividerGlow > path {
   filter: drop-shadow(10px 10px 20px var(--theme-accent-color));
 }
 
-.divider-bottom {
+.dividerBottom {
   transform: translateY(-5%);
 
   fill: var(--theme-testimonial-background);
@@ -49,28 +49,28 @@
 }
 
 .animate.divider,
-.animate.divider-glow {
+.animate.dividerGlow {
   transition-delay: 0;
   transition-duration: 1.5s;
 }
 
-.animate.divider-bottom {
+.animate.dividerBottom {
   transition-duration: 1s;
 }
 
 @media screen and (max-width: 42rem) {
-  .divider-stroke {
+  .dividerStroke {
     stroke-width: 35px;
     stroke-dashoffset: 456px;
     stroke-dasharray: 456px;
     stroke-linecap: round;
   }
 
-  .divider-glow > path {
+  .dividerGlow > path {
     filter: drop-shadow(10px 10px 16px var(--theme-accent-color));
   }
 
-  .divider-bottom {
+  .dividerBottom {
     stroke-width: 50px;
   }
 }
