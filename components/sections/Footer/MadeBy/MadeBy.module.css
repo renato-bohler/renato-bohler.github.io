@@ -45,32 +45,32 @@
   transition-timing-function: cubic-bezier(0.51, 0.1, 0.13, 0.72);
 }
 
-.made-m {
+.madeM {
   stroke-dashoffset: 226.86068725585938px;
   stroke-dasharray: 226.86068725585938px;
 }
 
-.visible > .made-m {
+.visible > .madeM {
   transition-delay: 0;
   transition-duration: 0.75s;
 }
 
-.made-a {
+.madeA {
   stroke-dashoffset: 91.60891723632812px;
   stroke-dasharray: 91.60891723632812px;
 }
 
-.visible > .made-a {
+.visible > .madeA {
   transition-delay: 0.5s;
   transition-duration: 0.5s;
 }
 
-.made-de {
+.madeDe {
   stroke-dashoffset: 235.08343505859375px;
   stroke-dasharray: 235.08343505859375px;
 }
 
-.visible > .made-de {
+.visible > .madeDe {
   transition-delay: 0.75s;
   transition-duration: 1s;
 }
@@ -85,22 +85,22 @@
   transition-duration: 1.5s;
 }
 
-.with-i-dot {
+.withIDot {
   stroke-dashoffset: 36.069515228271484px;
   stroke-dasharray: 36.069515228271484px;
 }
 
-.visible > .with-i-dot {
+.visible > .withIDot {
   transition-delay: 3s;
   transition-duration: 0.25s;
 }
 
-.with-t-cross {
+.withTCross {
   stroke-dashoffset: 29.985427856445312px;
   stroke-dasharray: 29.985427856445312px;
 }
 
-.visible > .with-t-cross {
+.visible > .withTCross {
   transition-delay: 3.25s;
   transition-duration: 0.25s;
 }
