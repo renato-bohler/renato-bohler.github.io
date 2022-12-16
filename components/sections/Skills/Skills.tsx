@@ -45,13 +45,13 @@ const Skills: React.FC = () => {
       <div id="skills" className={styles.anchor} aria-hidden />
 
       <h3 className={styles.subtitle}>Competences</h3>
-      <em className={styles['subtitle-description']}>
+      <em className={styles.subtitleDescription}>
         Based on feedbacks collected from my colleagues
       </em>
       <SkillFeedbacks />
 
       <h3 className={styles.subtitle}>Technologies</h3>
-      <em className={styles['subtitle-description']}>
+      <em className={styles.subtitleDescription}>
         Click each one of the cards below for more context on my
         experience with these technologies
       </em>
