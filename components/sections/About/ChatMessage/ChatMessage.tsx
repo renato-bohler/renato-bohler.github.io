@@ -11,7 +11,7 @@ import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAni
 type Props = {
   message: Message;
   onResponse: (option: Option) => void;
-  classNames?: {
+  animatedStyles?: {
     container: string;
     picture: string;
     pictureImage: string;
@@ -23,15 +23,15 @@ type Props = {
 };
 
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
-  ({ message, onResponse, classNames }, ref) => (
+  ({ message, onResponse, animatedStyles }, ref) => (
     <div
       ref={ref}
-      className={cx(styles.container, classNames?.container, {
+      className={cx(styles.container, animatedStyles?.container, {
         [styles.outgoing]: message.direction === 'outgoing',
-        [styles['fade-in']]: !ref,
+        [styles.fadeIn]: !ref,
       })}
     >
-      <div className={cx(styles.picture, classNames?.picture)}>
+      <div className={cx(styles.picture, animatedStyles?.picture)}>
         <svg viewBox="-10 -10 205 132" className={styles.pictureArc}>
           <defs>
             <linearGradient id="gradient">
@@ -49,33 +49,31 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
             d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
             className={cx(
               styles.pictureArcStroke,
-              classNames?.pictureArcStroke,
+              animatedStyles?.pictureArcStroke,
             )}
           />
           <path
             d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
             className={cx(
               styles.pictureArcFill,
-              classNames?.pictureArcFill,
+              animatedStyles?.pictureArcFill,
             )}
           />
         </svg>
         <img
           src="images/me/full.webp"
-          // TODO: camelCase?
           className={cx(
             styles.pictureImage,
-            classNames?.pictureImage,
+            animatedStyles?.pictureImage,
           )}
           alt="A smiley Renato"
         />
       </div>
-      <div className={cx(styles.bubble, classNames?.bubble)}>
+      <div className={cx(styles.bubble, animatedStyles?.bubble)}>
         <div
-          // TODO: camelCase?
           className={cx(
-            styles['bubble-pointer'],
-            classNames?.bubblePointer,
+            styles.bubblePointer,
+            animatedStyles?.bubblePointer,
           )}
         />
         {message.status === 'writing' ? (

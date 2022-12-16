@@ -1,8 +1,7 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
-import { throttle } from 'throttle-debounce';
 
 const useAboutProgress = () => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -20,11 +19,10 @@ const useAboutProgress = () => {
     query: '(max-width: 1475px)',
   });
 
-  const [progress, setProgress] = useState(0);
   useEffect(() => {
     if (!aboutInView) return;
 
-    const scrollHandler = throttle(10, () => {
+    const scrollHandler = () => {
       if (!scrollRef.current || !aboutRef.current) return;
 
       const PADDING_HEIGHT = isTabletOrMobile ? 150 : 300;
@@ -43,8 +41,8 @@ const useAboutProgress = () => {
 
       const percentage = offset / maxOffset;
 
-      setProgress(percentage);
-    });
+      aboutRef.current.style.setProperty('--scroll', `${percentage}`);
+    };
     document.addEventListener('scroll', scrollHandler);
     scrollHandler();
 
@@ -52,7 +50,7 @@ const useAboutProgress = () => {
       document.removeEventListener('scroll', scrollHandler);
   }, [aboutInView, isTabletOrMobile]);
 
-  return { progress, scrollRef, setAboutRefs };
+  return { scrollRef, setAboutRefs };
 };
 
 export default useAboutProgress;

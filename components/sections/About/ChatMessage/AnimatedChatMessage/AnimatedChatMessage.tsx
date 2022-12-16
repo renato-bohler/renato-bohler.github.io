@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -8,18 +8,9 @@ import styles from './AnimatedChatMessage.module.css';
 
 type Props = {
   children: React.ReactNode;
-  progress: number;
 };
 
-const AnimatedChatMessage: React.FC<Props> = ({
-  children,
-  progress,
-}) => {
-  // TODO: move and rename --scroll
-  useEffect(() => {
-    document.body.style.setProperty('--scroll', `${progress}`);
-  }, [progress]);
-
+const AnimatedChatMessage: React.FC<Props> = ({ children }) => {
   const [ref, inView] = useInView({
     threshold: 1,
     triggerOnce: true,
@@ -28,7 +19,7 @@ const AnimatedChatMessage: React.FC<Props> = ({
   return (
     <ChatMessage
       ref={ref}
-      classNames={{
+      animatedStyles={{
         container: classNames(styles.container, {
           [styles.inView]: inView,
         }),

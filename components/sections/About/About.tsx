@@ -13,7 +13,7 @@ import useMessages from './ChatMessage/useMessages';
 import useAboutProgress from './useAboutProgress';
 
 const About: React.FC = () => {
-  const { progress, scrollRef, setAboutRefs } = useAboutProgress();
+  const { scrollRef, setAboutRefs } = useAboutProgress();
 
   const [fullyScrolled, setFullyScrolled] = useState(true);
 
@@ -63,9 +63,7 @@ const About: React.FC = () => {
           )}
           ref={setAboutRefs}
         >
-          <AnimatedChatMessage progress={progress}>
-            Hello there 👋
-          </AnimatedChatMessage>
+          <AnimatedChatMessage>Hello there 👋</AnimatedChatMessage>
         </div>
       </div>
 
