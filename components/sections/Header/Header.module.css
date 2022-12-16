@@ -5,7 +5,7 @@
   z-index: 10;
 }
 
-.navigation-header {
+.navigationHeader {
   position: fixed;
   z-index: 1;
   top: 0;
@@ -28,7 +28,7 @@
     width 500ms ease-in-out;
 }
 
-.navigation-header[data-folded='true'] {
+.navigationHeader[data-folded='true'] {
   width: calc(100% - 40px);
   margin: 20px;
   padding-left: 85px;
@@ -44,15 +44,15 @@
     width 500ms ease-in-out 500ms;
 }
 
-.navigation-header-contrast {
+.navigationHeaderContrast {
   background: var(--theme-menu-background);
 }
 
-.navigation-header-contrast[data-folder='true'] {
+.navigationHeaderContrast[data-folder='true'] {
   border: 1px solid black;
 }
 
-.navigation-header-hidden {
+.navigationHeaderHidden {
   margin-top: -200px !important;
 }
 
@@ -196,7 +196,7 @@
   color: transparent;
 }
 
-.scroll-down {
+.scrollDown {
   position: fixed;
   bottom: 1em;
   left: 50%;
@@ -256,7 +256,7 @@
 @supports not (
   (-webkit-backdrop-filter: none) or (backdrop-filter: none)
 ) {
-  .navigation-header[data-folded='true'] {
+  .navigationHeader[data-folded='true'] {
     background: var(--theme-menu-background-fallback);
   }
 }

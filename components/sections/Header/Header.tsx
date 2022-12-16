@@ -65,8 +65,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
     <header ref={ref} className={styles.header}>
       <h1
         className={classNames(styles.heading, {
-          [styles['navigation-header-hidden']]:
-            isNavigationHeaderHidden,
+          [styles.navigationHeaderHidden]: isNavigationHeaderHidden,
         })}
         data-folded={!inView}
       >
@@ -117,10 +116,9 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
       </h1>
 
       <div
-        className={classNames(styles['navigation-header'], {
-          [styles['navigation-header-contrast']]: isContrastMode,
-          [styles['navigation-header-hidden']]:
-            isNavigationHeaderHidden,
+        className={classNames(styles.navigationHeader, {
+          [styles.navigationHeaderContrast]: isContrastMode,
+          [styles.navigationHeaderHidden]: isNavigationHeaderHidden,
         })}
         data-folded={!inView}
       >
@@ -166,7 +164,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
       </div>
 
       {isScrollHintVisible && (
-        <AnimatedIcon className={styles['scroll-down']} aria-hidden>
+        <AnimatedIcon className={styles.scrollDown} aria-hidden>
           <ArrowDownIcon />
         </AnimatedIcon>
       )}
