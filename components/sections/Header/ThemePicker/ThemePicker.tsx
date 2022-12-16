@@ -68,10 +68,10 @@ const ThemePicker: React.FC = () => {
         <div className={styles.popover}>
           <PopoverArrow
             {...popover}
-            className={styles['popover-arrow']}
+            className={styles.popoverArrow}
           />
           <span className={styles.title}>Select your theme</span>
-          <div className={styles['theme-grid']}>
+          <div className={styles.themeGrid}>
             {themes.map((t) => {
               const colors = isDarkMode ? t.dark : t.light;
               const primary = colors['primary-bright'];
@@ -81,7 +81,7 @@ const ThemePicker: React.FC = () => {
                 <Button
                   key={t.name}
                   title={t.name}
-                  className={styles['theme-button']}
+                  className={styles.themeButton}
                   aria-pressed={
                     !isFirstMount && t.name === theme.name
                   }
