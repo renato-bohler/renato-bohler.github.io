@@ -11,7 +11,7 @@ const KeyboardNavigation: React.FC = () => (
         key={section.name}
         className={classNames(
           styles.navigation,
-          styles['navigation-button'],
+          styles.navigationButton,
         )}
         href={section.anchor}
       >
