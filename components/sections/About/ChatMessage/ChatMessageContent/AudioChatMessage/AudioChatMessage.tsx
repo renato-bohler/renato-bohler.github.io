@@ -109,7 +109,7 @@ const AudioChatMessage: React.FC<Props> = ({ message }) => {
         </Button>
         <div className={styles.progress}>
           <div
-            className={styles['progress-bar']}
+            className={styles.progressBar}
             style={{
               width:
                 status === 'idle' ? 0 : `${(time / duration) * 100}%`,
@@ -120,7 +120,7 @@ const AudioChatMessage: React.FC<Props> = ({ message }) => {
         <div className={styles.time}>
           <span>{formatTime(time)}</span>
           <Button
-            className={styles['speed-button']}
+            className={styles.speedButton}
             onClick={handleSpeedCycle}
           >
             {speed}×

@@ -27,7 +27,7 @@
   padding: 2px;
 }
 
-.progress-bar {
+.progressBar {
   background: var(--theme-chat-accent);
   opacity: 90%;
   width: 50%;
@@ -43,7 +43,7 @@
   font-size: 0.8em;
 }
 
-.speed-button {
+.speedButton {
   background: var(--theme-chat-accent);
   color: var(--theme-background);
   border: none;
