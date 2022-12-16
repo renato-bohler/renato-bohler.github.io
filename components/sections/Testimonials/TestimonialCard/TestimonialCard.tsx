@@ -36,11 +36,11 @@ const TestimonialCard: React.FC<Props> = ({
         <img
           src={authorPicture}
           alt={`${authorName}'s profile picture'`}
-          className={styles['author-picture']}
+          className={styles.authorPicture}
         />
-        <div className={styles['author-title']}>
-          <span className={styles['author-name']}>{authorName}</span>
-          <span className={styles['author-role']}>{authorRole}</span>
+        <div className={styles.authorTitle}>
+          <span className={styles.authorName}>{authorName}</span>
+          <span className={styles.authorRole}>{authorRole}</span>
         </div>
       </div>
     </div>

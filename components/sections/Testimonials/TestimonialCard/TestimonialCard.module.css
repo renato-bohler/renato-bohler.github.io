@@ -44,25 +44,25 @@
   border-radius: 25px;
 }
 
-.author-picture {
+.authorPicture {
   border-radius: 100%;
   width: 40px;
   height: 40px;
   margin: 5px 10px 5px 5px;
 }
 
-.author-title {
+.authorTitle {
   display: flex;
   flex-direction: column;
 }
 
-.author-name {
+.authorName {
   font-weight: bold;
   margin-right: 0.5em;
   line-height: 1em;
 }
 
-.author-role {
+.authorRole {
   font-style: italic;
   font-size: 0.8em;
   line-height: 1em;
