@@ -65,7 +65,7 @@ const ContactFormChatMessage: React.FC = () => {
     formState === 'submitting' || formState == 'success';
 
   return (
-    <form onSubmit={handleSubmit} className={styles['form']}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <label className={styles.labelContainer}>
         <span className={styles.label}>What&apos;s your name?</span>
         <input
