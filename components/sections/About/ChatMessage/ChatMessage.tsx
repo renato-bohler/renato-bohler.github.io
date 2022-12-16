@@ -1,6 +1,6 @@
 import React from 'react';
 
-import classNames from 'classnames';
+import cx from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import styles from './ChatMessage.module.css';
@@ -11,28 +11,27 @@ import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAni
 type Props = {
   message: Message;
   onResponse: (option: Option) => void;
-  style?: {
-    container: React.CSSProperties;
-    picture: React.CSSProperties;
-    pictureImage: React.CSSProperties;
-    pictureArcFill: React.CSSProperties;
-    pictureArcStroke: React.CSSProperties;
-    bubble: React.CSSProperties;
-    bubblePointer: React.CSSProperties;
+  classNames?: {
+    container: string;
+    picture: string;
+    pictureImage: string;
+    pictureArcFill: string;
+    pictureArcStroke: string;
+    bubble: string;
+    bubblePointer: string;
   };
 };
 
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
-  ({ message, onResponse, style }, ref) => (
+  ({ message, onResponse, classNames }, ref) => (
     <div
       ref={ref}
-      className={classNames(styles.container, {
+      className={cx(styles.container, classNames?.container, {
         [styles.outgoing]: message.direction === 'outgoing',
         [styles['fade-in']]: !ref,
       })}
-      style={style?.container}
     >
-      <div className={styles.picture} style={style?.picture}>
+      <div className={cx(styles.picture, classNames?.picture)}>
         <svg viewBox="-10 -10 205 132" className={styles.pictureArc}>
           <defs>
             <linearGradient id="gradient">
@@ -48,26 +47,36 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
           </defs>
           <path
             d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
-            className={styles.pictureArcStroke}
-            style={style?.pictureArcStroke}
+            className={cx(
+              styles.pictureArcStroke,
+              classNames?.pictureArcStroke,
+            )}
           />
           <path
             d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
-            className={styles.pictureArcFill}
-            style={style?.pictureArcFill}
+            className={cx(
+              styles.pictureArcFill,
+              classNames?.pictureArcFill,
+            )}
           />
         </svg>
         <img
           src="images/me/full.webp"
-          className={styles.pictureImage}
-          style={style?.pictureImage}
+          // TODO: camelCase?
+          className={cx(
+            styles.pictureImage,
+            classNames?.pictureImage,
+          )}
           alt="A smiley Renato"
         />
       </div>
-      <div className={styles.bubble} style={style?.bubble}>
+      <div className={cx(styles.bubble, classNames?.bubble)}>
         <div
-          className={styles['bubble-pointer']}
-          style={style?.bubblePointer}
+          // TODO: camelCase?
+          className={cx(
+            styles['bubble-pointer'],
+            classNames?.bubblePointer,
+          )}
         />
         {message.status === 'writing' ? (
           <MessageWritingAnimation />

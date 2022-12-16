@@ -1,0 +1,207 @@
+.scroll-animated {
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+/* Container */
+.container {
+  composes: scroll-animated;
+  animation-name: container;
+
+  --font-size-start: 2em;
+
+  position: relative;
+  width: 100%;
+
+  will-change: font-size, height, top, left, transform;
+}
+
+@media screen and (max-width: 42rem) {
+  .container {
+    --font-size-start: 1.5em !important;
+  }
+}
+
+@keyframes container {
+  0% {
+    font-size: var(--font-size-start);
+    height: 15em;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+  75% {
+    height: 8em;
+  }
+  100% {
+    font-size: 1em;
+    height: 4.25em;
+
+    top: 100%;
+    left: 0%;
+
+    transform: translate(0, -100%);
+  }
+}
+
+/* Picture */
+.picture {
+  composes: scroll-animated;
+  animation-name: picture;
+
+  --translate-y-end: 0.5em;
+  --picture-dimension-end: 2.5em;
+
+  position: absolute;
+  top: 0;
+
+  max-width: none;
+
+  will-change: width, height, left, transform;
+}
+
+@media screen and (max-width: 42rem) {
+  .picture {
+    --translate-y-end: 1.25em !important;
+    --picture-dimension-end: 1.75em !important;
+  }
+}
+
+@keyframes picture {
+  0% {
+    width: 10em;
+    height: 10em;
+
+    left: 50%;
+
+    transform: translate(-50%, 0em);
+  }
+  80% {
+    transform: translate(-40%, -1em);
+  }
+  100% {
+    width: var(--picture-dimension-end);
+    height: var(--picture-dimension-end);
+
+    left: 0%;
+
+    transform: translate(0%, var(--translate-y-end));
+  }
+}
+
+/* Picture Image */
+.pictureImage {
+  opacity: 0%;
+
+  transition: opacity 250ms ease-in-out;
+}
+
+.inView .pictureImage {
+  opacity: 100%;
+}
+
+/* Picture Arc Fill */
+.pictureArcFill {
+  opacity: 0%;
+
+  transition: opacity 250ms 550ms ease-in-out;
+}
+
+.inView .pictureArcFill {
+  opacity: 100%;
+}
+
+/* Picture Arc Stroke */
+.pictureArcStroke {
+  stroke-dasharray: 304;
+  stroke-dashoffset: 304;
+
+  transition: stroke-dashoffset 500ms 200ms ease-in-out;
+}
+
+.inView .pictureArcStroke {
+  stroke-dashoffset: 0;
+}
+
+/* Bubble */
+.bubble {
+  composes: scroll-animated;
+  animation-name: bubble;
+
+  --translate-x-em-end: 3.75em;
+
+  position: absolute;
+  bottom: 2em;
+
+  opacity: 0%;
+  white-space: nowrap;
+
+  transition: bottom 250ms 650ms ease-in-out,
+    opacity 250ms 650ms ease-in-out;
+
+  will-change: left, transform;
+}
+
+@media screen and (max-width: 42rem) {
+  .bubble {
+    --translate-x-em-end: 3.15em !important;
+  }
+}
+
+@keyframes bubble {
+  0% {
+    left: 50%;
+    transform: translateX(calc(-50% + 0em));
+  }
+  100% {
+    left: 0%;
+    transform: translateX(calc(0% + var(--translate-x-em-end)));
+  }
+}
+
+.inView .bubble {
+  bottom: 0;
+  opacity: 100%;
+}
+
+/* Bubble Pointer */
+.bubblePointer {
+  composes: scroll-animated;
+  animation-name: bubblePointer;
+
+  --translate-x-start: 50%;
+
+  will-change: top, left, transform;
+}
+
+@media screen and (max-width: 42rem) {
+  .bubblePointer {
+    --translate-x-start: 0%;
+  }
+}
+
+@keyframes bubblePointer {
+  0% {
+    top: 0.2em;
+    left: 50%;
+
+    transform: rotate(90deg) translate(-50%, var(--translate-x-start));
+  }
+  80% {
+    top: 0.2em;
+
+    transform: rotate(90deg) translate(-80%, 7.5%);
+  }
+  100% {
+    top: 1.7em;
+    left: 0%;
+
+    transform: rotate(0deg) translate(0%, 0%);
+  }
+}
