@@ -37,13 +37,13 @@
   z-index: 2;
 }
 
-.title-description {
+.titleDescription {
   font-size: 0.8em;
   text-align: center;
   margin-bottom: 16px;
 }
 
-.swiper-container {
+.swiperContainer {
   position: relative;
   width: 80vw;
   max-width: 900px;
@@ -54,7 +54,7 @@
   max-width: calc(80vw - 200px);
 }
 
-.navigation-button {
+.navigationButton {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -70,19 +70,19 @@
   cursor: pointer;
 }
 
-.previous-button {
+.previousButton {
   left: 0;
 }
 
-.next-button {
+.nextButton {
   right: 0;
 }
 
-.swiper :global(.swiper-slide) {
+.swiper :global(.swiperSlide) {
   margin: auto;
 }
 
-.swiper :global(.swiper-slide-shadow) {
+.swiper :global(.swiperSlideShadow) {
   border-radius: 15px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
@@ -101,7 +101,7 @@
     max-width: 80vw;
   }
 
-  .navigation-button {
+  .navigationButton {
     display: none;
   }
 }

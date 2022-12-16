@@ -69,12 +69,12 @@ const Testimonials: React.FC = () => {
           What my colleagues have to say about me?
         </h2>
 
-        <div className={styles['swiper-container']} ref={ref}>
+        <div className={styles.swiperContainer} ref={ref}>
           <Button
             aria-label="Previous testimonial"
             className={classNames(
-              styles['navigation-button'],
-              styles['previous-button'],
+              styles.navigationButton,
+              styles.previousButton,
             )}
             onFocus={handleFocus}
             ref={setPrevEl}
@@ -113,8 +113,8 @@ const Testimonials: React.FC = () => {
           <Button
             aria-label="Next testimonial"
             className={classNames(
-              styles['navigation-button'],
-              styles['next-button'],
+              styles.navigationButton,
+              styles.nextButton,
             )}
             onFocus={handleFocus}
             ref={setNextEl}
@@ -125,7 +125,7 @@ const Testimonials: React.FC = () => {
           </Button>
         </div>
 
-        <em className={styles['title-description']}>
+        <em className={styles.titleDescription}>
           All testimonials spontaneously provided by colleagues
         </em>
       </section>
