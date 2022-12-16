@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { CSSProperties, Fragment, useState } from 'react';
 
 import { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
@@ -51,16 +51,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
         className={classNames(styles.mainContainer, {
           [styles.transitioning]: isMainContentTransitioning,
         })}
-        style={
-          isMainContentTransitioning
-            ? {
-                transform: `scale(${1 - progress * 0.1}) translateY(${
-                  progress * 1000
-                }px)`,
-                borderRadius: progress * 50,
-              }
-            : {}
-        }
+        style={{ '--scroll': `${progress}` } as CSSProperties}
       >
         <SectionAnchor
           sectionName={HEADER.name}

@@ -1,11 +1,21 @@
+.animatedScroll {
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
 .mainContainer {
-  transition: transform 250ms ease-in-out,
-    border-radius 250ms ease-in-out, box-shadow 500ms ease-in-out,
-    background-color 250ms;
+  transition: box-shadow 500ms ease-in-out, background-color 250ms;
   background-color: var(--theme-background);
 }
 
 .transitioning {
+  composes: animatedScroll;
+  animation-name: transition;
+
   overflow: hidden;
   box-shadow: 1px 1px 60px rgb(255, 255, 255, 0.6);
   will-change: transform, border-radius;
@@ -14,4 +24,15 @@
 /* Fixes flickering background on Chrome */
 .transitioning * {
   backdrop-filter: none !important;
+}
+
+@keyframes transition {
+  from {
+    transform: scale(100%) translateY(0px);
+    border-radius: 0px;
+  }
+  to {
+    transform: scale(90%) translateY(1000px);
+    border-radius: 50px;
+  }
 }

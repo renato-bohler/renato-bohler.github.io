@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useRef } from 'react';
 
 import { useInView } from 'react-intersection-observer';
-import { throttle } from 'throttle-debounce';
 
 import styles from './FooterTransitionTrigger.module.css';
 
@@ -36,7 +35,7 @@ const FooterTransitionTrigger: React.FC<Props> = ({
       return;
     }
 
-    const scrollHandler = throttle(250, () => {
+    const scrollHandler = () => {
       if (!progressRef.current) return;
       const windowBottomY =
         document.documentElement.scrollTop + window.innerHeight;
@@ -49,7 +48,7 @@ const FooterTransitionTrigger: React.FC<Props> = ({
       );
 
       onProgressChange(Math.max(0, percentage));
-    });
+    };
     document.addEventListener('scroll', scrollHandler);
     scrollHandler();
 
