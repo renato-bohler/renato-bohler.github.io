@@ -45,7 +45,7 @@
   margin: 0 auto;
 }
 
-.animated-message {
+.animatedMessage {
   position: sticky;
   top: 0;
 
@@ -54,11 +54,11 @@
   padding-bottom: 1em;
 }
 
-.message-list-container {
+.messageListContainer {
   position: relative;
 }
 
-.message-list {
+.messageList {
   position: relative;
 
   height: 50vh;
@@ -67,23 +67,23 @@
   overflow: hidden auto;
 }
 
-.message-list::-webkit-scrollbar {
+.messageList::-webkit-scrollbar {
   width: 8px;
 }
 
-.message-list::-webkit-scrollbar-track {
+.messageList::-webkit-scrollbar-track {
   background-color: rgb(var(--theme-highlight-rgb), 0.1);
   border-radius: 100px;
 }
 
-.message-list::-webkit-scrollbar-thumb {
+.messageList::-webkit-scrollbar-thumb {
   background-color: var(--theme-accent-color);
   border-radius: 100px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 
-.scroll-button {
+.scrollButton {
   position: absolute;
   top: 0.5em;
   left: 50%;
@@ -111,12 +111,12 @@
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-.scroll-button:disabled {
+.scrollButton:disabled {
   opacity: 0%;
 }
 
 @media screen and (max-width: 42rem) {
-  .message-list {
+  .messageList {
     height: 75vh;
   }
 }

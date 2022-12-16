@@ -59,7 +59,7 @@ const About: React.FC = () => {
         <div
           className={classNames(
             styles.messages,
-            styles['animated-message'],
+            styles.animatedMessage,
           )}
           ref={setAboutRefs}
         >
@@ -69,10 +69,10 @@ const About: React.FC = () => {
 
       <div id="about" aria-hidden className={styles.anchor} />
 
-      <div className={styles['message-list-container']}>
+      <div className={styles.messageListContainer}>
         <Button
           onClick={scrollBottom}
-          className={styles['scroll-button']}
+          className={styles.scrollButton}
           disabled={fullyScrolled}
         >
           <ArrowDownIcon />
@@ -83,10 +83,7 @@ const About: React.FC = () => {
         <div
           ref={setMessagesRefs}
           onScroll={scrollHandler}
-          className={classNames(
-            styles.messages,
-            styles['message-list'],
-          )}
+          className={classNames(styles.messages, styles.messageList)}
           role="region"
           aria-live="polite"
           aria-label="Message list"
