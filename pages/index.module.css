@@ -1,4 +1,4 @@
-.main-container {
+.mainContainer {
   transition: transform 250ms ease-in-out,
     border-radius 250ms ease-in-out, box-shadow 500ms ease-in-out,
     background-color 250ms;

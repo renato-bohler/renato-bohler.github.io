@@ -48,7 +48,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       <KeyboardNavigation />
 
       <div
-        className={classNames(styles['main-container'], {
+        className={classNames(styles.mainContainer, {
           [styles.transitioning]: isMainContentTransitioning,
         })}
         style={
