@@ -18,11 +18,11 @@ const OptionChatMessage: React.FC<Props> = ({
   const [responded, setResponded] = useState(false);
 
   return (
-    <Group className={styles['option-container']}>
+    <Group className={styles.optionContainer}>
       {message.content.map((option) => (
         <Button
           key={option.id}
-          className={styles['option-button']}
+          className={styles.optionButton}
           disabled={responded || option.disabled}
           onClick={() => {
             onResponse(option);

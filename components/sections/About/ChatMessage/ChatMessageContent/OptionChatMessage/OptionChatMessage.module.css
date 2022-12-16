@@ -1,10 +1,10 @@
-.option-container {
+.optionContainer {
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
 
-.option-button {
+.optionButton {
   color: var(--theme-text);
   background: var(--theme-background-opaque);
   border: none;
@@ -14,13 +14,13 @@
   cursor: pointer;
 }
 
-.option-button:hover,
-.option-button:focus {
+.optionButton:hover,
+.optionButton:focus {
   background: var(--theme-background);
 
   transition: background-color 150ms ease-in-out;
 }
 
-.option-button:disabled {
+.optionButton:disabled {
   opacity: 50%;
 }
