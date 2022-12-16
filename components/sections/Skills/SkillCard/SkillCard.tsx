@@ -162,7 +162,7 @@ const SkillCard: React.FC<Props> = ({
           <div className={styles.info}>
             <svg
               viewBox="0 0 1440 320"
-              className={classNames(styles['wave-divider'], {
+              className={classNames(styles.waveDivider, {
                 [styles.contrast]: isContrastMode,
               })}
               aria-hidden
@@ -170,7 +170,7 @@ const SkillCard: React.FC<Props> = ({
               <path d={wavePath} />
             </svg>
             <div
-              className={classNames(styles['content-wrapper'], {
+              className={classNames(styles.contentWrapper, {
                 [styles.contrast]: isContrastMode,
               })}
             >
@@ -178,7 +178,7 @@ const SkillCard: React.FC<Props> = ({
                 <>
                   <div className={styles.content}>
                     <span
-                      className={styles['content-title']}
+                      className={styles.contentTitle}
                       title="experience"
                     >
                       {favorite ? 'experience' : 'exp.'}
@@ -198,10 +198,7 @@ const SkillCard: React.FC<Props> = ({
                 </>
               )}
               <div className={styles.content}>
-                <span
-                  className={styles['content-title']}
-                  title="usage"
-                >
+                <span className={styles.contentTitle} title="usage">
                   {favorite ? 'usage' : 'usg.'}
                 </span>
                 <span title={usageDescription}>
@@ -215,7 +212,7 @@ const SkillCard: React.FC<Props> = ({
 
                   <div className={styles.content}>
                     <span
-                      className={styles['content-title']}
+                      className={styles.contentTitle}
                       title="studying"
                     >
                       {favorite ? 'studying' : 'stu.'}
