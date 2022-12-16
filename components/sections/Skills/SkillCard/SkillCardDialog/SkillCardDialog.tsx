@@ -160,7 +160,7 @@ const SkillCardDialog: React.FC<Props> = ({
             color: textColor,
           }}
         >
-          <div className={styles['header-row']}>
+          <div className={styles.headerRow}>
             <div className={styles.image}>{icon}</div>
             <h1 className={styles.title}>
               {name}
@@ -168,7 +168,7 @@ const SkillCardDialog: React.FC<Props> = ({
             </h1>
             <Button
               onClick={handleDialogClose}
-              className={styles['close-button']}
+              className={styles.closeButton}
               title="Close dialog"
             >
               {dialog.visible && (

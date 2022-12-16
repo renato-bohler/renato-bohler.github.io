@@ -55,7 +55,7 @@ html[data-reduced-motion='true'] .dialog {
   border-top-right-radius: 16px;
 }
 
-.header-row {
+.headerRow {
   display: flex;
   justify-content: space-between;
   padding: 8px;
@@ -68,7 +68,7 @@ html[data-reduced-motion='true'] .dialog {
   margin: 0;
 }
 
-.close-button {
+.closeButton {
   background: none;
   border: none;
 
