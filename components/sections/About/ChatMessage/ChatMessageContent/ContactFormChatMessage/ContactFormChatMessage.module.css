@@ -5,7 +5,7 @@
   width: 400px;
 }
 
-.label-container {
+.labelContainer {
   display: flex;
   flex-direction: column;
 }

@@ -66,7 +66,7 @@ const ContactFormChatMessage: React.FC = () => {
 
   return (
     <form onSubmit={handleSubmit} className={styles['form']}>
-      <label className={styles['label-container']}>
+      <label className={styles.labelContainer}>
         <span className={styles.label}>What&apos;s your name?</span>
         <input
           name="author"
@@ -79,7 +79,7 @@ const ContactFormChatMessage: React.FC = () => {
         />
       </label>
 
-      <label className={styles['label-container']}>
+      <label className={styles.labelContainer}>
         <span className={styles.label}>
           How should I get back to you?
         </span>
@@ -94,7 +94,7 @@ const ContactFormChatMessage: React.FC = () => {
         />
       </label>
 
-      <label className={styles['label-container']}>
+      <label className={styles.labelContainer}>
         <span className={styles.label}>Speak your mind</span>
         <textarea
           name="message"
