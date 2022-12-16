@@ -1,4 +1,4 @@
-.scroll-animated {
+.animatedScroll {
   animation-duration: 1s;
   animation-timing-function: linear;
   animation-play-state: paused;
@@ -9,7 +9,7 @@
 
 /* Container */
 .container {
-  composes: scroll-animated;
+  composes: animatedScroll;
   animation-name: container;
 
   --font-size-start: 2em;
@@ -52,7 +52,7 @@
 
 /* Picture */
 .picture {
-  composes: scroll-animated;
+  composes: animatedScroll;
   animation-name: picture;
 
   --translate-y-end: 0.5em;
@@ -131,7 +131,7 @@
 
 /* Bubble */
 .bubble {
-  composes: scroll-animated;
+  composes: animatedScroll;
   animation-name: bubble;
 
   --translate-x-em-end: 3.75em;
@@ -172,7 +172,7 @@
 
 /* Bubble Pointer */
 .bubblePointer {
-  composes: scroll-animated;
+  composes: animatedScroll;
   animation-name: bubblePointer;
 
   --translate-x-start: 50%;
