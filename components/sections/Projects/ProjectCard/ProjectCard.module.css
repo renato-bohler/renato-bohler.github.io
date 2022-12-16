@@ -9,7 +9,7 @@
   max-height: calc(650px * 1.1);
 }
 
-.sticky-container {
+.stickyContainer {
   position: sticky;
   top: 0px;
 
@@ -20,7 +20,7 @@
   transform: scale(0.9) translateY(100px);
 }
 
-.video-container {
+.videoContainer {
   position: relative;
 
   flex: 1;
@@ -32,7 +32,7 @@
   transform: translateZ(0);
 }
 
-.side-title {
+.sideTitle {
   position: absolute;
   right: 0;
   transform: translateX(100%);
@@ -46,7 +46,7 @@
   writing-mode: vertical-rl;
 }
 
-.container:nth-child(even) .side-title {
+.container:nth-child(even) .sideTitle {
   right: unset;
   left: 0;
   transform: translateX(-100%) scale(-1);
@@ -87,7 +87,7 @@
   transform: translateY(175px);
 }
 
-.card-content {
+.cardContent {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -97,23 +97,23 @@
   overflow-y: auto;
 }
 
-.card-content::-webkit-scrollbar {
+.cardContent::-webkit-scrollbar {
   width: 8px;
 }
 
-.card-content::-webkit-scrollbar-track {
+.cardContent::-webkit-scrollbar-track {
   background-color: rgb(var(--theme-highlight-rgb), 0.1);
   border-radius: 100px;
 }
 
-.card-content::-webkit-scrollbar-thumb {
+.cardContent::-webkit-scrollbar-thumb {
   background-color: var(--theme-accent-color);
   border-radius: 100px;
   border: 3px solid transparent;
   background-clip: content-box;
 }
 
-.card-header {
+.cardHeader {
   display: flex;
   justify-content: space-between;
 
@@ -121,18 +121,18 @@
   border-bottom: 1px solid rgba(var(--theme-text-rgb), 10%);
 }
 
-.card-title {
+.cardTitle {
   font-size: 1.75em;
   margin: 0;
 }
 
-.card-subtitle {
+.cardSubtitle {
   font-style: italic;
   font-weight: normal;
   margin: 0;
 }
 
-.card-description {
+.cardDescription {
   font-size: 0.9em;
 
   flex: 1;
@@ -145,7 +145,7 @@
 }
 
 @media screen and (max-width: 42rem) {
-  .card-header {
+  .cardHeader {
     flex-direction: column;
   }
 }
@@ -161,11 +161,11 @@
     padding: 1em;
   }
 
-  .sticky-container {
+  .stickyContainer {
     height: 30vh !important;
   }
 
-  .side-title {
+  .sideTitle {
     top: 0;
     right: unset;
     transform: translateY(-100%);
@@ -177,7 +177,7 @@
     text-align: left;
   }
 
-  .container:nth-child(even) .side-title {
+  .container:nth-child(even) .sideTitle {
     transform: translateY(-100%);
     text-align: right;
   }

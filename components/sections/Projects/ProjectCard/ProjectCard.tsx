@@ -42,15 +42,12 @@ const ProjectCard: React.FC<Props> = ({
   return (
     <div className={styles.container}>
       <div
-        className={classNames(
-          styles['sticky-container'],
-          styles.size,
-        )}
+        className={classNames(styles.stickyContainer, styles.size)}
       >
-        <span className={styles['side-title']}>
+        <span className={styles.sideTitle}>
           {order}.{project.name}
         </span>
-        <div className={styles['video-container']}>
+        <div className={styles.videoContainer}>
           <video
             ref={videoRef}
             src={`/videos/${project.folder}/${quality}.mp4`}
@@ -68,13 +65,11 @@ const ProjectCard: React.FC<Props> = ({
         ref={cardRef}
         className={classNames(styles.card, styles.size)}
       >
-        <div className={styles['card-content']}>
-          <header className={styles['card-header']}>
+        <div className={styles.cardContent}>
+          <header className={styles.cardHeader}>
             <div>
-              <h3 className={styles['card-title']}>
-                {project.title}
-              </h3>
-              <p className={styles['card-subtitle']}>
+              <h3 className={styles.cardTitle}>{project.title}</h3>
+              <p className={styles.cardSubtitle}>
                 {project.subtitle}
               </p>
             </div>
@@ -92,7 +87,7 @@ const ProjectCard: React.FC<Props> = ({
               />
             )}
           </header>
-          <div className={styles['card-description']}>
+          <div className={styles.cardDescription}>
             {project.description}
           </div>
         </div>
