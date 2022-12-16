@@ -1,11 +1,11 @@
-.wave-background {
+.waveBackground {
   position: absolute;
 
   width: 100vw;
   height: 100vh;
 }
 
-.wave-background svg {
+.waveBackground svg {
   width: calc(120vw + 200px);
   height: 100vh;
 
@@ -18,7 +18,7 @@
   stroke-width: 0;
 }
 
-.wave-pattern {
+.wavePattern {
   transition: fill 500ms ease-in-out;
 }
 
@@ -27,11 +27,11 @@
   will-change: transform, fill;
 }
 
-.wave-primary {
+.wavePrimary {
   animation-direction: alternate-reverse;
 }
 
-.wave-secondary {
+.waveSecondary {
   animation-direction: alternate;
 }
 
