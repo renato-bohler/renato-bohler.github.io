@@ -62,30 +62,6 @@
   gap: 16px;
 }
 
-.social {
-  display: flex;
-  align-items: center;
-
-  background: none;
-  border: none;
-
-  height: fit-content;
-
-  font-size: 1.75rem;
-  color: var(--theme-text);
-
-  transition: color 1s ease-in-out;
-}
-
-.social:after {
-  display: none;
-}
-
-.social:hover svg {
-  transform: translateY(-5px) rotate(-5deg);
-  transition: transform 250ms cubic-bezier(0.97, -0.87, 0, 2.24);
-}
-
 .heading {
   display: flex;
   flex-direction: column;
@@ -200,11 +176,25 @@
   position: fixed;
   bottom: 1em;
   left: 50%;
+  transform: translateX(-50%);
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scrollDownIcon {
   font-size: 4em;
 
-  transform: translateX(-50%);
   animation: bounce 2s infinite 1s;
+}
+
+.scrollDownLabel {
+  font-size: 0.9em;
+  opacity: 0%;
+
+  animation: fadeIn 1s 1 350ms;
+  animation-fill-mode: forwards;
 }
 
 @media screen and (max-width: 30rem) {
@@ -250,6 +240,15 @@
   }
   60% {
     margin-bottom: 20px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }
 

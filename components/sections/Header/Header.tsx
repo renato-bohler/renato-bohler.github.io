@@ -5,13 +5,10 @@ import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
 import ArrowDownIcon from '~/components/icons/ArrowDown';
-import GitHubIcon from '~/components/icons/GitHub';
-import LinkedInIcon from '~/components/icons/LinkedIn';
-import TwitterIcon from '~/components/icons/Twitter';
-import socials from '~/consts/socials.const';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './Header.module.css';
+import Socials from './Socials/Socials';
 import ThemePicker from './ThemePicker/ThemePicker';
 import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
@@ -57,7 +54,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
 
     const timeout = setTimeout(() => {
       setScrollHintVisible(true);
-    }, 8000);
+    }, 5000);
     return () => clearTimeout(timeout);
   }, [inView]);
 
@@ -127,46 +124,17 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
         </div>
 
         <nav className={styles.container}>
-          <a
-            title="Twitter"
-            href={socials.twitter}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.social}
-          >
-            <AnimatedIcon animationDelay={5500}>
-              <TwitterIcon />
-            </AnimatedIcon>
-          </a>
-          <a
-            title="LinkedIn"
-            href={socials.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.social}
-          >
-            <AnimatedIcon animationDelay={4500}>
-              <LinkedInIcon />
-            </AnimatedIcon>
-          </a>
-          <a
-            title="GitHub"
-            href={socials.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.social}
-          >
-            <AnimatedIcon animationDelay={3500}>
-              <GitHubIcon />
-            </AnimatedIcon>
-          </a>
+          <Socials />
         </nav>
       </div>
 
       {isScrollHintVisible && (
-        <AnimatedIcon className={styles.scrollDown} aria-hidden>
-          <ArrowDownIcon />
-        </AnimatedIcon>
+        <div className={styles.scrollDown}>
+          <AnimatedIcon className={styles.scrollDownIcon} aria-hidden>
+            <ArrowDownIcon />
+          </AnimatedIcon>
+          <span className={styles.scrollDownLabel}>Scroll down</span>
+        </div>
       )}
 
       <WavyBackground />

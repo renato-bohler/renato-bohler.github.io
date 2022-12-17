@@ -50,7 +50,7 @@ const ThemePicker: React.FC = () => {
         className={styles.button}
         onClick={() => setDarkMode((darkMode) => !darkMode)}
       >
-        <AnimatedIcon animationDelay={1000}>
+        <AnimatedIcon animationDelay={500}>
           {isDarkMode ? <DarkIcon /> : <LightIcon />}
         </AnimatedIcon>
       </Button>
@@ -60,7 +60,7 @@ const ThemePicker: React.FC = () => {
         className={styles.button}
         title="Switch theme color"
       >
-        <AnimatedIcon animationDelay={2000}>
+        <AnimatedIcon animationDelay={1000}>
           <ThemeIcon />
         </AnimatedIcon>
       </PopoverDisclosure>
