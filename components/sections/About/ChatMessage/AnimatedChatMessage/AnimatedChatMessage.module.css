@@ -56,7 +56,7 @@
   animation-name: picture;
 
   --translate-y-end: 0.5em;
-  --picture-dimension-end: 2.5em;
+  --picture-dimension-end: 2.75em;
 
   position: absolute;
   top: 0;
