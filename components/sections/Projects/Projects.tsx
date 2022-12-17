@@ -20,7 +20,7 @@ const Projects: React.FC<Props> = ({ repositories }) => {
   const title = 'personal projects';
 
   return (
-    <section>
+    <section className={styles.section}>
       <div id="projects" aria-hidden className={styles.anchor} />
 
       <h2 className={styles.title} ref={ref}>

@@ -2,6 +2,11 @@
   transform: translateY(-1.25em);
 }
 
+.section {
+  position: relative;
+  z-index: 1;
+}
+
 .title {
   display: flex;
   justify-content: center;
