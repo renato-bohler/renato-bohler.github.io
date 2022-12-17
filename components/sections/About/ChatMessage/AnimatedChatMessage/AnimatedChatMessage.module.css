@@ -1,6 +1,6 @@
 .animatedScroll {
   animation-duration: 1s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
   animation-iteration-count: 1;
@@ -83,7 +83,7 @@
     transform: translate(-50%, 0em);
   }
   80% {
-    transform: translate(-40%, -1em);
+    transform: translate(-20%, -0.5em);
   }
   100% {
     width: var(--picture-dimension-end);
@@ -175,15 +175,7 @@
   composes: animatedScroll;
   animation-name: bubblePointer;
 
-  --translate-x-start: 50%;
-
   will-change: top, left, transform;
-}
-
-@media screen and (max-width: 42rem) {
-  .bubblePointer {
-    --translate-x-start: 0%;
-  }
 }
 
 @keyframes bubblePointer {
@@ -191,12 +183,12 @@
     top: 0.2em;
     left: 50%;
 
-    transform: rotate(90deg) translate(-50%, var(--translate-x-start));
+    transform: rotate(90deg) translate(-50%, 0%);
   }
   80% {
     top: 0.2em;
 
-    transform: rotate(90deg) translate(-80%, 7.5%);
+    transform: rotate(90deg) translate(-80%, -50%);
   }
   100% {
     top: 1.7em;
