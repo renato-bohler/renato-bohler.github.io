@@ -119,6 +119,8 @@ const SkillCardDialog: React.FC<Props> = ({
 
   useEffect(() => {
     const popStateHandler = (event: PopStateEvent) => {
+      if (!event.state) return;
+
       const { dialogId } = event.state;
       if (dialogId !== `skills-${id}`) dialog.hide();
     };
