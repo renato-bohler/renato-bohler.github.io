@@ -11,7 +11,7 @@
 
 .stickyContainer {
   position: sticky;
-  top: 0px;
+  top: 100px;
 
   display: flex;
 
