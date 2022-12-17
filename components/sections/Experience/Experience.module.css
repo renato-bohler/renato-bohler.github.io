@@ -1,6 +1,6 @@
 .animatedScroll {
   animation-duration: 1s;
-  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
   animation-play-state: paused;
   animation-delay: calc(var(--scroll) * -1s);
   animation-iteration-count: 1;
