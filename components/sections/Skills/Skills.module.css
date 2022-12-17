@@ -75,19 +75,19 @@
   grid-template-columns: repeat(8, 150px);
 }
 
-@media screen and (max-width: 82rem) {
+@media screen and (max-width: 96rem) {
   .grid {
     grid-template-columns: repeat(4, 150px);
   }
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (max-width: 60rem) {
   .grid {
     grid-template-columns: repeat(2, 150px);
   }
 
   .title {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 
