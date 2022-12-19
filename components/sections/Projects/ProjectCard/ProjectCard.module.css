@@ -183,7 +183,7 @@
   }
 
   .size {
-    width: calc(100vw - 2em);
-    height: 50vh;
+    width: calc(100vw - 4em);
+    height: 75vh;
   }
 }
