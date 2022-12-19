@@ -11,12 +11,7 @@ const SocialsIcon: React.FC<{
     className={className}
     style={style}
   >
-    <g
-      fill="none"
-      stroke="currentColor"
-      stroke-linecap="round"
-      stroke-width="2"
-    >
+    <g fill="none" stroke="currentColor" stroke-linecap="round">
       <path
         stroke-dasharray="20"
         stroke-dashoffset="20"
