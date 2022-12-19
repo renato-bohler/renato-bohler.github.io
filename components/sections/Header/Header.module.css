@@ -38,10 +38,9 @@
   backdrop-filter: blur(10px);
   background: var(--theme-menu-background);
 
-  transition: background-color 500ms ease-in-out 500ms,
-    backdrop-filter 500ms ease-in-out 500ms,
-    padding 500ms ease-in-out 750ms, margin 500ms ease-in-out,
-    width 500ms ease-in-out 500ms;
+  transition: background-color 500ms ease-in-out,
+    backdrop-filter 500ms ease-in-out, padding 500ms ease-in-out 750ms,
+    margin 500ms ease-in-out, width 500ms ease-in-out 500ms;
 }
 
 .navigationHeaderContrast {
