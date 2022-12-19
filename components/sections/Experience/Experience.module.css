@@ -14,15 +14,30 @@
 .section {
   display: flex;
   flex-direction: column;
-  margin-top: 50vh;
 }
 
 .title {
+  position: relative;
+
   font-size: 10em;
   text-align: center;
   text-transform: uppercase;
 
   margin-bottom: 0;
+}
+
+.title::after {
+  content: 'experience';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  color: var(--theme-primary-dark);
+  mix-blend-mode: color-burn;
 }
 
 .transitionContainer {
@@ -33,15 +48,31 @@
   composes: animatedScroll;
   animation-name: transitionOverflow;
 
+  --translate-y-end: -125vh;
+  --height-end: 500px;
+
   overflow: hidden;
   max-width: 100%;
-  height: 500px;
-  padding-top: 50px;
+  height: var(--height-end);
+}
+
+@keyframes transitionOverflow {
+  0% {
+    transform: translateY(var(--translate-y-end));
+    height: 200vh;
+  }
+  100% {
+    height: var(--height-end);
+  }
 }
 
 .transitionLine {
   composes: animatedScroll;
   animation-name: transitionLine;
+
+  --margin-left-start: auto;
+  --margin-left-middle: auto;
+  --margin-left-end: auto;
 
   width: 2px;
   height: 100%;
@@ -56,6 +87,27 @@
   border-radius: 50px;
 }
 
+@keyframes transitionLine {
+  0% {
+    margin-left: var(--margin-left-start);
+    width: 100%;
+    border-radius: 50vw 50vw 0 0;
+    transform: perspective(150px) rotateX(10deg) scale(1.5);
+  }
+  30% {
+    transform: perspective(100px) rotateX(5deg) scale(1);
+  }
+  75% {
+    width: 10%;
+    margin-left: var(--margin-left-middle);
+  }
+  100% {
+    margin-left: var(--margin-left-end);
+    width: 2px;
+    border-radius: 50px 50px 0 0;
+  }
+}
+
 .timelineBackground {
   background: linear-gradient(
     to right,
@@ -64,7 +116,7 @@
   );
   background-size: 2px;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
 .timeline {
@@ -80,20 +132,19 @@
 }
 
 .card {
-  border-radius: 25px;
+  margin: 2em 0;
+  padding: 0 50px 0 0;
 
-  margin: 1em;
-  padding: 15px;
-
-  max-width: calc(50% - 100px);
+  max-width: calc(50% - 50px);
 }
 
 .card:nth-child(odd) {
-  text-align: right;
+  align-self: flex-end;
 }
 
 .card:nth-child(even) {
-  align-self: flex-end;
+  text-align: right;
+  padding: 0 0 0 50px;
 }
 
 .endTransition {
@@ -115,33 +166,69 @@
   }
 }
 
+@media screen and (max-width: 65rem) {
+  .card {
+    font-size: 0.9em;
+    max-width: calc(50% - 25px);
+  }
+}
+
 @media screen and (max-width: 42rem) {
+  .section {
+    margin-top: 50vh;
+  }
+
   .title {
     font-size: 2.5em;
+    text-align: left;
+    margin: 0 25px;
+  }
+
+  .card {
+    max-width: calc(100% - 102px);
+    align-self: flex-end;
+  }
+
+  .card:nth-child(even) {
+    text-align: left;
+    padding: 0 50px 0 0;
+  }
+
+  .transitionContainer {
+    height: 250px;
+  }
+
+  .transitionOverflow {
+    --translate-y-end: -90vh;
+    --height-end: 250px;
+  }
+
+  .transitionLine {
+    --margin-left-start: 0;
+    --margin-left-middle: 50%;
+    --margin-left-end: 50px;
+  }
+
+  .timelineBackground {
+    background-position: 50px;
   }
 }
 
-@keyframes transitionOverflow {
-  0% {
-    transform: translateY(-150vh);
-    height: 200vh;
+@media screen and (max-width: 32rem) {
+  .card {
+    max-width: calc(100% - 52px);
+    padding: 0 25px 0 0;
   }
-  100% {
-    height: 500px;
-  }
-}
 
-@keyframes transitionLine {
-  0% {
-    width: 100%;
-    border-radius: 50vw 50vw 0 0;
-    transform: perspective(150px) rotateX(10deg) scale(1.5);
+  .card:nth-child(even) {
+    padding: 0 25px 0 0;
   }
-  80% {
-    width: 5%;
+
+  .transitionLine {
+    --margin-left-end: 25px;
   }
-  100% {
-    width: 2px;
-    border-radius: 50px 50px 0 0;
+
+  .timelineBackground {
+    background-position: 25px;
   }
 }
