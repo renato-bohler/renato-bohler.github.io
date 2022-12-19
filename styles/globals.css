@@ -119,7 +119,7 @@ html[data-reduced-motion='true'] {
 }
 
 html[data-reduced-motion='true'] * {
-  animation: none !important;
+  animation-duration: 0s !important;
   transition: none !important;
 }
 
