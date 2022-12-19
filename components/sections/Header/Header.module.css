@@ -77,6 +77,8 @@
 
   transform: translate(calc(50vw - 50%), calc(50vh - 50%));
   transition: 500ms ease-in-out;
+
+  pointer-events: none;
 }
 
 .title {
@@ -112,6 +114,10 @@
 .initial {
   position: fixed;
   user-select: none;
+  text-decoration: none;
+  background: none;
+  padding: 0;
+  margin: 0;
 }
 
 .initial,
@@ -127,6 +133,8 @@
   transform: translate(50px, 40px);
   transition: transform 1s ease-in-out 250ms,
     margin-top 500ms ease-in-out;
+
+  pointer-events: all;
 }
 
 .heading[data-folded='true'] > .title {

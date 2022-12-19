@@ -72,7 +72,13 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
           })}
           aria-hidden
         >
-          <em className={styles.initial}>{firstName[0]}</em>
+          <a
+            href="#"
+            title="Scroll back to top"
+            className={styles.initial}
+          >
+            {firstName[0]}
+          </a>
           <em
             className={styles.name}
             data-complete={isFullNameTypingComplete}
@@ -88,7 +94,13 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
           })}
           aria-hidden
         >
-          <em className={styles.initial}>{lastName[0]}</em>
+          <a
+            href="#"
+            title="Scroll back to top"
+            className={styles.initial}
+          >
+            {lastName[0]}
+          </a>
           <em
             className={styles.name}
             data-complete={isFullNameTypingComplete}
