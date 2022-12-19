@@ -47,12 +47,12 @@
   background: var(--theme-menu-background);
 }
 
-.navigationHeaderContrast[data-folder='true'] {
-  border: 1px solid black;
+.navigationHeaderContrast[data-folded='true'] {
+  border: 1px solid var(--theme-text);
 }
 
-.navigationHeaderHidden {
-  margin-top: -200px !important;
+.navigationHeaderHidden:is(h1, [data-folded='true']) {
+  margin-top: -200px;
 }
 
 .container {

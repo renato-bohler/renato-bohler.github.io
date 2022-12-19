@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 42rem) {
   .container {
-    --font-size-start: 1.5em !important;
+    --font-size-start: 1.5em;
   }
 }
 
@@ -68,8 +68,8 @@
 
 @media screen and (max-width: 42rem) {
   .picture {
-    --translate-y-end: 1.25em !important;
-    --picture-dimension-end: 1.75em !important;
+    --translate-y-end: 1.25em;
+    --picture-dimension-end: 1.75em;
   }
 }
 
@@ -150,7 +150,7 @@
 
 @media screen and (max-width: 42rem) {
   .bubble {
-    --translate-x-em-end: 3.15em !important;
+    --translate-x-em-end: 3.15em;
   }
 }
 

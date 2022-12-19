@@ -42,7 +42,7 @@
 }
 
 .animate {
-  stroke-dashoffset: 0 !important;
+  stroke-dashoffset: 0;
 
   transition-property: stroke-dashoffset;
   transition-timing-function: cubic-bezier(0.65, 0.18, 0.21, 0.65);
