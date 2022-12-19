@@ -12,7 +12,7 @@ import SocialsIcon from '~/components/icons/Socials';
 import TwitterIcon from '~/components/icons/Twitter';
 import socials from '~/consts/socials.const';
 
-import styles from './Socials.module.css';
+import styles from './SocialLinks.module.css';
 
 type LinksProps = {
   animate?: boolean;

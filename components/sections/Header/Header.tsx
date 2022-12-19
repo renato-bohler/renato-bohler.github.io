@@ -8,7 +8,7 @@ import ArrowDownIcon from '~/components/icons/ArrowDown';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './Header.module.css';
-import Socials from './Socials/Socials';
+import SocialLinks from './SocialLinks/SocialLinks';
 import ThemePicker from './ThemePicker/ThemePicker';
 import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
@@ -124,7 +124,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
         </div>
 
         <nav className={styles.container}>
-          <Socials />
+          <SocialLinks />
         </nav>
       </div>
 
