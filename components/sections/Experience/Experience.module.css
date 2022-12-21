@@ -73,6 +73,7 @@
   --margin-left-start: auto;
   --margin-left-middle: auto;
   --margin-left-end: auto;
+  --scale-start: 1.5;
 
   width: 2px;
   height: 100%;
@@ -92,7 +93,8 @@
     margin-left: var(--margin-left-start);
     width: 100%;
     border-radius: 50vw 50vw 0 0;
-    transform: perspective(150px) rotateX(10deg) scale(1.5);
+    transform: perspective(150px) rotateX(10deg)
+      scale(var(--scale-start));
   }
   30% {
     transform: perspective(100px) rotateX(5deg) scale(1);
@@ -175,7 +177,7 @@
 
 @media screen and (max-width: 42rem) {
   .section {
-    margin-top: 50vh;
+    margin-top: 40vh;
   }
 
   .title {
@@ -199,7 +201,7 @@
   }
 
   .transitionOverflow {
-    --translate-y-end: -90vh;
+    --translate-y-end: -60vh;
     --height-end: 250px;
   }
 
@@ -207,6 +209,7 @@
     --margin-left-start: 0;
     --margin-left-middle: 50%;
     --margin-left-end: 50px;
+    --scale-start: 3;
   }
 
   .timelineBackground {
