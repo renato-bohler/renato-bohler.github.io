@@ -2,7 +2,7 @@
   position: absolute;
   transform: translateY(-200px);
   width: 10px;
-  height: 10px;
+  height: 50vh;
 }
 
 .progressTrigger {
