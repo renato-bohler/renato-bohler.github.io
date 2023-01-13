@@ -78,11 +78,11 @@
   right: 0;
 }
 
-.swiper :global(.swiperSlide) {
+.swiper :global(.swiper-slide) {
   margin: auto;
 }
 
-.swiper :global(.swiperSlideShadow) {
+.swiper :global(.swiper-slide-shadow) {
   border-radius: 15px;
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
