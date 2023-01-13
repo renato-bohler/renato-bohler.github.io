@@ -22,6 +22,7 @@
   justify-content: center;
 
   margin: -8vw 0 -0.5vw 0;
+  padding: 0 20px;
   overflow: hidden;
 
   background: var(--theme-testimonial-background);
@@ -103,5 +104,11 @@
 
   .navigationButton {
     display: none;
+  }
+}
+
+@media screen and (max-width: 55rem) {
+  .title {
+    font-size: 1.5em;
   }
 }
