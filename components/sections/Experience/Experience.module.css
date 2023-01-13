@@ -36,7 +36,15 @@
   top: 0;
   z-index: 1;
 
-  color: var(--theme-primary-dark);
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 var(--theme-experience-transition-adjust);
+
   mix-blend-mode: color-burn;
 }
 

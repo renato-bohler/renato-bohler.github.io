@@ -75,6 +75,7 @@ export const contrast = {
     'chat-background': '#e9e9e9',
     'chat-outgoing-background': '#e9e9e9',
     'chat-accent': '#0d0f12',
+    'experience-transition-adjust': '#ebebeb',
     'primary-bright': '#383838',
     'primary-dark': 'black',
     'secondary-bright': '#525252',
@@ -107,6 +108,7 @@ export const contrast = {
     'chat-background': '#0d0f12',
     'chat-outgoing-background': '#0d0f12',
     'chat-accent': '#e9e9e9',
+    'experience-transition-adjust': '#202020',
     'primary-bright': 'white',
     'primary-dark': '#bfbfbf',
     'secondary-bright': '#ededed',
@@ -135,6 +137,7 @@ const themes = [
       'accent-color': '#ee0979',
       'chat-outgoing-background': '#ff9486',
       'chat-accent': '#ff7c69',
+      'experience-transition-adjust': '#ffffffbf',
     },
     dark: {
       ...dark,
@@ -148,6 +151,7 @@ const themes = [
       'accent-color': '#ee0979',
       'chat-outgoing-background': '#b71607',
       'chat-accent': '#ff5444',
+      'experience-transition-adjust': '#ffffffd9',
     },
   },
   {
@@ -164,6 +168,7 @@ const themes = [
       'accent-color': '#4ca1af',
       'chat-outgoing-background': '#86d7bf',
       'chat-accent': '#039a6e',
+      'experience-transition-adjust': '#686868',
     },
     dark: {
       ...dark,
@@ -177,6 +182,7 @@ const themes = [
       'accent-color': '#4ca1af',
       'chat-outgoing-background': '#017855',
       'chat-accent': '#85ffdb',
+      'experience-transition-adjust': '#686868',
     },
   },
   {
@@ -193,6 +199,7 @@ const themes = [
       'accent-color': '#ec6ead',
       'chat-outgoing-background': '#abd7ff',
       'chat-accent': '#2189e7',
+      'experience-transition-adjust': '#cbcbcb',
     },
     dark: {
       ...dark,
@@ -206,6 +213,7 @@ const themes = [
       'accent-color': '#ec6ead',
       'chat-outgoing-background': '#0f4170',
       'chat-accent': '#c1e1ff',
+      'experience-transition-adjust': '#747474',
     },
   },
   {
@@ -222,6 +230,7 @@ const themes = [
       'accent-color': '#7f00ff',
       'chat-outgoing-background': '#dd98e7',
       'chat-accent': '#a833b8',
+      'experience-transition-adjust': '#ffffffc7',
     },
     dark: {
       ...dark,
@@ -235,6 +244,7 @@ const themes = [
       'accent-color': '#7f00ff',
       'chat-outgoing-background': '#630370',
       'chat-accent': '#ff7aec',
+      'experience-transition-adjust': '#ffffffc7',
     },
   },
 ];
