@@ -72,6 +72,8 @@
   border-radius: 100%;
   border: 2px solid var(--theme-shadow);
   box-shadow: inset 0 0 0 2px var(--theme-text);
+
+  cursor: pointer;
 }
 
 .themeButton[aria-pressed='true'] {
