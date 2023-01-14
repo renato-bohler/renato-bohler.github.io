@@ -71,7 +71,7 @@ export const SECTIONS = [
     Component: Projects,
   },
   {
-    name: 'Experience',
+    name: 'experience',
     anchor: '#experience',
     title: `Experience / ${TITLE}`,
     Component: Experience,
