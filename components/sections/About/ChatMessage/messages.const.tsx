@@ -127,14 +127,28 @@ export const optionSelect: OptionSelectMessage = {
           status: 'invisible',
           content: (
             <>
-              {/* TODO: mention Experience and Projects sections once those exist */}
               You can check out the{' '}
+              <strong>
+                <a href="#experience">Experience</a>
+              </strong>{' '}
+              section if you&apos;re interested in learning more about
+              my trajectory.
+              <br />
+              <br />
+              The{' '}
               <strong>
                 <a href="#skills">Skills</a>
               </strong>{' '}
-              section if you&apos;re interested in my trajectory. Each
-              card in that section contains some background on each
-              technology I have experience with.
+              section details some of my abilities — click any of
+              those cards if you&apos;re interested in more context.
+              <br />
+              <br />
+              Make sure to also take a look at my open source projects
+              in the{' '}
+              <strong>
+                <a href="#projects">Projects</a>
+              </strong>{' '}
+              section.
             </>
           ),
         },
