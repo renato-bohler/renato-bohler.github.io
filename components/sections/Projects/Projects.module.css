@@ -1,5 +1,6 @@
 .anchor {
-  transform: translateY(-1.25em);
+  transform: translateY(-1.5em);
+  height: 1px;
 }
 
 .section {
