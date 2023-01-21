@@ -36,7 +36,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    favorite: true,
+    featured: true,
     teaser: (
       <>
         <p>
@@ -118,7 +118,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -170,7 +170,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -230,7 +230,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    favorite: true,
+    featured: true,
     teaser: (
       <>
         <p>
@@ -321,7 +321,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -402,7 +402,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -488,7 +488,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    favorite: true,
+    featured: true,
     teaser: (
       <>
         <p>
@@ -648,7 +648,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    favorite: true,
+    featured: true,
     teaser: (
       <>
         <p>
@@ -744,7 +744,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -813,7 +813,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -887,7 +887,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -939,7 +939,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -1020,7 +1020,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -1082,7 +1082,7 @@ const skills: Skill[] = [
       );
     },
     studying: false,
-    favorite: false,
+    featured: false,
     description: (
       <>
         <p>
@@ -1171,7 +1171,7 @@ export type Skill = {
   };
   icon?: (isContrastMode: boolean) => React.ReactElement;
   studying: boolean;
-  favorite: boolean;
+  featured: boolean;
   teaser?: React.ReactElement;
   description: React.ReactElement;
 };

@@ -65,7 +65,7 @@ const Skills: React.FC = () => {
               id={skill.id}
               name={skill.name}
               icon={skill?.icon?.(isContrastMode)}
-              favorite={skill.favorite}
+              featured={skill.featured}
               backgroundColor={colors.background}
               textColor={colors.text}
               scrollBarTrackColor={skill.colors.scrollBar?.trackColor}

@@ -23,7 +23,7 @@ type Props = {
   description: React.ReactElement;
   teaser?: React.ReactElement;
   icon: React.ReactNode;
-  favorite: boolean;
+  featured: boolean;
   backgroundColor: string;
   textColor: string;
   scrollBarTrackColor?: string;
@@ -80,7 +80,7 @@ const SkillCard: React.FC<Props> = ({
   description,
   teaser,
   icon,
-  favorite,
+  featured,
   backgroundColor,
   textColor,
   scrollBarTrackColor,
@@ -115,7 +115,7 @@ const SkillCard: React.FC<Props> = ({
     <div
       ref={setRefs}
       className={classNames(styles.card, {
-        [styles.large]: favorite,
+        [styles.large]: featured,
         [styles.hidden]: !inView,
         [styles.border]: isContrastMode,
       })}
@@ -158,7 +158,7 @@ const SkillCard: React.FC<Props> = ({
             <VisuallyHidden>.</VisuallyHidden>
           </span>
 
-          {favorite && teaser && (
+          {featured && teaser && (
             <div
               className={classNames(styles.teaser, {
                 [styles.contrast]: isContrastMode,
@@ -190,7 +190,7 @@ const SkillCard: React.FC<Props> = ({
                       className={styles.contentTitle}
                       title="experience"
                     >
-                      {favorite ? 'experience' : 'exp.'}
+                      {featured ? 'experience' : 'exp.'}
                     </span>
                     <span
                       title={`${yearsExperience} year${
@@ -208,7 +208,7 @@ const SkillCard: React.FC<Props> = ({
               )}
               <div className={styles.content}>
                 <span className={styles.contentTitle} title="usage">
-                  {favorite ? 'usage' : 'usg.'}
+                  {featured ? 'usage' : 'usg.'}
                 </span>
                 <span title={usageDescription}>
                   <Icon aria-label={usageDescription} />
@@ -224,7 +224,7 @@ const SkillCard: React.FC<Props> = ({
                       className={styles.contentTitle}
                       title="studying"
                     >
-                      {favorite ? 'studying' : 'stu.'}
+                      {featured ? 'studying' : 'stu.'}
                     </span>
                     <span title={STUDYING_LABEL}>
                       <OpenBookIcon aria-label={STUDYING_LABEL} />
