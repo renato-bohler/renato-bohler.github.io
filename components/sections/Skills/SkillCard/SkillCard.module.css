@@ -70,10 +70,6 @@
   width: 40px;
 }
 
-.image > svg {
-  paint-order: stroke;
-}
-
 .large .image {
   width: 80px;
 }

@@ -121,10 +121,6 @@ html[data-reduced-motion='true'] .dialog {
   width: 80px;
 }
 
-.image > svg {
-  paint-order: stroke;
-}
-
 @media screen and (max-width: 42rem) {
   .dialog {
     position: fixed;
