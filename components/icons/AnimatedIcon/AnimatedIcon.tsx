@@ -32,7 +32,7 @@ const AnimatedIcon: React.FC<Props> = ({
   }, [inView, visible, animationDelay]);
 
   return (
-    <div
+    <span
       ref={visible ? null : ref}
       className={classNames(
         { [styles.stub]: !visible },
@@ -42,7 +42,7 @@ const AnimatedIcon: React.FC<Props> = ({
       style={style}
     >
       {visible && children}
-    </div>
+    </span>
   );
 };
 
