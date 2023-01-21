@@ -61,9 +61,6 @@
 @media screen and (max-width: 42rem) {
   .dividerStroke {
     stroke-width: 35px;
-    stroke-dashoffset: 456px;
-    stroke-dasharray: 456px;
-    stroke-linecap: round;
   }
 
   .dividerGlow > path {
