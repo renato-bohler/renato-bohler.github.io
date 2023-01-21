@@ -88,7 +88,7 @@ const SkillCard: React.FC<Props> = ({
   yearsExperience,
   studying,
 }) => {
-  const { isContrastMode } = useTheme();
+  const { isDarkMode, isContrastMode } = useTheme();
 
   const cardRef = useRef<HTMLDivElement | null>(null);
   const { ref: inViewRef, inView } = useInView({
@@ -120,9 +120,22 @@ const SkillCard: React.FC<Props> = ({
         [styles.border]: isContrastMode,
       })}
       style={{
-        background: backgroundColor,
+        backgroundImage: `linear-gradient(var(--theme-background), var(--theme-background)), radial-gradient(circle at top, ${backgroundColor}, transparent 90%)`,
+        boxShadow: `${backgroundColor}${
+          isDarkMode ? 20 : 40
+        } 0 5px 50px`,
       }}
     >
+      <div className={styles.blurContainer}>
+        <div
+          className={classNames(styles.blur, {
+            [styles.light]: !isDarkMode,
+          })}
+          style={{
+            background: backgroundColor,
+          }}
+        />
+      </div>
       <div className={styles.content}>
         <SkillCardDialog
           cardRect={cardRef.current?.getBoundingClientRect()}
@@ -137,11 +150,7 @@ const SkillCard: React.FC<Props> = ({
           yearsExperience={yearsExperience}
           wavePath={wavePath}
         />
-        <DialogDisclosure
-          {...dialog}
-          className={styles.button}
-          style={{ color: textColor }}
-        >
+        <DialogDisclosure {...dialog} className={styles.button}>
           <div className={styles.image}>{icon}</div>
 
           <span className={styles.name}>
@@ -185,11 +194,11 @@ const SkillCard: React.FC<Props> = ({
                     </span>
                     <span
                       title={`${yearsExperience} year${
-                        yearsExperience > 1 ? 's' : ''
+                        yearsExperience >= 2 ? 's' : ''
                       }`}
                     >
                       {yearsExperience} yr
-                      {yearsExperience > 1 ? 's' : ''}
+                      {yearsExperience >= 2 ? 's' : ''}
                     </span>
                     <VisuallyHidden>.</VisuallyHidden>
                   </div>

@@ -1,6 +1,10 @@
 .card {
-  box-shadow: var(--theme-shadow) 5px 5px 20px;
+  position: relative;
+
+  border: 2px solid transparent;
   border-radius: 8px;
+  background-origin: border-box;
+  background-clip: content-box, border-box;
 
   font-size: 0.75em;
 
@@ -8,15 +12,55 @@
     transform 250ms cubic-bezier(0.21, -0.56, 0.43, 1.53);
 }
 
-.card:hover {
-  transform: scale(120%);
+.blurContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  border-radius: 6px;
+  overflow: hidden;
 }
 
-.large.card:hover {
-  transform: scale(110%);
+.blur {
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  width: 75%;
+  height: 75%;
+
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  opacity: 50%;
+  filter: blur(60px);
+
+  transition: width ease-in-out 300ms, height ease-in-out 300ms,
+    opacity ease-in-out 300ms;
+}
+
+.blur.light {
+  right: unset;
+  left: -25%;
+  width: 100%;
+  height: 100%;
+  opacity: 75%;
+}
+
+.card:hover .blur {
+  width: 100%;
+  height: 100%;
+}
+
+.card:hover .blur.light {
+  width: 150%;
+  height: 150%;
 }
 
 .content {
+  position: relative;
+  z-index: 1;
+
   height: 150px;
 }
 
@@ -27,6 +71,22 @@
 
 .large > .content {
   height: 450px;
+}
+
+.large .blur {
+  opacity: 50%;
+  filter: blur(120px);
+}
+
+.large .blur.light {
+  width: 115%;
+  height: 115%;
+}
+
+.large.card:hover .blur.light {
+  width: 150%;
+  height: 150%;
+  opacity: 60%;
 }
 
 .hidden {
@@ -61,6 +121,7 @@
   font-size: 1.2em;
   font-weight: normal;
   width: 100%;
+  color: var(--theme-text);
 }
 
 .image {
