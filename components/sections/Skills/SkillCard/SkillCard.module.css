@@ -74,11 +74,12 @@
 }
 
 .large .blur {
-  opacity: 50%;
+  opacity: 30%;
   filter: blur(120px);
 }
 
 .large .blur.light {
+  opacity: 50%;
   width: 115%;
   height: 115%;
 }
