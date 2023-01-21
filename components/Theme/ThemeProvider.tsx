@@ -12,7 +12,6 @@ import Head from 'next/head';
 import themes, { contrast, Theme } from '~/consts/themes.const';
 
 import useDynamicFavicon from './useDynamicFavicon';
-import usePreferredColorScheme from './usePreferredColorScheme';
 import usePreferredContrast from './usePreferredContrast';
 import usePreferredMotion from './usePreferredMotion';
 import useThemeApply from './useThemeApply';
@@ -34,7 +33,7 @@ export type ThemeContextType = {
 const ThemeContext = createContext<ThemeContextType>({
   theme: RANDOM_THEME,
   setTheme: () => {},
-  isDarkMode: false,
+  isDarkMode: true,
   setDarkMode: () => {},
   isContrastMode: false,
   setContrastMode: () => {},
@@ -63,7 +62,7 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
     [lastTheme],
   );
 
-  const [isDarkMode, setDarkMode] = usePreferredColorScheme();
+  const [isDarkMode, setDarkMode] = useState(true);
   const isContrastMode = usePreferredContrast(theme, setContrastMode);
   const [isReducedMotion, setReducedMotion] = usePreferredMotion();
   useThemeApply(theme, isDarkMode, isReducedMotion);
