@@ -136,7 +136,7 @@
   width: 80px;
 }
 
-.teaser {
+.brief {
   width: 100%;
   min-height: 200px;
   padding: 32px 16px;
@@ -159,7 +159,7 @@
   opacity: 90%;
 }
 
-.teaser.contrast {
+.brief.contrast {
   opacity: 100%;
 }
 
@@ -236,7 +236,7 @@
     height: 375px;
   }
 
-  .teaser,
+  .brief,
   .info {
     font-size: 0.9em;
   }

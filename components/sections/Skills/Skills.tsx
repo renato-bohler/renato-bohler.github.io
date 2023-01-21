@@ -73,7 +73,7 @@ const Skills: React.FC = () => {
               yearsExperience={skill.yearsExperience}
               studying={skill.studying}
               description={skill.description}
-              teaser={skill.teaser}
+              brief={skill.brief}
             />
           );
         })}

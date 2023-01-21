@@ -37,7 +37,7 @@ const skills: Skill[] = [
     },
     studying: true,
     featured: true,
-    teaser: (
+    brief: (
       <>
         <p>
           <strong>JavaScript</strong> was the first programming
@@ -231,7 +231,7 @@ const skills: Skill[] = [
     },
     studying: true,
     featured: true,
-    teaser: (
+    brief: (
       <>
         <p>
           <strong>TypeScript</strong> is one of those things that you
@@ -489,7 +489,7 @@ const skills: Skill[] = [
     },
     studying: true,
     featured: true,
-    teaser: (
+    brief: (
       <>
         <p>
           I&apos;ve been in love with <strong>React</strong> since I
@@ -649,7 +649,7 @@ const skills: Skill[] = [
     },
     studying: true,
     featured: true,
-    teaser: (
+    brief: (
       <>
         <p>
           I&apos;ve used <strong>React Native</strong> in only one
@@ -1172,7 +1172,7 @@ export type Skill = {
   icon?: (isContrastMode: boolean) => React.ReactElement;
   studying: boolean;
   featured: boolean;
-  teaser?: React.ReactElement;
+  brief?: React.ReactElement;
   description: React.ReactElement;
 };
 

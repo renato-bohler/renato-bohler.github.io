@@ -21,7 +21,7 @@ type Props = {
   id: string;
   name: string;
   description: React.ReactElement;
-  teaser?: React.ReactElement;
+  brief?: React.ReactElement;
   icon: React.ReactNode;
   featured: boolean;
   backgroundColor: string;
@@ -78,7 +78,7 @@ const SkillCard: React.FC<Props> = ({
   id,
   name,
   description,
-  teaser,
+  brief,
   icon,
   featured,
   backgroundColor,
@@ -158,13 +158,13 @@ const SkillCard: React.FC<Props> = ({
             <VisuallyHidden>.</VisuallyHidden>
           </span>
 
-          {featured && teaser && (
+          {featured && brief && (
             <div
-              className={classNames(styles.teaser, {
+              className={classNames(styles.brief, {
                 [styles.contrast]: isContrastMode,
               })}
             >
-              {teaser}
+              {brief}
             </div>
           )}
 
