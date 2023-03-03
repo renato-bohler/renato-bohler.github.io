@@ -1,6 +1,7 @@
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
 import styles from './Experience.module.css';
+import ExperienceCard from './ExperienceCard/ExperienceCard';
 
 const Experience: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -43,8 +44,8 @@ const Experience: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.timeline}>
-        <div className={styles.card}>
+      <ul className={styles.timeline}>
+        <ExperienceCard year={2023}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           Pellentesque dictum odio sit amet orci imperdiet, in
           hendrerit enim fringilla. Aliquam imperdiet ut sapien et
@@ -54,9 +55,9 @@ const Experience: React.FC = () => {
           Ut aliquet ultricies dolor, eu venenatis elit ultrices in.
           Class aptent taciti sociosqu ad litora torquent per conubia
           nostra, per inceptos himenaeos.
-        </div>
+        </ExperienceCard>
 
-        <div className={styles.card}>
+        <ExperienceCard year={2022}>
           Ut erat velit, suscipit eu leo in, facilisis posuere augue.
           Aliquam tincidunt ligula tortor, sed facilisis quam congue
           ut. Nunc augue felis, finibus sit amet metus et, vulputate
@@ -74,9 +75,9 @@ const Experience: React.FC = () => {
           tempor consectetur, nibh quam egestas enim, id varius nunc
           nisl nec nunc. Etiam volutpat massa nulla, at commodo nisi
           tristique in.
-        </div>
+        </ExperienceCard>
 
-        <div className={styles.card}>
+        <ExperienceCard year={2021}>
           Fusce non molestie massa. Suspendisse semper volutpat sapien
           sed dignissim. Vestibulum eleifend ornare sapien, id
           ultricies tortor posuere at. Proin pharetra leo quis massa
@@ -84,8 +85,8 @@ const Experience: React.FC = () => {
           senectus et netus et malesuada fames ac turpis egestas.
           Curabitur egestas consequat augue at dignissim. Fusce
           pulvinar consequat lobortis
-        </div>
-      </div>
+        </ExperienceCard>
+      </ul>
 
       <div className={styles.endTransition} />
     </section>

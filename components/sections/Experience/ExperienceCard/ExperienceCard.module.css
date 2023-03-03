@@ -1,0 +1,93 @@
+.card {
+  position: relative;
+
+  display: flex;
+
+  margin: 2em 0;
+  padding: 0 50px;
+  max-width: 50%;
+
+  list-style: none;
+}
+
+.card:nth-child(odd) {
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.card:nth-child(even) {
+  text-align: right;
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, 0.5em);
+
+  width: 16px;
+  height: 16px;
+
+  background-color: var(--theme-background);
+  border: 3px solid var(--theme-secondary-bright);
+  outline: 6px solid var(--theme-background);
+  border-radius: 50px;
+
+  transition: background-color 250ms, outline-color 250ms;
+}
+
+.card:nth-child(even) > .dot {
+  left: unset;
+  right: 0;
+  transform: translate(50%, 0.5em);
+}
+
+.year {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(calc(-100% - 50px), -0.25em);
+
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.card:nth-child(even) > .year {
+  left: unset;
+  right: 0;
+  transform: translate(calc(100% + 50px), -0.25em);
+}
+
+@media screen and (max-width: 65rem) {
+  .card {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 42rem) {
+  .card {
+    max-width: calc(100% - 50px);
+    align-self: flex-end;
+  }
+
+  .card:nth-child(even) {
+    text-align: left;
+  }
+
+  .card:nth-child(even) > .dot {
+    left: 0;
+    right: unset;
+    transform: translate(-50%, 0.5em);
+  }
+
+  .year {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 32rem) {
+  .card {
+    max-width: calc(100% - 25px);
+    padding: 0 25px;
+  }
+}

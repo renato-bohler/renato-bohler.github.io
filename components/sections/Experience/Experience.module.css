@@ -137,24 +137,9 @@
   display: flex;
   flex-direction: column;
 
-  max-width: 1600px;
+  padding: 0;
   margin: auto;
-}
-
-.card {
-  margin: 2em 0;
-  padding: 0 50px 0 0;
-
-  max-width: calc(50% - 50px);
-}
-
-.card:nth-child(odd) {
-  align-self: flex-end;
-}
-
-.card:nth-child(even) {
-  text-align: right;
-  padding: 0 0 0 50px;
+  max-width: 1600px;
 }
 
 .endTransition {
@@ -176,13 +161,6 @@
   }
 }
 
-@media screen and (max-width: 65rem) {
-  .card {
-    font-size: 0.9em;
-    max-width: calc(50% - 25px);
-  }
-}
-
 @media screen and (max-width: 42rem) {
   .section {
     margin-top: 40vh;
@@ -192,16 +170,6 @@
     font-size: 2.5em;
     text-align: left;
     margin: 0 25px;
-  }
-
-  .card {
-    max-width: calc(100% - 102px);
-    align-self: flex-end;
-  }
-
-  .card:nth-child(even) {
-    text-align: left;
-    padding: 0 50px 0 0;
   }
 
   .transitionContainer {
@@ -226,15 +194,6 @@
 }
 
 @media screen and (max-width: 32rem) {
-  .card {
-    max-width: calc(100% - 52px);
-    padding: 0 25px 0 0;
-  }
-
-  .card:nth-child(even) {
-    padding: 0 25px 0 0;
-  }
-
   .transitionLine {
     --margin-left-end: 25px;
   }
