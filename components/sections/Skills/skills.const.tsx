@@ -30,6 +30,7 @@ const skills: Skill[] = [
             xlinkHref={`#${this.id}`}
             stroke={colors.background}
             strokeWidth={35}
+            strokeLinejoin="round"
           />
           <use xlinkHref={`#${this.id}`} fill={colors.text} />
         </svg>
@@ -164,6 +165,7 @@ const skills: Skill[] = [
             xlinkHref={`#${this.id}`}
             stroke={colors.background}
             strokeWidth={125}
+            strokeLinejoin="round"
           />
           <use xlinkHref={`#${this.id}`} fill={colors.text} />
         </svg>
@@ -807,6 +809,7 @@ const skills: Skill[] = [
             xlinkHref={`#${this.id}`}
             stroke={colors.background}
             strokeWidth={80}
+            strokeLinejoin="round"
           />
           <use xlinkHref={`#${this.id}`} fill={colors.text} />
         </svg>
@@ -880,7 +883,7 @@ const skills: Skill[] = [
           <use
             xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={40}
+            strokeWidth={30}
           />
           <use xlinkHref={`#${this.id}`} fill={colors.text} />
         </svg>
@@ -1076,6 +1079,7 @@ const skills: Skill[] = [
             xlinkHref={`#${this.id}`}
             stroke={colors.background}
             strokeWidth={30}
+            strokeLinejoin="round"
           />
           <use xlinkHref={`#${this.id}`} fill={colors.text} />
         </svg>
