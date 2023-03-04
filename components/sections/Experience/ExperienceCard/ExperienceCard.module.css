@@ -50,12 +50,35 @@
 
   font-size: 1.5em;
   font-weight: 100;
+
+  opacity: 100%;
+  transition: opacity 500ms 100ms, transform 500ms;
 }
 
 .card:nth-child(even) > .year {
   left: unset;
   right: 0;
   transform: translate(calc(100% + 50px), -0.25em);
+}
+
+.card[data-revealed='false'] > .year {
+  opacity: 0%;
+  transform: translate(calc(-100% + 100px), -0.25em);
+}
+
+.text {
+  transform: translateX(0);
+  opacity: 100%;
+  transition: opacity 500ms 100ms, transform 500ms;
+}
+
+.card[data-revealed='false'] > .text {
+  opacity: 0%;
+  transform: translateX(-50px);
+}
+
+.card:nth-child(even)[data-revealed='false'] > .text {
+  transform: translateX(50px);
 }
 
 @media screen and (max-width: 65rem) {
@@ -78,6 +101,10 @@
     left: 0;
     right: unset;
     transform: translate(-50%, 0.5em);
+  }
+
+  .card:nth-child(even)[data-revealed='false'] > .text {
+    transform: translateX(-50px);
   }
 
   .year {
