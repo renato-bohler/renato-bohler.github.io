@@ -7,4 +7,5 @@
   width: 100%;
   height: 300px;
   transform: translateY(5px);
+  margin-top: -15vh;
 }
