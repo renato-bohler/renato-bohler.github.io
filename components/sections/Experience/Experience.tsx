@@ -87,8 +87,6 @@ const Experience: React.FC = () => {
           pulvinar consequat lobortis
         </ExperienceCard>
       </ul>
-
-      <div className={styles.endTransition} />
     </section>
   );
 };

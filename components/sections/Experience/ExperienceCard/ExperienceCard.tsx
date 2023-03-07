@@ -10,14 +10,16 @@ type Props = {
 const ExperienceCard: React.FC<Props> = ({ children, year }) => {
   const [ref, inView] = useInView({
     triggerOnce: true,
-    rootMargin: '-50px',
+    rootMargin: '-100px',
+    threshold: 0.1,
   });
 
   return (
-    <li className={styles.card} data-revealed={inView}>
-      <div className={styles.dot} ref={ref} />
+    <li ref={ref} className={styles.card} data-revealed={inView}>
+      <div className={styles.dot} />
       <div className={styles.year}>{year}</div>
       <div className={styles.text}>{children}</div>
+      <div className={styles.reveal} />
     </li>
   );
 };

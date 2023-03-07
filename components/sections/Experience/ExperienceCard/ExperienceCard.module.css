@@ -19,10 +19,15 @@
   text-align: right;
 }
 
+.card:last-child {
+  padding-bottom: 40vh;
+}
+
 .dot {
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   transform: translate(-50%, 0.5em);
 
   width: 16px;
@@ -46,6 +51,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1;
   transform: translate(calc(-100% - 50px), -0.25em);
 
   font-size: 1.5em;
@@ -67,9 +73,12 @@
 }
 
 .text {
+  position: relative;
+  z-index: 1;
+
   transform: translateX(0);
   opacity: 100%;
-  transition: opacity 500ms 100ms, transform 500ms;
+  transition: opacity 500ms 300ms, transform 500ms 300ms;
 }
 
 .card[data-revealed='false'] > .text {
@@ -79,6 +88,23 @@
 
 .card:nth-child(even)[data-revealed='false'] > .text {
   transform: translateX(50px);
+}
+
+.reveal {
+  position: absolute;
+  inset: 0;
+  transform: translateX(-5px) scaleY(0%);
+  width: calc(100% + 10px);
+  height: calc(100% + 100px);
+
+  background: var(--theme-background);
+
+  transform-origin: bottom;
+  transition: transform 1.5s cubic-bezier(0.25, 0, 0, 1);
+}
+
+.card[data-revealed='false'] > .reveal {
+  transform: translateX(-5px) scaleY(100%);
 }
 
 @media screen and (max-width: 65rem) {

@@ -127,6 +127,12 @@
   background-size: 2px;
   background-position: center;
   background-repeat: repeat-y;
+
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 100%) calc(100% - 20vh),
+    rgba(0, 0, 0, 25%) calc(100% - 10vh),
+    transparent 100%
+  );
 }
 
 .timeline {
@@ -140,19 +146,8 @@
   padding: 0;
   margin: auto;
   max-width: 1600px;
-}
 
-.endTransition {
-  composes: timelineBackground;
-
-  height: 50vh;
-  margin-bottom: -100px;
-
-  mask-image: linear-gradient(
-    rgba(0, 0, 0, 100%) 5%,
-    rgba(0, 0, 0, 25%) 50%,
-    transparent 100%
-  );
+  overflow: hidden;
 }
 
 @media screen and (max-width: 84rem) {
