@@ -7,6 +7,7 @@ import SkillCard from './SkillCard/SkillCard';
 import SkillFeedbacks from './SkillFeedbacks/SkillFeedbacks';
 import skills, { getColors } from './skills.const';
 import styles from './Skills.module.css';
+import SkillVectors from './SkillVectors/SkillVectors';
 
 const HEADER = 'skills';
 
@@ -26,6 +27,8 @@ const Skills: React.FC = () => {
 
   return (
     <section className={styles.section}>
+      <SkillVectors />
+
       <div className={styles.scroll}>
         <h2 className={styles.title}>
           <span aria-hidden>{`>${HEADER.slice(

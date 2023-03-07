@@ -85,7 +85,8 @@ html[data-reduced-motion='true'] .dialog {
 
 .wave {
   display: block;
-  transform: translateY(1px);
+  width: 100%;
+  height: 100%;
 
   fill: var(--theme-background);
 }
@@ -118,6 +119,9 @@ html[data-reduced-motion='true'] .dialog {
   transform: translate(10%, -45%);
 
   z-index: 1;
+}
+
+.image > svg {
   width: 80px;
 }
 

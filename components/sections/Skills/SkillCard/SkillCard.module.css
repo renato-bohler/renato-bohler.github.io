@@ -127,13 +127,17 @@
 
 .image {
   position: absolute;
-  transform: translate(20%, -25%);
-
-  width: 40px;
+  transform: translate(20%, -45%);
 }
 
-.large .image {
+.image > svg {
+  width: 40px;
+  height: 40px;
+}
+
+.large .image > svg {
   width: 80px;
+  height: 80px;
 }
 
 .brief {
