@@ -147,6 +147,6 @@ html[data-reduced-motion='true'] .dialog {
   }
 
   .image {
-    transform: translate(10%);
+    transform: translate(-30%, -10%);
   }
 }
