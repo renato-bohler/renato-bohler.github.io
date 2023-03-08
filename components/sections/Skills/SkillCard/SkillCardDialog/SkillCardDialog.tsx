@@ -44,10 +44,13 @@ const SkillCardDialog: React.FC<Props> = ({
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  const { isReducedMotion } = useTheme();
+  const { isDarkMode, isReducedMotion } = useTheme();
   const [translate, setTranslate] = useState({ x: 0, y: 0 });
 
-  const scrollBarColors = {
+  const commonStyles = {
+    boxShadow: `${backgroundColor}${
+      isDarkMode ? 30 : 60
+    } 0 5px 100px`,
     '--theme-scrollbar-thumb-color': backgroundColor,
     ...(scrollBarTrackColor
       ? {
@@ -148,9 +151,9 @@ const SkillCardDialog: React.FC<Props> = ({
                 width: cardRect?.width,
                 height: cardRect?.height,
                 transform: `translate(${translate.x}px, ${translate.y}px)`,
-                ...scrollBarColors,
+                ...commonStyles,
               }
-            : { ...scrollBarColors, opacity: 1 }
+            : { ...commonStyles, opacity: 1 }
         }
       >
         <header
