@@ -3,7 +3,7 @@ const skills: Skill[] = [
     id: 'javascript',
     name: 'JavaScript',
     usageLevel: 3,
-    yearsExperience: 5,
+    yearsExperience: 7,
     colors: {
       normal: {
         background: '#f7df1e',
@@ -79,7 +79,7 @@ const skills: Skill[] = [
   {
     id: 'node-js',
     name: 'Node.js',
-    usageLevel: -1,
+    usageLevel: 1,
     yearsExperience: 1.5,
     colors: {
       normal: {
@@ -113,12 +113,25 @@ const skills: Skill[] = [
         <p>
           Even though I&apos;ve been focusing my career on the
           frontend path these last few years, I have experience
-          building server-side Node.js applications.
+          building Node.js applications.
         </p>
         <p>
           My experience with server-side Node.js includes small
           backends developed using Express and multi-system Kafka
           integration applications.
+        </p>
+        <p>
+          I&apos;ve been also helping building and maintaining
+          pipeline monitoring tools built in Node.js, like for
+          instance an automated{' '}
+          <a
+            href="https://www.ada.gov/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            ADA compliance
+          </a>{' '}
+          checker.
         </p>
       </>
     ),
@@ -180,7 +193,7 @@ const skills: Skill[] = [
     id: 'typescript',
     name: 'TypeScript',
     usageLevel: 3,
-    yearsExperience: 3,
+    yearsExperience: 4,
     colors: {
       normal: {
         background: '#007acd',
@@ -260,7 +273,7 @@ const skills: Skill[] = [
     id: 'git',
     name: 'Git',
     usageLevel: 3,
-    yearsExperience: 5,
+    yearsExperience: 6,
     colors: {
       normal: {
         background: '#f34f29',
@@ -411,7 +424,7 @@ const skills: Skill[] = [
     id: 'react',
     name: 'React',
     usageLevel: 3,
-    yearsExperience: 5,
+    yearsExperience: 6,
     colors: {
       normal: {
         background: '#61dbfb',
@@ -562,6 +575,144 @@ const skills: Skill[] = [
     ),
   },
   {
+    id: 'css',
+    name: 'CSS',
+    usageLevel: 3,
+    yearsExperience: 7,
+    colors: {
+      normal: {
+        background: '#1b73ba',
+        text: '#ffffff',
+      },
+      contrast: {
+        background: '#1b73ba',
+        text: '#ffffff',
+      },
+      scrollBar: { trackColor: '#5fbbd3' },
+    },
+    icon: function (isContrastMode: boolean): React.ReactElement {
+      const colors = getColors(this, isContrastMode);
+
+      return (
+        <svg aria-hidden>
+          <use
+            xlinkHref={`#${this.id}-1`}
+            fill={colors.background}
+            stroke={colors.background}
+            strokeWidth={10}
+          />
+          <use xlinkHref={`#${this.id}-2`} fill="#1c88c7" />
+          <use xlinkHref={`#${this.id}-3`} fill={colors.text} />
+        </svg>
+      );
+    },
+    studying: true,
+    featured: true,
+    brief: (
+      <>
+        <p>
+          <strong>CSS is not exactly easy</strong>. There are loads of
+          concepts, properties, selectors, and functions to
+          understand, animations and transitions to tinker with,
+          responsive design to consider, and cross-browser
+          compatibility to work around...
+        </p>
+        <p>
+          ... but I think I&apos;m lucky to be around for so long that
+          all of that is kind of natural to me 😅
+        </p>
+      </>
+    ),
+    description: (
+      <>
+        <p>
+          As a frontend developer,{' '}
+          <strong>
+            learning CSS is an essential part of mastering web
+            development
+          </strong>
+          .
+        </p>
+        <p>
+          I&apos;ve been improving my CSS skills for the best part of
+          the last 2 decades: I was there when we had to use{' '}
+          <code>table</code>s to create layouts, when{' '}
+          <em>tableless</em> was a thing, and when vertical aligning
+          an element was close to impossible 🤣
+        </p>
+        <p>
+          My journey learning CSS has been a continuous one. I like to
+          keep myself up to date with new CSS features by reading the{' '}
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CSS MDN Docs
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://web.dev/blog/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            web.dev&apos;s blog
+          </a>{' '}
+          every once in a while.
+        </p>
+        <p>
+          Call me weird, but I have the habit of inspecting every
+          website that makes me wonder{' '}
+          <em>
+            &ldquo;how would I implement something like that?&rdquo;
+          </em>{' '}
+          🤔 — and I learned a lot doing that!
+        </p>
+        <p>
+          I also like checking{' '}
+          <a
+            href="https://www.awwwards.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Awwwarded
+          </a>{' '}
+          websites for design inspiration, and implementing and
+          tweaking animations and transitions — but you probably
+          noticed this already 😅
+        </p>
+        <p>
+          I do have experience configuring and using pre-processors
+          like{' '}
+          <a
+            href="https://sass-lang.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SASS
+          </a>
+          , but not so much with CSS frameworks like{' '}
+          <a
+            href="https://getbootstrap.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Bootstrap
+          </a>{' '}
+          or{' '}
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Tailwind
+          </a>
+          , and that&apos;s something I&apos;d like to fix soon 📖
+        </p>
+      </>
+    ),
+  },
+  {
     id: 'react-native',
     name: 'React Native',
     usageLevel: 1,
@@ -592,16 +743,7 @@ const skills: Skill[] = [
       );
     },
     studying: true,
-    featured: true,
-    brief: (
-      <>
-        <p>
-          I&apos;ve used <strong>React Native</strong> in only one
-          professional project so far, but being able to write Android
-          and iOS applications with React is such a great thing.
-        </p>
-      </>
-    ),
+    featured: false,
     description: (
       <>
         <p>
@@ -655,7 +797,7 @@ const skills: Skill[] = [
     id: 'redux',
     name: 'Redux',
     usageLevel: 1,
-    yearsExperience: 4,
+    yearsExperience: 5,
     colors: {
       normal: {
         background: '#6e50b5',
