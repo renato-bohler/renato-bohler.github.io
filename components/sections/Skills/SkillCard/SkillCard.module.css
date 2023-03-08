@@ -64,27 +64,27 @@
   height: 150px;
 }
 
-.large {
+.featured {
   grid-column: span 2;
   grid-row: span 3;
 }
 
-.large > .content {
+.featured > .content {
   height: 450px;
 }
 
-.large .blur {
+.featured .blur {
   opacity: 30%;
   filter: blur(120px);
 }
 
-.large .blur.light {
+.featured .blur.light {
   opacity: 50%;
   width: 115%;
   height: 115%;
 }
 
-.large.card:hover .blur.light {
+.featured.card:hover .blur.light {
   width: 150%;
   height: 150%;
   opacity: 60%;
@@ -119,10 +119,14 @@
   margin: 0;
   padding: 8px 16px 2px 0;
   text-align: right;
-  font-size: 1.2em;
-  font-weight: normal;
+  font-size: 0.9rem;
+  font-weight: 200;
   width: 100%;
   color: var(--theme-text);
+}
+
+.featured .name {
+  font-size: 1.5em;
 }
 
 .image {
@@ -135,7 +139,7 @@
   height: 40px;
 }
 
-.large .image > svg {
+.featured .image > svg {
   width: 80px;
   height: 80px;
 }
@@ -172,16 +176,6 @@
   width: 100%;
 }
 
-.info > .waveDivider {
-  display: block;
-  fill: var(--theme-background-opaque);
-  transform: translateY(0.25px);
-}
-
-.waveDivider.contrast > path {
-  fill: var(--theme-background);
-}
-
 .info > .contentWrapper {
   display: flex;
   justify-content: space-around;
@@ -214,7 +208,7 @@
   height: 100%;
 }
 
-.large .contentWrapper > .content {
+.featured .contentWrapper > .content {
   font-size: 1.15em;
 }
 
@@ -236,7 +230,7 @@
     height: 125px;
   }
 
-  .large > .content {
+  .featured > .content {
     height: 375px;
   }
 

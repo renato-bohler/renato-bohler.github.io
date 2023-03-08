@@ -29,7 +29,6 @@ type Props = {
   textColor: string;
   scrollBarTrackColor?: string;
   yearsExperience?: number;
-  wavePath: string;
 };
 
 const SkillCardDialog: React.FC<Props> = ({
@@ -42,7 +41,6 @@ const SkillCardDialog: React.FC<Props> = ({
   backgroundColor,
   textColor,
   scrollBarTrackColor,
-  wavePath,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -162,7 +160,10 @@ const SkillCardDialog: React.FC<Props> = ({
             color: textColor,
           }}
         >
-          <div className={styles.headerRow}>
+          <div
+            className={styles.headerRow}
+            style={{ borderBottomColor: backgroundColor }}
+          >
             <div className={styles.image}>{icon}</div>
             <h1 className={styles.title}>
               {name}
@@ -180,14 +181,6 @@ const SkillCardDialog: React.FC<Props> = ({
               )}
             </Button>
           </div>
-
-          <svg
-            viewBox="10 0 1400 320"
-            className={styles.wave}
-            aria-hidden
-          >
-            <path d={wavePath} />
-          </svg>
         </header>
 
         <div className={styles.content} ref={scrollRef}>

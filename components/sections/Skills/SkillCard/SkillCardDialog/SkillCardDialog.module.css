@@ -34,7 +34,6 @@ html[data-reduced-motion='true'] .backdrop {
 
   background: var(--theme-background);
   border-radius: 16px;
-  border: calc(var(--theme-is-contrast) * 2px) solid var(--theme-text);
 
   opacity: 0;
 
@@ -59,12 +58,15 @@ html[data-reduced-motion='true'] .dialog {
   display: flex;
   justify-content: space-between;
   padding: 8px;
+
+  border-bottom-width: 6px;
+  border-bottom-style: outset;
 }
 
 .title {
-  font-weight: normal;
-  font-size: 1rem;
-  transform: translate(96px);
+  font-weight: 600;
+  font-size: 1.25rem;
+  transform: translate(115px);
   margin: 0;
 }
 
@@ -92,14 +94,14 @@ html[data-reduced-motion='true'] .dialog {
 }
 
 .content {
-  padding: 0 24px 0 32px;
-  margin: 8px 8px 8px 0;
+  padding: 8px 24px 0 32px;
+  margin: 16px 10px 16px 0;
 
-  overflow-y: auto;
+  overflow: hidden auto;
 }
 
 .content::-webkit-scrollbar {
-  width: 16px;
+  width: 8px;
 }
 
 .content::-webkit-scrollbar-track {
@@ -116,13 +118,13 @@ html[data-reduced-motion='true'] .dialog {
 
 .image {
   position: absolute;
-  transform: translate(10%, -45%);
+  transform: translate(-30%, -20%);
 
   z-index: 1;
 }
 
 .image > svg {
-  width: 80px;
+  height: 80px;
 }
 
 @media screen and (max-width: 42rem) {
