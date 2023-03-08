@@ -1,5 +1,3 @@
-import { useCallback, useRef } from 'react';
-
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { DialogDisclosure, useDialogState } from 'reakit/Dialog';
@@ -77,18 +75,10 @@ const SkillCard: React.FC<Props> = ({
 }) => {
   const { isDarkMode, isContrastMode } = useTheme();
 
-  const cardRef = useRef<HTMLDivElement | null>(null);
-  const { ref: inViewRef, inView } = useInView({
+  const { ref, inView } = useInView({
     threshold: 0,
     triggerOnce: true,
   });
-  const setRefs = useCallback(
-    (node: HTMLDivElement) => {
-      cardRef.current = node;
-      inViewRef(node);
-    },
-    [inViewRef],
-  );
 
   const { Icon, description: usageDescription } = USAGE[usageLevel];
 
@@ -96,7 +86,7 @@ const SkillCard: React.FC<Props> = ({
 
   return (
     <div
-      ref={setRefs}
+      ref={ref}
       className={classNames(styles.card, {
         [styles.featured]: featured,
         [styles.hidden]: !inView,
@@ -104,6 +94,7 @@ const SkillCard: React.FC<Props> = ({
       })}
       style={{
         backgroundImage: `linear-gradient(var(--theme-background), var(--theme-background)), radial-gradient(circle at top, ${backgroundColor}, transparent 90%)`,
+        borderColor: isContrastMode ? backgroundColor : '',
         boxShadow: `${backgroundColor}${
           isDarkMode ? 20 : 40
         } 0 5px 50px`,
@@ -121,7 +112,6 @@ const SkillCard: React.FC<Props> = ({
       </div>
       <div className={styles.content}>
         <SkillCardDialog
-          cardRect={cardRef.current?.getBoundingClientRect()}
           dialog={dialog}
           id={id}
           name={name}

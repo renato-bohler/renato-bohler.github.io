@@ -13,40 +13,39 @@
 
   background: var(--theme-backdrop);
   backdrop-filter: blur(15px);
-  opacity: 0;
+  opacity: 0%;
 
-  transition: opacity 500ms ease-in-out 125ms;
+  transition: opacity 250ms ease-in-out;
 }
 
 .backdrop[data-enter] {
-  opacity: 1;
+  opacity: 100%;
 
-  transition: opacity 500ms ease-in-out;
+  transition: opacity 250ms ease-in-out;
 }
 
 html[data-reduced-motion='true'] .backdrop {
-  opacity: 1;
+  opacity: 100%;
 }
 
 .dialog {
   display: flex;
   flex-direction: column;
 
+  width: min(600px, 100vw);
+  height: min(800px, calc(var(--dvh, 1vh) * 100));
+
   background: var(--theme-background);
   border-radius: 16px;
 
-  opacity: 0;
+  opacity: 0%;
 
-  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out,
-    width 250ms ease-in-out, height 250ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
 }
 
 .dialog[data-enter],
 html[data-reduced-motion='true'] .dialog {
-  opacity: 1;
-
-  width: min(600px, 100vw);
-  height: min(800px, calc(var(--dvh, 1vh) * 100));
+  opacity: 100%;
 }
 
 .header {
