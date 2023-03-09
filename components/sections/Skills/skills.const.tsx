@@ -469,7 +469,6 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-    // TODO: write about design system, component library, chromatic, etc.
     description: (
       <>
         <p>
@@ -536,8 +535,24 @@ const skills: Skill[] = [
           <li>integrations with real-time measurement devices</li>
         </ul>
         <p>
-          I also have experience with building and maintaining
-          component libraries using{' '}
+          I also have experience with setting up the whole workflow
+          for component libraries using{' '}
+          <a
+            href="https://vitejs.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vite
+          </a>{' '}
+          (for bundling),{' '}
+          <a
+            href="https://intuit.github.io/auto/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Auto
+          </a>{' '}
+          (for automated releasing), and{' '}
           <a
             href="https://storybook.js.org"
             target="_blank"
