@@ -2,6 +2,8 @@ import { CSSProperties, useEffect, useRef, useState } from 'react';
 
 import styles from './Experience.module.css';
 import ExperienceCard from './ExperienceCard/ExperienceCard';
+import experiences from './experiences.const';
+import ExperienceVectors from './ExperienceVectors/ExperienceVectors';
 
 const Experience: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -31,6 +33,8 @@ const Experience: React.FC = () => {
 
   return (
     <section className={styles.section}>
+      <ExperienceVectors />
+
       <div id="experience" aria-hidden className={styles.anchor} />
 
       <h2 className={styles.title}>Experience</h2>
@@ -45,47 +49,16 @@ const Experience: React.FC = () => {
       </div>
 
       <ul className={styles.timeline}>
-        <ExperienceCard year={2023}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Pellentesque dictum odio sit amet orci imperdiet, in
-          hendrerit enim fringilla. Aliquam imperdiet ut sapien et
-          consequat. Phasellus rhoncus dolor ut ante eleifend, eu
-          vulputate metus placerat. Donec eu lacus in nunc sodales
-          efficitur a in risus. Nullam gravida in lectus eu convallis.
-          Ut aliquet ultricies dolor, eu venenatis elit ultrices in.
-          Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos.
-        </ExperienceCard>
-
-        <ExperienceCard year={2022}>
-          Ut erat velit, suscipit eu leo in, facilisis posuere augue.
-          Aliquam tincidunt ligula tortor, sed facilisis quam congue
-          ut. Nunc augue felis, finibus sit amet metus et, vulputate
-          egestas ex. Quisque congue velit efficitur ipsum bibendum,
-          nec efficitur tellus consequat. Phasellus ullamcorper, enim
-          a dictum mattis, urna dolor facilisis ante, id posuere diam
-          libero sed urna. Sed ut ante mi. Nam eu ligula sit amet
-          lectus ornare aliquam sed sed elit. Nam lobortis tellus vel
-          aliquet ornare. Vestibulum fringilla tincidunt arcu, eu
-          aliquet ante egestas a. Vestibulum scelerisque vitae enim ac
-          luctus. Maecenas ultricies sollicitudin maximus. Vivamus
-          eleifend quis justo id cursus. Quisque a ante hendrerit,
-          scelerisque elit eu, gravida ex. Vestibulum imperdiet mi
-          magna, eget commodo erat porta vel. Nunc faucibus, est id
-          tempor consectetur, nibh quam egestas enim, id varius nunc
-          nisl nec nunc. Etiam volutpat massa nulla, at commodo nisi
-          tristique in.
-        </ExperienceCard>
-
-        <ExperienceCard year={2021}>
-          Fusce non molestie massa. Suspendisse semper volutpat sapien
-          sed dignissim. Vestibulum eleifend ornare sapien, id
-          ultricies tortor posuere at. Proin pharetra leo quis massa
-          congue vehicula. Pellentesque habitant morbi tristique
-          senectus et netus et malesuada fames ac turpis egestas.
-          Curabitur egestas consequat augue at dignissim. Fusce
-          pulvinar consequat lobortis
-        </ExperienceCard>
+        {experiences.map((experience) => (
+          <ExperienceCard
+            key={experience.id}
+            title={experience.title}
+            company={experience.company}
+            period={experience.period}
+          >
+            {experience.description}
+          </ExperienceCard>
+        ))}
       </ul>
     </section>
   );

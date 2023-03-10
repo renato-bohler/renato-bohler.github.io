@@ -5,14 +5,13 @@
 
   margin: 2em 0;
   padding: 0 50px;
-  max-width: 50%;
+  width: 50%;
 
   list-style: none;
 }
 
 .card:nth-child(odd) {
   align-self: flex-end;
-  justify-content: flex-end;
 }
 
 .card:nth-child(even) {
@@ -47,47 +46,67 @@
   transform: translate(50%, 0.5em);
 }
 
-.year {
+.companyLogo {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
-  transform: translate(calc(-100% - 50px), -0.25em);
+  transform: translate(calc(-100% - 50px), calc(-50% + 16px));
 
-  font-size: 1.5em;
-  font-weight: 100;
+  display: flex;
+  border-radius: 100%;
+
+  width: 48px;
+  height: 48px;
+  padding: 8px;
 
   opacity: 100%;
   transition: opacity 500ms 100ms, transform 500ms;
 }
 
-.card:nth-child(even) > .year {
+.card:nth-child(even) > .companyLogo {
   left: unset;
   right: 0;
-  transform: translate(calc(100% + 50px), -0.25em);
+  transform: translate(calc(100% + 50px), calc(-50% + 16px));
 }
 
-.card[data-revealed='false'] > .year {
+.card[data-revealed='false'] > .companyLogo {
   opacity: 0%;
-  transform: translate(calc(-100% + 100px), -0.25em);
+  transform: translate(calc(-100% + 100px), calc(-50% + 16px));
 }
 
-.text {
+.content {
   position: relative;
   z-index: 1;
+
+  display: flex;
+  flex-direction: column;
 
   transform: translateX(0);
   opacity: 100%;
   transition: opacity 500ms 300ms, transform 500ms 300ms;
 }
 
-.card[data-revealed='false'] > .text {
+.card[data-revealed='false'] > .content {
   opacity: 0%;
   transform: translateX(-50px);
 }
 
-.card:nth-child(even)[data-revealed='false'] > .text {
+.card:nth-child(even)[data-revealed='false'] > .content {
   transform: translateX(50px);
+}
+
+.company {
+  margin: 0;
+}
+
+.period {
+  font-size: 0.9em;
+  opacity: 80%;
+}
+
+.description {
+  margin-top: 1em;
 }
 
 .reveal {
@@ -115,8 +134,9 @@
 
 @media screen and (max-width: 42rem) {
   .card {
-    max-width: calc(100% - 50px);
+    width: calc(100% - 50px);
     align-self: flex-end;
+    padding: 0 25px;
   }
 
   .card:nth-child(even) {
@@ -129,18 +149,26 @@
     transform: translate(-50%, 0.5em);
   }
 
-  .card:nth-child(even)[data-revealed='false'] > .text {
+  .card[data-revealed='false'] > .content {
     transform: translateX(-50px);
   }
 
-  .year {
-    display: none;
+  .companyLogo {
+    position: static;
+    transform: none;
+    margin-right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .card:nth-child(even) > .companyLogo {
+    transform: none;
   }
 }
 
 @media screen and (max-width: 32rem) {
   .card {
-    max-width: calc(100% - 25px);
+    width: calc(100% - 25px);
     padding: 0 25px;
   }
 }
