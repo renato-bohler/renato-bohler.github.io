@@ -61,7 +61,7 @@ const ExperienceCard: React.FC<Props> = ({
           {formatDate(period.from)} — {formatDate(period.to)} (
           {formatDuration(period.from, period.to || new Date())})
         </em>
-        <span className={styles.description}>{children}</span>
+        <span>{children}</span>
       </div>
       <div className={styles.reveal} />
     </li>
