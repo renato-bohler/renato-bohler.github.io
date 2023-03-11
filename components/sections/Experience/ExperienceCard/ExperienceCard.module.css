@@ -100,8 +100,12 @@
   margin: 0;
 }
 
-.period {
+.jobTitle {
   font-size: 0.9em;
+}
+
+.period {
+  font-size: 0.8em;
   opacity: 80%;
 }
 

@@ -5,6 +5,7 @@ import styles from './ExperienceCard.module.css';
 
 type Props = {
   title: string;
+  jobTitle: string;
   company: Company;
   period: Period;
   children: React.ReactNode;
@@ -34,6 +35,7 @@ const formatDuration = (from: Date, to: Date) => {
 
 const ExperienceCard: React.FC<Props> = ({
   title,
+  jobTitle,
   company,
   period,
   children,
@@ -57,6 +59,7 @@ const ExperienceCard: React.FC<Props> = ({
       </div>
       <div className={styles.content}>
         <h3 className={styles.company}>{title}</h3>
+        <span className={styles.jobTitle}>{jobTitle}</span>
         <em className={styles.period}>
           {formatDate(period.from)} — {formatDate(period.to)} (
           {formatDuration(period.from, period.to || new Date())})

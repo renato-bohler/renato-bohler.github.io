@@ -53,6 +53,7 @@ const Experience: React.FC = () => {
           <ExperienceCard
             key={experience.id}
             title={experience.title}
+            jobTitle={experience.jobTitle}
             company={experience.company}
             period={experience.period}
           >

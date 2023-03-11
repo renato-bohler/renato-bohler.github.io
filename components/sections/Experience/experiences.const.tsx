@@ -17,6 +17,7 @@ const experiences: Experience[] = [
   {
     id: 'intive-1',
     title: 'intive',
+    jobTitle: 'Full stack developer',
     company: intive,
     period: {
       from: new Date('2021-11-01T00:00:00Z'),
@@ -38,6 +39,7 @@ const experiences: Experience[] = [
   {
     id: 'ci&t-1',
     title: 'CI&T',
+    jobTitle: 'Full stack developer',
     company: ciandt,
     period: {
       from: new Date('2020-03-01T00:00:00Z'),
@@ -75,6 +77,7 @@ const experiences: Experience[] = [
   {
     id: 'agrotis',
     title: 'Agrotis',
+    jobTitle: 'Full stack developer',
     company: agrotis,
     period: {
       from: new Date('2016-10-01T00:00:00Z'),
@@ -82,7 +85,51 @@ const experiences: Experience[] = [
     },
     description: (
       <>
-        <p>Lorem ipsum.</p>
+        <p>
+          <a
+            href="https://www.agrotis.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Agrotis
+          </a>{' '}
+          is a Brazilian-based company that develops software for the
+          agriculture industry.
+        </p>
+        <p>
+          I started as a backend engineer, developing APIs using Java
+          EE, Hibernate, SQL Server, Kafka, and MQTT. I soon migrated
+          to a full stack position, working with AngularJS and React.
+        </p>
+        <p>
+          During my time at Agrotis, I&apos;ve helped build some core
+          functionalities of their enterprise web platform:
+          <ul>
+            <li>
+              custom rich text editor that generates dynamic contract
+              documents based on system parameters (using{' '}
+              <a
+                href="https://draftjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <code>draft-js</code>
+              </a>
+              )
+            </li>
+            <li>
+              real-time hardware integration with the web platform,
+              enabling users to read truck weights on the go (using
+              MQTT)
+            </li>
+            <li>SAP Business One integration via Kafka</li>
+          </ul>
+        </p>
+        <p>
+          I was also the developer in charge of maintaining a core
+          React components package used by another four web teams in
+          the company.
+        </p>
       </>
     ),
   },
@@ -101,6 +148,7 @@ export type Company = {
 export type Experience = {
   id: string;
   title: string;
+  jobTitle: string;
   company: Company;
   period: Period;
   description: React.ReactElement;
