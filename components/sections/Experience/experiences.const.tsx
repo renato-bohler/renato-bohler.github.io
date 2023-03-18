@@ -172,27 +172,28 @@ const experiences: Experience[] = [
         <p>
           During my time at Agrotis, I&apos;ve helped build some core
           functionalities of their enterprise web platform:
-          <ul>
-            <li>
-              custom rich text editor that generates dynamic contract
-              documents based on system parameters (using{' '}
-              <a
-                href="https://draftjs.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <code>draft-js</code>
-              </a>
-              )
-            </li>
-            <li>
-              real-time hardware integration with the web platform,
-              enabling users to read truck weights on the go (using
-              MQTT)
-            </li>
-            <li>SAP Business One integration via Kafka</li>
-          </ul>
         </p>
+        <ul>
+          <li>
+            custom rich text editor that generates dynamic contract
+            documents based on system parameters (using{' '}
+            <a
+              href="https://draftjs.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <code>draft-js</code>
+            </a>
+            )
+          </li>
+          <li>
+            real-time hardware integration with the web platform,
+            enabling users to read truck weights on the go (using
+            MQTT)
+          </li>
+          <li>SAP Business One integration via Kafka</li>
+        </ul>
+
         <p>
           I was also the developer in charge of maintaining a core
           React components package used by another four web teams in
