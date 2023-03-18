@@ -55,6 +55,7 @@ const Experience: React.FC = () => {
             title={experience.title}
             jobTitle={experience.jobTitle}
             company={experience.company}
+            consultant={experience.consultant}
             period={experience.period}
           >
             {experience.description}

@@ -7,6 +7,7 @@ type Props = {
   title: string;
   jobTitle: string;
   company: Company;
+  consultant?: boolean;
   period: Period;
   children: React.ReactNode;
 };
@@ -26,17 +27,19 @@ const formatDuration = (from: Date, to: Date) => {
   const years = diff.getUTCFullYear() - 1970;
   const months = diff.getUTCMonth() + 1;
 
-  if (years === 0 && months <= 1) return '< 1 month';
+  const formattedYears = `${years} year${years > 1 ? 's' : ''}`;
+  const formattedMonths = `${months} month${months > 1 ? 's' : ''}`;
 
-  return `${years} year${years > 1 ? 's' : ''}, ${months} month${
-    months > 1 ? 's' : ''
-  }`;
+  if (years === 0 && months <= 1) return '< 1 month';
+  if (years === 0) return formattedMonths;
+  return `${formattedYears}, ${formattedMonths}`;
 };
 
 const ExperienceCard: React.FC<Props> = ({
   title,
   jobTitle,
   company,
+  consultant,
   period,
   children,
 }) => {
@@ -58,12 +61,21 @@ const ExperienceCard: React.FC<Props> = ({
         </svg>
       </div>
       <div className={styles.content}>
-        <h3 className={styles.company}>{title}</h3>
+        <h3 className={styles.company}>
+          {title}
+          {consultant && '*'}
+        </h3>
         <span className={styles.jobTitle}>{jobTitle}</span>
         <em className={styles.period}>
           {formatDate(period.from)} — {formatDate(period.to)} (
           {formatDuration(period.from, period.to || new Date())})
         </em>
+        {consultant && (
+          <span className={styles.consultant}>
+            * as a consultant, I&apos;m not allowed to disclose client
+            information
+          </span>
+        )}
         <span>{children}</span>
       </div>
       <div className={styles.reveal} />

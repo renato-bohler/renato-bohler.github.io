@@ -109,6 +109,11 @@
   opacity: 80%;
 }
 
+.consultant {
+  font-size: 0.75em;
+  opacity: 50%;
+}
+
 .reveal {
   position: absolute;
   inset: 0;
