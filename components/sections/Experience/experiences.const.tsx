@@ -88,27 +88,17 @@ const experiences: Experience[] = [
     description: (
       <>
         <p>
-          Ut erat velit, suscipit eu leo in, facilisis posuere augue.
-          Aliquam tincidunt ligula tortor, sed facilisis quam congue
-          ut. Nunc augue felis, finibus sit amet metus et, vulputate
-          egestas ex. Quisque congue velit efficitur ipsum bibendum,
-          nec efficitur tellus consequat. Phasellus ullamcorper, enim
-          a dictum mattis, urna dolor facilisis ante, id posuere diam
-          libero sed urna.
+          As a corporate travel software, this app included flight and
+          hotel booking, car rental, expense management, policies and
+          approvals, users and groups, and more. It&apos;s a React
+          project embedded via <code>WebView</code> into the biggest
+          Colombian super app.
         </p>
         <p>
-          Sed ut ante mi. Nam eu ligula sit amet lectus ornare aliquam
-          sed sed elit. Nam lobortis tellus vel aliquet ornare.
-          Vestibulum fringilla tincidunt arcu, eu aliquet ante egestas
-          a. Vestibulum scelerisque vitae enim ac luctus. Maecenas
-          ultricies sollicitudin maximus. Vivamus eleifend quis justo
-          id cursus. Quisque a ante hendrerit, scelerisque elit eu,
-          gravida ex. Vestibulum imperdiet mi magna, eget commodo erat
-          porta vel. Nunc faucibus, est id tempor consectetur, nibh
-          quam egestas enim, id varius nunc nisl nec nunc.
-        </p>
-        <p>
-          Etiam volutpat massa nulla, at commodo nisi tristique in.
+          Initially, this project was meant to be mobile only. During
+          this period, I was tasked with collaborating with the design
+          team to redesign every screen to make it compatible with
+          desktop devices.
         </p>
       </>
     ),
