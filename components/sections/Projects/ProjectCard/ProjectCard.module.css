@@ -141,7 +141,6 @@
   column-count: auto;
   column-gap: 5em;
   column-rule: 1px solid rgba(var(--theme-text-rgb), 5%);
-  column-fill: auto;
 }
 
 @media screen and (max-width: 42rem) {
