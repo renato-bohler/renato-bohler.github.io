@@ -96,9 +96,10 @@ const experiences: Experience[] = [
         </p>
         <p>
           Initially, this project was meant to be mobile only. During
-          this period, I was tasked with collaborating with the design
-          team to redesign every screen to make it compatible with
-          desktop devices.
+          this period, apart from developing new features and fixing
+          bugs, I was tasked with collaborating with the design team
+          to redesign every screen to make it compatible with desktop
+          devices.
         </p>
       </>
     ),
