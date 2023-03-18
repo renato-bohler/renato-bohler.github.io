@@ -107,6 +107,7 @@
 
 .heart {
   fill: transparent;
+  stroke: var(--theme-primary-bright);
 
   stroke-dashoffset: 233.1723175048828px;
   stroke-dasharray: 233.1723175048828px;
@@ -114,7 +115,7 @@
 
 .visible > .heart {
   stroke-width: 6px;
-  fill: rgba(255, 0, 0, 50%);
+  fill: rgba(var(--theme-highlight-rgb), 25%);
 
   transition-property: stroke-dashoffset, fill;
   transition-delay: 3.5s, 4s;
