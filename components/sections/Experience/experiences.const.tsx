@@ -26,13 +26,47 @@ const experiences: Experience[] = [
     description: (
       <>
         <p>
-          Fusce non molestie massa. Suspendisse semper volutpat sapien
-          sed dignissim. Vestibulum eleifend ornare sapien, id
-          ultricies tortor posuere at. Proin pharetra leo quis massa
-          congue vehicula. Pellentesque habitant morbi tristique
-          senectus et netus et malesuada fames ac turpis egestas.
-          Curabitur egestas consequat augue at dignissim. Fusce
-          pulvinar consequat lobortis.
+          As a front end developer for this company, my role involves
+          creating and maintaining the user interface of a platform
+          that serves thousands of pizzerias across the United States,
+          working alongside product managers, designers, and other
+          developers based in various locations around the world.
+        </p>
+        <p>
+          One of my significant achievements during my time at this
+          company was leading the development of a React component
+          library that has been adopted by multiple teams. I oversaw
+          its creation, from defining core concepts and workflow to
+          setting up the bundler (
+          <a
+            href="https://vitejs.dev/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Vite
+          </a>
+          ), implementing automatic semantic versioning and publishing
+          (using{' '}
+          <a
+            href="https://intuit.github.io/auto/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Auto
+          </a>
+          ), configuring automated Storybook deployment, and ensuring
+          code-splitting was executed correctly (both for JS and CSS).
+        </p>
+        <p>
+          In addition, I&apos;ve made significant improvements to the
+          developer experience by reworking an automated ADA
+          compliance check, leading the migration of unit tests from{' '}
+          <code>enzyme</code> to <code>react-testing-library</code>,
+          and leading the migration of styling from{' '}
+          <code>react-fela</code> to <code>sass</code>. I&apos;ve also
+          polished bundler and CI/CD configurations, maintained
+          dependencies up-to-date, and refined linting rules across
+          multiple projects.
         </p>
       </>
     ),
@@ -93,7 +127,9 @@ const experiences: Experience[] = [
           this period, apart from developing new features and fixing
           bugs, I was tasked with collaborating with the design team
           to redesign every screen to make it compatible with desktop
-          devices.
+          devices. I also worked to improve the developer experience
+          of the project, installing and configuring linting tools and
+          improving the CI/CD pipeline.
         </p>
       </>
     ),
