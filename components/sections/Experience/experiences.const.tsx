@@ -201,30 +201,39 @@ const experiences: Experience[] = [
           to a full stack position, working with AngularJS and React.
         </p>
         <p>
-          During my time at Agrotis, I&apos;ve helped build some core
-          functionalities of their enterprise web platform:
+          During my time at Agrotis, I had the opportunity to
+          contribute to the development of several core
+          functionalities of their enterprise web platform. For
+          instance, I worked on a custom rich text editor (using{' '}
+          <a
+            href="https://draftjs.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <code>draft-js</code>
+          </a>
+          ) to generate dynamic contract documents based on system
+          parameters. Additionally, I assisted in the development of
+          real-time hardware integration with the web platform, which
+          enabled users to read truck weights on the go (using{' '}
+          <a
+            href="https://mqtt.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MQTT
+          </a>
+          ). I was also involved in the development of integrations
+          with SAP Business One through{' '}
+          <a
+            href="https://kafka.apache.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Apache Kafka
+          </a>
+          .
         </p>
-        <ul>
-          <li>
-            custom rich text editor that generates dynamic contract
-            documents based on system parameters (using{' '}
-            <a
-              href="https://draftjs.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <code>draft-js</code>
-            </a>
-            )
-          </li>
-          <li>
-            real-time hardware integration with the web platform,
-            enabling users to read truck weights on the go (using
-            MQTT)
-          </li>
-          <li>SAP Business One integration via Kafka</li>
-        </ul>
-
         <p>
           I was also the developer in charge of maintaining a core
           React components package used by another four web teams in
