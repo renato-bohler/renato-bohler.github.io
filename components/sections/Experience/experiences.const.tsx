@@ -34,9 +34,12 @@ const experiences: Experience[] = [
         </p>
         <p>
           One of my significant achievements during my time at this
-          company was leading the development of a React component
-          library that has been adopted by multiple teams. I oversaw
-          its creation, from defining core concepts and workflow to
+          company was{' '}
+          <strong>
+            leading the development of a React component library
+          </strong>{' '}
+          that has been adopted by multiple teams. I oversaw its
+          creation, from defining core concepts and workflow to
           setting up the bundler (
           <a
             href="https://vitejs.dev/"
@@ -59,8 +62,9 @@ const experiences: Experience[] = [
         </p>
         <p>
           In addition, I&apos;ve made significant improvements to the
-          developer experience by reworking an automated ADA
-          compliance check, leading the migration of unit tests from{' '}
+          developer experience by{' '}
+          <strong>reworking an automated ADA compliance check</strong>
+          , leading the migration of unit tests from{' '}
           <code>enzyme</code> to <code>react-testing-library</code>,
           and leading the migration of styling from{' '}
           <code>react-fela</code> to <code>sass</code>. I&apos;ve also
@@ -125,10 +129,14 @@ const experiences: Experience[] = [
         <p>
           Initially, this project was meant to be mobile only. During
           this period, apart from developing new features and fixing
-          bugs, I was tasked with collaborating with the design team
-          to redesign every screen to make it compatible with desktop
-          devices. I also worked to improve the developer experience
-          of the project, installing and configuring linting tools and
+          bugs, I was tasked with{' '}
+          <strong>
+            collaborating with the design team to redesign
+          </strong>{' '}
+          every screen to make it compatible with desktop devices. I
+          also worked to{' '}
+          <strong>improve the developer experience</strong> of the
+          project, installing and configuring linting tools and
           improving the CI/CD pipeline.
         </p>
       </>
@@ -190,7 +198,7 @@ const experiences: Experience[] = [
             target="_blank"
             rel="noopener noreferrer"
           >
-            Agrotis
+            <strong>Agrotis</strong>
           </a>{' '}
           is a Brazilian-based company that develops software for the
           agriculture industry.
@@ -204,7 +212,8 @@ const experiences: Experience[] = [
           During my time at Agrotis, I had the opportunity to
           contribute to the development of several core
           functionalities of their enterprise web platform. For
-          instance, I worked on a custom rich text editor (using{' '}
+          instance, I worked on a{' '}
+          <strong>custom rich text editor</strong> (using{' '}
           <a
             href="https://draftjs.org/"
             target="_blank"
@@ -213,9 +222,10 @@ const experiences: Experience[] = [
             <code>draft-js</code>
           </a>
           ) to generate dynamic contract documents based on system
-          parameters. Additionally, I assisted in the development of
-          real-time hardware integration with the web platform, which
-          enabled users to read truck weights on the go (using{' '}
+          parameters. Additionally, I assisted in the development of{' '}
+          <strong>real-time hardware integration</strong> with the web
+          platform, which enabled users to read truck weights on the
+          go (using{' '}
           <a
             href="https://mqtt.org/"
             target="_blank"
@@ -223,8 +233,8 @@ const experiences: Experience[] = [
           >
             MQTT
           </a>
-          ). I was also involved in the development of integrations
-          with SAP Business One through{' '}
+          ). I was also involved in the development of{' '}
+          <strong>integrations with SAP Business One</strong> through{' '}
           <a
             href="https://kafka.apache.org/"
             target="_blank"
@@ -235,9 +245,9 @@ const experiences: Experience[] = [
           .
         </p>
         <p>
-          I was also the developer in charge of maintaining a core
-          React components package used by another four web teams in
-          the company.
+          I was also the developer in charge of maintaining a{' '}
+          <strong>core React components package</strong> used by
+          another four web teams in the company.
         </p>
       </>
     ),
