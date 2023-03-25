@@ -1,3 +1,5 @@
+import dynamic from 'next/dynamic';
+
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { DialogDisclosure, useDialogState } from 'reakit/Dialog';
@@ -13,7 +15,11 @@ import OpenBookIcon from '~/components/icons/OpenBook';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './SkillCard.module.css';
-import SkillCardDialog from './SkillCardDialog/SkillCardDialog';
+
+const SkillCardDialog = dynamic(
+  () => import('./SkillCardDialog/SkillCardDialog'),
+  { ssr: false },
+);
 
 type Props = {
   id: string;
