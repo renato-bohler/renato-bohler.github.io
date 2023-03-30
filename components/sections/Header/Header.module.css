@@ -76,7 +76,9 @@
   min-width: 6ch;
   margin: 0;
 
-  transform: translate(calc(50vw - 50%), calc(50vh - 50%));
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   transition: 500ms ease-in-out;
 
   pointer-events: none;
@@ -129,12 +131,15 @@
 }
 
 .heading[data-folded='true'] {
+  top: 0;
+  left: 0;
+
   min-height: 40px;
   min-width: 60px;
 
   transform: translate(50px, 40px);
-  transition: transform 1s ease-in-out 250ms,
-    margin-top 500ms ease-in-out;
+  transition: transform 1s ease-in-out 250ms, top 1s ease-in-out 350ms,
+    left 1s ease-in-out 250ms, margin-top 500ms ease-in-out;
 
   pointer-events: all;
 }
