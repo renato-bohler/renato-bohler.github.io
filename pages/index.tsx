@@ -1,9 +1,11 @@
 import { CSSProperties, Fragment, useState } from 'react';
 
 import { GetStaticProps, NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
 import classNames from 'classnames';
+import { useDialogState } from 'reakit/Dialog';
 
 import fetchProjectDetails, {
   RepositoryInfo,
@@ -18,6 +20,11 @@ import { HEADER, SECTIONS } from '~/consts/sections.const';
 
 import styles from './index.module.css';
 
+const EmailDialog = dynamic(
+  () => import('~/components/EmailDialog/EmailDialog'),
+  { ssr: false },
+);
+
 type StaticProps = {
   repositories: RepositoryInfo[];
 };
@@ -30,6 +37,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
 
   const [isNavigationHeaderHidden, setNavigationHeaderHidden] =
     useState(false);
+
+  const emailDialog = useDialogState();
 
   return (
     <>
@@ -46,6 +55,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       </Head>
 
       <KeyboardNavigation />
+      <EmailDialog dialog={emailDialog} />
 
       <div
         className={classNames(styles.mainContainer, {
@@ -57,7 +67,10 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
           sectionName={HEADER.name}
           onChange={handleSectionChange}
         />
-        <Header isNavigationHeaderHidden={isNavigationHeaderHidden} />
+        <Header
+          isNavigationHeaderHidden={isNavigationHeaderHidden}
+          onEmailDialogOpen={emailDialog.show}
+        />
 
         <main>
           {SECTIONS.map(({ name, Component }) => (

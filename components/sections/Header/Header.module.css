@@ -221,12 +221,6 @@
   }
 }
 
-@media screen and (max-width: 25rem) {
-  .container:last-child {
-    display: none;
-  }
-}
-
 @keyframes blink {
   from {
     opacity: 0;

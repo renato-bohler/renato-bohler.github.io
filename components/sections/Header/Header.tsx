@@ -24,9 +24,13 @@ const SUBTITLES = [
 
 type Props = {
   isNavigationHeaderHidden: boolean;
+  onEmailDialogOpen: () => void;
 };
 
-const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
+const Header: React.FC<Props> = ({
+  isNavigationHeaderHidden,
+  onEmailDialogOpen,
+}) => {
   const { isContrastMode } = useTheme();
 
   const [isScrollHintVisible, setScrollHintVisible] = useState(false);
@@ -136,7 +140,7 @@ const Header: React.FC<Props> = ({ isNavigationHeaderHidden }) => {
         </div>
 
         <nav className={styles.container}>
-          <SocialLinks />
+          <SocialLinks onEmailDialogOpen={onEmailDialogOpen} />
         </nav>
       </div>
 

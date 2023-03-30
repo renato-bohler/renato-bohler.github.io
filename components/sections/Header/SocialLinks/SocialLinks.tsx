@@ -1,3 +1,4 @@
+import { Button } from 'reakit/Button';
 import {
   Popover,
   PopoverArrow,
@@ -6,6 +7,7 @@ import {
 } from 'reakit/Popover';
 
 import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import EmailIcon from '~/components/icons/Email';
 import GitHubIcon from '~/components/icons/GitHub';
 import LinkedInIcon from '~/components/icons/LinkedIn';
 import SocialsIcon from '~/components/icons/Socials';
@@ -16,10 +18,23 @@ import styles from './SocialLinks.module.css';
 
 type LinksProps = {
   animate?: boolean;
+  onEmailDialogOpen: () => void;
 };
 
-const Links: React.FC<LinksProps> = ({ animate }) => (
+const Links: React.FC<LinksProps> = ({
+  animate,
+  onEmailDialogOpen,
+}) => (
   <>
+    <Button
+      title="E-mail"
+      onClick={onEmailDialogOpen}
+      className={styles.social}
+    >
+      <AnimatedIcon animationDelay={animate ? 3500 : 0}>
+        <EmailIcon />
+      </AnimatedIcon>
+    </Button>
     <a
       title="Twitter"
       href={socials.twitter}
@@ -56,7 +71,11 @@ const Links: React.FC<LinksProps> = ({ animate }) => (
   </>
 );
 
-const Socials: React.FC = () => {
+type Props = {
+  onEmailDialogOpen: () => void;
+};
+
+const Socials: React.FC<Props> = ({ onEmailDialogOpen }) => {
   const popover = usePopoverState({
     placement: 'bottom-start',
     animated: 500,
@@ -65,7 +84,7 @@ const Socials: React.FC = () => {
   return (
     <>
       <div className={styles.desktopButtons}>
-        <Links animate />
+        <Links animate onEmailDialogOpen={onEmailDialogOpen} />
       </div>
       <PopoverDisclosure
         {...popover}
@@ -84,7 +103,7 @@ const Socials: React.FC = () => {
           />
           <span className={styles.title}>Socials</span>
           <div className={styles.grid}>
-            <Links />
+            <Links onEmailDialogOpen={onEmailDialogOpen} />
           </div>
         </div>
       </Popover>

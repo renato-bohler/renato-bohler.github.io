@@ -10,6 +10,8 @@
   font-size: 1.75rem;
   color: var(--theme-text);
 
+  cursor: pointer;
+
   transition: color 1s ease-in-out;
 }
 
@@ -86,7 +88,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
 
   padding: 0 16px 16px 16px;
