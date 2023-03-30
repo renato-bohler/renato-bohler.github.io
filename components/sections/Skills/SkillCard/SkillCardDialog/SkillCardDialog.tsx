@@ -57,26 +57,6 @@ const SkillCardDialog: React.FC<Props> = ({
     }
   }, [dialog.visible]);
 
-  /**
-   * This hack will not be needed when `dvh` gets supported by
-   * browsers (dynamic viewport units).
-   *
-   * See: https://caniuse.com/viewport-unit-variants
-   */
-  useEffect(() => {
-    if (!window) return;
-
-    const setDvhValue = () =>
-      document.documentElement.style.setProperty(
-        '--dvh',
-        `${window.innerHeight * 0.01}px`,
-      );
-    window.addEventListener('resize', setDvhValue);
-    setDvhValue();
-
-    return () => window.removeEventListener('resize', setDvhValue);
-  }, []);
-
   useEffect(() => {
     dialog.setAnimated(!isReducedMotion);
   }, [dialog, isReducedMotion]);
