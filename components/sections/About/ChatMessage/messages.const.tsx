@@ -63,7 +63,7 @@ export const incoming: Message[] = [
     direction: 'incoming',
     status: 'writing',
     content: (
-      <>Is there anything else you&apos;d like to know about me?</>
+      <>What would you like to know about me? Ask right away!</>
     ),
   },
 ];
