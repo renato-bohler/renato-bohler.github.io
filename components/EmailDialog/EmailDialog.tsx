@@ -19,12 +19,13 @@ type Props = {
 };
 
 const EmailDialog: React.FC<Props> = ({ dialog }) => {
-  const focusRef = useRef<HTMLInputElement | null>(null);
+  const formRef = useRef<HTMLFormElement | null>(null);
 
   const { isReducedMotion } = useTheme();
 
   useEffect(() => {
-    if (dialog.visible) focusRef.current?.focus();
+    if (!dialog.visible) return;
+    formRef.current?.getElementsByTagName('input')[0]?.focus();
   }, [dialog.visible]);
 
   useEffect(() => {
@@ -58,14 +59,13 @@ const EmailDialog: React.FC<Props> = ({ dialog }) => {
         <div className={styles.content}>
           <div className={styles.intro}>
             <strong>
-              Want to get in touch? I&apos;m looking forward to
-              hearing from you!
+              I&apos;m looking forward to hearing from you!
             </strong>
             Fill this form and I&apos;ll reach out as soon as possible
             😊
           </div>
 
-          <EmailForm />
+          <EmailForm ref={formRef} />
         </div>
       </Dialog>
     </DialogBackdrop>

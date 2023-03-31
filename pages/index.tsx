@@ -91,6 +91,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
         onProgressChange={setProgress}
         onNavigationHeaderTrigger={setNavigationHeaderHidden}
         isNavigationHeaderHidden={isNavigationHeaderHidden}
+        onEmailDialogOpen={emailDialog.show}
       />
     </>
   );

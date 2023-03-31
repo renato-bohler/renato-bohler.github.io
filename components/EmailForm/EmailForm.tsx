@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { forwardRef, Ref, useState } from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';
@@ -41,7 +41,10 @@ type Props = {
   className?: string;
 };
 
-const EmailForm: React.FC<Props> = ({ className }) => {
+const EmailForm = (
+  { className }: Props,
+  ref: Ref<HTMLFormElement>,
+) => {
   const [formState, setFormState] = useState<FormState>('idle');
 
   const handleSubmit: React.FormEventHandler<
@@ -70,6 +73,7 @@ const EmailForm: React.FC<Props> = ({ className }) => {
 
   return (
     <form
+      ref={ref}
       onSubmit={handleSubmit}
       className={classNames(styles.form, className)}
     >
@@ -138,4 +142,4 @@ const EmailForm: React.FC<Props> = ({ className }) => {
   );
 };
 
-export default EmailForm;
+export default forwardRef(EmailForm);

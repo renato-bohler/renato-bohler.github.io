@@ -7,7 +7,7 @@
   align-items: center;
 
   padding: 16px;
-  margin-top: 500px;
+  margin-top: 150px;
 
   color: white;
 }
@@ -26,4 +26,63 @@
   background-image: url('/images/topography.svg');
   background-size: contain;
   background-position: center;
+}
+
+.contactButton {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0.5em 0.75em;
+  margin: 0 0 300px 0;
+
+  font-family: Major Mono Display, monospace;
+  font-size: 2em;
+  font-weight: bolder;
+  -webkit-text-stroke: 0.04em;
+  text-transform: lowercase;
+
+  background: linear-gradient(
+    180deg,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  color: transparent;
+  background-clip: text;
+
+  border-image: linear-gradient(
+    90deg,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  border-image-slice: 1;
+  border-width: 2px;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.contactButtonDecoration {
+  color: white;
+}
+
+.contactButtonDecoration::after {
+  content: '_';
+  animation: blink ease 1s infinite;
+}
+
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 28rem) {
+  .contactButton {
+    font-size: 1.5em;
+  }
 }
