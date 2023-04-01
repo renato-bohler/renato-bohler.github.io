@@ -40,6 +40,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
+    permissions:
+      pages: write
     env:
       name: github-pages
     steps:
