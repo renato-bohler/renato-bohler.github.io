@@ -5,6 +5,10 @@ on:
     branches: [development]
   workflow_dispatch:
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -37,7 +41,6 @@ jobs:
     needs: build
     env:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
