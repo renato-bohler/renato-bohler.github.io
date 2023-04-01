@@ -46,8 +46,39 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
         <title>{title}</title>
         <meta
           name="description"
-          content="Renato Böhler: frontend developer"
+          content="Computer Engineer, Web Developer. Passionate about anything computer-related."
         />
+
+        {/* Open Graph */}
+        <meta
+          property="og:url"
+          content="https://renato-bohler.github.io/"
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Renato Böhler" />
+        <meta
+          property="og:description"
+          content="Computer Engineer, Web Developer. Passionate about everything computer-related."
+        />
+        <meta property="og:image" content="/images/social.png" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:domain"
+          content="renato-bohler.github.io"
+        />
+        <meta
+          property="twitter:url"
+          content="https://renato-bohler.github.io/"
+        />
+        <meta name="twitter:title" content="Renato Böhler" />
+        <meta
+          name="twitter:description"
+          content="Computer Engineer, Web Developer. Passionate about everything computer-related."
+        />
+        <meta name="twitter:image" content="/images/social.png" />
+
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0"
