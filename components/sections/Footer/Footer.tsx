@@ -1,5 +1,7 @@
 import { Button } from 'reakit/Button';
 
+import * as format from '~/utils/format';
+
 import styles from './Footer.module.css';
 import FooterTransitionTrigger from './FooterTransitionTrigger/FooterTransitionTrigger';
 import MadeBy from './MadeBy/MadeBy';
@@ -17,6 +19,8 @@ const Footer: React.FC<Props> = ({
   isNavigationHeaderHidden,
   onEmailDialogOpen,
 }) => {
+  const lastUpdated = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
+
   return (
     <>
       <FooterTransitionTrigger
@@ -38,10 +42,25 @@ const Footer: React.FC<Props> = ({
           </span>
         </Button>
 
+        <MadeBy />
+
+        <div className={styles.details}>
+          <span title={format.dateTime(lastUpdated)}>
+            Last updated {format.relativeTime(lastUpdated)}
+          </span>
+
+          <a
+            href="https://github.com/renato-bohler/renato-bohler.github.io"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Source code
+          </a>
+        </div>
+
         {isNavigationHeaderHidden && (
           <div className={styles.background} />
         )}
-        <MadeBy />
       </footer>
     </>
   );

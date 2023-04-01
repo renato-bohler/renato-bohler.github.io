@@ -28,6 +28,24 @@
   background-position: center;
 }
 
+.details {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+
+  font-size: 0.8em;
+  color: rgb(150, 150, 150);
+}
+
+.details a {
+  text-align: right;
+}
+
+.details a::after {
+  content: '' !important;
+}
+
 .contactButton {
   position: relative;
 
@@ -85,5 +103,10 @@
 @media screen and (max-width: 28rem) {
   .contactButton {
     font-size: 1.5em;
+  }
+
+  .details {
+    margin-top: 16px;
+    font-size: 0.6em;
   }
 }
