@@ -5,6 +5,9 @@ on:
     branches: [development]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu
@@ -43,6 +46,10 @@ jobs:
   semantic_release:
     runs-on: ubuntu
     needs: deploy
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
       - name: Semantic Release
         env:
