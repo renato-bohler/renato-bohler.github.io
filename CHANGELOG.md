@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.0...v2.0.1) (2023-04-01)
+
+
+### Bug Fixes
+
+* adjusts domain name ([3abb86c](https://github.com/renato-bohler/renato-bohler.github.io/commit/3abb86c0e216ba1fd06a9208a62feba08d0f80cc))
+
 # [2.0.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.11.2...v2.0.0) (2023-04-01)
 
 
