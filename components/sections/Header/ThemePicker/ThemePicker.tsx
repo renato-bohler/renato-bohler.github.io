@@ -14,7 +14,6 @@ import DarkIcon from '~/components/icons/Dark';
 import LightIcon from '~/components/icons/Light';
 import ThemeIcon from '~/components/icons/Theme';
 import themes from '~/consts/themes.const';
-import useFirstMount from '~/hooks/useFirstMount';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
@@ -30,8 +29,6 @@ const ThemePicker: React.FC = () => {
     isReducedMotion,
     setReducedMotion,
   } = useTheme();
-
-  const isFirstMount = useFirstMount();
 
   const isMobile = useMediaQuery({
     query: '(max-width: 550px)',
@@ -82,9 +79,7 @@ const ThemePicker: React.FC = () => {
                   key={t.name}
                   title={t.name}
                   className={styles.themeButton}
-                  aria-pressed={
-                    !isFirstMount && t.name === theme.name
-                  }
+                  aria-pressed={t.name === theme.name}
                   style={{
                     background: `
                       linear-gradient(
