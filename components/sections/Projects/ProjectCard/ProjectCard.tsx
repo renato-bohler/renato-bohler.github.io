@@ -56,7 +56,7 @@ const ProjectCard: React.FC<Props> = ({
             muted
             playsInline
             poster={`/videos/${project.folder}/poster.png`}
-            preload="auto"
+            preload="metadata"
             className={styles.video}
           />
         </div>
