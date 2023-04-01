@@ -1,0 +1,199 @@
+.animatedScroll {
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}
+
+.anchor {
+  transform: translateY(-5.5em);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  position: relative;
+
+  font-size: 10em;
+  text-align: center;
+  text-transform: uppercase;
+
+  margin-bottom: 0;
+}
+
+.title::after {
+  content: 'experience';
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 var(--theme-experience-transition-adjust);
+
+  mix-blend-mode: color-burn;
+}
+
+.transitionContainer {
+  height: 500px;
+}
+
+.transitionOverflow {
+  composes: animatedScroll;
+  animation-name: transitionOverflow;
+
+  --translate-y-end: -125vh;
+  --height-end: 500px;
+
+  overflow: hidden;
+  max-width: 100%;
+  height: var(--height-end);
+}
+
+@keyframes transitionOverflow {
+  0% {
+    transform: translateY(var(--translate-y-end));
+    height: 200vh;
+  }
+  100% {
+    height: var(--height-end);
+  }
+}
+
+.transitionLine {
+  composes: animatedScroll;
+  animation-name: transitionLine;
+
+  --margin-left-start: auto;
+  --margin-left-middle: auto;
+  --margin-left-end: auto;
+  --scale-start: 1.5;
+
+  width: 2px;
+  height: 100%;
+
+  margin: 0 auto;
+
+  background: linear-gradient(
+    to right,
+    var(--theme-secondary-bright),
+    var(--theme-primary-bright)
+  );
+  border-radius: 50px;
+}
+
+@keyframes transitionLine {
+  0% {
+    margin-left: var(--margin-left-start);
+    width: 100%;
+    border-radius: 50vw 50vw 0 0;
+    transform: perspective(150px) rotateX(10deg)
+      scale(var(--scale-start));
+  }
+  30% {
+    transform: perspective(100px) rotateX(5deg) scale(1);
+  }
+  75% {
+    width: 10%;
+    margin-left: var(--margin-left-middle);
+  }
+  100% {
+    margin-left: var(--margin-left-end);
+    width: 2px;
+    border-radius: 50px 50px 0 0;
+  }
+}
+
+.timelineBackground {
+  background: linear-gradient(
+    to right,
+    var(--theme-secondary-bright),
+    var(--theme-primary-bright)
+  );
+  background-size: 2px;
+  background-position: center;
+  background-repeat: repeat-y;
+
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 100%) calc(100% - 20vh),
+    rgba(0, 0, 0, 25%) calc(100% - 10vh),
+    transparent 100%
+  );
+}
+
+.timeline {
+  composes: timelineBackground;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 0;
+  margin: auto;
+  max-width: 1600px;
+
+  overflow: hidden;
+}
+
+@media screen and (max-width: 84rem) {
+  .title {
+    font-size: 5em;
+  }
+}
+
+@media screen and (max-width: 42rem) {
+  .section {
+    margin-top: 40vh;
+  }
+
+  .title {
+    font-size: 2.5em;
+    text-align: left;
+    margin: 0 25px;
+  }
+
+  .transitionContainer {
+    height: 250px;
+  }
+
+  .transitionOverflow {
+    --translate-y-end: -60vh;
+    --height-end: 250px;
+  }
+
+  .transitionLine {
+    --margin-left-start: 0;
+    --margin-left-middle: 50%;
+    --margin-left-end: 50px;
+    --scale-start: 3;
+  }
+
+  .timelineBackground {
+    background-position: 50px;
+  }
+}
+
+@media screen and (max-width: 32rem) {
+  .transitionLine {
+    --margin-left-end: 25px;
+  }
+
+  .timelineBackground {
+    background-position: 25px;
+  }
+}

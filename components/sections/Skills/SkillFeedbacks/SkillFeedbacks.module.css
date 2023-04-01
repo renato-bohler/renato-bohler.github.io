@@ -1,0 +1,198 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-bottom: 50px;
+  z-index: 1;
+}
+
+.switchButton {
+  width: 200px;
+  margin-bottom: 16px;
+  padding: 8px;
+
+  font-size: 0.75em;
+  color: var(--theme-text);
+
+  background: var(--theme-background-opaque);
+  box-shadow: var(--theme-shadow) 0px 4px 12px;
+  border: 2px solid var(--theme-primary-dark);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.switchButton:hover,
+.switchButton:focus {
+  border: 2px solid var(--theme-secondary-dark);
+}
+
+/* Flip */
+.flip {
+  perspective: 10000px;
+  height: 600px;
+  width: 800px;
+  max-width: 80vw;
+  overflow: auto hidden;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+.flipperFlipped {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.front {
+  transform: rotateY(0);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Radar chart view */
+.hexagon {
+  fill: none;
+  stroke: var(--theme-text);
+}
+
+.line {
+  stroke: var(--theme-text);
+  opacity: calc(0.5 * (1 + var(--theme-is-contrast)));
+  stroke-dasharray: 3px;
+}
+
+.data {
+  fill: var(--theme-secondary-dark);
+  fill-opacity: calc(0.25 + 0.5 * var(--theme-is-contrast));
+
+  stroke: var(--theme-primary-bright);
+  stroke-width: 2px;
+}
+
+.feedback {
+  stroke-width: 2px;
+  fill-opacity: 50%;
+  fill-opacity: calc(0.5 + 0.3 * var(--theme-is-contrast));
+}
+
+.data:hover,
+.feedback:hover {
+  filter: opacity(50%);
+}
+
+.label {
+  font-family: Major Mono Display, monospace;
+  font-size: 0.5em;
+  stroke: var(--theme-text);
+}
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  margin-top: 16px;
+}
+
+.button {
+  border: none;
+  background: none;
+
+  font-size: 0.75em;
+  color: var(--theme-text);
+
+  padding: 16px;
+  margin: 0 8px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.button[aria-pressed='true'],
+.button:hover,
+.button:focus {
+  background: var(--theme-background-opaque);
+  box-shadow: var(--theme-shadow) 0px 4px 12px;
+}
+
+.buttonIcon {
+  display: inline-block;
+
+  width: 10px;
+  height: 10px;
+
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+
+  margin-right: 4px;
+
+  opacity: 90%;
+}
+
+/* Table view */
+.tableView {
+  border-spacing: 8px;
+  text-align: right;
+  margin: 32px auto 0 auto;
+}
+
+.tableView > caption {
+  caption-side: bottom;
+  font-style: italic;
+  font-size: 0.8em;
+  line-height: 1.3em;
+}
+
+.tableView th,
+.tableView td {
+  background: var(--theme-table-cell-background);
+  border-bottom: 1px solid var(--theme-primary-bright);
+  border-right: 1px solid var(--theme-primary-dark);
+  padding: 8px 10px;
+}
+
+.tableView th:last-child,
+.tableView td:last-child {
+  font-weight: bold;
+}
+
+.tableView > tbody > tr:nth-child(odd) > td {
+  border-bottom: 1px solid var(--theme-secondary-bright);
+  border-right: 1px solid var(--theme-secondary-dark);
+}
+
+.tableView th {
+  font-weight: normal;
+  font-size: 0.75em;
+}
+
+.tableView td {
+  font-family: Major Mono Display, monospace;
+}
+
+.tableView thead tr th:first-of-type {
+  background: none;
+  border: none;
+}
+
+.tableView tbody tr td:first-of-type {
+  font-weight: bold;
+  font-size: 0.9em;
+}

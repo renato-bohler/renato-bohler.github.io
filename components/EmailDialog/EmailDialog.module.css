@@ -1,0 +1,129 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 10;
+
+  background: var(--theme-backdrop);
+  backdrop-filter: blur(15px);
+  opacity: 0%;
+
+  transition: opacity 250ms ease-in-out;
+}
+
+.backdrop[data-enter] {
+  opacity: 100%;
+
+  transition: opacity 250ms ease-in-out;
+}
+
+html[data-reduced-motion='true'] .backdrop {
+  opacity: 100%;
+}
+
+.dialog {
+  display: flex;
+  flex-direction: column;
+
+  width: min(600px, 100vw);
+  height: min(600px, 100dvh);
+
+  background: var(--theme-background);
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  opacity: 0%;
+
+  transition: opacity 500ms ease-in-out;
+}
+
+.dialog[data-enter],
+html[data-reduced-motion='true'] .dialog {
+  opacity: 100%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 8px 8px 16px;
+
+  background: rgba(
+    var(--theme-highlight-rgb),
+    calc(0.75 - var(--theme-is-dark) * 0.5)
+  );
+  border-bottom-color: rgb(var(--theme-highlight-rgb));
+  border-bottom-width: 6px;
+  border-bottom-style: outset;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+
+  padding: 0;
+
+  font-size: 2rem;
+  color: var(--theme-text);
+
+  cursor: pointer;
+
+  mix-blend-mode: hard-light;
+  filter: drop-shadow(2px 2px 6px #666);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  padding: 8px 24px 0 32px;
+  margin: 16px 10px 32px 0;
+
+  overflow: hidden auto;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  border-bottom: 1px solid rgba(var(--theme-text-rgb), 25%);
+}
+
+@media screen and (max-width: 42rem) {
+  .dialog {
+    position: fixed;
+    top: 0;
+
+    border-radius: 0;
+    width: 100%;
+    height: 100dvh;
+  }
+
+  .dialog[data-enter] {
+    width: 100%;
+    height: 100dvh;
+  }
+
+  .header {
+    padding: 8px;
+  }
+
+  .title {
+    font-size: 1.1rem;
+  }
+}

@@ -1,0 +1,61 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  align-items: center;
+  gap: 0 16px;
+}
+
+.button {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 2.5rem;
+  color: var(--theme-chat-accent);
+  opacity: 80%;
+  border: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+
+.progress {
+  border: 1px solid var(--theme-text);
+  border-radius: 8px;
+  background: var(--theme-background);
+  opacity: 80%;
+  width: 225px;
+  height: 8px;
+  padding: 2px;
+}
+
+.progressBar {
+  background: var(--theme-chat-accent);
+  opacity: 90%;
+  width: 50%;
+  height: 100%;
+  border-radius: 8px;
+
+  transition: width 250ms ease-in-out;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8em;
+}
+
+.speedButton {
+  background: var(--theme-chat-accent);
+  color: var(--theme-background);
+  border: none;
+  border-radius: 1em;
+  width: 4em;
+  opacity: 90%;
+
+  cursor: pointer;
+}
+
+@media screen and (max-width: 42rem) {
+  .progress {
+    width: 125px;
+  }
+}

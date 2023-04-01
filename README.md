@@ -1,2 +1,1 @@
-# renato-bohler.github.io
-This is my personal website, aswell as my first try at VueJS.
+![Renato Böhler, frontend developer](/assets/logo.svg)

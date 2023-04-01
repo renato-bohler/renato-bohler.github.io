@@ -1,0 +1,46 @@
+{
+  "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "react/self-closing-comp": "warn",
+    "simple-import-sort/exports": "warn",
+    "simple-import-sort/imports": [
+      "warn",
+      {
+        "groups": [
+          ["^\\u0000"], // Side effect imports
+          ["^react$"], // React
+          ["^next"], // NextJS
+          ["^@?\\w"], // External imports
+          ["^"], // Absolute imports
+          ["^\\."] // Relative imports
+        ]
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(test).[jt]s?(x)"
+      ],
+      "plugins": ["jest-dom", "testing-library"],
+      "extends": [
+        "plugin:jest-dom/recommended",
+        "plugin:testing-library/react"
+      ]
+    }
+  ]
+}

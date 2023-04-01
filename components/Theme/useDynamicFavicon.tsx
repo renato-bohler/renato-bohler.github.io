@@ -1,0 +1,61 @@
+import { renderToStaticMarkup } from 'react-dom/server';
+
+import { Theme } from '~/consts/themes.const';
+
+const FAVICON_DIMENSION = 256;
+
+const FavIcon: React.FC<{ theme: Theme; size?: number }> = ({
+  theme,
+  size = FAVICON_DIMENSION,
+}) => {
+  const isBrowserDarkMode = window.matchMedia(
+    '(prefers-color-scheme: dark)',
+  ).matches;
+
+  const selectedTheme = isBrowserDarkMode ? theme.dark : theme.light;
+
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+    >
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop
+            offset="25%"
+            style={{ stopColor: selectedTheme['primary-bright'] }}
+          />
+          <stop
+            offset="100%"
+            style={{ stopColor: selectedTheme['secondary-bright'] }}
+          />
+        </linearGradient>
+      </defs>
+
+      {/* B */}
+      <path
+        d="M 169.773 0.568000000000012 Q 193.995 0.568000000000012 208.308 7.9080000000000155 Q 225.557 16.716000000000008 234.9155 32.129999999999995 Q 244.274 47.54400000000001 244.274 66.62800000000001 Q 244.274 84.61099999999999 234.732 99.8415 Q 225.19 115.072 208.67499999999998 123.88 Q 228.493 130.853 242.072 148.102 Q 255.65099999999998 165.351 255.65099999999998 187.00400000000002 Q 255.65099999999998 206.088 245.9255 222.0525 Q 236.2 238.017 220.052 247.192 Q 211.978 251.596 202.069 253.798 Q 192.16 256 175.645 256 L 62.609 256 L 62.609 0.568000000000012 Z"
+        fill="url(#grad1)"
+      />
+
+      {/* r */}
+      <path
+        d="M 146.20699618530273 9.009000000000015 Q 168.22699618530274 19.284999999999997 180.88849618530273 39.47 Q 193.54999618530272 59.655 193.54999618530272 84.244 Q 193.54999618530272 112.87 176.11749618530274 135.4405 Q 158.68499618530274 158.011 131.52699618530272 165.351 L 196.48599618530272 256 L 180.33799618530273 256 L 117.58099618530272 167.92000000000002 L 105.83699618530272 168.287 L 13.719996185302733 168.287 L 13.719996185302733 256 L 0.1409961853027326 256 L 0.1409961853027326 0.568000000000012 L 97.39599618530272 0.568000000000012 Q 113.54399618530272 0.568000000000012 125.10449618530274 2.586500000000001 Q 136.66499618530273 4.605000000000018 146.20699618530273 9.009000000000015 Z M 109.50699618530274 154.708 Q 128.59099618530274 154.708 144.73899618530274 145.166 Q 160.88699618530273 135.624 170.42899618530274 119.476 Q 179.97099618530274 103.328 179.97099618530274 84.244 Q 179.97099618530274 62.958 168.77749618530274 45.709 Q 157.58399618530274 28.460000000000008 137.76599618530273 20.019000000000005 Q 123.45299618530274 14.146999999999991 97.39599618530272 14.146999999999991 L 13.719996185302733 14.146999999999991 L 13.719996185302733 154.708 Z"
+        fill={selectedTheme.text}
+      />
+    </svg>
+  );
+};
+
+const useDynamicFavicon = (theme: Theme): string => {
+  if (typeof window === 'undefined') return '/favicon.ico';
+
+  const svgMarkup = renderToStaticMarkup(<FavIcon theme={theme} />);
+  const encodedMarkup = encodeURIComponent(svgMarkup);
+
+  return `data:image/svg+xml,${encodedMarkup}`;
+};
+
+export default useDynamicFavicon;

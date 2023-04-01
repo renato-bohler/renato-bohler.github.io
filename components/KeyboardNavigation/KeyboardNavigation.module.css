@@ -1,0 +1,27 @@
+.navigation {
+  position: absolute;
+  z-index: 3;
+  top: 100px;
+  left: 100px;
+}
+
+.navigation:not(:focus) {
+  border: 0px;
+  clip: rect(0px, 0px, 0px, 0px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0px;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.navigationButton {
+  background: var(--theme-background);
+  border: 1px solid var(--theme-text);
+
+  color: var(--theme-text);
+  font-size: 1.2em;
+  padding: 0.3em;
+}

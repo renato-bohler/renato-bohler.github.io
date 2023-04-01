@@ -1,0 +1,45 @@
+.waveBackground {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.waveBackground svg {
+  width: calc(120vw + 200px);
+  height: 100vh;
+
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 50%) 0%,
+    transparent 100%
+  );
+
+  transform: translateY(-20px);
+  stroke-width: 0;
+}
+
+.wavePattern {
+  transition: fill 500ms ease-in-out;
+}
+
+.wave {
+  animation: wave 10s infinite ease-in-out;
+  will-change: transform, fill;
+}
+
+.wavePrimary {
+  animation-direction: alternate-reverse;
+}
+
+.waveSecondary {
+  animation-direction: alternate;
+}
+
+@keyframes wave {
+  from {
+    transform: translateX(100px);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

@@ -1,0 +1,128 @@
+.scroll {
+  position: relative;
+  height: 200vh;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 100vh;
+  max-width: 1600px;
+
+  margin: 0 auto;
+  padding: 20vh 0;
+
+  position: sticky;
+  top: 0;
+  overflow-x: hidden;
+}
+
+.anchor {
+  transform: translateY(-200px);
+}
+
+.picture {
+  width: 50vmin;
+  height: 50vmin;
+  border-radius: 100%;
+  border: 5px solid var(--theme-primary-bright);
+}
+
+.bubble {
+  background: var(--theme-text);
+  color: var(--theme-background);
+}
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+
+  max-width: min(1600px, 80vw);
+  margin: 0 auto;
+}
+
+.animatedMessage {
+  position: sticky;
+  top: 0;
+
+  height: 100vh;
+
+  padding-bottom: 1em;
+}
+
+.messageListContainer {
+  position: relative;
+}
+
+.messageList {
+  position: relative;
+
+  height: 50vh;
+  padding-right: 1em;
+
+  overflow: hidden auto;
+}
+
+.messageList::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messageList::-webkit-scrollbar-track {
+  background-color: rgb(var(--theme-highlight-rgb), 0.1);
+  border-radius: 100px;
+}
+
+.messageList::-webkit-scrollbar-thumb {
+  background-color: var(--theme-accent-color);
+  border-radius: 100px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.scrollButton {
+  position: absolute;
+  top: 0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+  display: flex;
+  gap: 8px;
+
+  padding: 0.5em 1.5em;
+
+  border: none;
+  border-radius: 50px;
+
+  font-size: 0.75em;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: var(--theme-chat-outgoing-background);
+  border: 1px dashed var(--theme-accent-color);
+  color: var(--theme-text);
+
+  cursor: pointer;
+
+  opacity: 100%;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+.scrollButton:disabled {
+  opacity: 0%;
+}
+
+@media screen and (max-width: 42rem) {
+  .messageList {
+    height: 75vh;
+  }
+}
+
+@media screen and (max-width: 82rem) {
+  .scroll {
+    height: 150vh;
+  }
+}
