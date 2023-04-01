@@ -21,7 +21,7 @@ const sendEmail = async (formData: FormData) => {
       throw new Error();
 
     const response = await fetch(
-      'https://kixlofqgt4ph6k5zgdbtese7pa0dqwka.lambda-url.us-east-1.on.aws',
+      process.env.NEXT_PUBLIC_CONTACT_ENDPOINT,
       {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
