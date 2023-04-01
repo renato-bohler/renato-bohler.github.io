@@ -55,7 +55,7 @@
     "typescript-plugin-css-modules": "^3.4.0"
   },
   "release": {
-    "branch": "development",
+    "branch": "master",
     "verifyConditions": [
       "@semantic-release/changelog",
       "@semantic-release/git",
