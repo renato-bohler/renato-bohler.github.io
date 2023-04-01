@@ -182,12 +182,7 @@
 
 ### BREAKING CHANGES
 
-* v2
-* v2
-* v2
-* v2
-* v2
-* v2
+* New project
 
 ## [1.11.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v1.11.1...v1.11.2) (2020-01-24)
 
