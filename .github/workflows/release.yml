@@ -10,7 +10,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps:
       - name: Setup Node.js
         uses: actions/setup-node@v3
@@ -33,7 +33,7 @@ jobs:
           path: 'out'
 
   deploy:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     needs: build
     env:
       name: github-pages
@@ -44,7 +44,7 @@ jobs:
         uses: actions/deploy-pages@v2
 
   semantic_release:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     needs: deploy
     permissions:
       contents: write
