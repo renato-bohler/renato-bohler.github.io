@@ -46,7 +46,13 @@ const Footer: React.FC<Props> = ({
 
         <div className={styles.details}>
           <span title={format.dateTime(lastUpdated)}>
-            Last updated {format.relativeTime(lastUpdated)}
+            Last published{' '}
+            <time
+              dateTime={lastUpdated.toISOString()}
+              itemProp="datePublished"
+            >
+              {format.relativeTime(lastUpdated)}
+            </time>
           </span>
 
           <a
