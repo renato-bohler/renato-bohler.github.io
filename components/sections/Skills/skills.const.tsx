@@ -379,7 +379,7 @@ const skills: Skill[] = [
           Integration and Continuous Deployment practices happened
           while developing{' '}
           <a
-            href="https://renato-bohler.github.io/redux-form-input-masks"
+            href="https://bohler.dev/redux-form-input-masks"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -500,7 +500,7 @@ const skills: Skill[] = [
           Some of the most complex things I&apos;ve built with React
           are open-source projects:{' '}
           <a
-            href="https://renato-bohler.github.io/logossim"
+            href="https://bohler.dev/logossim"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -508,7 +508,7 @@ const skills: Skill[] = [
           </a>{' '}
           and{' '}
           <a
-            href="https://renato-bohler.github.io/what-the-filter"
+            href="https://bohler.dev/what-the-filter"
             target="_blank"
             rel="noopener noreferrer"
           >

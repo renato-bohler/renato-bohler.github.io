@@ -50,10 +50,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
         />
 
         {/* Open Graph */}
-        <meta
-          property="og:url"
-          content="https://renato-bohler.github.io/"
-        />
+        <meta property="og:url" content="https://bohler.dev/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Renato Böhler" />
         <meta
@@ -64,14 +61,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:domain"
-          content="renato-bohler.github.io"
-        />
-        <meta
-          property="twitter:url"
-          content="https://renato-bohler.github.io/"
-        />
+        <meta property="twitter:domain" content="bohler.dev" />
+        <meta property="twitter:url" content="https://bohler.dev/" />
         <meta name="twitter:title" content="Renato Böhler" />
         <meta
           name="twitter:description"

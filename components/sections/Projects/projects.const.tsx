@@ -27,7 +27,7 @@ const projects: Project[] = [
           those components,{' '}
           <strong>it is possible to build fun circuits</strong>, like{' '}
           <a
-            href="https://renato-bohler.github.io/logossim/?example=Darth%20Vader"
+            href="https://bohler.dev/logossim/?example=Darth%20Vader"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -154,7 +154,7 @@ const projects: Project[] = [
           <strong>Oh, and I almost forgot!</strong> You can generate
           URLs{' '}
           <a
-            href="https://renato-bohler.github.io/what-the-filter/#code/PTAEAkFMBtoe1AMwE5wLajQT1ABzsgC6JzQCWCAXACIBQAxnAHYDOhoA7gBYCGhAKl0gAxMtEKRkoALygAFAEoZAPlABvWqFDJIhAK7ImoANoByejr6QAJqYA0oUwCMsle451M+cd6aZxCXycAN65oSVMAXU0tUAA6RDEJZDk5DgJrJWlVdORrUABCaVk-ANMFGK04tB5cVNzMlVAAAwASNQbjAAZIuMI4AFVcXEkAYR4WSEUAX3aGuJZyeimARgVp5orY+IArODImOVNHBQBuWmnToA"
+            href="https://bohler.dev/what-the-filter/#code/PTAEAkFMBtoe1AMwE5wLajQT1ABzsgC6JzQCWCAXACIBQAxnAHYDOhoA7gBYCGhAKl0gAxMtEKRkoALygAFAEoZAPlABvWqFDJIhAK7ImoANoByejr6QAJqYA0oUwCMsle451M+cd6aZxCXycAN65oSVMAXU0tUAA6RDEJZDk5DgJrJWlVdORrUABCaVk-ANMFGK04tB5cVNzMlVAAAwASNQbjAAZIuMI4AFVcXEkAYR4WSEUAX3aGuJZyeimARgVp5orY+IArODImOVNHBQBuWmnToA"
             target="_blank"
             rel="noopener noreferrer"
           >
