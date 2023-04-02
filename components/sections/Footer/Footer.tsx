@@ -21,8 +21,6 @@ const Footer: React.FC<Props> = ({
   onEmailDialogOpen,
 }) => {
   const lastUpdated = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
-  const lastUpdatedDateTime = format.dateTime(lastUpdated);
-  const lastUpdatedRelative = format.relativeTime(lastUpdated);
 
   const isFirstMount = useFirstMount();
 
@@ -50,15 +48,21 @@ const Footer: React.FC<Props> = ({
         <MadeBy />
 
         <div className={styles.details}>
-          <span title={lastUpdatedDateTime}>
+          <span
+            title={
+              isFirstMount
+                ? format.dateTimeUTC(lastUpdated)
+                : format.dateTime(lastUpdated)
+            }
+          >
             Last published{' '}
             <time
               dateTime={lastUpdated.toISOString()}
               itemProp="datePublished"
             >
               {isFirstMount
-                ? lastUpdatedDateTime
-                : lastUpdatedRelative}
+                ? format.dateTimeUTC(lastUpdated)
+                : format.relativeTime(lastUpdated)}
             </time>
           </span>
 
