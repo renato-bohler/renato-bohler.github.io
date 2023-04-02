@@ -14,16 +14,16 @@ type Props = {
   onEmailDialogOpen: () => void;
 };
 
-const LAST_UPDATED = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
-const LAST_UPDATED_DATE_TIME = format.dateTime(LAST_UPDATED);
-const LAST_UPDATED_RELATIVE = format.relativeTime(LAST_UPDATED);
-
 const Footer: React.FC<Props> = ({
   onProgressChange,
   onNavigationHeaderTrigger,
   isNavigationHeaderHidden,
   onEmailDialogOpen,
 }) => {
+  const lastUpdated = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
+  const lastUpdatedDateTime = format.dateTime(lastUpdated);
+  const lastUpdatedRelative = format.relativeTime(lastUpdated);
+
   const isFirstMount = useFirstMount();
 
   return (
@@ -50,15 +50,15 @@ const Footer: React.FC<Props> = ({
         <MadeBy />
 
         <div className={styles.details}>
-          <span title={LAST_UPDATED_DATE_TIME}>
+          <span title={lastUpdatedDateTime}>
             Last published{' '}
             <time
-              dateTime={LAST_UPDATED.toISOString()}
+              dateTime={lastUpdated.toISOString()}
               itemProp="datePublished"
             >
               {isFirstMount
-                ? LAST_UPDATED_DATE_TIME
-                : LAST_UPDATED_RELATIVE}
+                ? lastUpdatedDateTime
+                : lastUpdatedRelative}
             </time>
           </span>
 

@@ -9,9 +9,11 @@ const props = {
   repositories: [],
 };
 
-process.env.NEXT_PUBLIC_LAST_UPDATED = new Date().toISOString();
-
 describe('Index', () => {
+  beforeEach(() => {
+    process.env.NEXT_PUBLIC_LAST_UPDATED = new Date().toISOString();
+  });
+
   it('does not crash', () => {
     render(<Index {...props} />);
   });
