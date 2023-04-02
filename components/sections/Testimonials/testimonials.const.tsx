@@ -93,10 +93,9 @@ const testimonials = [
     quote: (
       <p>
         Renato is one of the best frontend engineers I&apos;ve worked
-        with at <em>Dextra</em>. He&apos;s very{' '}
-        <strong>focused</strong> and has a strong{' '}
-        <strong>commitment</strong> to his clients. He&apos;s an{' '}
-        <strong>excellent</strong> professional.
+        with at <em>CI&T</em>. He&apos;s very <strong>focused</strong>{' '}
+        and has a strong <strong>commitment</strong> to his clients.
+        He&apos;s an <strong>excellent</strong> professional.
       </p>
     ),
     author: {
