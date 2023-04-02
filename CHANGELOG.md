@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.4...v2.0.5) (2023-04-02)
+
+
+### Bug Fixes
+
+* **Testimonials:** updates company name ([911d2f6](https://github.com/renato-bohler/renato-bohler.github.io/commit/911d2f6368398abd4e491a1413da72ea2af9396b))
+
 ## [2.0.4](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.3...v2.0.4) (2023-04-02)
 
 
