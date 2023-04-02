@@ -1,3 +1,14 @@
+## [2.0.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.1...v2.0.2) (2023-04-02)
+
+
+### Bug Fixes
+
+* **Footer:** fixes color contrast issue ([509062b](https://github.com/renato-bohler/renato-bohler.github.io/commit/509062b4f3494772ffc4de0f6cc11039f063910a))
+* **Footer:** fixes hydration mismatch ([c356a76](https://github.com/renato-bohler/renato-bohler.github.io/commit/c356a76b8505238505455329d0a538b4109b9e80))
+* **Header:** dynamically loads `ThemePicker` ([ff3f145](https://github.com/renato-bohler/renato-bohler.github.io/commit/ff3f14540ab70ed67dd283983f943696af2443f7))
+* **ProjectCard:** adjusts video preloading ([bc4bc2b](https://github.com/renato-bohler/renato-bohler.github.io/commit/bc4bc2b6189c2d076ee726a8182c91913b98fd37))
+* **RepositoryDetails:** fixes hydration mismatch ([0f08d4f](https://github.com/renato-bohler/renato-bohler.github.io/commit/0f08d4fb1bf371ac7adf3cb762d47653e6998bf7))
+
 ## [2.0.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.0...v2.0.1) (2023-04-01)
 
 
