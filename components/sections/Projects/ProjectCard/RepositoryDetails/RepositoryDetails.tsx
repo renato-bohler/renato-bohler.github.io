@@ -58,7 +58,7 @@ const RepositoryDetails: React.FC<Props> = ({
         </span>
       ) : (
         <span>
-          last updated
+          last updated{' '}
           <strong>
             {isFirstMount
               ? format.dateTimeUTC(new Date(lastUpdate))
