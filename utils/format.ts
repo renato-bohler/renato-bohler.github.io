@@ -9,6 +9,17 @@ export const dateTime = (date: Date) =>
     minute: 'numeric',
   });
 
+export const dateTimeUTC = (date: Date) =>
+  date.toLocaleDateString('en', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    timeZone: 'UTC',
+    timeZoneName: 'short',
+  });
+
 export const relativeTime = (
   date: Date,
   relative: Date = new Date(),
