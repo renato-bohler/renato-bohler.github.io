@@ -1,3 +1,11 @@
+## [2.0.3](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.2...v2.0.3) (2023-04-02)
+
+
+### Bug Fixes
+
+* **ProjectCard:** reverts preload change to `video` ([7e8cd0a](https://github.com/renato-bohler/renato-bohler.github.io/commit/7e8cd0ac25196a5994b3ec3aec6775c4d56fe27c))
+* server timezone causing hydration mismatch ([b13bb31](https://github.com/renato-bohler/renato-bohler.github.io/commit/b13bb316c42d3e08df6b4bfe31d9a2ad5ce2223e))
+
 ## [2.0.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.1...v2.0.2) (2023-04-02)
 
 
