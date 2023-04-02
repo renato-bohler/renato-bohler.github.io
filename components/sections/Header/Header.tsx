@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import dynamic from 'next/dynamic';
+
 import classNames from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
@@ -9,7 +11,6 @@ import useTheme from '~/hooks/useTheme';
 
 import styles from './Header.module.css';
 import SocialLinks from './SocialLinks/SocialLinks';
-import ThemePicker from './ThemePicker/ThemePicker';
 import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
 
@@ -26,6 +27,11 @@ type Props = {
   isNavigationHeaderHidden: boolean;
   onEmailDialogOpen: () => void;
 };
+
+const ThemePicker = dynamic(
+  () => import('./ThemePicker/ThemePicker'),
+  { ssr: false },
+);
 
 const Header: React.FC<Props> = ({
   isNavigationHeaderHidden,

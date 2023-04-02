@@ -1,5 +1,6 @@
 import { Button } from 'reakit/Button';
 
+import useFirstMount from '~/hooks/useFirstMount';
 import * as format from '~/utils/format';
 
 import styles from './Footer.module.css';
@@ -20,6 +21,10 @@ const Footer: React.FC<Props> = ({
   onEmailDialogOpen,
 }) => {
   const lastUpdated = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
+  const lastUpdatedDateTime = format.dateTime(lastUpdated);
+  const lastUpdatedRelative = format.relativeTime(lastUpdated);
+
+  const isFirstMount = useFirstMount();
 
   return (
     <>
@@ -45,13 +50,15 @@ const Footer: React.FC<Props> = ({
         <MadeBy />
 
         <div className={styles.details}>
-          <span title={format.dateTime(lastUpdated)}>
+          <span title={lastUpdatedDateTime}>
             Last published{' '}
             <time
               dateTime={lastUpdated.toISOString()}
               itemProp="datePublished"
             >
-              {format.relativeTime(lastUpdated)}
+              {isFirstMount
+                ? lastUpdatedDateTime
+                : lastUpdatedRelative}
             </time>
           </span>
 
