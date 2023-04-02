@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.3...v2.0.4) (2023-04-02)
+
+
+### Bug Fixes
+
+* **ProjectCard:** adds missing space ([243199f](https://github.com/renato-bohler/renato-bohler.github.io/commit/243199f53d8d80ea57672e93dbf85937fdefb933))
+
 ## [2.0.3](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.2...v2.0.3) (2023-04-02)
 
 
