@@ -4,23 +4,18 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 10;
-
   background: var(--theme-backdrop);
   backdrop-filter: blur(15px);
   opacity: 0%;
-
   transition: opacity 250ms ease-in-out;
 }
 
 .backdrop[data-enter] {
   opacity: 100%;
-
   transition: opacity 250ms ease-in-out;
 }
 
@@ -31,15 +26,11 @@ html[data-reduced-motion='true'] .backdrop {
 .dialog {
   display: flex;
   flex-direction: column;
-
   width: min(600px, 100vw);
   height: min(800px, 100dvh);
-
   background: var(--theme-background);
   border-radius: 16px;
-
   opacity: 0%;
-
   transition: opacity 500ms ease-in-out;
 }
 
@@ -57,7 +48,6 @@ html[data-reduced-motion='true'] .dialog {
   display: flex;
   justify-content: space-between;
   padding: 8px;
-
   border-bottom-width: 6px;
   border-bottom-style: outset;
 }
@@ -72,14 +62,10 @@ html[data-reduced-motion='true'] .dialog {
 .closeButton {
   background: none;
   border: none;
-
   padding: 0;
-
   font-size: 2em;
   color: #ebebeb;
-
   cursor: pointer;
-
   mix-blend-mode: hard-light;
   filter: drop-shadow(2px 2px 6px #666);
 }
@@ -88,14 +74,12 @@ html[data-reduced-motion='true'] .dialog {
   display: block;
   width: 100%;
   height: 100%;
-
   fill: var(--theme-background);
 }
 
 .content {
   padding: 8px 24px 0 32px;
   margin: 16px 10px 16px 0;
-
   overflow: hidden auto;
 }
 
@@ -118,7 +102,6 @@ html[data-reduced-motion='true'] .dialog {
 .image {
   position: absolute;
   transform: translate(-30%, -20%);
-
   z-index: 1;
 }
 
@@ -126,11 +109,10 @@ html[data-reduced-motion='true'] .dialog {
   height: 80px;
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .dialog {
     position: fixed;
     top: 0;
-
     border-radius: 0;
     width: 100%;
     height: 100dvh;

@@ -33,7 +33,6 @@
   width: 50%;
   height: 100%;
   border-radius: 8px;
-
   transition: width 250ms ease-in-out;
 }
 
@@ -50,11 +49,10 @@
   border-radius: 1em;
   width: 4em;
   opacity: 90%;
-
   cursor: pointer;
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .progress {
     width: 125px;
   }

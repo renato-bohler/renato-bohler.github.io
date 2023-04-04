@@ -32,28 +32,25 @@
 }
 
 .pictureArcStroke {
-  stroke: url(#gradient);
+  /* TODO: does this work? */
+  stroke: url('#gradient');
   stroke-width: 3px;
   stroke-linecap: round;
   fill: none;
-
   filter: drop-shadow(0 0 2px var(--theme-primary-bright));
 }
 
 .pictureArcFill {
-  fill: url(#gradient);
-  fill-opacity: 0.3;
+  fill: url('#gradient');
+  fill-opacity: 30%;
   filter: blur(2px);
 }
 
 .bubble {
   position: relative;
-
   font-size: 1em;
   background: var(--theme-chat-background);
-
   border-radius: 0.4em;
-
   width: fit-content;
   max-width: 50ch;
   height: fit-content;
@@ -64,10 +61,8 @@
   position: absolute;
   left: 0;
   top: 1.7em;
-
   width: 0;
   height: 0;
-
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
   border-right: 20px solid var(--theme-chat-background);
@@ -75,25 +70,19 @@
   margin-left: -0.6em;
 }
 
-.bubble:after {
+.bubble::after {
   content: '';
-
   pointer-events: none;
-
   position: absolute;
   top: 0;
   left: 0;
-
   width: calc(100% + 0.15em);
   height: calc(100% + 0.15em);
-
   border-right: 1px solid var(--theme-secondary-dark);
   border-bottom: 1px solid var(--theme-primary-bright);
-
   border-top-right-radius: 0.3em;
   border-bottom-right-radius: 0.4em;
   border-bottom-left-radius: 0.3em;
-
   transition: border-color 500ms ease-in-out;
 }
 
@@ -123,17 +112,14 @@
   margin-left: 0;
 }
 
-.outgoing .bubble:after {
+.outgoing .bubble::after {
   left: -3px;
-
   border-right: none;
-
   border-top-left-radius: 0.3em;
   border-bottom-left-radius: 0.4em;
   border-bottom-right-radius: 0.3em;
-
-  border-left: 1px solid rgb(var(--theme-highlight-rgb), 0.75);
-  border-bottom-color: rgb(var(--theme-highlight-accent-rgb), 0.75);
+  border-left: 1px solid rgba(var(--theme-highlight-rgb), 75%);
+  border-bottom-color: rgba(var(--theme-highlight-accent-rgb), 75%);
 }
 
 @keyframes fadeInRight {
@@ -141,6 +127,7 @@
     transform: translateX(2em);
     opacity: 0%;
   }
+
   100% {
     transform: translateX(0);
     opacity: 100%;
@@ -152,13 +139,14 @@
     transform: translateX(-2em);
     opacity: 0%;
   }
+
   100% {
     transform: translateX(0);
     opacity: 100%;
   }
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .picture {
     width: 1.75em;
     height: 1.75em;

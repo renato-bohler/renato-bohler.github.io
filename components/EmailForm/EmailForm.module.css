@@ -44,21 +44,17 @@
   display: flex;
   align-self: flex-end;
   gap: 16px;
-
   margin-top: auto;
 }
 
 .status {
   position: relative;
-
   display: flex;
   align-items: center;
   justify-content: flex-end;
-
   background: var(--theme-text);
   color: var(--theme-background);
   border-radius: 8px;
-
   padding: 0 1em;
 }
 
@@ -81,18 +77,14 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-
   padding: 0.25em;
-
   width: 2.75rem;
   height: 2.75rem;
   font-size: 2.75rem;
-
   background: var(--theme-chat-accent);
   color: var(--theme-chat-background);
   border-radius: 8px;
   border: none;
-
   opacity: 100%;
   transition: opacity 250ms ease-in-out;
 }
@@ -102,7 +94,7 @@
   opacity: 90%;
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .form {
     width: auto;
   }

@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'Inter';
+  font-family: Inter;
   font-style: normal;
   font-weight: 900;
   font-display: swap;
@@ -40,7 +40,7 @@
       )
     )
   );
-  color: rgb(var(--theme-highlight-accent-rgb));
+  color: rgba(var(--theme-highlight-accent-rgb), 100%);
 }
 
 html {
@@ -52,14 +52,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-
-  font-family: 'Inter', sans-serif;
+  font-family: Inter, sans-serif;
   font-feature-settings: 'ss03', 'cv08', 'cv11', 'zero', 'cv02',
     'cv03', 'cv04', 'cv09';
   font-size: 1.06em;
   line-height: 1.75;
   letter-spacing: -0.014em;
-
   color: var(--theme-text);
 }
 
@@ -69,17 +67,14 @@ a {
   text-decoration-color: rgba(var(--theme-highlight-rgb), 75%);
   text-decoration-thickness: 3px;
   text-decoration-skip-ink: none;
-
   background-image: linear-gradient(
     rgba(var(--theme-highlight-rgb), 10%),
     rgba(var(--theme-highlight-rgb), 20%)
   );
   background-repeat: no-repeat;
   background-size: 0;
-
   padding: 0 2px;
   margin: 0 -2px;
-
   transition: all ease-in-out 250ms;
 }
 
@@ -87,11 +82,10 @@ a:hover {
   background-size: 100%;
 }
 
-a[target='_blank']:after {
+a[target='_blank']::after {
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' aria-hidden='true' role='img' width='1em' height='1em' preserveAspectRatio='xMidYMid meet' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='currentColor' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M10 6H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-4M14 4h6m0 0v6m0-6L10 14'/%3E%3C/svg%3E");
   margin-left: 2px;
   vertical-align: middle;
-
   filter: brightness(0) invert(var(--theme-is-dark));
 }
 
@@ -102,15 +96,12 @@ p {
 
 code {
   display: inline-block;
-
   font-size: 0.8em;
   font-family: monospace;
-
-  background: rgba(var(--theme-code-accent-rgb), 0.05);
-  border: 1px solid rgb(var(--theme-code-accent-rgb));
-  color: rgba(var(--theme-code-accent-rgb));
+  background: rgba(var(--theme-code-accent-rgb), 5%);
+  border: 1px solid rgba(var(--theme-code-accent-rgb), 100%);
+  color: rgba(var(--theme-code-accent-rgb), 100%);
   border-radius: 5px;
-
   padding: 0 4px;
 }
 
@@ -127,7 +118,7 @@ ul {
   list-style-image: var(--theme-list-style-image);
 }
 
-@media screen and (max-width: 28rem) {
+@media screen and (width <= 28rem) {
   body {
     background-size: 300%;
   }

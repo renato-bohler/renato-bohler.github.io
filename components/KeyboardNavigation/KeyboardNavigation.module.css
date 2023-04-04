@@ -6,12 +6,12 @@
 }
 
 .navigation:not(:focus) {
-  border: 0px;
-  clip: rect(0px, 0px, 0px, 0px);
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   height: 1px;
   margin: -1px;
   overflow: hidden;
-  padding: 0px;
+  padding: 0;
   position: absolute;
   white-space: nowrap;
   width: 1px;
@@ -20,7 +20,6 @@
 .navigationButton {
   background: var(--theme-background);
   border: 1px solid var(--theme-text);
-
   color: var(--theme-text);
   font-size: 1.2em;
   padding: 0.3em;

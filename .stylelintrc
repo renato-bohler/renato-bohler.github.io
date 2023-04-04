@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-css-modules"
+  ],
+  "plugins": ["stylelint-order"],
+  "ignoreFiles": "out/**/*",
+  "rules": {
+    "selector-id-pattern": null,
+    "selector-class-pattern": null,
+    "value-keyword-case": null,
+    "keyframes-name-pattern": null,
+    "alpha-value-notation": "percentage",
+    "color-function-notation": "legacy",
+    "order/order": ["custom-properties", "declarations"]
+  }
+}

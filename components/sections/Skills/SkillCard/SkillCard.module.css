@@ -1,24 +1,17 @@
 .card {
   position: relative;
-
   border: 2px solid transparent;
   border-radius: 8px;
   background-origin: border-box;
   background-clip: content-box, border-box;
-
   font-size: 0.75em;
-
   transition: all 500ms ease 100ms,
     transform 250ms cubic-bezier(0.21, -0.56, 0.43, 1.53);
 }
 
 .blurContainer {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
+  inset: 0;
   border-radius: 6px;
   overflow: hidden;
 }
@@ -29,12 +22,10 @@
   right: -25%;
   width: 75%;
   height: 75%;
-
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
   opacity: 50%;
   filter: blur(60px);
-
   transition: width ease-in-out 300ms, height ease-in-out 300ms,
     opacity ease-in-out 300ms;
 }
@@ -45,6 +36,17 @@
   width: 100%;
   height: 100%;
   opacity: 75%;
+}
+
+.featured .blur {
+  opacity: 30%;
+  filter: blur(120px);
+}
+
+.featured .blur.light {
+  opacity: 50%;
+  width: 115%;
+  height: 115%;
 }
 
 .card:hover .blur {
@@ -60,7 +62,6 @@
 .content {
   position: relative;
   z-index: 1;
-
   height: 150px;
 }
 
@@ -73,17 +74,6 @@
   height: 450px;
 }
 
-.featured .blur {
-  opacity: 30%;
-  filter: blur(120px);
-}
-
-.featured .blur.light {
-  opacity: 50%;
-  width: 115%;
-  height: 115%;
-}
-
 .featured.card:hover .blur.light {
   width: 150%;
   height: 150%;
@@ -91,7 +81,7 @@
 }
 
 .hidden {
-  opacity: 0;
+  opacity: 0%;
   transform: translateY(50px);
 }
 
@@ -103,15 +93,12 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   height: 100%;
   width: 100%;
-
   background: none;
   border: none;
   border-radius: 0;
   padding: 0;
-
   cursor: pointer;
 }
 
@@ -149,11 +136,9 @@
   min-height: 200px;
   padding: 32px 16px;
   text-align: left;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   background: linear-gradient(
     176deg,
     transparent 0%,
@@ -180,15 +165,11 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  padding: 16px 8px 8px 8px;
-
+  padding: 16px 8px 8px;
   width: 100%;
   height: 60px;
-
   font-weight: bold;
   color: var(--theme-text);
-
   background: var(--theme-background-opaque);
   border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
@@ -203,7 +184,6 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-
   font-size: 0.9em;
   height: 100%;
 }
@@ -213,7 +193,7 @@
 }
 
 .content > .contentTitle {
-  font-family: Major Mono Display, monospace;
+  font-family: 'Major Mono Display', monospace;
   font-size: 0.8em;
   font-weight: normal;
 }
@@ -225,7 +205,7 @@
   margin: 0 4px;
 }
 
-@media screen and (max-width: 21rem) {
+@media screen and (width <= 21rem) {
   .content {
     height: 125px;
   }

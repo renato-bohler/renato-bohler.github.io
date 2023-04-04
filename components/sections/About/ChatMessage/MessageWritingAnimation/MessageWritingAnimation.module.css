@@ -30,13 +30,15 @@
   50%,
   80%,
   100% {
-    transform: translateY(0em);
+    transform: translateY(0);
     opacity: 50%;
   }
+
   40% {
     transform: translateY(0.1em);
     opacity: 60%;
   }
+
   60% {
     transform: translateY(-0.4em);
     opacity: 100%;

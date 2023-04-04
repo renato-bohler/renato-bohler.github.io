@@ -2,13 +2,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   width: 100%;
   min-height: 200px;
-
   color: var(--theme-testimonial-card-text);
   background: var(--theme-testimonial-card-background);
-
   border: 1px solid var(--theme-testimonial-card-border);
   border-radius: 15px;
   border-bottom-left-radius: 25px;
@@ -34,13 +31,12 @@
 
 .author::before {
   content: '';
-
   position: absolute;
   width: 100%;
   height: 50px;
-
   background: var(--theme-primary-bright);
-  opacity: calc(0.05 * (1 - var(--theme-is-contrast)));
+  /* stylelint-disable-next-line alpha-value-notation */
+  opacity: calc(5% * (1 - var(--theme-is-contrast)));
   border-radius: 25px;
 }
 
@@ -68,7 +64,7 @@
   line-height: 1em;
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .card {
     font-size: 0.8em;
   }

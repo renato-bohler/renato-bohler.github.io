@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-
   margin-bottom: 50px;
   z-index: 1;
 }
@@ -11,12 +10,10 @@
   width: 200px;
   margin-bottom: 16px;
   padding: 8px;
-
   font-size: 0.75em;
   color: var(--theme-text);
-
   background: var(--theme-background-opaque);
-  box-shadow: var(--theme-shadow) 0px 4px 12px;
+  box-shadow: var(--theme-shadow) 0 4px 12px;
   border: 2px solid var(--theme-primary-dark);
   border-radius: 8px;
   cursor: pointer;
@@ -72,14 +69,14 @@
 
 .line {
   stroke: var(--theme-text);
-  opacity: calc(0.5 * (1 + var(--theme-is-contrast)));
+  /* stylelint-disable-next-line alpha-value-notation */
+  opacity: calc(50% * (1 + var(--theme-is-contrast)));
   stroke-dasharray: 3px;
 }
 
 .data {
   fill: var(--theme-secondary-dark);
-  fill-opacity: calc(0.25 + 0.5 * var(--theme-is-contrast));
-
+  fill-opacity: calc(25% + 50% * var(--theme-is-contrast));
   stroke: var(--theme-primary-bright);
   stroke-width: 2px;
 }
@@ -87,7 +84,7 @@
 .feedback {
   stroke-width: 2px;
   fill-opacity: 50%;
-  fill-opacity: calc(0.5 + 0.3 * var(--theme-is-contrast));
+  fill-opacity: calc(50% + 30% * var(--theme-is-contrast));
 }
 
 .data:hover,
@@ -96,7 +93,7 @@
 }
 
 .label {
-  font-family: Major Mono Display, monospace;
+  font-family: 'Major Mono Display', monospace;
   font-size: 0.5em;
   stroke: var(--theme-text);
 }
@@ -106,21 +103,17 @@
   align-items: center;
   justify-content: space-evenly;
   flex-wrap: wrap;
-
   margin-top: 16px;
 }
 
 .button {
   border: none;
   background: none;
-
   font-size: 0.75em;
   color: var(--theme-text);
-
   padding: 16px;
   margin: 0 8px;
   border-radius: 8px;
-
   cursor: pointer;
 }
 
@@ -128,21 +121,17 @@
 .button:hover,
 .button:focus {
   background: var(--theme-background-opaque);
-  box-shadow: var(--theme-shadow) 0px 4px 12px;
+  box-shadow: var(--theme-shadow) 0 4px 12px;
 }
 
 .buttonIcon {
   display: inline-block;
-
   width: 10px;
   height: 10px;
-
   border-width: 1px;
   border-style: solid;
   border-radius: 10px;
-
   margin-right: 4px;
-
   opacity: 90%;
 }
 
@@ -150,7 +139,7 @@
 .tableView {
   border-spacing: 8px;
   text-align: right;
-  margin: 32px auto 0 auto;
+  margin: 32px auto 0;
 }
 
 .tableView > caption {
@@ -168,6 +157,15 @@
   padding: 8px 10px;
 }
 
+.tableView th {
+  font-weight: normal;
+  font-size: 0.75em;
+}
+
+.tableView td {
+  font-family: 'Major Mono Display', monospace;
+}
+
 .tableView th:last-child,
 .tableView td:last-child {
   font-weight: bold;
@@ -176,15 +174,6 @@
 .tableView > tbody > tr:nth-child(odd) > td {
   border-bottom: 1px solid var(--theme-secondary-bright);
   border-right: 1px solid var(--theme-secondary-dark);
-}
-
-.tableView th {
-  font-weight: normal;
-  font-size: 0.75em;
-}
-
-.tableView td {
-  font-family: Major Mono Display, monospace;
 }
 
 .tableView thead tr th:first-of-type {

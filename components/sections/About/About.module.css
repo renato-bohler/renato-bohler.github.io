@@ -8,13 +8,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   height: 100vh;
   max-width: 1600px;
-
   margin: 0 auto;
   padding: 20vh 0;
-
   position: sticky;
   top: 0;
   overflow-x: hidden;
@@ -40,7 +37,6 @@
   display: flex;
   flex-direction: column;
   gap: 1em;
-
   max-width: min(1600px, 80vw);
   margin: 0 auto;
 }
@@ -48,9 +44,7 @@
 .animatedMessage {
   position: sticky;
   top: 0;
-
   height: 100vh;
-
   padding-bottom: 1em;
 }
 
@@ -60,10 +54,8 @@
 
 .messageList {
   position: relative;
-
   height: 50vh;
   padding-right: 1em;
-
   overflow: hidden auto;
 }
 
@@ -72,7 +64,7 @@
 }
 
 .messageList::-webkit-scrollbar-track {
-  background-color: rgb(var(--theme-highlight-rgb), 0.1);
+  background-color: rgba(var(--theme-highlight-rgb), 10%);
   border-radius: 100px;
 }
 
@@ -89,24 +81,17 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
-
   display: flex;
   gap: 8px;
-
   padding: 0.5em 1.5em;
-
-  border: none;
   border-radius: 50px;
-
   font-size: 0.75em;
   font-weight: bold;
   text-transform: uppercase;
   background: var(--theme-chat-outgoing-background);
   border: 1px dashed var(--theme-accent-color);
   color: var(--theme-text);
-
   cursor: pointer;
-
   opacity: 100%;
   transition: opacity 250ms ease-in-out 250ms;
 }
@@ -115,13 +100,13 @@
   opacity: 0%;
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .messageList {
     height: 75vh;
   }
 }
 
-@media screen and (max-width: 82rem) {
+@media screen and (width <= 82rem) {
   .scroll {
     height: 150vh;
   }

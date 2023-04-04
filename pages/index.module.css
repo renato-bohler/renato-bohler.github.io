@@ -15,7 +15,6 @@
 .transitioning {
   composes: animatedScroll;
   animation-name: transition;
-
   overflow: hidden;
   will-change: transform, border-radius, box-shadow;
 }
@@ -27,12 +26,13 @@
 
 @keyframes transition {
   from {
-    transform: scale(100%) translateY(0px);
-    border-radius: 0px;
+    transform: scale(100%) translateY(0);
+    border-radius: 0;
   }
+
   to {
     transform: scale(90%) translateY(1000px);
     border-radius: 50px;
-    box-shadow: 1px 1px 60px rgb(255, 255, 255, 20%);
+    box-shadow: 1px 1px 60px rgba(255, 255, 255, 20%);
   }
 }

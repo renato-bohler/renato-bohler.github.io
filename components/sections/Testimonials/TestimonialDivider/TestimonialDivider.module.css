@@ -8,12 +8,8 @@
 .divider {
   display: block;
   z-index: 1;
-
   fill: var(--theme-testimonial-background);
   stroke: var(--theme-primary-dark);
-}
-
-.divider {
   filter: drop-shadow(0 35px 0 var(--theme-primary-bright));
 }
 
@@ -21,7 +17,6 @@
   position: absolute;
   z-index: 2;
   top: 0;
-
   fill: none;
   stroke: var(--theme-primary-dark);
 }
@@ -32,7 +27,6 @@
 
 .dividerBottom {
   transform: translateY(-5%);
-
   fill: var(--theme-testimonial-background);
   stroke: var(--theme-secondary-bright);
   stroke-width: 10px;
@@ -43,7 +37,6 @@
 
 .animate {
   stroke-dashoffset: 0;
-
   transition-property: stroke-dashoffset;
   transition-timing-function: cubic-bezier(0.65, 0.18, 0.21, 0.65);
 }
@@ -58,7 +51,7 @@
   transition-duration: 1s;
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .dividerStroke {
     stroke-width: 35px;
   }

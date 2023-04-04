@@ -1,12 +1,9 @@
 .card {
   position: relative;
-
   display: flex;
-
   margin: 2em 0;
   padding: 0 50px;
   width: 50%;
-
   list-style: none;
 }
 
@@ -28,15 +25,12 @@
   left: 0;
   z-index: 1;
   transform: translate(-50%, 0.5em);
-
   width: 16px;
   height: 16px;
-
   background-color: var(--theme-background);
   border: 3px solid var(--theme-secondary-bright);
   outline: 6px solid var(--theme-background);
   border-radius: 50px;
-
   transition: background-color 250ms, outline-color 250ms;
 }
 
@@ -52,15 +46,12 @@
   left: 0;
   z-index: 1;
   transform: translate(calc(-100% - 50px), calc(-50% + 16px));
-
   display: flex;
   border-radius: 100%;
-
   width: 48px;
   min-width: 48px;
   height: 48px;
   padding: 8px;
-
   opacity: 100%;
   transition: opacity 500ms 100ms, transform 500ms;
 }
@@ -79,10 +70,8 @@
 .content {
   position: relative;
   z-index: 1;
-
   display: flex;
   flex-direction: column;
-
   transform: translateX(0);
   opacity: 100%;
   transition: opacity 500ms 300ms, transform 500ms 300ms;
@@ -121,9 +110,7 @@
   transform: translateX(-5px) scaleY(0%);
   width: calc(100% + 10px);
   height: calc(100% + 100px);
-
   background: var(--theme-background);
-
   transform-origin: bottom;
   transition: transform 1.5s cubic-bezier(0.25, 0, 0, 1);
 }
@@ -132,13 +119,13 @@
   transform: translateX(-5px) scaleY(100%);
 }
 
-@media screen and (max-width: 65rem) {
+@media screen and (width <= 65rem) {
   .card {
     font-size: 0.9em;
   }
 }
 
-@media screen and (max-width: 42rem) {
+@media screen and (width <= 42rem) {
   .card {
     width: calc(100% - 50px);
     align-self: flex-end;
@@ -173,7 +160,7 @@
   }
 }
 
-@media screen and (max-width: 32rem) {
+@media screen and (width <= 32rem) {
   .card {
     width: calc(100% - 25px);
     padding: 0 25px;
