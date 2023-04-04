@@ -1,10 +1,10 @@
 .animatedScroll {
   animation-duration: 1s;
-  animation-timing-function: ease-in-out;
   animation-play-state: paused;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
   animation-delay: calc(var(--scroll) * -1s);
   animation-iteration-count: 1;
-  animation-fill-mode: both;
 }
 
 .anchor {
@@ -18,27 +18,32 @@
 
 .title {
   position: relative;
+
+  margin-bottom: 0;
+
   font-size: 10em;
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 0;
 }
 
 .title::after {
   content: 'experience';
+
   position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
   z-index: 1;
+  top: 0;
+  right: 0;
+  left: 0;
+
+  color: transparent;
+  text-shadow: 0 0 var(--theme-experience-transition-adjust);
+
   background: linear-gradient(
     90deg,
     var(--theme-primary-bright),
     var(--theme-secondary-bright)
   );
-  color: transparent;
   background-clip: text;
-  text-shadow: 0 0 var(--theme-experience-transition-adjust);
   mix-blend-mode: color-burn;
 }
 
@@ -51,10 +56,13 @@
   --height-end: 500px;
 
   composes: animatedScroll;
-  animation-name: transitionOverflow;
+
   overflow: hidden;
+
   max-width: 100%;
   height: var(--height-end);
+
+  animation-name: transitionOverflow;
 }
 
 @keyframes transitionOverflow {
@@ -75,25 +83,28 @@
   --scale-start: 1.5;
 
   composes: animatedScroll;
-  animation-name: transitionLine;
+
   width: 2px;
   height: 100%;
   margin: 0 auto;
+
   background: linear-gradient(
     to right,
     var(--theme-secondary-bright),
     var(--theme-primary-bright)
   );
   border-radius: 50px;
+
+  animation-name: transitionLine;
 }
 
 @keyframes transitionLine {
   0% {
-    margin-left: var(--margin-left-start);
-    width: 100%;
-    border-radius: 50vw 50vw 0 0;
     transform: perspective(150px) rotateX(10deg)
       scale(var(--scale-start));
+    width: 100%;
+    margin-left: var(--margin-left-start);
+    border-radius: 50vw 50vw 0 0;
   }
 
   30% {
@@ -106,8 +117,8 @@
   }
 
   100% {
-    margin-left: var(--margin-left-end);
     width: 2px;
+    margin-left: var(--margin-left-end);
     border-radius: 50px 50px 0 0;
   }
 }
@@ -118,9 +129,10 @@
     var(--theme-secondary-bright),
     var(--theme-primary-bright)
   );
-  background-size: 2px;
-  background-position: center;
   background-repeat: repeat-y;
+  background-position: center;
+  background-size: 2px;
+
   mask-image: linear-gradient(
     rgba(0, 0, 0, 100%) calc(100% - 20vh),
     rgba(0, 0, 0, 25%) calc(100% - 10vh),
@@ -130,13 +142,16 @@
 
 .timeline {
   composes: timelineBackground;
+
   position: relative;
+
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding: 0;
-  margin: auto;
+
   max-width: 1600px;
-  overflow: hidden;
+  margin: auto;
+  padding: 0;
 }
 
 @media screen and (width <= 84rem) {
@@ -151,9 +166,9 @@
   }
 
   .title {
+    margin: 0 25px;
     font-size: 2.5em;
     text-align: left;
-    margin: 0 25px;
   }
 
   .transitionContainer {

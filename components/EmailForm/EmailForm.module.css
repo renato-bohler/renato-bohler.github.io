@@ -1,8 +1,9 @@
 .form {
   display: flex;
-  flex-direction: column;
   flex: 1 1 auto;
+  flex-direction: column;
   gap: 8px;
+
   width: 100%;
 }
 
@@ -16,17 +17,17 @@
 }
 
 .label {
+  transform: translateY(0.3em);
   font-size: 0.75em;
   font-weight: bold;
   text-transform: uppercase;
-  transform: translateY(0.3em);
 }
 
 .input {
   padding: 0.625em;
-  border-radius: 4px;
-  border: 1px solid var(--theme-chat-accent);
   background: var(--theme-background);
+  border: 1px solid var(--theme-chat-accent);
+  border-radius: 4px;
 }
 
 .input:disabled {
@@ -34,58 +35,69 @@
 }
 
 .textarea {
-  height: 75px;
   min-width: 100%;
   max-width: 100%;
+  height: 75px;
   max-height: 300px;
 }
 
 .footer {
   display: flex;
-  align-self: flex-end;
   gap: 16px;
+  align-self: flex-end;
   margin-top: auto;
 }
 
 .status {
   position: relative;
+
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  background: var(--theme-text);
-  color: var(--theme-background);
-  border-radius: 8px;
+
   padding: 0 1em;
+
+  color: var(--theme-background);
+
+  background: var(--theme-text);
+  border-radius: 8px;
 }
 
 .status::after {
   content: '';
+
   position: absolute;
-  right: -10px;
   top: 50%;
+  right: -10px;
+
   width: 0;
   height: 0;
+  margin-top: -0.6em;
+  margin-left: -0.6em;
+
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-left: 12px solid var(--theme-text);
-  margin-top: -0.6em;
-  margin-left: -0.6em;
 }
 
 .button {
   display: flex;
+  gap: 8px;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 0.25em;
+
   width: 2.75rem;
   height: 2.75rem;
+  padding: 0.25em;
+
   font-size: 2.75rem;
-  background: var(--theme-chat-accent);
   color: var(--theme-chat-background);
-  border-radius: 8px;
-  border: none;
+
   opacity: 100%;
+  background: var(--theme-chat-accent);
+  border: none;
+  border-radius: 8px;
+
   transition: opacity 250ms ease-in-out;
 }
 

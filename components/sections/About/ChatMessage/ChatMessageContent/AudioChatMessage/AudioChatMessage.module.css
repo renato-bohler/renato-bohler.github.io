@@ -1,38 +1,43 @@
 .container {
   display: grid;
   grid-template-columns: repeat(2, auto);
-  align-items: center;
   gap: 0 16px;
+  align-items: center;
 }
 
 .button {
   width: 2.5rem;
   height: 2.5rem;
-  font-size: 2.5rem;
-  color: var(--theme-chat-accent);
-  opacity: 80%;
-  border: none;
-  background: none;
   margin: 0;
   padding: 0;
+
+  font-size: 2.5rem;
+  color: var(--theme-chat-accent);
+
+  opacity: 80%;
+  background: none;
+  border: none;
 }
 
 .progress {
-  border: 1px solid var(--theme-text);
-  border-radius: 8px;
-  background: var(--theme-background);
-  opacity: 80%;
   width: 225px;
   height: 8px;
   padding: 2px;
+
+  opacity: 80%;
+  background: var(--theme-background);
+  border: 1px solid var(--theme-text);
+  border-radius: 8px;
 }
 
 .progressBar {
-  background: var(--theme-chat-accent);
-  opacity: 90%;
   width: 50%;
   height: 100%;
+
+  opacity: 90%;
+  background: var(--theme-chat-accent);
   border-radius: 8px;
+
   transition: width 250ms ease-in-out;
 }
 
@@ -43,13 +48,16 @@
 }
 
 .speedButton {
-  background: var(--theme-chat-accent);
+  cursor: pointer;
+
+  width: 4em;
+
   color: var(--theme-background);
+
+  opacity: 90%;
+  background: var(--theme-chat-accent);
   border: none;
   border-radius: 1em;
-  width: 4em;
-  opacity: 90%;
-  cursor: pointer;
 }
 
 @media screen and (width <= 42rem) {

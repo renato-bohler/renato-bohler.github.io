@@ -4,17 +4,19 @@
 }
 
 .about {
+  position: sticky;
+  top: 0;
+
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+
   max-width: 1600px;
+  height: 100vh;
   margin: 0 auto;
   padding: 20vh 0;
-  position: sticky;
-  top: 0;
-  overflow-x: hidden;
 }
 
 .anchor {
@@ -24,19 +26,20 @@
 .picture {
   width: 50vmin;
   height: 50vmin;
-  border-radius: 100%;
   border: 5px solid var(--theme-primary-bright);
+  border-radius: 100%;
 }
 
 .bubble {
-  background: var(--theme-text);
   color: var(--theme-background);
+  background: var(--theme-text);
 }
 
 .messages {
   display: flex;
   flex-direction: column;
   gap: 1em;
+
   max-width: min(1600px, 80vw);
   margin: 0 auto;
 }
@@ -54,9 +57,9 @@
 
 .messageList {
   position: relative;
+  overflow: hidden auto;
   height: 50vh;
   padding-right: 1em;
-  overflow: hidden auto;
 }
 
 .messageList::-webkit-scrollbar {
@@ -70,29 +73,35 @@
 
 .messageList::-webkit-scrollbar-thumb {
   background-color: var(--theme-accent-color);
-  border-radius: 100px;
-  border: 3px solid transparent;
   background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 100px;
 }
 
 .scrollButton {
+  cursor: pointer;
+
   position: absolute;
+  z-index: 1;
   top: 0.5em;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1;
+
   display: flex;
   gap: 8px;
+
   padding: 0.5em 1.5em;
-  border-radius: 50px;
+
   font-size: 0.75em;
   font-weight: bold;
+  color: var(--theme-text);
   text-transform: uppercase;
+
+  opacity: 100%;
   background: var(--theme-chat-outgoing-background);
   border: 1px dashed var(--theme-accent-color);
-  color: var(--theme-text);
-  cursor: pointer;
-  opacity: 100%;
+  border-radius: 50px;
+
   transition: opacity 250ms ease-in-out 250ms;
 }
 

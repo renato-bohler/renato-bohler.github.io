@@ -4,37 +4,43 @@
 
 .size {
   width: calc(100vw - 6em);
-  height: 80vh;
   max-width: calc(1200px * 1.1);
+  height: 80vh;
   max-height: calc(650px * 1.1);
 }
 
 .stickyContainer {
   position: sticky;
   top: 100px;
-  display: flex;
-  margin: auto;
   transform: scale(0.9) translateY(100px);
+
+  display: flex;
+
+  margin: auto;
 }
 
 .videoContainer {
   position: relative;
-  flex: 1;
-  border-radius: 24px;
-  overflow: hidden;
-  clip-path: 0 0;
   transform: translateZ(0);
+
+  overflow: hidden;
+  flex: 1;
+
+  clip-path: 0 0;
+  border-radius: 24px;
 }
 
 .sideTitle {
   position: absolute;
   right: 0;
   transform: translateX(100%);
+
   margin: 0;
+
+  writing-mode: vertical-rl;
   font-family: 'Major Mono Display', monospace;
   font-size: 1.75em;
   white-space: nowrap;
-  writing-mode: vertical-rl;
 }
 
 .container:nth-child(even) .sideTitle {
@@ -44,37 +50,42 @@
 }
 
 .video {
-  transform: translateZ(0);
   position: absolute;
   inset: -100%;
-  margin: auto;
+  transform: translateZ(0);
+
   min-width: 100%;
   min-height: 100%;
+  margin: auto;
 }
 
 .card {
   position: relative;
   z-index: 1;
+  transform: translateY(175px);
+
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+
   margin: -135px auto auto;
   padding: 2em;
+
   background: var(--theme-glass-background);
+  backdrop-filter: blur(50px);
   border: var(--theme-glass-border);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 10%);
-  backdrop-filter: blur(50px);
-  transform: translateY(175px);
 }
 
 .cardContent {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding-right: 4px;
-  max-height: 100%;
   overflow-y: auto;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
+  max-height: 100%;
+  padding-right: 4px;
 }
 
 .cardContent::-webkit-scrollbar {
@@ -88,9 +99,9 @@
 
 .cardContent::-webkit-scrollbar-thumb {
   background-color: var(--theme-accent-color);
-  border-radius: 100px;
-  border: 3px solid transparent;
   background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 100px;
 }
 
 .cardHeader {
@@ -101,22 +112,23 @@
 }
 
 .cardTitle {
-  font-size: 1.75em;
   margin: 0;
+  font-size: 1.75em;
 }
 
 .cardSubtitle {
-  font-style: italic;
-  font-weight: normal;
   margin: 0;
+  font-weight: normal;
+  font-style: italic;
 }
 
 .cardDescription {
-  font-size: 0.9em;
-  flex: 1;
   columns: 35ch auto;
-  column-gap: 5em;
   column-rule: 1px solid rgba(var(--theme-text-rgb), 5%);
+  flex: 1;
+  column-gap: 5em;
+
+  font-size: 0.9em;
 }
 
 @media screen and (width <= 42rem) {
@@ -131,8 +143,8 @@
   }
 
   .card {
-    margin: -50px auto auto;
     transform: translateY(110px);
+    margin: -50px auto auto;
     padding: 1em;
   }
 
@@ -140,11 +152,13 @@
     top: 0;
     right: unset;
     transform: translateY(-100%);
+
     width: 100%;
-    font-size: 1.5em;
+
     writing-mode: unset;
-    white-space: unset;
+    font-size: 1.5em;
     text-align: left;
+    white-space: unset;
   }
 
   .container:nth-child(even) .sideTitle {

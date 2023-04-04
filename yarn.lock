@@ -7174,6 +7174,13 @@ styled-jsx@5.1.0:
   dependencies:
     client-only "0.0.1"
 
+stylelint-config-clean-order@^5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/stylelint-config-clean-order/-/stylelint-config-clean-order-5.0.0.tgz#cf3714889321a41ee698d66b788da99c938bfc5f"
+  integrity sha512-X4k3relU0KmkNE7Q+K7WslN8Xk1nJBCT30OMeEwF0MAKqV8C9uh3vGbCcrR3/6Oxcv+83m1AxNsQAkrBDtV2sw==
+  dependencies:
+    stylelint-order "^6.0.2"
+
 stylelint-config-css-modules@^4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/stylelint-config-css-modules/-/stylelint-config-css-modules-4.2.0.tgz#0196347d5c143eff9e2a3e97b1ba980253b6b8bf"
@@ -7193,7 +7200,7 @@ stylelint-config-standard@^32.0.0:
   dependencies:
     stylelint-config-recommended "^11.0.0"
 
-stylelint-order@^6.0.3:
+stylelint-order@^6.0.2:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/stylelint-order/-/stylelint-order-6.0.3.tgz#160b78650bd90463241b992581efee7159baefc2"
   integrity sha512-1j1lOb4EU/6w49qZeT2SQVJXm0Ht+Qnq9GMfUa3pMwoyojIWfuA+JUDmoR97Bht1RLn4ei0xtLGy87M7d29B1w==

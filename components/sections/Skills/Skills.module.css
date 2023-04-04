@@ -3,47 +3,53 @@
 }
 
 .section {
+  position: relative;
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 80px 40px 40px;
+
   margin: 0;
-  position: relative;
-  z-index: 1;
+  padding: 80px 40px 40px;
 }
 
 .scroll {
   position: relative;
-  height: 100vh;
   overflow: visible;
+  height: 100vh;
 }
 
 .trigger {
   position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: sticky;
   z-index: 1;
   top: 50%;
   transform: translateY(-50%);
-  margin: 0;
-  height: 1.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   width: 9ch;
   max-width: 100vw;
-  background: var(--theme-background);
-  border-radius: 50px;
+  height: 1.5em;
+  margin: 0;
+
   font-family: "Major Mono Display", monospace;
-  font-weight: bolder;
   font-size: 4em;
+  font-weight: bolder;
   color: var(--theme-text);
   text-align: center;
+
+  background: var(--theme-background);
+  border-radius: 50px;
 }
 
 .caret {
@@ -52,20 +58,20 @@
 }
 
 .subtitle {
-  font-size: 1.5em;
   margin-bottom: 0;
+  font-size: 1.5em;
 }
 
 .subtitleDescription {
-  font-size: 0.8em;
   margin-bottom: 50px;
+  font-size: 0.8em;
   text-align: center;
 }
 
 .grid {
   display: grid;
-  gap: 32px;
   grid-template-columns: repeat(8, 150px);
+  gap: 32px;
 }
 
 @media screen and (width <= 96rem) {
@@ -94,8 +100,8 @@
   }
 
   .grid {
-    gap: 32px 16px;
     grid-template-columns: repeat(2, 125px);
+    gap: 32px 16px;
   }
 }
 

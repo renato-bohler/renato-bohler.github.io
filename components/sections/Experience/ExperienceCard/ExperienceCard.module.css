@@ -1,9 +1,12 @@
 .card {
   position: relative;
+
   display: flex;
+
+  width: 50%;
   margin: 2em 0;
   padding: 0 50px;
-  width: 50%;
+
   list-style: none;
 }
 
@@ -21,65 +24,75 @@
 
 .dot {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
-  z-index: 1;
   transform: translate(-50%, 0.5em);
+
   width: 16px;
   height: 16px;
+
   background-color: var(--theme-background);
   border: 3px solid var(--theme-secondary-bright);
-  outline: 6px solid var(--theme-background);
   border-radius: 50px;
+  outline: 6px solid var(--theme-background);
+
   transition: background-color 250ms, outline-color 250ms;
 }
 
 .card:nth-child(even) > .dot {
-  left: unset;
   right: 0;
+  left: unset;
   transform: translate(50%, 0.5em);
 }
 
 .companyLogo {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
-  z-index: 1;
   transform: translate(calc(-100% - 50px), calc(-50% + 16px));
+
   display: flex;
-  border-radius: 100%;
+
   width: 48px;
   min-width: 48px;
   height: 48px;
   padding: 8px;
+
   opacity: 100%;
+  border-radius: 100%;
+
   transition: opacity 500ms 100ms, transform 500ms;
 }
 
 .card:nth-child(even) > .companyLogo {
-  left: unset;
   right: 0;
+  left: unset;
   transform: translate(calc(100% + 50px), calc(-50% + 16px));
 }
 
 .card[data-revealed='false'] > .companyLogo {
-  opacity: 0%;
   transform: translate(calc(-100% + 100px), calc(-50% + 16px));
+  opacity: 0%;
 }
 
 .content {
   position: relative;
   z-index: 1;
+  transform: translateX(0);
+
   display: flex;
   flex-direction: column;
-  transform: translateX(0);
+
   opacity: 100%;
+
   transition: opacity 500ms 300ms, transform 500ms 300ms;
 }
 
 .card[data-revealed='false'] > .content {
-  opacity: 0%;
   transform: translateX(-50px);
+  opacity: 0%;
 }
 
 .card:nth-child(even)[data-revealed='false'] > .content {
@@ -107,11 +120,14 @@
 .reveal {
   position: absolute;
   inset: 0;
+  transform-origin: bottom;
   transform: translateX(-5px) scaleY(0%);
+
   width: calc(100% + 10px);
   height: calc(100% + 100px);
+
   background: var(--theme-background);
-  transform-origin: bottom;
+
   transition: transform 1.5s cubic-bezier(0.25, 0, 0, 1);
 }
 
@@ -127,8 +143,8 @@
 
 @media screen and (width <= 42rem) {
   .card {
-    width: calc(100% - 50px);
     align-self: flex-end;
+    width: calc(100% - 50px);
     padding: 0 25px;
   }
 
@@ -137,8 +153,8 @@
   }
 
   .card:nth-child(even) > .dot {
-    left: 0;
     right: unset;
+    left: 0;
     transform: translate(-50%, 0.5em);
   }
 
@@ -149,10 +165,11 @@
   .companyLogo {
     position: static;
     transform: none;
-    margin-right: 16px;
+
     width: 40px;
     min-width: 40px;
     height: 40px;
+    margin-right: 16px;
   }
 
   .card:nth-child(even) > .companyLogo {

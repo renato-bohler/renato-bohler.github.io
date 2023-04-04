@@ -1,9 +1,10 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
   gap: 2px;
+  align-items: flex-end;
+  justify-content: flex-end;
+
   font-size: 0.75em;
   text-align: right;
 }
@@ -17,18 +18,21 @@
 
 .links > a {
   display: flex;
-  align-items: center;
   gap: 4px;
-  background: rgba(var(--theme-code-accent-rgb), 10%);
-  border: 1px solid transparent;
-  border-radius: 8px;
+  align-items: center;
+
+  margin: 0;
+  padding: 2px 8px;
+
   font-size: 1.25em;
   color: rgba(var(--theme-code-accent-rgb), 100%);
   text-decoration-color: rgba(var(--theme-code-accent-rgb), 33%);
   text-decoration-style: wavy;
   text-decoration-thickness: 1px;
-  margin: 0;
-  padding: 2px 8px;
+
+  background: rgba(var(--theme-code-accent-rgb), 10%);
+  border: 1px solid transparent;
+  border-radius: 8px;
 }
 
 .links > a:hover {

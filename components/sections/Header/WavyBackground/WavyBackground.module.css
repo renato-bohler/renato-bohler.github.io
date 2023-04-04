@@ -5,14 +5,17 @@
 }
 
 .waveBackground svg {
+  transform: translateY(-20px);
+
   width: calc(120vw + 200px);
   height: 100vh;
+
+  stroke-width: 0;
+
   mask-image: linear-gradient(
     rgba(0, 0, 0, 50%) 0%,
     transparent 100%
   );
-  transform: translateY(-20px);
-  stroke-width: 0;
 }
 
 .wavePattern {
@@ -20,8 +23,8 @@
 }
 
 .wave {
-  animation: wave 10s infinite ease-in-out;
   will-change: transform, fill;
+  animation: wave 10s infinite ease-in-out;
 }
 
 .wavePrimary {

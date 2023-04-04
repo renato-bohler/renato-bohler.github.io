@@ -1,16 +1,20 @@
 .backdrop {
   position: fixed;
+  z-index: 10;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10;
+
+  width: 100vw;
+  height: 100vh;
+
+  opacity: 0%;
   background: var(--theme-backdrop);
   backdrop-filter: blur(15px);
-  opacity: 0%;
+
   transition: opacity 250ms ease-in-out;
 }
 
@@ -26,11 +30,14 @@ html[data-reduced-motion='true'] .backdrop {
 .dialog {
   display: flex;
   flex-direction: column;
+
   width: min(600px, 100vw);
   height: min(800px, 100dvh);
+
+  opacity: 0%;
   background: var(--theme-background);
   border-radius: 16px;
-  opacity: 0%;
+
   transition: opacity 500ms ease-in-out;
 }
 
@@ -47,27 +54,32 @@ html[data-reduced-motion='true'] .dialog {
 .headerRow {
   display: flex;
   justify-content: space-between;
+
   padding: 8px;
-  border-bottom-width: 6px;
+
   border-bottom-style: outset;
+  border-bottom-width: 6px;
 }
 
 .title {
-  font-weight: 600;
-  font-size: 1.25rem;
   transform: translate(115px);
   margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
 }
 
 .closeButton {
-  background: none;
-  border: none;
+  cursor: pointer;
+
   padding: 0;
+
   font-size: 2em;
   color: #ebebeb;
-  cursor: pointer;
-  mix-blend-mode: hard-light;
+
+  background: none;
   filter: drop-shadow(2px 2px 6px #666);
+  border: none;
+  mix-blend-mode: hard-light;
 }
 
 .wave {
@@ -78,9 +90,9 @@ html[data-reduced-motion='true'] .dialog {
 }
 
 .content {
-  padding: 8px 24px 0 32px;
-  margin: 16px 10px 16px 0;
   overflow: hidden auto;
+  margin: 16px 10px 16px 0;
+  padding: 8px 24px 0 32px;
 }
 
 .content::-webkit-scrollbar {
@@ -94,15 +106,15 @@ html[data-reduced-motion='true'] .dialog {
 
 .content::-webkit-scrollbar-thumb {
   background-color: var(--theme-scrollbar-thumb-color);
-  border-radius: 100px;
-  border: 3px solid transparent;
   background-clip: content-box;
+  border: 3px solid transparent;
+  border-radius: 100px;
 }
 
 .image {
   position: absolute;
-  transform: translate(-30%, -20%);
   z-index: 1;
+  transform: translate(-30%, -20%);
 }
 
 .image > svg {
@@ -113,9 +125,11 @@ html[data-reduced-motion='true'] .dialog {
   .dialog {
     position: fixed;
     top: 0;
-    border-radius: 0;
+
     width: 100%;
     height: 100dvh;
+
+    border-radius: 0;
   }
 
   .dialog[data-enter] {

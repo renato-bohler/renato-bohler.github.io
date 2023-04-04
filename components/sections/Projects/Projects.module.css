@@ -11,28 +11,35 @@
 .title {
   display: flex;
   justify-content: center;
+
+  margin: 1em 0 0;
+
   font-family: 'Major Mono Display', monospace;
   font-size: min(14vw, 10em);
   font-weight: bolder;
   line-height: 1em;
-  -webkit-text-stroke: 0.07em;
+  color: rgba(var(--theme-code-accent-rgb), 5%);
+  text-shadow: 0 0 var(--theme-background);
+
   background: linear-gradient(
     90deg,
     rgba(var(--theme-highlight-accent-rgb), 100%) 0%,
     rgba(var(--theme-highlight-rgb), 100%) 100%
   );
   background-clip: text;
-  color: rgba(var(--theme-code-accent-rgb), 5%);
-  text-shadow: 0 0 var(--theme-background);
-  margin: 1em 0 0;
+
+  -webkit-text-stroke: 0.07em;
 }
 
 .title::before,
 .title::after {
   content: '';
+
   flex: 1;
   align-self: center;
+
   height: 0.1em;
+
   background: linear-gradient(
     90deg,
     rgba(var(--theme-highlight-rgb), 100%) 0%,
@@ -55,8 +62,8 @@
 .animate {
   animation-name: textTransform;
   animation-duration: calc(var(--i) * 1s);
-  animation-fill-mode: forwards;
   animation-timing-function: ease;
+  animation-fill-mode: forwards;
   animation-iteration-count: 2;
 }
 

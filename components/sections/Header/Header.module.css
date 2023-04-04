@@ -1,8 +1,8 @@
 .header {
   position: relative;
+  z-index: 10;
   overflow: hidden;
   height: 100vh;
-  z-index: 10;
 }
 
 .navigationHeader {
@@ -10,15 +10,19 @@
   z-index: 1;
   top: 0;
   left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   width: 100%;
   max-width: 100%;
   height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
   margin: 0;
+  padding: 20px;
+
   font-size: 2em;
+
   transition: backdrop-filter 250ms ease-in-out,
     padding 250ms ease-in-out, margin 250ms ease-in-out,
     width 500ms ease-in-out;
@@ -27,11 +31,13 @@
 .navigationHeader[data-folded='true'] {
   width: calc(100% - 40px);
   margin: 20px;
-  padding-left: 85px;
   padding-right: 40px;
-  border-radius: 50px;
-  backdrop-filter: blur(10px);
+  padding-left: 85px;
+
   background: var(--theme-menu-background);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+
   transition: background-color 500ms ease-in-out,
     backdrop-filter 500ms ease-in-out,
     padding-left 500ms ease-in-out 750ms, margin 500ms ease-in-out,
@@ -57,28 +63,37 @@
 }
 
 .heading {
-  display: flex;
-  flex-direction: column;
+  pointer-events: none;
+
   position: fixed;
   z-index: 3;
-  font-size: min(12vmin, 6.67rem);
-  font-family: 'Major Mono Display', monospace;
-  min-height: min(29vmin, 16rem);
-  min-width: 6ch;
-  margin: 0;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  display: flex;
+  flex-direction: column;
+
+  min-width: 6ch;
+  min-height: min(29vmin, 16rem);
+  margin: 0;
+
+  font-family: 'Major Mono Display', monospace;
+  font-size: min(12vmin, 6.67rem);
+
   transition: 500ms ease-in-out;
-  pointer-events: none;
 }
 
 .title {
   position: relative;
+
   display: block;
+
   margin: 0;
+
   font-weight: normal;
   line-height: 1em;
+
   transition: font-size 100ms ease-in-out 100ms;
 }
 
@@ -94,19 +109,26 @@
 
 .subtitle {
   margin: 1vmin 0 0 auto;
+
   font-size: min(3vmin, 1.67rem);
   font-weight: normal;
   line-height: 1em;
+
   transition: font-size 100ms ease-in-out 100ms;
 }
 
 .initial {
-  position: fixed;
   user-select: none;
-  text-decoration: none;
-  background: none;
-  padding: 0;
+
+  position: fixed;
+
   margin: 0;
+  padding: 0;
+
+  text-decoration: none;
+
+  background: none;
+
   transition: inherit;
 }
 
@@ -117,14 +139,17 @@
 }
 
 .heading[data-folded='true'] {
+  pointer-events: all;
+
   top: 0;
   left: 0;
-  min-height: 40px;
-  min-width: 60px;
   transform: translate(50px, 40px);
+
+  min-width: 60px;
+  min-height: 40px;
+
   transition: transform 1s ease-in-out 250ms, top 1s ease-in-out 350ms,
     left 1s ease-in-out 250ms, margin-top 500ms ease-in-out;
-  pointer-events: all;
 }
 
 .heading[data-folded='true'] > .title {
@@ -133,8 +158,8 @@
 }
 
 .heading[data-folded='true'] > .subtitle {
-  opacity: 0%;
   font-size: 0;
+  opacity: 0%;
   transition: opacity 250ms ease-in-out,
     font-size 250ms ease-in-out 750ms;
 }
@@ -158,15 +183,17 @@
 
 .heading[data-folded='true'] > .title:nth-child(2) > .initial {
   position: fixed;
-  transform: translate(10px);
   z-index: -1;
+  transform: translate(10px);
+
+  color: transparent;
+
   background: linear-gradient(
     to bottom,
     var(--theme-primary-bright),
     var(--theme-secondary-bright)
   );
   background-clip: text;
-  color: transparent;
 }
 
 .scrollDown {
@@ -174,6 +201,7 @@
   bottom: 1em;
   left: 50%;
   transform: translateX(-50%);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,8 +221,8 @@
 
 @media screen and (width <= 30rem) {
   .heading {
-    min-height: 43vmin;
     min-width: 80vmin;
+    min-height: 43vmin;
   }
 
   .heading > .title {

@@ -1,11 +1,14 @@
 .footer {
   position: relative;
+
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 16px;
+  justify-content: center;
+
   margin-top: 150px;
+  padding: 16px;
+
   color: white;
 }
 
@@ -14,19 +17,23 @@
   z-index: -1;
   bottom: 0;
   left: 0;
+
   width: 100%;
   height: 200vh;
+
   background-color: #121212;
   background-image: url('/images/topography.svg');
-  background-size: contain;
   background-position: center;
+  background-size: contain;
 }
 
 .details {
   display: flex;
-  justify-content: space-between;
   gap: 8px;
+  justify-content: space-between;
+
   width: 100%;
+
   font-size: 0.8em;
 }
 
@@ -39,33 +46,39 @@
 }
 
 .contactButton {
+  cursor: pointer;
+  user-select: none;
+
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0.5em 0.75em;
+
   margin: 0 0 300px;
+  padding: 0.5em 0.75em;
+
   font-family: "Major Mono Display", monospace;
   font-size: 2em;
   font-weight: bolder;
-  -webkit-text-stroke: 0.04em;
+  color: transparent;
   text-transform: lowercase;
+
   background: linear-gradient(
     180deg,
     var(--theme-primary-bright),
     var(--theme-secondary-bright)
   );
-  color: transparent;
   background-clip: text;
+  border-width: 2px;
   border-image: linear-gradient(
     90deg,
     var(--theme-primary-bright),
     var(--theme-secondary-bright)
   );
   border-image-slice: 1;
-  border-width: 2px;
-  user-select: none;
-  cursor: pointer;
+
+  -webkit-text-stroke: 0.04em;
 }
 
 .contactButtonDecoration {

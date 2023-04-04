@@ -1,22 +1,27 @@
 .container {
+  z-index: 1;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   margin-bottom: 50px;
-  z-index: 1;
 }
 
 .switchButton {
+  cursor: pointer;
+
   width: 200px;
   margin-bottom: 16px;
   padding: 8px;
+
   font-size: 0.75em;
   color: var(--theme-text);
+
   background: var(--theme-background-opaque);
-  box-shadow: var(--theme-shadow) 0 4px 12px;
   border: 2px solid var(--theme-primary-dark);
   border-radius: 8px;
-  cursor: pointer;
+  box-shadow: var(--theme-shadow) 0 4px 12px;
 }
 
 .switchButton:hover,
@@ -26,19 +31,23 @@
 
 /* Flip */
 .flip {
-  perspective: 10000px;
-  height: 600px;
+  overflow: auto hidden;
+
   width: 800px;
   max-width: 80vw;
-  overflow: auto hidden;
+  height: 600px;
+
+  perspective: 10000px;
 }
 
 .flipper {
   position: relative;
+  transform-style: preserve-3d;
+
   width: 100%;
   height: 100%;
+
   transition: transform 1s;
-  transform-style: preserve-3d;
 }
 
 .flipperFlipped {
@@ -68,9 +77,9 @@
 }
 
 .line {
-  stroke: var(--theme-text);
   /* stylelint-disable-next-line alpha-value-notation */
   opacity: calc(50% * (1 + var(--theme-is-contrast)));
+  stroke: var(--theme-text);
   stroke-dasharray: 3px;
 }
 
@@ -82,9 +91,9 @@
 }
 
 .feedback {
-  stroke-width: 2px;
   fill-opacity: 50%;
   fill-opacity: calc(50% + 30% * var(--theme-is-contrast));
+  stroke-width: 2px;
 }
 
 .data:hover,
@@ -100,21 +109,25 @@
 
 .buttonGroup {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  flex-wrap: wrap;
+
   margin-top: 16px;
 }
 
 .button {
-  border: none;
-  background: none;
+  cursor: pointer;
+
+  margin: 0 8px;
+  padding: 16px;
+
   font-size: 0.75em;
   color: var(--theme-text);
-  padding: 16px;
-  margin: 0 8px;
+
+  background: none;
+  border: none;
   border-radius: 8px;
-  cursor: pointer;
 }
 
 .button[aria-pressed='true'],
@@ -126,40 +139,42 @@
 
 .buttonIcon {
   display: inline-block;
+
   width: 10px;
   height: 10px;
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 10px;
   margin-right: 4px;
+
   opacity: 90%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
 }
 
 /* Table view */
 .tableView {
   border-spacing: 8px;
-  text-align: right;
   margin: 32px auto 0;
+  text-align: right;
 }
 
 .tableView > caption {
   caption-side: bottom;
-  font-style: italic;
   font-size: 0.8em;
+  font-style: italic;
   line-height: 1.3em;
 }
 
 .tableView th,
 .tableView td {
-  background: var(--theme-table-cell-background);
-  border-bottom: 1px solid var(--theme-primary-bright);
-  border-right: 1px solid var(--theme-primary-dark);
   padding: 8px 10px;
+  background: var(--theme-table-cell-background);
+  border-right: 1px solid var(--theme-primary-dark);
+  border-bottom: 1px solid var(--theme-primary-bright);
 }
 
 .tableView th {
-  font-weight: normal;
   font-size: 0.75em;
+  font-weight: normal;
 }
 
 .tableView td {
@@ -172,8 +187,8 @@
 }
 
 .tableView > tbody > tr:nth-child(odd) > td {
-  border-bottom: 1px solid var(--theme-secondary-bright);
   border-right: 1px solid var(--theme-secondary-dark);
+  border-bottom: 1px solid var(--theme-secondary-bright);
 }
 
 .tableView thead tr th:first-of-type {
@@ -182,6 +197,6 @@
 }
 
 .tableView tbody tr td:first-of-type {
-  font-weight: bold;
   font-size: 0.9em;
+  font-weight: bold;
 }

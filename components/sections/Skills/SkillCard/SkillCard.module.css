@@ -1,10 +1,13 @@
 .card {
   position: relative;
+
+  font-size: 0.75em;
+
+  background-clip: content-box, border-box;
+  background-origin: border-box;
   border: 2px solid transparent;
   border-radius: 8px;
-  background-origin: border-box;
-  background-clip: content-box, border-box;
-  font-size: 0.75em;
+
   transition: all 500ms ease 100ms,
     transform 250ms cubic-bezier(0.21, -0.56, 0.43, 1.53);
 }
@@ -12,20 +15,23 @@
 .blurContainer {
   position: absolute;
   inset: 0;
-  border-radius: 6px;
   overflow: hidden;
+  border-radius: 6px;
 }
 
 .blur {
   position: absolute;
   top: -25%;
   right: -25%;
+  transform: translate3d(0, 0, 0);
+
   width: 75%;
   height: 75%;
+
   backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
   opacity: 50%;
   filter: blur(60px);
+
   transition: width ease-in-out 300ms, height ease-in-out 300ms,
     opacity ease-in-out 300ms;
 }
@@ -33,8 +39,10 @@
 .blur.light {
   right: unset;
   left: -25%;
+
   width: 100%;
   height: 100%;
+
   opacity: 75%;
 }
 
@@ -44,9 +52,9 @@
 }
 
 .featured .blur.light {
-  opacity: 50%;
   width: 115%;
   height: 115%;
+  opacity: 50%;
 }
 
 .card:hover .blur {
@@ -81,8 +89,8 @@
 }
 
 .hidden {
-  opacity: 0%;
   transform: translateY(50px);
+  opacity: 0%;
 }
 
 .border {
@@ -90,26 +98,30 @@
 }
 
 .button {
+  cursor: pointer;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
+
   width: 100%;
+  height: 100%;
+  padding: 0;
+
   background: none;
   border: none;
   border-radius: 0;
-  padding: 0;
-  cursor: pointer;
 }
 
 .name {
+  width: 100%;
   margin: 0;
   padding: 8px 12px 2px 0;
-  text-align: right;
+
   font-size: 0.9rem;
   font-weight: 200;
-  width: 100%;
   color: var(--theme-text);
+  text-align: right;
 }
 
 .featured .name {
@@ -132,13 +144,18 @@
 }
 
 .brief {
-  width: 100%;
-  min-height: 200px;
-  padding: 32px 16px;
-  text-align: left;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  width: 100%;
+  min-height: 200px;
+  padding: 32px 16px;
+
+  color: var(--theme-text);
+  text-align: left;
+
+  opacity: 90%;
   background: linear-gradient(
     176deg,
     transparent 0%,
@@ -148,8 +165,6 @@
     transparent 90%,
     transparent 100%
   );
-  color: var(--theme-text);
-  opacity: 90%;
 }
 
 .brief.contrast {
@@ -157,22 +172,25 @@
 }
 
 .info {
-  padding: 4px;
   width: 100%;
+  padding: 4px;
 }
 
 .info > .contentWrapper {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  padding: 16px 8px 8px;
+  justify-content: space-around;
+
   width: 100%;
   height: 60px;
+  padding: 16px 8px 8px;
+
   font-weight: bold;
   color: var(--theme-text);
+
   background: var(--theme-background-opaque);
-  border-bottom-left-radius: 8px;
   border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
 }
 
 .contentWrapper.contrast {
@@ -182,10 +200,12 @@
 .contentWrapper > .content {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   align-items: center;
-  font-size: 0.9em;
+  justify-content: space-around;
+
   height: 100%;
+
+  font-size: 0.9em;
 }
 
 .featured .contentWrapper > .content {
@@ -199,10 +219,10 @@
 }
 
 .contentWrapper > .divider {
-  border-right: 1px solid var(--theme-text);
   height: 100%;
-  opacity: 15%;
   margin: 0 4px;
+  opacity: 15%;
+  border-right: 1px solid var(--theme-text);
 }
 
 @media screen and (width <= 21rem) {

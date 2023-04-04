@@ -1,10 +1,10 @@
 .animatedScroll {
   animation-duration: 1s;
-  animation-timing-function: ease-in-out;
   animation-play-state: paused;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
   animation-delay: calc(var(--scroll) * -1s);
   animation-iteration-count: 1;
-  animation-fill-mode: both;
 }
 
 /* Container */
@@ -12,10 +12,14 @@
   --font-size-start: 2em;
 
   composes: animatedScroll;
-  animation-name: container;
-  position: relative;
-  width: 100%;
+
   will-change: font-size, height, top, left, transform;
+
+  position: relative;
+
+  width: 100%;
+
+  animation-name: container;
 }
 
 @media screen and (width <= 42rem) {
@@ -26,11 +30,13 @@
 
 @keyframes container {
   0% {
-    font-size: var(--font-size-start);
-    height: 15em;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    height: 15em;
+
+    font-size: var(--font-size-start);
   }
 
   75% {
@@ -38,11 +44,13 @@
   }
 
   100% {
-    font-size: 1em;
-    height: 4.25em;
     top: 100%;
     left: 0%;
     transform: translate(0, -100%);
+
+    height: 4.25em;
+
+    font-size: 1em;
   }
 }
 
@@ -52,11 +60,15 @@
   --picture-dimension-end: 2.75em;
 
   composes: animatedScroll;
-  animation-name: picture;
+
+  will-change: width, height, left, transform;
+
   position: absolute;
   top: 0;
+
   max-width: none;
-  will-change: width, height, left, transform;
+
+  animation-name: picture;
 }
 
 @media screen and (width <= 42rem) {
@@ -68,10 +80,10 @@
 
 @keyframes picture {
   0% {
-    width: 10em;
-    height: 10em;
     left: 50%;
     transform: translate(-50%, 0);
+    width: 10em;
+    height: 10em;
   }
 
   80% {
@@ -79,10 +91,10 @@
   }
 
   100% {
-    width: var(--picture-dimension-end);
-    height: var(--picture-dimension-end);
     left: 0%;
     transform: translate(0%, var(--translate-y-end));
+    width: var(--picture-dimension-end);
+    height: var(--picture-dimension-end);
   }
 }
 
@@ -122,14 +134,19 @@
   --translate-x-em-end: 3.75em;
 
   composes: animatedScroll;
-  animation-name: bubble;
+
+  will-change: left, transform;
+
   position: absolute;
   bottom: 2em;
-  opacity: 0%;
+
   white-space: nowrap;
+
+  opacity: 0%;
+
   transition: bottom 250ms 650ms ease-in-out,
     opacity 250ms 650ms ease-in-out;
-  will-change: left, transform;
+  animation-name: bubble;
 }
 
 @media screen and (width <= 42rem) {
@@ -158,8 +175,8 @@
 /* Bubble Pointer */
 .bubblePointer {
   composes: animatedScroll;
-  animation-name: bubblePointer;
   will-change: top, left, transform;
+  animation-name: bubblePointer;
 }
 
 @keyframes bubblePointer {

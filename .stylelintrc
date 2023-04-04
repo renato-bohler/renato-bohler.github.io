@@ -1,9 +1,9 @@
 {
   "extends": [
     "stylelint-config-standard",
-    "stylelint-config-css-modules"
+    "stylelint-config-css-modules",
+    "stylelint-config-clean-order"
   ],
-  "plugins": ["stylelint-order"],
   "ignoreFiles": "out/**/*",
   "rules": {
     "selector-id-pattern": null,

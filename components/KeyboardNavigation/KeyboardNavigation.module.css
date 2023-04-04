@@ -6,21 +6,27 @@
 }
 
 .navigation:not(:focus) {
-  border: 0;
-  clip: rect(0, 0, 0, 0);
+  position: absolute;
+
+  overflow: hidden;
+
+  width: 1px;
   height: 1px;
   margin: -1px;
-  overflow: hidden;
   padding: 0;
-  position: absolute;
+
   white-space: nowrap;
-  width: 1px;
+
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 .navigationButton {
+  padding: 0.3em;
+
+  font-size: 1.2em;
+  color: var(--theme-text);
+
   background: var(--theme-background);
   border: 1px solid var(--theme-text);
-  color: var(--theme-text);
-  font-size: 1.2em;
-  padding: 0.3em;
 }
