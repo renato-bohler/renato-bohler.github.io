@@ -3,9 +3,24 @@
   z-index: 3;
   top: 100px;
   left: 100px;
+
+  list-style: none;
 }
 
-.navigation:not(:focus) {
+.navigationButton {
+  padding: 0.3em;
+
+  font-size: 1.2em;
+  color: var(--theme-text);
+
+  background: var(--theme-background);
+  border: 1px solid var(--theme-text);
+
+  transition: none;
+}
+
+.navigation:not(:focus-within),
+.navigationButton:not(:focus) {
   position: absolute;
 
   overflow: hidden;
@@ -19,14 +34,4 @@
 
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.navigationButton {
-  padding: 0.3em;
-
-  font-size: 1.2em;
-  color: var(--theme-text);
-
-  background: var(--theme-background);
-  border: 1px solid var(--theme-text);
 }
