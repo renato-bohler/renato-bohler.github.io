@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.5...v2.0.6) (2023-04-06)
+
+
+### Bug Fixes
+
+* **KeyboardNavigation:** wraps links in `menu` element ([14948cc](https://github.com/renato-bohler/renato-bohler.github.io/commit/14948cc77782959264295bd85585e0c951b16de4))
+
 ## [2.0.5](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.4...v2.0.5) (2023-04-02)
 
 
