@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.6...v2.1.0) (2023-04-08)
+
+
+### Features
+
+* **Project:** adds contact button on portfolio ([87ffa9c](https://github.com/renato-bohler/renato-bohler.github.io/commit/87ffa9c9b8ef2a0eab9ab18ef68dbb747083bf0d))
+
 ## [2.0.6](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.5...v2.0.6) (2023-04-06)
 
 
