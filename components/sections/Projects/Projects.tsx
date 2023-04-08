@@ -5,14 +5,18 @@ import { VisuallyHidden } from 'reakit/VisuallyHidden';
 import { RepositoryInfo } from '~/api/fetchProjectDetails';
 
 import ProjectCard from './ProjectCard/ProjectCard';
-import projects from './projects.const';
+import getProjects from './projects.const';
 import styles from './Projects.module.css';
 
 type Props = {
   repositories: RepositoryInfo[];
+  onEmailDialogOpen: () => void;
 };
 
-const Projects: React.FC<Props> = ({ repositories }) => {
+const Projects: React.FC<Props> = ({
+  repositories,
+  onEmailDialogOpen,
+}) => {
   const [ref, inView] = useInView({
     threshold: 0.5,
     triggerOnce: true,
@@ -57,7 +61,7 @@ const Projects: React.FC<Props> = ({ repositories }) => {
         </div>
       </h2>
 
-      {projects.map((project, index) => (
+      {getProjects(onEmailDialogOpen).map((project, index) => (
         <ProjectCard
           key={project.folder}
           order={index + 1}

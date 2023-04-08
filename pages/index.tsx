@@ -101,7 +101,10 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
                 sectionName={name}
                 onChange={handleSectionChange}
               />
-              <Component repositories={repositories} />
+              <Component
+                repositories={repositories}
+                onEmailDialogOpen={emailDialog.show}
+              />
             </Fragment>
           ))}
 

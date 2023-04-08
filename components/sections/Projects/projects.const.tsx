@@ -1,4 +1,8 @@
-const projects: Project[] = [
+import { Button } from 'reakit/Button';
+
+import styles from './Projects.module.css';
+
+const getProjects = (onEmailDialogOpen: () => void): Project[] => [
   {
     repo: 'logossim',
     folder: 'logossim',
@@ -274,14 +278,14 @@ const projects: Project[] = [
           , so I&apos;d only work on it when I felt inspired enough to
           do so during my free time. I rebuilt every section of this
           portfolio 2 or 3 times before being happy with the outcome.
-          That might explain why it took me about a year to finish it
-          😅
+          That might explain why it took me about two years to finish
+          it 😅
         </p>
         <p>
           I&apos;m someone who loves having fun while building
-          beautiful stuff, and I{' '}
+          beautiful stuff, and{' '}
           <strong>
-            wanted this page to be unique and reflect who I am
+            I wanted this page to be unique and reflect who I am
           </strong>{' '}
           — both professionally and personally.
         </p>
@@ -302,8 +306,14 @@ const projects: Project[] = [
           as an interactive chat simulator, so anyone can experience
           how it feels talking to me.{' '}
           <strong>
-            But if you&apos;re looking for the real deal, feel free to
-            get in touch 😉
+            But if you&apos;re looking for the real deal, feel free to{' '}
+            <Button
+              onClick={onEmailDialogOpen}
+              className={styles.getInTouch}
+            >
+              get in touch
+            </Button>{' '}
+            😉
           </strong>
         </p>
       </>
@@ -320,4 +330,4 @@ export type Project = {
   description: React.ReactElement;
 };
 
-export default projects;
+export default getProjects;

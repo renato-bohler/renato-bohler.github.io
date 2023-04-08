@@ -67,6 +67,25 @@
   animation-iteration-count: 2;
 }
 
+.getInTouch {
+  cursor: pointer;
+
+  margin: 0;
+  padding: 0;
+
+  font-weight: bolder;
+  color: transparent;
+
+  background: none;
+  background: linear-gradient(
+    90deg,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  background-clip: text;
+  border: none;
+}
+
 @keyframes textTransform {
   0% {
     text-transform: lowercase;
