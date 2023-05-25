@@ -10,11 +10,8 @@ import styles from './About.module.css';
 import AnimatedChatMessage from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
 import ChatMessage from './ChatMessage/ChatMessage';
 import useMessages from './ChatMessage/useMessages';
-import useAboutProgress from './useAboutProgress';
 
 const About: React.FC = () => {
-  const { scrollRef, setAboutRefs } = useAboutProgress();
-
   const [fullyScrolled, setFullyScrolled] = useState(true);
 
   const messagesRef = useRef<HTMLDivElement | null>(null);
@@ -55,13 +52,12 @@ const About: React.FC = () => {
 
   return (
     <section>
-      <div className={styles.scroll} ref={scrollRef}>
+      <div className={styles.scroll}>
         <div
           className={classNames(
             styles.messages,
             styles.animatedMessage,
           )}
-          ref={setAboutRefs}
         >
           <AnimatedChatMessage>Hello there 👋</AnimatedChatMessage>
         </div>
