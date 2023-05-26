@@ -8,14 +8,14 @@ import FooterTransitionTrigger from './FooterTransitionTrigger/FooterTransitionT
 import MadeBy from './MadeBy/MadeBy';
 
 type Props = {
-  onProgressChange: (progress: number) => void;
+  onFooterTransitionTrigger: (transitioning: boolean) => void;
   onNavigationHeaderTrigger: (hide: boolean) => void;
   isNavigationHeaderHidden: boolean;
   onEmailDialogOpen: () => void;
 };
 
 const Footer: React.FC<Props> = ({
-  onProgressChange,
+  onFooterTransitionTrigger,
   onNavigationHeaderTrigger,
   isNavigationHeaderHidden,
   onEmailDialogOpen,
@@ -27,7 +27,7 @@ const Footer: React.FC<Props> = ({
   return (
     <>
       <FooterTransitionTrigger
-        onProgressChange={onProgressChange}
+        onFooterTransitionTrigger={onFooterTransitionTrigger}
         onNavigationHeaderTrigger={onNavigationHeaderTrigger}
       />
 

@@ -32,9 +32,8 @@ type StaticProps = {
 const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
   const { title, handleSectionChange } = useSectionAnchor();
 
-  const [progress, setProgress] = useState(0);
-  const isMainContentTransitioning = progress > 0;
-
+  const [isFooterTransitioning, setFooterTransitioning] =
+    useState(false);
   const [isNavigationHeaderHidden, setNavigationHeaderHidden] =
     useState(false);
 
@@ -81,9 +80,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
 
       <div
         className={classNames(styles.mainContainer, {
-          [styles.transitioning]: isMainContentTransitioning,
+          [styles.transitioning]: isFooterTransitioning,
         })}
-        style={{ '--scroll': `${progress}` } as CSSProperties}
       >
         <SectionAnchor
           sectionName={HEADER.name}
@@ -113,7 +111,7 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       </div>
 
       <Footer
-        onProgressChange={setProgress}
+        onFooterTransitionTrigger={setFooterTransitioning}
         onNavigationHeaderTrigger={setNavigationHeaderHidden}
         isNavigationHeaderHidden={isNavigationHeaderHidden}
         onEmailDialogOpen={emailDialog.show}
