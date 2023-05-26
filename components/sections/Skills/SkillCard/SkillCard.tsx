@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 
 import classNames from 'classnames';
-import { useInView } from 'react-intersection-observer';
 import { DialogDisclosure, useDialogState } from 'reakit/Dialog';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
