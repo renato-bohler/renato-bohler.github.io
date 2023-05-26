@@ -1,5 +1,9 @@
 {
-  "plugins": ["@typescript-eslint", "simple-import-sort"],
+  "plugins": [
+    "@typescript-eslint",
+    "unused-imports",
+    "simple-import-sort"
+  ],
   "extends": [
     "next",
     "next/core-web-vitals",
@@ -8,13 +12,20 @@
   ],
   "rules": {
     "@next/next/no-img-element": "off",
-    "@typescript-eslint/no-unused-vars": [
-      "error",
-      { "argsIgnorePattern": "^_" }
-    ],
+    "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-empty-function": "off",
     "react/self-closing-comp": "warn",
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
     "simple-import-sort/exports": "warn",
     "simple-import-sort/imports": [
       "warn",
