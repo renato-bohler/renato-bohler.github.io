@@ -50,8 +50,6 @@
 .transitionContainer {
   height: 500px;
 
-  view-timeline-axis: block;
-
   view-timeline-name: --experience-transition;
 }
 

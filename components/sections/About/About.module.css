@@ -2,8 +2,6 @@
   position: relative;
   height: 200vh;
 
-  view-timeline-axis: block;
-
   view-timeline-name: --about-transition;
 }
 
