@@ -81,21 +81,14 @@ const SkillCard: React.FC<Props> = ({
 }) => {
   const { isDarkMode, isContrastMode } = useTheme();
 
-  const { ref, inView } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
   const { Icon, description: usageDescription } = USAGE[usageLevel];
 
   const dialog = useDialogState();
 
   return (
     <div
-      ref={ref}
       className={classNames(styles.card, {
         [styles.featured]: featured,
-        [styles.hidden]: !inView,
         [styles.border]: isContrastMode,
       })}
       style={{

@@ -1,4 +1,17 @@
+.animatedScroll {
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+
+  animation-range: cover 0% contain 10%;
+
+  animation-timeline: view();
+}
+
 .card {
+  composes: animatedScroll;
+
+  will-change: transform, border-radius, box-shadow;
+
   position: relative;
 
   font-size: 0.75em;
@@ -10,6 +23,7 @@
 
   transition: all 500ms ease 100ms,
     transform 250ms cubic-bezier(0.21, -0.56, 0.43, 1.53);
+  animation-name: transition;
 }
 
 .blurContainer {
@@ -86,11 +100,6 @@
   width: 150%;
   height: 150%;
   opacity: 60%;
-}
-
-.hidden {
-  transform: translateY(50px);
-  opacity: 0%;
 }
 
 .border {
@@ -237,5 +246,17 @@
   .brief,
   .info {
     font-size: 0.9em;
+  }
+}
+
+@keyframes transition {
+  from {
+    transform: translateY(50px);
+    opacity: 0%;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 100%;
   }
 }
