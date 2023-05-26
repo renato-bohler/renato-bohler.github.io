@@ -1,4 +1,4 @@
-import { CSSProperties, Fragment, useState } from 'react';
+import { Fragment, useState } from 'react';
 
 import { GetStaticProps, NextPage } from 'next';
 import dynamic from 'next/dynamic';
