@@ -1,3 +1,10 @@
+# [2.2.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.1.0...v2.2.0) (2023-06-02)
+
+
+### Features
+
+* **Project:** updates portfolio videos ([1f1db80](https://github.com/renato-bohler/renato-bohler.github.io/commit/1f1db8028a64048ebc71232b3938d5c352bc1ff9))
+
 # [2.1.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.0.6...v2.1.0) (2023-04-08)
 
 
