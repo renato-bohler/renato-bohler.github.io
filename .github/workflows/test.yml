@@ -63,5 +63,8 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: out
+          path: out
       - name: Nu HTML Checker
-        run: ls -R
+        run: |
+          ls -R
+          npx nu-html-checker -f json ./out/index.html
