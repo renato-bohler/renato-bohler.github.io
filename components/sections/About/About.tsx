@@ -56,7 +56,7 @@ const About: React.FC = () => {
 
   return (
     <section>
-      <VisuallyHidden>
+      <VisuallyHidden as="div">
         <h2>About</h2>
       </VisuallyHidden>
 
