@@ -15,6 +15,6 @@ runs:
         node-version: 16
         cache: 'yarn'
     - name: Install dependencies
-      if: ${{ input.install-dependencies == 'true' }}
+      if: ${{ inputs.install-dependencies == 'true' }}
       run: yarn install
       shell: sh
