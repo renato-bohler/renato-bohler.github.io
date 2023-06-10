@@ -1,6 +1,11 @@
 name: Setup
 description: Sets up Node.js, yarn and caches `node_modules`
 
+inputs:
+  install-dependencies:
+    description: When 'true', dependencies will be installed
+    default: 'true'
+
 runs:
   using: composite
   steps:
@@ -10,5 +15,6 @@ runs:
         node-version: 16
         cache: 'yarn'
     - name: Install dependencies
+      if: ${{ input.install-dependencies == 'true' }}
       run: yarn install
       shell: sh
