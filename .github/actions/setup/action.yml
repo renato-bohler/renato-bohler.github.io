@@ -9,8 +9,6 @@ runs:
       with:
         node-version: 16
         cache: 'yarn'
-    - name: Checkout
-      uses: actions/checkout@v3
     - name: Cache dependencies
       uses: actions/cache@v3
       with:

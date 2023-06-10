@@ -15,6 +15,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
       - name: Test
         run: yarn test
@@ -22,6 +23,7 @@ jobs:
   eslint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
       - name: ESLint
         run: yarn lint
@@ -29,6 +31,7 @@ jobs:
   stylelint:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
       - name: Stylelint
         run: yarn stylelint
@@ -36,6 +39,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
       - name: Build
         env:
