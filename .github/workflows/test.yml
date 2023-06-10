@@ -69,7 +69,8 @@ jobs:
       - name: Validate HTML
         run: |
           npx nu-html-checker -f json ./out/index.html > ./validation-report.json
-          ERROR_COUNT=`cat ./validation-report.json | grep '"type": "error"' -c`
+          ERROR_COUNT=$(cat ./validation-report.json | grep '"type": "error"' -c || ERROR_COUNT=0)
+
           if [ $ERROR_COUNT = 0 ]; then
             echo "No errors found"
             exit 0
