@@ -68,11 +68,10 @@ jobs:
           path: out
       - name: Validate HTML
         run: |
-          cat ./out/index.html
-          npx --verbose nu-html-checker -f json ./out/index.html > ./validation-report.json
-          cat ./validation-report.json
+          grep --version
+          echo "test" | grep "test" -c
+          npx nu-html-checker -f json ./out/index.html > ./validation-report.json
           ERROR_COUNT=$(cat ./validation-report.json | grep '"type": "error"' -c)
-          echo $ERROR_COUNT
 
           if [ $ERROR_COUNT = 0 ]; then
             echo "No errors found"
