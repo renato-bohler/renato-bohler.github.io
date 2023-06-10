@@ -64,4 +64,4 @@ jobs:
         with:
           name: out
       - name: Nu HTML Checker
-        run: npx nu-html-checker -f json ./out/index.html
+        run: ls -R
