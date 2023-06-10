@@ -1,3 +1,15 @@
+## [2.2.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.0...v2.2.1) (2023-06-10)
+
+
+### Bug Fixes
+
+* **Experience:** HTML validation fixes ([44a34dc](https://github.com/renato-bohler/renato-bohler.github.io/commit/44a34dc86d7045b4bbfacd1ab58f2292ebec5867))
+* HTML validation fixes ([56c6f1e](https://github.com/renato-bohler/renato-bohler.github.io/commit/56c6f1e944bc8ed4bb0fd933814002d890a5e3c7))
+* **Projects:** HTML validation fixes ([433a0dd](https://github.com/renato-bohler/renato-bohler.github.io/commit/433a0dd38d599b24c0886716129a373f840ac7e5))
+* **SkillCardDialog:** HTML validation fixes ([52aed74](https://github.com/renato-bohler/renato-bohler.github.io/commit/52aed74c740848d55c304d6c5ec1e4f09ca3a549))
+* **SkillCard:** HTML validation fixes ([2e121b8](https://github.com/renato-bohler/renato-bohler.github.io/commit/2e121b818e56db7a852b2a273aaa95051c7c83cc))
+* **SkillFeedbacks:** HTML validation fixes ([876ecaf](https://github.com/renato-bohler/renato-bohler.github.io/commit/876ecaf583d4af8f19bd40652aca9bb274129a8b))
+
 # [2.2.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.1.0...v2.2.0) (2023-06-02)
 
 
