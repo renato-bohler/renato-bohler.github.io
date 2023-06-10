@@ -34,16 +34,16 @@ const skills: Skill[] = [
     featured: true,
     brief: (
       <>
-        <p>
+        <span>
           <strong>JavaScript</strong> was the first programming
           language I had contact with when I was 12. At that time,
           I&apos;d create websites just for fun.
-        </p>
-        <p>
+        </span>
+        <span>
           I&apos;ve been closely following the evolution of JS ever
           since, from the pre-ES3, jQuery times to the modern JS we
           have today.
-        </p>
+        </span>
       </>
     ),
     description: (
@@ -224,16 +224,16 @@ const skills: Skill[] = [
     featured: true,
     brief: (
       <>
-        <p>
+        <span>
           <strong>TypeScript</strong> is one of those things that you
           might ask yourself: <em>&quot;why do I need that?&quot;</em>{' '}
           — but when you get used to it, you&apos;ll never look back.
-        </p>
-        <p>
+        </span>
+        <span>
           I&apos;ve been using <strong>TypeScript</strong> since
           mid-2019, and I&apos;ll add it to every project I start
           today, no matter how small it might be.
-        </p>
+        </span>
       </>
     ),
     description: (
@@ -454,19 +454,19 @@ const skills: Skill[] = [
     featured: true,
     brief: (
       <>
-        <p>
+        <span>
           I&apos;ve been in love with <strong>React</strong> since I
           first used it in 2017.
-        </p>
-        <p>
+        </span>
+        <span>
           What I really enjoy about <strong>React</strong>, apart from
           its component-based architecture, is that it&apos;s all just
           JavaScript.
-        </p>
-        <p>
+        </span>
+        <span>
           The whole <strong>React</strong> ecosystem also helps make
           it awesome.
-        </p>
+        </span>
       </>
     ),
     description: (
@@ -625,17 +625,17 @@ const skills: Skill[] = [
     featured: true,
     brief: (
       <>
-        <p>
+        <span>
           <strong>CSS is not exactly easy</strong>. There are loads of
           concepts, properties, selectors, and functions to
           understand, animations and transitions to tinker with,
           responsive design to consider, and cross-browser
           compatibility to work around...
-        </p>
-        <p>
+        </span>
+        <span>
           ... but I think I&apos;m lucky to be around for so long that
           all of that is kind of natural to me 😅
-        </p>
+        </span>
       </>
     ),
     description: (

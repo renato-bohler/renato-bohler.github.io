@@ -252,7 +252,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
           onClick={() => setShowFeedback(0)}
           disabled={!active}
         >
-          <div
+          <span
             className={styles.buttonIcon}
             style={{
               backgroundColor: 'var(--theme-secondary-dark)',
@@ -272,7 +272,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
               onClick={() => setShowFeedback(feedbackNumber)}
               disabled={!active}
             >
-              <div
+              <span
                 className={styles.buttonIcon}
                 style={{
                   backgroundColor: feedback.color,

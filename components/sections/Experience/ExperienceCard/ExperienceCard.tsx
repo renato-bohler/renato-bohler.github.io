@@ -76,7 +76,7 @@ const ExperienceCard: React.FC<Props> = ({
             information
           </span>
         )}
-        <span>{children}</span>
+        <div>{children}</div>
       </div>
       <div className={styles.reveal} />
     </li>

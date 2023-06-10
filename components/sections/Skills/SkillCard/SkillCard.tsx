@@ -18,7 +18,6 @@ import styles from './SkillCard.module.css';
 
 const SkillCardDialog = dynamic(
   () => import('./SkillCardDialog/SkillCardDialog'),
-  { ssr: false },
 );
 
 type Props = {
@@ -129,7 +128,7 @@ const SkillCard: React.FC<Props> = ({
           yearsExperience={yearsExperience}
         />
         <DialogDisclosure {...dialog} className={styles.button}>
-          <div className={styles.image}>{icon}</div>
+          <span className={styles.image}>{icon}</span>
 
           <span className={styles.name}>
             {name}
@@ -137,24 +136,24 @@ const SkillCard: React.FC<Props> = ({
           </span>
 
           {featured && brief && (
-            <div
+            <span
               className={classNames(styles.brief, {
                 [styles.contrast]: isContrastMode,
               })}
             >
               {brief}
-            </div>
+            </span>
           )}
 
-          <div className={styles.info}>
-            <div
+          <span className={styles.info}>
+            <span
               className={classNames(styles.contentWrapper, {
                 [styles.contrast]: isContrastMode,
               })}
             >
               {yearsExperience && (
                 <>
-                  <div className={styles.content}>
+                  <span className={styles.content}>
                     <span
                       className={styles.contentTitle}
                       title="experience"
@@ -170,12 +169,12 @@ const SkillCard: React.FC<Props> = ({
                       {yearsExperience >= 2 ? 's' : ''}
                     </span>
                     <VisuallyHidden>.</VisuallyHidden>
-                  </div>
+                  </span>
 
                   <span className={styles.divider} />
                 </>
               )}
-              <div className={styles.content}>
+              <span className={styles.content}>
                 <span className={styles.contentTitle} title="usage">
                   {featured ? 'usage' : 'usg.'}
                 </span>
@@ -183,12 +182,12 @@ const SkillCard: React.FC<Props> = ({
                   <Icon aria-label={usageDescription} />
                 </span>
                 <VisuallyHidden>.</VisuallyHidden>
-              </div>
+              </span>
               {studying && (
                 <>
                   <span className={styles.divider} />
 
-                  <div className={styles.content}>
+                  <span className={styles.content}>
                     <span
                       className={styles.contentTitle}
                       title="studying"
@@ -199,11 +198,11 @@ const SkillCard: React.FC<Props> = ({
                       <OpenBookIcon aria-label={STUDYING_LABEL} />
                     </span>
                     <VisuallyHidden>.</VisuallyHidden>
-                  </div>
+                  </span>
                 </>
               )}
-            </div>
-          </div>
+            </span>
+          </span>
         </DialogDisclosure>
       </div>
     </div>

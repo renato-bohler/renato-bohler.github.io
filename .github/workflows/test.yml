@@ -15,30 +15,67 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: yarn
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
       - name: Test
         run: yarn test
+
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - name: ESLint
+        run: yarn lint
+
+  stylelint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+      - name: Stylelint
+        run: yarn stylelint
 
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Install dependencies
-        run: yarn
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_CONTACT_ENDPOINT: https://kixlofqgt4ph6k5zgdbtese7pa0dqwka.lambda-url.us-east-1.on.aws
-        run: yarn build
+        run: |
+          yarn build
+          yarn export
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: out
+          path: out
+
+  validate:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/setup
+        with:
+          install-dependencies: false
+      - uses: actions/download-artifact@v3
+        with:
+          name: out
+          path: out
+      - name: Validate HTML
+        run: |
+          npx nu-html-checker -f json ./out/index.html > ./validation-report.json
+          ERROR_COUNT=$(cat ./validation-report.json | grep '"type": "error"' -c || ERROR_COUNT=0)
+
+          if [ $ERROR_COUNT = 0 ]; then
+            echo "No errors found"
+            exit 0
+          else
+            cat ./validation-report.json
+            echo "$ERROR_COUNT error(s) found!"
+            exit 1
+          fi
