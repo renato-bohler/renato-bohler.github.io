@@ -82,3 +82,4 @@ jobs:
             echo "$ERROR_COUNT error(s) found!"
             exit 1
           fi
+        shell: sh
