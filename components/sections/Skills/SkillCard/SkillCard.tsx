@@ -18,7 +18,6 @@ import styles from './SkillCard.module.css';
 
 const SkillCardDialog = dynamic(
   () => import('./SkillCardDialog/SkillCardDialog'),
-  { ssr: false },
 );
 
 type Props = {
