@@ -1,3 +1,11 @@
+## [2.2.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.1...v2.2.2) (2023-06-10)
+
+
+### Bug Fixes
+
+* **About:** adds section heading ([4cd706f](https://github.com/renato-bohler/renato-bohler.github.io/commit/4cd706f167cea55399117cc4df57c1eaa22a3b77))
+* **About:** fixes HTML validation error ([01b18f1](https://github.com/renato-bohler/renato-bohler.github.io/commit/01b18f14b2e5e7444e73acc2c620773800eae92b))
+
 ## [2.2.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.0...v2.2.1) (2023-06-10)
 
 
