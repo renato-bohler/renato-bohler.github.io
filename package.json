@@ -52,7 +52,7 @@
     "prettier": "^2.5.1",
     "react-test-renderer": "^17.0.2",
     "semantic-release": "^19.0.3",
-    "stylelint": "^15.4.0",
+    "stylelint": "^15.10.1",
     "stylelint-config-clean-order": "^5.0.0",
     "stylelint-config-css-modules": "^4.2.0",
     "stylelint-config-standard": "^32.0.0",
