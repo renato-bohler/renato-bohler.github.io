@@ -8,7 +8,7 @@ import Document, {
 class MyDocument extends Document {
   render(): React.ReactElement {
     return (
-      <Html lang="en">
+      <Html lang="en" itemScope itemType="https://schema.org/WebPage">
         <Head />
         <body>
           <Main />

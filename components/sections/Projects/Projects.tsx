@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
@@ -30,35 +32,40 @@ const Projects: React.FC<Props> = ({
       <h2 className={styles.title} ref={ref}>
         <VisuallyHidden>{title}</VisuallyHidden>
 
-        <div aria-hidden>
+        <span aria-hidden>
           {title.split(' ').map((word) => {
             const wordIndex = title.indexOf(word);
 
             return (
-              <div key={word}>
-                {Array.from(word).map((character, characterIndex) => {
-                  const index = wordIndex + characterIndex;
+              <Fragment key={word}>
+                <span>
+                  {Array.from(word).map(
+                    (character, characterIndex) => {
+                      const index = wordIndex + characterIndex;
 
-                  return (
-                    <span
-                      key={index}
-                      className={classNames({
-                        [styles.animate]: inView,
-                      })}
-                      style={
-                        {
-                          '--i': 0.3 + 0.1 * index,
-                        } as React.CSSProperties
-                      }
-                    >
-                      {character}
-                    </span>
-                  );
-                })}
-              </div>
+                      return (
+                        <span
+                          key={index}
+                          className={classNames({
+                            [styles.animate]: inView,
+                          })}
+                          style={
+                            {
+                              '--i': 0.3 + 0.1 * index,
+                            } as React.CSSProperties
+                          }
+                        >
+                          {character}
+                        </span>
+                      );
+                    },
+                  )}
+                </span>
+                {wordIndex === 0 && <br />}
+              </Fragment>
             );
           })}
-        </div>
+        </span>
       </h2>
 
       {getProjects(onEmailDialogOpen).map((project, index) => (

@@ -14,11 +14,12 @@ import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
 import CloseIcon from '~/components/icons/Close';
+import useFirstMount from '~/hooks/useFirstMount';
 import useTheme from '~/hooks/useTheme';
 
 import styles from './SkillCardDialog.module.css';
 
-type Props = {
+export type Props = {
   cardRect?: DOMRect;
   dialog: DialogStateReturn;
   id: string;
@@ -41,6 +42,7 @@ const SkillCardDialog: React.FC<Props> = ({
   textColor,
   scrollBarTrackColor,
 }) => {
+  const isFirstMount = useFirstMount();
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const { isDarkMode, isReducedMotion } = useTheme();
@@ -87,6 +89,8 @@ const SkillCardDialog: React.FC<Props> = ({
     if (!dialog.visible) return;
     window.history.pushState({ dialogId: `skills-${id}` }, '', '');
   }, [dialog.visible, id]);
+
+  if (isFirstMount) return <div id={dialog.baseId} aria-hidden />;
 
   return (
     <DialogBackdrop {...dialog} className={styles.backdrop}>

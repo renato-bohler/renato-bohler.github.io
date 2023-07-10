@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from 'react';
 
 import classNames from 'classnames';
+import { VisuallyHidden } from 'reakit';
 import { Button } from 'reakit/Button';
 import { debounce } from 'throttle-debounce';
 
@@ -52,6 +53,10 @@ const About: React.FC = () => {
 
   return (
     <section>
+      <VisuallyHidden as="div">
+        <h2>About</h2>
+      </VisuallyHidden>
+
       <div className={styles.scroll}>
         <div
           className={classNames(

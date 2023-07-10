@@ -176,6 +176,11 @@
   );
 }
 
+.brief > span {
+    margin: 0.6em 0;
+    padding-bottom: 0.5em;
+}
+
 .brief.contrast {
   opacity: 100%;
 }
