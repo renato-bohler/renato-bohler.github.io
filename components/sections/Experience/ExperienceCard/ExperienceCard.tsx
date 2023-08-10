@@ -54,7 +54,10 @@ const ExperienceCard: React.FC<Props> = ({
       <div className={styles.dot} />
       <div
         className={styles.companyLogo}
-        style={{ background: company.color }}
+        style={{
+          background: company.color,
+          padding: company.padding,
+        }}
       >
         <svg>
           <use xlinkHref={`#${company.logo}`} fill="white" />
