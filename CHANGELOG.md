@@ -1,3 +1,10 @@
+# [2.3.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.2...v2.3.0) (2023-08-10)
+
+
+### Features
+
+* **Experience:** updates information ([860319e](https://github.com/renato-bohler/renato-bohler.github.io/commit/860319e2e3133fb698413b585ddde0dec159e137))
+
 ## [2.2.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.1...v2.2.2) (2023-06-10)
 
 
