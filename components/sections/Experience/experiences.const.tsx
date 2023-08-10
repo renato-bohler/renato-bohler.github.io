@@ -13,7 +13,23 @@ const intive: Company = {
   color: '#007ac9',
 };
 
+const shippo: Company = {
+  logo: 'shippo',
+  color: '#93d33d',
+  padding: 4,
+};
+
 const experiences: Experience[] = [
+  {
+    id: 'shippo',
+    title: 'Shippo',
+    jobTitle: 'Front end developer',
+    company: shippo,
+    period: {
+      from: new Date('2023-08-01T00:00:00Z'),
+    },
+    description: <></>,
+  },
   {
     id: 'intive-1',
     title: 'Pizzeria Marketplace App',
@@ -22,6 +38,7 @@ const experiences: Experience[] = [
     consultant: true,
     period: {
       from: new Date('2021-11-01T00:00:00Z'),
+      to: new Date('2023-08-01T00:00:00Z'),
     },
     description: (
       <>
@@ -68,7 +85,8 @@ const experiences: Experience[] = [
           <code>enzyme</code> to <code>react-testing-library</code>,
           and leading the migration of styling from{' '}
           <code>react-fela</code> to <code>sass</code>. I&apos;ve also
-          polished bundler and CI/CD configurations, maintained
+          polished bundler and CI/CD configurations, migrated the
+          pipeline from GitLab to GitHub Actions, maintained
           dependencies up-to-date, and refined linting rules across
           multiple projects.
         </p>
@@ -262,6 +280,7 @@ export type Period = {
 export type Company = {
   logo: string;
   color: string;
+  padding?: number;
 };
 
 export type Experience = {
