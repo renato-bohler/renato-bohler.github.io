@@ -1,3 +1,11 @@
+# [2.4.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.3.0...v2.4.0) (2023-09-07)
+
+
+### Features
+
+* **Experience:** updates Shippo logo ([9d6cad5](https://github.com/renato-bohler/renato-bohler.github.io/commit/9d6cad5ef90ccba7eb25253ce40fda1b0c07eb40))
+* updates `pronunciation.mp3` ([e086c3a](https://github.com/renato-bohler/renato-bohler.github.io/commit/e086c3a91d7e0a49d00dc221d4ad9289100ef994))
+
 # [2.3.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.2...v2.3.0) (2023-08-10)
 
 
