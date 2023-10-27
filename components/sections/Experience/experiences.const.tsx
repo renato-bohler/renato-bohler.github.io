@@ -1,6 +1,6 @@
 const agrotis: Company = {
   logo: 'agrotis',
-  color: '#00876e',
+  color: '#00735c',
 };
 
 const ciandt: Company = {

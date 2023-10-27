@@ -249,7 +249,7 @@ export const optionSelect: OptionSelectMessage = {
               And in Brazilian Portuguese, we pronounce{' '}
               <strong>Böhler</strong> almost like{' '}
               <strong>
-                <em>baller</em>
+                <em>bowler</em>
               </strong>
               .
             </>

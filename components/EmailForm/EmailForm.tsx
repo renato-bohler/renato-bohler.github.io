@@ -87,6 +87,7 @@ const EmailForm = (
           maxLength={100}
           placeholder="John Doe"
           className={styles.input}
+          autoComplete="name"
         />
       </label>
 
@@ -102,6 +103,7 @@ const EmailForm = (
           maxLength={300}
           placeholder="E-mail, LinkedIn profile, Twitter, etc."
           className={styles.input}
+          autoComplete="email"
         />
       </label>
 
