@@ -1,6 +1,5 @@
 import { memo } from 'react';
 
-import { useMediaQuery } from 'react-responsive';
 import { Button } from 'reakit/Button';
 import {
   Popover,
@@ -30,11 +29,8 @@ const ThemePicker: React.FC = () => {
     setReducedMotion,
   } = useTheme();
 
-  const isMobile = useMediaQuery({
-    query: '(max-width: 550px)',
-  });
   const popover = usePopoverState({
-    placement: isMobile ? 'bottom-start' : 'right-start',
+    placement: 'bottom-start',
     animated: 500,
   });
 

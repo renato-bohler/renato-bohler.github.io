@@ -108,8 +108,4 @@
   [data-enter] .popover {
     transform: translateY(0);
   }
-
-  .popoverArrow {
-    transform: translate3d(7px, -30px, 0) rotate(90deg) !important;
-  }
 }
