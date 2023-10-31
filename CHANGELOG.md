@@ -1,3 +1,16 @@
+# [2.5.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.4.0...v2.5.0) (2023-10-27)
+
+
+### Bug Fixes
+
+* **About:** updates message ([ac29f09](https://github.com/renato-bohler/renato-bohler.github.io/commit/ac29f09be33b71f0433ea7f153c3744ba55e28f6))
+
+
+### Features
+
+* **EmailForm:** adds `autocomplete` to fields ([bc614f5](https://github.com/renato-bohler/renato-bohler.github.io/commit/bc614f5a463618158eeea092d83d99e05c898fa3))
+* **Experience:** updates Agrotis logo ([2077a3c](https://github.com/renato-bohler/renato-bohler.github.io/commit/2077a3cadaa302211b56383d51fb7b83d5dfd0b1))
+
 # [2.4.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.3.0...v2.4.0) (2023-09-07)
 
 
