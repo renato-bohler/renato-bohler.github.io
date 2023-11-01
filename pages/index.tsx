@@ -30,7 +30,7 @@ type StaticProps = {
 };
 
 const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
-  const { title, handleSectionChange } = useSectionAnchor();
+  const { handleSectionChange, title } = useSectionAnchor();
 
   const [progress, setProgress] = useState(0);
   const isMainContentTransitioning = progress > 0;
@@ -45,34 +45,34 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       <Head>
         <title>{title}</title>
         <meta
-          name="description"
           content="Computer Engineer, Web Developer. Passionate about anything computer-related."
+          name="description"
         />
 
         {/* Open Graph */}
-        <meta property="og:url" content="https://bohler.dev/" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Renato Böhler" />
+        <meta content="https://bohler.dev/" property="og:url" />
+        <meta content="website" property="og:type" />
+        <meta content="Renato Böhler" property="og:title" />
         <meta
-          property="og:description"
           content="Computer Engineer, Web Developer. Passionate about everything computer-related."
+          property="og:description"
         />
-        <meta property="og:image" content="/images/social.png" />
+        <meta content="/images/social.png" property="og:image" />
 
         {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="bohler.dev" />
-        <meta property="twitter:url" content="https://bohler.dev/" />
-        <meta name="twitter:title" content="Renato Böhler" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="bohler.dev" property="twitter:domain" />
+        <meta content="https://bohler.dev/" property="twitter:url" />
+        <meta content="Renato Böhler" name="twitter:title" />
         <meta
-          name="twitter:description"
           content="Computer Engineer, Web Developer. Passionate about everything computer-related."
+          name="twitter:description"
         />
-        <meta name="twitter:image" content="/images/social.png" />
+        <meta content="/images/social.png" name="twitter:image" />
 
         <meta
-          name="viewport"
           content="width=device-width, initial-scale=1.0"
+          name="viewport"
         />
       </Head>
 
@@ -86,8 +86,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
         style={{ '--scroll': `${progress}` } as CSSProperties}
       >
         <SectionAnchor
-          sectionName={HEADER.name}
           onChange={handleSectionChange}
+          sectionName={HEADER.name}
         />
         <Header
           isNavigationHeaderHidden={isNavigationHeaderHidden}
@@ -95,15 +95,15 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
         />
 
         <main>
-          {SECTIONS.map(({ name, Component }) => (
+          {SECTIONS.map(({ Component, name }) => (
             <Fragment key={name}>
               <SectionAnchor
-                sectionName={name}
                 onChange={handleSectionChange}
+                sectionName={name}
               />
               <Component
-                repositories={repositories}
                 onEmailDialogOpen={emailDialog.show}
+                repositories={repositories}
               />
             </Fragment>
           ))}
@@ -113,10 +113,10 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       </div>
 
       <Footer
-        onProgressChange={setProgress}
-        onNavigationHeaderTrigger={setNavigationHeaderHidden}
         isNavigationHeaderHidden={isNavigationHeaderHidden}
         onEmailDialogOpen={emailDialog.show}
+        onNavigationHeaderTrigger={setNavigationHeaderHidden}
+        onProgressChange={setProgress}
       />
     </>
   );
@@ -135,8 +135,8 @@ export const getStaticProps: GetStaticProps = async () => ({
       }),
       await fetchProjectDetails({
         owner: 'renato-bohler',
-        repo: 'redux-form-input-masks',
         packageName: 'redux-form-input-masks',
+        repo: 'redux-form-input-masks',
       }),
       await fetchProjectDetails({
         owner: 'renato-bohler',

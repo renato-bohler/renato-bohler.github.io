@@ -1,9 +1,10 @@
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
-import styles from './Experience.module.css';
 import ExperienceCard from './ExperienceCard/ExperienceCard';
-import experiences from './experiences.const';
 import ExperienceVectors from './ExperienceVectors/ExperienceVectors';
+import experiences from './experiences.const';
+
+import styles from './Experience.module.css';
 
 const Experience: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -35,11 +36,11 @@ const Experience: React.FC = () => {
     <section className={styles.section}>
       <ExperienceVectors />
 
-      <div id="experience" aria-hidden className={styles.anchor} />
+      <div aria-hidden className={styles.anchor} id="experience" />
 
       <h2 className={styles.title}>Experience</h2>
 
-      <div ref={containerRef} className={styles.transitionContainer}>
+      <div className={styles.transitionContainer} ref={containerRef}>
         <div
           className={styles.transitionOverflow}
           style={{ '--scroll': `${progress}` } as CSSProperties}
@@ -51,12 +52,12 @@ const Experience: React.FC = () => {
       <ul className={styles.timeline}>
         {experiences.map((experience) => (
           <ExperienceCard
-            key={experience.id}
-            title={experience.title}
-            jobTitle={experience.jobTitle}
             company={experience.company}
             consultant={experience.consultant}
+            jobTitle={experience.jobTitle}
+            key={experience.id}
             period={experience.period}
+            title={experience.title}
           >
             {experience.description}
           </ExperienceCard>

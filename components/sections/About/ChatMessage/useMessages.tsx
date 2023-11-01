@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import { Message } from './messages.types';
 import messageService from './messageService';
+import { Message } from './messages.types';
 
 type Options = {
   onMessage?: () => void;
@@ -37,8 +37,8 @@ const useMessages = ({ onMessage }: Options) => {
 
   return {
     messages,
-    onResponse: messageService.onResponse.bind(messageService),
     messagesInViewRef,
+    onResponse: messageService.onResponse.bind(messageService),
   };
 };
 

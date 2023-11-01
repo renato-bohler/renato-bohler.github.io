@@ -17,20 +17,20 @@ const CRITERIAS = [
 
 const FEEDBACKS = [
   {
-    votes: [4, 4, 3, 3, 4, 4],
     color: 'var(--theme-primary-dark)',
+    votes: [4, 4, 3, 3, 4, 4],
   },
   {
-    votes: [4, 3, 3, 3, 4, 4],
     color: 'var(--theme-primary-bright)',
+    votes: [4, 3, 3, 3, 4, 4],
   },
   {
-    votes: [4, 4, 4, 4, 4, 4],
     color: 'var(--theme-secondary-dark)',
+    votes: [4, 4, 4, 4, 4, 4],
   },
   {
-    votes: [4, 3, 3, 3, 3, 3],
     color: 'var(--theme-secondary-bright)',
+    votes: [4, 3, 3, 3, 3, 3],
   },
 ] as const;
 
@@ -120,10 +120,10 @@ const SkillFeedbacks: React.FC = () => {
             [styles.flipperFlipped]: tableView,
           })}
         >
-          <div className={styles.front} aria-hidden={tableView}>
+          <div aria-hidden={tableView} className={styles.front}>
             <GraphicalView active={!tableView} />
           </div>
-          <div className={styles.back} aria-hidden={!tableView}>
+          <div aria-hidden={!tableView} className={styles.back}>
             <TableView />
           </div>
         </div>
@@ -140,64 +140,64 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
       <svg viewBox="-125 -25 550 350">
         {Object.values(HEXAGON_VERTICES).map((points, index) => (
           <polygon
-            key={index}
             className={styles.hexagon}
+            key={index}
             points={points.map((point) => point.join(',')).join(' ')}
           />
         ))}
 
         <text
-          role="graphics-object"
           className={styles.label}
+          role="graphics-object"
+          textAnchor="middle"
           x="65.047"
           y="0"
-          textAnchor="middle"
         >
           {CRITERIAS[0]}
         </text>
         <text
-          role="graphics-object"
           className={styles.label}
+          role="graphics-object"
+          textAnchor="middle"
           x="234.953"
           y="0"
-          textAnchor="middle"
         >
           {CRITERIAS[1]}
         </text>
         <text
-          role="graphics-object"
           className={styles.label}
+          dominantBaseline="middle"
+          role="graphics-object"
           x="320"
           y="150"
-          dominantBaseline="middle"
         >
           {CRITERIAS[2]}
         </text>
         <text
-          role="graphics-object"
           className={styles.label}
+          role="graphics-object"
+          textAnchor="middle"
           x="234.953"
           y="310"
-          textAnchor="middle"
         >
           {CRITERIAS[3]}
         </text>
         <text
-          role="graphics-object"
           className={styles.label}
+          role="graphics-object"
+          textAnchor="middle"
           x="65.047"
           y="310"
-          textAnchor="middle"
         >
           {CRITERIAS[4]}
         </text>
         <text
-          role="graphics-object"
           className={styles.label}
+          dominantBaseline="middle"
+          role="graphics-object"
+          textAnchor="end"
           x="-20"
           y="150"
-          dominantBaseline="middle"
-          textAnchor="end"
         >
           {CRITERIAS[5]}
         </text>
@@ -205,22 +205,22 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
         <line
           className={styles.line}
           x1="234.953"
-          y1="297.252"
           x2="65.047"
+          y1="297.252"
           y2="2.748"
         />
         <line
           className={styles.line}
           x1="-20"
-          y1="150"
           x2="320"
+          y1="150"
           y2="150"
         />
         <line
           className={styles.line}
           x1="65.047"
-          y1="297.252"
           x2="234.953"
+          y1="297.252"
           y2="2.748"
         />
 
@@ -231,13 +231,13 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
         {showFeedback > 0 && (
           <polygon
             className={styles.feedback}
-            stroke={FEEDBACKS[showFeedback - 1].color}
             fill={FEEDBACKS[showFeedback - 1].color}
             points={FEEDBACKS[showFeedback - 1].votes
               .map((vote, voteIndex) =>
                 HEXAGON_VERTICES[vote][voteIndex].join(','),
               )
               .join(' ')}
+            stroke={FEEDBACKS[showFeedback - 1].color}
           />
         )}
       </svg>
@@ -247,10 +247,10 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
         title="Select an individual feedback"
       >
         <Button
-          className={styles.button}
           aria-pressed={showFeedback === 0}
-          onClick={() => setShowFeedback(0)}
+          className={styles.button}
           disabled={!active}
+          onClick={() => setShowFeedback(0)}
         >
           <span
             className={styles.buttonIcon}
@@ -266,11 +266,11 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
 
           return (
             <Button
-              key={feedback.color}
-              className={styles.button}
               aria-pressed={showFeedback === feedbackNumber}
-              onClick={() => setShowFeedback(feedbackNumber)}
+              className={styles.button}
               disabled={!active}
+              key={feedback.color}
+              onClick={() => setShowFeedback(feedbackNumber)}
             >
               <span
                 className={styles.buttonIcon}

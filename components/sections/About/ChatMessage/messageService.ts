@@ -1,6 +1,6 @@
 import messages, {
-  end,
   FAST_MODE_ID,
+  end,
   optionSelect,
 } from './messages.const';
 import { Message, Option } from './messages.types';
@@ -15,12 +15,12 @@ const MESSAGE_WRITE_VARIANCE_MS = 750;
 
 class MessageService {
   connected = false;
-  finished = false;
   fastMode = false;
+  finished = false;
 
-  timeouts: number[] = [];
-  sentMessages: Message[] = [];
   selectedResponses: string[] = [];
+  sentMessages: Message[] = [];
+  timeouts: number[] = [];
 
   connect() {
     if (this.connected) return;
@@ -39,6 +39,55 @@ class MessageService {
     this.timeouts = [];
   }
 
+  endChat() {
+    this.sentMessages.push(end);
+    this.onMessage(end);
+
+    this.timeouts.push(
+      window.setTimeout(() => {
+        this.finishMessage();
+        this.finished = true;
+        this.disconnect();
+      }, this.getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS)),
+    );
+  }
+
+  finishMessage() {
+    const writingMessage = this.sentMessages.find(
+      (message) => message.status === 'writing',
+    );
+
+    if (!writingMessage) return;
+
+    const writingMessageStatus: Message = {
+      ...writingMessage,
+      status: 'visible',
+    };
+    this.updateSentMessage(writingMessageStatus);
+    this.onMessage(writingMessageStatus);
+    this.queueSendNextMessage();
+  }
+
+  getTime(base: number, variance: number) {
+    const varianceSignal = Math.random() < 0.5 ? 1 : -1;
+
+    return (
+      (base + varianceSignal * Math.random() * variance) /
+      (this.fastMode ? 5 : 1)
+    );
+  }
+
+  handleStale() {
+    if (this.shouldEndChat()) {
+      this.queueEndChat();
+      return;
+    }
+
+    if (this.shouldResendOptionSelect()) {
+      this.resendOptionSelect();
+    }
+  }
+
   onMessage(_message: Message) {}
 
   onResponse(option: Option) {
@@ -47,6 +96,59 @@ class MessageService {
     this.selectedResponses.push(option.id);
     this.sentMessages.push(...option.responses);
     this.sendNextMessage();
+  }
+
+  queueEndChat() {
+    this.timeouts.push(
+      window.setTimeout(
+        () => this.endChat(),
+        this.getTime(1500, 250),
+      ),
+    );
+  }
+
+  queueFinishMessage() {
+    this.timeouts.push(
+      window.setTimeout(
+        () => this.finishMessage(),
+        this.getTime(
+          MESSAGE_WRITE_BASE_MS,
+          MESSAGE_WRITE_VARIANCE_MS,
+        ),
+      ),
+    );
+  }
+
+  queueSendNextMessage() {
+    this.timeouts.push(
+      window.setTimeout(
+        () => this.sendNextMessage(),
+        this.getTime(
+          MESSAGE_START_BASE_MS,
+          MESSAGE_START_VARIANCE_MS,
+        ),
+      ),
+    );
+  }
+
+  resendOptionSelect() {
+    const newOptionSelect = {
+      ...optionSelect,
+      content: (optionSelect.content || []).map((option) => {
+        if (!this.selectedResponses.includes(option.id))
+          return option;
+
+        return { ...option, disabled: true };
+      }),
+      id: `${optionSelect.id}-${
+        this.sentMessages.filter(
+          (message) => message.type === 'option-select',
+        ).length + 1
+      }`,
+    };
+
+    this.sentMessages.push(newOptionSelect);
+    this.onMessage(newOptionSelect);
   }
 
   resumeMessages() {
@@ -65,13 +167,6 @@ class MessageService {
     }
 
     this.queueSendNextMessage();
-  }
-
-  updateSentMessage(updated: Message) {
-    this.sentMessages = this.sentMessages.map((sentMessage) => {
-      if (sentMessage.id !== updated.id) return sentMessage;
-      return updated;
-    });
   }
 
   sendFirstMessage() {
@@ -119,55 +214,21 @@ class MessageService {
     else this.queueFinishMessage();
   }
 
-  queueSendNextMessage() {
-    this.timeouts.push(
-      window.setTimeout(
-        () => this.sendNextMessage(),
-        this.getTime(
-          MESSAGE_START_BASE_MS,
-          MESSAGE_START_VARIANCE_MS,
-        ),
-      ),
-    );
-  }
+  shouldEndChat() {
+    if (this.sentMessages.some((message) => message.id === end.id))
+      return false;
 
-  finishMessage() {
-    const writingMessage = this.sentMessages.find(
-      (message) => message.status === 'writing',
-    );
+    if (
+      optionSelect.content.some(
+        (option) =>
+          ![...this.selectedResponses, FAST_MODE_ID].includes(
+            option.id,
+          ),
+      )
+    )
+      return false;
 
-    if (!writingMessage) return;
-
-    const writingMessageStatus: Message = {
-      ...writingMessage,
-      status: 'visible',
-    };
-    this.updateSentMessage(writingMessageStatus);
-    this.onMessage(writingMessageStatus);
-    this.queueSendNextMessage();
-  }
-
-  queueFinishMessage() {
-    this.timeouts.push(
-      window.setTimeout(
-        () => this.finishMessage(),
-        this.getTime(
-          MESSAGE_WRITE_BASE_MS,
-          MESSAGE_WRITE_VARIANCE_MS,
-        ),
-      ),
-    );
-  }
-
-  handleStale() {
-    if (this.shouldEndChat()) {
-      this.queueEndChat();
-      return;
-    }
-
-    if (this.shouldResendOptionSelect()) {
-      this.resendOptionSelect();
-    }
+    return true;
   }
 
   shouldResendOptionSelect() {
@@ -187,73 +248,14 @@ class MessageService {
     return true;
   }
 
-  resendOptionSelect() {
-    const newOptionSelect = {
-      ...optionSelect,
-      id: `${optionSelect.id}-${
-        this.sentMessages.filter(
-          (message) => message.type === 'option-select',
-        ).length + 1
-      }`,
-      content: (optionSelect.content || []).map((option) => {
-        if (!this.selectedResponses.includes(option.id))
-          return option;
-
-        return { ...option, disabled: true };
-      }),
-    };
-
-    this.sentMessages.push(newOptionSelect);
-    this.onMessage(newOptionSelect);
-  }
-
-  shouldEndChat() {
-    if (this.sentMessages.some((message) => message.id === end.id))
-      return false;
-
-    if (
-      optionSelect.content.some(
-        (option) =>
-          ![...this.selectedResponses, FAST_MODE_ID].includes(
-            option.id,
-          ),
-      )
-    )
-      return false;
-
-    return true;
-  }
-
-  endChat() {
-    this.sentMessages.push(end);
-    this.onMessage(end);
-
-    this.timeouts.push(
-      window.setTimeout(() => {
-        this.finishMessage();
-        this.finished = true;
-        this.disconnect();
-      }, this.getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS)),
-    );
-  }
-
-  queueEndChat() {
-    this.timeouts.push(
-      window.setTimeout(
-        () => this.endChat(),
-        this.getTime(1500, 250),
-      ),
-    );
-  }
-
-  getTime(base: number, variance: number) {
-    const varianceSignal = Math.random() < 0.5 ? 1 : -1;
-
-    return (
-      (base + varianceSignal * Math.random() * variance) /
-      (this.fastMode ? 5 : 1)
-    );
+  updateSentMessage(updated: Message) {
+    this.sentMessages = this.sentMessages.map((sentMessage) => {
+      if (sentMessage.id !== updated.id) return sentMessage;
+      return updated;
+    });
   }
 }
 
-export default new MessageService();
+const instance = new MessageService();
+
+export default instance;

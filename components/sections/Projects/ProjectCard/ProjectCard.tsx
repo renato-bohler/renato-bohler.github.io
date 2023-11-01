@@ -8,8 +8,10 @@ import { RepositoryInfo } from '~/api/fetchProjectDetails';
 import useTheme from '~/hooks/useTheme';
 
 import { Project } from '../projects.const';
-import styles from './ProjectCard.module.css';
+
 import RepositoryDetails from './RepositoryDetails/RepositoryDetails';
+
+import styles from './ProjectCard.module.css';
 
 type Props = {
   order: number;
@@ -49,21 +51,21 @@ const ProjectCard: React.FC<Props> = ({
         </span>
         <div className={styles.videoContainer}>
           <video
-            ref={videoRef}
-            src={`/videos/${project.folder}/${quality}.mp4`}
             autoPlay
+            className={styles.video}
             loop
             muted
             playsInline
             poster={`/videos/${project.folder}/poster.png`}
             preload="auto"
-            className={styles.video}
+            ref={videoRef}
+            src={`/videos/${project.folder}/${quality}.mp4`}
           />
         </div>
       </div>
       <article
-        ref={cardRef}
         className={classNames(styles.card, styles.size)}
+        ref={cardRef}
       >
         <div className={styles.cardContent}>
           <header className={styles.cardHeader}>
@@ -76,14 +78,14 @@ const ProjectCard: React.FC<Props> = ({
 
             {repository && (
               <RepositoryDetails
-                title={project.title}
-                owner={repository.owner}
-                name={repository.name}
-                stars={repository.stars}
-                monthlyDownloads={repository.monthlyDownloads}
                 lastUpdate={repository.lastUpdate}
                 liveUrl={repository.liveUrl}
+                monthlyDownloads={repository.monthlyDownloads}
+                name={repository.name}
+                owner={repository.owner}
                 repositoryUrl={repository.repositoryUrl}
+                stars={repository.stars}
+                title={project.title}
               />
             )}
           </header>

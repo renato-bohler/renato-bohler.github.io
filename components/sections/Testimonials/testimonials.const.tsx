@@ -1,5 +1,10 @@
 const testimonials = [
   {
+    author: {
+      name: 'Dione Betanin',
+      picture: '/images/testimonials/dione-betanin.webp',
+      role: 'Software Engineer',
+    },
     quote: (
       <>
         <p>
@@ -15,13 +20,13 @@ const testimonials = [
         <p>It was a privilege to work with him.</p>
       </>
     ),
-    author: {
-      name: 'Dione Betanin',
-      picture: '/images/testimonials/dione-betanin.webp',
-      role: 'Software Engineer',
-    },
   },
   {
+    author: {
+      name: 'Ema Casas',
+      picture: '/images/testimonials/ema-casas.webp',
+      role: 'Product Owner',
+    },
     quote: (
       <p>
         Renato <strong>crushes</strong> frontend work. He&apos;s
@@ -30,13 +35,13 @@ const testimonials = [
         <strong>excellent</strong> dev.
       </p>
     ),
-    author: {
-      name: 'Ema Casas',
-      picture: '/images/testimonials/ema-casas.webp',
-      role: 'Product Owner',
-    },
   },
   {
+    author: {
+      name: 'Rodrigo Diego',
+      picture: '/images/testimonials/rodrigo-diego.webp',
+      role: 'Head of UX',
+    },
     quote: (
       <>
         <p>
@@ -55,25 +60,25 @@ const testimonials = [
         </p>
       </>
     ),
-    author: {
-      name: 'Rodrigo Diego',
-      picture: '/images/testimonials/rodrigo-diego.webp',
-      role: 'Head of UX',
-    },
   },
   {
-    quote: (
-      <p>
-        Renato is <strong>fantastic</strong> to work with!
-      </p>
-    ),
     author: {
       name: 'Olivia Hendrick',
       picture: '/images/testimonials/olivia-hendrick.webp',
       role: 'UX Designer',
     },
+    quote: (
+      <p>
+        Renato is <strong>fantastic</strong> to work with!
+      </p>
+    ),
   },
   {
+    author: {
+      name: 'Rafael de Paula',
+      picture: '/images/testimonials/rafael-paula.webp',
+      role: 'Backend Engineer',
+    },
     quote: (
       <p>
         I&apos;ve worked with Renato for only about a month, but even
@@ -83,13 +88,13 @@ const testimonials = [
         <strong>committed</strong> on delivering quality software.
       </p>
     ),
-    author: {
-      name: 'Rafael de Paula',
-      picture: '/images/testimonials/rafael-paula.webp',
-      role: 'Backend Engineer',
-    },
   },
   {
+    author: {
+      name: 'Gustavo Bigardi',
+      picture: '/images/testimonials/gustavo-bigardi.webp',
+      role: 'Backend Engineer',
+    },
     quote: (
       <p>
         Renato is one of the best frontend engineers I&apos;ve worked
@@ -98,13 +103,13 @@ const testimonials = [
         He&apos;s an <strong>excellent</strong> professional.
       </p>
     ),
-    author: {
-      name: 'Gustavo Bigardi',
-      picture: '/images/testimonials/gustavo-bigardi.webp',
-      role: 'Backend Engineer',
-    },
   },
   {
+    author: {
+      name: 'Luiz Eduardo Oku',
+      picture: '/images/testimonials/luiz-oku.webp',
+      role: 'Frontend Engineer',
+    },
     quote: (
       <>
         <p>
@@ -120,13 +125,13 @@ const testimonials = [
         </p>
       </>
     ),
-    author: {
-      name: 'Luiz Eduardo Oku',
-      picture: '/images/testimonials/luiz-oku.webp',
-      role: 'Frontend Engineer',
-    },
   },
   {
+    author: {
+      name: 'Daniela Jagher',
+      picture: '/images/testimonials/daniela-jagher.webp',
+      role: 'UI/UX Designer',
+    },
     quote: (
       <>
         <p>
@@ -142,13 +147,13 @@ const testimonials = [
         </p>
       </>
     ),
-    author: {
-      name: 'Daniela Jagher',
-      picture: '/images/testimonials/daniela-jagher.webp',
-      role: 'UI/UX Designer',
-    },
   },
   {
+    author: {
+      name: "Renato's G2i Profile",
+      picture: '/images/testimonials/g2i.svg',
+      role: '',
+    },
     quote: (
       <>
         <p>
@@ -161,11 +166,6 @@ const testimonials = [
         </p>
       </>
     ),
-    author: {
-      name: "Renato's G2i Profile",
-      picture: '/images/testimonials/g2i.svg',
-      role: '',
-    },
   },
 ];
 

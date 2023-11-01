@@ -1,7 +1,7 @@
 import {
-  createContext,
   Dispatch,
   SetStateAction,
+  createContext,
   useCallback,
   useEffect,
   useState,
@@ -9,7 +9,7 @@ import {
 
 import Head from 'next/head';
 
-import themes, { contrast, Theme } from '~/consts/themes.const';
+import themes, { Theme, contrast } from '~/consts/themes.const';
 
 import useDynamicFavicon from './useDynamicFavicon';
 import usePreferredContrast from './usePreferredContrast';
@@ -20,25 +20,25 @@ const RANDOM_THEME =
   themes[Math.floor(Math.random() * themes.length)];
 
 export type ThemeContextType = {
-  theme: Theme;
-  setTheme: Dispatch<SetStateAction<Theme>>;
-  isDarkMode: boolean;
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
   isContrastMode: boolean;
-  setContrastMode: (value: boolean) => void;
+  isDarkMode: boolean;
   isReducedMotion: boolean;
+  setContrastMode: (value: boolean) => void;
+  setDarkMode: Dispatch<SetStateAction<boolean>>;
   setReducedMotion: (value: boolean) => void;
+  setTheme: Dispatch<SetStateAction<Theme>>;
+  theme: Theme;
 };
 
 const ThemeContext = createContext<ThemeContextType>({
-  theme: RANDOM_THEME,
-  setTheme: () => {},
-  isDarkMode: true,
-  setDarkMode: () => {},
   isContrastMode: false,
-  setContrastMode: () => {},
+  isDarkMode: true,
   isReducedMotion: false,
+  setContrastMode: () => {},
+  setDarkMode: () => {},
   setReducedMotion: () => {},
+  setTheme: () => {},
+  theme: RANDOM_THEME,
 });
 
 type Props = {
@@ -73,20 +73,20 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
   }, [isContrastMode]);
 
   const context = {
-    theme,
-    setTheme,
-    isDarkMode,
-    setDarkMode,
     isContrastMode,
-    setContrastMode,
+    isDarkMode,
     isReducedMotion,
+    setContrastMode,
+    setDarkMode,
     setReducedMotion,
+    setTheme,
+    theme,
   };
 
   return (
     <>
       <Head>
-        <link rel="icon" href={favicon} />
+        <link href={favicon} rel="icon" />
       </Head>
 
       <ThemeContext.Provider value={context}>

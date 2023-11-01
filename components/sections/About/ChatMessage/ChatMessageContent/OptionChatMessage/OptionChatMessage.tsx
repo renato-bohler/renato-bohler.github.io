@@ -4,6 +4,7 @@ import { Button } from 'reakit/Button';
 import { Group } from 'reakit/Group';
 
 import { Option, OptionSelectMessage } from '../../messages.types';
+
 import styles from './OptionChatMessage.module.css';
 
 type Props = {
@@ -21,9 +22,9 @@ const OptionChatMessage: React.FC<Props> = ({
     <Group className={styles.optionContainer}>
       {message.content.map((option) => (
         <Button
-          key={option.id}
           className={styles.optionButton}
           disabled={responded || option.disabled}
+          key={option.id}
           onClick={() => {
             onResponse(option);
             setResponded(true);

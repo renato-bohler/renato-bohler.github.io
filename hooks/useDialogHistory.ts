@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import { DialogStateReturn } from 'reakit';
 
 type DialogHistory = (arg: {
-  id: string;
   dialog: DialogStateReturn;
+  id: string;
 }) => { hide: () => void };
 
-const useDialogHistory: DialogHistory = ({ id, dialog }) => {
+const useDialogHistory: DialogHistory = ({ dialog, id }) => {
   const hide = () => {
     window.history.back();
     dialog.hide();

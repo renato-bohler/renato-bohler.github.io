@@ -21,27 +21,27 @@ import useTheme from '~/hooks/useTheme';
 import styles from './SkillCardDialog.module.css';
 
 export type Props = {
+  backgroundColor: string;
   cardRect?: DOMRect;
+  description: React.ReactElement;
   dialog: DialogStateReturn;
+  icon: React.ReactNode;
   id: string;
   name: string;
-  description: React.ReactElement;
-  icon: React.ReactNode;
-  backgroundColor: string;
-  textColor: string;
   scrollBarTrackColor?: string;
+  textColor: string;
   yearsExperience?: number;
 };
 
 const SkillCardDialog: React.FC<Props> = ({
+  backgroundColor,
+  description,
   dialog,
+  icon,
   id,
   name,
-  description,
-  icon,
-  backgroundColor,
-  textColor,
   scrollBarTrackColor,
+  textColor,
 }) => {
   const isFirstMount = useFirstMount();
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -65,22 +65,22 @@ const SkillCardDialog: React.FC<Props> = ({
     dialog.setAnimated(!isReducedMotion);
   }, [dialog, isReducedMotion]);
 
-  if (isFirstMount) return <div id={dialog.baseId} aria-hidden />;
+  if (isFirstMount) return <div aria-hidden id={dialog.baseId} />;
 
   return (
     <DialogBackdrop {...dialog} className={styles.backdrop}>
       <Dialog
         {...dialog}
         aria-label={`My experience with ${name}`}
-        hide={hide}
         className={styles.dialog}
+        hide={hide}
         preventBodyScroll={false}
         style={
           {
+            '--theme-scrollbar-thumb-color': backgroundColor,
             boxShadow: `${backgroundColor}${
               isDarkMode ? 30 : 60
             } 0 5px 100px`,
-            '--theme-scrollbar-thumb-color': backgroundColor,
             ...(scrollBarTrackColor
               ? {
                   '--theme-scrollbar-track-color':
@@ -107,8 +107,8 @@ const SkillCardDialog: React.FC<Props> = ({
               <VisuallyHidden>.</VisuallyHidden>
             </h1>
             <Button
-              onClick={hide}
               className={styles.closeButton}
+              onClick={hide}
               title="Close dialog"
             >
               {dialog.visible && (

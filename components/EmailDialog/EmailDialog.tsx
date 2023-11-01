@@ -13,6 +13,7 @@ import useTheme from '~/hooks/useTheme';
 import EmailForm from '../EmailForm/EmailForm';
 import AnimatedIcon from '../icons/AnimatedIcon/AnimatedIcon';
 import CloseIcon from '../icons/Close';
+
 import styles from './EmailDialog.module.css';
 
 type Props = {
@@ -39,16 +40,16 @@ const EmailDialog: React.FC<Props> = ({ dialog }) => {
       <Dialog
         {...dialog}
         aria-label="E-mail contact dialog form"
-        hide={hide}
         className={styles.dialog}
+        hide={hide}
         preventBodyScroll
       >
         <header className={styles.header}>
           <h1 className={styles.title}>Let&apos;s talk</h1>
 
           <Button
-            onClick={dialog.hide}
             className={styles.closeButton}
+            onClick={dialog.hide}
             title="Close dialog"
           >
             {dialog.visible && (

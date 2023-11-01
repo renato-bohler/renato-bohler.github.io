@@ -1,4 +1,4 @@
-import React, { forwardRef, Ref, useState } from 'react';
+import React, { Ref, forwardRef, useState } from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';
@@ -11,8 +11,8 @@ import styles from './EmailForm.module.css';
 
 type FormData = {
   author: string;
-  replyTo: string;
   message: string;
+  replyTo: string;
 };
 
 const sendEmail = async (formData: FormData) => {
@@ -23,9 +23,9 @@ const sendEmail = async (formData: FormData) => {
     const response = await fetch(
       process.env.NEXT_PUBLIC_CONTACT_ENDPOINT,
       {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
       },
     );
 
@@ -35,7 +35,7 @@ const sendEmail = async (formData: FormData) => {
   }
 };
 
-type FormState = 'idle' | 'submitting' | 'success' | 'error';
+type FormState = 'error' | 'idle' | 'submitting' | 'success';
 
 type Props = {
   className?: string;
@@ -55,8 +55,8 @@ const EmailForm = (
     const formData = new FormData(event.currentTarget);
     const payload = {
       author: formData.get('author')?.toString() || '',
-      replyTo: formData.get('replyTo')?.toString() || '',
       message: formData.get('message')?.toString() || '',
+      replyTo: formData.get('replyTo')?.toString() || '',
     };
 
     try {
@@ -73,21 +73,21 @@ const EmailForm = (
 
   return (
     <form
-      ref={ref}
-      onSubmit={handleSubmit}
       className={classNames(styles.form, className)}
+      onSubmit={handleSubmit}
+      ref={ref}
     >
       <label className={styles.labelContainer}>
         <span className={styles.label}>What&apos;s your name?</span>
         <input
-          name="author"
-          type="text"
-          required
+          autoComplete="name"
+          className={styles.input}
           disabled={disabled}
           maxLength={100}
+          name="author"
           placeholder="John Doe"
-          className={styles.input}
-          autoComplete="name"
+          required
+          type="text"
         />
       </label>
 
@@ -96,26 +96,26 @@ const EmailForm = (
           How should I get back to you?
         </span>
         <input
-          name="replyTo"
-          type="text"
-          required
+          autoComplete="email"
+          className={styles.input}
           disabled={disabled}
           maxLength={300}
+          name="replyTo"
           placeholder="E-mail, LinkedIn profile, Twitter, etc."
-          className={styles.input}
-          autoComplete="email"
+          required
+          type="text"
         />
       </label>
 
       <label className={styles.labelContainer}>
         <span className={styles.label}>Speak your mind</span>
         <textarea
-          name="message"
-          required
+          className={classNames(styles.input, styles.textarea)}
           disabled={disabled}
           maxLength={1000}
+          name="message"
           placeholder="Type your message here..."
-          className={classNames(styles.input, styles.textarea)}
+          required
         />
       </label>
 
@@ -128,10 +128,10 @@ const EmailForm = (
         )}
 
         <Button
-          type="submit"
-          disabled={disabled}
           className={styles.button}
+          disabled={disabled}
           title="Send your message"
+          type="submit"
         >
           {(formState === 'idle' || formState === 'error') && (
             <PaperPlaneIcon />
