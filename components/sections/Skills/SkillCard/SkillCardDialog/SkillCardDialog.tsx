@@ -14,6 +14,7 @@ import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
 import CloseIcon from '~/components/icons/Close';
+import useDialogHistory from '~/hooks/useDialogHistory';
 import useFirstMount from '~/hooks/useFirstMount';
 import useTheme from '~/hooks/useTheme';
 
@@ -44,6 +45,7 @@ const SkillCardDialog: React.FC<Props> = ({
 }) => {
   const isFirstMount = useFirstMount();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { hide } = useDialogHistory({ dialog, id: `skills-${id}` });
 
   const { isDarkMode, isReducedMotion } = useTheme();
 
@@ -63,33 +65,6 @@ const SkillCardDialog: React.FC<Props> = ({
     dialog.setAnimated(!isReducedMotion);
   }, [dialog, isReducedMotion]);
 
-  /**
-   * Handles closing dialog on back button.
-   */
-  const handleDialogClose = () => {
-    window.history.back();
-    dialog.hide();
-  };
-
-  useEffect(() => {
-    const popStateHandler = (event: PopStateEvent) => {
-      if (!event.state) return;
-
-      const { dialogId } = event.state;
-      if (dialogId !== `skills-${id}`) dialog.hide();
-    };
-
-    window.addEventListener('popstate', popStateHandler);
-    return () => {
-      window.removeEventListener('popstate', popStateHandler);
-    };
-  }, [dialog, id]);
-
-  useEffect(() => {
-    if (!dialog.visible) return;
-    window.history.pushState({ dialogId: `skills-${id}` }, '', '');
-  }, [dialog.visible, id]);
-
   if (isFirstMount) return <div id={dialog.baseId} aria-hidden />;
 
   return (
@@ -97,7 +72,7 @@ const SkillCardDialog: React.FC<Props> = ({
       <Dialog
         {...dialog}
         aria-label={`My experience with ${name}`}
-        hide={handleDialogClose}
+        hide={hide}
         className={styles.dialog}
         preventBodyScroll={false}
         style={
@@ -132,7 +107,7 @@ const SkillCardDialog: React.FC<Props> = ({
               <VisuallyHidden>.</VisuallyHidden>
             </h1>
             <Button
-              onClick={handleDialogClose}
+              onClick={hide}
               className={styles.closeButton}
               title="Close dialog"
             >
