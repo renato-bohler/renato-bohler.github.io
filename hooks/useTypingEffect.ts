@@ -3,23 +3,23 @@ import { useEffect, useState } from 'react';
 import usePrevious from './usePrevious';
 
 type Options = {
-  targetText: string;
-  halt?: boolean;
   animateDelete?: boolean;
-  startDelayMs?: number;
-  keyStrokeMinTimeMs?: number;
+  halt?: boolean;
   keyStrokeMaxVarianceMs?: number;
+  keyStrokeMinTimeMs?: number;
+  startDelayMs?: number;
+  targetText: string;
 };
 
-type State = 'stale' | 'typing' | 'deleting';
+type State = 'deleting' | 'stale' | 'typing';
 
 const useTypingEffect = ({
-  targetText,
-  halt,
   animateDelete = false,
-  startDelayMs = 0,
-  keyStrokeMinTimeMs = 50,
+  halt,
   keyStrokeMaxVarianceMs = 70,
+  keyStrokeMinTimeMs = 50,
+  startDelayMs = 0,
+  targetText,
 }: Options): string => {
   const [state, setState] = useState<State>('stale');
 

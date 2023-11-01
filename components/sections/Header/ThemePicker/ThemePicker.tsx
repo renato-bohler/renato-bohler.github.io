@@ -1,6 +1,5 @@
 import { memo } from 'react';
 
-import { useMediaQuery } from 'react-responsive';
 import { Button } from 'reakit/Button';
 import {
   Popover,
@@ -20,32 +19,29 @@ import styles from './ThemePicker.module.css';
 
 const ThemePicker: React.FC = () => {
   const {
-    theme,
-    setTheme,
-    isDarkMode,
-    setDarkMode,
     isContrastMode,
-    setContrastMode,
+    isDarkMode,
     isReducedMotion,
+    setContrastMode,
+    setDarkMode,
     setReducedMotion,
+    setTheme,
+    theme,
   } = useTheme();
 
-  const isMobile = useMediaQuery({
-    query: '(max-width: 550px)',
-  });
   const popover = usePopoverState({
-    placement: isMobile ? 'bottom-start' : 'right-start',
     animated: 500,
+    placement: 'bottom-start',
   });
 
   return (
     <>
       <Button
+        className={styles.button}
+        onClick={() => setDarkMode((darkMode) => !darkMode)}
         title={
           isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
         }
-        className={styles.button}
-        onClick={() => setDarkMode((darkMode) => !darkMode)}
       >
         <AnimatedIcon animationDelay={500}>
           {isDarkMode ? <DarkIcon /> : <LightIcon />}
@@ -76,10 +72,10 @@ const ThemePicker: React.FC = () => {
 
               return (
                 <Button
-                  key={t.name}
-                  title={t.name}
-                  className={styles.themeButton}
                   aria-pressed={t.name === theme.name}
+                  className={styles.themeButton}
+                  key={t.name}
+                  onClick={() => setTheme(t)}
                   style={{
                     background: `
                       linear-gradient(
@@ -91,7 +87,7 @@ const ThemePicker: React.FC = () => {
                       )
                     `,
                   }}
-                  onClick={() => setTheme(t)}
+                  title={t.name}
                 />
               );
             })}
@@ -100,24 +96,24 @@ const ThemePicker: React.FC = () => {
           <div
             style={{
               background: isDarkMode ? 'white' : 'black',
-              color: isDarkMode ? 'black' : 'white',
               borderRadius: 'inherit',
+              color: isDarkMode ? 'black' : 'white',
             }}
           >
             <label className={styles.checkbox}>
               <input
-                type="checkbox"
                 checked={isContrastMode}
                 onChange={(e) => setContrastMode(e.target.checked)}
+                type="checkbox"
               />
               Contrast mode
             </label>
 
             <label className={styles.checkbox}>
               <input
-                type="checkbox"
                 checked={isReducedMotion}
                 onChange={(e) => setReducedMotion(e.target.checked)}
+                type="checkbox"
               />
               Reduce motion
             </label>

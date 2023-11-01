@@ -4,9 +4,9 @@ import { Theme } from '~/consts/themes.const';
 
 const FAVICON_DIMENSION = 256;
 
-const FavIcon: React.FC<{ theme: Theme; size?: number }> = ({
-  theme,
+const FavIcon: React.FC<{ size?: number; theme: Theme }> = ({
   size = FAVICON_DIMENSION,
+  theme,
 }) => {
   const isBrowserDarkMode = window.matchMedia(
     '(prefers-color-scheme: dark)',
@@ -16,13 +16,13 @@ const FavIcon: React.FC<{ theme: Theme; size?: number }> = ({
 
   return (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
       height={size}
       viewBox={`0 0 ${size} ${size}`}
+      width={size}
+      xmlns="http://www.w3.org/2000/svg"
     >
       <defs>
-        <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
+        <linearGradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
           <stop
             offset="25%"
             style={{ stopColor: selectedTheme['primary-bright'] }}

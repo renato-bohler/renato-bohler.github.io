@@ -1,32 +1,32 @@
 type BaseMessage = {
-  id: string;
   direction: 'incoming' | 'outgoing';
-  status: 'invisible' | 'writing' | 'visible';
+  id: string;
+  status: 'invisible' | 'visible' | 'writing';
 };
 
 export type TextMessage = BaseMessage & {
-  type: 'text';
   content: React.ReactNode;
+  type: 'text';
 };
 
 export type AudioMessage = BaseMessage & {
-  type: 'audio';
   content: {
-    type: string;
     src: string;
+    type: string;
   };
+  type: 'audio';
 };
 
 export type Option = {
+  disabled?: boolean;
   id: string;
   label: string;
-  disabled?: boolean;
   responses: Message[];
 };
 
 export type OptionSelectMessage = BaseMessage & {
-  type: 'option-select';
   content: Option[];
+  type: 'option-select';
 };
 
 export type ContactFormMessage = BaseMessage & {
@@ -34,7 +34,7 @@ export type ContactFormMessage = BaseMessage & {
 };
 
 export type Message =
-  | TextMessage
   | AudioMessage
+  | ContactFormMessage
   | OptionSelectMessage
-  | ContactFormMessage;
+  | TextMessage;

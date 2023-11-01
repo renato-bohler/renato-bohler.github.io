@@ -1,23 +1,24 @@
 import { useInView } from 'react-intersection-observer';
 
 import { Company, Period } from '../experiences.const';
+
 import styles from './ExperienceCard.module.css';
 
 type Props = {
-  title: string;
-  jobTitle: string;
+  children: React.ReactNode;
   company: Company;
   consultant?: boolean;
+  jobTitle: string;
   period: Period;
-  children: React.ReactNode;
+  title: string;
 };
 
 const formatDate = (date?: Date) =>
   date
     ? date.toLocaleDateString('en', {
         month: 'long',
-        year: 'numeric',
         timeZone: 'UTC',
+        year: 'numeric',
       })
     : 'Present';
 
@@ -36,21 +37,21 @@ const formatDuration = (from: Date, to: Date) => {
 };
 
 const ExperienceCard: React.FC<Props> = ({
-  title,
-  jobTitle,
+  children,
   company,
   consultant,
+  jobTitle,
   period,
-  children,
+  title,
 }) => {
   const [ref, inView] = useInView({
-    triggerOnce: true,
     rootMargin: '-100px',
     threshold: 0.1,
+    triggerOnce: true,
   });
 
   return (
-    <li ref={ref} className={styles.card} data-revealed={inView}>
+    <li className={styles.card} data-revealed={inView} ref={ref}>
       <div className={styles.dot} />
       <div
         className={styles.companyLogo}
@@ -60,7 +61,7 @@ const ExperienceCard: React.FC<Props> = ({
         }}
       >
         <svg>
-          <use xlinkHref={`#${company.logo}`} fill="white" />
+          <use fill="white" xlinkHref={`#${company.logo}`} />
         </svg>
       </div>
       <div className={styles.content}>

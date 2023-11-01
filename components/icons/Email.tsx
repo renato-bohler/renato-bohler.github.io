@@ -4,12 +4,12 @@ const EmailIcon: React.FC<{
 }> = ({ className, style }) => (
   <svg
     aria-hidden
-    width="1em"
+    className={className}
     height="1em"
     preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 24 24"
-    className={className}
     style={style}
+    viewBox="0 0 24 24"
+    width="1em"
   >
     <path
       d="M12 11L4 6H20L12 11Z"
@@ -18,32 +18,32 @@ const EmailIcon: React.FC<{
     >
       <animate
         attributeName="fill-opacity"
-        values="0;0.3"
         begin="1s"
         dur="0.15s"
         fill="freeze"
+        values="0;0.3"
       />
     </path>
     <g
       fill="none"
       stroke="currentColor"
-      strokeWidth={1}
       strokeLinecap="round"
+      strokeWidth={1}
     >
       <rect
-        x="3"
-        y="5"
-        width="18"
         height="14"
         rx="1"
         strokeDasharray="64"
         strokeDashoffset="64"
+        width="18"
+        x="3"
+        y="5"
       >
         <animate
           attributeName="stroke-dashoffset"
-          values="64;0"
           dur="0.6s"
           fill="freeze"
+          values="64;0"
         />
       </rect>
       <path
@@ -53,10 +53,10 @@ const EmailIcon: React.FC<{
       >
         <animate
           attributeName="stroke-dashoffset"
-          values="24;0"
           begin="0.6s"
           dur="0.4s"
           fill="freeze"
+          values="24;0"
         />
       </path>
     </g>

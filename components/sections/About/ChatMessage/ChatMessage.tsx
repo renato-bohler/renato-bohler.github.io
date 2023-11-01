@@ -3,36 +3,37 @@ import React from 'react';
 import cx from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import styles from './ChatMessage.module.css';
 import ChatMessageContent from './ChatMessageContent/ChatMessageContent';
-import { Message, Option } from './messages.types';
 import MessageWritingAnimation from './MessageWritingAnimation/MessageWritingAnimation';
+import { Message, Option } from './messages.types';
+
+import styles from './ChatMessage.module.css';
 
 type Props = {
-  message: Message;
-  onResponse: (option: Option) => void;
   animatedStyles?: {
-    container: string;
-    picture: string;
-    pictureImage: string;
-    pictureArcFill: string;
-    pictureArcStroke: string;
     bubble: string;
     bubblePointer: string;
+    container: string;
+    picture: string;
+    pictureArcFill: string;
+    pictureArcStroke: string;
+    pictureImage: string;
   };
+  message: Message;
+  onResponse: (option: Option) => void;
 };
 
 const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
-  ({ message, onResponse, animatedStyles }, ref) => (
+  ({ animatedStyles, message, onResponse }, ref) => (
     <div
-      ref={ref}
       className={cx(styles.container, animatedStyles?.container, {
-        [styles.outgoing]: message.direction === 'outgoing',
         [styles.fadeIn]: !ref,
+        [styles.outgoing]: message.direction === 'outgoing',
       })}
+      ref={ref}
     >
       <div className={cx(styles.picture, animatedStyles?.picture)}>
-        <svg viewBox="-10 -10 205 132" className={styles.pictureArc}>
+        <svg className={styles.pictureArc} viewBox="-10 -10 205 132">
           <defs>
             <linearGradient id="gradient">
               <stop
@@ -46,27 +47,27 @@ const ChatMessage = React.forwardRef<HTMLDivElement, Props>(
             </linearGradient>
           </defs>
           <path
-            d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
             className={cx(
               styles.pictureArcStroke,
               animatedStyles?.pictureArcStroke,
             )}
+            d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
           />
           <path
-            d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
             className={cx(
               styles.pictureArcFill,
               animatedStyles?.pictureArcFill,
             )}
+            d="M -2.362 117.557 C -19.633 42.539 50.782 -23.043 124.384 -0.492 C 154.967 8.879 179.222 32.314 189.638 62.557"
           />
         </svg>
         <img
-          src="images/me/full.webp"
+          alt="A smiley Renato"
           className={cx(
             styles.pictureImage,
             animatedStyles?.pictureImage,
           )}
-          alt="A smiley Renato"
+          src="images/me/full.webp"
         />
       </div>
       <div className={cx(styles.bubble, animatedStyles?.bubble)}>

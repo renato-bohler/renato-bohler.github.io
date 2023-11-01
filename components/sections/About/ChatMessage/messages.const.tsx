@@ -16,10 +16,6 @@ export const FAST_MODE_ID = 'fast-mode';
 
 export const incoming: Message[] = [
   {
-    id: '1',
-    type: 'text',
-    direction: 'incoming',
-    status: 'writing',
     content: (
       <>
         I&apos;m <strong>Renato Böhler</strong>, here are some quick
@@ -32,10 +28,10 @@ export const incoming: Message[] = [
           <li>
             🎓 Computer Engineer (
             <a
-              title="Universidade Tecnológica Federal do Paraná"
               href="http://www.utfpr.edu.br/english"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
+              title="Universidade Tecnológica Federal do Paraná"
             >
               UTFPR
             </a>
@@ -45,8 +41,8 @@ export const incoming: Message[] = [
             ⚽{' '}
             <a
               href="https://www.athletico.com.br/en/"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
             >
               Athletico Paranaense
             </a>{' '}
@@ -56,33 +52,29 @@ export const incoming: Message[] = [
         </ul>
       </>
     ),
+    direction: 'incoming',
+    id: '1',
+    status: 'writing',
+    type: 'text',
   },
   {
-    id: '2',
-    type: 'text',
-    direction: 'incoming',
-    status: 'writing',
     content: (
       <>What would you like to know about me? Ask right away!</>
     ),
+    direction: 'incoming',
+    id: '2',
+    status: 'writing',
+    type: 'text',
   },
 ];
 
 export const optionSelect: OptionSelectMessage = {
-  id: 'option-select',
-  type: 'option-select',
-  direction: 'outgoing',
-  status: 'visible',
   content: [
     {
       id: 'career',
       label: 'Tell me about your career',
       responses: [
         {
-          id: 'career-1',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               I started my journey as a developer very young, at the
@@ -90,12 +82,12 @@ export const optionSelect: OptionSelectMessage = {
               learning some basic programming concepts by myself.
             </>
           ),
+          direction: 'incoming',
+          id: 'career-1',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'career-2',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               In <strong>2015</strong>, I started studying the arts of
@@ -105,12 +97,12 @@ export const optionSelect: OptionSelectMessage = {
               In <strong>2021</strong> I finally graduated 🎓🎉
             </>
           ),
+          direction: 'incoming',
+          id: 'career-2',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'career-3',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               My professional journey started in <strong>2016</strong>
@@ -119,12 +111,12 @@ export const optionSelect: OptionSelectMessage = {
               many international projects.
             </>
           ),
+          direction: 'incoming',
+          id: 'career-3',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'career-4',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               You can check out the{' '}
@@ -151,6 +143,10 @@ export const optionSelect: OptionSelectMessage = {
               section.
             </>
           ),
+          direction: 'incoming',
+          id: 'career-4',
+          status: 'invisible',
+          type: 'text',
         },
       ],
     },
@@ -159,10 +155,6 @@ export const optionSelect: OptionSelectMessage = {
       label: 'Who are you in a team?',
       responses: [
         {
-          id: 'team-1',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               I&apos;m a very technical professional, so I often find
@@ -170,12 +162,12 @@ export const optionSelect: OptionSelectMessage = {
               a new team.
             </>
           ),
+          direction: 'incoming',
+          id: 'team-1',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'team-2',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               I see myself an easy guy to work with: I like
@@ -186,12 +178,12 @@ export const optionSelect: OptionSelectMessage = {
               .
             </>
           ),
+          direction: 'incoming',
+          id: 'team-2',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'team-3',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               <strong>I truly love what I do</strong>, and I like to
@@ -199,12 +191,12 @@ export const optionSelect: OptionSelectMessage = {
               work.
             </>
           ),
+          direction: 'incoming',
+          id: 'team-3',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'team-4',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               <strong>But don&apos;t take my word for it!</strong>
@@ -218,6 +210,10 @@ export const optionSelect: OptionSelectMessage = {
               to say 😄
             </>
           ),
+          direction: 'incoming',
+          id: 'team-4',
+          status: 'invisible',
+          type: 'text',
         },
       ],
     },
@@ -226,10 +222,6 @@ export const optionSelect: OptionSelectMessage = {
       label: 'How do you pronounce your name?',
       responses: [
         {
-          id: 'pronounce-1',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               <strong>Renato</strong> sounds almost like{' '}
@@ -254,16 +246,20 @@ export const optionSelect: OptionSelectMessage = {
               .
             </>
           ),
+          direction: 'incoming',
+          id: 'pronounce-1',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'pronounce-2',
-          type: 'audio',
-          direction: 'incoming',
-          status: 'invisible',
           content: {
-            type: 'audio/mpeg',
             src: '/sounds/pronunciation.mp3',
+            type: 'audio/mpeg',
           },
+          direction: 'incoming',
+          id: 'pronounce-2',
+          status: 'invisible',
+          type: 'audio',
         },
       ],
     },
@@ -272,10 +268,6 @@ export const optionSelect: OptionSelectMessage = {
       label: 'How can I contact you?',
       responses: [
         {
-          id: 'contact-1',
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               I&apos;m glad you asked 😄
@@ -284,12 +276,16 @@ export const optionSelect: OptionSelectMessage = {
               Just fill this form and I&apos;ll get back to you ASAP.
             </>
           ),
+          direction: 'incoming',
+          id: 'contact-1',
+          status: 'invisible',
+          type: 'text',
         },
         {
-          id: 'contact-2',
-          type: 'contact-form',
           direction: 'outgoing',
+          id: 'contact-2',
           status: 'invisible',
+          type: 'contact-form',
         },
       ],
     },
@@ -298,10 +294,6 @@ export const optionSelect: OptionSelectMessage = {
       label: 'Can you please just type faster?',
       responses: [
         {
-          id: `${FAST_MODE_ID}-response`,
-          type: 'text',
-          direction: 'incoming',
-          status: 'invisible',
           content: (
             <>
               Absolutely!
@@ -313,17 +305,21 @@ export const optionSelect: OptionSelectMessage = {
               </strong>
             </>
           ),
+          direction: 'incoming',
+          id: `${FAST_MODE_ID}-response`,
+          status: 'invisible',
+          type: 'text',
         },
       ],
     },
   ],
+  direction: 'outgoing',
+  id: 'option-select',
+  status: 'visible',
+  type: 'option-select',
 };
 
 export const end: Message = {
-  id: 'end',
-  type: 'text',
-  direction: 'incoming',
-  status: 'writing',
   content: (
     <>
       Well, that was a lovely conversation 🤩
@@ -333,6 +329,10 @@ export const end: Message = {
       scrolling!
     </>
   ),
+  direction: 'incoming',
+  id: 'end',
+  status: 'writing',
+  type: 'text',
 };
 
 const messages = [...incoming, optionSelect];

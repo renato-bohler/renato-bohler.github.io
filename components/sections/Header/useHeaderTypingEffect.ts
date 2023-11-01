@@ -5,24 +5,24 @@ import { useInView } from 'react-intersection-observer';
 import useTypingEffect from '~/hooks/useTypingEffect';
 
 type Options = {
-  firstName: string;
-  lastName: string;
-  subtitles: string[];
-  startDelayMs?: number;
   changeSubtitleDelayMs?: number;
-  keyStrokeMinTimeMs?: number;
+  firstName: string;
   keyStrokeMaxVarianceMs?: number;
+  keyStrokeMinTimeMs?: number;
+  lastName: string;
+  startDelayMs?: number;
+  subtitles: string[];
 };
 
 type Result = {
-  ref: (node?: Element | null | undefined) => void;
-  inView: boolean;
   firstName: string;
-  lastName: string;
-  subtitle: string;
+  inView: boolean;
   isFirstNameTypingComplete: boolean;
-  isLastNameTypingComplete: boolean;
   isFullNameTypingComplete: boolean;
+  isLastNameTypingComplete: boolean;
+  lastName: string;
+  ref: (node?: Element | null | undefined) => void;
+  subtitle: string;
 };
 
 const getNewSubtitle = (subtitles: string[], current?: string) => {
@@ -33,25 +33,25 @@ const getNewSubtitle = (subtitles: string[], current?: string) => {
 };
 
 const useHeaderTypingEffect = ({
-  startDelayMs = 1000,
   changeSubtitleDelayMs = 3000,
-  keyStrokeMinTimeMs = 50,
   keyStrokeMaxVarianceMs = 70,
+  keyStrokeMinTimeMs = 50,
+  startDelayMs = 1000,
   ...options
 }: Options): Result => {
-  const { ref, inView } = useInView({
-    threshold: 0.75,
+  const { inView, ref } = useInView({
     initialInView: true,
+    threshold: 0.75,
   });
 
   const commonOptions = {
-    keyStrokeMinTimeMs,
     keyStrokeMaxVarianceMs,
+    keyStrokeMinTimeMs,
   };
 
   const firstName = useTypingEffect({
-    targetText: inView ? options.firstName : '',
     startDelayMs,
+    targetText: inView ? options.firstName : '',
     ...commonOptions,
   });
   const isFirstNameTypingComplete = useMemo(
@@ -60,8 +60,8 @@ const useHeaderTypingEffect = ({
   );
 
   const lastName = useTypingEffect({
-    targetText: inView ? options.lastName : '',
     halt: !isFirstNameTypingComplete,
+    targetText: inView ? options.lastName : '',
     ...commonOptions,
   });
   const isLastNameTypingComplete = useMemo(
@@ -71,9 +71,9 @@ const useHeaderTypingEffect = ({
 
   const [targetSubtitle, setTargetSubtitle] = useState('');
   const subtitle = useTypingEffect({
-    targetText: targetSubtitle,
-    halt: inView && !isLastNameTypingComplete,
     animateDelete: inView,
+    halt: inView && !isLastNameTypingComplete,
+    targetText: targetSubtitle,
     ...commonOptions,
   });
   const isSubtitleTypingComplete = useMemo(
@@ -137,14 +137,14 @@ const useHeaderTypingEffect = ({
   ]);
 
   return {
-    ref,
-    inView,
     firstName: inView ? firstName : options.firstName,
-    lastName: inView ? lastName : options.lastName,
-    subtitle: inView ? subtitle : '',
+    inView,
     isFirstNameTypingComplete,
-    isLastNameTypingComplete,
     isFullNameTypingComplete,
+    isLastNameTypingComplete,
+    lastName: inView ? lastName : options.lastName,
+    ref,
+    subtitle: inView ? subtitle : '',
   };
 };
 

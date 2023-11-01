@@ -4,16 +4,16 @@ const LightIcon: React.FC<{
 }> = ({ className, style }) => (
   <svg
     aria-hidden
-    width="1em"
+    className={className}
+    fill="none"
     height="1em"
     preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 16 16"
-    fill="none"
     stroke="currentColor"
     strokeLinecap="round"
     strokeLinejoin="round"
-    className={className}
     style={style}
+    viewBox="0 0 16 16"
+    width="1em"
   >
     <circle
       cx="8"
@@ -23,138 +23,138 @@ const LightIcon: React.FC<{
       strokeDashoffset="21"
     >
       <animate
-        fill="freeze"
         attributeName="stroke-dashoffset"
         dur="0.5s"
+        fill="freeze"
         values="21;0"
       />
     </circle>
     <g>
       <line
-        x1="8.013"
-        y1="2.539"
-        x2="8.013"
-        y2="1.435"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="8.013"
+        x2="8.013"
+        y1="2.539"
+        y2="1.435"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.4s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="11.474"
-        y1="4.545"
-        x2="12.534"
-        y2="3.462"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="11.474"
+        x2="12.534"
+        y1="4.545"
+        y2="3.462"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.45s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="13.486"
-        y1="8.007"
-        x2="14.523"
-        y2="8.007"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="13.486"
+        x2="14.523"
+        y1="8.007"
+        y2="8.007"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.5s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="11.488"
-        y1="11.499"
-        x2="12.487"
-        y2="12.502"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="11.488"
+        x2="12.487"
+        y1="11.499"
+        y2="12.502"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.55s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="8.013"
-        y1="14.568"
-        x2="8.013"
-        y2="13.464"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="8.013"
+        x2="8.013"
+        y1="14.568"
+        y2="13.464"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.6s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="3.462"
-        y1="12.569"
-        x2="4.522"
-        y2="11.486"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="3.462"
+        x2="4.522"
+        y1="12.569"
+        y2="11.486"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.65s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="1.479"
-        y1="8.007"
-        x2="2.516"
-        y2="8.007"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="1.479"
+        x2="2.516"
+        y1="8.007"
+        y2="8.007"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.7s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
       <line
-        x1="3.509"
-        y1="3.498"
-        x2="4.508"
-        y2="4.501"
         strokeDasharray="2"
         strokeDashoffset="2"
+        x1="3.509"
+        x2="4.508"
+        y1="3.498"
+        y2="4.501"
       >
         <animate
-          fill="freeze"
           attributeName="stroke-dashoffset"
           begin="0.75s"
           dur="0.6s"
+          fill="freeze"
           values="2;0"
         />
       </line>
@@ -162,12 +162,12 @@ const LightIcon: React.FC<{
       <animateTransform
         attributeName="transform"
         attributeType="XML"
-        type="rotate"
         begin="0.4s"
-        from="0 8 8"
-        to="360 8 8"
         dur="20s"
+        from="0 8 8"
         repeatCount="indefinite"
+        to="360 8 8"
+        type="rotate"
       />
     </g>
   </svg>

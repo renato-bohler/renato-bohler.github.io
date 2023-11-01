@@ -5,13 +5,13 @@ import { useInView } from 'react-intersection-observer';
 import styles from './FooterTransitionTrigger.module.css';
 
 type Props = {
-  onProgressChange: (progress: number) => void;
   onNavigationHeaderTrigger: (hide: boolean) => void;
+  onProgressChange: (progress: number) => void;
 };
 
 const FooterTransitionTrigger: React.FC<Props> = ({
-  onProgressChange,
   onNavigationHeaderTrigger,
+  onProgressChange,
 }) => {
   const [navigationBarHideRef, navigationBarHideInView] = useInView();
 
@@ -59,10 +59,10 @@ const FooterTransitionTrigger: React.FC<Props> = ({
   return (
     <>
       <div
-        ref={navigationBarHideRef}
         className={styles.navHeaderHideTrigger}
+        ref={navigationBarHideRef}
       />
-      <div ref={setProgressRefs} className={styles.progressTrigger} />
+      <div className={styles.progressTrigger} ref={setProgressRefs} />
     </>
   );
 };

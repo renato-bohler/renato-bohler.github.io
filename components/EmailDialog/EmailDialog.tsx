@@ -7,11 +7,13 @@ import {
   DialogStateReturn,
 } from 'reakit/Dialog';
 
+import useDialogHistory from '~/hooks/useDialogHistory';
 import useTheme from '~/hooks/useTheme';
 
 import EmailForm from '../EmailForm/EmailForm';
 import AnimatedIcon from '../icons/AnimatedIcon/AnimatedIcon';
 import CloseIcon from '../icons/Close';
+
 import styles from './EmailDialog.module.css';
 
 type Props = {
@@ -19,6 +21,7 @@ type Props = {
 };
 
 const EmailDialog: React.FC<Props> = ({ dialog }) => {
+  const { hide } = useDialogHistory({ dialog, id: 'email' });
   const formRef = useRef<HTMLFormElement | null>(null);
 
   const { isReducedMotion } = useTheme();
@@ -38,14 +41,15 @@ const EmailDialog: React.FC<Props> = ({ dialog }) => {
         {...dialog}
         aria-label="E-mail contact dialog form"
         className={styles.dialog}
+        hide={hide}
         preventBodyScroll
       >
         <header className={styles.header}>
           <h1 className={styles.title}>Let&apos;s talk</h1>
 
           <Button
-            onClick={dialog.hide}
             className={styles.closeButton}
+            onClick={dialog.hide}
             title="Close dialog"
           >
             {dialog.visible && (

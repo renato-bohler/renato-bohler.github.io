@@ -5,20 +5,21 @@ import useTheme from '~/hooks/useTheme';
 
 import SkillCard from './SkillCard/SkillCard';
 import SkillFeedbacks from './SkillFeedbacks/SkillFeedbacks';
-import skills, { getColors } from './skills.const';
-import styles from './Skills.module.css';
 import SkillVectors from './SkillVectors/SkillVectors';
+import skills, { getColors } from './skills.const';
+
+import styles from './Skills.module.css';
 
 const HEADER = 'skills';
 
 const Skills: React.FC = () => {
   const { isContrastMode } = useTheme();
 
-  const { ref, entry } = useInView({
+  const { entry, ref } = useInView({
+    rootMargin: '100% 0% -25% 0%',
     threshold: Array.from(`${HEADER} `).map(
       (_, i) => i / HEADER.length,
     ),
-    rootMargin: '100% 0% -25% 0%',
   });
 
   const currentCharacterIndex = Math.round(
@@ -35,17 +36,17 @@ const Skills: React.FC = () => {
             0,
             currentCharacterIndex,
           )}`}</span>
-          <span className={styles.caret} aria-hidden>
+          <span aria-hidden className={styles.caret}>
             _
           </span>
 
           <VisuallyHidden>{HEADER}</VisuallyHidden>
         </h2>
 
-        <div ref={ref} className={styles.trigger} />
+        <div className={styles.trigger} ref={ref} />
       </div>
 
-      <div id="skills" className={styles.anchor} aria-hidden />
+      <div aria-hidden className={styles.anchor} id="skills" />
 
       <h3 className={styles.subtitle}>Competences</h3>
       <em className={styles.subtitleDescription}>
@@ -64,19 +65,19 @@ const Skills: React.FC = () => {
 
           return (
             <SkillCard
-              key={skill.id}
-              id={skill.id}
-              name={skill.name}
-              icon={skill?.icon?.(isContrastMode)}
-              featured={skill.featured}
               backgroundColor={colors.background}
-              textColor={colors.text}
+              brief={skill.brief}
+              description={skill.description}
+              featured={skill.featured}
+              icon={skill?.icon?.(isContrastMode)}
+              id={skill.id}
+              key={skill.id}
+              name={skill.name}
               scrollBarTrackColor={skill.colors.scrollBar?.trackColor}
+              studying={skill.studying}
+              textColor={colors.text}
               usageLevel={skill.usageLevel}
               yearsExperience={skill.yearsExperience}
-              studying={skill.studying}
-              description={skill.description}
-              brief={skill.brief}
             />
           );
         })}

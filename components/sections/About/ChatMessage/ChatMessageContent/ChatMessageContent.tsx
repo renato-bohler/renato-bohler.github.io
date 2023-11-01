@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Message, Option } from '../messages.types';
+
 import AudioChatMessage from './AudioChatMessage/AudioChatMessage';
 import ContactFormChatMessage from './ContactFormChatMessage/ContactFormChatMessage';
 import OptionChatMessage from './OptionChatMessage/OptionChatMessage';

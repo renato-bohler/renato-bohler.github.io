@@ -1,21 +1,21 @@
 const ChevronDownIcon: React.FC<{
+  'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
-  'aria-label'?: string;
-}> = ({ className, style, 'aria-label': ariaLabel }) => (
+}> = ({ 'aria-label': ariaLabel, className, style }) => (
   <svg
-    aria-label={ariaLabel}
     aria-hidden={!ariaLabel}
-    width="1em"
+    aria-label={ariaLabel}
+    className={className}
     height="1em"
     preserveAspectRatio="xMidYMid meet"
-    viewBox="0 0 24 24"
-    className={className}
     style={style}
+    viewBox="0 0 24 24"
+    width="1em"
   >
     <path
-      fill="currentColor"
       d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42Z"
+      fill="currentColor"
     />
   </svg>
 );
