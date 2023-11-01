@@ -1,3 +1,16 @@
+# [2.6.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.5.0...v2.6.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* **EmailDialog:** fixes dialog not closing on browser back ([8a4a47c](https://github.com/renato-bohler/renato-bohler.github.io/commit/8a4a47c33155ce56054901f23bea56865d7f94b9))
+* **ThemePicker:** fixes positioning ([efde507](https://github.com/renato-bohler/renato-bohler.github.io/commit/efde507cf061dada743bcca605774325866ac4fc))
+
+
+### Features
+
+* **Footer:** updates background image ([06a8bef](https://github.com/renato-bohler/renato-bohler.github.io/commit/06a8bef34a4b78a305016a088819ae0d2ef6060f))
+
 # [2.5.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.4.0...v2.5.0) (2023-10-27)
 
 
