@@ -8,13 +8,13 @@ import Testimonials from '~/components/sections/Testimonials/Testimonials';
 const TITLE = 'Renato Böhler';
 
 export type SectionName =
-  | typeof HEADER['name']
-  | typeof SECTIONS[number]['name'];
+  | (typeof HEADER)['name']
+  | (typeof SECTIONS)[number]['name'];
 
 export type Section = {
   Component:
-    | typeof HEADER['Component']
-    | typeof SECTIONS[number]['Component'];
+    | (typeof HEADER)['Component']
+    | (typeof SECTIONS)[number]['Component'];
   anchor: string;
   name: SectionName;
   title: string;

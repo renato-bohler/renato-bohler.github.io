@@ -249,6 +249,6 @@ const themes = [
   },
 ];
 
-export type Theme = typeof themes[number];
+export type Theme = (typeof themes)[number];
 
 export default themes;

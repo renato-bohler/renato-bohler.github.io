@@ -9,12 +9,13 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { Button } from 'reakit/Button';
-import SwiperInstance, {
+import SwiperInstance from 'swiper';
+import {
   Autoplay,
   Controller,
   EffectCards,
   Navigation,
-} from 'swiper';
+} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
@@ -88,6 +89,7 @@ const Testimonials: React.FC = () => {
           <Swiper
             autoplay={{ delay: 8000 }}
             className={styles.swiper}
+            controller={{ control: swiper }}
             effect="cards"
             grabCursor
             loop
