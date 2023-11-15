@@ -4,12 +4,6 @@ import styles from './Projects.module.css';
 
 const getProjects = (onEmailDialogOpen: () => void): Project[] => [
   {
-    repo: 'logossim',
-    folder: 'logossim',
-    name: 'logossim',
-    title: 'Logossim',
-    subtitle:
-      'An open-source logic digital simulator built for the web',
     description: (
       <>
         <p>
@@ -17,8 +11,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           thesis on Computer Engineering. As the name implies,{' '}
           <a
             href="http://www.cburch.com/logisim"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Logisim
           </a>
@@ -32,8 +26,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           <strong>it is possible to build fun circuits</strong>, like{' '}
           <a
             href="https://bohler.dev/logossim/?example=Darth%20Vader"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             this one, that play{' '}
             <em>&ldquo;The Imperial March&rdquo;</em> from the Star
@@ -56,8 +50,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           This engine runs on a{' '}
           <a
             href="https://developer.mozilla.org/docs/Web/API/Web_Workers_API"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Web Worker
           </a>{' '}
@@ -69,8 +63,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           The user interface was built on top of{' '}
           <a
             href="https://github.com/projectstorm/react-diagrams"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <code>react-diagrams</code>
           </a>
@@ -90,14 +84,14 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
         </ul>
       </>
     ),
+    folder: 'logossim',
+    name: 'logossim',
+    repo: 'logossim',
+    subtitle:
+      'An open-source logic digital simulator built for the web',
+    title: 'Logossim',
   },
   {
-    repo: 'what-the-filter',
-    folder: 'what-the-filter',
-    name: 'what the filter?',
-    title: 'What the Filter?',
-    subtitle:
-      'A visual playground to JavaScript array and object transformations',
     description: (
       <>
         <p>
@@ -159,8 +153,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           URLs{' '}
           <a
             href="https://bohler.dev/what-the-filter/#code/PTAEAkFMBtoe1AMwE5wLajQT1ABzsgC6JzQCWCAXACIBQAxnAHYDOhoA7gBYCGhAKl0gAxMtEKRkoALygAFAEoZAPlABvWqFDJIhAK7ImoANoByejr6QAJqYA0oUwCMsle451M+cd6aZxCXycAN65oSVMAXU0tUAA6RDEJZDk5DgJrJWlVdORrUABCaVk-ANMFGK04tB5cVNzMlVAAAwASNQbjAAZIuMI4AFVcXEkAYR4WSEUAX3aGuJZyeimARgVp5orY+IArODImOVNHBQBuWmnToA"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             like this
           </a>{' '}
@@ -168,13 +162,14 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
         </p>
       </>
     ),
+    folder: 'what-the-filter',
+    name: 'what the filter?',
+    repo: 'what-the-filter',
+    subtitle:
+      'A visual playground to JavaScript array and object transformations',
+    title: 'What the Filter?',
   },
   {
-    repo: 'redux-form-input-masks',
-    folder: 'redux-form-input-masks',
-    name: 'redux form input masks',
-    title: 'redux-form-input-masks',
-    subtitle: 'Input masking with redux-form made easy',
     description: (
       <>
         <p>
@@ -182,8 +177,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           library. Its goal was to make adding input masking to{' '}
           <a
             href="https://redux-form.com"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <code>redux-form</code>
           </a>{' '}
@@ -193,8 +188,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           Of course, with <code>redux-form</code> being{' '}
           <a
             href="https://github.com/redux-form/redux-form#%EF%B8%8F-attention-%EF%B8%8F"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             pretty much deprecated
           </a>{' '}
@@ -212,16 +207,16 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           myself. I&apos;ve used{' '}
           <a
             href="https://www.travis-ci.com"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Travis CI
           </a>
           , running{' '}
           <a
             href="https://semantic-release.gitbook.io"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <code>semantic-release</code>
           </a>{' '}
@@ -230,16 +225,16 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           Pages. I&apos;ve also configured{' '}
           <a
             href="https://about.codecov.io"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Codecov
           </a>{' '}
           to automatically generate test coverage reports and{' '}
           <a
             href="https://danger.systems/js"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Danger JS
           </a>{' '}
@@ -247,13 +242,13 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
         </p>
       </>
     ),
+    folder: 'redux-form-input-masks',
+    name: 'redux form input masks',
+    repo: 'redux-form-input-masks',
+    subtitle: 'Input masking with redux-form made easy',
+    title: 'redux-form-input-masks',
   },
   {
-    repo: 'renato-bohler.github.io',
-    folder: 'renato-bohler',
-    name: 'this page',
-    title: 'My portfolio',
-    subtitle: "Yeah, that's a little bit meta, I know",
     description: (
       <>
         <p>
@@ -308,8 +303,8 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
           <strong>
             But if you&apos;re looking for the real deal, feel free to{' '}
             <Button
-              onClick={onEmailDialogOpen}
               className={styles.getInTouch}
+              onClick={onEmailDialogOpen}
             >
               get in touch
             </Button>{' '}
@@ -318,16 +313,21 @@ const getProjects = (onEmailDialogOpen: () => void): Project[] => [
         </p>
       </>
     ),
+    folder: 'renato-bohler',
+    name: 'this page',
+    repo: 'renato-bohler.github.io',
+    subtitle: "Yeah, that's a little bit meta, I know",
+    title: 'My portfolio',
   },
 ];
 
 export type Project = {
-  repo: string;
+  description: React.ReactElement;
   folder: string;
   name: string;
-  title: string;
+  repo: string;
   subtitle: string;
-  description: React.ReactElement;
+  title: string;
 };
 
 export default getProjects;

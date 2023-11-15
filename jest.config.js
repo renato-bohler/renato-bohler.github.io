@@ -10,7 +10,6 @@ const pureEsmDependencies = ['swiper', 'ssr-window', 'dom7'].join(
 );
 
 module.exports = {
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   collectCoverageFrom: [
     '**/*.{ts,tsx}',
     '!**/*.d.ts',
@@ -19,17 +18,20 @@ module.exports = {
   moduleNameMapper: {
     '^.+\\.module\\.css$': 'identity-obj-proxy',
     '^~/(.*)$': '<rootDir>/$1',
+    '^swiper/css': 'identity-obj-proxy',
+    '^swiper/modules$':
+      '<rootDir>/node_modules/swiper/modules/index.mjs',
+    '^swiper/react$':
+      '<rootDir>/node_modules/swiper/swiper-react.mjs',
     [`^(${pureEsmDependencies})$`]:
       '<rootDir>/node_modules/$1/$1.esm.js',
-    '^swiper/react$':
-      '<rootDir>/node_modules/swiper/react/swiper-react.js',
-    '^swiper/css': 'identity-obj-proxy',
   },
+  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testEnvironment: 'jsdom',
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/.next/',
   ],
-  testEnvironment: 'jsdom',
   transform: {
     '^.+\\.(ts|tsx)$': ['babel-jest', { presets: ['next/babel'] }],
     [`^.*/node_modules/(${pureEsmDependencies})/*`]: [

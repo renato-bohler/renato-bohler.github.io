@@ -6,15 +6,15 @@ import { useInView } from 'react-intersection-observer';
 import styles from './AnimatedIcon.module.css';
 
 type Props = {
-  children: React.ReactNode;
   animationDelay?: number;
+  children: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
 };
 
 const AnimatedIcon: React.FC<Props> = ({
-  children,
   animationDelay = 0,
+  children,
   className,
   style,
 }) => {
@@ -33,12 +33,12 @@ const AnimatedIcon: React.FC<Props> = ({
 
   return (
     <span
-      ref={visible ? null : ref}
       className={classNames(
         { [styles.stub]: !visible },
         styles.container,
         className,
       )}
+      ref={visible ? null : ref}
       style={style}
     >
       {visible && children}

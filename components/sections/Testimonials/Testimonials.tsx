@@ -9,12 +9,13 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { Button } from 'reakit/Button';
-import SwiperInstance, {
+import SwiperInstance from 'swiper';
+import {
   Autoplay,
   Controller,
   EffectCards,
   Navigation,
-} from 'swiper';
+} from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
@@ -24,9 +25,10 @@ import useTheme from '~/hooks/useTheme';
 
 import TestimonialCard from './TestimonialCard/TestimonialCard';
 import TestimonialDivider from './TestimonialDivider/TestimonialDivider';
-import testimonials from './testimonials.const';
-import styles from './Testimonials.module.css';
 import TestimonialSectionTransition from './TestimonialSectionTransition/TestimonialSectionTransition';
+import testimonials from './testimonials.const';
+
+import styles from './Testimonials.module.css';
 
 const Testimonials: React.FC = () => {
   const [ref, inView] = useInView();
@@ -56,7 +58,7 @@ const Testimonials: React.FC = () => {
 
   return (
     <div className={styles.container}>
-      <div id="testimonials" className={styles.anchor} aria-hidden />
+      <div aria-hidden className={styles.anchor} id="testimonials" />
 
       <TestimonialDivider position="top" />
 
@@ -85,15 +87,16 @@ const Testimonials: React.FC = () => {
           </Button>
 
           <Swiper
-            modules={[Autoplay, Controller, EffectCards, Navigation]}
-            effect="cards"
             autoplay={{ delay: 8000 }}
-            navigation={{ prevEl, nextEl }}
+            className={styles.swiper}
+            controller={{ control: swiper }}
+            effect="cards"
             grabCursor
             loop
-            className={styles.swiper}
-            onSwiper={(swiper) => setSwiper(swiper)}
+            modules={[Autoplay, Controller, EffectCards, Navigation]}
+            navigation={{ nextEl, prevEl }}
             onFocus={handleFocus}
+            onSwiper={(swiper) => setSwiper(swiper)}
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={testimonial.author.name}>

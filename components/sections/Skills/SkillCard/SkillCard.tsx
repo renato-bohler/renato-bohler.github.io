@@ -20,32 +20,32 @@ const SkillCardDialog = dynamic(
 );
 
 type Props = {
+  backgroundColor: string;
+  brief?: React.ReactElement;
+  description: React.ReactElement;
+  featured: boolean;
+  icon: React.ReactNode;
   id: string;
   name: string;
-  description: React.ReactElement;
-  brief?: React.ReactElement;
-  icon: React.ReactNode;
-  featured: boolean;
-  backgroundColor: string;
-  textColor: string;
   scrollBarTrackColor?: string;
-  usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
-  yearsExperience?: number;
   studying: boolean;
+  textColor: string;
+  usageLevel: -1 | -2 | -3 | 1 | 2 | 3;
+  yearsExperience?: number;
 };
 
 const USAGE = {
-  [-3]: {
-    Icon: ChevronTripleDownIcon,
-    description: "I haven't used this in the last five years",
+  [-1]: {
+    Icon: ChevronDownIcon,
+    description: "I haven't used this in the last year",
   },
   [-2]: {
     Icon: ChevronDoubleDownIcon,
     description: "I haven't used this in the last two years",
   },
-  [-1]: {
-    Icon: ChevronDownIcon,
-    description: "I haven't used this in the last year",
+  [-3]: {
+    Icon: ChevronTripleDownIcon,
+    description: "I haven't used this in the last five years",
   },
   1: {
     Icon: ChevronUpIcon,
@@ -64,20 +64,20 @@ const USAGE = {
 const STUDYING_LABEL = "I've been studying this recently";
 
 const SkillCard: React.FC<Props> = ({
+  backgroundColor,
+  brief,
+  description,
+  featured,
+  icon,
   id,
   name,
-  description,
-  brief,
-  icon,
-  featured,
-  backgroundColor,
-  textColor,
   scrollBarTrackColor,
+  studying,
+  textColor,
   usageLevel,
   yearsExperience,
-  studying,
 }) => {
-  const { isDarkMode, isContrastMode } = useTheme();
+  const { isContrastMode, isDarkMode } = useTheme();
 
   const { Icon, description: usageDescription } = USAGE[usageLevel];
 
@@ -86,8 +86,8 @@ const SkillCard: React.FC<Props> = ({
   return (
     <div
       className={classNames(styles.card, {
-        [styles.featured]: featured,
         [styles.border]: isContrastMode,
+        [styles.featured]: featured,
       })}
       style={{
         backgroundImage: `linear-gradient(var(--theme-background), var(--theme-background)), radial-gradient(circle at top, ${backgroundColor}, transparent 90%)`,
@@ -109,14 +109,14 @@ const SkillCard: React.FC<Props> = ({
       </div>
       <div className={styles.content}>
         <SkillCardDialog
+          backgroundColor={backgroundColor}
+          description={description}
           dialog={dialog}
+          icon={icon}
           id={id}
           name={name}
-          description={description}
-          icon={icon}
-          backgroundColor={backgroundColor}
-          textColor={textColor}
           scrollBarTrackColor={scrollBarTrackColor}
+          textColor={textColor}
           yearsExperience={yearsExperience}
         />
         <DialogDisclosure {...dialog} className={styles.button}>

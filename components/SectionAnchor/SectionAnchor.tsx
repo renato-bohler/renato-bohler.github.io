@@ -7,13 +7,13 @@ import { SectionName } from '~/consts/sections.const';
 import styles from './SectionAnchor.module.css';
 
 type Props = {
-  sectionName: SectionName;
   onChange: (sectionName: string, inView: boolean) => void;
+  sectionName: SectionName;
 };
 
 const SectionAnchor: React.FC<Props> = ({
-  sectionName,
   onChange,
+  sectionName,
 }) => {
   const [ref, inView] = useInView({ threshold: 0.5 });
 
@@ -21,7 +21,7 @@ const SectionAnchor: React.FC<Props> = ({
     onChange(sectionName, inView);
   }, [onChange, sectionName, inView]);
 
-  return <div ref={ref} className={styles.anchor} aria-hidden />;
+  return <div aria-hidden className={styles.anchor} ref={ref} />;
 };
 
 export default SectionAnchor;

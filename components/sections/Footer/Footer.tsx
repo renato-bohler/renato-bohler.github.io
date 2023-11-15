@@ -3,22 +3,23 @@ import { Button } from 'reakit/Button';
 import useFirstMount from '~/hooks/useFirstMount';
 import * as format from '~/utils/format';
 
-import styles from './Footer.module.css';
 import FooterTransitionTrigger from './FooterTransitionTrigger/FooterTransitionTrigger';
 import MadeBy from './MadeBy/MadeBy';
 
+import styles from './Footer.module.css';
+
 type Props = {
-  onFooterTransitionTrigger: (transitioning: boolean) => void;
-  onNavigationHeaderTrigger: (hide: boolean) => void;
   isNavigationHeaderHidden: boolean;
   onEmailDialogOpen: () => void;
+  onFooterTransitionTrigger: (transitioning: boolean) => void;
+  onNavigationHeaderTrigger: (hide: boolean) => void;
 };
 
 const Footer: React.FC<Props> = ({
-  onFooterTransitionTrigger,
-  onNavigationHeaderTrigger,
   isNavigationHeaderHidden,
   onEmailDialogOpen,
+  onFooterTransitionTrigger,
+  onNavigationHeaderTrigger,
 }) => {
   const lastUpdated = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
 
@@ -33,13 +34,13 @@ const Footer: React.FC<Props> = ({
 
       <footer className={styles.footer}>
         <Button
-          onClick={onEmailDialogOpen}
           className={styles.contactButton}
+          onClick={onEmailDialogOpen}
         >
           <span>Contact me</span>
           <span
-            className={styles.contactButtonDecoration}
             aria-hidden
+            className={styles.contactButtonDecoration}
           >
             {'>'}
           </span>
@@ -68,8 +69,8 @@ const Footer: React.FC<Props> = ({
 
           <a
             href="https://github.com/renato-bohler/renato-bohler.github.io"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Source code
           </a>

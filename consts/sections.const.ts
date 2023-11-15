@@ -8,55 +8,55 @@ import Testimonials from '~/components/sections/Testimonials/Testimonials';
 const TITLE = 'Renato Böhler';
 
 export type SectionName =
-  | typeof HEADER['name']
-  | typeof SECTIONS[number]['name'];
+  | (typeof HEADER)['name']
+  | (typeof SECTIONS)[number]['name'];
 
 export type Section = {
-  name: SectionName;
-  anchor: string;
-  title: string;
   Component:
-    | typeof HEADER['Component']
-    | typeof SECTIONS[number]['Component'];
+    | (typeof HEADER)['Component']
+    | (typeof SECTIONS)[number]['Component'];
+  anchor: string;
+  name: SectionName;
+  title: string;
 };
 
 export const HEADER = {
-  name: 'header',
-  anchor: ' ',
-  title: TITLE,
   Component: Header,
+  anchor: ' ',
+  name: 'header',
+  title: TITLE,
 } as const;
 
 export const SECTIONS = [
   {
-    name: 'about',
-    anchor: '#about',
-    title: `About / ${TITLE}`,
     Component: About,
+    anchor: '#about',
+    name: 'about',
+    title: `About / ${TITLE}`,
   },
   {
-    name: 'testimonials',
-    anchor: '#testimonials',
-    title: `Testimonials / ${TITLE}`,
     Component: Testimonials,
+    anchor: '#testimonials',
+    name: 'testimonials',
+    title: `Testimonials / ${TITLE}`,
   },
   {
-    name: 'skills',
-    anchor: '#skills',
-    title: `Skills / ${TITLE}`,
     Component: Skills,
+    anchor: '#skills',
+    name: 'skills',
+    title: `Skills / ${TITLE}`,
   },
   {
-    name: 'projects',
-    anchor: '#projects',
-    title: `Projects / ${TITLE}`,
     Component: Projects,
+    anchor: '#projects',
+    name: 'projects',
+    title: `Projects / ${TITLE}`,
   },
   {
-    name: 'experience',
-    anchor: '#experience',
-    title: `Experience / ${TITLE}`,
     Component: Experience,
+    anchor: '#experience',
+    name: 'experience',
+    title: `Experience / ${TITLE}`,
   },
 ] as const;
 

@@ -27,42 +27,42 @@ const Links: React.FC<LinksProps> = ({
 }) => (
   <>
     <Button
-      title="E-mail"
-      onClick={onEmailDialogOpen}
       className={styles.social}
+      onClick={onEmailDialogOpen}
+      title="E-mail"
     >
       <AnimatedIcon animationDelay={animate ? 3500 : 0}>
         <EmailIcon />
       </AnimatedIcon>
     </Button>
     <a
-      title="Twitter"
-      href={socials.twitter}
-      target="_blank"
-      rel="noopener noreferrer"
       className={styles.social}
+      href={socials.twitter}
+      rel="noopener noreferrer"
+      target="_blank"
+      title="Twitter"
     >
       <AnimatedIcon animationDelay={animate ? 3000 : 0}>
         <TwitterIcon />
       </AnimatedIcon>
     </a>
     <a
-      title="LinkedIn"
-      href={socials.linkedin}
-      target="_blank"
-      rel="noopener noreferrer"
       className={styles.social}
+      href={socials.linkedin}
+      rel="noopener noreferrer"
+      target="_blank"
+      title="LinkedIn"
     >
       <AnimatedIcon animationDelay={animate ? 2500 : 0}>
         <LinkedInIcon />
       </AnimatedIcon>
     </a>
     <a
-      title="GitHub"
-      href={socials.github}
-      target="_blank"
-      rel="noopener noreferrer"
       className={styles.social}
+      href={socials.github}
+      rel="noopener noreferrer"
+      target="_blank"
+      title="GitHub"
     >
       <AnimatedIcon animationDelay={animate ? 2000 : 0}>
         <GitHubIcon />
@@ -77,8 +77,8 @@ type Props = {
 
 const Socials: React.FC<Props> = ({ onEmailDialogOpen }) => {
   const popover = usePopoverState({
-    placement: 'bottom-start',
     animated: 500,
+    placement: 'bottom-start',
   });
 
   return (

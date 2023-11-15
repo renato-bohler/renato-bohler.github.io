@@ -9,10 +9,11 @@ import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
 import ArrowDownIcon from '~/components/icons/ArrowDown';
 import useTheme from '~/hooks/useTheme';
 
-import styles from './Header.module.css';
 import SocialLinks from './SocialLinks/SocialLinks';
-import useHeaderTypingEffect from './useHeaderTypingEffect';
 import WavyBackground from './WavyBackground/WavyBackground';
+import useHeaderTypingEffect from './useHeaderTypingEffect';
+
+import styles from './Header.module.css';
 
 const SUBTITLES = [
   'react developer',
@@ -42,14 +43,14 @@ const Header: React.FC<Props> = ({
   const [isScrollHintVisible, setScrollHintVisible] = useState(false);
 
   const {
-    ref,
-    inView,
     firstName,
-    lastName,
-    subtitle,
+    inView,
     isFirstNameTypingComplete,
-    isLastNameTypingComplete,
     isFullNameTypingComplete,
+    isLastNameTypingComplete,
+    lastName,
+    ref,
+    subtitle,
   } = useHeaderTypingEffect({
     firstName: 'renato',
     lastName: 'Böhler',
@@ -69,7 +70,7 @@ const Header: React.FC<Props> = ({
   }, [inView]);
 
   return (
-    <header ref={ref} className={styles.header}>
+    <header className={styles.header} ref={ref}>
       <h1
         className={classNames(styles.heading, {
           [styles.navigationHeaderHidden]: isNavigationHeaderHidden,
@@ -77,15 +78,15 @@ const Header: React.FC<Props> = ({
         data-folded={!inView}
       >
         <span
+          aria-hidden
           className={classNames(styles.title, {
             [styles.caret]: !isFirstNameTypingComplete,
           })}
-          aria-hidden
         >
           <a
+            className={styles.initial}
             href="#"
             title="Scroll back to top"
-            className={styles.initial}
           >
             {firstName[0]}
           </a>
@@ -98,16 +99,16 @@ const Header: React.FC<Props> = ({
         </span>
 
         <span
+          aria-hidden
           className={classNames(styles.title, {
             [styles.caret]:
               isFirstNameTypingComplete && !isLastNameTypingComplete,
           })}
-          aria-hidden
         >
           <a
+            className={styles.initial}
             href="#"
             title="Scroll back to top"
-            className={styles.initial}
           >
             {lastName[0]}
           </a>
@@ -120,11 +121,11 @@ const Header: React.FC<Props> = ({
         </span>
 
         <span
+          aria-hidden
           className={classNames(styles.subtitle, {
             [styles.caret]:
               isFirstNameTypingComplete && isLastNameTypingComplete,
           })}
-          aria-hidden
         >
           {subtitle}
         </span>
@@ -152,7 +153,7 @@ const Header: React.FC<Props> = ({
 
       {isScrollHintVisible && (
         <div className={styles.scrollDown}>
-          <AnimatedIcon className={styles.scrollDownIcon} aria-hidden>
+          <AnimatedIcon aria-hidden className={styles.scrollDownIcon}>
             <ArrowDownIcon />
           </AnimatedIcon>
           <span className={styles.scrollDownLabel}>Scroll down</span>

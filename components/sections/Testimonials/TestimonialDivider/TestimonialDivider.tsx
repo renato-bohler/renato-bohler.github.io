@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import styles from './TestimonialDivider.module.css';
 
 type Props = {
-  position: 'top' | 'bottom';
+  position: 'bottom' | 'top';
 };
 
 const TOP_VIEWBOX = '0 142 400 164';
@@ -21,7 +21,7 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
     return (
       <>
         <svg
-          ref={ref}
+          aria-hidden
           className={classNames(
             styles.divider,
             styles.dividerStroke,
@@ -29,9 +29,9 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
               [styles.animate]: inView,
             },
           )}
-          viewBox={TOP_VIEWBOX}
           preserveAspectRatio="xMinYMax slice"
-          aria-hidden
+          ref={ref}
+          viewBox={TOP_VIEWBOX}
         >
           <path
             d="M -30.7 201.426 C -24.514 203.225 -6.801 208.333 -6.3 208.5 C 21.6 220.5 49.8 231.8 77.2 244.7 C 115 262.4 154.5 270.7 196.1 269.8 C 227.3 269.1 258.1 264.2 289 259.7 C 313.1 256.2 337.3 253 361.7 254.2 C 379.91 255.09 397.464 258.601 413.94 266.003 L 413.94 343.161 L -30.7 343.829 L -30.7 201.426 Z"
@@ -40,6 +40,7 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
           <path d={TOP_STROKE_PATH} fill="none" />
         </svg>
         <svg
+          aria-hidden
           className={classNames(
             styles.dividerGlow,
             styles.dividerStroke,
@@ -47,9 +48,8 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
               [styles.animate]: inView,
             },
           )}
-          viewBox={TOP_VIEWBOX}
           preserveAspectRatio="xMinYMax slice"
-          aria-hidden
+          viewBox={TOP_VIEWBOX}
         >
           <path d={TOP_STROKE_PATH} />
         </svg>
@@ -59,13 +59,13 @@ const TestimonialDivider: React.FC<Props> = ({ position }) => {
 
   return (
     <svg
-      ref={ref}
+      aria-hidden
       className={classNames(styles.dividerBottom, {
         [styles.animate]: inView,
       })}
-      viewBox="-10 133 600 80"
       preserveAspectRatio="xMinYMax slice"
-      aria-hidden
+      ref={ref}
+      viewBox="-10 133 600 80"
     >
       <path
         d="M -14.658 120.423 L 600.516 120.423 L 600.516 155.761 C 591.254 152.531 581.914 149.539 572.386 147.11 C 542.986 139.71 513.286 138.31 483.086 141.11 C 449.486 144.21 418.086 155.31 386.186 165.11 C 359.986 173.11 333.786 181.11 306.686 185.31 C 280.486 189.41 254.186 189.71 227.786 188.21 C 200.886 186.71 174.086 183.01 147.486 178.61 C 123.586 174.61 99.886 169.31 75.986 165.11 C 53.686 161.21 31.586 157.31 10.086 149.91 C 1.735 147.068 -6.495 143.96 -14.658 140.698 Z"

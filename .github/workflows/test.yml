@@ -43,9 +43,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_CONTACT_ENDPOINT: https://kixlofqgt4ph6k5zgdbtese7pa0dqwka.lambda-url.us-east-1.on.aws
-        run: |
-          yarn build
-          yarn export
+        run: yarn build
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:

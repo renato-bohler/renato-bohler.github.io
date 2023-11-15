@@ -7,13 +7,14 @@ import PauseIcon from '~/components/icons/Pause';
 import PlayIcon from '~/components/icons/Play';
 
 import { AudioMessage } from '../../messages.types';
+
 import styles from './AudioChatMessage.module.css';
 
 type Props = {
   message: AudioMessage;
 };
 
-type Status = 'loading' | 'idle' | 'paused' | 'playing';
+type Status = 'idle' | 'loading' | 'paused' | 'playing';
 
 const formatTime = (seconds: number) => {
   const date = new Date(0);
@@ -80,10 +81,10 @@ const AudioChatMessage: React.FC<Props> = ({ message }) => {
   return (
     <>
       <audio
-        ref={ref}
         onCanPlayThrough={handleFinishLoad}
-        onTimeUpdate={handleTimeUpdate}
         onEnded={handleEnd}
+        onTimeUpdate={handleTimeUpdate}
+        ref={ref}
       >
         <source
           src={message.content.src}
@@ -93,15 +94,15 @@ const AudioChatMessage: React.FC<Props> = ({ message }) => {
       </audio>
       <div className={styles.container}>
         <Button
-          className={styles.button}
-          onClick={handleToggle}
           aria-label={
             status === 'loading'
               ? 'Loading message...'
               : status !== 'playing'
-              ? 'Play message'
-              : 'Pause message'
+                ? 'Play message'
+                : 'Pause message'
           }
+          className={styles.button}
+          onClick={handleToggle}
         >
           {status === 'loading' && <LoadingIcon />}
           {status === 'playing' && <PauseIcon />}

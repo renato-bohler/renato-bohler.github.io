@@ -8,16 +8,17 @@ import { RepositoryInfo } from '~/api/fetchProjectDetails';
 
 import ProjectCard from './ProjectCard/ProjectCard';
 import getProjects from './projects.const';
+
 import styles from './Projects.module.css';
 
 type Props = {
-  repositories: RepositoryInfo[];
   onEmailDialogOpen: () => void;
+  repositories: RepositoryInfo[];
 };
 
 const Projects: React.FC<Props> = ({
-  repositories,
   onEmailDialogOpen,
+  repositories,
 }) => {
   const [ref, inView] = useInView({
     threshold: 0.5,
@@ -27,7 +28,7 @@ const Projects: React.FC<Props> = ({
 
   return (
     <section className={styles.section}>
-      <div id="projects" aria-hidden className={styles.anchor} />
+      <div aria-hidden className={styles.anchor} id="projects" />
 
       <h2 className={styles.title} ref={ref}>
         <VisuallyHidden>{title}</VisuallyHidden>
@@ -45,10 +46,10 @@ const Projects: React.FC<Props> = ({
 
                       return (
                         <span
-                          key={index}
                           className={classNames({
                             [styles.animate]: inView,
                           })}
+                          key={index}
                           style={
                             {
                               '--i': 0.3 + 0.1 * index,

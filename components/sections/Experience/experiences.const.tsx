@@ -1,45 +1,38 @@
 const agrotis: Company = {
+  color: '#00735c',
   logo: 'agrotis',
-  color: '#00876e',
 };
 
 const ciandt: Company = {
-  logo: 'ciandt',
   color: '#ed1941',
+  logo: 'ciandt',
 };
 
 const intive: Company = {
-  logo: 'intive',
   color: '#007ac9',
+  logo: 'intive',
 };
 
 const shippo: Company = {
-  logo: 'shippo',
   color: '#93d33d',
+  logo: 'shippo',
   padding: 4,
 };
 
 const experiences: Experience[] = [
   {
-    id: 'shippo',
-    title: 'Shippo',
-    jobTitle: 'Front end developer',
     company: shippo,
+    description: <></>,
+    id: 'shippo',
+    jobTitle: 'Front end developer',
     period: {
       from: new Date('2023-08-01T00:00:00Z'),
     },
-    description: <></>,
+    title: 'Shippo',
   },
   {
-    id: 'intive-1',
-    title: 'Pizzeria Marketplace App',
-    jobTitle: 'Front end developer',
     company: intive,
     consultant: true,
-    period: {
-      from: new Date('2021-11-01T00:00:00Z'),
-      to: new Date('2023-08-01T00:00:00Z'),
-    },
     description: (
       <>
         <p>
@@ -60,8 +53,8 @@ const experiences: Experience[] = [
           setting up the bundler (
           <a
             href="https://vitejs.dev/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Vite
           </a>
@@ -69,8 +62,8 @@ const experiences: Experience[] = [
           (using{' '}
           <a
             href="https://intuit.github.io/auto/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Auto
           </a>
@@ -92,17 +85,17 @@ const experiences: Experience[] = [
         </p>
       </>
     ),
+    id: 'intive-1',
+    jobTitle: 'Front end developer',
+    period: {
+      from: new Date('2021-11-01T00:00:00Z'),
+      to: new Date('2023-08-01T00:00:00Z'),
+    },
+    title: 'Pizzeria Marketplace App',
   },
   {
-    id: 'ci&t-3',
-    title: 'Digital Mortgage & Fulfillment Solutions',
-    jobTitle: 'Front end developer',
     company: ciandt,
     consultant: true,
-    period: {
-      from: new Date('2021-03-01T00:00:00Z'),
-      to: new Date('2021-11-01T00:00:00Z'),
-    },
     description: (
       <>
         <p>
@@ -124,17 +117,17 @@ const experiences: Experience[] = [
         </p>
       </>
     ),
+    id: 'ci&t-3',
+    jobTitle: 'Front end developer',
+    period: {
+      from: new Date('2021-03-01T00:00:00Z'),
+      to: new Date('2021-11-01T00:00:00Z'),
+    },
+    title: 'Digital Mortgage & Fulfillment Solutions',
   },
   {
-    id: 'ci&t-2',
-    title: 'B2B Travel',
-    jobTitle: 'Front end developer',
     company: ciandt,
     consultant: true,
-    period: {
-      from: new Date('2020-09-01T00:00:00Z'),
-      to: new Date('2021-03-01T00:00:00Z'),
-    },
     description: (
       <>
         <p>
@@ -159,17 +152,17 @@ const experiences: Experience[] = [
         </p>
       </>
     ),
+    id: 'ci&t-2',
+    jobTitle: 'Front end developer',
+    period: {
+      from: new Date('2020-09-01T00:00:00Z'),
+      to: new Date('2021-03-01T00:00:00Z'),
+    },
+    title: 'B2B Travel',
   },
   {
-    id: 'ci&t-1',
-    title: 'Healthcare Marketplace App',
-    jobTitle: 'Mobile & Front end developer',
     company: ciandt,
     consultant: true,
-    period: {
-      from: new Date('2020-03-01T00:00:00Z'),
-      to: new Date('2020-09-01T00:00:00Z'),
-    },
     description: (
       <>
         <p>
@@ -183,8 +176,8 @@ const experiences: Experience[] = [
           scheduling, payment, and telemedicine using{' '}
           <a
             href="https://www.twilio.com/en-us/video/video-api"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Twilio&apos;s Video API
           </a>
@@ -198,23 +191,23 @@ const experiences: Experience[] = [
         </p>
       </>
     ),
+    id: 'ci&t-1',
+    jobTitle: 'Mobile & Front end developer',
+    period: {
+      from: new Date('2020-03-01T00:00:00Z'),
+      to: new Date('2020-09-01T00:00:00Z'),
+    },
+    title: 'Healthcare Marketplace App',
   },
   {
-    id: 'agrotis',
-    title: 'Agrotis',
-    jobTitle: 'Full stack developer',
     company: agrotis,
-    period: {
-      from: new Date('2016-10-01T00:00:00Z'),
-      to: new Date('2020-03-01T00:00:00Z'),
-    },
     description: (
       <>
         <p>
           <a
             href="https://www.agrotis.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <strong>Agrotis</strong>
           </a>{' '}
@@ -234,8 +227,8 @@ const experiences: Experience[] = [
           <strong>custom rich text editor</strong> (using{' '}
           <a
             href="https://draftjs.org/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             <code>draft-js</code>
           </a>
@@ -246,8 +239,8 @@ const experiences: Experience[] = [
           go (using{' '}
           <a
             href="https://mqtt.org/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             MQTT
           </a>
@@ -255,8 +248,8 @@ const experiences: Experience[] = [
           <strong>integrations with SAP Business One</strong> through{' '}
           <a
             href="https://kafka.apache.org/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Apache Kafka
           </a>
@@ -269,6 +262,13 @@ const experiences: Experience[] = [
         </p>
       </>
     ),
+    id: 'agrotis',
+    jobTitle: 'Full stack developer',
+    period: {
+      from: new Date('2016-10-01T00:00:00Z'),
+      to: new Date('2020-03-01T00:00:00Z'),
+    },
+    title: 'Agrotis',
   },
 ];
 
@@ -278,19 +278,19 @@ export type Period = {
 };
 
 export type Company = {
-  logo: string;
   color: string;
+  logo: string;
   padding?: number;
 };
 
 export type Experience = {
-  id: string;
-  title: string;
-  jobTitle: string;
   company: Company;
   consultant?: boolean;
-  period: Period;
   description: React.ReactElement;
+  id: string;
+  jobTitle: string;
+  period: Period;
+  title: string;
 };
 
 export default experiences;

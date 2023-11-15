@@ -1,5 +1,9 @@
-import '@testing-library/jest-dom/extend-expect';
+import '@testing-library/jest-dom';
 import 'jest-axe/extend-expect';
+
+import { TextEncoder } from 'util';
+
+global.TextEncoder = TextEncoder;
 
 jest.mock('next/dynamic', () => ({
   __esModule: true,
@@ -35,15 +39,15 @@ Object.defineProperty(window, 'IntersectionObserver', {
 });
 
 Object.defineProperty(window, 'matchMedia', {
-  writable: true,
   value: jest.fn().mockImplementation((query) => ({
+    addEventListener: jest.fn(),
+    addListener: jest.fn(), // Deprecated
+    dispatchEvent: jest.fn(),
     matches: false,
     media: query,
     onchange: null,
-    addListener: jest.fn(), // Deprecated
-    removeListener: jest.fn(), // Deprecated
-    addEventListener: jest.fn(),
     removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
+    removeListener: jest.fn(), // Deprecated
   })),
+  writable: true,
 });

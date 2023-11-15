@@ -6,25 +6,25 @@ import * as format from '~/utils/format';
 import styles from './RepositoryDetails.module.css';
 
 type Props = {
-  title: string;
-  owner: string;
-  name: string;
-  stars: number;
-  monthlyDownloads?: number;
   lastUpdate: string;
   liveUrl: string;
+  monthlyDownloads?: number;
+  name: string;
+  owner: string;
   repositoryUrl: string;
+  stars: number;
+  title: string;
 };
 
 const RepositoryDetails: React.FC<Props> = ({
-  title,
-  owner,
-  name,
-  stars,
-  monthlyDownloads,
   lastUpdate,
   liveUrl,
+  monthlyDownloads,
+  name,
+  owner,
   repositoryUrl,
+  stars,
+  title,
 }) => {
   const isFirstMount = useFirstMount();
 
@@ -33,8 +33,8 @@ const RepositoryDetails: React.FC<Props> = ({
       <div className={styles.links}>
         <a
           href={liveUrl}
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
           title={`See "${title}" in action`}
         >
           Live
@@ -42,8 +42,8 @@ const RepositoryDetails: React.FC<Props> = ({
         </a>
         <a
           href={repositoryUrl}
-          target="_blank"
           rel="noopener noreferrer"
+          target="_blank"
           title={`See "${owner}/${name}" on GitHub`}
         >
           <GitHubIcon />

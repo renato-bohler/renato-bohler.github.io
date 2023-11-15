@@ -2,41 +2,39 @@ import { VisuallyHidden } from 'reakit/VisuallyHidden';
 import { useSwiperSlide } from 'swiper/react';
 
 import styles from './TestimonialCard.module.css';
+
 type Props = {
-  children: React.ReactNode;
-  authorPicture: string;
   authorName: string;
+  authorPicture: string;
   authorRole: string;
+  children: React.ReactNode;
   currentTestimonial: number;
   totalTestimonial: number;
 };
 
 const TestimonialCard: React.FC<Props> = ({
-  children,
-  authorPicture,
   authorName,
+  authorPicture,
   authorRole,
+  children,
   currentTestimonial,
   totalTestimonial,
 }) => {
   const slide = useSwiperSlide();
 
   return (
-    <div
-      className={styles.card}
-      aria-hidden={slide.isDuplicate || !slide.isActive}
-    >
+    <div aria-hidden={!slide.isActive} className={styles.card}>
       <VisuallyHidden>
         Testimonial {currentTestimonial} out of {totalTestimonial}.{' '}
         {authorName}, {authorRole}.
       </VisuallyHidden>
 
       <div className={styles.quote}>{children}</div>
-      <div className={styles.author} aria-hidden>
+      <div aria-hidden className={styles.author}>
         <img
-          src={authorPicture}
           alt={`${authorName}'s profile picture'`}
           className={styles.authorPicture}
+          src={authorPicture}
         />
         <div className={styles.authorTitle}>
           <span className={styles.authorName}>{authorName}</span>

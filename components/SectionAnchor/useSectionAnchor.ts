@@ -1,19 +1,19 @@
 import { useCallback, useEffect, useState } from 'react';
 
 import {
+  SECTIONS_WITH_HEADER,
   Section,
   SectionName,
-  SECTIONS_WITH_HEADER,
 } from '~/consts/sections.const';
 
 type SectionInView = {
-  name: SectionName;
   inView: boolean;
+  name: SectionName;
 };
 
 const useSectionAnchor = (): {
-  title: string;
   handleSectionChange: (sectionName: string, inView: boolean) => void;
+  title: string;
 } => {
   const [activeSection, setActiveSection] = useState<Section>(
     SECTIONS_WITH_HEADER[0],
@@ -21,8 +21,8 @@ const useSectionAnchor = (): {
 
   const [sections, setSections] = useState<SectionInView[]>(
     SECTIONS_WITH_HEADER.map((section) => ({
-      name: section.name,
       inView: false,
+      name: section.name,
     })),
   );
 
@@ -33,8 +33,8 @@ const useSectionAnchor = (): {
           if (section.name !== sectionName) return section;
 
           return {
-            name: section.name,
             inView,
+            name: section.name,
           };
         }),
       );
@@ -44,9 +44,8 @@ const useSectionAnchor = (): {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      const sectionName = sections.find(
-        (section) => section.inView,
-      )?.name;
+      const sectionName = sections.find((section) => section.inView)
+        ?.name;
       const section = SECTIONS_WITH_HEADER.find(
         (section) => section.name === sectionName,
       );
@@ -62,7 +61,7 @@ const useSectionAnchor = (): {
     history.replaceState({}, '', activeSection.anchor);
   }, [activeSection]);
 
-  return { title: activeSection.title, handleSectionChange };
+  return { handleSectionChange, title: activeSection.title };
 };
 
 export default useSectionAnchor;

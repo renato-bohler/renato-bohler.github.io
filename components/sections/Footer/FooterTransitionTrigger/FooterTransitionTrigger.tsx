@@ -30,12 +30,12 @@ const FooterTransitionTrigger: React.FC<Props> = ({
   return (
     <>
       <div
-        ref={navigationBarHideTriggerRef}
         className={styles.navHeaderHideTrigger}
+        ref={navigationBarHideTriggerRef}
       />
       <div
-        ref={footerTransitionTriggerRef}
         className={styles.footerTransitionTrigger}
+        ref={footerTransitionTriggerRef}
       />
     </>
   );

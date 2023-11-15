@@ -1,37 +1,5 @@
 const skills: Skill[] = [
   {
-    id: 'javascript',
-    name: 'JavaScript',
-    usageLevel: 3,
-    yearsExperience: 7,
-    colors: {
-      normal: {
-        background: '#f7df1e',
-        text: '#292e31',
-      },
-      contrast: {
-        background: '#f7df1e',
-        text: 'black',
-      },
-      scrollBar: { trackColor: '#645a0a' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
-      const colors = getColors(this, isContrastMode);
-
-      return (
-        <svg aria-hidden>
-          <use
-            xlinkHref={`#${this.id}`}
-            stroke={colors.background}
-            strokeWidth={35}
-            strokeLinejoin="round"
-          />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
-        </svg>
-      );
-    },
-    studying: true,
-    featured: true,
     brief: (
       <>
         <span>
@@ -46,6 +14,17 @@ const skills: Skill[] = [
         </span>
       </>
     ),
+    colors: {
+      contrast: {
+        background: '#f7df1e',
+        text: 'black',
+      },
+      normal: {
+        background: '#f7df1e',
+        text: '#292e31',
+      },
+      scrollBar: { trackColor: '#645a0a' },
+    },
     description: (
       <>
         <p>
@@ -75,39 +54,40 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'node-js',
-    name: 'Node.js',
-    usageLevel: 1,
-    yearsExperience: 1.5,
-    colors: {
-      normal: {
-        background: '#82cd2a',
-        text: '#292e31',
-      },
-      contrast: {
-        background: '#aae06a',
-        text: 'black',
-      },
-      scrollBar: { trackColor: '#3c6011' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: true,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={10}
+            strokeLinejoin="round"
+            strokeWidth={35}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
-    studying: false,
-    featured: false,
+    id: 'javascript',
+    name: 'JavaScript',
+    studying: true,
+    usageLevel: 3,
+    yearsExperience: 7,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#aae06a',
+        text: 'black',
+      },
+      normal: {
+        background: '#82cd2a',
+        text: '#292e31',
+      },
+      scrollBar: { trackColor: '#3c6011' },
+    },
     description: (
       <>
         <p>
@@ -126,8 +106,8 @@ const skills: Skill[] = [
           instance an automated{' '}
           <a
             href="https://www.ada.gov/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             ADA compliance
           </a>{' '}
@@ -135,39 +115,39 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'regexp',
-    name: 'RegExp',
-    usageLevel: 2,
-    colors: {
-      normal: {
-        background: '#01814e',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#004026',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#69d7ab' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={125}
-            strokeLinejoin="round"
+            strokeWidth={10}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
-    studying: true,
-    featured: false,
+    id: 'node-js',
+    name: 'Node.js',
+    studying: false,
+    usageLevel: 1,
+    yearsExperience: 1.5,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#004026',
+        text: 'white',
+      },
+      normal: {
+        background: '#01814e',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#69d7ab' },
+    },
     description: (
       <>
         <p>
@@ -188,40 +168,28 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'typescript',
-    name: 'TypeScript',
-    usageLevel: 3,
-    yearsExperience: 4,
-    colors: {
-      normal: {
-        background: '#007acd',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#005c9a',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#8dd1ff' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={35}
             strokeLinejoin="round"
+            strokeWidth={125}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
+    id: 'regexp',
+    name: 'RegExp',
     studying: true,
-    featured: true,
+    usageLevel: 2,
+  },
+  {
     brief: (
       <>
         <span>
@@ -236,6 +204,17 @@ const skills: Skill[] = [
         </span>
       </>
     ),
+    colors: {
+      contrast: {
+        background: '#005c9a',
+        text: 'white',
+      },
+      normal: {
+        background: '#007acd',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#8dd1ff' },
+    },
     description: (
       <>
         <p>
@@ -268,40 +247,40 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'git',
-    name: 'Git',
-    usageLevel: 3,
-    yearsExperience: 6,
-    colors: {
-      normal: {
-        background: '#f34f29',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#a92709',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#ffbdaf' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: true,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}-1`}
-            fill={colors.background}
             stroke={colors.background}
-            strokeWidth={10}
+            strokeLinejoin="round"
+            strokeWidth={35}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}-2`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
-    studying: false,
-    featured: false,
+    id: 'typescript',
+    name: 'TypeScript',
+    studying: true,
+    usageLevel: 3,
+    yearsExperience: 4,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#a92709',
+        text: 'white',
+      },
+      normal: {
+        background: '#f34f29',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#ffbdaf' },
+    },
     description: (
       <>
         <p>
@@ -319,8 +298,8 @@ const skills: Skill[] = [
           throughout my career — most of them were variations of the{' '}
           <a
             href="https://nvie.com/posts/a-successful-git-branching-model"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Git Flow
           </a>
@@ -331,8 +310,8 @@ const skills: Skill[] = [
           messages according to the{' '}
           <a
             href="https://www.conventionalcommits.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Conventional Commits
           </a>
@@ -340,38 +319,40 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'ci-cd',
-    name: 'CI/CD',
-    usageLevel: 3,
-    colors: {
-      normal: {
-        background: '#c0c0c0',
-        text: '#292e31',
-      },
-      contrast: {
-        background: '#c0c0c0',
-        text: 'black',
-      },
-      scrollBar: { trackColor: '#4c4c4c' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
+            fill={colors.background}
             stroke={colors.background}
-            strokeWidth={5}
+            strokeWidth={10}
+            xlinkHref={`#${this.id}-1`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}-2`} />
         </svg>
       );
     },
+    id: 'git',
+    name: 'Git',
     studying: false,
-    featured: false,
+    usageLevel: 3,
+    yearsExperience: 6,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#c0c0c0',
+        text: 'black',
+      },
+      normal: {
+        background: '#c0c0c0',
+        text: '#292e31',
+      },
+      scrollBar: { trackColor: '#4c4c4c' },
+    },
     description: (
       <>
         <p>
@@ -380,8 +361,8 @@ const skills: Skill[] = [
           while developing{' '}
           <a
             href="https://bohler.dev/redux-form-input-masks"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             redux-form-input-masks
           </a>
@@ -402,8 +383,8 @@ const skills: Skill[] = [
           <strong>ADA compliance bot</strong>. This bot would use{' '}
           <a
             href="https://www.deque.com/axe"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             axe
           </a>{' '}
@@ -419,39 +400,27 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'react',
-    name: 'React',
-    usageLevel: 3,
-    yearsExperience: 6,
-    colors: {
-      normal: {
-        background: '#61dbfb',
-        text: '#222222',
-      },
-      contrast: {
-        background: '#61dbfb',
-        text: 'black',
-      },
-      scrollBar: { trackColor: '#2e4f58' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={30}
+            strokeWidth={5}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
-    studying: true,
-    featured: true,
+    id: 'ci-cd',
+    name: 'CI/CD',
+    studying: false,
+    usageLevel: 3,
+  },
+  {
     brief: (
       <>
         <span>
@@ -469,6 +438,17 @@ const skills: Skill[] = [
         </span>
       </>
     ),
+    colors: {
+      contrast: {
+        background: '#61dbfb',
+        text: 'black',
+      },
+      normal: {
+        background: '#61dbfb',
+        text: '#222222',
+      },
+      scrollBar: { trackColor: '#2e4f58' },
+    },
     description: (
       <>
         <p>
@@ -489,8 +469,8 @@ const skills: Skill[] = [
           from{' '}
           <a
             href="https://nextjs.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Next.js
           </a>
@@ -501,16 +481,16 @@ const skills: Skill[] = [
           are open-source projects:{' '}
           <a
             href="https://bohler.dev/logossim"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Logossim
           </a>{' '}
           and{' '}
           <a
             href="https://bohler.dev/what-the-filter"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             what the filter?
           </a>
@@ -525,8 +505,8 @@ const skills: Skill[] = [
             customized rich text editors using{' '}
             <a
               href="https://draftjs.org"
-              target="_blank"
               rel="noopener noreferrer"
+              target="_blank"
             >
               <code>draft-js</code>
             </a>
@@ -539,24 +519,24 @@ const skills: Skill[] = [
           for component libraries using{' '}
           <a
             href="https://vitejs.dev/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Vite
           </a>{' '}
           (for bundling),{' '}
           <a
             href="https://intuit.github.io/auto/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Auto
           </a>{' '}
           (for automated releasing), and{' '}
           <a
             href="https://storybook.js.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Storybook
           </a>
@@ -568,16 +548,16 @@ const skills: Skill[] = [
           the opportunity to{' '}
           <a
             href="https://github.com/reactjs/pt-BR.reactjs.org/pull/31"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             collaborate
           </a>{' '}
           with the original translation of the{' '}
           <a
             href="https://pt-br.reactjs.org/docs/react-api.html"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             API Reference (in Portuguese)
           </a>{' '}
@@ -588,41 +568,28 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'css',
-    name: 'CSS',
-    usageLevel: 3,
-    yearsExperience: 7,
-    colors: {
-      normal: {
-        background: '#1b73ba',
-        text: '#ffffff',
-      },
-      contrast: {
-        background: '#1b73ba',
-        text: '#ffffff',
-      },
-      scrollBar: { trackColor: '#5fbbd3' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: true,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}-1`}
-            fill={colors.background}
             stroke={colors.background}
-            strokeWidth={10}
+            strokeWidth={30}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}-2`} fill="#1c88c7" />
-          <use xlinkHref={`#${this.id}-3`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
+    id: 'react',
+    name: 'React',
     studying: true,
-    featured: true,
+    usageLevel: 3,
+    yearsExperience: 6,
+  },
+  {
     brief: (
       <>
         <span>
@@ -638,6 +605,17 @@ const skills: Skill[] = [
         </span>
       </>
     ),
+    colors: {
+      contrast: {
+        background: '#1b73ba',
+        text: '#ffffff',
+      },
+      normal: {
+        background: '#1b73ba',
+        text: '#ffffff',
+      },
+      scrollBar: { trackColor: '#5fbbd3' },
+    },
     description: (
       <>
         <p>
@@ -660,16 +638,16 @@ const skills: Skill[] = [
           keep myself up to date with new CSS features by reading the{' '}
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/CSS"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             CSS MDN Docs
           </a>{' '}
           and{' '}
           <a
             href="https://web.dev/blog/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             web.dev&apos;s blog
           </a>{' '}
@@ -687,8 +665,8 @@ const skills: Skill[] = [
           I also like checking{' '}
           <a
             href="https://www.awwwards.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Awwwarded
           </a>{' '}
@@ -701,24 +679,24 @@ const skills: Skill[] = [
           like{' '}
           <a
             href="https://sass-lang.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             SASS
           </a>
           , but not so much with CSS frameworks like{' '}
           <a
             href="https://getbootstrap.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Bootstrap
           </a>{' '}
           or{' '}
           <a
             href="https://tailwindcss.com/"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Tailwind
           </a>
@@ -726,39 +704,41 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'react-native',
-    name: 'React Native',
-    usageLevel: 1,
-    yearsExperience: 1,
-    colors: {
-      normal: {
-        background: '#222222',
-        text: '#61dbfb',
-      },
-      contrast: {
-        background: '#222222',
-        text: '#7ee1fb',
-      },
-      scrollBar: { trackColor: '#5fbbd3' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: true,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref="#react"
+            fill={colors.background}
             stroke={colors.background}
-            strokeWidth={30}
+            strokeWidth={10}
+            xlinkHref={`#${this.id}-1`}
           />
-          <use xlinkHref="#react" fill={colors.text} />
+          <use fill="#1c88c7" xlinkHref={`#${this.id}-2`} />
+          <use fill={colors.text} xlinkHref={`#${this.id}-3`} />
         </svg>
       );
     },
+    id: 'css',
+    name: 'CSS',
     studying: true,
-    featured: false,
+    usageLevel: 3,
+    yearsExperience: 7,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#222222',
+        text: '#7ee1fb',
+      },
+      normal: {
+        background: '#222222',
+        text: '#61dbfb',
+      },
+      scrollBar: { trackColor: '#5fbbd3' },
+    },
     description: (
       <>
         <p>
@@ -780,16 +760,16 @@ const skills: Skill[] = [
           healthcare marketplace app (
           <a
             href="https://play.google.com/store/apps/details?id=com.compar.tudobem"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Android
           </a>
           ,{' '}
           <a
             href="https://apps.apple.com/br/app/tudobem/id1527314081"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             iOS
           </a>{' '}
@@ -798,8 +778,8 @@ const skills: Skill[] = [
           knowledge falls short. I know people use tools like{' '}
           <a
             href="https://fastlane.tools"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             fastlane
           </a>{' '}
@@ -807,39 +787,39 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'redux',
-    name: 'Redux',
-    usageLevel: 1,
-    yearsExperience: 5,
-    colors: {
-      normal: {
-        background: '#6e50b5',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#4e3784',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#b0a0d7' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
             strokeWidth={30}
+            xlinkHref="#react"
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref="#react" />
         </svg>
       );
     },
-    studying: false,
-    featured: false,
+    id: 'react-native',
+    name: 'React Native',
+    studying: true,
+    usageLevel: 1,
+    yearsExperience: 1,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#4e3784',
+        text: 'white',
+      },
+      normal: {
+        background: '#6e50b5',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#b0a0d7' },
+    },
     description: (
       <>
         <p>
@@ -852,8 +832,8 @@ const skills: Skill[] = [
           community around it. Libraries like{' '}
           <a
             href="https://redux-toolkit.js.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Redux Toolkit
           </a>{' '}
@@ -870,40 +850,39 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'angular',
-    name: 'Angular',
-    usageLevel: 1,
-    yearsExperience: 2,
-    colors: {
-      normal: {
-        background: '#dd0031',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#b20027',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#ffa0b6' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={80}
-            strokeLinejoin="round"
+            strokeWidth={30}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
+    id: 'redux',
+    name: 'Redux',
     studying: false,
-    featured: false,
+    usageLevel: 1,
+    yearsExperience: 5,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#b20027',
+        text: 'white',
+      },
+      normal: {
+        background: '#dd0031',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#ffa0b6' },
+    },
     description: (
       <>
         <p>
@@ -929,40 +908,40 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'vue',
-    name: 'Vue',
-    usageLevel: -2,
-    yearsExperience: 0.5,
-    colors: {
-      normal: {
-        background: '#41b883',
-        text: '#292e31',
-      },
-      contrast: {
-        background: '#7dd1ac',
-        text: 'black',
-      },
-      scrollBar: { trackColor: '#292e31' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}-1`}
             stroke={colors.background}
-            strokeWidth={10}
+            strokeLinejoin="round"
+            strokeWidth={80}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}-2`} fill={colors.background} />
-          <use xlinkHref={`#${this.id}-3`} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
+    id: 'angular',
+    name: 'Angular',
     studying: false,
-    featured: false,
+    usageLevel: 1,
+    yearsExperience: 2,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#7dd1ac',
+        text: 'black',
+      },
+      normal: {
+        background: '#41b883',
+        text: '#292e31',
+      },
+      scrollBar: { trackColor: '#292e31' },
+    },
     description: (
       <>
         <p>
@@ -976,39 +955,40 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'graphql',
-    name: 'GraphQL',
-    usageLevel: 1,
-    yearsExperience: 1,
-    colors: {
-      normal: {
-        background: '#e535ab',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#901266',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#ffc9ed' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={50}
+            strokeWidth={10}
+            xlinkHref={`#${this.id}-1`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.background} xlinkHref={`#${this.id}-2`} />
+          <use xlinkHref={`#${this.id}-3`} />
         </svg>
       );
     },
-    studying: true,
-    featured: false,
+    id: 'vue',
+    name: 'Vue',
+    studying: false,
+    usageLevel: -2,
+    yearsExperience: 0.5,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#901266',
+        text: 'white',
+      },
+      normal: {
+        background: '#e535ab',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#ffc9ed' },
+    },
     description: (
       <>
         <p>
@@ -1023,8 +1003,8 @@ const skills: Skill[] = [
           I have professional experience using GraphQL with{' '}
           <a
             href="https://www.apollographql.com"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Apollo
           </a>{' '}
@@ -1033,8 +1013,8 @@ const skills: Skill[] = [
         <p>
           <a
             href="https://relay.dev"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Relay
           </a>{' '}
@@ -1044,39 +1024,39 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'sql',
-    name: 'SQL',
-    usageLevel: -2,
-    yearsExperience: 2,
-    colors: {
-      normal: {
-        background: '#545454',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#545454',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#a1a1a1' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
-            strokeWidth={30}
+            strokeWidth={50}
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
-    studying: false,
-    featured: false,
+    id: 'graphql',
+    name: 'GraphQL',
+    studying: true,
+    usageLevel: 1,
+    yearsExperience: 1,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#545454',
+        text: 'white',
+      },
+      normal: {
+        background: '#545454',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#a1a1a1' },
+    },
     description: (
       <>
         <p>
@@ -1100,40 +1080,39 @@ const skills: Skill[] = [
         </p>
       </>
     ),
-  },
-  {
-    id: 'java',
-    name: 'Java',
-    usageLevel: -2,
-    yearsExperience: 2,
-    colors: {
-      normal: {
-        background: '#ef2d30',
-        text: '#f3f3f3',
-      },
-      contrast: {
-        background: '#b00d0f',
-        text: 'white',
-      },
-      scrollBar: { trackColor: '#ffbdbe' },
-    },
-    icon: function (isContrastMode: boolean): React.ReactElement {
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
         <svg aria-hidden>
           <use
-            xlinkHref={`#${this.id}`}
             stroke={colors.background}
             strokeWidth={30}
-            strokeLinejoin="round"
+            xlinkHref={`#${this.id}`}
           />
-          <use xlinkHref={`#${this.id}`} fill={colors.text} />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
         </svg>
       );
     },
+    id: 'sql',
+    name: 'SQL',
     studying: false,
-    featured: false,
+    usageLevel: -2,
+    yearsExperience: 2,
+  },
+  {
+    colors: {
+      contrast: {
+        background: '#b00d0f',
+        text: 'white',
+      },
+      normal: {
+        background: '#ef2d30',
+        text: '#f3f3f3',
+      },
+      scrollBar: { trackColor: '#ffbdbe' },
+    },
     description: (
       <>
         <p>
@@ -1146,8 +1125,8 @@ const skills: Skill[] = [
           One of those apps, for instance, was an{' '}
           <a
             href="https://forum.xda-developers.com/xposed"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Xposed framework
           </a>{' '}
@@ -1156,8 +1135,8 @@ const skills: Skill[] = [
           allowed me to overcome the fact that Android 4.4 (KitKat){' '}
           <a
             href="https://android-developers.googleblog.com/2013/10/getting-your-sms-apps-ready-for-kitkat.html"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             removed the ability for apps to intercept and block SMS
             messages
@@ -1170,24 +1149,24 @@ const skills: Skill[] = [
           applications using mainly{' '}
           <a
             href="https://maven.apache.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Maven
           </a>
           ,{' '}
           <a
             href="https://www.ibm.com/docs/en/was/8.5.5?topic=SSEQTP_8.5.5/com.ibm.websphere.nd.multiplatform.doc/ae/cwbs_jaxrs_overview.html"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             JAX-RS
           </a>
           , and{' '}
           <a
             href="https://hibernate.org"
-            target="_blank"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Hibernate
           </a>
@@ -1195,24 +1174,41 @@ const skills: Skill[] = [
         </p>
       </>
     ),
+    featured: false,
+    icon(isContrastMode: boolean): React.ReactElement {
+      const colors = getColors(this, isContrastMode);
+
+      return (
+        <svg aria-hidden>
+          <use
+            stroke={colors.background}
+            strokeLinejoin="round"
+            strokeWidth={30}
+            xlinkHref={`#${this.id}`}
+          />
+          <use fill={colors.text} xlinkHref={`#${this.id}`} />
+        </svg>
+      );
+    },
+    id: 'java',
+    name: 'Java',
+    studying: false,
+    usageLevel: -2,
+    yearsExperience: 2,
   },
 ];
 
-export const getColors = (skill: Skill, isContrastMode: boolean) => {
-  return isContrastMode ? skill.colors.contrast : skill.colors.normal;
-};
+export const getColors = (skill: Skill, isContrastMode: boolean) =>
+  isContrastMode ? skill.colors.contrast : skill.colors.normal;
 
 export type Skill = {
-  id: string;
-  name: string;
-  usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
-  yearsExperience?: number;
+  brief?: React.ReactElement;
   colors: {
-    normal: {
+    contrast: {
       background: string;
       text: string;
     };
-    contrast: {
+    normal: {
       background: string;
       text: string;
     };
@@ -1220,11 +1216,14 @@ export type Skill = {
       trackColor?: string;
     };
   };
-  icon?: (isContrastMode: boolean) => React.ReactElement;
-  studying: boolean;
-  featured: boolean;
-  brief?: React.ReactElement;
   description: React.ReactElement;
+  featured: boolean;
+  icon?: (isContrastMode: boolean) => React.ReactElement;
+  id: string;
+  name: string;
+  studying: boolean;
+  usageLevel: -1 | -2 | -3 | 1 | 2 | 3;
+  yearsExperience?: number;
 };
 
 export default skills;

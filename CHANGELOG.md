@@ -1,3 +1,37 @@
+# [2.6.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.5.0...v2.6.0) (2023-11-01)
+
+
+### Bug Fixes
+
+* **EmailDialog:** fixes dialog not closing on browser back ([8a4a47c](https://github.com/renato-bohler/renato-bohler.github.io/commit/8a4a47c33155ce56054901f23bea56865d7f94b9))
+* **ThemePicker:** fixes positioning ([efde507](https://github.com/renato-bohler/renato-bohler.github.io/commit/efde507cf061dada743bcca605774325866ac4fc))
+
+
+### Features
+
+* **Footer:** updates background image ([06a8bef](https://github.com/renato-bohler/renato-bohler.github.io/commit/06a8bef34a4b78a305016a088819ae0d2ef6060f))
+
+# [2.5.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.4.0...v2.5.0) (2023-10-27)
+
+
+### Bug Fixes
+
+* **About:** updates message ([ac29f09](https://github.com/renato-bohler/renato-bohler.github.io/commit/ac29f09be33b71f0433ea7f153c3744ba55e28f6))
+
+
+### Features
+
+* **EmailForm:** adds `autocomplete` to fields ([bc614f5](https://github.com/renato-bohler/renato-bohler.github.io/commit/bc614f5a463618158eeea092d83d99e05c898fa3))
+* **Experience:** updates Agrotis logo ([2077a3c](https://github.com/renato-bohler/renato-bohler.github.io/commit/2077a3cadaa302211b56383d51fb7b83d5dfd0b1))
+
+# [2.4.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.3.0...v2.4.0) (2023-09-07)
+
+
+### Features
+
+* **Experience:** updates Shippo logo ([9d6cad5](https://github.com/renato-bohler/renato-bohler.github.io/commit/9d6cad5ef90ccba7eb25253ce40fda1b0c07eb40))
+* updates `pronunciation.mp3` ([e086c3a](https://github.com/renato-bohler/renato-bohler.github.io/commit/e086c3a91d7e0a49d00dc221d4ad9289100ef994))
+
 # [2.3.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.2.2...v2.3.0) (2023-08-10)
 
 
