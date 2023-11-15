@@ -98,8 +98,8 @@ const AudioChatMessage: React.FC<Props> = ({ message }) => {
             status === 'loading'
               ? 'Loading message...'
               : status !== 'playing'
-              ? 'Play message'
-              : 'Pause message'
+                ? 'Play message'
+                : 'Pause message'
           }
           className={styles.button}
           onClick={handleToggle}

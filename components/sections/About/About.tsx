@@ -22,11 +22,13 @@ const About: React.FC = () => {
   const messagesRef = useRef<HTMLDivElement | null>(null);
   const scrollBottom = useCallback(
     () =>
-      debounce(100, () =>
-        messagesRef.current?.scrollTo({
-          behavior: 'smooth',
-          top: messagesRef.current.scrollHeight,
-        }),
+      debounce(
+        100,
+        () =>
+          messagesRef.current?.scrollTo({
+            behavior: 'smooth',
+            top: messagesRef.current.scrollHeight,
+          }),
       )(),
     [],
   );

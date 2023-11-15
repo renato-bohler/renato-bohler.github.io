@@ -44,11 +44,17 @@ class MessageService {
     this.onMessage(end);
 
     this.timeouts.push(
-      window.setTimeout(() => {
-        this.finishMessage();
-        this.finished = true;
-        this.disconnect();
-      }, this.getTime(MESSAGE_WRITE_BASE_MS, MESSAGE_WRITE_VARIANCE_MS)),
+      window.setTimeout(
+        () => {
+          this.finishMessage();
+          this.finished = true;
+          this.disconnect();
+        },
+        this.getTime(
+          MESSAGE_WRITE_BASE_MS,
+          MESSAGE_WRITE_VARIANCE_MS,
+        ),
+      ),
     );
   }
 

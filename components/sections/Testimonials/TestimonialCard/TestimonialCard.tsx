@@ -23,10 +23,7 @@ const TestimonialCard: React.FC<Props> = ({
   const slide = useSwiperSlide();
 
   return (
-    <div
-      aria-hidden={slide.isDuplicate || !slide.isActive}
-      className={styles.card}
-    >
+    <div aria-hidden={!slide.isActive} className={styles.card}>
       <VisuallyHidden>
         Testimonial {currentTestimonial} out of {totalTestimonial}.{' '}
         {authorName}, {authorRole}.
