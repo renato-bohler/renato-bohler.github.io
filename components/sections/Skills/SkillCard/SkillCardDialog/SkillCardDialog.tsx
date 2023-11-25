@@ -47,7 +47,7 @@ const SkillCardDialog: React.FC<Props> = ({
   const scrollRef = useRef<HTMLDivElement>(null);
   const { hide } = useDialogHistory({ dialog, id: `skills-${id}` });
 
-  const { isDarkMode, isReducedMotion } = useTheme();
+  const { colorScheme, isReducedMotion } = useTheme();
 
   useEffect(() => {
     if (!scrollRef.current) return;
@@ -79,7 +79,7 @@ const SkillCardDialog: React.FC<Props> = ({
           {
             '--theme-scrollbar-thumb-color': backgroundColor,
             boxShadow: `${backgroundColor}${
-              isDarkMode ? 30 : 60
+              colorScheme === 'dark' ? 30 : 60
             } 0 5px 100px`,
             ...(scrollBarTrackColor
               ? {
