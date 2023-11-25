@@ -31,6 +31,7 @@ export type ThemeContextType = {
 };
 
 const ThemeContext = createContext<ThemeContextType>({
+  getReducedMotionDuration: () => MINIMUM_DURATION,
   isContrastMode: false,
   isDarkMode: true,
   isReducedMotion: false,
@@ -67,12 +68,15 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
   const [isReducedMotion, setReducedMotion] = usePreferredMotion();
   useThemeApply(theme, isDarkMode, isReducedMotion);
   const favicon = useDynamicFavicon(theme);
+  const getReducedMotionDuration = (duration: string) =>
+    isReducedMotion ? MINIMUM_DURATION : duration;
 
   useEffect(() => {
     if (isContrastMode) setTheme(contrast);
   }, [isContrastMode]);
 
   const context = {
+    getReducedMotionDuration,
     isContrastMode,
     isDarkMode,
     isReducedMotion,
