@@ -3,7 +3,8 @@
   font-weight: 900;
   font-style: normal;
   font-display: swap;
-  src: local(''),
+  src:
+    local(''),
     url('/fonts/major-mono-display-regular.woff2') format('woff2'),
     url('/fonts/major-mono-display-regular.woff') format('woff');
 }
@@ -13,7 +14,9 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-  src: local(''), url('/fonts/inter-regular.woff2') format('woff2'),
+  src:
+    local(''),
+    url('/fonts/inter-regular.woff2') format('woff2'),
     url('/fonts/inter-regular.woff') format('woff');
 }
 
@@ -22,7 +25,9 @@
   font-weight: 900;
   font-style: normal;
   font-display: swap;
-  src: local(''), url('/fonts/inter-black.woff2') format('woff2'),
+  src:
+    local(''),
+    url('/fonts/inter-black.woff2') format('woff2'),
     url('/fonts/inter-black.woff') format('woff');
 }
 
@@ -116,7 +121,9 @@ html[data-reduced-motion='true'] {
   scroll-behavior: initial;
 }
 
-html[data-reduced-motion='true'] * {
+html[data-reduced-motion='true'] *,
+html[data-reduced-motion='true'] *::before,
+html[data-reduced-motion='true'] *::after {
   transition: none !important;
   animation-duration: 0s !important;
 }

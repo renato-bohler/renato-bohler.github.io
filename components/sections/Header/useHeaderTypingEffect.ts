@@ -2,7 +2,6 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import useTheme from '~/hooks/useTheme';
 import useTypingEffect from '~/hooks/useTypingEffect';
 
 type Options = {
@@ -41,8 +40,6 @@ const useHeaderTypingEffect = ({
   startDelayMs = 1000,
   ...options
 }: Options): Result => {
-  const { isReducedMotion } = useTheme();
-
   const { inView, ref } = useInView({
     initialInView: true,
     threshold: 0.75,
@@ -144,20 +141,6 @@ const useHeaderTypingEffect = ({
     isFirstNameTypingComplete,
     isLastNameTypingComplete,
   ]);
-
-  if (isReducedMotion) {
-    return {
-      firstName: options.firstName,
-      inView,
-      isFirstNameTypingComplete: true,
-      isFullNameTypingComplete: true,
-      isLastNameTypingComplete: true,
-      isSubtitleTypingComplete: true,
-      lastName: options.lastName,
-      ref,
-      subtitle: options.subtitles[0],
-    };
-  }
 
   return {
     firstName: inView ? firstName : options.firstName,
