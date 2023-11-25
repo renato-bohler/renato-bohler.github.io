@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
+import useTheme from '~/hooks/useTheme';
 import useTypingEffect from '~/hooks/useTypingEffect';
 
 type Options = {
@@ -20,6 +21,7 @@ type Result = {
   isFirstNameTypingComplete: boolean;
   isFullNameTypingComplete: boolean;
   isLastNameTypingComplete: boolean;
+  isSubtitleTypingComplete: boolean;
   lastName: string;
   ref: (node?: Element | null | undefined) => void;
   subtitle: string;
@@ -39,6 +41,8 @@ const useHeaderTypingEffect = ({
   startDelayMs = 1000,
   ...options
 }: Options): Result => {
+  const { isReducedMotion } = useTheme();
+
   const { inView, ref } = useInView({
     initialInView: true,
     threshold: 0.75,
@@ -69,6 +73,8 @@ const useHeaderTypingEffect = ({
     [lastName, options.lastName],
   );
 
+  const [isFirstSubtitleWrite, setIsFirstSubtitleWrite] =
+    useState(true);
   const [targetSubtitle, setTargetSubtitle] = useState('');
   const subtitle = useTypingEffect({
     animateDelete: inView,
@@ -89,8 +95,11 @@ const useHeaderTypingEffect = ({
     }
 
     setTargetSubtitle(
-      getNewSubtitle(options.subtitles, targetSubtitle),
+      isFirstSubtitleWrite
+        ? options.subtitles[0]
+        : getNewSubtitle(options.subtitles, targetSubtitle),
     );
+    setIsFirstSubtitleWrite(false);
   }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Subtitle recycling
@@ -136,12 +145,27 @@ const useHeaderTypingEffect = ({
     isLastNameTypingComplete,
   ]);
 
+  if (isReducedMotion) {
+    return {
+      firstName: options.firstName,
+      inView,
+      isFirstNameTypingComplete: true,
+      isFullNameTypingComplete: true,
+      isLastNameTypingComplete: true,
+      isSubtitleTypingComplete: true,
+      lastName: options.lastName,
+      ref,
+      subtitle: options.subtitles[0],
+    };
+  }
+
   return {
     firstName: inView ? firstName : options.firstName,
     inView,
     isFirstNameTypingComplete,
     isFullNameTypingComplete,
     isLastNameTypingComplete,
+    isSubtitleTypingComplete,
     lastName: inView ? lastName : options.lastName,
     ref,
     subtitle: inView ? subtitle : '',
