@@ -25,7 +25,7 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Visual Regression Test
         run: |
-          yarn playwright install --with-deps
+          yarn playwright install chromium
           yarn test:e2e
       - uses: actions/upload-artifact@v3
         if: failure()
