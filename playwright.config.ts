@@ -38,7 +38,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: IS_CI ? 'npx serve out' : 'yarn build && npx serve out',
+    command: 'yarn build && npx serve out',
     reuseExistingServer: !IS_CI,
     url: URL,
   },
