@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 jobs:
   test:
@@ -26,10 +27,10 @@ jobs:
           persist-credentials: false
           fetch-depth: 0
       - uses: ./.github/actions/setup
+      - name: Install Chromium
+        run: yarn playwright install chromium
       - name: Visual Regression Test
-        run: |
-          yarn playwright install chromium
-          yarn test:e2e
+        run: yarn test:e2e
       - name: Update snapshots
         if: failure()
         run: yarn test:e2e --update-snapshots
