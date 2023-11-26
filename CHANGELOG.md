@@ -1,3 +1,19 @@
+# [2.7.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.6.0...v2.7.0) (2023-11-26)
+
+
+### Bug Fixes
+
+* adjusts reduced motion for `Dark` and `Light` icons ([30cb90e](https://github.com/renato-bohler/renato-bohler.github.io/commit/30cb90e6da3038517c16e87eaea37db16ceb88e6))
+* **Experience:** implements reduced motion ([08e5ece](https://github.com/renato-bohler/renato-bohler.github.io/commit/08e5ecefa1cf181de296e37af49caad03d357589))
+* **Footer:** implements reduced motion ([bd0c532](https://github.com/renato-bohler/renato-bohler.github.io/commit/bd0c532e4fd61a9678c0186c56823305fd433b79))
+* implements reduced motion for icons ([86fe8db](https://github.com/renato-bohler/renato-bohler.github.io/commit/86fe8dbda7d99bb729bca6381ad34e3d58684062))
+
+
+### Features
+
+* **Header:** implements reduced motion ([3928bde](https://github.com/renato-bohler/renato-bohler.github.io/commit/3928bdef992449d1efa22868e1bf3c0e8795fb80))
+* **ThemeProvider:** implements theme and color scheme preferences ([10de484](https://github.com/renato-bohler/renato-bohler.github.io/commit/10de4848aa1f1dbc40e7e72b1bb17a984cf94955))
+
 # [2.6.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.5.0...v2.6.0) (2023-11-01)
 
 
