@@ -39,8 +39,6 @@
   filter: drop-shadow(0 0 2px var(--theme-primary-bright));
 
   fill: none;
-
-  /* TODO: does this work? */
   stroke: url('#gradient');
   stroke-linecap: round;
   stroke-width: 3px;
