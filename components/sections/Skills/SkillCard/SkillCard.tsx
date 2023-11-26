@@ -78,7 +78,7 @@ const SkillCard: React.FC<Props> = ({
   usageLevel,
   yearsExperience,
 }) => {
-  const { isContrastMode, isDarkMode } = useTheme();
+  const { colorScheme, isContrastMode } = useTheme();
 
   const { inView, ref } = useInView({
     threshold: 0,
@@ -101,14 +101,14 @@ const SkillCard: React.FC<Props> = ({
         backgroundImage: `linear-gradient(var(--theme-background), var(--theme-background)), radial-gradient(circle at top, ${backgroundColor}, transparent 90%)`,
         borderColor: isContrastMode ? backgroundColor : '',
         boxShadow: `${backgroundColor}${
-          isDarkMode ? 20 : 40
+          colorScheme === 'dark' ? 20 : 40
         } 0 5px 50px`,
       }}
     >
       <div className={styles.blurContainer}>
         <div
           className={classNames(styles.blur, {
-            [styles.light]: !isDarkMode,
+            [styles.light]: colorScheme === 'light',
           })}
           style={{
             background: backgroundColor,

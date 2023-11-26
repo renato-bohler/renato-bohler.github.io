@@ -20,6 +20,7 @@ type Result = {
   isFirstNameTypingComplete: boolean;
   isFullNameTypingComplete: boolean;
   isLastNameTypingComplete: boolean;
+  isSubtitleTypingComplete: boolean;
   lastName: string;
   ref: (node?: Element | null | undefined) => void;
   subtitle: string;
@@ -69,6 +70,8 @@ const useHeaderTypingEffect = ({
     [lastName, options.lastName],
   );
 
+  const [isFirstSubtitleWrite, setIsFirstSubtitleWrite] =
+    useState(true);
   const [targetSubtitle, setTargetSubtitle] = useState('');
   const subtitle = useTypingEffect({
     animateDelete: inView,
@@ -89,8 +92,11 @@ const useHeaderTypingEffect = ({
     }
 
     setTargetSubtitle(
-      getNewSubtitle(options.subtitles, targetSubtitle),
+      isFirstSubtitleWrite
+        ? options.subtitles[0]
+        : getNewSubtitle(options.subtitles, targetSubtitle),
     );
+    setIsFirstSubtitleWrite(false);
   }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Subtitle recycling
@@ -142,6 +148,7 @@ const useHeaderTypingEffect = ({
     isFirstNameTypingComplete,
     isFullNameTypingComplete,
     isLastNameTypingComplete,
+    isSubtitleTypingComplete,
     lastName: inView ? lastName : options.lastName,
     ref,
     subtitle: inView ? subtitle : '',

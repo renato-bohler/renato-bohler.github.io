@@ -19,11 +19,11 @@ import styles from './ThemePicker.module.css';
 
 const ThemePicker: React.FC = () => {
   const {
+    colorScheme,
     isContrastMode,
-    isDarkMode,
     isReducedMotion,
+    setColorScheme,
     setContrastMode,
-    setDarkMode,
     setReducedMotion,
     setTheme,
     theme,
@@ -38,13 +38,17 @@ const ThemePicker: React.FC = () => {
     <>
       <Button
         className={styles.button}
-        onClick={() => setDarkMode((darkMode) => !darkMode)}
+        onClick={() =>
+          setColorScheme(colorScheme === 'dark' ? 'light' : 'dark')
+        }
         title={
-          isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'
+          colorScheme === 'dark'
+            ? 'Switch to light mode'
+            : 'Switch to dark mode'
         }
       >
         <AnimatedIcon animationDelay={500}>
-          {isDarkMode ? <DarkIcon /> : <LightIcon />}
+          {colorScheme === 'dark' ? <DarkIcon /> : <LightIcon />}
         </AnimatedIcon>
       </Button>
 
@@ -66,7 +70,7 @@ const ThemePicker: React.FC = () => {
           <span className={styles.title}>Select your theme</span>
           <div className={styles.themeGrid}>
             {themes.map((t) => {
-              const colors = isDarkMode ? t.dark : t.light;
+              const colors = t[colorScheme];
               const primary = colors['primary-bright'];
               const secondary = colors['secondary-bright'];
 
@@ -95,9 +99,9 @@ const ThemePicker: React.FC = () => {
 
           <div
             style={{
-              background: isDarkMode ? 'white' : 'black',
+              background: colorScheme === 'dark' ? 'white' : 'black',
               borderRadius: 'inherit',
-              color: isDarkMode ? 'black' : 'white',
+              color: colorScheme === 'dark' ? 'black' : 'white',
             }}
           >
             <label className={styles.checkbox}>

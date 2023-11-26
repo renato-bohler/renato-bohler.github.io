@@ -1,6 +1,4 @@
 import {
-  Dispatch,
-  SetStateAction,
   createContext,
   useCallback,
   useEffect,
@@ -15,27 +13,39 @@ import useDynamicFavicon from './useDynamicFavicon';
 import usePreferredContrast from './usePreferredContrast';
 import usePreferredMotion from './usePreferredMotion';
 import useThemeApply from './useThemeApply';
+import {
+  getStoredColorScheme,
+  getStoredTheme,
+  setStoredColorScheme,
+  setStoredTheme,
+} from './utils/themeStorage';
 
 const RANDOM_THEME =
   themes[Math.floor(Math.random() * themes.length)];
 
+const MINIMUM_DURATION = '1ms';
+
 export type ThemeContextType = {
+  colorScheme: ColorScheme;
+  getReducedMotionDuration: (duration: string) => string;
   isContrastMode: boolean;
-  isDarkMode: boolean;
   isReducedMotion: boolean;
+  setColorScheme: (colorScheme: ColorScheme) => void;
   setContrastMode: (value: boolean) => void;
-  setDarkMode: Dispatch<SetStateAction<boolean>>;
   setReducedMotion: (value: boolean) => void;
-  setTheme: Dispatch<SetStateAction<Theme>>;
+  setTheme: (theme: Theme) => void;
   theme: Theme;
 };
 
+export type ColorScheme = 'dark' | 'light';
+
 const ThemeContext = createContext<ThemeContextType>({
+  colorScheme: 'dark',
+  getReducedMotionDuration: () => MINIMUM_DURATION,
   isContrastMode: false,
-  isDarkMode: true,
   isReducedMotion: false,
+  setColorScheme: () => {},
   setContrastMode: () => {},
-  setDarkMode: () => {},
   setReducedMotion: () => {},
   setTheme: () => {},
   theme: RANDOM_THEME,
@@ -46,7 +56,9 @@ type Props = {
 };
 
 export const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(RANDOM_THEME);
+  const [theme, setTheme] = useState<Theme>(
+    getStoredTheme() || RANDOM_THEME,
+  );
   const [lastTheme, setLastTheme] = useState(theme);
 
   useEffect(() => {
@@ -62,24 +74,37 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
     [lastTheme],
   );
 
-  const [isDarkMode, setDarkMode] = useState(true);
+  const [colorScheme, setColorScheme] = useState<ColorScheme>(
+    getStoredColorScheme() || 'dark',
+  );
   const isContrastMode = usePreferredContrast(theme, setContrastMode);
   const [isReducedMotion, setReducedMotion] = usePreferredMotion();
-  useThemeApply(theme, isDarkMode, isReducedMotion);
+
+  useThemeApply(theme, colorScheme, isReducedMotion);
+
   const favicon = useDynamicFavicon(theme);
+  const getReducedMotionDuration = (duration: string) =>
+    isReducedMotion ? MINIMUM_DURATION : duration;
 
   useEffect(() => {
     if (isContrastMode) setTheme(contrast);
   }, [isContrastMode]);
 
   const context = {
+    colorScheme,
+    getReducedMotionDuration,
     isContrastMode,
-    isDarkMode,
     isReducedMotion,
+    setColorScheme: (colorScheme: ColorScheme) => {
+      setStoredColorScheme(colorScheme);
+      setColorScheme(colorScheme);
+    },
     setContrastMode,
-    setDarkMode,
     setReducedMotion,
-    setTheme,
+    setTheme: (theme: Theme) => {
+      setStoredTheme(theme);
+      setTheme(theme);
+    },
     theme,
   };
 

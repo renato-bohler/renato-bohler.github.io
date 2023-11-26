@@ -16,8 +16,8 @@ import useHeaderTypingEffect from './useHeaderTypingEffect';
 import styles from './Header.module.css';
 
 const SUBTITLES = [
-  'react developer',
   'frontend developer',
+  'react developer',
   'web developer',
   '.* developer',
   'css enthusiast',
@@ -48,6 +48,7 @@ const Header: React.FC<Props> = ({
     isFirstNameTypingComplete,
     isFullNameTypingComplete,
     isLastNameTypingComplete,
+    isSubtitleTypingComplete,
     lastName,
     ref,
     subtitle,
@@ -75,6 +76,9 @@ const Header: React.FC<Props> = ({
         className={classNames(styles.heading, {
           [styles.navigationHeaderHidden]: isNavigationHeaderHidden,
         })}
+        data-complete={
+          isFullNameTypingComplete && isSubtitleTypingComplete
+        }
         data-folded={!inView}
       >
         <span
