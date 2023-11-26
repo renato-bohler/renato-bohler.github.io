@@ -72,7 +72,7 @@ const About: React.FC = () => {
           ref={setAboutRefs}
         >
           <AnimatedChatMessage>
-            Hello there (test change) 👋
+            Hello there (test change number 3) 👋
           </AnimatedChatMessage>
         </div>
       </div>
