@@ -7,7 +7,7 @@ on:
       - synchronize
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   test:
@@ -22,17 +22,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          persist-credentials: false
+          fetch-depth: 0
       - uses: ./.github/actions/setup
       - name: Visual Regression Test
         run: |
           yarn playwright install chromium
           yarn test:e2e
-      - uses: actions/upload-artifact@v3
+      - name: Update snapshots
         if: failure()
+        run: yarn test:e2e --update-snapshots
+      - name: Commit & Push changes
+        if: failure()
+        uses: actions-js/push@1
         with:
-          name: playwright-report
-          path: playwright-report
-          retention-days: 30
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: 'test: updates snapshots [skip ci]'
+          branch: ${{ github.head_ref }}
 
   eslint:
     runs-on: ubuntu-latest
