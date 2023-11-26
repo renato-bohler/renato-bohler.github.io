@@ -35,11 +35,18 @@ jobs:
         run: yarn test:e2e --update-snapshots
       - name: Commit & Push changes
         if: failure()
-        uses: actions-js/push@v1.4
+        uses: actions-js/push@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: 'test: updates snapshots [skip ci]'
           branch: ${{ github.head_ref }}
+      - name: Add PR review
+        if: failure()
+        uses: nbaztec/add-pr-review-comment@v1
+        with:
+          comments: |
+            [{"path":"e2e/__screenshots__/About/default-desktop.png","text":"Please verify this updated screenshot.","side":"RIGHT"},{"path":"e2e/__screenshots__/Experience/default-mobile.png","text":"Please verify this updated screenshot.","side":"RIGHT"}]
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   eslint:
     runs-on: ubuntu-latest
