@@ -65,6 +65,7 @@ jobs:
           yarn playwright install --with-deps
           yarn test:e2e
       - uses: actions/upload-artifact@v3
+        if: always()
         with:
           name: playwright-report
           path: playwright-report
