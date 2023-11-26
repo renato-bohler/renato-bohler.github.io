@@ -4,7 +4,7 @@ const DarkIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
-  const { getReducedMotionDuration } = useTheme();
+  const { getReducedMotionDuration, isReducedMotion } = useTheme();
 
   return (
     <svg
@@ -49,9 +49,10 @@ const DarkIcon: React.FC<{
         <animateTransform
           attributeName="transform"
           begin="1.1s"
-          dur="50s"
+          dur={getReducedMotionDuration('50s')}
+          fill="freeze"
           from="360 13.4 5.3"
-          repeatCount="indefinite"
+          repeatCount={isReducedMotion ? 0 : 'indefinite'}
           to="0 13.4 5.3"
           type="rotate"
         />
@@ -71,9 +72,10 @@ const DarkIcon: React.FC<{
         <animateTransform
           attributeName="transform"
           begin="1.6s"
-          dur="25s"
+          dur={getReducedMotionDuration('25s')}
+          fill="freeze"
           from="0 18.5 11.8"
-          repeatCount="indefinite"
+          repeatCount={isReducedMotion ? 0 : 'indefinite'}
           to="360 18.5 11.8"
           type="rotate"
         />

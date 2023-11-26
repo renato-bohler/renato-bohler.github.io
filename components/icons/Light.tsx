@@ -4,7 +4,7 @@ const LightIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
-  const { getReducedMotionDuration } = useTheme();
+  const { getReducedMotionDuration, isReducedMotion } = useTheme();
 
   return (
     <svg
@@ -168,9 +168,10 @@ const LightIcon: React.FC<{
           attributeName="transform"
           attributeType="XML"
           begin={getReducedMotionDuration('0.4s')}
-          dur="20s"
+          dur={getReducedMotionDuration('20s')}
+          fill="freeze"
           from="0 8 8"
-          repeatCount="indefinite"
+          repeatCount={isReducedMotion ? 0 : 'indefinite'}
           to="360 8 8"
           type="rotate"
         />
