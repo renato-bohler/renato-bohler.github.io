@@ -35,7 +35,7 @@ jobs:
         run: yarn test:e2e --update-snapshots
       - name: Commit & Push changes
         if: failure()
-        uses: actions-js/push@1
+        uses: actions-js/push@v1.4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           message: 'test: updates snapshots [skip ci]'
