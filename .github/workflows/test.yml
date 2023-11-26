@@ -46,7 +46,7 @@ jobs:
         uses: nbaztec/add-pr-review-comment@v1
         with:
           comments: |
-            [{"path":"e2e/__screenshots__/About/default-desktop.png","text":"Please verify this updated screenshot.","side":"RIGHT"},{"path":"e2e/__screenshots__/Experience/default-mobile.png","text":"Please verify this updated screenshot.","side":"RIGHT"}]
+            [{"path":"e2e/__screenshots__/About/default-desktop.png","text":"Please verify this updated screenshot.","side":"RIGHT","position":"","in_reply_to":"","line":"","subject_type":"file"},{"path":"e2e/__screenshots__/About/default-mobile.png","text":"Please verify this updated screenshot.","side":"RIGHT","position":"","in_reply_to":"","line":"","subject_type":"file"}]
           repo-token: ${{ secrets.GITHUB_TOKEN }}
 
   eslint:
