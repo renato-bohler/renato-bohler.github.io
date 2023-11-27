@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import usePrevious from './usePrevious';
+import useTheme from './useTheme';
 
 type Options = {
   animateDelete?: boolean;
@@ -21,6 +22,8 @@ const useTypingEffect = ({
   startDelayMs = 0,
   targetText,
 }: Options): string => {
+  const { isReducedMotion } = useTheme();
+
   const [state, setState] = useState<State>('stale');
 
   const [currentText, setCurrentText] = useState('');
@@ -116,7 +119,7 @@ const useTypingEffect = ({
     keyStrokeMaxVarianceMs,
   ]);
 
-  return currentText;
+  return isReducedMotion ? targetText : currentText;
 };
 
 export default useTypingEffect;

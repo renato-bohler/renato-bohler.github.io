@@ -2,13 +2,16 @@ import { useEffect } from 'react';
 
 import { Theme } from '../../consts/themes.const';
 
+import { ColorScheme } from './ThemeProvider';
+
 const useThemeApply = (
   theme: Theme,
-  isDarkMode: boolean,
+  colorScheme: ColorScheme,
   isReducedMotion: boolean,
 ): void => {
   useEffect(() => {
-    const selectedTheme = isDarkMode ? theme.dark : theme.light;
+    const selectedTheme =
+      colorScheme === 'dark' ? theme.dark : theme.light;
 
     const properties = Object.keys(selectedTheme) as Array<
       keyof typeof selectedTheme
@@ -25,10 +28,8 @@ const useThemeApply = (
       `${isReducedMotion}`,
     );
 
-    document.documentElement.style.colorScheme = isDarkMode
-      ? 'dark'
-      : 'light';
-  }, [theme, isDarkMode, isReducedMotion]);
+    document.documentElement.style.colorScheme = colorScheme;
+  }, [theme, colorScheme, isReducedMotion]);
 };
 
 export default useThemeApply;

@@ -1,5 +1,7 @@
 import { useInView } from 'react-intersection-observer';
 
+import useTheme from '~/hooks/useTheme';
+
 import { Company, Period } from '../experiences.const';
 
 import styles from './ExperienceCard.module.css';
@@ -44,6 +46,8 @@ const ExperienceCard: React.FC<Props> = ({
   period,
   title,
 }) => {
+  const { isReducedMotion } = useTheme();
+
   const [ref, inView] = useInView({
     rootMargin: '-100px',
     threshold: 0.1,
@@ -51,7 +55,11 @@ const ExperienceCard: React.FC<Props> = ({
   });
 
   return (
-    <li className={styles.card} data-revealed={inView} ref={ref}>
+    <li
+      className={styles.card}
+      data-revealed={inView || isReducedMotion}
+      ref={ref}
+    >
       <div className={styles.dot} />
       <div
         className={styles.companyLogo}

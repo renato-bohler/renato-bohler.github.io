@@ -1,25 +1,25 @@
 export type RepositoryInfo = {
-  owner: string;
-  name: string;
-  repositoryUrl: string;
-  liveUrl: string;
-  stars: number;
-  subscribers: number;
   forks: number;
   lastUpdate: string;
+  liveUrl: string;
   monthlyDownloads?: number;
+  name: string;
+  owner: string;
+  repositoryUrl: string;
+  stars: number;
+  subscribers: number;
 };
 
 type Options = {
   owner: string;
-  repo: string;
   packageName?: string;
+  repo: string;
 };
 
 const fetchProjectDetails = async ({
   owner,
-  repo,
   packageName,
+  repo,
 }: Options): Promise<RepositoryInfo | null> => {
   const githubResponse = await fetch(
     `https://api.github.com/repos/${owner}/${repo}`,
@@ -49,14 +49,14 @@ const fetchProjectDetails = async ({
   }
 
   return {
-    owner,
-    name: repo,
-    repositoryUrl: githubData.html_url,
-    liveUrl: githubData.homepage,
-    stars: githubData.stargazers_count,
-    subscribers: githubData.subscribers_count,
     forks: githubData.forks,
     lastUpdate: githubData.pushed_at,
+    liveUrl: githubData.homepage,
+    name: repo,
+    owner,
+    repositoryUrl: githubData.html_url,
+    stars: githubData.stargazers_count,
+    subscribers: githubData.subscribers_count,
     ...npmDetails,
   };
 };

@@ -13,6 +13,13 @@
     "plugin:prettier/recommended",
     "plugin:perfectionist/recommended-natural"
   ],
+  "ignorePatterns": [
+    "**/node_modules",
+    "**/out",
+    "**/playwright-report",
+    "**/.next",
+    "**/test-results"
+  ],
   "rules": {
     // Code style
     "object-shorthand": "error",
