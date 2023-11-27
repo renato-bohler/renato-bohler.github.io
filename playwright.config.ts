@@ -13,6 +13,7 @@ populate(process.env as DotenvPopulateInput, {
 });
 
 export default defineConfig({
+  expect: { toHaveScreenshot: { animations: 'allow' } },
   forbidOnly: IS_CI,
   fullyParallel: true,
   projects: [
