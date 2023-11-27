@@ -25,6 +25,8 @@ jobs:
       SCREENSHOTS_DIRECTORY: 'e2e/__screenshots__'
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
       - uses: ./.github/actions/setup
       - name: Install Chromium
         run: yarn playwright install chromium
@@ -42,7 +44,6 @@ jobs:
       - name: Commit and push changes
         if: steps.check.outputs.changes_detected
         run: |
-          git checkout ${{ github.head_ref }}
           git add $SCREENSHOTS_DIRECTORY
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com>"
