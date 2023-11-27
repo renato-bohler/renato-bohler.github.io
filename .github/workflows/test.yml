@@ -53,6 +53,7 @@ jobs:
         if: steps.check.outputs.changes_detected
         run: |
           LAST_COMMIT_SHA=$(git rev-parse HEAD)
+          echo $LAST_COMMIT_SHA
           CHANGED_SCREENSHOTS=$(git diff --name-only HEAD HEAD~1 | grep $SCREENSHOTS_DIRECTORY)
           for screenshot in $CHANGED_SCREENSHOTS
           do
