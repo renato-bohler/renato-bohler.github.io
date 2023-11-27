@@ -42,11 +42,12 @@ jobs:
       - name: Commit and push changes
         if: steps.check.outputs.changes_detected
         run: |
+          git checkout ${{ github.head_ref }}
           git add $SCREENSHOTS_DIRECTORY
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com>"
           git commit -m "test(e2e): updates screenshots"
-          git push origin HEAD:${{ github.head_ref }}
+          git push
       - name: Add PR review comments
         if: steps.check.outputs.changes_detected
         run: |
