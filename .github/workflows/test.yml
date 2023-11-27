@@ -47,13 +47,13 @@ jobs:
           git add $SCREENSHOTS_DIRECTORY
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com>"
-          git commit -m "test(e2e): updates screenshots"
+          git commit -m "test(e2e): updates screenshots [skip ci]"
           git push
       - name: Add PR review comments
         if: steps.check.outputs.changes_detected
         run: |
+          sleep 3
           LAST_COMMIT_SHA=$(git rev-parse HEAD)
-          echo $LAST_COMMIT_SHA
           CHANGED_SCREENSHOTS=$(git diff --name-only HEAD HEAD~1 | grep $SCREENSHOTS_DIRECTORY)
           for screenshot in $CHANGED_SCREENSHOTS
           do
