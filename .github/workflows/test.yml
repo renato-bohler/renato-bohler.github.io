@@ -52,6 +52,7 @@ jobs:
       - name: Add PR review comments
         if: steps.check.outputs.changes_detected
         run: |
+          LAST_COMMIT_SHA=$(git rev-parse HEAD)
           echo "Waiting for commit $LAST_COMMIT_SHA to be available on GitHub..."
           until curl -s -L -f -o /dev/null \
             -H "Accept: application/vnd.github+json" \
@@ -63,7 +64,6 @@ jobs:
             echo -n .
           done
 
-          LAST_COMMIT_SHA=$(git rev-parse HEAD)
           CHANGED_SCREENSHOTS=$(git diff --name-only HEAD HEAD~1 | grep $SCREENSHOTS_DIRECTORY)
           for screenshot in $CHANGED_SCREENSHOTS
           do
