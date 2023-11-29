@@ -58,7 +58,8 @@ jobs:
 
           for screenshot in $CHANGED_SCREENSHOTS
           do
-            curl -L \
+            echo "Adding PR review comment for \"$screenshot\"..."
+            curl -s -S -L -o /dev/null \
               -X POST \
               -H "Accept: application/vnd.github+json" \
               -H "Authorization: Bearer ${{ github.token }}" \
