@@ -42,7 +42,7 @@
   height: 1.5em;
   margin: 0;
 
-  font-family: "Major Mono Display", monospace;
+  font-family: 'Major Mono Display', monospace;
   font-size: 4em;
   font-weight: bolder;
   color: var(--theme-text);
