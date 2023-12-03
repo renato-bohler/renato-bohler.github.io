@@ -1,3 +1,10 @@
+# [2.8.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.7.0...v2.8.0) (2023-12-03)
+
+
+### Features
+
+* **Skills:** updates Angular logo ([34efb76](https://github.com/renato-bohler/renato-bohler.github.io/commit/34efb76e5ab0292d1cba518bd510c279f3c3a2ec))
+
 # [2.7.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.6.0...v2.7.0) (2023-11-26)
 
 
