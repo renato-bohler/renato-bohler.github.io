@@ -874,11 +874,11 @@ const skills: Skill[] = [
   {
     colors: {
       contrast: {
-        background: '#b20027',
+        background: '#eb0a59',
         text: 'white',
       },
       normal: {
-        background: '#dd0031',
+        background: '#eb0a59',
         text: '#f3f3f3',
       },
       scrollBar: { trackColor: '#ffa0b6' },
@@ -915,12 +915,13 @@ const skills: Skill[] = [
       return (
         <svg aria-hidden>
           <use
+            fill={colors.background}
             stroke={colors.background}
             strokeLinejoin="round"
-            strokeWidth={80}
-            xlinkHref={`#${this.id}`}
+            strokeWidth={100}
+            xlinkHref={`#${this.id}-1`}
           />
-          <use fill={colors.text} xlinkHref={`#${this.id}`} />
+          <use fill={colors.text} xlinkHref={`#${this.id}-2`} />
         </svg>
       );
     },
