@@ -67,7 +67,9 @@
   background: var(--theme-text);
   border-radius: 5px;
 
-  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
+  transition:
+    opacity 250ms ease-in-out,
+    transform 250ms ease-in-out;
 }
 
 [data-enter] .popover {
