@@ -2,7 +2,8 @@
   "extends": [
     "stylelint-config-standard",
     "stylelint-config-css-modules",
-    "stylelint-config-clean-order"
+    "stylelint-config-clean-order",
+    "stylelint-prettier/recommended"
   ],
   "ignoreFiles": "out/**/*",
   "rules": {
