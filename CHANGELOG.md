@@ -1,3 +1,10 @@
+## [2.8.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.0...v2.8.1) (2023-12-03)
+
+
+### Bug Fixes
+
+* **Experience:** fixes company logos not showing on Safari ([8ac2f04](https://github.com/renato-bohler/renato-bohler.github.io/commit/8ac2f04e1e1e4fae93a42dba14b2c85daa0fc43c))
+
 # [2.8.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.7.0...v2.8.0) (2023-12-03)
 
 
