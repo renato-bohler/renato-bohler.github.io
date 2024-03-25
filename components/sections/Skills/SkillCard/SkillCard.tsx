@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic';
 
 import classNames from 'classnames';
-import { useInView } from 'react-intersection-observer';
 import { DialogDisclosure, useDialogState } from 'reakit/Dialog';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
@@ -80,11 +79,6 @@ const SkillCard: React.FC<Props> = ({
 }) => {
   const { colorScheme, isContrastMode } = useTheme();
 
-  const { inView, ref } = useInView({
-    threshold: 0,
-    triggerOnce: true,
-  });
-
   const { Icon, description: usageDescription } = USAGE[usageLevel];
 
   const dialog = useDialogState();
@@ -94,9 +88,7 @@ const SkillCard: React.FC<Props> = ({
       className={classNames(styles.card, {
         [styles.border]: isContrastMode,
         [styles.featured]: featured,
-        [styles.hidden]: !inView,
       })}
-      ref={ref}
       style={{
         backgroundImage: `linear-gradient(var(--theme-background), var(--theme-background)), radial-gradient(circle at top, ${backgroundColor}, transparent 90%)`,
         borderColor: isContrastMode ? backgroundColor : '',
