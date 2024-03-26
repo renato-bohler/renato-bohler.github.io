@@ -17,6 +17,7 @@ import useSectionAnchor from '~/components/SectionAnchor/useSectionAnchor';
 import Footer from '~/components/sections/Footer/Footer';
 import Header from '~/components/sections/Header/Header';
 import { HEADER, SECTIONS } from '~/consts/sections.const';
+import useFullStory from '~/hooks/useFullStory';
 
 import styles from './index.module.css';
 
@@ -39,6 +40,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
     useState(false);
 
   const emailDialog = useDialogState();
+
+  useFullStory();
 
   return (
     <>

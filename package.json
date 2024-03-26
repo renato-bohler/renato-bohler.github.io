@@ -12,6 +12,7 @@
     "test:e2e": "playwright test"
   },
   "dependencies": {
+    "@fullstory/browser": "^2.0.3",
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.3.2",
     "next": "^14.0.2",
