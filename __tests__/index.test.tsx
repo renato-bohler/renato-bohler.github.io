@@ -11,6 +11,7 @@ const props = {
 
 jest.mock('@fullstory/browser', () => ({
   init: jest.fn(),
+  isInitialized: jest.fn(),
 }));
 
 describe('Index', () => {
