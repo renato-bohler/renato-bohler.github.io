@@ -9,6 +9,10 @@ const props = {
   repositories: [],
 };
 
+jest.mock('@fullstory/browser', () => ({
+  init: jest.fn(),
+}));
+
 describe('Index', () => {
   beforeEach(() => {
     process.env.NEXT_PUBLIC_LAST_UPDATED = new Date().toISOString();
