@@ -28,7 +28,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ github.head_ref }}
-      - name: Setup
+      - name: Project setup
         uses: ./.github/actions/setup
       - name: Install Chromium
         run: yarn playwright install chromium
@@ -85,7 +85,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup
+      - name: Project setup
         uses: ./.github/actions/setup
       - name: ESLint
         run: yarn lint
@@ -95,7 +95,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup
+      - name: Project setup
         uses: ./.github/actions/setup
       - name: Stylelint
         run: yarn stylelint
@@ -105,7 +105,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup
+      - name: Project setup
         uses: ./.github/actions/setup
       - name: Build
         env:
@@ -124,7 +124,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Setup
+      - name: Project setup
         uses: ./.github/actions/setup
         with:
           install-dependencies: false
