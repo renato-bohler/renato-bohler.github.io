@@ -13,7 +13,12 @@ populate(process.env as DotenvPopulateInput, {
 });
 
 export default defineConfig({
-  expect: { toHaveScreenshot: { animations: 'allow' } },
+  expect: {
+    toHaveScreenshot: {
+      animations: 'allow',
+      maxDiffPixelRatio: IS_CI ? 0.01 : 0.1,
+    },
+  },
   forbidOnly: IS_CI,
   fullyParallel: true,
   projects: [
@@ -29,7 +34,7 @@ export default defineConfig({
       use: { ...devices['Pixel 7'] },
     },
   ],
-  reporter: 'html',
+  reporter: IS_CI ? 'github' : 'html',
   retries: IS_CI ? 2 : 0,
   snapshotPathTemplate:
     '{testDir}/__screenshots__/{testName}/{arg}-{projectName}.png',
