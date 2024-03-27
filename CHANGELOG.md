@@ -1,3 +1,11 @@
+## [2.8.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.1...v2.8.2) (2024-03-27)
+
+
+### Bug Fixes
+
+* fixes FullStory initializing without an Org ID ([b0af794](https://github.com/renato-bohler/renato-bohler.github.io/commit/b0af7944f3d3dfa4cfc153fe3aef653fe1efe3be))
+* removes reinitialization warning ([ff9d66e](https://github.com/renato-bohler/renato-bohler.github.io/commit/ff9d66e013b5ffe9ece9980ec8f9a583dd005373))
+
 ## [2.8.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.0...v2.8.1) (2023-12-03)
 
 
