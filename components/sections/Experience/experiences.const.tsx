@@ -14,7 +14,7 @@ const intive: Company = {
 };
 
 const shippo: Company = {
-  color: '#93d33d',
+  color: '#25d695',
   logo: 'shippo',
   padding: 4,
 };
