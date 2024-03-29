@@ -1,3 +1,5 @@
+import { type FC } from 'react';
+
 import { useInView } from 'react-intersection-observer';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
@@ -12,7 +14,7 @@ import styles from './Skills.module.css';
 
 const HEADER = 'skills';
 
-export const Skills: React.FC = () => {
+export const Skills: FC = () => {
   const { isContrastMode } = useTheme();
 
   const { entry, ref } = useInView({

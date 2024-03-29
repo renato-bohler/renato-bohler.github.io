@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, type FC } from 'react';
 
 import { Button } from 'reakit/Button';
 import { Group } from 'reakit/Group';
@@ -15,7 +15,7 @@ type Props = {
   onResponse: (option: Option) => void;
 };
 
-export const OptionChatMessage: React.FC<Props> = ({
+export const OptionChatMessage: FC<Props> = ({
   message,
   onResponse,
 }) => {

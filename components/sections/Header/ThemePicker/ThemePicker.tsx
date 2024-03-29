@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, type FC } from 'react';
 
 import { Button } from 'reakit/Button';
 import {
@@ -17,7 +17,7 @@ import { useTheme } from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
 
-const BasePicker: React.FC = () => {
+const BasePicker: FC = () => {
   const {
     colorScheme,
     isContrastMode,

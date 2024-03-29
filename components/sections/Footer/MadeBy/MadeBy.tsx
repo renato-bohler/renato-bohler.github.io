@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FC } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -8,7 +8,7 @@ import { useTypingEffect } from '~/hooks/useTypingEffect';
 
 import styles from './MadeBy.module.css';
 
-export const MadeBy: React.FC = () => {
+export const MadeBy: FC = () => {
   const { isReducedMotion } = useTheme();
 
   const [handWritingFinished, setHandwritingFinished] =

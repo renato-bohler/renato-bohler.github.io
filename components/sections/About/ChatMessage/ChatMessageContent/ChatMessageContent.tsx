@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC } from 'react';
 
 import { type Message, type Option } from '../messages.types';
 
@@ -12,7 +12,7 @@ type Props = {
   onResponse: (option: Option) => void;
 };
 
-export const ChatMessageContent: React.FC<Props> = ({
+export const ChatMessageContent: FC<Props> = ({
   message,
   onResponse,
 }) => {

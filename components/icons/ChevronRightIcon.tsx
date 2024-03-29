@@ -1,8 +1,10 @@
+import { type CSSProperties, type FC } from 'react';
+
 import { useTheme } from '~/hooks/useTheme';
 
-export const ChevronRightIcon: React.FC<{
+export const ChevronRightIcon: FC<{
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }> = ({ className, style }) => {
   const { getReducedMotionDuration } = useTheme();
 

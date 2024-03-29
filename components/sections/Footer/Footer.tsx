@@ -1,3 +1,5 @@
+import { type FC } from 'react';
+
 import { Button } from 'reakit/Button';
 
 import { useFirstMount } from '~/hooks/useFirstMount';
@@ -15,7 +17,7 @@ type Props = {
   onProgressChange: (progress: number) => void;
 };
 
-export const Footer: React.FC<Props> = ({
+export const Footer: FC<Props> = ({
   isNavigationHeaderHidden,
   onEmailDialogOpen,
   onNavigationHeaderTrigger,

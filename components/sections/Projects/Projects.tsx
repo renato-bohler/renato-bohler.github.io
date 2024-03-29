@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, type CSSProperties, type FC } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -16,7 +16,7 @@ type Props = {
   repositories: RepositoryInfo[];
 };
 
-export const Projects: React.FC<Props> = ({
+export const Projects: FC<Props> = ({
   onEmailDialogOpen,
   repositories,
 }) => {
@@ -53,7 +53,7 @@ export const Projects: React.FC<Props> = ({
                           style={
                             {
                               '--i': 0.3 + 0.1 * index,
-                            } as React.CSSProperties
+                            } as CSSProperties
                           }
                         >
                           {character}

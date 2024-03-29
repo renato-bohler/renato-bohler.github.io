@@ -1,10 +1,10 @@
-import { memo } from 'react';
+import { memo, type FC } from 'react';
 
 import classNames from 'classnames';
 
 import styles from './WavyBackground.module.css';
 
-const Waves: React.FC = () => (
+const Waves: FC = () => (
   <div aria-hidden className={styles.waveBackground}>
     <svg>
       <defs>

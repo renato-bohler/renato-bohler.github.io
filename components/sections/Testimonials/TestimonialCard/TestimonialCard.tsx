@@ -1,3 +1,5 @@
+import { type FC, type ReactNode } from 'react';
+
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 import { useSwiperSlide } from 'swiper/react';
 
@@ -7,12 +9,12 @@ type Props = {
   authorName: string;
   authorPicture: string;
   authorRole: string;
-  children: React.ReactNode;
+  children: ReactNode;
   currentTestimonial: number;
   totalTestimonial: number;
 };
 
-export const TestimonialCard: React.FC<Props> = ({
+export const TestimonialCard: FC<Props> = ({
   authorName,
   authorPicture,
   authorRole,

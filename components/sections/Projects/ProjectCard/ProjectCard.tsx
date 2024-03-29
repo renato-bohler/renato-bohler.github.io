@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type FC } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -19,7 +19,7 @@ type Props = {
   repository?: RepositoryInfo;
 };
 
-export const ProjectCard: React.FC<Props> = ({
+export const ProjectCard: FC<Props> = ({
   order,
   project,
   repository,

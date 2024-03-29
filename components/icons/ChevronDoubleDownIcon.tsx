@@ -1,7 +1,9 @@
-export const ChevronDoubleDownIcon: React.FC<{
+import { type CSSProperties, type FC } from 'react';
+
+export const ChevronDoubleDownIcon: FC<{
   'aria-label'?: string;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }> = ({ 'aria-label': ariaLabel, className, style }) => (
   <svg
     aria-hidden={!ariaLabel}

@@ -1,3 +1,5 @@
+import { type ReactElement } from 'react';
+
 export const skills: Skill[] = [
   {
     brief: (
@@ -55,7 +57,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: true,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -116,7 +118,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -169,7 +171,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -248,7 +250,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: true,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -320,7 +322,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -401,7 +403,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -569,7 +571,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: true,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -705,7 +707,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: true,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -788,7 +790,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -851,7 +853,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -909,7 +911,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -957,7 +959,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -1026,7 +1028,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -1082,7 +1084,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -1176,7 +1178,7 @@ export const skills: Skill[] = [
       </>
     ),
     featured: false,
-    icon(isContrastMode: boolean): React.ReactElement {
+    icon(isContrastMode: boolean): ReactElement {
       const colors = getColors(this, isContrastMode);
 
       return (
@@ -1203,7 +1205,7 @@ export const getColors = (skill: Skill, isContrastMode: boolean) =>
   isContrastMode ? skill.colors.contrast : skill.colors.normal;
 
 export type Skill = {
-  brief?: React.ReactElement;
+  brief?: ReactElement;
   colors: {
     contrast: {
       background: string;
@@ -1217,9 +1219,9 @@ export type Skill = {
       trackColor?: string;
     };
   };
-  description: React.ReactElement;
+  description: ReactElement;
   featured: boolean;
-  icon?: (isContrastMode: boolean) => React.ReactElement;
+  icon?: (isContrastMode: boolean) => ReactElement;
   id: string;
   name: string;
   studying: boolean;

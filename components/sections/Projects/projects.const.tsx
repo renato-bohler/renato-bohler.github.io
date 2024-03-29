@@ -1,3 +1,5 @@
+import { type ReactElement } from 'react';
+
 import { Button } from 'reakit/Button';
 
 import styles from './Projects.module.css';
@@ -324,7 +326,7 @@ export const getProjects = (
 ];
 
 export type Project = {
-  description: React.ReactElement;
+  description: ReactElement;
   folder: string;
   name: string;
   repo: string;

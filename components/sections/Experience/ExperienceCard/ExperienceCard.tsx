@@ -1,3 +1,5 @@
+import { type FC, type ReactNode } from 'react';
+
 import { useInView } from 'react-intersection-observer';
 
 import { useTheme } from '~/hooks/useTheme';
@@ -7,7 +9,7 @@ import { type Company, type Period } from '../experiences.const';
 import styles from './ExperienceCard.module.css';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
   company: Company;
   consultant?: boolean;
   jobTitle: string;
@@ -38,7 +40,7 @@ const formatDuration = (from: Date, to: Date) => {
   return `${formattedYears}, ${formattedMonths}`;
 };
 
-export const ExperienceCard: React.FC<Props> = ({
+export const ExperienceCard: FC<Props> = ({
   children,
   company,
   consultant,

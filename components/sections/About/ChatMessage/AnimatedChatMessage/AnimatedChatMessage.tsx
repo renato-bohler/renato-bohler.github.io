@@ -1,4 +1,4 @@
-import React from 'react';
+import { type FC, type ReactNode } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -8,12 +8,10 @@ import { ChatMessage } from '../ChatMessage';
 import styles from './AnimatedChatMessage.module.css';
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-export const AnimatedChatMessage: React.FC<Props> = ({
-  children,
-}) => {
+export const AnimatedChatMessage: FC<Props> = ({ children }) => {
   const [ref, inView] = useInView({
     threshold: 1,
     triggerOnce: true,

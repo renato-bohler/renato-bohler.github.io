@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type FC } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
@@ -11,7 +11,7 @@ type Props = {
   sectionName: SectionName;
 };
 
-export const SectionAnchor: React.FC<Props> = ({
+export const SectionAnchor: FC<Props> = ({
   onChange,
   sectionName,
 }) => {

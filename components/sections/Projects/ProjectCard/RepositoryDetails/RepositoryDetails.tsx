@@ -1,3 +1,5 @@
+import { type FC } from 'react';
+
 import { GitHubIcon } from '~/components/icons/GitHubIcon';
 import { PlayIcon } from '~/components/icons/PlayIcon';
 import { useFirstMount } from '~/hooks/useFirstMount';
@@ -16,7 +18,7 @@ type Props = {
   title: string;
 };
 
-export const RepositoryDetails: React.FC<Props> = ({
+export const RepositoryDetails: FC<Props> = ({
   lastUpdate,
   liveUrl,
   monthlyDownloads,

@@ -1,4 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import {
+  useEffect,
+  useState,
+  type CSSProperties,
+  type FC,
+  type ReactNode,
+} from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -9,12 +15,12 @@ import styles from './AnimatedIcon.module.css';
 
 type Props = {
   animationDelay?: number;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 };
 
-export const AnimatedIcon: React.FC<Props> = ({
+export const AnimatedIcon: FC<Props> = ({
   animationDelay = 0,
   children,
   className,

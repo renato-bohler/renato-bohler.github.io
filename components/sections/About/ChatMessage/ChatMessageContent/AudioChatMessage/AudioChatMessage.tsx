@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState, type FC } from 'react';
 
 import { Button } from 'reakit/Button';
 
@@ -24,7 +24,7 @@ const formatTime = (seconds: number) => {
 
 const SPEED_CYCLE = [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2];
 
-export const AudioChatMessage: React.FC<Props> = ({ message }) => {
+export const AudioChatMessage: FC<Props> = ({ message }) => {
   const [status, setStatus] = useState<Status>('loading');
 
   const [time, setTime] = useState(0);

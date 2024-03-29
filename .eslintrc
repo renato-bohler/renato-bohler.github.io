@@ -10,6 +10,7 @@
   "extends": [
     "next",
     "next/core-web-vitals",
+    "plugin:react/jsx-runtime",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
     "plugin:perfectionist/recommended-natural",
@@ -66,6 +67,10 @@
       "error",
       { "prefer": "type-imports", "fixStyle": "inline-type-imports" },
     ],
+    "no-restricted-imports": [
+      "error",
+      { "paths": [{ "name": "react", "importNames": ["default"] }] },
+    ],
     "perfectionist/sort-imports": [
       "error",
       {
@@ -119,6 +124,7 @@
       "rules": {
         "spaced-comment": "off",
         "multiline-comment-style": "off",
+        "capitalized-comments": "off",
       },
     },
     {
