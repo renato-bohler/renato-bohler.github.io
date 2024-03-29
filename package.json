@@ -8,21 +8,22 @@
     "start": "next start",
     "lint": "eslint .",
     "stylelint": "stylelint \"**/*.css\"",
+    "test": "playwright test",
     "test:a11y": "playwright test e2e/accessibility.test.ts",
     "test:visual": "playwright test e2e/visual.test.ts"
   },
   "dependencies": {
     "@fullstory/browser": "^2.0.3",
     "body-scroll-lock": "^3.1.5",
-    "classnames": "^2.3.2",
-    "next": "^14.0.2",
+    "classnames": "^2.5.1",
+    "next": "^14.1.4",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-intersection-observer": "^9.5.3",
-    "react-responsive": "^9.0.2",
+    "react-intersection-observer": "^9.8.1",
+    "react-responsive": "^10.0.0",
     "reakit": "^1.3.11",
-    "swiper": "^10.3.1",
+    "swiper": "^11.1.0",
     "throttle-debounce": "^5.0.0"
   },
   "devDependencies": {
