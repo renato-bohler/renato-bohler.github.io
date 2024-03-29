@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint .",
     "stylelint": "stylelint \"**/*.css\"",
-    "test": "jest",
-    "test:e2e": "playwright test"
+    "test:a11y": "playwright test e2e/accessibility.test.ts",
+    "test:visual": "playwright test e2e/visual.test.ts"
   },
   "dependencies": {
     "@fullstory/browser": "^2.0.3",
@@ -26,6 +26,7 @@
     "throttle-debounce": "^5.0.0"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.8.5",
     "@playwright/test": "^1.40.0",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",

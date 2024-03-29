@@ -11,15 +11,24 @@ permissions:
   pull-requests: write
 
 jobs:
-  test:
+  a11y-test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Project setup
         uses: ./.github/actions/setup
-      - name: Test
-        run: yarn test
+      - name: Accessibility test
+        run: yarn test:a11y
+    - name: Upload test artifacts on failure
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-artifacts
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 30
 
   visual-test:
     runs-on: ubuntu-latest
@@ -35,7 +44,7 @@ jobs:
       - name: Install Chromium
         run: yarn playwright install chromium
       - name: Visual regression test
-        run: yarn test:e2e --update-snapshots
+        run: yarn test:visual --update-snapshots
       - name: Upload test artifacts on failure
         uses: actions/upload-artifact@v4
         if: failure()
