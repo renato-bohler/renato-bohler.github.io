@@ -16,7 +16,7 @@ export default defineConfig({
   expect: {
     toHaveScreenshot: {
       animations: 'allow',
-      maxDiffPixelRatio: IS_CI ? 0.01 : 0.1,
+      maxDiffPixelRatio: IS_CI ? 0 : 0.1,
     },
   },
   forbidOnly: IS_CI,
