@@ -1,10 +1,9 @@
 .animatedScroll {
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
+  animation-timeline: --experience-transition;
 
   animation-range: entry 0% entry-crossing 100%;
-
-  animation-timeline: --experience-transition;
 }
 
 .anchor {
@@ -49,7 +48,6 @@
 
 .transitionContainer {
   height: 500px;
-
   view-timeline-name: --experience-transition;
 }
 
