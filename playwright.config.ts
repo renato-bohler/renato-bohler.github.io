@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { DotenvPopulateInput, populate } from 'dotenv';
+import { populate, type DotenvPopulateInput } from 'dotenv';
 
 const URL = 'http://localhost:3000';
 const IS_CI = !!process.env.CI;
@@ -16,7 +16,7 @@ export default defineConfig({
   expect: {
     toHaveScreenshot: {
       animations: 'allow',
-      maxDiffPixelRatio: IS_CI ? 0.01 : 0.1,
+      maxDiffPixelRatio: IS_CI ? 0 : 0.1,
     },
   },
   forbidOnly: IS_CI,

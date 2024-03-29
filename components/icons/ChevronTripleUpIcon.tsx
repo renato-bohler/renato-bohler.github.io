@@ -1,4 +1,4 @@
-const ChevronDoubleUpIcon: React.FC<{
+export const ChevronTripleUpIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -14,10 +14,8 @@ const ChevronDoubleUpIcon: React.FC<{
     width="1em"
   >
     <path
-      d="M7.41 18.41L6 17l6-6l6 6l-1.41 1.41L12 13.83l-4.59 4.58m0-6L6 11l6-6l6 6l-1.41 1.41L12 7.83l-4.59 4.58Z"
+      d="M16.59 9.42L12 4.83L7.41 9.42L6 8l6-6l6 6l-1.41 1.42m0 6L12 10.83l-4.59 4.59L6 14l6-6l6 6l-1.41 1.42m0 6L12 16.83l-4.59 4.59L6 20l6-6l6 6l-1.41 1.42Z"
       fill="currentColor"
     />
   </svg>
 );
-
-export default ChevronDoubleUpIcon;

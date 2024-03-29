@@ -5,19 +5,21 @@ import { useInView } from 'react-intersection-observer';
 import { DialogDisclosure, useDialogState } from 'reakit/Dialog';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import ChevronDoubleDownIcon from '~/components/icons/ChevronDoubleDown';
-import ChevronDoubleUpIcon from '~/components/icons/ChevronDoubleUp';
-import ChevronDownIcon from '~/components/icons/ChevronDown';
-import ChevronTripleDownIcon from '~/components/icons/ChevronTripleDown';
-import ChevronTripleUpIcon from '~/components/icons/ChevronTripleUp';
-import ChevronUpIcon from '~/components/icons/ChevronUp';
-import OpenBookIcon from '~/components/icons/OpenBook';
-import useTheme from '~/hooks/useTheme';
+import { ChevronDoubleDownIcon } from '~/components/icons/ChevronDoubleDownIcon';
+import { ChevronDoubleUpIcon } from '~/components/icons/ChevronDoubleUpIcon';
+import { ChevronDownIcon } from '~/components/icons/ChevronDownIcon';
+import { ChevronTripleDownIcon } from '~/components/icons/ChevronTripleDownIcon';
+import { ChevronTripleUpIcon } from '~/components/icons/ChevronTripleUpIcon';
+import { ChevronUpIcon } from '~/components/icons/ChevronUpIcon';
+import { OpenBookIcon } from '~/components/icons/OpenBookIcon';
+import { useTheme } from '~/hooks/useTheme';
 
 import styles from './SkillCard.module.css';
 
-const SkillCardDialog = dynamic(
-  () => import('./SkillCardDialog/SkillCardDialog'),
+const SkillCardDialog = dynamic(() =>
+  import('./SkillCardDialog/SkillCardDialog').then(
+    ({ SkillCardDialog }) => SkillCardDialog,
+  ),
 );
 
 type Props = {
@@ -64,7 +66,7 @@ const USAGE = {
 
 const STUDYING_LABEL = "I've been studying this recently";
 
-const SkillCard: React.FC<Props> = ({
+export const SkillCard: React.FC<Props> = ({
   backgroundColor,
   brief,
   description,
@@ -208,5 +210,3 @@ const SkillCard: React.FC<Props> = ({
     </div>
   );
 };
-
-export default SkillCard;

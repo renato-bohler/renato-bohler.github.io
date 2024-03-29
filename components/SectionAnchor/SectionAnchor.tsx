@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import { SectionName } from '~/consts/sections.const';
+import { type SectionName } from '~/consts/sections.const';
 
 import styles from './SectionAnchor.module.css';
 
@@ -11,7 +11,7 @@ type Props = {
   sectionName: SectionName;
 };
 
-const SectionAnchor: React.FC<Props> = ({
+export const SectionAnchor: React.FC<Props> = ({
   onChange,
   sectionName,
 }) => {
@@ -23,5 +23,3 @@ const SectionAnchor: React.FC<Props> = ({
 
   return <div aria-hidden className={styles.anchor} ref={ref} />;
 };
-
-export default SectionAnchor;

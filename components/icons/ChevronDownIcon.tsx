@@ -1,4 +1,4 @@
-const ChevronUpIcon: React.FC<{
+export const ChevronDownIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -14,10 +14,8 @@ const ChevronUpIcon: React.FC<{
     width="1em"
   >
     <path
-      d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6l-6 6l1.41 1.41Z"
+      d="M7.41 8.58L12 13.17l4.59-4.59L18 10l-6 6l-6-6l1.41-1.42Z"
       fill="currentColor"
     />
   </svg>
 );
-
-export default ChevronUpIcon;

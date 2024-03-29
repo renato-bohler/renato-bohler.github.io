@@ -1,6 +1,11 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import {
+  useEffect,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 
-const usePreferredMotion = (): [
+export const usePreferredMotion = (): [
   boolean,
   Dispatch<SetStateAction<boolean>>,
 ] => {
@@ -36,5 +41,3 @@ const usePreferredMotion = (): [
 
   return [isReducedMotion, setReducedMotion];
 };
-
-export default usePreferredMotion;

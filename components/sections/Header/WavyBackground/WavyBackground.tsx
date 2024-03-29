@@ -4,7 +4,7 @@ import classNames from 'classnames';
 
 import styles from './WavyBackground.module.css';
 
-const WavyBackground: React.FC = () => (
+const Waves: React.FC = () => (
   <div aria-hidden className={styles.waveBackground}>
     <svg>
       <defs>
@@ -61,4 +61,4 @@ const WavyBackground: React.FC = () => (
   </div>
 );
 
-export default memo(WavyBackground);
+export const WavyBackground = memo(Waves);

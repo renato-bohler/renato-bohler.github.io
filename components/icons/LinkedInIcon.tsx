@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const LinkedInIcon: React.FC<{
+export const LinkedInIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -75,5 +75,3 @@ const LinkedInIcon: React.FC<{
     </svg>
   );
 };
-
-export default LinkedInIcon;

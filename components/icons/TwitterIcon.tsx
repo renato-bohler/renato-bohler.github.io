@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const TwitterIcon: React.FC<{
+export const TwitterIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -44,5 +44,3 @@ const TwitterIcon: React.FC<{
     </svg>
   );
 };
-
-export default TwitterIcon;

@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import {
   SECTIONS_WITH_HEADER,
-  Section,
-  SectionName,
+  type Section,
+  type SectionName,
 } from '~/consts/sections.const';
 
 type SectionInView = {
@@ -11,7 +11,7 @@ type SectionInView = {
   name: SectionName;
 };
 
-const useSectionAnchor = (): {
+export const useSectionAnchor = (): {
   handleSectionChange: (sectionName: string, inView: boolean) => void;
   title: string;
 } => {
@@ -44,8 +44,9 @@ const useSectionAnchor = (): {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      const sectionName = sections.find((section) => section.inView)
-        ?.name;
+      const sectionName = sections.find(
+        (section) => section.inView,
+      )?.name;
       const section = SECTIONS_WITH_HEADER.find(
         (section) => section.name === sectionName,
       );
@@ -63,5 +64,3 @@ const useSectionAnchor = (): {
 
   return { handleSectionChange, title: activeSection.title };
 };
-
-export default useSectionAnchor;

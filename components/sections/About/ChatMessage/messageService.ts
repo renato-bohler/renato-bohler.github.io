@@ -1,9 +1,10 @@
-import messages, {
+import {
   FAST_MODE_ID,
   end,
+  messages,
   optionSelect,
 } from './messages.const';
-import { Message, Option } from './messages.types';
+import { type Message, type Option } from './messages.types';
 
 // Time it takes for a message to be added
 const MESSAGE_START_BASE_MS = 1000;
@@ -89,9 +90,7 @@ class MessageService {
       return;
     }
 
-    if (this.shouldResendOptionSelect()) {
-      this.resendOptionSelect();
-    }
+    if (this.shouldResendOptionSelect()) this.resendOptionSelect();
   }
 
   onMessage(_message: Message) {}
@@ -262,6 +261,4 @@ class MessageService {
   }
 }
 
-const instance = new MessageService();
-
-export default instance;
+export const messageService = new MessageService();

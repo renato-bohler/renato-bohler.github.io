@@ -12,7 +12,7 @@ type Props = {
   totalTestimonial: number;
 };
 
-const TestimonialCard: React.FC<Props> = ({
+export const TestimonialCard: React.FC<Props> = ({
   authorName,
   authorPicture,
   authorRole,
@@ -44,5 +44,3 @@ const TestimonialCard: React.FC<Props> = ({
     </div>
   );
 };
-
-export default TestimonialCard;

@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import useTypingEffect from '~/hooks/useTypingEffect';
+import { useTypingEffect } from '~/hooks/useTypingEffect';
 
 type Options = {
   changeSubtitleDelayMs?: number;
@@ -33,7 +33,7 @@ const getNewSubtitle = (subtitles: string[], current?: string) => {
   return candidates[Math.floor(Math.random() * candidates.length)];
 };
 
-const useHeaderTypingEffect = ({
+export const useHeaderTypingEffect = ({
   changeSubtitleDelayMs = 3000,
   keyStrokeMaxVarianceMs = 70,
   keyStrokeMinTimeMs = 50,
@@ -154,5 +154,3 @@ const useHeaderTypingEffect = ({
     subtitle: inView ? subtitle : '',
   };
 };
-
-export default useHeaderTypingEffect;

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import usePrevious from './usePrevious';
-import useTheme from './useTheme';
+import { usePrevious } from './usePrevious';
+import { useTheme } from './useTheme';
 
 type Options = {
   animateDelete?: boolean;
@@ -14,7 +14,7 @@ type Options = {
 
 type State = 'deleting' | 'stale' | 'typing';
 
-const useTypingEffect = ({
+export const useTypingEffect = ({
   animateDelete = false,
   halt,
   keyStrokeMaxVarianceMs = 70,
@@ -55,11 +55,9 @@ const useTypingEffect = ({
     window.clearTimeout(isTypingTimeout);
     setCurrentTarget(targetText);
 
-    if (targetText.startsWith(previousTarget || '')) {
+    if (targetText.startsWith(previousTarget || ''))
       setState('stale');
-    } else {
-      setState('deleting');
-    }
+    else setState('deleting');
   }, [targetText]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Typing effect
@@ -121,5 +119,3 @@ const useTypingEffect = ({
 
   return isReducedMotion ? targetText : currentText;
 };
-
-export default useTypingEffect;

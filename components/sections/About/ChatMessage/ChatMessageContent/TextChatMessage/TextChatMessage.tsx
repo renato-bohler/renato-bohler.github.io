@@ -1,11 +1,8 @@
-import React from 'react';
+import type React from 'react';
 
-import { TextMessage } from '../../messages.types';
+import { type TextMessage } from '../../messages.types';
 
 type Props = { message: TextMessage };
 
-const TextChatMessage: React.FC<Props> = ({ message }) => (
-  <>{message.content}</>
-);
-
-export default TextChatMessage;
+export const TextChatMessage: React.FC<Props> = ({ message }) =>
+  message.content;

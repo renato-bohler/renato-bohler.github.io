@@ -1,18 +1,18 @@
 import { useInView } from 'react-intersection-observer';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-import SkillCard from './SkillCard/SkillCard';
-import SkillFeedbacks from './SkillFeedbacks/SkillFeedbacks';
-import SkillVectors from './SkillVectors/SkillVectors';
-import skills, { getColors } from './skills.const';
+import { SkillCard } from './SkillCard/SkillCard';
+import { SkillFeedbacks } from './SkillFeedbacks/SkillFeedbacks';
+import { SkillVectors } from './SkillVectors/SkillVectors';
+import { getColors, skills } from './skills.const';
 
 import styles from './Skills.module.css';
 
 const HEADER = 'skills';
 
-const Skills: React.FC = () => {
+export const Skills: React.FC = () => {
   const { isContrastMode } = useTheme();
 
   const { entry, ref } = useInView({
@@ -85,5 +85,3 @@ const Skills: React.FC = () => {
     </section>
   );
 };
-
-export default Skills;

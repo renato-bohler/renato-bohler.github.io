@@ -1,8 +1,8 @@
 import { useInView } from 'react-intersection-observer';
 
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-import { Company, Period } from '../experiences.const';
+import { type Company, type Period } from '../experiences.const';
 
 import styles from './ExperienceCard.module.css';
 
@@ -38,7 +38,7 @@ const formatDuration = (from: Date, to: Date) => {
   return `${formattedYears}, ${formattedMonths}`;
 };
 
-const ExperienceCard: React.FC<Props> = ({
+export const ExperienceCard: React.FC<Props> = ({
   children,
   company,
   consultant,
@@ -94,5 +94,3 @@ const ExperienceCard: React.FC<Props> = ({
     </li>
   );
 };
-
-export default ExperienceCard;

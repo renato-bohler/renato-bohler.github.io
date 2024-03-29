@@ -1,4 +1,4 @@
-const skills: Skill[] = [
+export const skills: Skill[] = [
   {
     brief: (
       <>
@@ -1226,5 +1226,3 @@ export type Skill = {
   usageLevel: -1 | -2 | -3 | 1 | 2 | 3;
   yearsExperience?: number;
 };
-
-export default skills;

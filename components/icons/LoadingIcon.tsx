@@ -1,4 +1,4 @@
-const LoadingIcon: React.FC<{
+export const LoadingIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -38,5 +38,3 @@ const LoadingIcon: React.FC<{
     </path>
   </svg>
 );
-
-export default LoadingIcon;

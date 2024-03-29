@@ -1,4 +1,4 @@
-const SkillVectors = () => (
+export const SkillVectors = () => (
   <svg style={{ display: 'none' }}>
     <symbol id="javascript" viewBox="0 0 446.124 321.514">
       <path
@@ -133,5 +133,3 @@ const SkillVectors = () => (
     </symbol>
   </svg>
 );
-
-export default SkillVectors;

@@ -1,6 +1,6 @@
-import GitHubIcon from '~/components/icons/GitHub';
-import PlayIcon from '~/components/icons/Play';
-import useFirstMount from '~/hooks/useFirstMount';
+import { GitHubIcon } from '~/components/icons/GitHubIcon';
+import { PlayIcon } from '~/components/icons/PlayIcon';
+import { useFirstMount } from '~/hooks/useFirstMount';
 import * as format from '~/utils/format';
 
 import styles from './RepositoryDetails.module.css';
@@ -16,7 +16,7 @@ type Props = {
   title: string;
 };
 
-const RepositoryDetails: React.FC<Props> = ({
+export const RepositoryDetails: React.FC<Props> = ({
   lastUpdate,
   liveUrl,
   monthlyDownloads,
@@ -72,5 +72,3 @@ const RepositoryDetails: React.FC<Props> = ({
     </div>
   );
 };
-
-export default RepositoryDetails;

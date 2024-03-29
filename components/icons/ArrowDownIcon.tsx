@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const ArrowDownIcon: React.FC<{
+export const ArrowDownIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -54,5 +54,3 @@ const ArrowDownIcon: React.FC<{
     </svg>
   );
 };
-
-export default ArrowDownIcon;

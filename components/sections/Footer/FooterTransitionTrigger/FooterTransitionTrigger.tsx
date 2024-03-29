@@ -9,7 +9,7 @@ type Props = {
   onProgressChange: (progress: number) => void;
 };
 
-const FooterTransitionTrigger: React.FC<Props> = ({
+export const FooterTransitionTrigger: React.FC<Props> = ({
   onNavigationHeaderTrigger,
   onProgressChange,
 }) => {
@@ -66,5 +66,3 @@ const FooterTransitionTrigger: React.FC<Props> = ({
     </>
   );
 };
-
-export default FooterTransitionTrigger;

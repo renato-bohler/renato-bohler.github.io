@@ -1,9 +1,9 @@
-import About from '~/components/sections/About/About';
-import Experience from '~/components/sections/Experience/Experience';
-import Header from '~/components/sections/Header/Header';
-import Projects from '~/components/sections/Projects/Projects';
-import Skills from '~/components/sections/Skills/Skills';
-import Testimonials from '~/components/sections/Testimonials/Testimonials';
+import { About } from '~/components/sections/About/About';
+import { Experience } from '~/components/sections/Experience/Experience';
+import { Header } from '~/components/sections/Header/Header';
+import { Projects } from '~/components/sections/Projects/Projects';
+import { Skills } from '~/components/sections/Skills/Skills';
+import { Testimonials } from '~/components/sections/Testimonials/Testimonials';
 
 const TITLE = 'Renato Böhler';
 
