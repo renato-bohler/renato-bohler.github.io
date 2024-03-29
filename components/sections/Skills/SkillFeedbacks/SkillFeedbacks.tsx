@@ -101,7 +101,7 @@ const AVERAGE_POINTS = AVERAGE.map((average, index) => {
   ].join(',');
 }).join(' ');
 
-export const SkillFeedbacks: FC = () => {
+export const SkillFeedbacks = () => {
   const [tableView, setTableView] = useState(false);
 
   return (
@@ -288,7 +288,7 @@ const GraphicalView: FC<{ active: boolean }> = ({ active }) => {
   );
 };
 
-const TableView: FC = () => (
+const TableView = () => (
   <table className={styles.tableView}>
     <caption>
       All data collected from colleagues on my latest feedback round.

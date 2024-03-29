@@ -3,7 +3,6 @@ import {
   useRef,
   useState,
   type CSSProperties,
-  type FC,
 } from 'react';
 
 import { ExperienceCard } from './ExperienceCard/ExperienceCard';
@@ -12,7 +11,7 @@ import { experiences } from './experiences.const';
 
 import styles from './Experience.module.css';
 
-export const Experience: FC = () => {
+export const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 

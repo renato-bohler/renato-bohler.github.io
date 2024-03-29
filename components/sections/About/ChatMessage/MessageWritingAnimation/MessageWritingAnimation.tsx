@@ -1,8 +1,6 @@
-import { type FC } from 'react';
-
 import styles from './MessageWritingAnimation.module.css';
 
-export const MessageWritingAnimation: FC = () => (
+export const MessageWritingAnimation = () => (
   <div className={styles.container}>
     &nbsp;
     <div className={styles.dot} />
