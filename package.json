@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "stylelint": "stylelint \"**/*.css\"",
     "test": "playwright test",
-    "test:a11y": "playwright test e2e/accessibility.test.ts",
+    "test:accessibility": "playwright test e2e/accessibility.test.ts",
     "test:visual": "playwright test e2e/visual.test.ts"
   },
   "dependencies": {
