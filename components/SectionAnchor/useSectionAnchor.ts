@@ -44,8 +44,9 @@ const useSectionAnchor = (): {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      const sectionName = sections.find((section) => section.inView)
-        ?.name;
+      const sectionName = sections.find(
+        (section) => section.inView,
+      )?.name;
       const section = SECTIONS_WITH_HEADER.find(
         (section) => section.name === sectionName,
       );
