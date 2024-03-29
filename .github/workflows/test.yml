@@ -143,7 +143,7 @@ jobs:
         with:
           install-dependencies: false
       - name: Download build artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: out
           path: out
