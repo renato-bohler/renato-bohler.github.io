@@ -23,8 +23,10 @@
 
   font-size: 2em;
 
-  transition: backdrop-filter 250ms ease-in-out,
-    padding 250ms ease-in-out, margin 250ms ease-in-out,
+  transition:
+    backdrop-filter 250ms ease-in-out,
+    padding 250ms ease-in-out,
+    margin 250ms ease-in-out,
     width 500ms ease-in-out;
 }
 
@@ -38,9 +40,11 @@
   backdrop-filter: blur(10px);
   border-radius: 50px;
 
-  transition: background-color 500ms ease-in-out,
+  transition:
+    background-color 500ms ease-in-out,
     backdrop-filter 500ms ease-in-out,
-    padding-left 500ms ease-in-out 750ms, margin 500ms ease-in-out,
+    padding-left 500ms ease-in-out 750ms,
+    margin 500ms ease-in-out,
     width 500ms ease-in-out;
 }
 
@@ -148,8 +152,11 @@
   min-width: 60px;
   min-height: 40px;
 
-  transition: transform 1s ease-in-out 250ms, top 1s ease-in-out 350ms,
-    left 1s ease-in-out 250ms, margin-top 500ms ease-in-out;
+  transition:
+    transform 1s ease-in-out 250ms,
+    top 1s ease-in-out 350ms,
+    left 1s ease-in-out 250ms,
+    margin-top 500ms ease-in-out;
 }
 
 .heading[data-folded='true'] > .title {
@@ -160,7 +167,8 @@
 .heading[data-folded='true'] > .subtitle {
   font-size: 0;
   opacity: 0%;
-  transition: opacity 250ms ease-in-out,
+  transition:
+    opacity 250ms ease-in-out,
     font-size 250ms ease-in-out 750ms;
 }
 
@@ -171,13 +179,16 @@
 
 .heading[data-folded='true'] .name[data-complete='false'] {
   color: transparent;
-  transition: 250ms ease-in-out, color 0ms;
+  transition:
+    250ms ease-in-out,
+    color 0ms;
 }
 
 .heading[data-folded='true'] .initial {
   font-size: 2.22rem;
   line-height: 1em;
-  transition: transform 500ms ease-in-out 250ms,
+  transition:
+    transform 500ms ease-in-out 250ms,
     font-size 500ms ease-in-out 250ms;
 }
 

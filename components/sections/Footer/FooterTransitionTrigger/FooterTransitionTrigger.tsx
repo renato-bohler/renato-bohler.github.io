@@ -9,7 +9,7 @@ type Props = {
   onNavigationHeaderTrigger: (hide: boolean) => void;
 };
 
-const FooterTransitionTrigger: React.FC<Props> = ({
+export const FooterTransitionTrigger: React.FC<Props> = ({
   onFooterTransitionTrigger,
   onNavigationHeaderTrigger,
 }) => {
@@ -40,5 +40,3 @@ const FooterTransitionTrigger: React.FC<Props> = ({
     </>
   );
 };
-
-export default FooterTransitionTrigger;

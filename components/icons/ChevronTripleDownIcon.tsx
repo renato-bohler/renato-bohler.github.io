@@ -1,4 +1,4 @@
-const ChevronTripleDownIcon: React.FC<{
+export const ChevronTripleDownIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const ChevronTripleDownIcon: React.FC<{
     />
   </svg>
 );
-
-export default ChevronTripleDownIcon;

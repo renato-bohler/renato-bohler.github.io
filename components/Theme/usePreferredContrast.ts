@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { Theme, contrast } from '~/consts/themes.const';
+import { contrast, type Theme } from '~/consts/themes.const';
 
-const usePreferredContrast = (
+export const usePreferredContrast = (
   theme: Theme,
   setContrastMode: (value: boolean) => void,
 ): boolean => {
@@ -36,5 +36,3 @@ const usePreferredContrast = (
 
   return theme.name === contrast.name;
 };
-
-export default usePreferredContrast;

@@ -5,27 +5,25 @@ import { VisuallyHidden } from 'reakit';
 import { Button } from 'reakit/Button';
 import { debounce } from 'throttle-debounce';
 
-import ArrowDownIcon from '~/components/icons/ArrowDown';
+import { ArrowDownIcon } from '~/components/icons/ArrowDownIcon';
 
-import AnimatedChatMessage from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
-import ChatMessage from './ChatMessage/ChatMessage';
-import useMessages from './ChatMessage/useMessages';
+import { AnimatedChatMessage } from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
+import { ChatMessage } from './ChatMessage/ChatMessage';
+import { useMessages } from './ChatMessage/useMessages';
 
 import styles from './About.module.css';
 
-const About: React.FC = () => {
+export const About: React.FC = () => {
   const [fullyScrolled, setFullyScrolled] = useState(true);
 
   const messagesRef = useRef<HTMLDivElement | null>(null);
   const scrollBottom = useCallback(
     () =>
-      debounce(
-        100,
-        () =>
-          messagesRef.current?.scrollTo({
-            behavior: 'smooth',
-            top: messagesRef.current.scrollHeight,
-          }),
+      debounce(100, () =>
+        messagesRef.current?.scrollTo({
+          behavior: 'smooth',
+          top: messagesRef.current.scrollHeight,
+        }),
       )(),
     [],
   );
@@ -106,5 +104,3 @@ const About: React.FC = () => {
     </section>
   );
 };
-
-export default About;

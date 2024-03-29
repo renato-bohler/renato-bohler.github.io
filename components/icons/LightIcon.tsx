@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const LightIcon: React.FC<{
+export const LightIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -179,5 +179,3 @@ const LightIcon: React.FC<{
     </svg>
   );
 };
-
-export default LightIcon;

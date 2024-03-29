@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const DarkIcon: React.FC<{
+export const DarkIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -83,5 +83,3 @@ const DarkIcon: React.FC<{
     </svg>
   );
 };
-
-export default DarkIcon;

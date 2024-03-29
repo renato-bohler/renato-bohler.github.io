@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const SocialsIcon: React.FC<{
+export const SocialsIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -64,5 +64,3 @@ const SocialsIcon: React.FC<{
     </svg>
   );
 };
-
-export default SocialsIcon;

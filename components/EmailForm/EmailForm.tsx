@@ -1,11 +1,11 @@
-import React, { Ref, forwardRef, useState } from 'react';
+import React, { forwardRef, useState, type Ref } from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';
 
-import CheckIcon from '~/components/icons/Check';
-import LoadingIcon from '~/components/icons/Loading';
-import PaperPlaneIcon from '~/components/icons/PaperPlane';
+import { CheckIcon } from '~/components/icons/CheckIcon';
+import { LoadingIcon } from '~/components/icons/LoadingIcon';
+import { PaperPlaneIcon } from '~/components/icons/PaperPlaneIcon';
 
 import styles from './EmailForm.module.css';
 
@@ -41,7 +41,7 @@ type Props = {
   className?: string;
 };
 
-const EmailForm = (
+export const BaseEmailForm = (
   { className }: Props,
   ref: Ref<HTMLFormElement>,
 ) => {
@@ -144,4 +144,4 @@ const EmailForm = (
   );
 };
 
-export default forwardRef(EmailForm);
+export const EmailForm = forwardRef(BaseEmailForm);

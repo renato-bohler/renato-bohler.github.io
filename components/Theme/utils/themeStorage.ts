@@ -1,6 +1,6 @@
-import themes, { Theme } from '~/consts/themes.const';
+import { themes, type Theme } from '~/consts/themes.const';
 
-import { ColorScheme } from '../ThemeProvider';
+import { type ColorScheme } from '../ThemeProvider';
 
 const THEME_KEY = 'theme';
 

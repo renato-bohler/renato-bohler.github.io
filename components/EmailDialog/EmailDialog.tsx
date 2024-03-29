@@ -4,15 +4,15 @@ import { Button } from 'reakit/Button';
 import {
   Dialog,
   DialogBackdrop,
-  DialogStateReturn,
+  type DialogStateReturn,
 } from 'reakit/Dialog';
 
-import useDialogHistory from '~/hooks/useDialogHistory';
-import useTheme from '~/hooks/useTheme';
+import { useDialogHistory } from '~/hooks/useDialogHistory';
+import { useTheme } from '~/hooks/useTheme';
 
-import EmailForm from '../EmailForm/EmailForm';
-import AnimatedIcon from '../icons/AnimatedIcon/AnimatedIcon';
-import CloseIcon from '../icons/Close';
+import { EmailForm } from '../EmailForm/EmailForm';
+import { AnimatedIcon } from '../icons/AnimatedIcon/AnimatedIcon';
+import { CloseIcon } from '../icons/CloseIcon';
 
 import styles from './EmailDialog.module.css';
 
@@ -20,7 +20,7 @@ type Props = {
   dialog: DialogStateReturn;
 };
 
-const EmailDialog: React.FC<Props> = ({ dialog }) => {
+export const EmailDialog: React.FC<Props> = ({ dialog }) => {
   const { hide } = useDialogHistory({ dialog, id: 'email' });
   const formRef = useRef<HTMLFormElement | null>(null);
 
@@ -75,5 +75,3 @@ const EmailDialog: React.FC<Props> = ({ dialog }) => {
     </DialogBackdrop>
   );
 };
-
-export default EmailDialog;

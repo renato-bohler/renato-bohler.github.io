@@ -1,6 +1,6 @@
 import Script from 'next/script';
 
-const AnalyticsScript = () => (
+export const AnalyticsScript = () => (
   <>
     <Script
       src="https://www.googletagmanager.com/gtag/js?id=G-T5ZEK0KJZR"
@@ -16,5 +16,3 @@ const AnalyticsScript = () => (
     </Script>
   </>
 );
-
-export default AnalyticsScript;

@@ -4,12 +4,12 @@ import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
 
-import { RepositoryInfo } from '~/api/fetchProjectDetails';
-import useTheme from '~/hooks/useTheme';
+import { type RepositoryInfo } from '~/api/fetchProjectDetails';
+import { useTheme } from '~/hooks/useTheme';
 
-import { Project } from '../projects.const';
+import { type Project } from '../projects.const';
 
-import RepositoryDetails from './RepositoryDetails/RepositoryDetails';
+import { RepositoryDetails } from './RepositoryDetails/RepositoryDetails';
 
 import styles from './ProjectCard.module.css';
 
@@ -19,7 +19,7 @@ type Props = {
   repository?: RepositoryInfo;
 };
 
-const ProjectCard: React.FC<Props> = ({
+export const ProjectCard: React.FC<Props> = ({
   order,
   project,
   repository,
@@ -97,5 +97,3 @@ const ProjectCard: React.FC<Props> = ({
     </div>
   );
 };
-
-export default ProjectCard;

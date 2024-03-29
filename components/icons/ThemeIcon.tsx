@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const ThemeIcon: React.FC<{
+export const ThemeIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -72,5 +72,3 @@ const ThemeIcon: React.FC<{
     </svg>
   );
 };
-
-export default ThemeIcon;

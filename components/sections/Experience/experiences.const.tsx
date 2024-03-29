@@ -14,15 +14,15 @@ const intive: Company = {
 };
 
 const shippo: Company = {
-  color: '#93d33d',
+  color: '#25d695',
   logo: 'shippo',
   padding: 4,
 };
 
-const experiences: Experience[] = [
+export const experiences: Experience[] = [
   {
     company: shippo,
-    description: <></>,
+    description: null,
     id: 'shippo',
     jobTitle: 'Front end developer',
     period: {
@@ -286,11 +286,9 @@ export type Company = {
 export type Experience = {
   company: Company;
   consultant?: boolean;
-  description: React.ReactElement;
+  description: React.ReactNode;
   id: string;
   jobTitle: string;
   period: Period;
   title: string;
 };
-
-export default experiences;

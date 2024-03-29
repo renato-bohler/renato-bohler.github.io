@@ -1,3 +1,32 @@
+## [2.8.3](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.2...v2.8.3) (2024-03-27)
+
+
+### Bug Fixes
+
+* fixes build not including Org ID env var ([1c06e74](https://github.com/renato-bohler/renato-bohler.github.io/commit/1c06e74df26ae2501db85db8f7f89845dfef171e))
+
+## [2.8.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.1...v2.8.2) (2024-03-27)
+
+
+### Bug Fixes
+
+* fixes FullStory initializing without an Org ID ([b0af794](https://github.com/renato-bohler/renato-bohler.github.io/commit/b0af7944f3d3dfa4cfc153fe3aef653fe1efe3be))
+* removes reinitialization warning ([ff9d66e](https://github.com/renato-bohler/renato-bohler.github.io/commit/ff9d66e013b5ffe9ece9980ec8f9a583dd005373))
+
+## [2.8.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.0...v2.8.1) (2023-12-03)
+
+
+### Bug Fixes
+
+* **Experience:** fixes company logos not showing on Safari ([8ac2f04](https://github.com/renato-bohler/renato-bohler.github.io/commit/8ac2f04e1e1e4fae93a42dba14b2c85daa0fc43c))
+
+# [2.8.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.7.0...v2.8.0) (2023-12-03)
+
+
+### Features
+
+* **Skills:** updates Angular logo ([34efb76](https://github.com/renato-bohler/renato-bohler.github.io/commit/34efb76e5ab0292d1cba518bd510c279f3c3a2ec))
+
 # [2.7.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.6.0...v2.7.0) (2023-11-26)
 
 

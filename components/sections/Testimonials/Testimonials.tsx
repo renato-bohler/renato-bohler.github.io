@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { Button } from 'reakit/Button';
-import SwiperInstance from 'swiper';
+import type SwiperInstance from 'swiper';
 import {
   Autoplay,
   Controller,
@@ -18,19 +18,19 @@ import {
 } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import ChevronLeftIcon from '~/components/icons/ChevronLeft';
-import ChevronRightIcon from '~/components/icons/ChevronRight';
-import useTheme from '~/hooks/useTheme';
+import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import { ChevronLeftIcon } from '~/components/icons/ChevronLeftIcon';
+import { ChevronRightIcon } from '~/components/icons/ChevronRightIcon';
+import { useTheme } from '~/hooks/useTheme';
 
-import TestimonialCard from './TestimonialCard/TestimonialCard';
-import TestimonialDivider from './TestimonialDivider/TestimonialDivider';
-import TestimonialSectionTransition from './TestimonialSectionTransition/TestimonialSectionTransition';
-import testimonials from './testimonials.const';
+import { TestimonialCard } from './TestimonialCard/TestimonialCard';
+import { TestimonialDivider } from './TestimonialDivider/TestimonialDivider';
+import { TestimonialSectionTransition } from './TestimonialSectionTransition/TestimonialSectionTransition';
+import { testimonials } from './testimonials.const';
 
 import styles from './Testimonials.module.css';
 
-const Testimonials: React.FC = () => {
+export const Testimonials: React.FC = () => {
   const [ref, inView] = useInView();
 
   const [swiper, setSwiper] = useState<SwiperInstance>();
@@ -49,11 +49,8 @@ const Testimonials: React.FC = () => {
   };
 
   useEffect(() => {
-    if (inView) {
-      swiper?.autoplay?.start();
-    } else {
-      swiper?.autoplay?.stop();
-    }
+    if (inView) swiper?.autoplay?.start();
+    else swiper?.autoplay?.stop();
   }, [inView, swiper]);
 
   return (
@@ -138,5 +135,3 @@ const Testimonials: React.FC = () => {
     </div>
   );
 };
-
-export default Testimonials;

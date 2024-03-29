@@ -101,7 +101,7 @@ const AVERAGE_POINTS = AVERAGE.map((average, index) => {
   ].join(',');
 }).join(' ');
 
-const SkillFeedbacks: React.FC = () => {
+export const SkillFeedbacks: React.FC = () => {
   const [tableView, setTableView] = useState(false);
 
   return (
@@ -319,4 +319,3 @@ const TableView: React.FC = () => (
     </tbody>
   </table>
 );
-export default SkillFeedbacks;

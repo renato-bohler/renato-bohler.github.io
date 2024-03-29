@@ -144,7 +144,8 @@
 
   opacity: 0%;
 
-  transition: bottom 250ms 650ms ease-in-out,
+  transition:
+    bottom 250ms 650ms ease-in-out,
     opacity 250ms 650ms ease-in-out;
   animation-name: bubble;
 }

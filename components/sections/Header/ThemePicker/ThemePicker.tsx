@@ -8,16 +8,16 @@ import {
   usePopoverState,
 } from 'reakit/Popover';
 
-import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import DarkIcon from '~/components/icons/Dark';
-import LightIcon from '~/components/icons/Light';
-import ThemeIcon from '~/components/icons/Theme';
-import themes from '~/consts/themes.const';
-import useTheme from '~/hooks/useTheme';
+import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import { DarkIcon } from '~/components/icons/DarkIcon';
+import { LightIcon } from '~/components/icons/LightIcon';
+import { ThemeIcon } from '~/components/icons/ThemeIcon';
+import { themes } from '~/consts/themes.const';
+import { useTheme } from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
 
-const ThemePicker: React.FC = () => {
+const BasePicker: React.FC = () => {
   const {
     colorScheme,
     isContrastMode,
@@ -128,4 +128,4 @@ const ThemePicker: React.FC = () => {
   );
 };
 
-export default memo(ThemePicker);
+export const ThemePicker = memo(BasePicker);

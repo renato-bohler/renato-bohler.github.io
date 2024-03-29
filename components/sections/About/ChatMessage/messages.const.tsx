@@ -1,4 +1,7 @@
-import { Message, OptionSelectMessage } from './messages.types';
+import {
+  type Message,
+  type OptionSelectMessage,
+} from './messages.types';
 
 const getAge = () => {
   const now = new Date();
@@ -335,6 +338,4 @@ export const end: Message = {
   type: 'text',
 };
 
-const messages = [...incoming, optionSelect];
-
-export default messages;
+export const messages = [...incoming, optionSelect];

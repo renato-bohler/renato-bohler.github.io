@@ -1,54 +1,73 @@
 {
   "plugins": [
     "@typescript-eslint",
+    "@stylistic/js",
     "perfectionist",
     "import",
     "unused-imports",
-    "prefer-arrow-functions"
+    "prefer-arrow-functions",
   ],
   "extends": [
     "next",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:perfectionist/recommended-natural"
+    "plugin:perfectionist/recommended-natural",
   ],
   "ignorePatterns": [
     "**/node_modules",
     "**/out",
     "**/playwright-report",
     "**/.next",
-    "**/test-results"
+    "**/test-results",
   ],
   "rules": {
     // Code style
     "object-shorthand": "error",
     "arrow-body-style": ["error", "as-needed"],
     "prefer-arrow-functions/prefer-arrow-functions": "error",
+    "curly": ["error", "multi-or-nest", "consistent"],
     "unused-imports/no-unused-vars": [
-      "warn",
+      "error",
       {
         "vars": "all",
         "varsIgnorePattern": "^_",
         "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
+        "argsIgnorePattern": "^_",
+      },
     ],
+    // Comment style
+    "@stylistic/js/spaced-comment": ["error", "always"],
+    "capitalized-comments": "error",
+    "multiline-comment-style": ["error", "starred-block"],
+    "no-warning-comments": "warn",
     // TypeScript
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-empty-function": "off",
     // React
-    "react/self-closing-comp": "warn",
+    "react/self-closing-comp": "error",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "react/jsx-no-useless-fragment": "error",
     // Next
     "@next/next/no-img-element": "off",
     // Imports & exports
-    "unused-imports/no-unused-imports": "warn",
-    "import/first": "warn",
-    "import/no-duplicates": "warn",
-    "import/newline-after-import": "warn",
+    "unused-imports/no-unused-imports": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "error",
+    "import/no-default-export": "error",
+    "import/consistent-type-specifier-style": [
+      "error",
+      "prefer-inline",
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" },
+    ],
     "perfectionist/sort-imports": [
-      "warn",
+      "error",
       {
         "type": "natural",
         "order": "asc",
@@ -63,28 +82,48 @@
           ["parent", "parent-type"],
           ["sibling", "sibling-type"],
           "style",
-          "unknown"
+          "unknown",
         ],
         "custom-groups": {
           "value": {
             "react": ["react", "react-dom"],
-            "next": ["next", "next/*"]
-          }
-        }
-      }
-    ]
+            "next": ["next", "next/*"],
+          },
+        },
+      },
+    ],
+    "perfectionist/sort-named-imports": [
+      "error",
+      {
+        "order": "asc",
+        "type": "natural",
+        "group-kind": "values-first",
+      },
+    ],
+    "perfectionist/sort-named-exports": [
+      "error",
+      {
+        "order": "asc",
+        "type": "natural",
+        "group-kind": "values-first",
+      },
+    ],
   },
   "overrides": [
     {
-      "files": [
-        "**/__tests__/**/*.[jt]s?(x)",
-        "**/?(*.)+(test).[jt]s?(x)"
-      ],
-      "plugins": ["jest-dom", "testing-library"],
-      "extends": [
-        "plugin:jest-dom/recommended",
-        "plugin:testing-library/react"
-      ]
-    }
-  ]
+      "files": ["./pages/**/*.tsx", "**.config.[jt]s"],
+      "rules": { "import/no-default-export": "off" },
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "spaced-comment": "off",
+        "multiline-comment-style": "off",
+      },
+    },
+    {
+      "files": ["**/e2e/?(*.)+(test).[jt]s?(x)"],
+      "extends": ["plugin:playwright/recommended"],
+    },
+  ],
 }

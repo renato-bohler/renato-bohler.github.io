@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 
-import { DialogStateReturn } from 'reakit';
+import { type DialogStateReturn } from 'reakit';
 
 type DialogHistory = (arg: {
   dialog: DialogStateReturn;
   id: string;
 }) => { hide: () => void };
 
-const useDialogHistory: DialogHistory = ({ dialog, id }) => {
+export const useDialogHistory: DialogHistory = ({ dialog, id }) => {
   const hide = () => {
     window.history.back();
     dialog.hide();
@@ -34,5 +34,3 @@ const useDialogHistory: DialogHistory = ({ dialog, id }) => {
 
   return { hide };
 };
-
-export default useDialogHistory;

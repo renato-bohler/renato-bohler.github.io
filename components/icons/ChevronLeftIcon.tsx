@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const ChevronLeftIcon: React.FC<{
+export const ChevronLeftIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -35,5 +35,3 @@ const ChevronLeftIcon: React.FC<{
     </svg>
   );
 };
-
-export default ChevronLeftIcon;

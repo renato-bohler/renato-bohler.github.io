@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { Button } from 'reakit/Button';
 import { Group } from 'reakit/Group';
 
-import { Option, OptionSelectMessage } from '../../messages.types';
+import {
+  type Option,
+  type OptionSelectMessage,
+} from '../../messages.types';
 
 import styles from './OptionChatMessage.module.css';
 
@@ -12,7 +15,7 @@ type Props = {
   onResponse: (option: Option) => void;
 };
 
-const OptionChatMessage: React.FC<Props> = ({
+export const OptionChatMessage: React.FC<Props> = ({
   message,
   onResponse,
 }) => {
@@ -36,5 +39,3 @@ const OptionChatMessage: React.FC<Props> = ({
     </Group>
   );
 };
-
-export default OptionChatMessage;

@@ -21,7 +21,8 @@
   border: 2px solid transparent;
   border-radius: 8px;
 
-  transition: all 500ms ease 100ms,
+  transition:
+    all 500ms ease 100ms,
     transform 250ms cubic-bezier(0.21, -0.56, 0.43, 1.53);
   animation-name: transition;
 }
@@ -46,7 +47,9 @@
   opacity: 50%;
   filter: blur(60px);
 
-  transition: width ease-in-out 300ms, height ease-in-out 300ms,
+  transition:
+    width ease-in-out 300ms,
+    height ease-in-out 300ms,
     opacity ease-in-out 300ms;
 }
 
@@ -177,8 +180,8 @@
 }
 
 .brief > span {
-    margin: 0.6em 0;
-    padding-bottom: 0.5em;
+  margin: 0.6em 0;
+  padding-bottom: 0.5em;
 }
 
 .brief.contrast {
