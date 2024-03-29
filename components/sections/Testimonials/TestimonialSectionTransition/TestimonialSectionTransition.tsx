@@ -1,6 +1,6 @@
 import styles from './TestimonialSectionTransition.module.css';
 
-export const TestimonialSectionTransition: React.FC = () => (
+export const TestimonialSectionTransition = () => (
   <svg aria-hidden className={styles.transition}>
     <defs>
       <pattern

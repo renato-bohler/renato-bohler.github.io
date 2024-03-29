@@ -1,7 +1,9 @@
-export const CheckIcon: React.FC<{
+import { type CSSProperties, type FC } from 'react';
+
+export const CheckIcon: FC<{
   'aria-label'?: string;
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }> = ({ 'aria-label': ariaLabel, className, style }) => (
   <svg
     aria-hidden={!ariaLabel}

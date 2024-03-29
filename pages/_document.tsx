@@ -1,3 +1,5 @@
+import { type ReactElement } from 'react';
+
 import Document, {
   Head,
   Html,
@@ -6,7 +8,7 @@ import Document, {
 } from 'next/document';
 
 class MyDocument extends Document {
-  render(): React.ReactElement {
+  render(): ReactElement {
     return (
       <Html itemScope itemType="https://schema.org/WebPage" lang="en">
         <Head />

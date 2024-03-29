@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, type UIEvent } from 'react';
 
 import classNames from 'classnames';
 import { VisuallyHidden } from 'reakit';
@@ -14,7 +14,7 @@ import { useAboutProgress } from './useAboutProgress';
 
 import styles from './About.module.css';
 
-export const About: React.FC = () => {
+export const About = () => {
   const { scrollRef, setAboutRefs } = useAboutProgress();
 
   const [fullyScrolled, setFullyScrolled] = useState(true);
@@ -47,7 +47,7 @@ export const About: React.FC = () => {
     [messagesInViewRef],
   );
 
-  const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
+  const scrollHandler = (event: UIEvent<HTMLDivElement>) => {
     const { offsetHeight, scrollHeight, scrollTop } =
       event.currentTarget;
     const scrollY = scrollTop + offsetHeight;

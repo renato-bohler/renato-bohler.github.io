@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';
@@ -101,7 +101,7 @@ const AVERAGE_POINTS = AVERAGE.map((average, index) => {
   ].join(',');
 }).join(' ');
 
-export const SkillFeedbacks: React.FC = () => {
+export const SkillFeedbacks = () => {
   const [tableView, setTableView] = useState(false);
 
   return (
@@ -132,7 +132,7 @@ export const SkillFeedbacks: React.FC = () => {
   );
 };
 
-const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
+const GraphicalView: FC<{ active: boolean }> = ({ active }) => {
   const [showFeedback, setShowFeedback] = useState(0);
 
   return (
@@ -288,7 +288,7 @@ const GraphicalView: React.FC<{ active: boolean }> = ({ active }) => {
   );
 };
 
-const TableView: React.FC = () => (
+const TableView = () => (
   <table className={styles.tableView}>
     <caption>
       All data collected from colleagues on my latest feedback round.

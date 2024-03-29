@@ -1,10 +1,12 @@
+import { type FC } from 'react';
+
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import { type Theme } from '~/consts/themes.const';
 
 const FAVICON_DIMENSION = 256;
 
-const FavIcon: React.FC<{ size?: number; theme: Theme }> = ({
+const FavIcon: FC<{ size?: number; theme: Theme }> = ({
   size = FAVICON_DIMENSION,
   theme,
 }) => {

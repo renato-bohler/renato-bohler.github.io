@@ -11,7 +11,7 @@ import { experiences } from './experiences.const';
 
 import styles from './Experience.module.css';
 
-export const Experience: React.FC = () => {
+export const Experience = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 

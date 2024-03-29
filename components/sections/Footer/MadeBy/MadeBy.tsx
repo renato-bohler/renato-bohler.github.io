@@ -8,7 +8,7 @@ import { useTypingEffect } from '~/hooks/useTypingEffect';
 
 import styles from './MadeBy.module.css';
 
-export const MadeBy: React.FC = () => {
+export const MadeBy = () => {
   const { isReducedMotion } = useTheme();
 
   const [handWritingFinished, setHandwritingFinished] =

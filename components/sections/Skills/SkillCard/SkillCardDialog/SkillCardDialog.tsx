@@ -1,4 +1,11 @@
-import { useEffect, useRef } from 'react';
+import {
+  useEffect,
+  useRef,
+  type CSSProperties,
+  type FC,
+  type ReactElement,
+  type ReactNode,
+} from 'react';
 
 import {
   disableBodyScroll,
@@ -23,9 +30,9 @@ import styles from './SkillCardDialog.module.css';
 export type Props = {
   backgroundColor: string;
   cardRect?: DOMRect;
-  description: React.ReactElement;
+  description: ReactElement;
   dialog: DialogStateReturn;
-  icon: React.ReactNode;
+  icon: ReactNode;
   id: string;
   name: string;
   scrollBarTrackColor?: string;
@@ -33,7 +40,7 @@ export type Props = {
   yearsExperience?: number;
 };
 
-export const SkillCardDialog: React.FC<Props> = ({
+export const SkillCardDialog: FC<Props> = ({
   backgroundColor,
   description,
   dialog,
@@ -87,7 +94,7 @@ export const SkillCardDialog: React.FC<Props> = ({
                     scrollBarTrackColor,
                 }
               : {}),
-          } as React.CSSProperties
+          } as CSSProperties
         }
       >
         <header

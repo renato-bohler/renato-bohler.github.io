@@ -1,3 +1,5 @@
+import { type FC } from 'react';
+
 import { Button } from 'reakit/Button';
 import {
   Popover,
@@ -21,10 +23,7 @@ type LinksProps = {
   onEmailDialogOpen: () => void;
 };
 
-const Links: React.FC<LinksProps> = ({
-  animate,
-  onEmailDialogOpen,
-}) => (
+const Links: FC<LinksProps> = ({ animate, onEmailDialogOpen }) => (
   <>
     <Button
       className={styles.social}
@@ -75,9 +74,7 @@ type Props = {
   onEmailDialogOpen: () => void;
 };
 
-export const SocialLinks: React.FC<Props> = ({
-  onEmailDialogOpen,
-}) => {
+export const SocialLinks: FC<Props> = ({ onEmailDialogOpen }) => {
   const popover = usePopoverState({
     animated: 500,
     placement: 'bottom-start',

@@ -1,3 +1,5 @@
+import { type FC, type ReactElement, type ReactNode } from 'react';
+
 import dynamic from 'next/dynamic';
 
 import classNames from 'classnames';
@@ -24,10 +26,10 @@ const SkillCardDialog = dynamic(() =>
 
 type Props = {
   backgroundColor: string;
-  brief?: React.ReactElement;
-  description: React.ReactElement;
+  brief?: ReactElement;
+  description: ReactElement;
   featured: boolean;
-  icon: React.ReactNode;
+  icon: ReactNode;
   id: string;
   name: string;
   scrollBarTrackColor?: string;
@@ -66,7 +68,7 @@ const USAGE = {
 
 const STUDYING_LABEL = "I've been studying this recently";
 
-export const SkillCard: React.FC<Props> = ({
+export const SkillCard: FC<Props> = ({
   backgroundColor,
   brief,
   description,

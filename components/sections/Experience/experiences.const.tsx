@@ -1,3 +1,5 @@
+import { type ReactNode } from 'react';
+
 const agrotis: Company = {
   color: '#00735c',
   logo: 'agrotis',
@@ -286,7 +288,7 @@ export type Company = {
 export type Experience = {
   company: Company;
   consultant?: boolean;
-  description: React.ReactNode;
+  description: ReactNode;
   id: string;
   jobTitle: string;
   period: Period;

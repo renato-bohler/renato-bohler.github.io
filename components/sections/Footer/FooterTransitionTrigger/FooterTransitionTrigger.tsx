@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef, type FC } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
@@ -9,7 +9,7 @@ type Props = {
   onProgressChange: (progress: number) => void;
 };
 
-export const FooterTransitionTrigger: React.FC<Props> = ({
+export const FooterTransitionTrigger: FC<Props> = ({
   onNavigationHeaderTrigger,
   onProgressChange,
 }) => {

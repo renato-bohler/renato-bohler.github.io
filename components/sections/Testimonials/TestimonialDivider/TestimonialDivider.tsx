@@ -1,3 +1,5 @@
+import { type FC } from 'react';
+
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
@@ -11,7 +13,7 @@ const TOP_VIEWBOX = '0 142 400 164';
 const TOP_STROKE_PATH =
   'M -26.681 177.616 C 1.219 189.616 49.8 209.8 77.2 222.7 C 115 240.4 154.5 248.7 196.1 247.8 C 227.3 247.1 258.1 242.2 289 237.7 C 313.1 234.2 337.3 231 361.7 232.2 C 379.902 233.09 397.45 236.598 413.92 243.994';
 
-export const TestimonialDivider: React.FC<Props> = ({ position }) => {
+export const TestimonialDivider: FC<Props> = ({ position }) => {
   const [ref, inView] = useInView({
     threshold: 0.5,
     triggerOnce: true,

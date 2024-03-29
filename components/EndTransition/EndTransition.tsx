@@ -1,6 +1,6 @@
 import styles from './EndTransition.module.css';
 
-export const EndTransition: React.FC = () => (
+export const EndTransition = () => (
   <div className={styles.container}>
     <svg
       className={styles.transition}

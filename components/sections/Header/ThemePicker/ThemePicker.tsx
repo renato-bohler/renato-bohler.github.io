@@ -17,7 +17,7 @@ import { useTheme } from '~/hooks/useTheme';
 
 import styles from './ThemePicker.module.css';
 
-const BasePicker: React.FC = () => {
+const BasePicker = () => {
   const {
     colorScheme,
     isContrastMode,
