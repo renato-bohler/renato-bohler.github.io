@@ -30,6 +30,7 @@
     "@playwright/test": "^1.42.1",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
+    "@stylistic/eslint-plugin-js": "^1.7.0",
     "@types/body-scroll-lock": "^3.1.2",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.73",

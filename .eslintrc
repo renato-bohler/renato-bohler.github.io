@@ -1,6 +1,7 @@
 {
   "plugins": [
     "@typescript-eslint",
+    "@stylistic/js",
     "perfectionist",
     "import",
     "unused-imports",
@@ -36,7 +37,7 @@
       },
     ],
     // Comment style
-    "spaced-comment": ["error", "always"],
+    "@stylistic/js/spaced-comment": ["error", "always"],
     "capitalized-comments": "error",
     "multiline-comment-style": ["error", "starred-block"],
     "no-warning-comments": "warn",
