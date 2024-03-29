@@ -12,7 +12,7 @@ import { useTheme } from '~/hooks/useTheme';
 
 import { EmailForm } from '../EmailForm/EmailForm';
 import { AnimatedIcon } from '../icons/AnimatedIcon/AnimatedIcon';
-import { CloseIcon } from '../icons/Close';
+import { CloseIcon } from '../icons/CloseIcon';
 
 import styles from './EmailDialog.module.css';
 

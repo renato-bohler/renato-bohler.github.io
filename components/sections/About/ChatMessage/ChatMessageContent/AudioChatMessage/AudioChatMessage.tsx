@@ -2,9 +2,9 @@ import React, { useRef, useState } from 'react';
 
 import { Button } from 'reakit/Button';
 
-import { LoadingIcon } from '~/components/icons/Loading';
-import { PauseIcon } from '~/components/icons/Pause';
-import { PlayIcon } from '~/components/icons/Play';
+import { LoadingIcon } from '~/components/icons/LoadingIcon';
+import { PauseIcon } from '~/components/icons/PauseIcon';
+import { PlayIcon } from '~/components/icons/PlayIcon';
 
 import { AudioMessage } from '../../messages.types';
 

@@ -7,11 +7,11 @@ import {
 } from 'reakit/Popover';
 
 import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import { EmailIcon } from '~/components/icons/Email';
-import { GitHubIcon } from '~/components/icons/GitHub';
-import { LinkedInIcon } from '~/components/icons/LinkedIn';
-import { SocialsIcon } from '~/components/icons/Socials';
-import { TwitterIcon } from '~/components/icons/Twitter';
+import { EmailIcon } from '~/components/icons/EmailIcon';
+import { GitHubIcon } from '~/components/icons/GitHubIcon';
+import { LinkedInIcon } from '~/components/icons/LinkedInIcon';
+import { SocialsIcon } from '~/components/icons/SocialsIcon';
+import { TwitterIcon } from '~/components/icons/TwitterIcon';
 import { socials } from '~/consts/socials.const';
 
 import styles from './SocialLinks.module.css';

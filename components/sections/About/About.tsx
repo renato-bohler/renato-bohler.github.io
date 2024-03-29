@@ -5,7 +5,7 @@ import { VisuallyHidden } from 'reakit';
 import { Button } from 'reakit/Button';
 import { debounce } from 'throttle-debounce';
 
-import { ArrowDownIcon } from '~/components/icons/ArrowDown';
+import { ArrowDownIcon } from '~/components/icons/ArrowDownIcon';
 
 import { AnimatedChatMessage } from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
 import { ChatMessage } from './ChatMessage/ChatMessage';

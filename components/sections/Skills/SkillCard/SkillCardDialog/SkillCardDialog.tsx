@@ -13,7 +13,7 @@ import {
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import { CloseIcon } from '~/components/icons/Close';
+import { CloseIcon } from '~/components/icons/CloseIcon';
 import { useDialogHistory } from '~/hooks/useDialogHistory';
 import { useFirstMount } from '~/hooks/useFirstMount';
 import { useTheme } from '~/hooks/useTheme';

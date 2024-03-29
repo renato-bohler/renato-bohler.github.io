@@ -6,7 +6,7 @@ import classNames from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import { ArrowDownIcon } from '~/components/icons/ArrowDown';
+import { ArrowDownIcon } from '~/components/icons/ArrowDownIcon';
 import { useTheme } from '~/hooks/useTheme';
 
 import { SocialLinks } from './SocialLinks/SocialLinks';

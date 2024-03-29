@@ -9,9 +9,9 @@ import {
 } from 'reakit/Popover';
 
 import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import { DarkIcon } from '~/components/icons/Dark';
-import { LightIcon } from '~/components/icons/Light';
-import { ThemeIcon } from '~/components/icons/Theme';
+import { DarkIcon } from '~/components/icons/DarkIcon';
+import { LightIcon } from '~/components/icons/LightIcon';
+import { ThemeIcon } from '~/components/icons/ThemeIcon';
 import { themes } from '~/consts/themes.const';
 import { useTheme } from '~/hooks/useTheme';
 

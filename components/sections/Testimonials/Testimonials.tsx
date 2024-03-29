@@ -19,8 +19,8 @@ import {
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import { ChevronLeftIcon } from '~/components/icons/ChevronLeft';
-import { ChevronRightIcon } from '~/components/icons/ChevronRight';
+import { ChevronLeftIcon } from '~/components/icons/ChevronLeftIcon';
+import { ChevronRightIcon } from '~/components/icons/ChevronRightIcon';
 import { useTheme } from '~/hooks/useTheme';
 
 import { TestimonialCard } from './TestimonialCard/TestimonialCard';

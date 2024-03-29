@@ -1,5 +1,5 @@
-import { GitHubIcon } from '~/components/icons/GitHub';
-import { PlayIcon } from '~/components/icons/Play';
+import { GitHubIcon } from '~/components/icons/GitHubIcon';
+import { PlayIcon } from '~/components/icons/PlayIcon';
 import { useFirstMount } from '~/hooks/useFirstMount';
 import * as format from '~/utils/format';
 
