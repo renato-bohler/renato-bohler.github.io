@@ -25,6 +25,7 @@
     "object-shorthand": "error",
     "arrow-body-style": ["error", "as-needed"],
     "prefer-arrow-functions/prefer-arrow-functions": "error",
+    "curly": ["error", "multi-or-nest", "consistent"],
     "unused-imports/no-unused-vars": [
       "warn",
       {
@@ -77,7 +78,7 @@
   },
   "overrides": [
     {
-      "files": ["./pages/**/*.tsx"],
+      "files": ["./pages/**/*.tsx", "**.config.[jt]s"],
       "rules": { "import/no-default-export": "off" },
     },
     {

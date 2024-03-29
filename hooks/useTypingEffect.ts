@@ -55,11 +55,9 @@ export const useTypingEffect = ({
     window.clearTimeout(isTypingTimeout);
     setCurrentTarget(targetText);
 
-    if (targetText.startsWith(previousTarget || '')) {
+    if (targetText.startsWith(previousTarget || ''))
       setState('stale');
-    } else {
-      setState('deleting');
-    }
+    else setState('deleting');
   }, [targetText]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Typing effect

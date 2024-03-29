@@ -90,9 +90,7 @@ class MessageService {
       return;
     }
 
-    if (this.shouldResendOptionSelect()) {
-      this.resendOptionSelect();
-    }
+    if (this.shouldResendOptionSelect()) this.resendOptionSelect();
   }
 
   onMessage(_message: Message) {}

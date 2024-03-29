@@ -49,11 +49,8 @@ export const Testimonials: React.FC = () => {
   };
 
   useEffect(() => {
-    if (inView) {
-      swiper?.autoplay?.start();
-    } else {
-      swiper?.autoplay?.stop();
-    }
+    if (inView) swiper?.autoplay?.start();
+    else swiper?.autoplay?.stop();
   }, [inView, swiper]);
 
   return (

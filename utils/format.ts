@@ -38,9 +38,8 @@ export const relativeTime = (
   const elapsed = date.getTime() - relative.getTime();
 
   for (const { ms, unit } of units) {
-    if (Math.abs(elapsed) >= ms || unit === 'second') {
+    if (Math.abs(elapsed) >= ms || unit === 'second')
       return rtf.format(Math.round(elapsed / ms), unit);
-    }
   }
   return '';
 };
