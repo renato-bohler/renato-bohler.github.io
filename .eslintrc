@@ -35,6 +35,11 @@
         "argsIgnorePattern": "^_",
       },
     ],
+    // Comment style
+    "spaced-comment": ["error", "always"],
+    "capitalized-comments": "error",
+    "multiline-comment-style": ["error", "starred-block"],
+    "no-warning-comments": "warn",
     // TypeScript
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/no-explicit-any": "error",
@@ -104,6 +109,13 @@
     {
       "files": ["./pages/**/*.tsx", "**.config.[jt]s"],
       "rules": { "import/no-default-export": "off" },
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "spaced-comment": "off",
+        "multiline-comment-style": "off",
+      },
     },
     {
       "files": ["**/e2e/?(*.)+(test).[jt]s?(x)"],

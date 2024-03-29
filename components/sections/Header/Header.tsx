@@ -29,7 +29,6 @@ type Props = {
   onEmailDialogOpen: () => void;
 };
 
-// TODO(renato): leave as default?
 const ThemePicker = dynamic(
   () =>
     import('./ThemePicker/ThemePicker').then(

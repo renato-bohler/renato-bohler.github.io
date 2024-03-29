@@ -16,7 +16,6 @@ import { useTheme } from '~/hooks/useTheme';
 
 import styles from './SkillCard.module.css';
 
-// TODO(renato): leave as default?
 const SkillCardDialog = dynamic(() =>
   import('./SkillCardDialog/SkillCardDialog').then(
     ({ SkillCardDialog }) => SkillCardDialog,
