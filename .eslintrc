@@ -46,6 +46,9 @@
     "@typescript-eslint/no-empty-function": "off",
     // React
     "react/self-closing-comp": "warn",
+    "react/jsx-boolean-value": "warn",
+    "react/jsx-curly-brace-presence": "warn",
+    "react/jsx-no-useless-fragment": "warn",
     // Next
     "@next/next/no-img-element": "off",
     // Imports & exports

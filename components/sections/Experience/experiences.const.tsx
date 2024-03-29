@@ -22,7 +22,7 @@ const shippo: Company = {
 export const experiences: Experience[] = [
   {
     company: shippo,
-    description: <></>,
+    description: null,
     id: 'shippo',
     jobTitle: 'Front end developer',
     period: {
@@ -286,7 +286,7 @@ export type Company = {
 export type Experience = {
   company: Company;
   consultant?: boolean;
-  description: React.ReactElement;
+  description: React.ReactNode;
   id: string;
   jobTitle: string;
   period: Period;
