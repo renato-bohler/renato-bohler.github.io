@@ -33,7 +33,7 @@ jobs:
           NEXT_PUBLIC_FULLSTORY_ORG_ID: o-1X4FCT-na1
         run: yarn build
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: out
 
@@ -45,7 +45,7 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
 
   semantic_release:
     runs-on: ubuntu-latest
