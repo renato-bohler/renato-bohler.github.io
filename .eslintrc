@@ -28,7 +28,7 @@
     "prefer-arrow-functions/prefer-arrow-functions": "error",
     "curly": ["error", "multi-or-nest", "consistent"],
     "unused-imports/no-unused-vars": [
-      "warn",
+      "error",
       {
         "vars": "all",
         "varsIgnorePattern": "^_",
@@ -46,17 +46,17 @@
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/no-empty-function": "off",
     // React
-    "react/self-closing-comp": "warn",
-    "react/jsx-boolean-value": "warn",
-    "react/jsx-curly-brace-presence": "warn",
-    "react/jsx-no-useless-fragment": "warn",
+    "react/self-closing-comp": "error",
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "react/jsx-no-useless-fragment": "error",
     // Next
     "@next/next/no-img-element": "off",
     // Imports & exports
-    "unused-imports/no-unused-imports": "warn",
-    "import/first": "warn",
-    "import/no-duplicates": "warn",
-    "import/newline-after-import": "warn",
+    "unused-imports/no-unused-imports": "error",
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "error",
     "import/no-default-export": "error",
     "import/consistent-type-specifier-style": [
       "error",
@@ -67,7 +67,7 @@
       { "prefer": "type-imports", "fixStyle": "inline-type-imports" },
     ],
     "perfectionist/sort-imports": [
-      "warn",
+      "error",
       {
         "type": "natural",
         "order": "asc",
