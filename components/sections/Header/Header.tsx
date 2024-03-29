@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FC } from 'react';
 
 import dynamic from 'next/dynamic';
 
@@ -37,7 +37,7 @@ const ThemePicker = dynamic(
   { ssr: false },
 );
 
-export const Header: React.FC<Props> = ({
+export const Header: FC<Props> = ({
   isNavigationHeaderHidden,
   onEmailDialogOpen,
 }) => {

@@ -4,7 +4,7 @@ import { experiences } from './experiences.const';
 
 import styles from './Experience.module.css';
 
-export const Experience: React.FC = () => (
+export const Experience = () => (
   <section className={styles.section}>
     <ExperienceVectors />
 

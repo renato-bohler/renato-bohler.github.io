@@ -1,4 +1,9 @@
-import React, { forwardRef, useState, type Ref } from 'react';
+import {
+  forwardRef,
+  useState,
+  type FormEventHandler,
+  type Ref,
+} from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';
@@ -47,9 +52,9 @@ export const BaseEmailForm = (
 ) => {
   const [formState, setFormState] = useState<FormState>('idle');
 
-  const handleSubmit: React.FormEventHandler<
-    HTMLFormElement
-  > = async (event) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (
+    event,
+  ) => {
     event.preventDefault();
 
     const formData = new FormData(event.currentTarget);

@@ -1,4 +1,4 @@
-import React, { forwardRef, type Ref } from 'react';
+import { forwardRef, type Ref } from 'react';
 
 import cx from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';

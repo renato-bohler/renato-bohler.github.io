@@ -12,7 +12,7 @@ import styles from './Skills.module.css';
 
 const HEADER = 'skills';
 
-export const Skills: React.FC = () => {
+export const Skills = () => {
   const { isContrastMode } = useTheme();
 
   const { entry, ref } = useInView({

@@ -3,6 +3,8 @@ import {
   useCallback,
   useEffect,
   useState,
+  type FC,
+  type ReactNode,
 } from 'react';
 
 import Head from 'next/head';
@@ -52,10 +54,10 @@ export const ThemeContext = createContext<ThemeContextType>({
 });
 
 type Props = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
-export const ThemeProvider: React.FC<Props> = ({ children }) => {
+export const ThemeProvider: FC<Props> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(
     getStoredTheme() || RANDOM_THEME,
   );

@@ -1,8 +1,10 @@
+import { type CSSProperties, type FC } from 'react';
+
 import { useTheme } from '~/hooks/useTheme';
 
-export const LightIcon: React.FC<{
+export const LightIcon: FC<{
   className?: string;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }> = ({ className, style }) => {
   const { getReducedMotionDuration, isReducedMotion } = useTheme();
 

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, type FC } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
@@ -9,7 +9,7 @@ type Props = {
   onNavigationHeaderTrigger: (hide: boolean) => void;
 };
 
-export const FooterTransitionTrigger: React.FC<Props> = ({
+export const FooterTransitionTrigger: FC<Props> = ({
   onFooterTransitionTrigger,
   onNavigationHeaderTrigger,
 }) => {

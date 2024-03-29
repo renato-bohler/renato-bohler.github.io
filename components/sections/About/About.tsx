@@ -1,4 +1,4 @@
-import { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState, type UIEvent } from 'react';
 
 import classNames from 'classnames';
 import { VisuallyHidden } from 'reakit';
@@ -13,7 +13,7 @@ import { useMessages } from './ChatMessage/useMessages';
 
 import styles from './About.module.css';
 
-export const About: React.FC = () => {
+export const About = () => {
   const [fullyScrolled, setFullyScrolled] = useState(true);
 
   const messagesRef = useRef<HTMLDivElement | null>(null);
@@ -44,7 +44,7 @@ export const About: React.FC = () => {
     [messagesInViewRef],
   );
 
-  const scrollHandler = (event: React.UIEvent<HTMLDivElement>) => {
+  const scrollHandler = (event: UIEvent<HTMLDivElement>) => {
     const { offsetHeight, scrollHeight, scrollTop } =
       event.currentTarget;
     const scrollY = scrollTop + offsetHeight;

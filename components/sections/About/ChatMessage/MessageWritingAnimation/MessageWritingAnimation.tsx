@@ -1,5 +1,3 @@
-import React from 'react';
-
 import styles from './MessageWritingAnimation.module.css';
 
 export const MessageWritingAnimation = () => (

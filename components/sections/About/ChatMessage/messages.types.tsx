@@ -1,3 +1,5 @@
+import { type ReactNode } from 'react';
+
 type BaseMessage = {
   direction: 'incoming' | 'outgoing';
   id: string;
@@ -5,7 +7,7 @@ type BaseMessage = {
 };
 
 export type TextMessage = BaseMessage & {
-  content: React.ReactNode;
+  content: ReactNode;
   type: 'text';
 };
 

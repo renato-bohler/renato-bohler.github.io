@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type FC } from 'react';
 
 import { Button } from 'reakit/Button';
 import {
@@ -20,7 +20,7 @@ type Props = {
   dialog: DialogStateReturn;
 };
 
-export const EmailDialog: React.FC<Props> = ({ dialog }) => {
+export const EmailDialog: FC<Props> = ({ dialog }) => {
   const { hide } = useDialogHistory({ dialog, id: 'email' });
   const formRef = useRef<HTMLFormElement | null>(null);
 
