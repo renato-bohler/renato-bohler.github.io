@@ -1,3 +1,10 @@
+## [2.8.4](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.3...v2.8.4) (2024-03-29)
+
+
+### Bug Fixes
+
+* **Experience:** adjusts Shippo color to new branding ([16c53f7](https://github.com/renato-bohler/renato-bohler.github.io/commit/16c53f7bec5760e99d9bbe51cc9f2915d6ac6554))
+
 ## [2.8.3](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.2...v2.8.3) (2024-03-27)
 
 
