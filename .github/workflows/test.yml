@@ -123,7 +123,8 @@ jobs:
       - name: Build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NEXT_PUBLIC_CONTACT_ENDPOINT: https://kixlofqgt4ph6k5zgdbtese7pa0dqwka.lambda-url.us-east-1.on.aws
+          NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ env.NEXT_PUBLIC_CONTACT_ENDPOINT }}
+          NEXT_PUBLIC_FULLSTORY_ORG_ID: ${{ env.NEXT_PUBLIC_FULLSTORY_ORG_ID }}
         run: yarn build
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
