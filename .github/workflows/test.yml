@@ -23,13 +23,13 @@ jobs:
       - name: Accessibility test
         run: yarn test:accessibility
       - name: Upload test artifacts on failure
-          uses: actions/upload-artifact@v4
-          if: failure()
-          with:
-            name: test-artifacts
-            path: |
-              playwright-report/
-              test-results/
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-artifacts
+          path: |
+            playwright-report/
+            test-results/
           retention-days: 30
 
   visual-test:
