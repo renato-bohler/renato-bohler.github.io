@@ -1,4 +1,4 @@
-const CheckIcon: React.FC<{
+export const CheckIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const CheckIcon: React.FC<{
     />
   </svg>
 );
-
-export default CheckIcon;

@@ -16,7 +16,7 @@ type Options = {
   repo: string;
 };
 
-const fetchProjectDetails = async ({
+export const fetchProjectDetails = async ({
   owner,
   packageName,
   repo,
@@ -60,5 +60,3 @@ const fetchProjectDetails = async ({
     ...npmDetails,
   };
 };
-
-export default fetchProjectDetails;

@@ -1,4 +1,4 @@
-const ChevronDoubleUpIcon: React.FC<{
+export const ChevronDoubleUpIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const ChevronDoubleUpIcon: React.FC<{
     />
   </svg>
 );
-
-export default ChevronDoubleUpIcon;

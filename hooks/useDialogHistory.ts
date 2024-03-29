@@ -7,7 +7,7 @@ type DialogHistory = (arg: {
   id: string;
 }) => { hide: () => void };
 
-const useDialogHistory: DialogHistory = ({ dialog, id }) => {
+export const useDialogHistory: DialogHistory = ({ dialog, id }) => {
   const hide = () => {
     window.history.back();
     dialog.hide();
@@ -34,5 +34,3 @@ const useDialogHistory: DialogHistory = ({ dialog, id }) => {
 
   return { hide };
 };
-
-export default useDialogHistory;

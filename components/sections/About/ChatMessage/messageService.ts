@@ -1,6 +1,7 @@
-import messages, {
+import {
   FAST_MODE_ID,
   end,
+  messages,
   optionSelect,
 } from './messages.const';
 import { Message, Option } from './messages.types';
@@ -262,6 +263,4 @@ class MessageService {
   }
 }
 
-const instance = new MessageService();
-
-export default instance;
+export const messageService = new MessageService();

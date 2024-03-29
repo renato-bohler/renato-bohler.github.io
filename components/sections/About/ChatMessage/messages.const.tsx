@@ -335,6 +335,4 @@ export const end: Message = {
   type: 'text',
 };
 
-const messages = [...incoming, optionSelect];
-
-export default messages;
+export const messages = [...incoming, optionSelect];

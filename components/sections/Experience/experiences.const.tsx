@@ -19,7 +19,7 @@ const shippo: Company = {
   padding: 4,
 };
 
-const experiences: Experience[] = [
+export const experiences: Experience[] = [
   {
     company: shippo,
     description: <></>,
@@ -292,5 +292,3 @@ export type Experience = {
   period: Period;
   title: string;
 };
-
-export default experiences;

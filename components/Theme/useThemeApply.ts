@@ -4,7 +4,7 @@ import { Theme } from '../../consts/themes.const';
 
 import { ColorScheme } from './ThemeProvider';
 
-const useThemeApply = (
+export const useThemeApply = (
   theme: Theme,
   colorScheme: ColorScheme,
   isReducedMotion: boolean,
@@ -31,5 +31,3 @@ const useThemeApply = (
     document.documentElement.style.colorScheme = colorScheme;
   }, [theme, colorScheme, isReducedMotion]);
 };
-
-export default useThemeApply;

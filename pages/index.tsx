@@ -7,22 +7,26 @@ import Head from 'next/head';
 import classNames from 'classnames';
 import { useDialogState } from 'reakit/Dialog';
 
-import fetchProjectDetails, {
+import {
   RepositoryInfo,
+  fetchProjectDetails,
 } from '~/api/fetchProjectDetails';
-import EndTransition from '~/components/EndTransition/EndTransition';
-import KeyboardNavigation from '~/components/KeyboardNavigation/KeyboardNavigation';
-import SectionAnchor from '~/components/SectionAnchor/SectionAnchor';
-import useSectionAnchor from '~/components/SectionAnchor/useSectionAnchor';
-import Footer from '~/components/sections/Footer/Footer';
-import Header from '~/components/sections/Header/Header';
+import { EndTransition } from '~/components/EndTransition/EndTransition';
+import { KeyboardNavigation } from '~/components/KeyboardNavigation/KeyboardNavigation';
+import { SectionAnchor } from '~/components/SectionAnchor/SectionAnchor';
+import { useSectionAnchor } from '~/components/SectionAnchor/useSectionAnchor';
+import { Footer } from '~/components/sections/Footer/Footer';
+import { Header } from '~/components/sections/Header/Header';
 import { HEADER, SECTIONS } from '~/consts/sections.const';
-import useFullStory from '~/hooks/useFullStory';
+import { useFullStory } from '~/hooks/useFullStory';
 
 import styles from './index.module.css';
 
 const EmailDialog = dynamic(
-  () => import('~/components/EmailDialog/EmailDialog'),
+  () =>
+    import('~/components/EmailDialog/EmailDialog').then(
+      ({ EmailDialog }) => EmailDialog,
+    ),
   { ssr: false },
 );
 

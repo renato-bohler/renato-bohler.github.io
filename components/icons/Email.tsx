@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const EmailIcon: React.FC<{
+export const EmailIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -68,5 +68,3 @@ const EmailIcon: React.FC<{
     </svg>
   );
 };
-
-export default EmailIcon;

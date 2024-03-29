@@ -3,12 +3,12 @@ import { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
-import useTheme from '~/hooks/useTheme';
-import useTypingEffect from '~/hooks/useTypingEffect';
+import { useTheme } from '~/hooks/useTheme';
+import { useTypingEffect } from '~/hooks/useTypingEffect';
 
 import styles from './MadeBy.module.css';
 
-const MadeBy: React.FC = () => {
+export const MadeBy: React.FC = () => {
   const { isReducedMotion } = useTheme();
 
   const [handWritingFinished, setHandwritingFinished] =
@@ -97,5 +97,3 @@ const MadeBy: React.FC = () => {
     </div>
   );
 };
-
-export default MadeBy;

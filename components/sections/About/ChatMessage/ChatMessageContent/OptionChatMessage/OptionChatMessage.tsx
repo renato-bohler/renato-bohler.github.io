@@ -12,7 +12,7 @@ type Props = {
   onResponse: (option: Option) => void;
 };
 
-const OptionChatMessage: React.FC<Props> = ({
+export const OptionChatMessage: React.FC<Props> = ({
   message,
   onResponse,
 }) => {
@@ -36,5 +36,3 @@ const OptionChatMessage: React.FC<Props> = ({
     </Group>
   );
 };
-
-export default OptionChatMessage;

@@ -12,11 +12,11 @@ import {
 } from 'reakit/Dialog';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import CloseIcon from '~/components/icons/Close';
-import useDialogHistory from '~/hooks/useDialogHistory';
-import useFirstMount from '~/hooks/useFirstMount';
-import useTheme from '~/hooks/useTheme';
+import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import { CloseIcon } from '~/components/icons/Close';
+import { useDialogHistory } from '~/hooks/useDialogHistory';
+import { useFirstMount } from '~/hooks/useFirstMount';
+import { useTheme } from '~/hooks/useTheme';
 
 import styles from './SkillCardDialog.module.css';
 
@@ -33,7 +33,7 @@ export type Props = {
   yearsExperience?: number;
 };
 
-const SkillCardDialog: React.FC<Props> = ({
+export const SkillCardDialog: React.FC<Props> = ({
   backgroundColor,
   description,
   dialog,
@@ -127,5 +127,3 @@ const SkillCardDialog: React.FC<Props> = ({
     </DialogBackdrop>
   );
 };
-
-export default SkillCardDialog;

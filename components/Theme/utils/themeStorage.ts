@@ -1,4 +1,4 @@
-import themes, { Theme } from '~/consts/themes.const';
+import { Theme, themes } from '~/consts/themes.const';
 
 import { ColorScheme } from '../ThemeProvider';
 

@@ -11,7 +11,7 @@ type SectionInView = {
   name: SectionName;
 };
 
-const useSectionAnchor = (): {
+export const useSectionAnchor = (): {
   handleSectionChange: (sectionName: string, inView: boolean) => void;
   title: string;
 } => {
@@ -64,5 +64,3 @@ const useSectionAnchor = (): {
 
   return { handleSectionChange, title: activeSection.title };
 };
-
-export default useSectionAnchor;

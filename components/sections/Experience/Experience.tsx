@@ -1,12 +1,12 @@
 import { CSSProperties, useEffect, useRef, useState } from 'react';
 
-import ExperienceCard from './ExperienceCard/ExperienceCard';
-import ExperienceVectors from './ExperienceVectors/ExperienceVectors';
-import experiences from './experiences.const';
+import { ExperienceCard } from './ExperienceCard/ExperienceCard';
+import { ExperienceVectors } from './ExperienceVectors/ExperienceVectors';
+import { experiences } from './experiences.const';
 
 import styles from './Experience.module.css';
 
-const Experience: React.FC = () => {
+export const Experience: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [progress, setProgress] = useState(0);
 
@@ -66,5 +66,3 @@ const Experience: React.FC = () => {
     </section>
   );
 };
-
-export default Experience;

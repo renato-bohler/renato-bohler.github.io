@@ -2,7 +2,9 @@ import { Button } from 'reakit/Button';
 
 import styles from './Projects.module.css';
 
-const getProjects = (onEmailDialogOpen: () => void): Project[] => [
+export const getProjects = (
+  onEmailDialogOpen: () => void,
+): Project[] => [
   {
     description: (
       <>
@@ -329,5 +331,3 @@ export type Project = {
   subtitle: string;
   title: string;
 };
-
-export default getProjects;

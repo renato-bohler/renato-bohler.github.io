@@ -18,19 +18,19 @@ import {
 } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import ChevronLeftIcon from '~/components/icons/ChevronLeft';
-import ChevronRightIcon from '~/components/icons/ChevronRight';
-import useTheme from '~/hooks/useTheme';
+import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import { ChevronLeftIcon } from '~/components/icons/ChevronLeft';
+import { ChevronRightIcon } from '~/components/icons/ChevronRight';
+import { useTheme } from '~/hooks/useTheme';
 
-import TestimonialCard from './TestimonialCard/TestimonialCard';
-import TestimonialDivider from './TestimonialDivider/TestimonialDivider';
-import TestimonialSectionTransition from './TestimonialSectionTransition/TestimonialSectionTransition';
-import testimonials from './testimonials.const';
+import { TestimonialCard } from './TestimonialCard/TestimonialCard';
+import { TestimonialDivider } from './TestimonialDivider/TestimonialDivider';
+import { TestimonialSectionTransition } from './TestimonialSectionTransition/TestimonialSectionTransition';
+import { testimonials } from './testimonials.const';
 
 import styles from './Testimonials.module.css';
 
-const Testimonials: React.FC = () => {
+export const Testimonials: React.FC = () => {
   const [ref, inView] = useInView();
 
   const [swiper, setSwiper] = useState<SwiperInstance>();
@@ -138,5 +138,3 @@ const Testimonials: React.FC = () => {
     </div>
   );
 };
-
-export default Testimonials;

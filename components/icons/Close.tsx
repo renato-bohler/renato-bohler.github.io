@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const CloseIcon: React.FC<{
+export const CloseIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -78,5 +78,3 @@ const CloseIcon: React.FC<{
     </svg>
   );
 };
-
-export default CloseIcon;

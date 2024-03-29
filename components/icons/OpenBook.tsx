@@ -1,4 +1,4 @@
-const OpenBookIcon: React.FC<{
+export const OpenBookIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const OpenBookIcon: React.FC<{
     />
   </svg>
 );
-
-export default OpenBookIcon;

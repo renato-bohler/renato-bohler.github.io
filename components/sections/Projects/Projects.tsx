@@ -6,8 +6,8 @@ import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import { RepositoryInfo } from '~/api/fetchProjectDetails';
 
-import ProjectCard from './ProjectCard/ProjectCard';
-import getProjects from './projects.const';
+import { ProjectCard } from './ProjectCard/ProjectCard';
+import { getProjects } from './projects.const';
 
 import styles from './Projects.module.css';
 
@@ -16,7 +16,7 @@ type Props = {
   repositories: RepositoryInfo[];
 };
 
-const Projects: React.FC<Props> = ({
+export const Projects: React.FC<Props> = ({
   onEmailDialogOpen,
   repositories,
 }) => {
@@ -82,5 +82,3 @@ const Projects: React.FC<Props> = ({
     </section>
   );
 };
-
-export default Projects;

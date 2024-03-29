@@ -1,6 +1,6 @@
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
-const GitHubIcon: React.FC<{
+export const GitHubIcon: React.FC<{
   className?: string;
   style?: React.CSSProperties;
 }> = ({ className, style }) => {
@@ -65,5 +65,3 @@ const GitHubIcon: React.FC<{
     </svg>
   );
 };
-
-export default GitHubIcon;

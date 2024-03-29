@@ -2,17 +2,17 @@ import React from 'react';
 
 import { Message, Option } from '../messages.types';
 
-import AudioChatMessage from './AudioChatMessage/AudioChatMessage';
-import ContactFormChatMessage from './ContactFormChatMessage/ContactFormChatMessage';
-import OptionChatMessage from './OptionChatMessage/OptionChatMessage';
-import TextChatMessage from './TextChatMessage/TextChatMessage';
+import { AudioChatMessage } from './AudioChatMessage/AudioChatMessage';
+import { ContactFormChatMessage } from './ContactFormChatMessage/ContactFormChatMessage';
+import { OptionChatMessage } from './OptionChatMessage/OptionChatMessage';
+import { TextChatMessage } from './TextChatMessage/TextChatMessage';
 
 type Props = {
   message: Message;
   onResponse: (option: Option) => void;
 };
 
-const ChatMessageContent: React.FC<Props> = ({
+export const ChatMessageContent: React.FC<Props> = ({
   message,
   onResponse,
 }) => {
@@ -32,5 +32,3 @@ const ChatMessageContent: React.FC<Props> = ({
       return <ContactFormChatMessage />;
   }
 };
-
-export default ChatMessageContent;

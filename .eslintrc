@@ -4,21 +4,21 @@
     "perfectionist",
     "import",
     "unused-imports",
-    "prefer-arrow-functions"
+    "prefer-arrow-functions",
   ],
   "extends": [
     "next",
     "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "plugin:perfectionist/recommended-natural"
+    "plugin:perfectionist/recommended-natural",
   ],
   "ignorePatterns": [
     "**/node_modules",
     "**/out",
     "**/playwright-report",
     "**/.next",
-    "**/test-results"
+    "**/test-results",
   ],
   "rules": {
     // Code style
@@ -31,8 +31,8 @@
         "vars": "all",
         "varsIgnorePattern": "^_",
         "args": "after-used",
-        "argsIgnorePattern": "^_"
-      }
+        "argsIgnorePattern": "^_",
+      },
     ],
     // TypeScript
     "@typescript-eslint/no-unused-vars": "off",
@@ -47,6 +47,7 @@
     "import/first": "warn",
     "import/no-duplicates": "warn",
     "import/newline-after-import": "warn",
+    "import/no-default-export": "error",
     "perfectionist/sort-imports": [
       "warn",
       {
@@ -63,21 +64,25 @@
           ["parent", "parent-type"],
           ["sibling", "sibling-type"],
           "style",
-          "unknown"
+          "unknown",
         ],
         "custom-groups": {
           "value": {
             "react": ["react", "react-dom"],
-            "next": ["next", "next/*"]
-          }
-        }
-      }
-    ]
+            "next": ["next", "next/*"],
+          },
+        },
+      },
+    ],
   },
   "overrides": [
     {
+      "files": ["./pages/**/*.tsx"],
+      "rules": { "import/no-default-export": "off" },
+    },
+    {
       "files": ["**/e2e/?(*.)+(test).[jt]s?(x)"],
-      "extends": ["plugin:playwright/recommended"]
-    }
-  ]
+      "extends": ["plugin:playwright/recommended"],
+    },
+  ],
 }

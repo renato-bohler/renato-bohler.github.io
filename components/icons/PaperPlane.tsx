@@ -1,4 +1,4 @@
-const PaperPlaneIcon: React.FC<{
+export const PaperPlaneIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const PaperPlaneIcon: React.FC<{
     />
   </svg>
 );
-
-export default PaperPlaneIcon;

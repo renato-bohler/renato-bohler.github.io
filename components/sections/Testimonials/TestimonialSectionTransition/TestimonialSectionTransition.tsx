@@ -1,6 +1,6 @@
 import styles from './TestimonialSectionTransition.module.css';
 
-const TestimonialSectionTransition: React.FC = () => (
+export const TestimonialSectionTransition: React.FC = () => (
   <svg aria-hidden className={styles.transition}>
     <defs>
       <pattern
@@ -25,5 +25,3 @@ const TestimonialSectionTransition: React.FC = () => (
     />
   </svg>
 );
-
-export default TestimonialSectionTransition;

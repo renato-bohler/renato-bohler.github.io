@@ -1,10 +1,10 @@
 import { Button } from 'reakit/Button';
 
-import useFirstMount from '~/hooks/useFirstMount';
+import { useFirstMount } from '~/hooks/useFirstMount';
 import * as format from '~/utils/format';
 
-import FooterTransitionTrigger from './FooterTransitionTrigger/FooterTransitionTrigger';
-import MadeBy from './MadeBy/MadeBy';
+import { FooterTransitionTrigger } from './FooterTransitionTrigger/FooterTransitionTrigger';
+import { MadeBy } from './MadeBy/MadeBy';
 
 import styles from './Footer.module.css';
 
@@ -15,7 +15,7 @@ type Props = {
   onProgressChange: (progress: number) => void;
 };
 
-const Footer: React.FC<Props> = ({
+export const Footer: React.FC<Props> = ({
   isNavigationHeaderHidden,
   onEmailDialogOpen,
   onNavigationHeaderTrigger,
@@ -83,5 +83,3 @@ const Footer: React.FC<Props> = ({
     </>
   );
 };
-
-export default Footer;

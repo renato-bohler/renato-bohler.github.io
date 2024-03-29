@@ -122,7 +122,7 @@ export const contrast = {
   name: 'Contrast',
 };
 
-const themes = [
+export const themes = [
   {
     dark: {
       ...dark,
@@ -250,5 +250,3 @@ const themes = [
 ];
 
 export type Theme = (typeof themes)[number];
-
-export default themes;

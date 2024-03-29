@@ -1,4 +1,4 @@
-const PauseIcon: React.FC<{
+export const PauseIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const PauseIcon: React.FC<{
     />
   </svg>
 );
-
-export default PauseIcon;

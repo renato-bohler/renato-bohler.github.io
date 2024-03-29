@@ -1,4 +1,4 @@
-const testimonials = [
+export const testimonials = [
   {
     author: {
       name: 'Dione Betanin',
@@ -170,5 +170,3 @@ const testimonials = [
 ];
 
 export type Testimonial = (typeof testimonials)[0];
-
-export default testimonials;

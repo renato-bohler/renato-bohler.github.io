@@ -7,12 +7,12 @@ import {
 
 import Head from 'next/head';
 
-import themes, { Theme, contrast } from '~/consts/themes.const';
+import { Theme, contrast, themes } from '~/consts/themes.const';
 
-import useDynamicFavicon from './useDynamicFavicon';
-import usePreferredContrast from './usePreferredContrast';
-import usePreferredMotion from './usePreferredMotion';
-import useThemeApply from './useThemeApply';
+import { useDynamicFavicon } from './useDynamicFavicon';
+import { usePreferredContrast } from './usePreferredContrast';
+import { usePreferredMotion } from './usePreferredMotion';
+import { useThemeApply } from './useThemeApply';
 import {
   getStoredColorScheme,
   getStoredTheme,
@@ -39,7 +39,7 @@ export type ThemeContextType = {
 
 export type ColorScheme = 'dark' | 'light';
 
-const ThemeContext = createContext<ThemeContextType>({
+export const ThemeContext = createContext<ThemeContextType>({
   colorScheme: 'dark',
   getReducedMotionDuration: () => MINIMUM_DURATION,
   isContrastMode: false,
@@ -120,5 +120,3 @@ export const ThemeProvider: React.FC<Props> = ({ children }) => {
     </>
   );
 };
-
-export default ThemeContext;

@@ -1,4 +1,4 @@
-const PlayIcon: React.FC<{
+export const PlayIcon: React.FC<{
   'aria-label'?: string;
   className?: string;
   style?: React.CSSProperties;
@@ -19,5 +19,3 @@ const PlayIcon: React.FC<{
     />
   </svg>
 );
-
-export default PlayIcon;

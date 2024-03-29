@@ -5,13 +5,13 @@ import dynamic from 'next/dynamic';
 import classNames from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import ArrowDownIcon from '~/components/icons/ArrowDown';
-import useTheme from '~/hooks/useTheme';
+import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import { ArrowDownIcon } from '~/components/icons/ArrowDown';
+import { useTheme } from '~/hooks/useTheme';
 
-import SocialLinks from './SocialLinks/SocialLinks';
-import WavyBackground from './WavyBackground/WavyBackground';
-import useHeaderTypingEffect from './useHeaderTypingEffect';
+import { SocialLinks } from './SocialLinks/SocialLinks';
+import { WavyBackground } from './WavyBackground/WavyBackground';
+import { useHeaderTypingEffect } from './useHeaderTypingEffect';
 
 import styles from './Header.module.css';
 
@@ -29,12 +29,16 @@ type Props = {
   onEmailDialogOpen: () => void;
 };
 
+// TODO(renato): leave as default?
 const ThemePicker = dynamic(
-  () => import('./ThemePicker/ThemePicker'),
+  () =>
+    import('./ThemePicker/ThemePicker').then(
+      ({ ThemePicker }) => ThemePicker,
+    ),
   { ssr: false },
 );
 
-const Header: React.FC<Props> = ({
+export const Header: React.FC<Props> = ({
   isNavigationHeaderHidden,
   onEmailDialogOpen,
 }) => {
@@ -168,5 +172,3 @@ const Header: React.FC<Props> = ({
     </header>
   );
 };
-
-export default Header;

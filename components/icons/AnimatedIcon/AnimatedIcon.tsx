@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 
-import useTheme from '~/hooks/useTheme';
+import { useTheme } from '~/hooks/useTheme';
 
 import styles from './AnimatedIcon.module.css';
 
@@ -14,7 +14,7 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-const AnimatedIcon: React.FC<Props> = ({
+export const AnimatedIcon: React.FC<Props> = ({
   animationDelay = 0,
   children,
   className,
@@ -52,5 +52,3 @@ const AnimatedIcon: React.FC<Props> = ({
     </span>
   );
 };
-
-export default AnimatedIcon;

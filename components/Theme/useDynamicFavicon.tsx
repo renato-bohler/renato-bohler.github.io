@@ -49,7 +49,7 @@ const FavIcon: React.FC<{ size?: number; theme: Theme }> = ({
   );
 };
 
-const useDynamicFavicon = (theme: Theme): string => {
+export const useDynamicFavicon = (theme: Theme): string => {
   if (typeof window === 'undefined') return '/favicon.ico';
 
   const svgMarkup = renderToStaticMarkup(<FavIcon theme={theme} />);
@@ -57,5 +57,3 @@ const useDynamicFavicon = (theme: Theme): string => {
 
   return `data:image/svg+xml,${encodedMarkup}`;
 };
-
-export default useDynamicFavicon;

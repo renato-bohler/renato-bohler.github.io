@@ -6,13 +6,13 @@ import {
   usePopoverState,
 } from 'reakit/Popover';
 
-import AnimatedIcon from '~/components/icons/AnimatedIcon/AnimatedIcon';
-import EmailIcon from '~/components/icons/Email';
-import GitHubIcon from '~/components/icons/GitHub';
-import LinkedInIcon from '~/components/icons/LinkedIn';
-import SocialsIcon from '~/components/icons/Socials';
-import TwitterIcon from '~/components/icons/Twitter';
-import socials from '~/consts/socials.const';
+import { AnimatedIcon } from '~/components/icons/AnimatedIcon/AnimatedIcon';
+import { EmailIcon } from '~/components/icons/Email';
+import { GitHubIcon } from '~/components/icons/GitHub';
+import { LinkedInIcon } from '~/components/icons/LinkedIn';
+import { SocialsIcon } from '~/components/icons/Socials';
+import { TwitterIcon } from '~/components/icons/Twitter';
+import { socials } from '~/consts/socials.const';
 
 import styles from './SocialLinks.module.css';
 
@@ -75,7 +75,9 @@ type Props = {
   onEmailDialogOpen: () => void;
 };
 
-const Socials: React.FC<Props> = ({ onEmailDialogOpen }) => {
+export const SocialLinks: React.FC<Props> = ({
+  onEmailDialogOpen,
+}) => {
   const popover = usePopoverState({
     animated: 500,
     placement: 'bottom-start',
@@ -110,5 +112,3 @@ const Socials: React.FC<Props> = ({ onEmailDialogOpen }) => {
     </>
   );
 };
-
-export default Socials;
