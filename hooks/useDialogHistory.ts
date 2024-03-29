@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { DialogStateReturn } from 'reakit';
+import { type DialogStateReturn } from 'reakit';
 
 type DialogHistory = (arg: {
   dialog: DialogStateReturn;

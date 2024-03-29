@@ -1,6 +1,6 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import { Theme } from '~/consts/themes.const';
+import { type Theme } from '~/consts/themes.const';
 
 const FAVICON_DIMENSION = 256;
 

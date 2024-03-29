@@ -6,7 +6,7 @@ import { LoadingIcon } from '~/components/icons/LoadingIcon';
 import { PauseIcon } from '~/components/icons/PauseIcon';
 import { PlayIcon } from '~/components/icons/PlayIcon';
 
-import { AudioMessage } from '../../messages.types';
+import { type AudioMessage } from '../../messages.types';
 
 import styles from './AudioChatMessage.module.css';
 

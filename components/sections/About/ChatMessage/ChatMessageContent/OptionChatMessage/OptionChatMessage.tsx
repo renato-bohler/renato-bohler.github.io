@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { Button } from 'reakit/Button';
 import { Group } from 'reakit/Group';
 
-import { Option, OptionSelectMessage } from '../../messages.types';
+import {
+  type Option,
+  type OptionSelectMessage,
+} from '../../messages.types';
 
 import styles from './OptionChatMessage.module.css';
 

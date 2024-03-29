@@ -4,7 +4,7 @@ import {
   messages,
   optionSelect,
 } from './messages.const';
-import { Message, Option } from './messages.types';
+import { type Message, type Option } from './messages.types';
 
 // Time it takes for a message to be added
 const MESSAGE_START_BASE_MS = 1000;

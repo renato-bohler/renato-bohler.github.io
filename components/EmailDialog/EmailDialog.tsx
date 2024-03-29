@@ -4,7 +4,7 @@ import { Button } from 'reakit/Button';
 import {
   Dialog,
   DialogBackdrop,
-  DialogStateReturn,
+  type DialogStateReturn,
 } from 'reakit/Dialog';
 
 import { useDialogHistory } from '~/hooks/useDialogHistory';

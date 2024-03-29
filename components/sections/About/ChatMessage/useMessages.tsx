@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 import { messageService } from './messageService';
-import { Message } from './messages.types';
+import { type Message } from './messages.types';
 
 type Options = {
   onMessage?: () => void;

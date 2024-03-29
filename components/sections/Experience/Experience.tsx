@@ -1,4 +1,9 @@
-import { CSSProperties, useEffect, useRef, useState } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type CSSProperties,
+} from 'react';
 
 import { ExperienceCard } from './ExperienceCard/ExperienceCard';
 import { ExperienceVectors } from './ExperienceVectors/ExperienceVectors';

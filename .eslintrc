@@ -49,6 +49,14 @@
     "import/no-duplicates": "warn",
     "import/newline-after-import": "warn",
     "import/no-default-export": "error",
+    "import/consistent-type-specifier-style": [
+      "error",
+      "prefer-inline",
+    ],
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      { "prefer": "type-imports", "fixStyle": "inline-type-imports" },
+    ],
     "perfectionist/sort-imports": [
       "warn",
       {
@@ -73,6 +81,22 @@
             "next": ["next", "next/*"],
           },
         },
+      },
+    ],
+    "perfectionist/sort-named-imports": [
+      "error",
+      {
+        "order": "asc",
+        "type": "natural",
+        "group-kind": "values-first",
+      },
+    ],
+    "perfectionist/sort-named-exports": [
+      "error",
+      {
+        "order": "asc",
+        "type": "natural",
+        "group-kind": "values-first",
       },
     ],
   },

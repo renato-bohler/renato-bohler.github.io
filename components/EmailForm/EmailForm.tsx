@@ -1,4 +1,4 @@
-import React, { Ref, forwardRef, useState } from 'react';
+import React, { forwardRef, useState, type Ref } from 'react';
 
 import classNames from 'classnames';
 import { Button } from 'reakit/Button';

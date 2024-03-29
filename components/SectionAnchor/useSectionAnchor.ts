@@ -2,8 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 
 import {
   SECTIONS_WITH_HEADER,
-  Section,
-  SectionName,
+  type Section,
+  type SectionName,
 } from '~/consts/sections.const';
 
 type SectionInView = {

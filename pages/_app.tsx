@@ -1,7 +1,7 @@
 import '~/styles/globals.css';
 import 'normalize.css';
 
-import { AppProps } from 'next/app';
+import { type AppProps } from 'next/app';
 
 import { Provider } from 'reakit/Provider';
 

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { Theme, contrast } from '~/consts/themes.const';
+import { contrast, type Theme } from '~/consts/themes.const';
 
 export const usePreferredContrast = (
   theme: Theme,

@@ -2,7 +2,7 @@ import { useContext } from 'react';
 
 import {
   ThemeContext,
-  ThemeContextType,
+  type ThemeContextType,
 } from '~/components/Theme/ThemeProvider';
 
 export const useTheme = (): ThemeContextType => {

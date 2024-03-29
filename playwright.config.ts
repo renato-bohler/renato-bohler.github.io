@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-import { DotenvPopulateInput, populate } from 'dotenv';
+import { populate, type DotenvPopulateInput } from 'dotenv';
 
 const URL = 'http://localhost:3000';
 const IS_CI = !!process.env.CI;

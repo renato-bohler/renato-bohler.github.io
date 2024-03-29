@@ -9,7 +9,7 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { Button } from 'reakit/Button';
-import SwiperInstance from 'swiper';
+import type SwiperInstance from 'swiper';
 import {
   Autoplay,
   Controller,

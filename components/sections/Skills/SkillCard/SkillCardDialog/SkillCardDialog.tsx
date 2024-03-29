@@ -8,7 +8,7 @@ import { Button } from 'reakit/Button';
 import {
   Dialog,
   DialogBackdrop,
-  DialogStateReturn,
+  type DialogStateReturn,
 } from 'reakit/Dialog';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 

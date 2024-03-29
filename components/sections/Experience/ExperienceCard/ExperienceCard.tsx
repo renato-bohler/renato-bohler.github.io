@@ -2,7 +2,7 @@ import { useInView } from 'react-intersection-observer';
 
 import { useTheme } from '~/hooks/useTheme';
 
-import { Company, Period } from '../experiences.const';
+import { type Company, type Period } from '../experiences.const';
 
 import styles from './ExperienceCard.module.css';
 

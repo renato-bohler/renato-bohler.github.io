@@ -1,4 +1,7 @@
-import { Message, OptionSelectMessage } from './messages.types';
+import {
+  type Message,
+  type OptionSelectMessage,
+} from './messages.types';
 
 const getAge = () => {
   const now = new Date();

@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { Theme } from '../../consts/themes.const';
+import { type Theme } from '../../consts/themes.const';
 
-import { ColorScheme } from './ThemeProvider';
+import { type ColorScheme } from './ThemeProvider';
 
 export const useThemeApply = (
   theme: Theme,

@@ -7,7 +7,7 @@ import {
 
 import Head from 'next/head';
 
-import { Theme, contrast, themes } from '~/consts/themes.const';
+import { contrast, themes, type Theme } from '~/consts/themes.const';
 
 import { useDynamicFavicon } from './useDynamicFavicon';
 import { usePreferredContrast } from './usePreferredContrast';

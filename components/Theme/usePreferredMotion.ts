@@ -1,4 +1,9 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import {
+  useEffect,
+  useState,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 
 export const usePreferredMotion = (): [
   boolean,

@@ -1,11 +1,11 @@
-import React, { Ref, forwardRef } from 'react';
+import React, { forwardRef, type Ref } from 'react';
 
 import cx from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import { ChatMessageContent } from './ChatMessageContent/ChatMessageContent';
 import { MessageWritingAnimation } from './MessageWritingAnimation/MessageWritingAnimation';
-import { Message, Option } from './messages.types';
+import { type Message, type Option } from './messages.types';
 
 import styles from './ChatMessage.module.css';
 

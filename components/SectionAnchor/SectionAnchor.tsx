@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import { SectionName } from '~/consts/sections.const';
+import { type SectionName } from '~/consts/sections.const';
 
 import styles from './SectionAnchor.module.css';
 

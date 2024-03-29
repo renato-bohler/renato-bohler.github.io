@@ -1,6 +1,6 @@
-import { CSSProperties, Fragment, useState } from 'react';
+import { Fragment, useState, type CSSProperties } from 'react';
 
-import { GetStaticProps, NextPage } from 'next';
+import { type GetStaticProps, type NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 
@@ -8,8 +8,8 @@ import classNames from 'classnames';
 import { useDialogState } from 'reakit/Dialog';
 
 import {
-  RepositoryInfo,
   fetchProjectDetails,
+  type RepositoryInfo,
 } from '~/api/fetchProjectDetails';
 import { EndTransition } from '~/components/EndTransition/EndTransition';
 import { KeyboardNavigation } from '~/components/KeyboardNavigation/KeyboardNavigation';

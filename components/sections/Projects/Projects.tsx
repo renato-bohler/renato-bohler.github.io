@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
-import { RepositoryInfo } from '~/api/fetchProjectDetails';
+import { type RepositoryInfo } from '~/api/fetchProjectDetails';
 
 import { ProjectCard } from './ProjectCard/ProjectCard';
 import { getProjects } from './projects.const';

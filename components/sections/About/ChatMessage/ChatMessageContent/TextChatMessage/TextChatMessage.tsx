@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextMessage } from '../../messages.types';
+import { type TextMessage } from '../../messages.types';
 
 type Props = { message: TextMessage };
 
