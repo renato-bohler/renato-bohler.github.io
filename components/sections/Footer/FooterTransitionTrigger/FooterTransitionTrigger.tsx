@@ -1,68 +1,42 @@
-import { useCallback, useEffect, useRef, type FC } from 'react';
+import { useEffect, type FC } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
 import styles from './FooterTransitionTrigger.module.css';
 
 type Props = {
+  onFooterTransitionTrigger: (transitioning: boolean) => void;
   onNavigationHeaderTrigger: (hide: boolean) => void;
-  onProgressChange: (progress: number) => void;
 };
 
 export const FooterTransitionTrigger: FC<Props> = ({
+  onFooterTransitionTrigger,
   onNavigationHeaderTrigger,
-  onProgressChange,
 }) => {
-  const [navigationBarHideRef, navigationBarHideInView] = useInView();
-
+  const [footerTransitionTriggerRef, footerTransitionTriggerInView] =
+    useInView();
   useEffect(() => {
-    onNavigationHeaderTrigger(navigationBarHideInView);
-  }, [navigationBarHideInView, onNavigationHeaderTrigger]);
+    onFooterTransitionTrigger(footerTransitionTriggerInView);
+  }, [footerTransitionTriggerInView, onFooterTransitionTrigger]);
 
-  const progressRef = useRef<HTMLDivElement | null>(null);
-  const [progressInViewRef, progressInView] = useInView();
-  const setProgressRefs = useCallback(
-    (node: HTMLDivElement) => {
-      progressRef.current = node;
-      progressInViewRef(node);
-    },
-    [progressInViewRef],
-  );
-
+  const [
+    navigationBarHideTriggerRef,
+    navigationBarHideTriggerInView,
+  ] = useInView();
   useEffect(() => {
-    if (!progressInView) {
-      onProgressChange(0);
-      return;
-    }
-
-    const scrollHandler = () => {
-      if (!progressRef.current) return;
-      const windowBottomY =
-        document.documentElement.scrollTop + window.innerHeight;
-      const targetHeight = progressRef.current.clientHeight;
-      const targetY = progressRef.current.offsetTop;
-
-      const percentage = Math.min(
-        1,
-        (windowBottomY - targetY) / targetHeight,
-      );
-
-      onProgressChange(Math.max(0, percentage));
-    };
-    document.addEventListener('scroll', scrollHandler);
-    scrollHandler();
-
-    return () =>
-      document.removeEventListener('scroll', scrollHandler);
-  }, [progressInView, onProgressChange]);
+    onNavigationHeaderTrigger(navigationBarHideTriggerInView);
+  }, [navigationBarHideTriggerInView, onNavigationHeaderTrigger]);
 
   return (
     <>
       <div
         className={styles.navHeaderHideTrigger}
-        ref={navigationBarHideRef}
+        ref={navigationBarHideTriggerRef}
       />
-      <div className={styles.progressTrigger} ref={setProgressRefs} />
+      <div
+        className={styles.footerTransitionTrigger}
+        ref={footerTransitionTriggerRef}
+      />
     </>
   );
 };
