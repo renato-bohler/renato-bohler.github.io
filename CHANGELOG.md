@@ -1,3 +1,10 @@
+## [2.8.5](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.4...v2.8.5) (2024-04-13)
+
+
+### Bug Fixes
+
+* fixes environment variables ([4af45e4](https://github.com/renato-bohler/renato-bohler.github.io/commit/4af45e42614bbf10d0ca9b636b7ae07fe83d5289))
+
 ## [2.8.4](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.3...v2.8.4) (2024-03-29)
 
 
