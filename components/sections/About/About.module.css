@@ -1,6 +1,7 @@
 .scroll {
   position: relative;
   height: 200vh;
+  view-timeline-name: --about-transition;
 }
 
 .about {
