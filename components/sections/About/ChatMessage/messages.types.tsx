@@ -6,18 +6,18 @@ type BaseMessage = {
   status: 'invisible' | 'visible' | 'writing';
 };
 
-export type TextMessage = BaseMessage & {
+export type TextMessage = {
   content: ReactNode;
   type: 'text';
-};
+} & BaseMessage;
 
-export type AudioMessage = BaseMessage & {
+export type AudioMessage = {
   content: {
     src: string;
     type: string;
   };
   type: 'audio';
-};
+} & BaseMessage;
 
 export type Option = {
   disabled?: boolean;
@@ -26,14 +26,14 @@ export type Option = {
   responses: Message[];
 };
 
-export type OptionSelectMessage = BaseMessage & {
+export type OptionSelectMessage = {
   content: Option[];
   type: 'option-select';
-};
+} & BaseMessage;
 
-export type ContactFormMessage = BaseMessage & {
+export type ContactFormMessage = {
   type: 'contact-form';
-};
+} & BaseMessage;
 
 export type Message =
   | AudioMessage
