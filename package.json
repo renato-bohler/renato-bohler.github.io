@@ -15,7 +15,7 @@
     "@fullstory/browser": "^2.0.3",
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.5.1",
-    "next": "^14.1.4",
+    "next": "^14.2.10",
     "normalize.css": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
