@@ -50,13 +50,15 @@
     "eslint-plugin-unused-imports": "^3.2.0",
     "prettier": "^3.3.3",
     "semantic-release": "^23.1.1",
-    "string-width": "4.2.3",
     "stylelint": "^16.9.0",
-    "stylelint-config-clean-order": "^5.4.2",
+    "stylelint-config-clean-order": "^6.1.0",
     "stylelint-config-css-modules": "^4.4.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-prettier": "^5.0.2",
     "typescript": "5.5.4",
     "typescript-plugin-css-modules": "^5.1.0"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
