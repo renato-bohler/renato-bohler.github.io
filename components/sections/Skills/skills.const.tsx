@@ -269,7 +269,7 @@ export const skills: Skill[] = [
     name: 'TypeScript',
     studying: true,
     usageLevel: 3,
-    yearsExperience: 5,
+    yearsExperience: 6,
   },
   {
     colors: {
@@ -341,7 +341,7 @@ export const skills: Skill[] = [
     name: 'Git',
     studying: false,
     usageLevel: 3,
-    yearsExperience: 7,
+    yearsExperience: 8,
   },
   {
     colors: {
@@ -421,7 +421,7 @@ export const skills: Skill[] = [
     name: 'CI/CD',
     studying: false,
     usageLevel: 3,
-    yearsExperience: 5,
+    yearsExperience: 6,
   },
   {
     brief: (
