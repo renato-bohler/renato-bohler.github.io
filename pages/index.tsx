@@ -1,4 +1,4 @@
-import { Fragment, useState, type CSSProperties } from 'react';
+import { Fragment, useState } from 'react';
 
 import { type GetStaticProps, type NextPage } from 'next';
 import dynamic from 'next/dynamic';
@@ -37,9 +37,8 @@ type StaticProps = {
 const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
   const { handleSectionChange, title } = useSectionAnchor();
 
-  const [progress, setProgress] = useState(0);
-  const isMainContentTransitioning = progress > 0;
-
+  const [isFooterTransitioning, setFooterTransitioning] =
+    useState(false);
   const [isNavigationHeaderHidden, setNavigationHeaderHidden] =
     useState(false);
 
@@ -88,9 +87,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
 
       <div
         className={classNames(styles.mainContainer, {
-          [styles.transitioning]: isMainContentTransitioning,
+          [styles.transitioning]: isFooterTransitioning,
         })}
-        style={{ '--scroll': `${progress}` } as CSSProperties}
       >
         <SectionAnchor
           onChange={handleSectionChange}
@@ -122,8 +120,8 @@ const Index: NextPage<StaticProps> = ({ repositories = [] }) => {
       <Footer
         isNavigationHeaderHidden={isNavigationHeaderHidden}
         onEmailDialogOpen={emailDialog.show}
+        onFooterTransitionTrigger={setFooterTransitioning}
         onNavigationHeaderTrigger={setNavigationHeaderHidden}
-        onProgressChange={setProgress}
       />
     </>
   );
