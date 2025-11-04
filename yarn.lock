@@ -99,18 +99,6 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.57.1.tgz#de633db3ec2ef6a3c89e2f19038063e8a122e2c2"
   integrity sha512-d9zaMRSTIKDLhctzH12MtXvJKSSUhaHcjV+2Z+GK+EEY7XKpP5yR4x+N3TAcHTcu963nIr+TMcCb4DBCYX1z6Q==
 
-"@fullstory/browser@^2.0.5":
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/@fullstory/browser/-/browser-2.0.5.tgz#8cab31eac882fdc29f3964850fdcc2d061c8ce30"
-  integrity sha512-2UTJInKM1ReEeLpDKbhEgZiHEgFo84DPJr3FRqMAdCH5+j/s5llZd15BLIKsUn5Xo3YZfz/vbqcBJygA/duIBQ==
-  dependencies:
-    "@fullstory/snippet" "2.0.3"
-
-"@fullstory/snippet@2.0.3":
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/@fullstory/snippet/-/snippet-2.0.3.tgz#d5410132becc3d0115bb129b57461d228c73b5f0"
-  integrity sha512-EaCuTQSLv5FvnjHLbTxErn3sS1+nLqf1p6sA/c4PV49stBtkUakA0eLhJJdaw0WLdXyEzZXf86lRNsjEzrgGPw==
-
 "@humanwhocodes/config-array@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.13.0.tgz#fb907624df3256d04b9aa2df50d7aa97ec648748"
