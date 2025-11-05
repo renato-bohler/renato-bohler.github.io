@@ -25,8 +25,8 @@
     "throttle-debounce": "^5.0.2"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.10.0",
-    "@playwright/test": "^1.47.2",
+    "@axe-core/playwright": "^4.11.0",
+    "@playwright/test": "^1.56.1",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^10.3.5",
@@ -43,7 +43,7 @@
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.30.0",
     "eslint-plugin-perfectionist": "^2.11.0",
-    "eslint-plugin-playwright": "^1.6.2",
+    "eslint-plugin-playwright": "^2.3.0",
     "eslint-plugin-prefer-arrow-functions": "^3.4.1",
     "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-unused-imports": "^3.2.0",
