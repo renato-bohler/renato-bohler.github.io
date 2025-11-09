@@ -1,148 +1,187 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import next from "eslint-config-next";
-import nextCoreWebVitals from "eslint-config-next/core-web-vitals";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import stylisticJs from "@stylistic/eslint-plugin-js";
-import perfectionist from "eslint-plugin-perfectionist";
-import _import from "eslint-plugin-import";
-import unusedImports from "eslint-plugin-unused-imports";
-import preferArrowFunctions from "eslint-plugin-prefer-arrow-functions";
-import { fixupPluginRules } from "@eslint/compat";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import js from "@eslint/js";
-import { FlatCompat } from "@eslint/eslintrc";
+import eslint from '@eslint/js';
+import stylistic from '@stylistic/eslint-plugin';
+import typescriptEslint from '@typescript-eslint/eslint-plugin';
+import next from 'eslint-config-next';
+import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
+import importPlugin from 'eslint-plugin-import';
+import perfectionist from 'eslint-plugin-perfectionist';
+import playwright from 'eslint-plugin-playwright';
+import preferArrowFunctions from 'eslint-plugin-prefer-arrow-functions';
+import prettierPlugin from 'eslint-plugin-prettier/recommended';
+import unusedImports from 'eslint-plugin-unused-imports';
+import { globalIgnores } from 'eslint/config';
+import tsEslint from 'typescript-eslint';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-    baseDirectory: __dirname,
-    recommendedConfig: js.configs.recommended,
-    allConfig: js.configs.all
-});
-
-export default defineConfig([globalIgnores([
-    "**/node_modules",
-    "**/out",
-    "**/playwright-report",
-    "**/.next",
-    "**/test-results",
-]), {
+export default tsEslint.config([
+  globalIgnores([
+    '**/node_modules',
+    '**/out',
+    '**/playwright-report',
+    '**/.next',
+    '**/test-results',
+  ]),
+  {
     extends: [
-        ...next,
-        ...nextCoreWebVitals,
-        ...compat.extends("plugin:react/jsx-runtime"),
-        ...compat.extends("plugin:@typescript-eslint/recommended"),
-        ...compat.extends("plugin:prettier/recommended"),
-        ...compat.extends("plugin:perfectionist/recommended-natural")
+      ...next,
+      ...nextCoreWebVitals,
+      prettierPlugin,
+      perfectionist.configs['recommended-natural'],
+      eslint.configs.recommended,
+      tsEslint.configs.recommended,
     ],
-
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
     plugins: {
-        "@typescript-eslint": typescriptEslint,
-        "@stylistic/js": stylisticJs,
-        perfectionist,
-        import: fixupPluginRules(_import),
-        "unused-imports": unusedImports,
-        "prefer-arrow-functions": preferArrowFunctions,
+      '@stylistic': stylistic,
+      '@typescript-eslint': typescriptEslint,
+      import: importPlugin,
+      'prefer-arrow-functions': preferArrowFunctions,
+      'unused-imports': unusedImports,
     },
-
     rules: {
-        "object-shorthand": "error",
-        "arrow-body-style": ["error", "as-needed"],
-        "prefer-arrow-functions/prefer-arrow-functions": "error",
-        curly: ["error", "multi-or-nest", "consistent"],
+      // Code style
+      'arrow-body-style': ['error', 'as-needed'],
+      curly: ['error', 'multi-or-nest', 'consistent'],
+      'object-shorthand': 'error',
+      'prefer-arrow-functions/prefer-arrow-functions': 'error',
+      'unused-imports/no-unused-vars': [
+        'error',
+        {
+          args: 'after-used',
+          argsIgnorePattern: '^_',
+          vars: 'all',
+          varsIgnorePattern: '^_',
+        },
+      ],
 
-        "unused-imports/no-unused-vars": ["error", {
-            vars: "all",
-            varsIgnorePattern: "^_",
-            args: "after-used",
-            argsIgnorePattern: "^_",
-        }],
+      // Comment style
+      '@stylistic/multiline-comment-style': [
+        'error',
+        'starred-block',
+      ],
+      '@stylistic/spaced-comment': ['error', 'always'],
+      'capitalized-comments': 'error',
+      'no-warning-comments': 'warn',
 
-        "@stylistic/js/spaced-comment": ["error", "always"],
-        "capitalized-comments": "error",
-        "multiline-comment-style": ["error", "starred-block"],
-        "no-warning-comments": "warn",
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-explicit-any": "error",
-        "@typescript-eslint/no-empty-function": "off",
-        "react/self-closing-comp": "error",
-        "react/jsx-boolean-value": "error",
-        "react/jsx-curly-brace-presence": "error",
-        "react/jsx-no-useless-fragment": "error",
-        "@next/next/no-img-element": "off",
-        "unused-imports/no-unused-imports": "error",
-        "import/first": "error",
-        "import/no-duplicates": "error",
-        "import/newline-after-import": "error",
-        "import/no-default-export": "error",
-        "import/consistent-type-specifier-style": ["error", "prefer-inline"],
+      // TypeScript
+      '@typescript-eslint/no-empty-function': 'off',
+      '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-unused-vars': 'off',
 
-        "@typescript-eslint/consistent-type-imports": ["error", {
-            prefer: "type-imports",
-            fixStyle: "inline-type-imports",
-        }],
+      // React
+      'react-hooks/set-state-in-effect': 'warn',
+      'react/jsx-boolean-value': 'error',
+      'react/jsx-curly-brace-presence': 'error',
+      'react/jsx-no-useless-fragment': 'error',
+      'react/self-closing-comp': 'error',
 
-        "no-restricted-imports": ["error", {
-            paths: [{
-                name: "react",
-                importNames: ["default"],
-            }],
-        }],
+      // Next
+      '@next/next/no-img-element': 'off',
 
-        "perfectionist/sort-imports": ["error", {
-            type: "natural",
-            order: "asc",
-            "newlines-between": "always",
-
-            groups: [
-                "side-effect",
-                "builtin",
-                "react",
-                "next",
-                ["external", "external-type"],
-                ["internal", "internal-type"],
-                ["parent", "parent-type"],
-                ["sibling", "sibling-type"],
-                "style",
-                "unknown",
-            ],
-
-            "custom-groups": {
-                value: {
-                    react: ["react", "react-dom"],
-                    next: ["next", "next/*"],
-                },
+      // Imports & exports
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          fixStyle: 'inline-type-imports',
+          prefer: 'type-imports',
+        },
+      ],
+      'import/consistent-type-specifier-style': [
+        'error',
+        'prefer-inline',
+      ],
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'import/no-default-export': 'error',
+      'import/no-duplicates': 'error',
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              importNames: ['default'],
+              name: 'react',
             },
-        }],
-
-        "perfectionist/sort-named-imports": ["error", {
-            order: "asc",
-            type: "natural",
-            "group-kind": "values-first",
-        }],
-
-        "perfectionist/sort-named-exports": ["error", {
-            order: "asc",
-            type: "natural",
-            "group-kind": "values-first",
-        }],
+          ],
+        },
+      ],
+      'perfectionist/sort-imports': [
+        'error',
+        {
+          customGroups: [
+            {
+              elementNamePattern: ['^react$', '^react-dom$'],
+              groupName: 'react',
+            },
+            {
+              elementNamePattern: ['^next$', '^next/.*$'],
+              groupName: 'next',
+            },
+          ],
+          groups: [
+            'side-effect',
+            'builtin',
+            'react',
+            'next',
+            ['external', 'external-type'],
+            ['internal', 'internal-type'],
+            ['parent', 'parent-type'],
+            ['sibling', 'sibling-type'],
+            'style',
+            'unknown',
+          ],
+          newlinesBetween: 'always',
+          order: 'asc',
+          type: 'natural',
+        },
+      ],
+      'perfectionist/sort-named-exports': [
+        'error',
+        {
+          groupKind: 'values-first',
+          order: 'asc',
+          type: 'natural',
+        },
+      ],
+      'perfectionist/sort-named-imports': [
+        'error',
+        {
+          groupKind: 'values-first',
+          order: 'asc',
+          type: 'natural',
+        },
+      ],
+      'unused-imports/no-unused-imports': 'error',
     },
-}, {
-    files: ["./pages/**/*.tsx", "**/**.config.[jt]s"],
-
+    settings: {
+      perfectionist: {
+        partitionByComment: true,
+      },
+    },
+  },
+  // Some files are expected to have default exports
+  {
+    files: ['./pages/**/*.tsx', '**/*.config.@(ts|js|mjs)'],
     rules: {
-        "import/no-default-export": "off",
+      'import/no-default-export': 'off',
     },
-}, {
-    files: ["**/*.d.ts"],
-
+  },
+  // Disable comment style rules for declaration files
+  {
+    files: ['**/*.d.ts'],
     rules: {
-        "spaced-comment": "off",
-        "multiline-comment-style": "off",
-        "capitalized-comments": "off",
+      'capitalized-comments': 'off',
+      'multiline-comment-style': 'off',
+      'spaced-comment': 'off',
     },
-}, {
-    files: ["**/e2e/?(*.)+(test).[jt]s?(x)"],
-    extends: [...compat.extends("plugin:playwright/recommended")],
-}]);
+  },
+  // E2E tests with Playwright
+  {
+    files: ['**/e2e/?(*.)+(test).[jt]s?(x)'],
+    ...playwright.configs['flat/recommended'],
+  },
+]);
