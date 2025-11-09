@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import { messageService } from './messageService';
 import { type Message } from './messages.types';
+import { messageService } from './messageService';
 
 type Options = {
   onMessage?: () => void;

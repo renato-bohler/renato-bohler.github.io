@@ -17,10 +17,10 @@ export const ChatMessageContent: FC<Props> = ({
   onResponse,
 }) => {
   switch (message.type) {
-    case 'text':
-      return <TextChatMessage message={message} />;
     case 'audio':
       return <AudioChatMessage message={message} />;
+    case 'contact-form':
+      return <ContactFormChatMessage />;
     case 'option-select':
       return (
         <OptionChatMessage
@@ -28,7 +28,7 @@ export const ChatMessageContent: FC<Props> = ({
           onResponse={onResponse}
         />
       );
-    case 'contact-form':
-      return <ContactFormChatMessage />;
+    case 'text':
+      return <TextChatMessage message={message} />;
   }
 };

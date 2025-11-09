@@ -4,8 +4,8 @@ import cx from 'classnames';
 import { VisuallyHidden } from 'reakit/VisuallyHidden';
 
 import { ChatMessageContent } from './ChatMessageContent/ChatMessageContent';
-import { MessageWritingAnimation } from './MessageWritingAnimation/MessageWritingAnimation';
 import { type Message, type Option } from './messages.types';
+import { MessageWritingAnimation } from './MessageWritingAnimation/MessageWritingAnimation';
 
 import styles from './ChatMessage.module.css';
 

@@ -1,23 +1,22 @@
 import { type ReactNode } from 'react';
 
-type BaseMessage = {
-  direction: 'incoming' | 'outgoing';
-  id: string;
-  status: 'invisible' | 'visible' | 'writing';
-};
-
-export type TextMessage = {
-  content: ReactNode;
-  type: 'text';
-} & BaseMessage;
-
-export type AudioMessage = {
+export type AudioMessage = BaseMessage & {
   content: {
     src: string;
     type: string;
   };
   type: 'audio';
-} & BaseMessage;
+};
+
+export type ContactFormMessage = BaseMessage & {
+  type: 'contact-form';
+};
+
+export type Message =
+  | AudioMessage
+  | ContactFormMessage
+  | OptionSelectMessage
+  | TextMessage;
 
 export type Option = {
   disabled?: boolean;
@@ -26,17 +25,18 @@ export type Option = {
   responses: Message[];
 };
 
-export type OptionSelectMessage = {
+export type OptionSelectMessage = BaseMessage & {
   content: Option[];
   type: 'option-select';
-} & BaseMessage;
+};
 
-export type ContactFormMessage = {
-  type: 'contact-form';
-} & BaseMessage;
+export type TextMessage = BaseMessage & {
+  content: ReactNode;
+  type: 'text';
+};
 
-export type Message =
-  | AudioMessage
-  | ContactFormMessage
-  | OptionSelectMessage
-  | TextMessage;
+type BaseMessage = {
+  direction: 'incoming' | 'outgoing';
+  id: string;
+  status: 'invisible' | 'visible' | 'writing';
+};

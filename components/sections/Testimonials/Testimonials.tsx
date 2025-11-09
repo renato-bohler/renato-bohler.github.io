@@ -25,8 +25,8 @@ import { useTheme } from '~/hooks/useTheme';
 
 import { TestimonialCard } from './TestimonialCard/TestimonialCard';
 import { TestimonialDivider } from './TestimonialDivider/TestimonialDivider';
-import { TestimonialSectionTransition } from './TestimonialSectionTransition/TestimonialSectionTransition';
 import { testimonials } from './testimonials.const';
+import { TestimonialSectionTransition } from './TestimonialSectionTransition/TestimonialSectionTransition';
 
 import styles from './Testimonials.module.css';
 

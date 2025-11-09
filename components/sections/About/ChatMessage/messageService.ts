@@ -1,6 +1,6 @@
 import {
-  FAST_MODE_ID,
   end,
+  FAST_MODE_ID,
   messages,
   optionSelect,
 } from './messages.const';
@@ -226,7 +226,7 @@ class MessageService {
     if (
       optionSelect.content.some(
         (option) =>
-          ![...this.selectedResponses, FAST_MODE_ID].includes(
+          ![FAST_MODE_ID, ...this.selectedResponses].includes(
             option.id,
           ),
       )
