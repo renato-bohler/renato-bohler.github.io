@@ -11,6 +11,9 @@
     "test:accessibility": "playwright test e2e/accessibility.test.ts",
     "test:visual": "playwright test e2e/visual.test.ts"
   },
+  "engines": {
+    "yarn": ">=1.22.0"
+  },
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
     "classnames": "^2.5.1",
