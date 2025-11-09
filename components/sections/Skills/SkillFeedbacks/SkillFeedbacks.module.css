@@ -14,13 +14,13 @@
   width: 200px;
   margin-bottom: 16px;
   padding: 8px;
+  border: 2px solid var(--theme-primary-dark);
+  border-radius: 8px;
 
   font-size: 0.75em;
   color: var(--theme-text);
 
   background: var(--theme-background-opaque);
-  border: 2px solid var(--theme-primary-dark);
-  border-radius: 8px;
   box-shadow: var(--theme-shadow) 0 4px 12px;
 }
 
@@ -121,13 +121,13 @@
 
   margin: 0 8px;
   padding: 16px;
+  border: none;
+  border-radius: 8px;
 
   font-size: 0.75em;
   color: var(--theme-text);
 
   background: none;
-  border: none;
-  border-radius: 8px;
 }
 
 .button[aria-pressed='true'],
@@ -143,11 +143,11 @@
   width: 10px;
   height: 10px;
   margin-right: 4px;
-
-  opacity: 90%;
   border-style: solid;
   border-width: 1px;
   border-radius: 10px;
+
+  opacity: 90%;
 }
 
 /* Table view */
@@ -167,9 +167,9 @@
 .tableView th,
 .tableView td {
   padding: 8px 10px;
-  background: var(--theme-table-cell-background);
   border-right: 1px solid var(--theme-primary-dark);
   border-bottom: 1px solid var(--theme-primary-bright);
+  background: var(--theme-table-cell-background);
 }
 
 .tableView th {
@@ -192,8 +192,8 @@
 }
 
 .tableView thead tr th:first-of-type {
-  background: none;
   border: none;
+  background: none;
 }
 
 .tableView tbody tr td:first-of-type {

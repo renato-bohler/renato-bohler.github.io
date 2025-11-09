@@ -34,10 +34,10 @@ html[data-reduced-motion='true'] .backdrop {
 
   width: min(600px, 100vw);
   height: min(600px, 100dvh);
+  border-radius: 16px;
 
   opacity: 0%;
   background: var(--theme-background);
-  border-radius: 16px;
 
   transition: opacity 500ms ease-in-out;
 }
@@ -52,12 +52,12 @@ html[data-reduced-motion='true'] .dialog {
   justify-content: space-between;
 
   padding: 8px 8px 8px 16px;
+  border-bottom: 6px outset rgb(var(--theme-highlight-rgb), 100%);
 
-  background: rgba(
+  background: rgb(
     var(--theme-highlight-rgb),
     calc(75% - var(--theme-is-dark) * 50%)
   );
-  border-bottom: 6px outset rgba(var(--theme-highlight-rgb), 100%);
 }
 
 .title {
@@ -69,13 +69,13 @@ html[data-reduced-motion='true'] .dialog {
   cursor: pointer;
 
   padding: 0;
+  border: none;
 
   font-size: 2rem;
   color: var(--theme-text);
 
   background: none;
   filter: drop-shadow(2px 2px 6px #666);
-  border: none;
   mix-blend-mode: hard-light;
 }
 
@@ -95,10 +95,9 @@ html[data-reduced-motion='true'] .dialog {
 
   margin-bottom: 2em;
   padding-bottom: 2em;
+  border-bottom: 1px solid rgb(var(--theme-text-rgb), 25%);
 
   text-align: center;
-
-  border-bottom: 1px solid rgba(var(--theme-text-rgb), 25%);
 }
 
 @media screen and (width <= 42rem) {
@@ -108,7 +107,6 @@ html[data-reduced-motion='true'] .dialog {
 
     width: 100%;
     height: 100dvh;
-
     border-radius: 0;
   }
 

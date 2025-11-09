@@ -33,10 +33,10 @@ html[data-reduced-motion='true'] .backdrop {
 
   width: min(600px, 100vw);
   height: min(800px, 100dvh);
+  border-radius: 16px;
 
   opacity: 0%;
   background: var(--theme-background);
-  border-radius: 16px;
 
   transition: opacity 500ms ease-in-out;
 }
@@ -56,7 +56,6 @@ html[data-reduced-motion='true'] .dialog {
   justify-content: space-between;
 
   padding: 8px;
-
   border-bottom-style: outset;
   border-bottom-width: 6px;
 }
@@ -72,13 +71,13 @@ html[data-reduced-motion='true'] .dialog {
   cursor: pointer;
 
   padding: 0;
+  border: none;
 
   font-size: 2em;
   color: #ebebeb;
 
   background: none;
   filter: drop-shadow(2px 2px 6px #666);
-  border: none;
   mix-blend-mode: hard-light;
 }
 
@@ -100,15 +99,15 @@ html[data-reduced-motion='true'] .dialog {
 }
 
 .content::-webkit-scrollbar-track {
-  background-color: var(--theme-scrollbar-track-color);
   border-radius: 100px;
+  background-color: var(--theme-scrollbar-track-color);
 }
 
 .content::-webkit-scrollbar-thumb {
-  background-color: var(--theme-scrollbar-thumb-color);
-  background-clip: content-box;
   border: 3px solid transparent;
   border-radius: 100px;
+  background-color: var(--theme-scrollbar-thumb-color);
+  background-clip: content-box;
 }
 
 .image {
@@ -128,7 +127,6 @@ html[data-reduced-motion='true'] .dialog {
 
     width: 100%;
     height: 100dvh;
-
     border-radius: 0;
   }
 

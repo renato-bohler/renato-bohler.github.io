@@ -4,8 +4,8 @@
   height: 125vh;
 
   mask-image: linear-gradient(
-    rgba(0, 0, 0, 100%) 5%,
-    rgba(0, 0, 0, 25%) 50%,
+    rgb(0, 0, 0, 100%) 5%,
+    rgb(0, 0, 0, 25%) 50%,
     transparent 100%
   );
 }

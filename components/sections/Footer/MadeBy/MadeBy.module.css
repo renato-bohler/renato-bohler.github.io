@@ -50,7 +50,7 @@
 }
 
 .visible > .madeM {
-  transition-delay: 0;
+  transition-delay: 0s;
   transition-duration: 0.75s;
 }
 
@@ -112,7 +112,7 @@
 }
 
 .visible > .heart {
-  fill: rgba(var(--theme-highlight-rgb), 25%);
+  fill: rgb(var(--theme-highlight-rgb), 25%);
   stroke-width: 6px;
 
   transition-delay: 3.5s, 4s;

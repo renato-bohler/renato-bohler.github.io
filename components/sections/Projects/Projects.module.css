@@ -18,13 +18,13 @@
   font-size: min(14vw, 10em);
   font-weight: bolder;
   line-height: 1em;
-  color: rgba(var(--theme-code-accent-rgb), 5%);
+  color: rgb(var(--theme-code-accent-rgb), 5%);
   text-shadow: 0 0 var(--theme-background);
 
   background: linear-gradient(
     90deg,
-    rgba(var(--theme-highlight-accent-rgb), 100%) 0%,
-    rgba(var(--theme-highlight-rgb), 100%) 100%
+    rgb(var(--theme-highlight-accent-rgb), 100%) 0%,
+    rgb(var(--theme-highlight-rgb), 100%) 100%
   );
   background-clip: text;
 
@@ -42,8 +42,8 @@
 
   background: linear-gradient(
     90deg,
-    rgba(var(--theme-highlight-rgb), 100%) 0%,
-    rgba(var(--theme-highlight-accent-rgb), 100%) 100%
+    rgb(var(--theme-highlight-rgb), 100%) 0%,
+    rgb(var(--theme-highlight-accent-rgb), 100%) 100%
   );
 }
 
@@ -72,6 +72,7 @@
 
   margin: 0;
   padding: 0;
+  border: none;
 
   font-weight: bolder;
   color: transparent;
@@ -83,7 +84,6 @@
     var(--theme-secondary-bright)
   );
   background-clip: text;
-  border: none;
 }
 
 @keyframes textTransform {
