@@ -1226,6 +1226,6 @@ export type Skill = {
   id: string;
   name: string;
   studying: boolean;
-  usageLevel: -1 | -2 | -3 | 1 | 2 | 3;
+  usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
   yearsExperience?: number;
 };

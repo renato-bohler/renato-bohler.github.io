@@ -35,34 +35,34 @@ type Props = {
   scrollBarTrackColor?: string;
   studying: boolean;
   textColor: string;
-  usageLevel: -1 | -2 | -3 | 1 | 2 | 3;
+  usageLevel: -3 | -2 | -1 | 1 | 2 | 3;
   yearsExperience?: number;
 };
 
 const USAGE = {
-  [-1]: {
-    Icon: ChevronDownIcon,
-    description: "I haven't used this in the last year",
+  [-3]: {
+    description: "I haven't used this in the last five years",
+    Icon: ChevronTripleDownIcon,
   },
   [-2]: {
-    Icon: ChevronDoubleDownIcon,
     description: "I haven't used this in the last two years",
+    Icon: ChevronDoubleDownIcon,
   },
-  [-3]: {
-    Icon: ChevronTripleDownIcon,
-    description: "I haven't used this in the last five years",
+  [-1]: {
+    description: "I haven't used this in the last year",
+    Icon: ChevronDownIcon,
   },
   1: {
-    Icon: ChevronUpIcon,
     description: "I've used this it the last year",
+    Icon: ChevronUpIcon,
   },
   2: {
-    Icon: ChevronDoubleUpIcon,
     description: "I've been using this recently",
+    Icon: ChevronDoubleUpIcon,
   },
   3: {
-    Icon: ChevronTripleUpIcon,
     description: "I've been using this everyday",
+    Icon: ChevronTripleUpIcon,
   },
 };
 
@@ -89,7 +89,7 @@ export const SkillCard: FC<Props> = ({
     triggerOnce: true,
   });
 
-  const { Icon, description: usageDescription } = USAGE[usageLevel];
+  const { description: usageDescription, Icon } = USAGE[usageLevel];
 
   const dialog = useDialogState();
 

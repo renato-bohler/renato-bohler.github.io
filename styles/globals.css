@@ -36,8 +36,8 @@
 }
 
 ::selection {
-  color: rgba(var(--theme-highlight-accent-rgb), 100%);
-  background: rgba(
+  color: rgb(var(--theme-highlight-accent-rgb), 100%);
+  background: rgb(
     var(--theme-highlight-rgb),
     calc(
       max(
@@ -60,8 +60,8 @@ body {
 
   font-family: Inter, sans-serif;
   font-size: 1.06em;
-  font-feature-settings: 'ss03', 'cv08', 'cv11', 'zero', 'cv02',
-    'cv03', 'cv04', 'cv09';
+  font-feature-settings:
+    'ss03', 'cv08', 'cv11', 'zero', 'cv02', 'cv03', 'cv04', 'cv09';
   line-height: 1.75;
   color: var(--theme-text);
   letter-spacing: -0.014em;
@@ -73,13 +73,13 @@ a {
 
   color: inherit;
   text-decoration: underline;
-  text-decoration-color: rgba(var(--theme-highlight-rgb), 75%);
+  text-decoration-color: rgb(var(--theme-highlight-rgb), 75%);
   text-decoration-thickness: 3px;
   text-decoration-skip-ink: none;
 
   background-image: linear-gradient(
-    rgba(var(--theme-highlight-rgb), 10%),
-    rgba(var(--theme-highlight-rgb), 20%)
+    rgb(var(--theme-highlight-rgb), 10%),
+    rgb(var(--theme-highlight-rgb), 20%)
   );
   background-repeat: no-repeat;
   background-size: 0;
@@ -107,14 +107,14 @@ code {
   display: inline-block;
 
   padding: 0 4px;
+  border: 1px solid rgb(var(--theme-code-accent-rgb), 100%);
+  border-radius: 5px;
 
   font-family: monospace;
   font-size: 0.8em;
-  color: rgba(var(--theme-code-accent-rgb), 100%);
+  color: rgb(var(--theme-code-accent-rgb), 100%);
 
-  background: rgba(var(--theme-code-accent-rgb), 5%);
-  border: 1px solid rgba(var(--theme-code-accent-rgb), 100%);
-  border-radius: 5px;
+  background: rgb(var(--theme-code-accent-rgb), 5%);
 }
 
 html[data-reduced-motion='true'] {

@@ -57,11 +57,11 @@
   max-width: 50ch;
   height: fit-content;
   padding: 1em;
+  border-radius: 0.4em;
 
   font-size: 1em;
 
   background: var(--theme-chat-background);
-  border-radius: 0.4em;
 }
 
 .bubblePointer {
@@ -73,7 +73,6 @@
   height: 0;
   margin-top: -0.6em;
   margin-left: -0.6em;
-
   border-top: 15px solid transparent;
   border-right: 20px solid var(--theme-chat-background);
   border-bottom: 15px solid transparent;
@@ -89,7 +88,6 @@
 
   width: calc(100% + 0.15em);
   height: calc(100% + 0.15em);
-
   border-right: 1px solid var(--theme-secondary-dark);
   border-bottom: 1px solid var(--theme-primary-bright);
   border-top-right-radius: 0.3em;
@@ -123,7 +121,6 @@
 
   margin-right: -0.6em;
   margin-left: 0;
-
   border-right-color: var(--theme-chat-outgoing-background);
 }
 
@@ -131,8 +128,8 @@
   left: -3px;
 
   border-right: none;
-  border-bottom-color: rgba(var(--theme-highlight-accent-rgb), 75%);
-  border-left: 1px solid rgba(var(--theme-highlight-rgb), 75%);
+  border-bottom-color: rgb(var(--theme-highlight-accent-rgb), 75%);
+  border-left: 1px solid rgb(var(--theme-highlight-rgb), 75%);
   border-top-left-radius: 0.3em;
   border-bottom-right-radius: 0.3em;
   border-bottom-left-radius: 0.4em;

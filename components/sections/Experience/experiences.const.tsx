@@ -274,11 +274,6 @@ export const experiences: Experience[] = [
   },
 ];
 
-export type Period = {
-  from: Date;
-  to?: Date;
-};
-
 export type Company = {
   color: string;
   logo: string;
@@ -293,4 +288,9 @@ export type Experience = {
   jobTitle: string;
   period: Period;
   title: string;
+};
+
+export type Period = {
+  from: Date;
+  to?: Date;
 };

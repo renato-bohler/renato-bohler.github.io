@@ -23,20 +23,20 @@
 
   margin: 0;
   padding: 2px 8px;
+  border: 1px solid transparent;
+  border-radius: 8px;
 
   font-size: 1.25em;
-  color: rgba(var(--theme-code-accent-rgb), 100%);
-  text-decoration-color: rgba(var(--theme-code-accent-rgb), 33%);
+  color: rgb(var(--theme-code-accent-rgb), 100%);
+  text-decoration-color: rgb(var(--theme-code-accent-rgb), 33%);
   text-decoration-style: wavy;
   text-decoration-thickness: 1px;
 
-  background: rgba(var(--theme-code-accent-rgb), 10%);
-  border: 1px solid transparent;
-  border-radius: 8px;
+  background: rgb(var(--theme-code-accent-rgb), 10%);
 }
 
 .links > a:hover {
-  border-color: rgba(var(--theme-code-accent-rgb), 75%);
+  border-color: rgb(var(--theme-code-accent-rgb), 75%);
 }
 
 .links > a:first-child {

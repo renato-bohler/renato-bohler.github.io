@@ -5,8 +5,8 @@ import { useTheme } from '~/hooks/useTheme';
 
 import { SkillCard } from './SkillCard/SkillCard';
 import { SkillFeedbacks } from './SkillFeedbacks/SkillFeedbacks';
-import { SkillVectors } from './SkillVectors/SkillVectors';
 import { getColors, skills } from './skills.const';
+import { SkillVectors } from './SkillVectors/SkillVectors';
 
 import styles from './Skills.module.css';
 

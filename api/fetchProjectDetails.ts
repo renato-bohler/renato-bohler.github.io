@@ -20,7 +20,7 @@ export const fetchProjectDetails = async ({
   owner,
   packageName,
   repo,
-}: Options): Promise<RepositoryInfo | null> => {
+}: Options): Promise<null | RepositoryInfo> => {
   const githubResponse = await fetch(
     `https://api.github.com/repos/${owner}/${repo}`,
     {

@@ -12,6 +12,10 @@
     "value-keyword-case": null,
     "keyframes-name-pattern": null,
     "alpha-value-notation": "percentage",
-    "color-function-notation": "legacy"
+    "color-function-notation": "legacy",
+    "declaration-property-value-no-unknown": [
+      true,
+      { "ignoreProperties": { "fill-opacity": "/\\d+%/" } }
+    ]
   }
 }
