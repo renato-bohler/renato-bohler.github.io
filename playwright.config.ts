@@ -41,6 +41,9 @@ export default defineConfig({
   testDir: './e2e',
   use: {
     baseURL: URL,
+    launchOptions: {
+      slowMo: 500,
+    },
     trace: 'on-first-retry',
   },
   webServer: {
