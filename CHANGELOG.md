@@ -1,3 +1,10 @@
+## [2.8.6](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.5...v2.8.6) (2025-11-10)
+
+
+### Bug Fixes
+
+* fixes build ([ea4e9d6](https://github.com/renato-bohler/renato-bohler.github.io/commit/ea4e9d6d1ace50839ab5826d4ea522609bd57cac))
+
 ## [2.8.5](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.4...v2.8.5) (2024-04-13)
 
 
