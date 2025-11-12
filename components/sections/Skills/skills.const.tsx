@@ -1205,7 +1205,7 @@ export const skills: Skill[] = [
 export const getColors = (skill: Skill, isContrastMode: boolean) =>
   isContrastMode ? skill.colors.contrast : skill.colors.normal;
 
-export type Skill = {
+type Skill = {
   brief?: ReactElement;
   colors: {
     contrast: {

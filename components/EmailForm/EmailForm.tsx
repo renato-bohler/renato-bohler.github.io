@@ -46,7 +46,7 @@ type Props = {
   className?: string;
 };
 
-export const BaseEmailForm = (
+const BaseEmailForm = (
   { className }: Props,
   ref: Ref<HTMLFormElement>,
 ) => {
