@@ -2,6 +2,10 @@
   "name": "renato-bohler",
   "private": true,
   "license": "GPLv3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renato-bohler/renato-bohler.github.io.git"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
