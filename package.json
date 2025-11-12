@@ -14,7 +14,7 @@
     "test": "playwright test",
     "test:accessibility": "playwright test e2e/accessibility.test.ts",
     "test:visual": "playwright test e2e/visual.test.ts",
-    "knip": "knip"
+    "knip": "knip --production --strict"
   },
   "engines": {
     "yarn": ">=1.22.0"

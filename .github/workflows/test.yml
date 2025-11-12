@@ -103,6 +103,16 @@ jobs:
       - name: ESLint
         run: yarn lint
 
+  knip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Project setup
+        uses: ./.github/actions/setup
+      - name: Knip
+        run: yarn knip
+
   stylelint:
     runs-on: ubuntu-latest
     steps:
