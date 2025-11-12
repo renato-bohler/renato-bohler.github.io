@@ -51,6 +51,7 @@
     "eslint-plugin-prettier": "^5.5.4",
     "eslint-plugin-unused-imports": "^4.3.0",
     "knip": "^5.69.1",
+    "nu-html-checker": "^0.1.0",
     "prettier": "^3.6.2",
     "semantic-release": "^25.0.2",
     "stylelint": "^16.25.0",
