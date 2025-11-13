@@ -1,3 +1,10 @@
+# [2.8.7](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.6...v2.8.7) (2025-11-12)
+
+
+### Fix
+
+* updates skills content ([4cb91e2](https://github.com/renato-bohler/renato-bohler.github.io/commit/4cb91e29b3cdca6119ba9b26f215ec9867a1097e))
+
 ## [2.8.6](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.5...v2.8.6) (2025-11-10)
 
 
