@@ -1,6 +1,5 @@
 import eslint from '@eslint/js';
 import stylistic from '@stylistic/eslint-plugin';
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import next from 'eslint-config-next';
 import nextCoreWebVitals from 'eslint-config-next/core-web-vitals';
 import importPlugin from 'eslint-plugin-import';
@@ -37,7 +36,6 @@ export default tsEslint.config([
     },
     plugins: {
       '@stylistic': stylistic,
-      '@typescript-eslint': typescriptEslint,
       import: importPlugin,
       'prefer-arrow-functions': preferArrowFunctions,
       'unused-imports': unusedImports,

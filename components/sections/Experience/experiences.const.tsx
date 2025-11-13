@@ -280,7 +280,12 @@ export type Company = {
   padding?: number;
 };
 
-export type Experience = {
+export type Period = {
+  from: Date;
+  to?: Date;
+};
+
+type Experience = {
   company: Company;
   consultant?: boolean;
   description: ReactNode;
@@ -288,9 +293,4 @@ export type Experience = {
   jobTitle: string;
   period: Period;
   title: string;
-};
-
-export type Period = {
-  from: Date;
-  to?: Date;
 };

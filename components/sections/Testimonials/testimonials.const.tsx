@@ -168,5 +168,3 @@ export const testimonials = [
     ),
   },
 ];
-
-export type Testimonial = (typeof testimonials)[0];

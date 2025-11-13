@@ -17,7 +17,7 @@ const getAge = () => {
 
 export const FAST_MODE_ID = 'fast-mode';
 
-export const incoming: Message[] = [
+const incoming: Message[] = [
   {
     content: (
       <>

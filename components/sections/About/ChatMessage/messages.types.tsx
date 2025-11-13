@@ -8,10 +8,6 @@ export type AudioMessage = BaseMessage & {
   type: 'audio';
 };
 
-export type ContactFormMessage = BaseMessage & {
-  type: 'contact-form';
-};
-
 export type Message =
   | AudioMessage
   | ContactFormMessage
@@ -39,4 +35,8 @@ type BaseMessage = {
   direction: 'incoming' | 'outgoing';
   id: string;
   status: 'invisible' | 'visible' | 'writing';
+};
+
+type ContactFormMessage = BaseMessage & {
+  type: 'contact-form';
 };
