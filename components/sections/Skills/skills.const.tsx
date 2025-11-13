@@ -76,7 +76,7 @@ export const skills: Skill[] = [
     name: 'JavaScript',
     studying: true,
     usageLevel: 3,
-    yearsExperience: 8,
+    yearsExperience: 9,
   },
   {
     colors: {
@@ -269,7 +269,7 @@ export const skills: Skill[] = [
     name: 'TypeScript',
     studying: true,
     usageLevel: 3,
-    yearsExperience: 6,
+    yearsExperience: 7,
   },
   {
     colors: {
@@ -341,7 +341,7 @@ export const skills: Skill[] = [
     name: 'Git',
     studying: false,
     usageLevel: 3,
-    yearsExperience: 8,
+    yearsExperience: 9,
   },
   {
     colors: {
@@ -421,7 +421,7 @@ export const skills: Skill[] = [
     name: 'CI/CD',
     studying: false,
     usageLevel: 3,
-    yearsExperience: 6,
+    yearsExperience: 7,
   },
   {
     brief: (
@@ -590,7 +590,7 @@ export const skills: Skill[] = [
     name: 'React',
     studying: true,
     usageLevel: 3,
-    yearsExperience: 7,
+    yearsExperience: 8,
   },
   {
     brief: (
@@ -728,7 +728,7 @@ export const skills: Skill[] = [
     name: 'CSS',
     studying: true,
     usageLevel: 3,
-    yearsExperience: 8,
+    yearsExperience: 9,
   },
   {
     colors: {
@@ -808,7 +808,7 @@ export const skills: Skill[] = [
     id: 'react-native',
     name: 'React Native',
     studying: true,
-    usageLevel: -1,
+    usageLevel: -2,
     yearsExperience: 1.5,
   },
   {
@@ -872,7 +872,7 @@ export const skills: Skill[] = [
     name: 'Redux',
     studying: false,
     usageLevel: 3,
-    yearsExperience: 6,
+    yearsExperience: 7,
   },
   {
     colors: {
@@ -1046,7 +1046,7 @@ export const skills: Skill[] = [
     id: 'graphql',
     name: 'GraphQL',
     studying: true,
-    usageLevel: -2,
+    usageLevel: -3,
     yearsExperience: 1,
   },
   {
@@ -1103,7 +1103,7 @@ export const skills: Skill[] = [
     name: 'SQL',
     studying: false,
     usageLevel: 2,
-    yearsExperience: 3,
+    yearsExperience: 4,
   },
   {
     colors: {
