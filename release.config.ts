@@ -9,7 +9,7 @@ const config: GlobalConfig = {
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.md'],
+        assets: ['CHANGELOG.md'],
         message: 'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
