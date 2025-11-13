@@ -5,11 +5,12 @@ import packageJson from './package.json' with { type: 'json' };
 const config: GlobalConfig = {
   branches: ['master'],
   plugins: [
+    '@semantic-release/release-notes-generator',
     '@semantic-release/changelog',
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.md'],
+        assets: ['CHANGELOG.md'],
         message: 'chore(release): ${nextRelease.version} [skip ci]',
       },
     ],
