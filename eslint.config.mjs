@@ -125,14 +125,14 @@ export default tsEslint.config([
             'builtin',
             'react',
             'next',
-            ['external', 'external-type'],
-            ['internal', 'internal-type'],
-            ['parent', 'parent-type'],
-            ['sibling', 'sibling-type'],
+            ['external', 'type-external'],
+            ['internal', 'type-internal'],
+            ['parent', 'type-parent'],
+            ['sibling', 'type-sibling'],
             'style',
             'unknown',
           ],
-          newlinesBetween: 'always',
+          newlinesBetween: 1,
           order: 'asc',
           type: 'natural',
         },
@@ -140,7 +140,7 @@ export default tsEslint.config([
       'perfectionist/sort-named-exports': [
         'error',
         {
-          groupKind: 'values-first',
+          groups: ['value-export', 'type-export'],
           order: 'asc',
           type: 'natural',
         },
@@ -148,7 +148,7 @@ export default tsEslint.config([
       'perfectionist/sort-named-imports': [
         'error',
         {
-          groupKind: 'values-first',
+          groups: ['value-import', 'type-import'],
           order: 'asc',
           type: 'natural',
         },
