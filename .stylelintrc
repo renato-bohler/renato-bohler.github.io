@@ -5,7 +5,13 @@
     "stylelint-config-clean-order",
     "stylelint-prettier/recommended"
   ],
-  "ignoreFiles": "out/**/*",
+  "ignoreFiles": [
+    "out/**/*",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx"
+  ],
   "rules": {
     "selector-id-pattern": null,
     "selector-class-pattern": null,
