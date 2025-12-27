@@ -2,6 +2,7 @@
   font-family: 'Major Mono Display';
   font-weight: 900;
   font-style: normal;
+
   font-display: swap;
   src:
     local(''),
@@ -13,6 +14,7 @@
   font-family: Inter;
   font-weight: 400;
   font-style: normal;
+
   font-display: swap;
   src:
     local(''),
@@ -24,6 +26,7 @@
   font-family: Inter;
   font-weight: 900;
   font-style: normal;
+
   font-display: swap;
   src:
     local(''),
