@@ -1,3 +1,15 @@
+# [2.9.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.7...v2.9.0) (2025-12-27)
+
+
+### Bug Fixes
+
+* **About:** fixes scroll gradient applying when not scrolling ([91014f0](https://github.com/renato-bohler/renato-bohler.github.io/commit/91014f0269f77f2b6ca87158dee6b3350915cbf9))
+
+
+### Features
+
+* **About:** implements chat scroll gradient ([f024fcf](https://github.com/renato-bohler/renato-bohler.github.io/commit/f024fcf8c18ae44e714db9f3c92081c18c736126))
+
 # [2.8.7](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.6...v2.8.7) (2025-11-12)
 
 
