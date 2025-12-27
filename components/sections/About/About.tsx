@@ -17,7 +17,14 @@ import styles from './About.module.css';
 export const About = () => {
   const { scrollRef, setAboutRefs } = useAboutProgress();
 
-  const [fullyScrolled, setFullyScrolled] = useState(true);
+  const [messagesScrollPosition, setMessagesScrollPosition] =
+    useState<
+      | 'bottom'
+      | 'mid-scroll'
+      | 'near-bottom'
+      | 'not-scrolling'
+      | 'top'
+    >('not-scrolling');
 
   const messagesRef = useRef<HTMLDivElement | null>(null);
   const scrollBottom = useCallback(
@@ -32,9 +39,9 @@ export const About = () => {
   );
 
   const onMessage = useCallback(() => {
-    if (!fullyScrolled) return;
+    if (!messagesScrollPosition) return;
     scrollBottom();
-  }, [fullyScrolled, scrollBottom]);
+  }, [messagesScrollPosition, scrollBottom]);
 
   const { messages, messagesInViewRef, onResponse } = useMessages({
     onMessage,
@@ -52,7 +59,12 @@ export const About = () => {
       event.currentTarget;
     const scrollY = scrollTop + offsetHeight;
 
-    setFullyScrolled(scrollY >= scrollHeight - 50);
+    if (scrollTop === 0) setMessagesScrollPosition('top');
+    else if (scrollY === scrollHeight)
+      setMessagesScrollPosition('bottom');
+    else if (scrollY >= scrollHeight - 50)
+      setMessagesScrollPosition('near-bottom');
+    else setMessagesScrollPosition('mid-scroll');
   };
 
   return (
@@ -78,7 +90,11 @@ export const About = () => {
       <div className={styles.messageListContainer}>
         <Button
           className={styles.scrollButton}
-          disabled={fullyScrolled}
+          disabled={[
+            'bottom',
+            'near-bottom',
+            'not-scrolling',
+          ].includes(messagesScrollPosition)}
           onClick={scrollBottom}
         >
           <ArrowDownIcon />
@@ -90,6 +106,7 @@ export const About = () => {
           aria-label="Message list"
           aria-live="polite"
           className={classNames(styles.messages, styles.messageList)}
+          data-scroll-position={messagesScrollPosition}
           onScroll={scrollHandler}
           ref={setMessagesRefs}
           role="region"
