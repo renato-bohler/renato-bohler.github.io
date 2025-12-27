@@ -119,8 +119,14 @@
   );
 }
 
-.messageList:not([data-scroll-position='top'])::before,
-.messageList:not([data-scroll-position='bottom'])::after {
+.messageList:not(
+    [data-scroll-position='not-scrolling'],
+    [data-scroll-position='top']
+  )::before,
+.messageList:not(
+    [data-scroll-position='not-scrolling'],
+    [data-scroll-position='bottom']
+  )::after {
   opacity: 100%;
 }
 
