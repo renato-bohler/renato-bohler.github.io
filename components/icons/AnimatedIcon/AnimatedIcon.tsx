@@ -32,9 +32,9 @@ export const AnimatedIcon: FC<Props> = ({
   const [visible, setVisible] = useState(
     animationDelay === 0 || isReducedMotion,
   );
+  const isVisible = visible || isReducedMotion;
 
   useEffect(() => {
-    if (isReducedMotion) setVisible(true);
     if (!inView || visible || isReducedMotion) return;
 
     const timeout = setTimeout(() => {
@@ -51,10 +51,10 @@ export const AnimatedIcon: FC<Props> = ({
         styles.container,
         className,
       )}
-      ref={visible ? null : ref}
+      ref={isVisible ? null : ref}
       style={style}
     >
-      {visible && children}
+      {isVisible && children}
     </span>
   );
 };
