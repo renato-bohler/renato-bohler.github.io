@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -8,32 +8,30 @@ import { useTypingEffect } from '~/hooks/useTypingEffect';
 
 import styles from './MadeBy.module.css';
 
+const TARGET_TEXT = 'renatoBöhler';
+
 export const MadeBy = () => {
   const { isReducedMotion } = useTheme();
 
-  const [handWritingFinished, setHandwritingFinished] =
-    useState(false);
-  const [haltTypingEffect, setHaltTypingEffect] = useState(false);
+  const name = useTypingEffect({ startDelayMs: 500 });
+  const [showCaret, setShowCaret] = useState(isReducedMotion);
 
-  const [ref, inView] = useInView({ threshold: 0 });
+  const startTyping = () => {
+    setShowCaret(true);
+    name.type(TARGET_TEXT);
+  };
 
-  const name = useTypingEffect({
-    halt: haltTypingEffect,
-    startDelayMs: 500,
-    targetText: handWritingFinished ? 'renatoBöhler' : '',
+  const endTyping = () => {
+    setShowCaret(false);
+    name.reset();
+  };
+
+  const [ref, inView] = useInView({
+    onChange: (inView) => {
+      if (!inView) endTyping();
+    },
+    threshold: 0,
   });
-
-  useEffect(() => {
-    if (isReducedMotion) setHandwritingFinished(true);
-  }, [isReducedMotion, inView]);
-
-  useEffect(() => {
-    if (!inView) setHandwritingFinished(false);
-  }, [inView]);
-
-  useEffect(() => {
-    setHaltTypingEffect(!handWritingFinished && name === '');
-  }, [handWritingFinished, name]);
 
   return (
     <div className={styles.container}>
@@ -84,15 +82,15 @@ export const MadeBy = () => {
         <path
           className={styles.by}
           d="M437.107+500.591C437.107+500.591+436.708+502.145+436.353+502.858C432.743+510.104+429.611+517.643+426.563+525.151C426.283+525.838+423.714+532.681+423.174+533.842C422.673+534.919+421.291+538.054+421.291+536.865C421.291+519.214+449.399+512.601+445.391+532.708C443.629+541.546+425.618+540.265+419.408+537.999C418.509+537.671+416.772+537.824+416.772+536.865C416.772+535.259+423.402+538.201+423.927+538.376C429.955+540.393+435.917+540.485+441.625+537.621C447.505+534.671+452.459+527.835+456.688+522.884C456.949+522.579+463.24+513.06+462.336+513.06C456.943+513.06+454.671+536.694+458.571+537.999C464.638+540.028+472.073+525.146+474.387+521.373C475.773+519.112+477.126+516.824+478.528+514.571C479.048+513.737+480.722+511.371+480.411+512.304C473.095+534.33+465.605+557.168+451.793+576.162C445.916+584.244+431.502+598.333+422.797+585.231C401.066+552.522+456.425+545.617+474.763+546.312C477.417+546.412+507.273+545.178+502.629+545.178"
-          onTransitionEnd={() => setHandwritingFinished(true)}
+          onTransitionEnd={startTyping}
         />
       </svg>
       <span
         aria-hidden
         className={styles.name}
-        data-caret={handWritingFinished}
+        data-caret={isReducedMotion || showCaret}
       >
-        {name}
+        {isReducedMotion ? TARGET_TEXT : name.text}
       </span>
     </div>
   );
