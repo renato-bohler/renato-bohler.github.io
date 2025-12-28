@@ -13,15 +13,15 @@ import styles from './Footer.module.css';
 type Props = {
   isNavigationHeaderHidden: boolean;
   onEmailDialogOpen: () => void;
+  onFooterTransitionTrigger: (transitioning: boolean) => void;
   onNavigationHeaderTrigger: (hide: boolean) => void;
-  onProgressChange: (progress: number) => void;
 };
 
 export const Footer: FC<Props> = ({
   isNavigationHeaderHidden,
   onEmailDialogOpen,
+  onFooterTransitionTrigger,
   onNavigationHeaderTrigger,
-  onProgressChange,
 }) => {
   const lastUpdated = new Date(process.env.NEXT_PUBLIC_LAST_UPDATED);
 
@@ -30,8 +30,8 @@ export const Footer: FC<Props> = ({
   return (
     <>
       <FooterTransitionTrigger
+        onFooterTransitionTrigger={onFooterTransitionTrigger}
         onNavigationHeaderTrigger={onNavigationHeaderTrigger}
-        onProgressChange={onProgressChange}
       />
 
       <footer className={styles.footer}>

@@ -10,13 +10,10 @@ import { ArrowDownIcon } from '~/components/icons/ArrowDownIcon';
 import { AnimatedChatMessage } from './ChatMessage/AnimatedChatMessage/AnimatedChatMessage';
 import { ChatMessage } from './ChatMessage/ChatMessage';
 import { useMessages } from './ChatMessage/useMessages';
-import { useAboutProgress } from './useAboutProgress';
 
 import styles from './About.module.css';
 
 export const About = () => {
-  const { scrollRef, setAboutRefs } = useAboutProgress();
-
   const [messagesScrollPosition, setMessagesScrollPosition] =
     useState<
       | 'bottom'
@@ -73,13 +70,12 @@ export const About = () => {
         <h2>About</h2>
       </VisuallyHidden>
 
-      <div className={styles.scroll} ref={scrollRef}>
+      <div className={styles.scroll}>
         <div
           className={classNames(
             styles.messages,
             styles.animatedMessage,
           )}
-          ref={setAboutRefs}
         >
           <AnimatedChatMessage>Hello there 👋</AnimatedChatMessage>
         </div>

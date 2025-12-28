@@ -1,12 +1,12 @@
+.footerTransitionTrigger {
+  position: absolute;
+  width: 10px;
+  height: 400px;
+}
+
 .navHeaderHideTrigger {
   position: absolute;
   transform: translateY(-200px);
   width: 10px;
   height: 50vh;
-}
-
-.progressTrigger {
-  position: absolute;
-  width: 10px;
-  height: 400px;
 }
