@@ -103,6 +103,16 @@ jobs:
       - name: ESLint
         run: yarn lint
 
+  knip:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Project setup
+        uses: ./.github/actions/setup
+      - name: Knip
+        run: yarn knip
+
   stylelint:
     runs-on: ubuntu-latest
     steps:
@@ -124,7 +134,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT }}
-          NEXT_PUBLIC_FULLSTORY_ORG_ID: ${{ vars.NEXT_PUBLIC_FULLSTORY_ORG_ID }}
         run: yarn build
       - name: Upload build artifact
         uses: actions/upload-artifact@v4

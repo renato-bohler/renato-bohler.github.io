@@ -27,7 +27,7 @@ import { useTheme } from '~/hooks/useTheme';
 
 import styles from './SkillCardDialog.module.css';
 
-export type Props = {
+type Props = {
   backgroundColor: string;
   cardRect?: DOMRect;
   description: ReactElement;

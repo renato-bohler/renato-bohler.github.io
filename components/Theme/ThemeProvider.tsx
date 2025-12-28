@@ -27,6 +27,8 @@ const RANDOM_THEME =
 
 const MINIMUM_DURATION = '1ms';
 
+export type ColorScheme = 'dark' | 'light';
+
 export type ThemeContextType = {
   colorScheme: ColorScheme;
   getReducedMotionDuration: (duration: string) => string;
@@ -38,8 +40,6 @@ export type ThemeContextType = {
   setTheme: (theme: Theme) => void;
   theme: Theme;
 };
-
-export type ColorScheme = 'dark' | 'light';
 
 export const ThemeContext = createContext<ThemeContextType>({
   colorScheme: 'dark',

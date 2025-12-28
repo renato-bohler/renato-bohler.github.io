@@ -57,6 +57,13 @@
 
   margin: 0 0 300px;
   padding: 0.5em 0.75em;
+  border-width: 2px;
+  border-image: linear-gradient(
+    90deg,
+    var(--theme-primary-bright),
+    var(--theme-secondary-bright)
+  );
+  border-image-slice: 1;
 
   font-family: 'Major Mono Display', monospace;
   font-size: 2em;
@@ -70,13 +77,6 @@
     var(--theme-secondary-bright)
   );
   background-clip: text;
-  border-width: 2px;
-  border-image: linear-gradient(
-    90deg,
-    var(--theme-primary-bright),
-    var(--theme-secondary-bright)
-  );
-  border-image-slice: 1;
 
   -webkit-text-stroke: 0.04em;
 }

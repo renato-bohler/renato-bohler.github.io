@@ -35,7 +35,7 @@ const sendEmail = async (formData: FormData) => {
     );
 
     return response.json();
-  } catch (e) {
+  } catch {
     return Promise.reject();
   }
 };
@@ -46,7 +46,7 @@ type Props = {
   className?: string;
 };
 
-export const BaseEmailForm = (
+const BaseEmailForm = (
   { className }: Props,
   ref: Ref<HTMLFormElement>,
 ) => {
@@ -68,7 +68,7 @@ export const BaseEmailForm = (
       setFormState('submitting');
       await sendEmail(payload);
       setFormState('success');
-    } catch (e) {
+    } catch {
       setFormState('error');
     }
   };

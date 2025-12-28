@@ -61,12 +61,12 @@
   transform: translateY(-50%);
 
   padding: 0;
+  border: none;
 
   font-size: 3.5em;
   color: inherit;
 
   background: none;
-  border: none;
 }
 
 .previousButton {

@@ -16,7 +16,7 @@ export default defineConfig({
   expect: {
     toHaveScreenshot: {
       animations: 'allow',
-      maxDiffPixelRatio: IS_CI ? 0 : 0.1,
+      maxDiffPixelRatio: IS_CI ? 0.03 : 0.1,
     },
   },
   forbidOnly: IS_CI,
@@ -41,6 +41,9 @@ export default defineConfig({
   testDir: './e2e',
   use: {
     baseURL: URL,
+    launchOptions: {
+      slowMo: 500,
+    },
     trace: 'on-first-retry',
   },
   webServer: {

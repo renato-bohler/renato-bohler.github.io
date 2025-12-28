@@ -87,13 +87,13 @@
   width: 2px;
   height: 100%;
   margin: 0 auto;
+  border-radius: 50px;
 
   background: linear-gradient(
     to right,
     var(--theme-secondary-bright),
     var(--theme-primary-bright)
   );
-  border-radius: 50px;
 
   animation-name: transitionLine;
 }
@@ -134,8 +134,8 @@
   background-size: 2px;
 
   mask-image: linear-gradient(
-    rgba(0, 0, 0, 100%) calc(100% - 20vh),
-    rgba(0, 0, 0, 25%) calc(100% - 10vh),
+    rgb(0, 0, 0, 100%) calc(100% - 20vh),
+    rgb(0, 0, 0, 25%) calc(100% - 10vh),
     transparent 100%
   );
 }

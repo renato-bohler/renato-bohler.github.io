@@ -10,8 +10,8 @@ import { ArrowDownIcon } from '~/components/icons/ArrowDownIcon';
 import { useTheme } from '~/hooks/useTheme';
 
 import { SocialLinks } from './SocialLinks/SocialLinks';
-import { WavyBackground } from './WavyBackground/WavyBackground';
 import { useHeaderTypingEffect } from './useHeaderTypingEffect';
+import { WavyBackground } from './WavyBackground/WavyBackground';
 
 import styles from './Header.module.css';
 

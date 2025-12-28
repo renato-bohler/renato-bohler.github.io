@@ -48,7 +48,7 @@
 
 .animate.divider,
 .animate.dividerGlow {
-  transition-delay: 0;
+  transition-delay: 0s;
   transition-duration: 1.5s;
 }
 

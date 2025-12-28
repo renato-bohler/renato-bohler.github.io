@@ -274,18 +274,18 @@ export const experiences: Experience[] = [
   },
 ];
 
-export type Period = {
-  from: Date;
-  to?: Date;
-};
-
 export type Company = {
   color: string;
   logo: string;
   padding?: number;
 };
 
-export type Experience = {
+export type Period = {
+  from: Date;
+  to?: Date;
+};
+
+type Experience = {
   company: Company;
   consultant?: boolean;
   description: ReactNode;

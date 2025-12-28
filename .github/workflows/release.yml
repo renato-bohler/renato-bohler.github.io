@@ -30,7 +30,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT }}
-          NEXT_PUBLIC_FULLSTORY_ORG_ID: ${{ vars.NEXT_PUBLIC_FULLSTORY_ORG_ID }}
         run: yarn build
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
@@ -59,5 +58,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT }}
-          NEXT_PUBLIC_FULLSTORY_ORG_ID: ${{ vars.NEXT_PUBLIC_FULLSTORY_ORG_ID }}
         run: npx semantic-release

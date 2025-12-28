@@ -5,7 +5,7 @@ import { type ColorScheme } from '../ThemeProvider';
 const THEME_KEY = 'theme';
 
 export const getStoredTheme = () => {
-  if (typeof localStorage === 'undefined') return null;
+  if (typeof window === 'undefined') return null;
 
   const themeName = localStorage.getItem(THEME_KEY);
   if (!themeName) return null;
@@ -18,13 +18,13 @@ export const setStoredTheme = (theme: Theme) =>
 const COLOR_SCHEME_KEY = 'dark_mode';
 
 export const getStoredColorScheme = () => {
-  if (typeof localStorage === 'undefined') return null;
+  if (typeof window === 'undefined') return null;
 
   return localStorage.getItem(COLOR_SCHEME_KEY) as ColorScheme;
 };
 
 export const setStoredColorScheme = (colorScheme: ColorScheme) => {
-  if (typeof localStorage === 'undefined') return null;
+  if (typeof window === 'undefined') return null;
 
   return localStorage.setItem(COLOR_SCHEME_KEY, colorScheme);
 };

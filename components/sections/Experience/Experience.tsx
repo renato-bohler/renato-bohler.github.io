@@ -1,6 +1,6 @@
 import { ExperienceCard } from './ExperienceCard/ExperienceCard';
-import { ExperienceVectors } from './ExperienceVectors/ExperienceVectors';
 import { experiences } from './experiences.const';
+import { ExperienceVectors } from './ExperienceVectors/ExperienceVectors';
 
 import styles from './Experience.module.css';
 

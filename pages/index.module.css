@@ -32,6 +32,6 @@
   to {
     transform: scale(90%) translateY(1000px);
     border-radius: 50px;
-    box-shadow: 1px 1px 60px rgba(255, 255, 255, 20%);
+    box-shadow: 1px 1px 60px rgb(255, 255, 255, 20%);
   }
 }
