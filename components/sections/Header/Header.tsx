@@ -1,4 +1,4 @@
-import { useEffect, useState, type FC } from 'react';
+import { useState, type FC } from 'react';
 
 import dynamic from 'next/dynamic';
 
@@ -44,6 +44,7 @@ export const Header: FC<Props> = ({
   const { isContrastMode } = useTheme();
 
   const [isScrollHintVisible, setScrollHintVisible] = useState(false);
+  const [scrollHintTimeout, setScrollHintTimeout] = useState(0);
 
   const {
     firstName,
@@ -58,20 +59,21 @@ export const Header: FC<Props> = ({
   } = useHeaderTypingEffect({
     firstName: 'renato',
     lastName: 'Böhler',
+    onInViewChange: (inView) => {
+      if (!inView) {
+        setScrollHintVisible(false);
+        clearTimeout(scrollHintTimeout);
+        return;
+      }
+
+      setScrollHintTimeout(
+        window.setTimeout(() => {
+          setScrollHintVisible(true);
+        }, 5000),
+      );
+    },
     subtitles: SUBTITLES,
   });
-
-  useEffect(() => {
-    if (!inView) {
-      setScrollHintVisible(false);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setScrollHintVisible(true);
-    }, 5000);
-    return () => clearTimeout(timeout);
-  }, [inView]);
 
   return (
     <header className={styles.header} ref={ref}>
