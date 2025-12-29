@@ -1,7 +1,8 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
+import { useTheme } from '~/hooks/useTheme';
 import { useTypingEffect } from '~/hooks/useTypingEffect';
 
 type Options = {
@@ -40,8 +41,24 @@ export const useHeaderTypingEffect = ({
   startDelayMs = 1000,
   ...options
 }: Options): Result => {
+  const { isReducedMotion } = useTheme();
+
+  const [subtitleTimeout, setSubtitleTimeout] = useState<
+    number | undefined
+  >();
+
   const { inView, ref } = useInView({
     initialInView: true,
+    onChange: (inView) => {
+      if (inView) {
+        firstName.type(options.firstName);
+      } else {
+        clearTimeout(subtitleTimeout);
+        firstName.reset();
+        lastName.reset();
+        subtitle.reset();
+      }
+    },
     threshold: 0.75,
   });
 
@@ -51,106 +68,61 @@ export const useHeaderTypingEffect = ({
   };
 
   const firstName = useTypingEffect({
+    onEnd: () => lastName.type(options.lastName),
     startDelayMs,
-    targetText: inView ? options.firstName : '',
     ...commonOptions,
   });
-  const isFirstNameTypingComplete = useMemo(
-    () => firstName === options.firstName,
-    [firstName, options.firstName],
-  );
 
   const lastName = useTypingEffect({
-    halt: !isFirstNameTypingComplete,
-    targetText: inView ? options.lastName : '',
+    onEnd: () => {
+      subtitle.type(options.subtitles[0]);
+    },
     ...commonOptions,
   });
-  const isLastNameTypingComplete = useMemo(
-    () => lastName === options.lastName,
-    [lastName, options.lastName],
-  );
 
-  const [isFirstSubtitleWrite, setIsFirstSubtitleWrite] =
-    useState(true);
-  const [targetSubtitle, setTargetSubtitle] = useState('');
   const subtitle = useTypingEffect({
-    animateDelete: inView,
-    halt: inView && !isLastNameTypingComplete,
-    targetText: targetSubtitle,
+    onEnd: (currentSubtitle) => {
+      clearTimeout(subtitleTimeout);
+
+      setSubtitleTimeout(
+        window.setTimeout(() => {
+          subtitle.type(
+            getNewSubtitle(options.subtitles, currentSubtitle),
+          );
+        }, changeSubtitleDelayMs),
+      );
+    },
     ...commonOptions,
   });
-  const isSubtitleTypingComplete = useMemo(
-    () => subtitle === targetSubtitle,
-    [subtitle, targetSubtitle],
+
+  const isFirstNameTypingComplete =
+    firstName.text === options.firstName;
+  const isLastNameTypingComplete = lastName.text === options.lastName;
+  const isFullNameTypingComplete =
+    isFirstNameTypingComplete && isLastNameTypingComplete;
+  const isSubtitleTypingComplete = options.subtitles.includes(
+    subtitle.text,
   );
-
-  // Header folding/unfolding
-  useEffect(() => {
-    if (!inView) {
-      setTargetSubtitle('');
-      return;
-    }
-
-    setTargetSubtitle(
-      isFirstSubtitleWrite
-        ? options.subtitles[0]
-        : getNewSubtitle(options.subtitles, targetSubtitle),
-    );
-    setIsFirstSubtitleWrite(false);
-  }, [inView]); // eslint-disable-line react-hooks/exhaustive-deps
-
-  // Subtitle recycling
-  useEffect(() => {
-    if (!isSubtitleTypingComplete || !inView) return;
-
-    const timeout = window.setTimeout(
-      () =>
-        setTargetSubtitle(
-          getNewSubtitle(options.subtitles, targetSubtitle),
-        ),
-      changeSubtitleDelayMs,
-    );
-
-    return () => window.clearTimeout(timeout);
-  }, [
-    isSubtitleTypingComplete,
-    inView,
-    targetSubtitle,
-    options.subtitles,
-    changeSubtitleDelayMs,
-  ]);
-
-  const [isFullNameTypingComplete, setFullNameTypingComplete] =
-    useState(false);
-
-  useEffect(() => {
-    if (!inView) {
-      // Waits a while for folding animation to complete
-      setTimeout(() => setFullNameTypingComplete(false), 1000);
-      return;
-    }
-
-    if (isFullNameTypingComplete) return;
-
-    setFullNameTypingComplete(
-      isFirstNameTypingComplete && isLastNameTypingComplete,
-    );
-  }, [
-    inView,
-    isFullNameTypingComplete,
-    isFirstNameTypingComplete,
-    isLastNameTypingComplete,
-  ]);
 
   return {
-    firstName: inView ? firstName : options.firstName,
+    firstName:
+      inView && !isReducedMotion ? firstName.text : options.firstName,
     inView,
-    isFirstNameTypingComplete,
-    isFullNameTypingComplete,
-    isLastNameTypingComplete,
-    isSubtitleTypingComplete,
-    lastName: inView ? lastName : options.lastName,
+    isFirstNameTypingComplete:
+      isFirstNameTypingComplete || isReducedMotion,
+    isFullNameTypingComplete:
+      isFullNameTypingComplete || isReducedMotion,
+    isLastNameTypingComplete:
+      isLastNameTypingComplete || isReducedMotion,
+    isSubtitleTypingComplete:
+      isSubtitleTypingComplete || isReducedMotion,
+    lastName:
+      inView && !isReducedMotion ? lastName.text : options.lastName,
     ref,
-    subtitle: inView ? subtitle : '',
+    subtitle: inView
+      ? isReducedMotion
+        ? options.subtitles[0]
+        : subtitle.text
+      : '',
   };
 };
