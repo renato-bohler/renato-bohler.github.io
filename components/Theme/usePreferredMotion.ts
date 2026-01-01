@@ -9,15 +9,11 @@ export const usePreferredMotion = (): [
   boolean,
   Dispatch<SetStateAction<boolean>>,
 ] => {
-  const [isReducedMotion, setReducedMotion] = useState(false);
-
-  // Initial motion preferences
-  useEffect(() => {
-    const userPrefersContrastMode = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    )?.matches;
-    setReducedMotion(userPrefersContrastMode);
-  }, [setReducedMotion]);
+  const [isReducedMotion, setReducedMotion] = useState(() => {
+    if (typeof window === 'undefined') return false;
+    return window.matchMedia('(prefers-reduced-motion: reduce)')
+      .matches;
+  });
 
   // Watches for system motion preferences changes
   useEffect(() => {

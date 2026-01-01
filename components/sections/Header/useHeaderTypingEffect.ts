@@ -11,6 +11,7 @@ type Options = {
   keyStrokeMaxVarianceMs?: number;
   keyStrokeMinTimeMs?: number;
   lastName: string;
+  onInViewChange?: (inView: boolean) => void;
   startDelayMs?: number;
   subtitles: string[];
 };
@@ -43,13 +44,13 @@ export const useHeaderTypingEffect = ({
 }: Options): Result => {
   const { isReducedMotion } = useTheme();
 
-  const [subtitleTimeout, setSubtitleTimeout] = useState<
-    number | undefined
-  >();
+  const [subtitleTimeout, setSubtitleTimeout] = useState(0);
 
   const { inView, ref } = useInView({
     initialInView: true,
     onChange: (inView) => {
+      options.onInViewChange?.(inView);
+
       if (inView) {
         firstName.type(options.firstName);
       } else {
