@@ -72,6 +72,11 @@ export default tsEslint.config([
 
       // React
       'react-hooks/set-state-in-effect': 'warn',
+      'react/destructuring-assignment': [
+        'error',
+        'always',
+        { destructureInSignature: 'always', ignoreClassFields: true },
+      ],
       'react/jsx-boolean-value': 'error',
       'react/jsx-curly-brace-presence': 'error',
       'react/jsx-no-useless-fragment': 'error',
