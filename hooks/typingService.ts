@@ -11,8 +11,8 @@ type Options = {
 type State = 'stale' | 'typing';
 
 export class TypingService {
-  private currentTarget: string = '';
-  private currentText: string = '';
+  private currentTarget = '';
+  private currentText = '';
   private state: State = 'stale';
   private timeouts: number[] = [];
 

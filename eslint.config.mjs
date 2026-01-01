@@ -68,6 +68,7 @@ export default tsEslint.config([
       // TypeScript
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/no-unused-vars': 'off',
 
       // React
