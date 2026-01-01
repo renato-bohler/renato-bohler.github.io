@@ -1,4 +1,5 @@
-export const number = new Intl.NumberFormat('en').format;
+export const number = (value: number) =>
+  new Intl.NumberFormat('en').format(value);
 
 export const dateTime = (date: Date) =>
   date.toLocaleDateString('en', {

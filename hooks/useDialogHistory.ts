@@ -7,6 +7,14 @@ type DialogHistory = (arg: {
   id: string;
 }) => { hide: () => void };
 
+type DialogPopState = { dialogId: string };
+const isDialogPopState = (
+  state: unknown,
+): state is DialogPopState => {
+  if (typeof state !== 'object' || state === null) return false;
+  return 'dialogId' in state;
+};
+
 export const useDialogHistory: DialogHistory = ({ dialog, id }) => {
   const hide = () => {
     window.history.back();
@@ -15,7 +23,7 @@ export const useDialogHistory: DialogHistory = ({ dialog, id }) => {
 
   useEffect(() => {
     const popStateHandler = (event: PopStateEvent) => {
-      if (!event.state) return;
+      if (!isDialogPopState(event.state)) return;
 
       const { dialogId } = event.state;
       if (dialogId !== id) dialog.hide();

@@ -1,8 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const { beforeEach } = test;
-
-beforeEach(async ({ page }) => {
+test.beforeEach(async ({ page }) => {
   await page.emulateMedia({
     colorScheme: 'dark',
     reducedMotion: 'reduce',

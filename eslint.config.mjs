@@ -21,12 +21,12 @@ export default tsEslint.config([
   ]),
   {
     extends: [
-      ...next,
-      ...nextCoreWebVitals,
+      next,
+      nextCoreWebVitals,
       prettierPlugin,
       perfectionist.configs['recommended-natural'],
       eslint.configs.recommended,
-      tsEslint.configs.recommended,
+      tsEslint.configs.recommendedTypeChecked,
     ],
     languageOptions: {
       parserOptions: {

@@ -10,7 +10,7 @@ import styles from './RepositoryDetails.module.css';
 type Props = {
   lastUpdate: string;
   liveUrl: string;
-  monthlyDownloads?: number;
+  monthlyDownloads: null | number;
   name: string;
   owner: string;
   repositoryUrl: string;
