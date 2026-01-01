@@ -41,8 +41,7 @@ const fetchGitHubRepositoryMetadata = async (
       },
     },
   );
-  if (response.status >= 400)
-    throw new Error('Failed to fetch GitHub repository metadata');
+  if (response.status >= 400) return null;
 
   return response.json() as Promise<GitHubApiResponse>;
 };
@@ -53,8 +52,7 @@ const fetchNpmPackageMetadata = async (packageName?: string) => {
   const response = await fetch(
     `https://registry.npmjs.org/${packageName}`,
   );
-  if (response.status >= 400)
-    throw new Error('Failed to fetch NPM package metadata');
+  if (response.status >= 400) return null;
 
   return response.json() as Promise<NpmApiResponse>;
 };
@@ -72,14 +70,14 @@ export const fetchProjectDetails = async ({
     await fetchNpmPackageMetadata(packageName);
 
   return {
-    forks: gitHubMetadata.forks,
-    lastUpdate: gitHubMetadata.pushed_at,
-    liveUrl: gitHubMetadata.homepage,
+    forks: gitHubMetadata?.forks ?? 0,
+    lastUpdate: gitHubMetadata?.pushed_at ?? '',
+    liveUrl: gitHubMetadata?.homepage ?? '',
     monthlyDownloads: npmPackageMetadata?.downloads ?? null,
     name: repo,
     owner,
-    repositoryUrl: gitHubMetadata.html_url,
-    stars: gitHubMetadata.stargazers_count,
-    subscribers: gitHubMetadata.subscribers_count,
+    repositoryUrl: gitHubMetadata?.html_url ?? '',
+    stars: gitHubMetadata?.stargazers_count ?? 0,
+    subscribers: gitHubMetadata?.subscribers_count ?? 0,
   };
 };
