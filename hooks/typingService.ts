@@ -18,14 +18,18 @@ export class TypingService {
 
   constructor(private options: Options) {}
 
-  public delete({ startDelayMs = 0 }) {
+  public delete({
+    startDelayMs = 0,
+  }: {
+    startDelayMs?: number;
+  }): void {
     this.type({
       startDelayMs,
       text: '',
     });
   }
 
-  public reset() {
+  public reset(): void {
     this.currentTarget = '';
     this.currentText = '';
     this.options.onChange(this.currentText);
@@ -43,7 +47,7 @@ export class TypingService {
   }: {
     startDelayMs?: number;
     text: string;
-  }) {
+  }): void {
     this.currentTarget = text;
     this.state = 'typing';
 

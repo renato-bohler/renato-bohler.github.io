@@ -66,6 +66,7 @@ export default tsEslint.config([
       'no-warning-comments': 'warn',
 
       // TypeScript
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/no-inferrable-types': 'error',

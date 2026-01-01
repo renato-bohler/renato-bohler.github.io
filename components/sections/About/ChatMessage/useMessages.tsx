@@ -2,14 +2,20 @@ import { useEffect, useState } from 'react';
 
 import { useInView } from 'react-intersection-observer';
 
-import { type Message } from './messages.types';
+import { type Message, type Option } from './messages.types';
 import { messageService } from './messageService';
 
 type Options = {
   onMessage?: () => void;
 };
 
-export const useMessages = ({ onMessage }: Options) => {
+type Return = {
+  messages: Message[];
+  messagesInViewRef: (node: HTMLDivElement | null) => void;
+  onResponse: (option: Option) => void;
+};
+
+export const useMessages = ({ onMessage }: Options): Return => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [messagesInViewRef, messagesInView] = useInView();
 

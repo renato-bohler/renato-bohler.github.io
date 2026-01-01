@@ -3,7 +3,12 @@ import { useCallback, useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 import { useMediaQuery } from 'react-responsive';
 
-export const useAboutProgress = () => {
+type Return = {
+  scrollRef: React.RefObject<HTMLDivElement | null>;
+  setAboutRefs: (node: HTMLDivElement) => void;
+};
+
+export const useAboutProgress = (): Return => {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const aboutRef = useRef<HTMLDivElement | null>(null);
   const [aboutInViewRef, aboutInView] = useInView();

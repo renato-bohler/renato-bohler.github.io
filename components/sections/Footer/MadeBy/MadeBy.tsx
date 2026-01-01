@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type FC } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -10,7 +10,7 @@ import styles from './MadeBy.module.css';
 
 const TARGET_TEXT = 'renatoBöhler';
 
-export const MadeBy = () => {
+export const MadeBy: FC = () => {
   const { isReducedMotion } = useTheme();
 
   const name = useTypingEffect({ startDelayMs: 500 });
