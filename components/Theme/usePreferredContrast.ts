@@ -1,18 +1,27 @@
-import { useEffect } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
-import { contrast, type Theme } from '~/consts/themes.const';
+type Options = {
+  onChangeSystemPreference?: (isPreferredContrast: boolean) => void;
+};
 
-export const usePreferredContrast = (
-  theme: Theme,
-  setContrastMode: (value: boolean) => void,
-): boolean => {
-  // Initial contrast preferences
-  useEffect(() => {
-    const userPrefersContrastMode = window.matchMedia(
-      '(prefers-contrast: more)',
-    )?.matches;
-    setContrastMode(userPrefersContrastMode);
-  }, [setContrastMode]);
+export const usePreferredContrast = ({
+  onChangeSystemPreference,
+}: Options): [boolean, (value: boolean) => void] => {
+  const [isPreferredContrast, setPreferredContrast] = useState(() => {
+    if (typeof window === 'undefined') return false;
+
+    const { matches } = window.matchMedia('(prefers-contrast: more)');
+    onChangeSystemPreference?.(matches);
+    return matches;
+  });
+
+  const setSystemPreference = useCallback(
+    (value: boolean) => {
+      setPreferredContrast(value);
+      onChangeSystemPreference?.(value);
+    },
+    [onChangeSystemPreference],
+  );
 
   // Watches for system contrast preferences changes
   useEffect(() => {
@@ -20,7 +29,7 @@ export const usePreferredContrast = (
       '(prefers-contrast: more)',
     );
     const handleSystemPreferenceChange = (e: MediaQueryListEvent) =>
-      setContrastMode(e.matches);
+      setSystemPreference(e.matches);
 
     mediaQueryList.addEventListener(
       'change',
@@ -32,7 +41,7 @@ export const usePreferredContrast = (
         'change',
         handleSystemPreferenceChange,
       );
-  }, [setContrastMode]);
+  }, [setSystemPreference]);
 
-  return theme.name === contrast.name;
+  return [isPreferredContrast, setPreferredContrast];
 };

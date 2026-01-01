@@ -1,7 +1,5 @@
 import {
   createContext,
-  useCallback,
-  useEffect,
   useState,
   type FC,
   type ReactNode,
@@ -63,23 +61,20 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
   );
   const [lastTheme, setLastTheme] = useState(theme);
 
-  useEffect(() => {
-    if (theme.name === contrast.name) return;
-    setLastTheme(theme);
-  }, [theme]);
-
-  const setContrastMode = useCallback(
-    (value: boolean) => {
-      if (value) setTheme(contrast);
-      else setTheme(lastTheme);
-    },
-    [lastTheme],
-  );
-
   const [colorScheme, setColorScheme] = useState<ColorScheme>(
     getStoredColorScheme() || 'dark',
   );
-  const isContrastMode = usePreferredContrast(theme, setContrastMode);
+
+  const [isContrastMode, setContrastMode] = usePreferredContrast({
+    onChangeSystemPreference: (isContrastMode) => {
+      if (isContrastMode) {
+        setLastTheme(theme);
+        setTheme(contrast);
+      } else if (theme === contrast) {
+        setTheme(lastTheme);
+      }
+    },
+  });
   const [isReducedMotion, setReducedMotion] = usePreferredMotion();
 
   useThemeApply(theme, colorScheme, isReducedMotion);
@@ -87,10 +82,6 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
   const favicon = useDynamicFavicon(theme);
   const getReducedMotionDuration = (duration: string) =>
     isReducedMotion ? MINIMUM_DURATION : duration;
-
-  useEffect(() => {
-    if (isContrastMode) setTheme(contrast);
-  }, [isContrastMode]);
 
   const context = {
     colorScheme,
@@ -101,11 +92,20 @@ export const ThemeProvider: FC<Props> = ({ children }) => {
       setStoredColorScheme(colorScheme);
       setColorScheme(colorScheme);
     },
-    setContrastMode,
+    setContrastMode: (value: boolean) => {
+      setContrastMode(value);
+      if (value) {
+        setLastTheme(theme);
+        setTheme(contrast);
+      } else {
+        setTheme(lastTheme);
+      }
+    },
     setReducedMotion,
     setTheme: (theme: Theme) => {
       setStoredTheme(theme);
       setTheme(theme);
+      setContrastMode(theme === contrast);
     },
     theme,
   };
