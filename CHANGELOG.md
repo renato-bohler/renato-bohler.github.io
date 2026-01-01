@@ -1,3 +1,10 @@
+## [2.9.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.9.0...v2.9.1) (2026-01-01)
+
+
+### Bug Fixes
+
+* **ThemeProvider:** adjusts behavior when toggling on/off contrast mode ([44aed71](https://github.com/renato-bohler/renato-bohler.github.io/commit/44aed715ac324373e18c43b3aef3720dc55f8934))
+
 # [2.9.0](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.8.7...v2.9.0) (2025-12-27)
 
 
