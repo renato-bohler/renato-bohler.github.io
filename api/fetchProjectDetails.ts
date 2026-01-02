@@ -66,18 +66,20 @@ export const fetchProjectDetails = async ({
     owner,
     repo,
   );
+  if (!gitHubMetadata) return null;
+
   const npmPackageMetadata =
     await fetchNpmPackageMetadata(packageName);
 
   return {
-    forks: gitHubMetadata?.forks ?? 0,
-    lastUpdate: gitHubMetadata?.pushed_at ?? '',
-    liveUrl: gitHubMetadata?.homepage ?? '',
+    forks: gitHubMetadata.forks,
+    lastUpdate: gitHubMetadata.pushed_at,
+    liveUrl: gitHubMetadata.homepage,
     monthlyDownloads: npmPackageMetadata?.downloads ?? null,
     name: repo,
     owner,
-    repositoryUrl: gitHubMetadata?.html_url ?? '',
-    stars: gitHubMetadata?.stargazers_count ?? 0,
-    subscribers: gitHubMetadata?.subscribers_count ?? 0,
+    repositoryUrl: gitHubMetadata.html_url,
+    stars: gitHubMetadata.stargazers_count,
+    subscribers: gitHubMetadata.subscribers_count,
   };
 };
