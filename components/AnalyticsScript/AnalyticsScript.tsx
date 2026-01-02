@@ -1,6 +1,8 @@
+import { type FC } from 'react';
+
 import Script from 'next/script';
 
-export const AnalyticsScript = () => (
+export const AnalyticsScript: FC = () => (
   <>
     <Script
       src="https://www.googletagmanager.com/gtag/js?id=G-T5ZEK0KJZR"

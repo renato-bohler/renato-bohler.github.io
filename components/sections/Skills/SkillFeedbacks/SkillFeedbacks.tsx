@@ -101,7 +101,7 @@ const AVERAGE_POINTS = AVERAGE.map((average, index) => {
   ].join(',');
 }).join(' ');
 
-export const SkillFeedbacks = () => {
+export const SkillFeedbacks: FC = () => {
   const [tableView, setTableView] = useState(false);
 
   return (

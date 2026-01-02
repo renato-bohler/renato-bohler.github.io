@@ -4,7 +4,7 @@ import 'swiper/css/controller';
 import 'swiper/css/effect-cards';
 import 'swiper/css/navigation';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, type FC } from 'react';
 
 import classNames from 'classnames';
 import { useInView } from 'react-intersection-observer';
@@ -30,7 +30,7 @@ import { TestimonialSectionTransition } from './TestimonialSectionTransition/Tes
 
 import styles from './Testimonials.module.css';
 
-export const Testimonials = () => {
+export const Testimonials: FC = () => {
   const [ref, inView] = useInView();
 
   const [swiper, setSwiper] = useState<SwiperInstance>();

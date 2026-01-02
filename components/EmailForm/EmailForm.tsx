@@ -25,18 +25,13 @@ const sendEmail = async (formData: FormData) => {
     if (!formData.author || !formData.replyTo || !formData.message)
       throw new Error();
 
-    const response = await fetch(
-      process.env.NEXT_PUBLIC_CONTACT_ENDPOINT,
-      {
-        body: JSON.stringify(formData),
-        headers: { 'Content-Type': 'application/json' },
-        method: 'POST',
-      },
-    );
-
-    return response.json();
+    await fetch(process.env.NEXT_PUBLIC_CONTACT_ENDPOINT, {
+      body: JSON.stringify(formData),
+      headers: { 'Content-Type': 'application/json' },
+      method: 'POST',
+    });
   } catch {
-    return Promise.reject();
+    throw new Error('Failed to send email');
   }
 };
 
@@ -52,25 +47,30 @@ const BaseEmailForm = (
 ) => {
   const [formState, setFormState] = useState<FormState>('idle');
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (
-    event,
-  ) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
 
-    const formData = new FormData(event.currentTarget);
-    const payload = {
-      author: formData.get('author')?.toString() || '',
-      message: formData.get('message')?.toString() || '',
-      replyTo: formData.get('replyTo')?.toString() || '',
+    const submitForm = async () => {
+      const formData = new FormData(event.currentTarget);
+      const getFormValue = (name: string): string => {
+        const value = formData.get(name);
+        return typeof value === 'string' ? value : '';
+      };
+
+      try {
+        setFormState('submitting');
+        await sendEmail({
+          author: getFormValue('author'),
+          message: getFormValue('message'),
+          replyTo: getFormValue('replyTo'),
+        });
+        setFormState('success');
+      } catch {
+        setFormState('error');
+      }
     };
 
-    try {
-      setFormState('submitting');
-      await sendEmail(payload);
-      setFormState('success');
-    } catch {
-      setFormState('error');
-    }
+    void submitForm();
   };
 
   const disabled =

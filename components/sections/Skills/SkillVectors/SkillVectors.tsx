@@ -1,4 +1,6 @@
-export const SkillVectors = () => (
+import { type FC } from 'react';
+
+export const SkillVectors: FC = () => (
   <svg style={{ display: 'none' }}>
     <symbol id="javascript" viewBox="0 0 446.124 321.514">
       <path

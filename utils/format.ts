@@ -1,6 +1,7 @@
-export const number = new Intl.NumberFormat('en').format;
+export const number = (value: number): string =>
+  new Intl.NumberFormat('en').format(value);
 
-export const dateTime = (date: Date) =>
+export const dateTime = (date: Date): string =>
   date.toLocaleDateString('en', {
     day: 'numeric',
     hour: 'numeric',
@@ -9,7 +10,7 @@ export const dateTime = (date: Date) =>
     year: 'numeric',
   });
 
-export const dateTimeUTC = (date: Date) =>
+export const dateTimeUTC = (date: Date): string =>
   date.toLocaleDateString('en', {
     day: 'numeric',
     hour: 'numeric',
@@ -23,7 +24,7 @@ export const dateTimeUTC = (date: Date) =>
 export const relativeTime = (
   date: Date,
   relative: Date = new Date(),
-) => {
+): string => {
   const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
 
   const units: { ms: number; unit: Intl.RelativeTimeFormatUnit }[] = [

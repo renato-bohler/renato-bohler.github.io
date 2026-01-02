@@ -24,7 +24,7 @@ type Result = {
   isLastNameTypingComplete: boolean;
   isSubtitleTypingComplete: boolean;
   lastName: string;
-  ref: (node?: Element | null | undefined) => void;
+  ref: (node?: Element | null) => void;
   subtitle: string;
 };
 

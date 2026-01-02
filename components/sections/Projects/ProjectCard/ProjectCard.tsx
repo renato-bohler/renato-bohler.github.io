@@ -32,7 +32,7 @@ export const ProjectCard: FC<Props> = ({
     if (!isReducedMotion) return;
 
     if (cardInView) videoRef.current?.pause();
-    else videoRef.current?.play();
+    else void videoRef.current?.play();
   }, [cardInView, isReducedMotion]);
 
   const isMobile = useMediaQuery({

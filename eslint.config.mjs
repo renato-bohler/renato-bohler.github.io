@@ -21,12 +21,12 @@ export default tsEslint.config([
   ]),
   {
     extends: [
-      ...next,
-      ...nextCoreWebVitals,
+      next,
+      nextCoreWebVitals,
       prettierPlugin,
       perfectionist.configs['recommended-natural'],
       eslint.configs.recommended,
-      tsEslint.configs.recommended,
+      tsEslint.configs.recommendedTypeChecked,
     ],
     languageOptions: {
       parserOptions: {
@@ -66,12 +66,20 @@ export default tsEslint.config([
       'no-warning-comments': 'warn',
 
       // TypeScript
+      '@typescript-eslint/explicit-module-boundary-types': 'error',
       '@typescript-eslint/no-empty-function': 'off',
       '@typescript-eslint/no-explicit-any': 'error',
+      '@typescript-eslint/no-inferrable-types': 'error',
+      '@typescript-eslint/no-unnecessary-type-assertion': 'error',
       '@typescript-eslint/no-unused-vars': 'off',
 
       // React
       'react-hooks/set-state-in-effect': 'warn',
+      'react/destructuring-assignment': [
+        'error',
+        'always',
+        { destructureInSignature: 'always', ignoreClassFields: true },
+      ],
       'react/jsx-boolean-value': 'error',
       'react/jsx-curly-brace-presence': 'error',
       'react/jsx-no-useless-fragment': 'error',

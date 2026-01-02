@@ -1202,7 +1202,10 @@ export const skills: Skill[] = [
   },
 ];
 
-export const getColors = (skill: Skill, isContrastMode: boolean) =>
+export const getColors = (
+  skill: Skill,
+  isContrastMode: boolean,
+): Skill['colors']['contrast'] | Skill['colors']['normal'] =>
   isContrastMode ? skill.colors.contrast : skill.colors.normal;
 
 type Skill = {

@@ -40,7 +40,7 @@ export const AudioChatMessage: FC<Props> = ({ message }) => {
   const handlePlay = () => {
     if (status !== 'paused') setTime(0);
     setStatus('playing');
-    ref.current?.play();
+    void ref.current?.play();
   };
 
   const handlePause = () => {
