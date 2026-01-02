@@ -1,3 +1,10 @@
+## [2.9.2](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.9.1...v2.9.2) (2026-01-02)
+
+
+### Bug Fixes
+
+* fixes invalid date string causing client-side crash ([67b9945](https://github.com/renato-bohler/renato-bohler.github.io/commit/67b99450470cfabf728c2a5f37fabb6ec395881b))
+
 ## [2.9.1](https://github.com/renato-bohler/renato-bohler.github.io/compare/v2.9.0...v2.9.1) (2026-01-01)
 
 
