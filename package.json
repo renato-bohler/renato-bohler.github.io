@@ -29,7 +29,7 @@
     "react-intersection-observer": "^10.0.0",
     "react-responsive": "^10.0.1",
     "reakit": "^1.3.11",
-    "swiper": "^12.0.3",
+    "swiper": "^12.1.2",
     "throttle-debounce": "^5.0.2"
   },
   "devDependencies": {
